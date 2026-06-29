@@ -74,9 +74,6 @@ export default function OIDCProvider({ children }: Props) {
   }, []);
 
   // We bypass authentication for pages that do not require auth.
-  // E.g., when we just want to show installation steps for public.
-  // Or the instance setup wizard for first-time setup.
-  // Or the invite acceptance page for new users.
   if (path === "/install" || path === "/setup" || path?.startsWith("/invite"))
     return children;
 
@@ -90,7 +87,6 @@ export default function OIDCProvider({ children }: Props) {
       callbackSuccessComponent={FullScreenLoading}
       onEvent={onEvent}
       onSessionLost={() => void 0}
-      //sessionLostComponent={SessionLost}
     >
       <SecureProvider>{children}</SecureProvider>
     </OidcProvider>
