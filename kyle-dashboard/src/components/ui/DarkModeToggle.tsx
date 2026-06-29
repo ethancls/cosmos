@@ -39,6 +39,7 @@ export default function DarkModeToggle() {
         <DropdownMenuItem
           onClick={() => setTheme("light")}
           className={"flex gap-2"}
+          disabled={true}
         >
           <SunIcon size={16} />
           Light
@@ -51,6 +52,7 @@ export default function DarkModeToggle() {
           Dark
         </DropdownMenuItem>
         <DropdownMenuItem
+          disabled={true}
           onClick={() => setTheme("system")}
           className={"flex gap-2"}
         >

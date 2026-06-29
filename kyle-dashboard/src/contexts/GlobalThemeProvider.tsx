@@ -18,9 +18,9 @@ export function GlobalThemeProvider({
   return (
     <NextThemesProvider
       attribute="class"
-      defaultTheme="system"
+      defaultTheme="dark"
       storageKey="kyle-theme"
-      enableSystem={true}
+      enableSystem={false}
       disableTransitionOnChange
       {...props}
     >
