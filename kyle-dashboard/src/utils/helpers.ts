@@ -26,9 +26,9 @@ export function removeAllSpaces(str?: string) {
 }
 
 export const generateColorFromString = (str?: string) => {
-  if (!str) return "#2563EB";
+  if (!str) return "#217ce7";
   if (str.includes("System")) return "#808080";
-  if (str.toLowerCase().startsWith("kyle")) return "#2563EB";
+  if (str.toLowerCase().startsWith("kyle")) return "#217ce7";
   let hash = 0;
   str.split("").forEach((char) => {
     hash = char.charCodeAt(0) + ((hash << 5) - hash);
