@@ -5,6 +5,6 @@ import AppLayout from "@/layouts/AppLayout";
 export const metadata: Metadata = {
   title: `${globalMetaTitle}`,
   description:
-    "Kyle combines a configuration-free peer-to-peer private network and a centralized access control system in a single open-source platform",
+    "Kyle — Secure remote access gateway. SSH, RDP, VNC in your browser with zero trust bastion architecture.",
 };
 export default AppLayout;

@@ -36,7 +36,7 @@ export const KyleLogo = ({ size = "default", mobile = true }: Props) => {
           className={cn(mobile && "md:hidden")}
         />
       )}
-      <span className="text-lg font-bold text-gray-900 dark:text-white hidden md:block">
+      <span className="text-lg font-semibold tracking-tight text-kyle hidden md:block">
         Kyle
       </span>
     </div>
