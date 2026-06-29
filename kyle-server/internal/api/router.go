@@ -45,7 +45,7 @@ func SetupRouter(database *sql.DB, cfg *config.Config) http.Handler {
 	r.mux.HandleFunc("GET /api/setup", r.handleGetSetup)
 	r.mux.HandleFunc("POST /api/setup", r.handlePostSetup)
 
-	// Other dashboard endpoints with DB or mock fallback
+	// Dashboard data endpoints (PostgreSQL only)
 	r.mux.HandleFunc("GET /api/peers", r.handlePeers)
 	r.mux.HandleFunc("GET /api/groups", r.handleGroups)
 	r.mux.HandleFunc("GET /api/setup-keys", r.handleSetupKeys)
@@ -319,169 +319,158 @@ func (r *Router) handlePostSetup(w http.ResponseWriter, req *http.Request) {
 }
 
 // ---------------------------------------------------------------------------
-// Dashboard endpoints (DB with mock fallback)
+// Dashboard endpoints (PostgreSQL only, no fallback)
 // ---------------------------------------------------------------------------
 
 func (r *Router) handleUsers(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	if r.db != nil {
-		users, err := queryUsers(r.db)
-		if err == nil {
-			json.NewEncoder(w).Encode(users)
-			return
-		}
-		log.Printf("query users failed: %v (falling back to mock)", err)
+	users, err := queryUsers(r.db)
+	if err != nil {
+		log.Printf("query users failed: %v", err)
+		w.WriteHeader(http.StatusInternalServerError)
+		json.NewEncoder(w).Encode(map[string]string{"error": "database query failed"})
+		return
 	}
-	json.NewEncoder(w).Encode(mockUsers())
+	json.NewEncoder(w).Encode(users)
 }
 
 func (r *Router) handleAccounts(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	if r.db != nil {
-		accounts, err := queryAccounts(r.db)
-		if err == nil {
-			json.NewEncoder(w).Encode(accounts)
-			return
-		}
-		log.Printf("query accounts failed: %v (falling back to mock)", err)
+	accounts, err := queryAccounts(r.db)
+	if err != nil {
+		log.Printf("query accounts failed: %v", err)
+		w.WriteHeader(http.StatusInternalServerError)
+		json.NewEncoder(w).Encode(map[string]string{"error": "database query failed"})
+		return
 	}
-	json.NewEncoder(w).Encode(mockAccounts())
+	json.NewEncoder(w).Encode(accounts)
 }
 
 func (r *Router) handlePeers(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	if r.db != nil {
-		peers, err := queryPeers(r.db)
-		if err == nil {
-			json.NewEncoder(w).Encode(peers)
-			return
-		}
-		log.Printf("query peers failed: %v (falling back to mock)", err)
+	peers, err := queryPeers(r.db)
+	if err != nil {
+		log.Printf("query peers failed: %v", err)
+		w.WriteHeader(http.StatusInternalServerError)
+		json.NewEncoder(w).Encode(map[string]string{"error": "database query failed"})
+		return
 	}
-	json.NewEncoder(w).Encode(mockPeers())
+	json.NewEncoder(w).Encode(peers)
 }
 
 func (r *Router) handleGroups(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	if r.db != nil {
-		groups, err := queryGroups(r.db)
-		if err == nil {
-			json.NewEncoder(w).Encode(groups)
-			return
-		}
-		log.Printf("query groups failed: %v (falling back to mock)", err)
+	groups, err := queryGroups(r.db)
+	if err != nil {
+		log.Printf("query groups failed: %v", err)
+		w.WriteHeader(http.StatusInternalServerError)
+		json.NewEncoder(w).Encode(map[string]string{"error": "database query failed"})
+		return
 	}
-	json.NewEncoder(w).Encode(mockGroups())
+	json.NewEncoder(w).Encode(groups)
 }
 
 func (r *Router) handleSetupKeys(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	if r.db != nil {
-		keys, err := querySetupKeys(r.db)
-		if err == nil {
-			json.NewEncoder(w).Encode(keys)
-			return
-		}
-		log.Printf("query setup keys failed: %v (falling back to mock)", err)
+	keys, err := querySetupKeys(r.db)
+	if err != nil {
+		log.Printf("query setup keys failed: %v", err)
+		w.WriteHeader(http.StatusInternalServerError)
+		json.NewEncoder(w).Encode(map[string]string{"error": "database query failed"})
+		return
 	}
-	json.NewEncoder(w).Encode(mockSetupKeys())
+	json.NewEncoder(w).Encode(keys)
 }
 
 func (r *Router) handleEvents(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	if r.db != nil {
-		events, err := queryEvents(r.db)
-		if err == nil {
-			json.NewEncoder(w).Encode(events)
-			return
-		}
-		log.Printf("query events failed: %v (falling back to mock)", err)
+	events, err := queryEvents(r.db)
+	if err != nil {
+		log.Printf("query events failed: %v", err)
+		w.WriteHeader(http.StatusInternalServerError)
+		json.NewEncoder(w).Encode(map[string]string{"error": "database query failed"})
+		return
 	}
-	json.NewEncoder(w).Encode(mockEvents())
+	json.NewEncoder(w).Encode(events)
 }
 
 func (r *Router) handleNameservers(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(mockNameservers())
+	json.NewEncoder(w).Encode([]string{})
 }
 
 func (r *Router) handleRoutes(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(mockRoutes())
+	json.NewEncoder(w).Encode([]string{})
 }
 
 func (r *Router) handleDNSSettings(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(mockDNSSettings())
+	json.NewEncoder(w).Encode(map[string]interface{}{})
 }
 
 // ---------------------------------------------------------------------------
-// V1 API endpoints (DB with mock fallback)
+// V1 API endpoints (PostgreSQL only, no fallback)
 // ---------------------------------------------------------------------------
 
 func (r *Router) handleServersV1(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	if r.db != nil {
-		servers, err := queryServers(r.db)
-		if err == nil {
-			json.NewEncoder(w).Encode(servers)
-			return
-		}
-		log.Printf("query servers failed: %v (falling back to mock)", err)
+	servers, err := queryServers(r.db)
+	if err != nil {
+		log.Printf("query servers failed: %v", err)
+		w.WriteHeader(http.StatusInternalServerError)
+		json.NewEncoder(w).Encode(map[string]string{"error": "database query failed"})
+		return
 	}
-	json.NewEncoder(w).Encode(mockServers())
+	json.NewEncoder(w).Encode(servers)
 }
 
 func (r *Router) handleUsersV1(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	if r.db != nil {
-		users, err := queryUsersV1(r.db)
-		if err == nil {
-			json.NewEncoder(w).Encode(users)
-			return
-		}
-		log.Printf("query v1 users failed: %v (falling back to mock)", err)
+	users, err := queryUsersV1(r.db)
+	if err != nil {
+		log.Printf("query v1 users failed: %v", err)
+		w.WriteHeader(http.StatusInternalServerError)
+		json.NewEncoder(w).Encode(map[string]string{"error": "database query failed"})
+		return
 	}
-	json.NewEncoder(w).Encode(mockUsersV1())
+	json.NewEncoder(w).Encode(users)
 }
 
 func (r *Router) handleConnectionsV1(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	if r.db != nil {
-		conns, err := queryConnections(r.db)
-		if err == nil {
-			json.NewEncoder(w).Encode(conns)
-			return
-		}
-		log.Printf("query connections failed: %v (falling back to mock)", err)
+	conns, err := queryConnections(r.db)
+	if err != nil {
+		log.Printf("query connections failed: %v", err)
+		w.WriteHeader(http.StatusInternalServerError)
+		json.NewEncoder(w).Encode(map[string]string{"error": "database query failed"})
+		return
 	}
-	json.NewEncoder(w).Encode(mockConnections())
+	json.NewEncoder(w).Encode(conns)
 }
 
 func (r *Router) handlePoliciesV1(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	if r.db != nil {
-		policies, err := queryPolicies(r.db)
-		if err == nil {
-			json.NewEncoder(w).Encode(policies)
-			return
-		}
-		log.Printf("query policies failed: %v (falling back to mock)", err)
+	policies, err := queryPolicies(r.db)
+	if err != nil {
+		log.Printf("query policies failed: %v", err)
+		w.WriteHeader(http.StatusInternalServerError)
+		json.NewEncoder(w).Encode(map[string]string{"error": "database query failed"})
+		return
 	}
-	json.NewEncoder(w).Encode(mockPolicies())
+	json.NewEncoder(w).Encode(policies)
 }
 
 func (r *Router) handleAuditV1(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	if r.db != nil {
-		logs, err := queryAuditLogs(r.db)
-		if err == nil {
-			json.NewEncoder(w).Encode(logs)
-			return
-		}
-		log.Printf("query audit logs failed: %v (falling back to mock)", err)
+	logs, err := queryAuditLogs(r.db)
+	if err != nil {
+		log.Printf("query audit logs failed: %v", err)
+		w.WriteHeader(http.StatusInternalServerError)
+		json.NewEncoder(w).Encode(map[string]string{"error": "database query failed"})
+		return
 	}
-	json.NewEncoder(w).Encode(mockAuditLogs())
+	json.NewEncoder(w).Encode(logs)
 }
 
 // ---------------------------------------------------------------------------

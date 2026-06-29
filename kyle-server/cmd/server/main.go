@@ -14,14 +14,11 @@ func main() {
 
 	database, err := db.Connect(cfg.DatabaseURL)
 	if err != nil {
-		log.Printf("WARNING: database not available: %v (server will start with in-memory fallback)", err)
-		database = nil
+		log.Fatalf("database connection failed: %v", err)
 	}
-	if database != nil {
-		defer database.Close()
-		if err := db.RunMigrations(database, "migrations"); err != nil {
-			log.Printf("WARNING: migrations failed: %v", err)
-		}
+	defer database.Close()
+	if err := db.RunMigrations(database, "migrations"); err != nil {
+		log.Printf("WARNING: migrations failed: %v", err)
 	}
 
 	router := api.SetupRouter(database, cfg)

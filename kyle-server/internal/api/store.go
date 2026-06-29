@@ -5,9 +5,7 @@ import (
 	"time"
 )
 
-// ---------------------------------------------------------------------------
 // Type definitions matching Netbird API response shapes
-// ---------------------------------------------------------------------------
 
 type apiUser struct {
 	ID            string   `json:"id"`
@@ -107,9 +105,7 @@ type apiAuditLog struct {
 	CreatedAt string `json:"created_at"`
 }
 
-// ---------------------------------------------------------------------------
-// PostgreSQL query functions
-// ---------------------------------------------------------------------------
+// PostgreSQL query functions (no mock fallback — PostgreSQL is mandatory)
 
 func queryUsers(db *sql.DB) ([]apiUser, error) {
 	rows, err := db.Query(`SELECT id, email, COALESCE(display_name, ''), role,
@@ -356,108 +352,4 @@ func queryAuditLogs(db *sql.DB) ([]apiAuditLog, error) {
 		logs = []apiAuditLog{}
 	}
 	return logs, rows.Err()
-}
-
-// ---------------------------------------------------------------------------
-// Mock data (in-memory) for development without PostgreSQL
-// ---------------------------------------------------------------------------
-
-func mockUsers() []apiUser {
-	return []apiUser{
-		{
-			ID:         "dev-user",
-			Email:      "dev@kyle.local",
-			Name:       "Dev User",
-			Role:       "owner",
-			AutoGroups: []string{},
-			Status:     "active",
-			IsBlocked:  false,
-			Issued:     "api",
-			LastLogin:  time.Now().UTC().Format(time.RFC3339),
-		},
-	}
-}
-
-func mockAccounts() []apiAccount {
-	return []apiAccount{
-		{
-			ID:        "dev-account",
-			Name:      "Kyle Dev",
-			Slug:      "kyle-dev",
-			Tier:      "free",
-			Status:    "active",
-			CreatedAt: time.Now().UTC().Format(time.RFC3339),
-		},
-	}
-}
-
-func mockPeers() []apiPeer {
-	return []apiPeer{
-		{
-			ID:       "dev-peer-1",
-			Name:     "dev-server",
-			Hostname: "dev.local",
-			IP:       "10.0.0.1",
-			OS:       "linux",
-			Status:   "offline",
-			Version:  "0.1.0",
-		},
-	}
-}
-
-func mockGroups() []apiGroup {
-	return []apiGroup{
-		{ID: "dev-group-all", Name: "All"},
-	}
-}
-
-func mockSetupKeys() []apiSetupKey {
-	return []apiSetupKey{}
-}
-
-func mockNameservers() []apiNameserver {
-	return []apiNameserver{}
-}
-
-func mockRoutes() []apiRoute {
-	return []apiRoute{}
-}
-
-func mockDNSSettings() map[string]interface{} {
-	return map[string]interface{}{
-		"dns_domain":        "kyle.local",
-		"custom_zones":      []interface{}{},
-		"nameserver_groups": []interface{}{},
-	}
-}
-
-func mockEvents() []apiEvent {
-	return []apiEvent{}
-}
-
-func mockServers() []apiServer {
-	return []apiServer{
-		{
-			ID:       "dev-server-1",
-			Name:     "dev-server",
-			Hostname: "dev.local",
-			Status:   "offline",
-		},
-	}
-}
-
-func mockUsersV1() []apiUser {
-	return mockUsers()
-}
-
-func mockConnections() []apiConnection {
-	return []apiConnection{}
-}
-
-func mockPolicies() []apiPolicy {
-	return []apiPolicy{}
-}
-
-func mockAuditLogs() []apiAuditLog {
-	return []apiAuditLog{}
 }
