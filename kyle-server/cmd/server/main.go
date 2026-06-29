@@ -14,12 +14,14 @@ func main() {
 
 	database, err := db.Connect(cfg.DatabaseURL)
 	if err != nil {
-		log.Fatalf("failed to connect to database: %v", err)
+		log.Printf("WARNING: database not available: %v (server will start without persistence)", err)
+		database = nil
 	}
-	defer database.Close()
-
-	if err := db.RunMigrations(database, "migrations"); err != nil {
-		log.Fatalf("failed to run migrations: %v", err)
+	if database != nil {
+		defer database.Close()
+		if err := db.RunMigrations(database, "migrations"); err != nil {
+			log.Printf("WARNING: migrations failed: %v", err)
+		}
 	}
 
 	router := api.SetupRouter(database, cfg)

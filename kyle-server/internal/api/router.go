@@ -39,18 +39,24 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 }
 
 func (r *Router) handleHealth(w http.ResponseWriter, req *http.Request) {
-	err := r.db.Ping()
-	if err != nil {
-		w.Header().Set("Content-Type", "application/json")
-		w.WriteHeader(http.StatusServiceUnavailable)
-		json.NewEncoder(w).Encode(map[string]string{
-			"status":   "unhealthy",
-			"database": "disconnected",
-		})
-		return
-	}
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(map[string]string{"status": "ok"})
+	dbStatus := "connected"
+	if r.db == nil {
+		dbStatus = "unavailable"
+	} else if err := r.db.Ping(); err != nil {
+		dbStatus = "disconnected"
+	}
+	status := "ok"
+	httpStatus := http.StatusOK
+	if dbStatus != "connected" {
+		status = "degraded"
+		httpStatus = http.StatusOK // still 200, just degraded
+	}
+	w.WriteHeader(httpStatus)
+	json.NewEncoder(w).Encode(map[string]string{
+		"status":   status,
+		"database": dbStatus,
+	})
 }
 
 func (r *Router) handleStatus(w http.ResponseWriter, req *http.Request) {
