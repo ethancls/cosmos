@@ -47,10 +47,7 @@ export const generateColorFromUser = (user?: {
   email?: string;
 }) => {
   if (user?.email === "NetBird") return "#9c9c9c";
-  return user?.name
-    ? chroma(generateColorFromString(user?.name || user?.id || "System User"))
-        .saturate(2)
-        .luminance(0.4)
+  return "#217ce7";
         .hex()
     : "#9c9c9c";
 };
