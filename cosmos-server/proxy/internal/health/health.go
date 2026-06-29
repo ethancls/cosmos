@@ -12,8 +12,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/embed"
-	"github.com/ethancls/kyle-server/proxy/internal/types"
+	"github.com/ethancls/cosmos-server/client/embed"
+	"github.com/ethancls/cosmos-server/proxy/internal/types"
 )
 
 const handshakeStaleThreshold = 5 * time.Minute

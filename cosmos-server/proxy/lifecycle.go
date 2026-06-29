@@ -7,8 +7,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/embed"
-	"github.com/ethancls/kyle-server/proxy/internal/acme"
+	"github.com/ethancls/cosmos-server/client/embed"
+	"github.com/ethancls/cosmos-server/proxy/internal/acme"
 )
 
 // Config bundles every knob the proxy reads at construction time. It mirrors

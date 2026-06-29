@@ -14,13 +14,13 @@ import (
 	ipset "github.com/lrh3321/ipset-go"
 	log "github.com/sirupsen/logrus"
 
-	nberrors "github.com/ethancls/kyle-server/client/errors"
-	firewall "github.com/ethancls/kyle-server/client/firewall/manager"
-	nbid "github.com/ethancls/kyle-server/client/internal/acl/id"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/ipfwdstate"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/refcounter"
-	"github.com/ethancls/kyle-server/client/internal/statemanager"
-	nbnet "github.com/ethancls/kyle-server/client/net"
+	nberrors "github.com/ethancls/cosmos-server/client/errors"
+	firewall "github.com/ethancls/cosmos-server/client/firewall/manager"
+	nbid "github.com/ethancls/cosmos-server/client/internal/acl/id"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/ipfwdstate"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/refcounter"
+	"github.com/ethancls/cosmos-server/client/internal/statemanager"
+	nbnet "github.com/ethancls/cosmos-server/client/net"
 )
 
 // constants needed to manage and create iptable rules

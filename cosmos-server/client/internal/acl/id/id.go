@@ -7,7 +7,7 @@ import (
 	"net/netip"
 	"strconv"
 
-	"github.com/ethancls/kyle-server/client/firewall/manager"
+	"github.com/ethancls/cosmos-server/client/firewall/manager"
 )
 
 type RuleID string

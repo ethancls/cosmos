@@ -5,7 +5,7 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/ethancls/kyle-server/client/internal/netflow/types"
+	"github.com/ethancls/cosmos-server/client/internal/netflow/types"
 )
 
 func NewMemoryStore() *Memory {

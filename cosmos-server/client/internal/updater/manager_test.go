@@ -11,9 +11,9 @@ import (
 
 	v "github.com/hashicorp/go-version"
 
-	"github.com/ethancls/kyle-server/client/internal/peer"
-	"github.com/ethancls/kyle-server/client/internal/statemanager"
-	cProto "github.com/ethancls/kyle-server/client/proto"
+	"github.com/ethancls/cosmos-server/client/internal/peer"
+	"github.com/ethancls/cosmos-server/client/internal/statemanager"
+	cProto "github.com/ethancls/cosmos-server/client/proto"
 )
 
 func Test_LatestVersion(t *testing.T) {

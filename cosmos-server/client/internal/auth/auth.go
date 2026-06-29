@@ -13,12 +13,12 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"github.com/ethancls/kyle-server/client/internal/profilemanager"
-	"github.com/ethancls/kyle-server/client/ssh"
-	"github.com/ethancls/kyle-server/client/system"
-	mgm "github.com/ethancls/kyle-server/shared/management/client"
-	"github.com/ethancls/kyle-server/shared/management/client/common"
-	mgmProto "github.com/ethancls/kyle-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/client/internal/profilemanager"
+	"github.com/ethancls/cosmos-server/client/ssh"
+	"github.com/ethancls/cosmos-server/client/system"
+	mgm "github.com/ethancls/cosmos-server/shared/management/client"
+	"github.com/ethancls/cosmos-server/shared/management/client/common"
+	mgmProto "github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 // Auth manages authentication operations with the management server

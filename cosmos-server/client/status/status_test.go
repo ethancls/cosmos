@@ -13,8 +13,8 @@ import (
 	"google.golang.org/protobuf/types/known/durationpb"
 	"google.golang.org/protobuf/types/known/timestamppb"
 
-	"github.com/ethancls/kyle-server/client/proto"
-	"github.com/ethancls/kyle-server/version"
+	"github.com/ethancls/cosmos-server/client/proto"
+	"github.com/ethancls/cosmos-server/version"
 )
 
 func init() {

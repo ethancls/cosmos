@@ -11,8 +11,8 @@ import (
 	"github.com/miekg/dns"
 	"golang.zx2c4.com/wireguard/tun/netstack"
 
-	"github.com/ethancls/kyle-server/client/internal/peer"
-	"github.com/ethancls/kyle-server/shared/management/domain"
+	"github.com/ethancls/cosmos-server/client/internal/peer"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
 )
 
 type upstreamResolver struct {

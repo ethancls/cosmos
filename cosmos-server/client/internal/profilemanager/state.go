@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/ethancls/kyle-server/util"
+	"github.com/ethancls/cosmos-server/util"
 )
 
 type ProfileState struct {

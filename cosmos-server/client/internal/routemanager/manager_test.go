@@ -8,15 +8,15 @@ import (
 	"net/netip"
 	"testing"
 
-	"github.com/ethancls/kyle-server/client/internal/stdnet"
+	"github.com/ethancls/cosmos-server/client/internal/stdnet"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/kyle-server/client/iface"
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
-	"github.com/ethancls/kyle-server/client/internal/peer"
-	"github.com/ethancls/kyle-server/route"
+	"github.com/ethancls/cosmos-server/client/iface"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
+	"github.com/ethancls/cosmos-server/client/internal/peer"
+	"github.com/ethancls/cosmos-server/route"
 )
 
 // send 5 routes, one for server and 4 for clients, one normal and 2 HA and one small

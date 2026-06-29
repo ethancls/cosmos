@@ -13,8 +13,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/ethancls/kyle-server/server/store"
-	"github.com/ethancls/kyle-server/server/types"
+	"github.com/ethancls/cosmos-server/server/store"
+	"github.com/ethancls/cosmos-server/server/types"
 )
 
 // StoreOpener initializes a store from the command context and calls fn.

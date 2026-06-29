@@ -10,8 +10,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/shared/management/domain"
-	mgmProto "github.com/ethancls/kyle-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
+	mgmProto "github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 var (

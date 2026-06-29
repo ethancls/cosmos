@@ -3,7 +3,7 @@ package rest
 import (
 	"context"
 
-	"github.com/ethancls/kyle-server/shared/management/http/api"
+	"github.com/ethancls/cosmos-server/shared/management/http/api"
 )
 
 // GeoLocationAPI APIs for Geo-Location, do not use directly

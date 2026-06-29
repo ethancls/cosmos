@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ethancls/kyle-server/proxy/internal/types"
+	"github.com/ethancls/cosmos-server/proxy/internal/types"
 )
 
 func TestAccountIDContext(t *testing.T) {

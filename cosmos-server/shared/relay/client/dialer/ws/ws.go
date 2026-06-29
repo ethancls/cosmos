@@ -13,9 +13,9 @@ import (
 	"github.com/coder/websocket"
 	log "github.com/sirupsen/logrus"
 
-	nbnet "github.com/ethancls/kyle-server/client/net"
-	"github.com/ethancls/kyle-server/shared/relay"
-	"github.com/ethancls/kyle-server/util/embeddedroots"
+	nbnet "github.com/ethancls/cosmos-server/client/net"
+	"github.com/ethancls/cosmos-server/shared/relay"
+	"github.com/ethancls/cosmos-server/util/embeddedroots"
 )
 
 type Dialer struct {

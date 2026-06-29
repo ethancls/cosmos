@@ -4,9 +4,9 @@ import (
 	"context"
 	"io"
 
-	"github.com/ethancls/kyle-server/client/system"
-	"github.com/ethancls/kyle-server/shared/management/domain"
-	"github.com/ethancls/kyle-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/client/system"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 // Client is the interface for the management service client.

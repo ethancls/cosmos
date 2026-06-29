@@ -6,7 +6,7 @@ import (
 
 	"github.com/pion/transport/v3"
 
-	nbnet "github.com/ethancls/kyle-server/client/net"
+	nbnet "github.com/ethancls/cosmos-server/client/net"
 )
 
 // ListenPacket listens for incoming packets on the given network and address.

@@ -10,9 +10,9 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/sys/windows"
 
-	"github.com/ethancls/kyle-server/client/internal"
-	"github.com/ethancls/kyle-server/client/internal/peer"
-	"github.com/ethancls/kyle-server/client/internal/profilemanager"
+	"github.com/ethancls/cosmos-server/client/internal"
+	"github.com/ethancls/cosmos-server/client/internal/peer"
+	"github.com/ethancls/cosmos-server/client/internal/profilemanager"
 )
 
 const (

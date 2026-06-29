@@ -11,8 +11,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/kyle-server/server/http/testing/testing_tools/channel"
-	"github.com/ethancls/kyle-server/shared/management/client/rest"
+	"github.com/ethancls/cosmos-server/server/http/testing/testing_tools/channel"
+	"github.com/ethancls/cosmos-server/shared/management/client/rest"
 )
 
 func withMockClient(callback func(*rest.Client, *http.ServeMux)) {

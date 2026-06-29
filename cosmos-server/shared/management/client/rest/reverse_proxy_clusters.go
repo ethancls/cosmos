@@ -5,7 +5,7 @@ import (
 	"errors"
 	"net/url"
 
-	"github.com/ethancls/kyle-server/shared/management/http/api"
+	"github.com/ethancls/cosmos-server/shared/management/http/api"
 )
 
 // ReverseProxyClustersAPI APIs for Reverse Proxy Clusters, do not use directly

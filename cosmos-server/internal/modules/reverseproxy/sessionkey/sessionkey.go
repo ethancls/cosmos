@@ -9,7 +9,7 @@ import (
 
 	"github.com/golang-jwt/jwt/v5"
 
-	"github.com/ethancls/kyle-server/proxy/auth"
+	"github.com/ethancls/cosmos-server/proxy/auth"
 )
 
 type KeyPair struct {

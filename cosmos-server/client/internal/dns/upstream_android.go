@@ -9,9 +9,9 @@ import (
 
 	"github.com/miekg/dns"
 
-	"github.com/ethancls/kyle-server/client/internal/peer"
-	nbnet "github.com/ethancls/kyle-server/client/net"
-	"github.com/ethancls/kyle-server/shared/management/domain"
+	"github.com/ethancls/cosmos-server/client/internal/peer"
+	nbnet "github.com/ethancls/cosmos-server/client/net"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
 )
 
 type upstreamResolver struct {

@@ -7,9 +7,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/notifier"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/vars"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/notifier"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/vars"
 )
 
 type mockWGIface struct {

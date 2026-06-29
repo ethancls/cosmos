@@ -13,10 +13,10 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/time/rate"
 
-	"github.com/ethancls/kyle-server/proxy/internal/accesslog"
-	"github.com/ethancls/kyle-server/proxy/internal/netutil"
-	"github.com/ethancls/kyle-server/proxy/internal/restrict"
-	"github.com/ethancls/kyle-server/proxy/internal/types"
+	"github.com/ethancls/cosmos-server/proxy/internal/accesslog"
+	"github.com/ethancls/cosmos-server/proxy/internal/netutil"
+	"github.com/ethancls/cosmos-server/proxy/internal/restrict"
+	"github.com/ethancls/cosmos-server/proxy/internal/types"
 )
 
 const (

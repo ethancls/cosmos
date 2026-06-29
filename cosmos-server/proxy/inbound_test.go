@@ -19,11 +19,11 @@ import (
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc"
 
-	"github.com/ethancls/kyle-server/proxy/internal/auth"
-	"github.com/ethancls/kyle-server/proxy/internal/roundtrip"
-	nbtcp "github.com/ethancls/kyle-server/proxy/internal/tcp"
-	"github.com/ethancls/kyle-server/proxy/internal/types"
-	"github.com/ethancls/kyle-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/proxy/internal/auth"
+	"github.com/ethancls/cosmos-server/proxy/internal/roundtrip"
+	nbtcp "github.com/ethancls/cosmos-server/proxy/internal/tcp"
+	"github.com/ethancls/cosmos-server/proxy/internal/types"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 // bufioReader wraps the connection in a buffered reader so http.ReadResponse

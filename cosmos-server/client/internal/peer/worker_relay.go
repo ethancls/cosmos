@@ -10,7 +10,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	relayClient "github.com/ethancls/kyle-server/shared/relay/client"
+	relayClient "github.com/ethancls/cosmos-server/shared/relay/client"
 )
 
 type RelayConnInfo struct {

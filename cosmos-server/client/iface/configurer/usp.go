@@ -16,9 +16,9 @@ import (
 	"golang.zx2c4.com/wireguard/device"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 
-	"github.com/ethancls/kyle-server/client/iface/bind"
-	nbnet "github.com/ethancls/kyle-server/client/net"
-	"github.com/ethancls/kyle-server/monotime"
+	"github.com/ethancls/cosmos-server/client/iface/bind"
+	nbnet "github.com/ethancls/cosmos-server/client/net"
+	"github.com/ethancls/cosmos-server/monotime"
 )
 
 const (

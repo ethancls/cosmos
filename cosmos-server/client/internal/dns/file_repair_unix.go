@@ -11,7 +11,7 @@ import (
 	"github.com/fsnotify/fsnotify"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/internal/statemanager"
+	"github.com/ethancls/cosmos-server/client/internal/statemanager"
 )
 
 var (

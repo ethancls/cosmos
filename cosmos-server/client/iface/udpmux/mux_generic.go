@@ -3,7 +3,7 @@
 package udpmux
 
 import (
-	nbnet "github.com/ethancls/kyle-server/client/net"
+	nbnet "github.com/ethancls/cosmos-server/client/net"
 )
 
 func (m *SingleSocketUDPMux) notifyAddressRemoval(addr string) {

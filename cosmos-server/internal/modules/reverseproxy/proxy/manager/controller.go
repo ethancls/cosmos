@@ -7,9 +7,9 @@ import (
 	log "github.com/sirupsen/logrus"
 	"go.opentelemetry.io/otel/metric"
 
-	"github.com/ethancls/kyle-server/internal/modules/reverseproxy/proxy"
-	nbgrpc "github.com/ethancls/kyle-server/internal/shared/grpc"
-	"github.com/ethancls/kyle-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/internal/modules/reverseproxy/proxy"
+	nbgrpc "github.com/ethancls/cosmos-server/internal/shared/grpc"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 // GRPCController is a concrete implementation that manages proxy clusters and sends updates directly via gRPC.

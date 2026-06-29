@@ -18,7 +18,7 @@ import (
 	"github.com/dexidp/dex/storage"
 	"github.com/dexidp/dex/storage/sql"
 
-	"github.com/ethancls/kyle-server/idp/dex/web"
+	"github.com/ethancls/cosmos-server/idp/dex/web"
 )
 
 // parseDuration parses a duration string (e.g., "6h", "24h", "168h").

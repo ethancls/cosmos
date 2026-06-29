@@ -6,8 +6,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/iface/freebsd"
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
+	"github.com/ethancls/cosmos-server/client/iface/freebsd"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
 )
 
 type wgLink struct {

@@ -13,9 +13,9 @@ import (
 	context "context"
 	reflect "reflect"
 
-	peer "github.com/ethancls/kyle-server/server/peer"
-	posture "github.com/ethancls/kyle-server/server/posture"
-	types "github.com/ethancls/kyle-server/server/types"
+	peer "github.com/ethancls/cosmos-server/server/peer"
+	posture "github.com/ethancls/cosmos-server/server/posture"
+	types "github.com/ethancls/cosmos-server/server/types"
 	gomock "go.uber.org/mock/gomock"
 )
 

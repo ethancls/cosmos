@@ -12,8 +12,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/kyle-server/upload-server/server"
-	"github.com/ethancls/kyle-server/upload-server/types"
+	"github.com/ethancls/cosmos-server/upload-server/server"
+	"github.com/ethancls/cosmos-server/upload-server/types"
 )
 
 func TestUpload(t *testing.T) {

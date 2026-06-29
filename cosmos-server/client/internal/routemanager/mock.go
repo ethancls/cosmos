@@ -3,12 +3,12 @@ package routemanager
 import (
 	"context"
 
-	firewall "github.com/ethancls/kyle-server/client/firewall/manager"
-	"github.com/ethancls/kyle-server/client/iface"
-	"github.com/ethancls/kyle-server/client/internal/listener"
-	"github.com/ethancls/kyle-server/client/internal/routeselector"
-	"github.com/ethancls/kyle-server/client/internal/statemanager"
-	"github.com/ethancls/kyle-server/route"
+	firewall "github.com/ethancls/cosmos-server/client/firewall/manager"
+	"github.com/ethancls/cosmos-server/client/iface"
+	"github.com/ethancls/cosmos-server/client/internal/listener"
+	"github.com/ethancls/cosmos-server/client/internal/routeselector"
+	"github.com/ethancls/cosmos-server/client/internal/statemanager"
+	"github.com/ethancls/cosmos-server/route"
 )
 
 // MockManager is the mock instance of a route manager

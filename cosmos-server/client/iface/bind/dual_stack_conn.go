@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/go-multierror"
 	log "github.com/sirupsen/logrus"
 
-	nberrors "github.com/ethancls/kyle-server/client/errors"
+	nberrors "github.com/ethancls/cosmos-server/client/errors"
 )
 
 var (

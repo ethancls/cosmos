@@ -3,7 +3,7 @@ package manager
 import (
 	"net/netip"
 
-	"github.com/ethancls/kyle-server/route"
+	"github.com/ethancls/cosmos-server/route"
 )
 
 type RouterPair struct {

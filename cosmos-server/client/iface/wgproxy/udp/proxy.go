@@ -13,9 +13,9 @@ import (
 	"github.com/hashicorp/go-multierror"
 	log "github.com/sirupsen/logrus"
 
-	cerrors "github.com/ethancls/kyle-server/client/errors"
-	"github.com/ethancls/kyle-server/client/iface/bufsize"
-	"github.com/ethancls/kyle-server/client/iface/wgproxy/listener"
+	cerrors "github.com/ethancls/cosmos-server/client/errors"
+	"github.com/ethancls/cosmos-server/client/iface/bufsize"
+	"github.com/ethancls/cosmos-server/client/iface/wgproxy/listener"
 )
 
 // WGUDPProxy proxies

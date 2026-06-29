@@ -5,9 +5,9 @@ package internal
 import (
 	"net/netip"
 
-	"github.com/ethancls/kyle-server/client/internal/dns"
-	"github.com/ethancls/kyle-server/client/internal/listener"
-	"github.com/ethancls/kyle-server/client/internal/stdnet"
+	"github.com/ethancls/cosmos-server/client/internal/dns"
+	"github.com/ethancls/cosmos-server/client/internal/listener"
+	"github.com/ethancls/cosmos-server/client/internal/stdnet"
 )
 
 // noopIFaceDiscover is a stub ExternalIFaceDiscover for embed.Client on Android.

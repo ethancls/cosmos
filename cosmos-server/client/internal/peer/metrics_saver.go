@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethancls/kyle-server/client/internal/metrics"
+	"github.com/ethancls/cosmos-server/client/internal/metrics"
 )
 
 type MetricsStages struct {

@@ -15,14 +15,14 @@ import (
 
 	wgdevice "golang.zx2c4.com/wireguard/device"
 
-	"github.com/ethancls/kyle-server/client/errors"
-	"github.com/ethancls/kyle-server/client/iface/configurer"
-	"github.com/ethancls/kyle-server/client/iface/device"
-	nbnetstack "github.com/ethancls/kyle-server/client/iface/netstack"
-	"github.com/ethancls/kyle-server/client/iface/udpmux"
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
-	"github.com/ethancls/kyle-server/client/iface/wgproxy"
-	"github.com/ethancls/kyle-server/monotime"
+	"github.com/ethancls/cosmos-server/client/errors"
+	"github.com/ethancls/cosmos-server/client/iface/configurer"
+	"github.com/ethancls/cosmos-server/client/iface/device"
+	nbnetstack "github.com/ethancls/cosmos-server/client/iface/netstack"
+	"github.com/ethancls/cosmos-server/client/iface/udpmux"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
+	"github.com/ethancls/cosmos-server/client/iface/wgproxy"
+	"github.com/ethancls/cosmos-server/monotime"
 )
 
 const (

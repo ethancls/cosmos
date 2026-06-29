@@ -8,7 +8,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/ethancls/kyle-server/shared/management/http/util"
+	"github.com/ethancls/cosmos-server/shared/management/http/util"
 )
 
 // APIError represents an error response from the management API.

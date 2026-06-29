@@ -13,13 +13,13 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/kyle-server/internal/modules/reverseproxy/proxy"
-	"github.com/ethancls/kyle-server/internal/modules/reverseproxy/service"
-	"github.com/ethancls/kyle-server/internal/modules/reverseproxy/sessionkey"
-	"github.com/ethancls/kyle-server/server/store"
-	"github.com/ethancls/kyle-server/server/types"
-	"github.com/ethancls/kyle-server/proxy/auth"
-	"github.com/ethancls/kyle-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/internal/modules/reverseproxy/proxy"
+	"github.com/ethancls/cosmos-server/internal/modules/reverseproxy/service"
+	"github.com/ethancls/cosmos-server/internal/modules/reverseproxy/sessionkey"
+	"github.com/ethancls/cosmos-server/server/store"
+	"github.com/ethancls/cosmos-server/server/types"
+	"github.com/ethancls/cosmos-server/proxy/auth"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 type validateSessionTestSetup struct {

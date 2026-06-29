@@ -15,15 +15,15 @@ import (
 	"syscall"
 	"testing"
 
-	"github.com/ethancls/kyle-server/client/internal/stdnet"
+	"github.com/ethancls/cosmos-server/client/internal/stdnet"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 
-	"github.com/ethancls/kyle-server/client/iface"
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/vars"
-	nbnet "github.com/ethancls/kyle-server/client/net"
+	"github.com/ethancls/cosmos-server/client/iface"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/vars"
+	nbnet "github.com/ethancls/cosmos-server/client/net"
 )
 
 func TestAddVPNRoute(t *testing.T) {

@@ -18,12 +18,12 @@ import (
 	"github.com/rs/xid"
 	"google.golang.org/protobuf/types/known/durationpb"
 
-	"github.com/ethancls/kyle-server/internal/modules/reverseproxy/proxy"
-	"github.com/ethancls/kyle-server/shared/hash/argon2id"
-	"github.com/ethancls/kyle-server/util/crypt"
+	"github.com/ethancls/cosmos-server/internal/modules/reverseproxy/proxy"
+	"github.com/ethancls/cosmos-server/shared/hash/argon2id"
+	"github.com/ethancls/cosmos-server/util/crypt"
 
-	"github.com/ethancls/kyle-server/shared/management/http/api"
-	"github.com/ethancls/kyle-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/shared/management/http/api"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 type Operation string

@@ -8,7 +8,7 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/formatter/hook"
+	"github.com/ethancls/cosmos-server/formatter/hook"
 )
 
 func (f *TextFormatter) Format(entry *logrus.Entry) ([]byte, error) {

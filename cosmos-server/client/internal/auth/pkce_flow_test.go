@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	mgm "github.com/ethancls/kyle-server/shared/management/client/common"
+	mgm "github.com/ethancls/cosmos-server/shared/management/client/common"
 )
 
 func TestPromptLogin(t *testing.T) {

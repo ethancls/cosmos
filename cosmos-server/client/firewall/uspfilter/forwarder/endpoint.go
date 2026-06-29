@@ -10,7 +10,7 @@ import (
 	"gvisor.dev/gvisor/pkg/tcpip/header"
 	"gvisor.dev/gvisor/pkg/tcpip/stack"
 
-	nblog "github.com/ethancls/kyle-server/client/firewall/uspfilter/log"
+	nblog "github.com/ethancls/cosmos-server/client/firewall/uspfilter/log"
 )
 
 // PacketCapture captures raw packets for debugging. Implementations must be

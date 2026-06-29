@@ -5,8 +5,8 @@ package notifier
 import (
 	"net/netip"
 
-	"github.com/ethancls/kyle-server/client/internal/listener"
-	"github.com/ethancls/kyle-server/route"
+	"github.com/ethancls/cosmos-server/client/internal/listener"
+	"github.com/ethancls/cosmos-server/route"
 )
 
 type Notifier struct{}

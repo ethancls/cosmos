@@ -17,12 +17,12 @@ import (
 	log "github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
 
-	"github.com/ethancls/kyle-server/proxy/auth"
-	"github.com/ethancls/kyle-server/proxy/internal/proxy"
-	"github.com/ethancls/kyle-server/proxy/internal/restrict"
-	"github.com/ethancls/kyle-server/proxy/internal/types"
-	"github.com/ethancls/kyle-server/proxy/web"
-	"github.com/ethancls/kyle-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/proxy/auth"
+	"github.com/ethancls/cosmos-server/proxy/internal/proxy"
+	"github.com/ethancls/cosmos-server/proxy/internal/restrict"
+	"github.com/ethancls/cosmos-server/proxy/internal/types"
+	"github.com/ethancls/cosmos-server/proxy/web"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 // errValidationUnavailable indicates that session validation failed due to

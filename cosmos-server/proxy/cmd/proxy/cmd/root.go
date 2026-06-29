@@ -13,12 +13,12 @@ import (
 	"github.com/spf13/cobra"
 	"golang.org/x/crypto/acme"
 
-	"github.com/ethancls/kyle-server/shared/management/domain"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
 
-	"github.com/ethancls/kyle-server/client/embed"
-	"github.com/ethancls/kyle-server/proxy"
-	nbacme "github.com/ethancls/kyle-server/proxy/internal/acme"
-	"github.com/ethancls/kyle-server/util"
+	"github.com/ethancls/cosmos-server/client/embed"
+	"github.com/ethancls/cosmos-server/proxy"
+	nbacme "github.com/ethancls/cosmos-server/proxy/internal/acme"
+	"github.com/ethancls/cosmos-server/util"
 )
 
 const (

@@ -9,7 +9,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/iface/netstack"
+	"github.com/ethancls/cosmos-server/client/iface/netstack"
 )
 
 var (

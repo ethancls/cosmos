@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethancls/kyle-server/relay/testec2/tun"
+	"github.com/ethancls/cosmos-server/relay/testec2/tun"
 
 	log "github.com/sirupsen/logrus"
 )

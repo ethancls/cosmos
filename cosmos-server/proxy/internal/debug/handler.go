@@ -22,12 +22,12 @@ import (
 	log "github.com/sirupsen/logrus"
 	"google.golang.org/protobuf/encoding/protojson"
 
-	nbembed "github.com/ethancls/kyle-server/client/embed"
-	nbstatus "github.com/ethancls/kyle-server/client/status"
-	"github.com/ethancls/kyle-server/proxy/internal/health"
-	"github.com/ethancls/kyle-server/proxy/internal/roundtrip"
-	"github.com/ethancls/kyle-server/proxy/internal/types"
-	"github.com/ethancls/kyle-server/version"
+	nbembed "github.com/ethancls/cosmos-server/client/embed"
+	nbstatus "github.com/ethancls/cosmos-server/client/status"
+	"github.com/ethancls/cosmos-server/proxy/internal/health"
+	"github.com/ethancls/cosmos-server/proxy/internal/roundtrip"
+	"github.com/ethancls/cosmos-server/proxy/internal/types"
+	"github.com/ethancls/cosmos-server/version"
 )
 
 //go:embed templates/*.html

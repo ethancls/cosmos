@@ -5,10 +5,10 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/ethancls/kyle-server/internal/modules/reverseproxy/accesslogs"
-	nbcontext "github.com/ethancls/kyle-server/server/context"
-	"github.com/ethancls/kyle-server/shared/management/http/api"
-	"github.com/ethancls/kyle-server/shared/management/http/util"
+	"github.com/ethancls/cosmos-server/internal/modules/reverseproxy/accesslogs"
+	nbcontext "github.com/ethancls/cosmos-server/server/context"
+	"github.com/ethancls/cosmos-server/shared/management/http/api"
+	"github.com/ethancls/cosmos-server/shared/management/http/util"
 )
 
 type handler struct {

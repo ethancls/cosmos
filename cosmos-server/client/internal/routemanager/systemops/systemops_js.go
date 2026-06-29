@@ -5,7 +5,7 @@ import (
 	"net"
 	"net/netip"
 
-	"github.com/ethancls/kyle-server/client/internal/statemanager"
+	"github.com/ethancls/cosmos-server/client/internal/statemanager"
 )
 
 var ErrRouteNotSupported = errors.New("route operations not supported on js")

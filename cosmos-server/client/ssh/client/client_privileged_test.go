@@ -14,7 +14,7 @@ import (
 	"github.com/stretchr/testify/require"
 	cryptossh "golang.org/x/crypto/ssh"
 
-	"github.com/ethancls/kyle-server/client/ssh/testutil"
+	"github.com/ethancls/cosmos-server/client/ssh/testutil"
 )
 
 func TestSSHClient_CommandExecution(t *testing.T) {

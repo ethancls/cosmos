@@ -16,8 +16,8 @@ import (
 	goversion "github.com/hashicorp/go-version"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/internal/updater/downloader"
-	"github.com/ethancls/kyle-server/client/internal/updater/reposign"
+	"github.com/ethancls/cosmos-server/client/internal/updater/downloader"
+	"github.com/ethancls/cosmos-server/client/internal/updater/reposign"
 )
 
 type Installer struct {

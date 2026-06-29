@@ -12,10 +12,10 @@ import (
 	"golang.zx2c4.com/wireguard/tun"
 	"golang.zx2c4.com/wireguard/tun/netstack"
 
-	"github.com/ethancls/kyle-server/client/iface/bind"
-	"github.com/ethancls/kyle-server/client/iface/configurer"
-	"github.com/ethancls/kyle-server/client/iface/udpmux"
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
+	"github.com/ethancls/cosmos-server/client/iface/bind"
+	"github.com/ethancls/cosmos-server/client/iface/configurer"
+	"github.com/ethancls/cosmos-server/client/iface/udpmux"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
 )
 
 // WGTunDevice ignore the WGTunDevice interface on Android because the creation of the tun device is different on this platform

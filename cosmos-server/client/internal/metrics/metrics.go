@@ -11,7 +11,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/internal/metrics/remoteconfig"
+	"github.com/ethancls/cosmos-server/client/internal/metrics/remoteconfig"
 )
 
 // AgentInfo holds static information about the agent

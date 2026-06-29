@@ -10,8 +10,8 @@ import (
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/layers"
 
-	fw "github.com/ethancls/kyle-server/client/firewall/manager"
-	"github.com/ethancls/kyle-server/client/firewall/uspfilter/conntrack"
+	fw "github.com/ethancls/cosmos-server/client/firewall/manager"
+	"github.com/ethancls/cosmos-server/client/firewall/uspfilter/conntrack"
 )
 
 type PacketStage int

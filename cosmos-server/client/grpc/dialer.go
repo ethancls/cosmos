@@ -15,7 +15,7 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/keepalive"
 
-	"github.com/ethancls/kyle-server/util/embeddedroots"
+	"github.com/ethancls/cosmos-server/util/embeddedroots"
 )
 
 // Backoff returns a backoff configuration for gRPC calls

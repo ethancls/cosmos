@@ -9,7 +9,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	auth "github.com/ethancls/kyle-server/shared/relay/auth/hmac"
+	auth "github.com/ethancls/cosmos-server/shared/relay/auth/hmac"
 )
 
 const (

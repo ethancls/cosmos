@@ -3,7 +3,7 @@ package main
 import (
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/relay/cmd"
+	"github.com/ethancls/cosmos-server/relay/cmd"
 )
 
 func main() {

@@ -18,13 +18,13 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	"github.com/ethancls/kyle-server/encryption"
-	"github.com/ethancls/kyle-server/relay/healthcheck"
-	"github.com/ethancls/kyle-server/relay/server"
-	"github.com/ethancls/kyle-server/shared/metrics"
-	"github.com/ethancls/kyle-server/shared/relay/auth"
-	"github.com/ethancls/kyle-server/stun"
-	"github.com/ethancls/kyle-server/util"
+	"github.com/ethancls/cosmos-server/encryption"
+	"github.com/ethancls/cosmos-server/relay/healthcheck"
+	"github.com/ethancls/cosmos-server/relay/server"
+	"github.com/ethancls/cosmos-server/shared/metrics"
+	"github.com/ethancls/cosmos-server/shared/relay/auth"
+	"github.com/ethancls/cosmos-server/stun"
+	"github.com/ethancls/cosmos-server/util"
 )
 
 type Config struct {

@@ -9,10 +9,10 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	nbdns "github.com/ethancls/kyle-server/dns"
-	"github.com/ethancls/kyle-server/internal/controllers/network_map"
-	"github.com/ethancls/kyle-server/internal/controllers/network_map/controller/cache"
-	nbconfig "github.com/ethancls/kyle-server/internal/server/config"
+	nbdns "github.com/ethancls/cosmos-server/dns"
+	"github.com/ethancls/cosmos-server/internal/controllers/network_map"
+	"github.com/ethancls/cosmos-server/internal/controllers/network_map/controller/cache"
+	nbconfig "github.com/ethancls/cosmos-server/internal/server/config"
 )
 
 func TestToProtocolDNSConfigWithCache(t *testing.T) {

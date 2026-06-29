@@ -6,7 +6,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ethancls/kyle-server/proxy/internal/types"
+	"github.com/ethancls/cosmos-server/proxy/internal/types"
 )
 
 func TestRegistry_Available(t *testing.T) {

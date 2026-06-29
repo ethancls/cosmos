@@ -14,7 +14,7 @@ import (
 	"github.com/miekg/dns"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/internal/dns/resutil"
+	"github.com/ethancls/cosmos-server/client/internal/dns/resutil"
 )
 
 const (

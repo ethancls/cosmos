@@ -9,12 +9,12 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/kyle-server/client/firewall"
-	"github.com/ethancls/kyle-server/client/iface"
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
-	"github.com/ethancls/kyle-server/client/internal/acl/mocks"
-	"github.com/ethancls/kyle-server/client/internal/netflow"
-	mgmProto "github.com/ethancls/kyle-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/client/firewall"
+	"github.com/ethancls/cosmos-server/client/iface"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
+	"github.com/ethancls/cosmos-server/client/internal/acl/mocks"
+	"github.com/ethancls/cosmos-server/client/internal/netflow"
+	mgmProto "github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 var flowLogger = netflow.NewManager(nil, []byte{}, nil).GetLogger()

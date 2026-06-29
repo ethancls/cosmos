@@ -5,7 +5,7 @@ import (
 	"context"
 	"encoding/json"
 
-	"github.com/ethancls/kyle-server/shared/management/http/api"
+	"github.com/ethancls/cosmos-server/shared/management/http/api"
 )
 
 // OktaScimIDPAPI APIs for Okta SCIM IDP integrations

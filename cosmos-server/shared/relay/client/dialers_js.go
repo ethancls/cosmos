@@ -3,8 +3,8 @@
 package client
 
 import (
-	"github.com/ethancls/kyle-server/shared/relay/client/dialer"
-	"github.com/ethancls/kyle-server/shared/relay/client/dialer/ws"
+	"github.com/ethancls/cosmos-server/shared/relay/client/dialer"
+	"github.com/ethancls/cosmos-server/shared/relay/client/dialer/ws"
 )
 
 func (c *Client) getDialers(_ TransportMode) []dialer.DialeFn {

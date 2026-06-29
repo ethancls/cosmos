@@ -10,7 +10,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/sys/unix"
 
-	"github.com/ethancls/kyle-server/client/internal/routemanager/systemops"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/systemops"
 )
 
 func checkChange(ctx context.Context, nexthopv4, nexthopv6 systemops.Nexthop) error {

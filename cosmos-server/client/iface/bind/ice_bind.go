@@ -17,9 +17,9 @@ import (
 	"golang.org/x/net/ipv6"
 	wgConn "golang.zx2c4.com/wireguard/conn"
 
-	"github.com/ethancls/kyle-server/client/iface/udpmux"
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
-	nbnet "github.com/ethancls/kyle-server/client/net"
+	"github.com/ethancls/cosmos-server/client/iface/udpmux"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
+	nbnet "github.com/ethancls/cosmos-server/client/net"
 )
 
 type receiverCreator struct {

@@ -8,10 +8,10 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/notifier"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/refcounter"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/vars"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/notifier"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/refcounter"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/vars"
 )
 
 type Nexthop struct {

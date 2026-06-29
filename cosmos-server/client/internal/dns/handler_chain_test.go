@@ -11,8 +11,8 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	nbdns "github.com/ethancls/kyle-server/client/internal/dns"
-	"github.com/ethancls/kyle-server/client/internal/dns/test"
+	nbdns "github.com/ethancls/cosmos-server/client/internal/dns"
+	"github.com/ethancls/cosmos-server/client/internal/dns/test"
 )
 
 // TestHandlerChain_ServeDNS_Priorities tests that handlers are executed in priority order

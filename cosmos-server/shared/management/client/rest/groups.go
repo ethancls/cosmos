@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"errors"
 
-	"github.com/ethancls/kyle-server/shared/management/http/api"
+	"github.com/ethancls/cosmos-server/shared/management/http/api"
 )
 
 // ErrGroupNotFound is returned when a group is not found

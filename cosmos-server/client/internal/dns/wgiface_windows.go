@@ -3,8 +3,8 @@ package dns
 import (
 	"golang.zx2c4.com/wireguard/tun/netstack"
 
-	"github.com/ethancls/kyle-server/client/iface/device"
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
+	"github.com/ethancls/cosmos-server/client/iface/device"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
 )
 
 // WGIface defines subset methods of interface required for manager

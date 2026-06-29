@@ -5,8 +5,8 @@ package uspfilter
 import (
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/firewall/firewalld"
-	"github.com/ethancls/kyle-server/client/internal/statemanager"
+	"github.com/ethancls/cosmos-server/client/firewall/firewalld"
+	"github.com/ethancls/cosmos-server/client/internal/statemanager"
 )
 
 // Close cleans up the firewall manager by removing all rules and closing trackers

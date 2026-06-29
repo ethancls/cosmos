@@ -13,10 +13,10 @@ import (
 	"google.golang.org/grpc/codes"
 	gstatus "google.golang.org/grpc/status"
 
-	"github.com/ethancls/kyle-server/client/internal"
-	"github.com/ethancls/kyle-server/client/internal/profilemanager"
-	"github.com/ethancls/kyle-server/client/proto"
-	"github.com/ethancls/kyle-server/util"
+	"github.com/ethancls/cosmos-server/client/internal"
+	"github.com/ethancls/cosmos-server/client/internal/profilemanager"
+	"github.com/ethancls/cosmos-server/client/proto"
+	"github.com/ethancls/cosmos-server/util"
 )
 
 var profileListShowID bool

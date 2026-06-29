@@ -12,12 +12,12 @@ import (
 	"github.com/pion/transport/v3"
 	log "github.com/sirupsen/logrus"
 
-	nberrors "github.com/ethancls/kyle-server/client/errors"
-	"github.com/ethancls/kyle-server/client/iface/bufsize"
-	"github.com/ethancls/kyle-server/client/iface/wgproxy/rawsocket"
-	"github.com/ethancls/kyle-server/client/internal/ebpf"
-	ebpfMgr "github.com/ethancls/kyle-server/client/internal/ebpf/manager"
-	nbnet "github.com/ethancls/kyle-server/client/net"
+	nberrors "github.com/ethancls/cosmos-server/client/errors"
+	"github.com/ethancls/cosmos-server/client/iface/bufsize"
+	"github.com/ethancls/cosmos-server/client/iface/wgproxy/rawsocket"
+	"github.com/ethancls/cosmos-server/client/internal/ebpf"
+	ebpfMgr "github.com/ethancls/cosmos-server/client/internal/ebpf/manager"
+	nbnet "github.com/ethancls/cosmos-server/client/net"
 )
 
 const (

@@ -17,12 +17,12 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/kyle-server/client/anonymize"
-	"github.com/ethancls/kyle-server/client/configs"
-	"github.com/ethancls/kyle-server/client/internal/profilemanager"
-	"github.com/ethancls/kyle-server/shared/management/domain"
-	mgmProto "github.com/ethancls/kyle-server/shared/management/proto"
-	"github.com/ethancls/kyle-server/shared/netiputil"
+	"github.com/ethancls/cosmos-server/client/anonymize"
+	"github.com/ethancls/cosmos-server/client/configs"
+	"github.com/ethancls/cosmos-server/client/internal/profilemanager"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
+	mgmProto "github.com/ethancls/cosmos-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/shared/netiputil"
 )
 
 func mustEncodePrefix(t *testing.T, p netip.Prefix) []byte {

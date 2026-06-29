@@ -15,9 +15,9 @@ import (
 	"go.opentelemetry.io/otel/metric/noop"
 	"google.golang.org/grpc"
 
-	proxymetrics "github.com/ethancls/kyle-server/proxy/internal/metrics"
-	"github.com/ethancls/kyle-server/proxy/internal/types"
-	"github.com/ethancls/kyle-server/shared/management/proto"
+	proxymetrics "github.com/ethancls/cosmos-server/proxy/internal/metrics"
+	"github.com/ethancls/cosmos-server/proxy/internal/types"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 func TestDebugEndpointDisabledByDefault(t *testing.T) {

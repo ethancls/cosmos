@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/ethancls/kyle-server/client/cmd"
+	"github.com/ethancls/cosmos-server/client/cmd"
 )
 
 func main() {

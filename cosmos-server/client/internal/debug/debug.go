@@ -24,14 +24,14 @@ import (
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 	"google.golang.org/protobuf/encoding/protojson"
 
-	"github.com/ethancls/kyle-server/client/anonymize"
-	"github.com/ethancls/kyle-server/client/configs"
-	"github.com/ethancls/kyle-server/client/internal/peer"
-	"github.com/ethancls/kyle-server/client/internal/profilemanager"
-	"github.com/ethancls/kyle-server/client/internal/updater/installer"
-	nbstatus "github.com/ethancls/kyle-server/client/status"
-	mgmProto "github.com/ethancls/kyle-server/shared/management/proto"
-	"github.com/ethancls/kyle-server/shared/netiputil"
+	"github.com/ethancls/cosmos-server/client/anonymize"
+	"github.com/ethancls/cosmos-server/client/configs"
+	"github.com/ethancls/cosmos-server/client/internal/peer"
+	"github.com/ethancls/cosmos-server/client/internal/profilemanager"
+	"github.com/ethancls/cosmos-server/client/internal/updater/installer"
+	nbstatus "github.com/ethancls/cosmos-server/client/status"
+	mgmProto "github.com/ethancls/cosmos-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/shared/netiputil"
 )
 
 const readmeContent = `Netbird debug bundle

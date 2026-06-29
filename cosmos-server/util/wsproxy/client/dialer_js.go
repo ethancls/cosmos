@@ -11,7 +11,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
 
-	"github.com/ethancls/kyle-server/util/wsproxy"
+	"github.com/ethancls/cosmos-server/util/wsproxy"
 )
 
 const dialTimeout = 30 * time.Second

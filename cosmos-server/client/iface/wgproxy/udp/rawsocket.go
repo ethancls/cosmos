@@ -10,7 +10,7 @@ import (
 	"github.com/google/gopacket/layers"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/iface/wgproxy/rawsocket"
+	"github.com/ethancls/cosmos-server/client/iface/wgproxy/rawsocket"
 )
 
 var (

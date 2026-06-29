@@ -7,7 +7,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
 )
 
 func TestLocalIPManager(t *testing.T) {

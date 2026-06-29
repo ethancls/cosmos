@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/kyle-server/client/iface/wgproxy/ebpf"
-	"github.com/ethancls/kyle-server/client/iface/wgproxy/udp"
+	"github.com/ethancls/cosmos-server/client/iface/wgproxy/ebpf"
+	"github.com/ethancls/cosmos-server/client/iface/wgproxy/udp"
 )
 
 // compareUDPAddr compares two UDP addresses, ignoring IPv6 zone IDs

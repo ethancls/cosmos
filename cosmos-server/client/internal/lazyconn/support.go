@@ -5,7 +5,7 @@ import (
 
 	"github.com/hashicorp/go-version"
 
-	nbversion "github.com/ethancls/kyle-server/version"
+	nbversion "github.com/ethancls/cosmos-server/version"
 )
 
 var (

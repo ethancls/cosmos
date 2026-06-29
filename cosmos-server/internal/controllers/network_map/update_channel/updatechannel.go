@@ -7,8 +7,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/internal/controllers/network_map"
-	"github.com/ethancls/kyle-server/server/telemetry"
+	"github.com/ethancls/cosmos-server/internal/controllers/network_map"
+	"github.com/ethancls/cosmos-server/server/telemetry"
 )
 
 const channelBufferSize = 100

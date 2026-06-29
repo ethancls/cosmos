@@ -9,7 +9,7 @@
 package syncstore
 
 import (
-	mgmProto "github.com/ethancls/kyle-server/shared/management/proto"
+	mgmProto "github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 // Store persists the latest sync response and returns it on demand.

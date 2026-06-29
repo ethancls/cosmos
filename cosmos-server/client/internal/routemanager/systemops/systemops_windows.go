@@ -19,8 +19,8 @@ import (
 	"github.com/yusufpapurcu/wmi"
 	"golang.org/x/sys/windows"
 
-	"github.com/ethancls/kyle-server/client/internal/statemanager"
-	nbnet "github.com/ethancls/kyle-server/client/net"
+	"github.com/ethancls/cosmos-server/client/internal/statemanager"
+	nbnet "github.com/ethancls/cosmos-server/client/net"
 )
 
 func init() {

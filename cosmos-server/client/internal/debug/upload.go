@@ -9,7 +9,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/ethancls/kyle-server/upload-server/types"
+	"github.com/ethancls/cosmos-server/upload-server/types"
 )
 
 const maxBundleUploadSize = 50 * 1024 * 1024

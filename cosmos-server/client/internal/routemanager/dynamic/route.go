@@ -12,14 +12,14 @@ import (
 	"github.com/hashicorp/go-multierror"
 	log "github.com/sirupsen/logrus"
 
-	nberrors "github.com/ethancls/kyle-server/client/errors"
-	"github.com/ethancls/kyle-server/client/internal/peer"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/common"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/iface"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/refcounter"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/util"
-	"github.com/ethancls/kyle-server/route"
-	"github.com/ethancls/kyle-server/shared/management/domain"
+	nberrors "github.com/ethancls/cosmos-server/client/errors"
+	"github.com/ethancls/cosmos-server/client/internal/peer"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/common"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/iface"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/refcounter"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/util"
+	"github.com/ethancls/cosmos-server/route"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
 )
 
 const (

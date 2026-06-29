@@ -15,12 +15,12 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	firewall "github.com/ethancls/kyle-server/client/firewall/manager"
-	"github.com/ethancls/kyle-server/client/internal/dns/resutil"
-	"github.com/ethancls/kyle-server/client/internal/dns/test"
-	"github.com/ethancls/kyle-server/client/internal/peer"
-	"github.com/ethancls/kyle-server/route"
-	"github.com/ethancls/kyle-server/shared/management/domain"
+	firewall "github.com/ethancls/cosmos-server/client/firewall/manager"
+	"github.com/ethancls/cosmos-server/client/internal/dns/resutil"
+	"github.com/ethancls/cosmos-server/client/internal/dns/test"
+	"github.com/ethancls/cosmos-server/client/internal/peer"
+	"github.com/ethancls/cosmos-server/route"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
 )
 
 func Test_getMatchingEntries(t *testing.T) {

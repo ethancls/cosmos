@@ -1,7 +1,7 @@
 package controller
 
 import (
-	"github.com/ethancls/kyle-server/server/telemetry"
+	"github.com/ethancls/cosmos-server/server/telemetry"
 )
 
 type metrics struct {

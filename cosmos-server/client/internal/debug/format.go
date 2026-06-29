@@ -7,10 +7,10 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/ethancls/kyle-server/client/anonymize"
-	"github.com/ethancls/kyle-server/client/internal/peer"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/systemops"
-	"github.com/ethancls/kyle-server/shared/management/domain"
+	"github.com/ethancls/cosmos-server/client/anonymize"
+	"github.com/ethancls/cosmos-server/client/internal/peer"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/systemops"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
 )
 
 func formatInterfaces(interfaces []net.Interface, anonymize bool, anonymizer *anonymize.Anonymizer) string {

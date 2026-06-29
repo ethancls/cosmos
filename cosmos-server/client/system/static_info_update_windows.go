@@ -11,8 +11,8 @@ import (
 	"github.com/yusufpapurcu/wmi"
 	"golang.org/x/sys/windows/registry"
 
-	"github.com/ethancls/kyle-server/client/system/detect_cloud"
-	"github.com/ethancls/kyle-server/client/system/detect_platform"
+	"github.com/ethancls/cosmos-server/client/system/detect_cloud"
+	"github.com/ethancls/cosmos-server/client/system/detect_platform"
 )
 
 type Win32_OperatingSystem struct {

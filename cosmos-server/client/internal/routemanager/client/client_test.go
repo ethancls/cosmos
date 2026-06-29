@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/kyle-server/client/internal/peer"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/common"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/static"
-	"github.com/ethancls/kyle-server/route"
+	"github.com/ethancls/cosmos-server/client/internal/peer"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/common"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/static"
+	"github.com/ethancls/cosmos-server/route"
 )
 
 func TestGetBestrouteFromStatuses(t *testing.T) {

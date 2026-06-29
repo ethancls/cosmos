@@ -7,7 +7,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/route"
+	"github.com/ethancls/cosmos-server/route"
 )
 
 // routeEntry holds the route prefix and the corresponding resource ID.

@@ -3,8 +3,8 @@ package controller
 import (
 	"testing"
 
-	"github.com/ethancls/kyle-server/internal/controllers/network_map"
-	nbpeer "github.com/ethancls/kyle-server/server/peer"
+	"github.com/ethancls/cosmos-server/internal/controllers/network_map"
+	nbpeer "github.com/ethancls/cosmos-server/server/peer"
 )
 
 func TestComputeForwarderPort(t *testing.T) {

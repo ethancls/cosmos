@@ -19,14 +19,14 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	"github.com/ethancls/kyle-server/server/types"
+	"github.com/ethancls/cosmos-server/server/types"
 
-	"github.com/ethancls/kyle-server/formatter/hook"
-	"github.com/ethancls/kyle-server/internal/server"
-	nbconfig "github.com/ethancls/kyle-server/internal/server/config"
-	nbdomain "github.com/ethancls/kyle-server/shared/management/domain"
-	"github.com/ethancls/kyle-server/util"
-	"github.com/ethancls/kyle-server/util/crypt"
+	"github.com/ethancls/cosmos-server/formatter/hook"
+	"github.com/ethancls/cosmos-server/internal/server"
+	nbconfig "github.com/ethancls/cosmos-server/internal/server/config"
+	nbdomain "github.com/ethancls/cosmos-server/shared/management/domain"
+	"github.com/ethancls/cosmos-server/util"
+	"github.com/ethancls/cosmos-server/util/crypt"
 )
 
 var newServer = func(cfg *server.Config) server.Server {

@@ -14,7 +14,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/zcalusic/sysinfo"
 
-	"github.com/ethancls/kyle-server/version"
+	"github.com/ethancls/cosmos-server/version"
 )
 
 var (

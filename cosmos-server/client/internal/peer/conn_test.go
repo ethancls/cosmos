@@ -9,12 +9,12 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ethancls/kyle-server/client/iface"
-	"github.com/ethancls/kyle-server/client/internal/peer/dispatcher"
-	"github.com/ethancls/kyle-server/client/internal/peer/guard"
-	"github.com/ethancls/kyle-server/client/internal/peer/ice"
-	"github.com/ethancls/kyle-server/client/internal/stdnet"
-	"github.com/ethancls/kyle-server/util"
+	"github.com/ethancls/cosmos-server/client/iface"
+	"github.com/ethancls/cosmos-server/client/internal/peer/dispatcher"
+	"github.com/ethancls/cosmos-server/client/internal/peer/guard"
+	"github.com/ethancls/cosmos-server/client/internal/peer/ice"
+	"github.com/ethancls/cosmos-server/client/internal/stdnet"
+	"github.com/ethancls/cosmos-server/util"
 )
 
 var testDispatcher = dispatcher.NewConnectionDispatcher()

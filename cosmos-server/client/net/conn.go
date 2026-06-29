@@ -8,7 +8,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/net/hooks"
+	"github.com/ethancls/cosmos-server/client/net/hooks"
 )
 
 // Conn wraps a net.Conn to override the Close method

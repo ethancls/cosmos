@@ -2,7 +2,7 @@
 
 package ebpf
 
-import "github.com/ethancls/kyle-server/client/internal/ebpf/manager"
+import "github.com/ethancls/cosmos-server/client/internal/ebpf/manager"
 
 // GetEbpfManagerInstance return error because ebpf is not supported on all os
 func GetEbpfManagerInstance() manager.Manager {

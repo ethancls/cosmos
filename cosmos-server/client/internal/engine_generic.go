@@ -3,7 +3,7 @@
 package internal
 
 import (
-	icemaker "github.com/ethancls/kyle-server/client/internal/peer/ice"
+	icemaker "github.com/ethancls/cosmos-server/client/internal/peer/ice"
 )
 
 // createICEConfig creates ICE configuration for non-WASM environments

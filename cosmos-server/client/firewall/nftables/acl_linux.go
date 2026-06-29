@@ -15,8 +15,8 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/sys/unix"
 
-	firewall "github.com/ethancls/kyle-server/client/firewall/manager"
-	nbnet "github.com/ethancls/kyle-server/client/net"
+	firewall "github.com/ethancls/cosmos-server/client/firewall/manager"
+	nbnet "github.com/ethancls/cosmos-server/client/net"
 )
 
 const (

@@ -3,9 +3,9 @@
 package iface
 
 import (
-	"github.com/ethancls/kyle-server/client/iface/bind"
-	"github.com/ethancls/kyle-server/client/iface/device"
-	"github.com/ethancls/kyle-server/client/iface/wgproxy"
+	"github.com/ethancls/cosmos-server/client/iface/bind"
+	"github.com/ethancls/cosmos-server/client/iface/device"
+	"github.com/ethancls/cosmos-server/client/iface/wgproxy"
 )
 
 // NewWGIFace Creates a new WireGuard interface instance

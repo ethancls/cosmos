@@ -18,13 +18,13 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/sys/unix"
 
-	nberrors "github.com/ethancls/kyle-server/client/errors"
-	"github.com/ethancls/kyle-server/client/firewall/firewalld"
-	firewall "github.com/ethancls/kyle-server/client/firewall/manager"
-	nbid "github.com/ethancls/kyle-server/client/internal/acl/id"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/ipfwdstate"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/refcounter"
-	nbnet "github.com/ethancls/kyle-server/client/net"
+	nberrors "github.com/ethancls/cosmos-server/client/errors"
+	"github.com/ethancls/cosmos-server/client/firewall/firewalld"
+	firewall "github.com/ethancls/cosmos-server/client/firewall/manager"
+	nbid "github.com/ethancls/cosmos-server/client/internal/acl/id"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/ipfwdstate"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/refcounter"
+	nbnet "github.com/ethancls/cosmos-server/client/net"
 )
 
 const (

@@ -3,7 +3,7 @@ package dispatcher
 import (
 	"sync"
 
-	"github.com/ethancls/kyle-server/client/internal/peer/id"
+	"github.com/ethancls/cosmos-server/client/internal/peer/id"
 )
 
 type ConnectionListener struct {

@@ -3,7 +3,7 @@ package accesslog
 import (
 	"io"
 
-	"github.com/ethancls/kyle-server/proxy/internal/responsewriter"
+	"github.com/ethancls/cosmos-server/proxy/internal/responsewriter"
 )
 
 // statusWriter captures the HTTP status code and bytes written from responses.

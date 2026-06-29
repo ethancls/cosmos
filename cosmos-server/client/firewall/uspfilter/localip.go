@@ -8,7 +8,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/firewall/uspfilter/common"
+	"github.com/ethancls/cosmos-server/client/firewall/uspfilter/common"
 )
 
 // localIPSnapshot is an immutable snapshot of local IP addresses, swapped

@@ -22,9 +22,9 @@ import (
 	"golang.org/x/crypto/acme"
 	"golang.org/x/crypto/acme/autocert"
 
-	"github.com/ethancls/kyle-server/proxy/internal/certwatch"
-	"github.com/ethancls/kyle-server/proxy/internal/types"
-	"github.com/ethancls/kyle-server/shared/management/domain"
+	"github.com/ethancls/cosmos-server/proxy/internal/certwatch"
+	"github.com/ethancls/cosmos-server/proxy/internal/types"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
 )
 
 // OID for the SCT list extension (1.3.6.1.4.1.11129.2.4.2)

@@ -6,11 +6,11 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/ethancls/kyle-server/internal/modules/zones"
-	nbcontext "github.com/ethancls/kyle-server/server/context"
-	"github.com/ethancls/kyle-server/shared/management/http/api"
-	"github.com/ethancls/kyle-server/shared/management/http/util"
-	"github.com/ethancls/kyle-server/shared/management/status"
+	"github.com/ethancls/cosmos-server/internal/modules/zones"
+	nbcontext "github.com/ethancls/cosmos-server/server/context"
+	"github.com/ethancls/cosmos-server/shared/management/http/api"
+	"github.com/ethancls/cosmos-server/shared/management/http/util"
+	"github.com/ethancls/cosmos-server/shared/management/status"
 )
 
 type handler struct {

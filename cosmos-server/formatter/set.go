@@ -3,10 +3,10 @@ package formatter
 import (
 	"github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/formatter/hook"
-	"github.com/ethancls/kyle-server/formatter/logcat"
-	"github.com/ethancls/kyle-server/formatter/syslog"
-	"github.com/ethancls/kyle-server/formatter/txt"
+	"github.com/ethancls/cosmos-server/formatter/hook"
+	"github.com/ethancls/cosmos-server/formatter/logcat"
+	"github.com/ethancls/cosmos-server/formatter/syslog"
+	"github.com/ethancls/cosmos-server/formatter/txt"
 )
 
 // SetTextFormatter set the text formatter for given logger.

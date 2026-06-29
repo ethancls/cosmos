@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	nbpeer "github.com/ethancls/kyle-server/server/peer"
+	nbpeer "github.com/ethancls/cosmos-server/server/peer"
 )
 
 const (

@@ -7,7 +7,7 @@ import (
 	_ "net/http/pprof"
 	"os"
 
-	"github.com/ethancls/kyle-server/cmd"
+	"github.com/ethancls/cosmos-server/cmd"
 )
 
 func main() {

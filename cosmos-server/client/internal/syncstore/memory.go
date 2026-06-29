@@ -7,7 +7,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"google.golang.org/protobuf/proto"
 
-	mgmProto "github.com/ethancls/kyle-server/shared/management/proto"
+	mgmProto "github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 // memoryStore keeps the latest sync response in memory.

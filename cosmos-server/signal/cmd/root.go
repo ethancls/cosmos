@@ -8,7 +8,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/ethancls/kyle-server/version"
+	"github.com/ethancls/cosmos-server/version"
 )
 
 const (

@@ -6,7 +6,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/ethancls/kyle-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 // Manager defines the interface for proxy operations

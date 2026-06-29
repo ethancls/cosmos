@@ -5,8 +5,8 @@ package debug
 import (
 	"fmt"
 
-	"github.com/ethancls/kyle-server/client/anonymize"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/systemops"
+	"github.com/ethancls/cosmos-server/client/anonymize"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/systemops"
 )
 
 // buildPlatformSpecificRouteTable builds headers and rows for Windows with interface metrics

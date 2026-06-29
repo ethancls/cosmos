@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/kyle-server/monotime"
+	"github.com/ethancls/cosmos-server/monotime"
 )
 
 func TestActivityRecorder_GetLastActivities(t *testing.T) {

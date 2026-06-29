@@ -10,13 +10,13 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"github.com/ethancls/kyle-server/encryption"
-	rpservice "github.com/ethancls/kyle-server/internal/modules/reverseproxy/service"
-	nbContext "github.com/ethancls/kyle-server/server/context"
-	nbpeer "github.com/ethancls/kyle-server/server/peer"
-	"github.com/ethancls/kyle-server/server/store"
-	"github.com/ethancls/kyle-server/shared/management/proto"
-	internalStatus "github.com/ethancls/kyle-server/shared/management/status"
+	"github.com/ethancls/cosmos-server/encryption"
+	rpservice "github.com/ethancls/cosmos-server/internal/modules/reverseproxy/service"
+	nbContext "github.com/ethancls/cosmos-server/server/context"
+	nbpeer "github.com/ethancls/cosmos-server/server/peer"
+	"github.com/ethancls/cosmos-server/server/store"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
+	internalStatus "github.com/ethancls/cosmos-server/shared/management/status"
 )
 
 // CreateExpose handles a peer request to create a new expose service.

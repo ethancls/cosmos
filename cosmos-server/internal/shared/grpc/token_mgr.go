@@ -12,14 +12,14 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 
-	integrationsConfig "github.com/netbirdio/management-integrations/integrations/config"
-	"github.com/ethancls/kyle-server/internal/controllers/network_map"
-	nbconfig "github.com/ethancls/kyle-server/internal/server/config"
-	"github.com/ethancls/kyle-server/server/groups"
-	"github.com/ethancls/kyle-server/server/settings"
-	"github.com/ethancls/kyle-server/shared/management/proto"
-	auth "github.com/ethancls/kyle-server/shared/relay/auth/hmac"
-	authv2 "github.com/ethancls/kyle-server/shared/relay/auth/hmac/v2"
+	integrationsConfig "github.com/ethancls/cosmos-server/management-integrations/integrations/config"
+	"github.com/ethancls/cosmos-server/internal/controllers/network_map"
+	nbconfig "github.com/ethancls/cosmos-server/internal/server/config"
+	"github.com/ethancls/cosmos-server/server/groups"
+	"github.com/ethancls/cosmos-server/server/settings"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
+	auth "github.com/ethancls/cosmos-server/shared/relay/auth/hmac"
+	authv2 "github.com/ethancls/cosmos-server/shared/relay/auth/hmac/v2"
 )
 
 const defaultDuration = 12 * time.Hour

@@ -12,8 +12,8 @@ import (
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/status"
 
-	"github.com/ethancls/kyle-server/server/store"
-	"github.com/ethancls/kyle-server/server/types"
+	"github.com/ethancls/cosmos-server/server/store"
+	"github.com/ethancls/cosmos-server/server/types"
 )
 
 const (

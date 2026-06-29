@@ -3,7 +3,7 @@ package client
 import (
 	"context"
 
-	"github.com/ethancls/kyle-server/shared/signal/proto"
+	"github.com/ethancls/cosmos-server/shared/signal/proto"
 )
 
 type MockClient struct {

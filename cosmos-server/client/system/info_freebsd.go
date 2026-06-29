@@ -13,9 +13,9 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/system/detect_cloud"
-	"github.com/ethancls/kyle-server/client/system/detect_platform"
-	"github.com/ethancls/kyle-server/version"
+	"github.com/ethancls/cosmos-server/client/system/detect_cloud"
+	"github.com/ethancls/cosmos-server/client/system/detect_platform"
+	"github.com/ethancls/cosmos-server/version"
 )
 
 // UpdateStaticInfoAsync is a no-op on Android as there is no static info to update

@@ -1,7 +1,7 @@
 package iface
 
 import (
-	"github.com/ethancls/kyle-server/client/iface/device"
+	"github.com/ethancls/cosmos-server/client/iface/device"
 )
 
 // GetInterfaceGUIDString returns an interface GUID. This is useful on Windows only

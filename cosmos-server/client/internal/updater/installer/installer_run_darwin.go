@@ -22,7 +22,7 @@ const (
 
 	defaultTempDir = "/var/lib/netbird/tmp-install"
 
-	pkgDownloadURL = "https://github.com/ethancls/kyle-server/releases/download/v%version/netbird_%version_darwin_%arch.pkg"
+	pkgDownloadURL = "https://github.com/ethancls/cosmos-server/releases/download/v%version/netbird_%version_darwin_%arch.pkg"
 )
 
 var (

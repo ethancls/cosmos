@@ -13,9 +13,9 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	"github.com/ethancls/kyle-server/client/proto"
-	nbssh "github.com/ethancls/kyle-server/client/ssh"
-	"github.com/ethancls/kyle-server/client/ssh/testutil"
+	"github.com/ethancls/cosmos-server/client/proto"
+	nbssh "github.com/ethancls/cosmos-server/client/ssh"
+	"github.com/ethancls/cosmos-server/client/ssh/testutil"
 )
 
 func TestMain(m *testing.M) {

@@ -33,7 +33,7 @@ package embed
 //	    "syscall"
 //	    "time"
 //
-//	    netbird "github.com/ethancls/kyle-server/client/embed"
+//	    netbird "github.com/ethancls/cosmos-server/client/embed"
 //	)
 //
 //	func main() {
@@ -105,7 +105,7 @@ package embed
 //	    "os"
 //	    "time"
 //
-//	    netbird "github.com/ethancls/kyle-server/client/embed"
+//	    netbird "github.com/ethancls/cosmos-server/client/embed"
 //	)
 //
 //	func main() {

@@ -8,7 +8,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/internal/lazyconn"
+	"github.com/ethancls/cosmos-server/client/internal/lazyconn"
 )
 
 // UDPListener uses UDP sockets for activity detection in kernel mode.

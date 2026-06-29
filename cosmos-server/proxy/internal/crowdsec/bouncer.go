@@ -15,7 +15,7 @@ import (
 	csbouncer "github.com/crowdsecurity/go-cs-bouncer"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/proxy/internal/restrict"
+	"github.com/ethancls/cosmos-server/proxy/internal/restrict"
 )
 
 // Bouncer wraps a CrowdSec StreamBouncer, maintaining a local cache of

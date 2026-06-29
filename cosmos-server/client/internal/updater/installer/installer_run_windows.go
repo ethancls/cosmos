@@ -22,8 +22,8 @@ const (
 
 	msiLogFile = "msi.log"
 
-	msiDownloadURL = "https://github.com/ethancls/kyle-server/releases/download/v%version/netbird_installer_%version_windows_%arch.msi"
-	exeDownloadURL = "https://github.com/ethancls/kyle-server/releases/download/v%version/netbird_installer_%version_windows_%arch.exe"
+	msiDownloadURL = "https://github.com/ethancls/cosmos-server/releases/download/v%version/netbird_installer_%version_windows_%arch.msi"
+	exeDownloadURL = "https://github.com/ethancls/cosmos-server/releases/download/v%version/netbird_installer_%version_windows_%arch.exe"
 )
 
 var (

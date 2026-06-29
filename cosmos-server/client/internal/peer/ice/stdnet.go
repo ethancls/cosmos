@@ -5,7 +5,7 @@ package ice
 import (
 	"context"
 
-	"github.com/ethancls/kyle-server/client/internal/stdnet"
+	"github.com/ethancls/cosmos-server/client/internal/stdnet"
 )
 
 func newStdNet(ctx context.Context, _ stdnet.ExternalIFaceDiscover, ifaceBlacklist []string) (*stdnet.Net, error) {

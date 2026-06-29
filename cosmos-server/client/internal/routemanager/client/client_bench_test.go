@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/kyle-server/client/internal/peer"
-	"github.com/ethancls/kyle-server/route"
+	"github.com/ethancls/cosmos-server/client/internal/peer"
+	"github.com/ethancls/cosmos-server/route"
 )
 
 type benchmarkTier struct {

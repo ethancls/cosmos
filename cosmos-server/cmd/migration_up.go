@@ -8,9 +8,9 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	"github.com/ethancls/kyle-server/formatter/hook"
-	"github.com/ethancls/kyle-server/server/store"
-	"github.com/ethancls/kyle-server/util"
+	"github.com/ethancls/cosmos-server/formatter/hook"
+	"github.com/ethancls/cosmos-server/server/store"
+	"github.com/ethancls/cosmos-server/util"
 )
 
 var shortUp = "Migrate JSON file store to SQLite store. Please make a backup of the JSON file before running this command."

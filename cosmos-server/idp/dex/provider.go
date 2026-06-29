@@ -27,7 +27,7 @@ import (
 	"golang.org/x/crypto/bcrypt"
 	"google.golang.org/grpc"
 
-	nbjwt "github.com/ethancls/kyle-server/shared/auth/jwt"
+	nbjwt "github.com/ethancls/cosmos-server/shared/auth/jwt"
 )
 
 // Config matches what management/internals/server/server.go expects

@@ -7,13 +7,13 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/internal/modules/peers"
-	"github.com/ethancls/kyle-server/internal/modules/peers/ephemeral"
-	"github.com/ethancls/kyle-server/server/activity"
-	nbpeer "github.com/ethancls/kyle-server/server/peer"
-	"github.com/ethancls/kyle-server/server/telemetry"
+	"github.com/ethancls/cosmos-server/internal/modules/peers"
+	"github.com/ethancls/cosmos-server/internal/modules/peers/ephemeral"
+	"github.com/ethancls/cosmos-server/server/activity"
+	nbpeer "github.com/ethancls/cosmos-server/server/peer"
+	"github.com/ethancls/cosmos-server/server/telemetry"
 
-	"github.com/ethancls/kyle-server/server/store"
+	"github.com/ethancls/cosmos-server/server/store"
 )
 
 const (

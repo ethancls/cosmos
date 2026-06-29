@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/kyle-server/client/internal/routemanager/systemops"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/systemops"
 )
 
 type MocMultiEvent struct {

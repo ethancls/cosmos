@@ -3,8 +3,8 @@ package auth
 import (
 	"time"
 
-	auth "github.com/ethancls/kyle-server/shared/relay/auth/hmac"
-	authv2 "github.com/ethancls/kyle-server/shared/relay/auth/hmac/v2"
+	auth "github.com/ethancls/cosmos-server/shared/relay/auth/hmac"
+	authv2 "github.com/ethancls/cosmos-server/shared/relay/auth/hmac/v2"
 )
 
 type TimedHMACValidator struct {

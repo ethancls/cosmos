@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ethancls/kyle-server/proxy/internal/geolocation"
+	"github.com/ethancls/cosmos-server/proxy/internal/geolocation"
 )
 
 type mockGeo struct {

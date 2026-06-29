@@ -14,8 +14,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/kyle-server/client/internal/dns/test"
-	nbdns "github.com/ethancls/kyle-server/dns"
+	"github.com/ethancls/cosmos-server/client/internal/dns/test"
+	nbdns "github.com/ethancls/cosmos-server/dns"
 )
 
 // mockResolver implements resolver for testing

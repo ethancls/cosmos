@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"net/url"
 
-	"github.com/ethancls/kyle-server/shared/management/http/api"
+	"github.com/ethancls/cosmos-server/shared/management/http/api"
 )
 
 // ReverseProxyServicesAPI APIs for Reverse Proxy Services, do not use directly

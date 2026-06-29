@@ -19,13 +19,13 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	"github.com/ethancls/kyle-server/client/internal/daemonaddr"
-	"github.com/ethancls/kyle-server/client/internal/profilemanager"
-	"github.com/ethancls/kyle-server/client/proto"
-	nbssh "github.com/ethancls/kyle-server/client/ssh"
-	"github.com/ethancls/kyle-server/client/ssh/detection"
-	"github.com/ethancls/kyle-server/util"
-	"github.com/ethancls/kyle-server/util/netrelay"
+	"github.com/ethancls/cosmos-server/client/internal/daemonaddr"
+	"github.com/ethancls/cosmos-server/client/internal/profilemanager"
+	"github.com/ethancls/cosmos-server/client/proto"
+	nbssh "github.com/ethancls/cosmos-server/client/ssh"
+	"github.com/ethancls/cosmos-server/client/ssh/detection"
+	"github.com/ethancls/cosmos-server/util"
+	"github.com/ethancls/cosmos-server/util/netrelay"
 )
 
 const (

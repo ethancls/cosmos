@@ -5,7 +5,7 @@ import (
 
 	"github.com/pion/transport/v3"
 
-	nbnet "github.com/ethancls/kyle-server/client/net"
+	nbnet "github.com/ethancls/cosmos-server/client/net"
 )
 
 // Dial connects to the address on the named network.

@@ -3,8 +3,8 @@ package embed
 import (
 	"io"
 
-	"github.com/ethancls/kyle-server/client/internal"
-	"github.com/ethancls/kyle-server/util/capture"
+	"github.com/ethancls/cosmos-server/client/internal"
+	"github.com/ethancls/cosmos-server/util/capture"
 )
 
 // CaptureOptions configures a packet capture session.

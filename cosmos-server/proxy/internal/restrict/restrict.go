@@ -9,7 +9,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/proxy/internal/geolocation"
+	"github.com/ethancls/cosmos-server/proxy/internal/geolocation"
 )
 
 // defaultLogger is used when no logger is provided to ParseFilter.

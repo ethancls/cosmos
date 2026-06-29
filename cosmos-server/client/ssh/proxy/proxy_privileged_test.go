@@ -25,12 +25,12 @@ import (
 	"github.com/stretchr/testify/require"
 	cryptossh "golang.org/x/crypto/ssh"
 
-	nbssh "github.com/ethancls/kyle-server/client/ssh"
-	sshauth "github.com/ethancls/kyle-server/client/ssh/auth"
-	"github.com/ethancls/kyle-server/client/ssh/server"
-	"github.com/ethancls/kyle-server/client/ssh/testutil"
-	nbjwt "github.com/ethancls/kyle-server/shared/auth/jwt"
-	sshuserhash "github.com/ethancls/kyle-server/shared/sshauth"
+	nbssh "github.com/ethancls/cosmos-server/client/ssh"
+	sshauth "github.com/ethancls/cosmos-server/client/ssh/auth"
+	"github.com/ethancls/cosmos-server/client/ssh/server"
+	"github.com/ethancls/cosmos-server/client/ssh/testutil"
+	nbjwt "github.com/ethancls/cosmos-server/shared/auth/jwt"
+	sshuserhash "github.com/ethancls/cosmos-server/shared/sshauth"
 )
 
 func (m *mockDaemon) setJWTToken(token string) {

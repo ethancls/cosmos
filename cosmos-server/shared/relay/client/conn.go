@@ -4,7 +4,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/ethancls/kyle-server/shared/relay/messages"
+	"github.com/ethancls/cosmos-server/shared/relay/messages"
 )
 
 // Conn represent a connection to a relayed remote peer.

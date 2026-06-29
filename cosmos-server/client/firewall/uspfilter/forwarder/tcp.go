@@ -12,9 +12,9 @@ import (
 	"gvisor.dev/gvisor/pkg/tcpip/transport/tcp"
 	"gvisor.dev/gvisor/pkg/waiter"
 
-	nblog "github.com/ethancls/kyle-server/client/firewall/uspfilter/log"
-	nftypes "github.com/ethancls/kyle-server/client/internal/netflow/types"
-	"github.com/ethancls/kyle-server/util/netrelay"
+	nblog "github.com/ethancls/cosmos-server/client/firewall/uspfilter/log"
+	nftypes "github.com/ethancls/cosmos-server/client/internal/netflow/types"
+	"github.com/ethancls/cosmos-server/util/netrelay"
 )
 
 // handleTCP is called by the TCP forwarder for new connections.

@@ -13,7 +13,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	nbssh "github.com/ethancls/kyle-server/client/ssh"
+	nbssh "github.com/ethancls/cosmos-server/client/ssh"
 )
 
 const (

@@ -16,11 +16,11 @@ import (
 	"github.com/vishvananda/netlink"
 	"golang.org/x/sys/unix"
 
-	nberrors "github.com/ethancls/kyle-server/client/errors"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/sysctl"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/vars"
-	"github.com/ethancls/kyle-server/client/internal/statemanager"
-	nbnet "github.com/ethancls/kyle-server/client/net"
+	nberrors "github.com/ethancls/cosmos-server/client/errors"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/sysctl"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/vars"
+	"github.com/ethancls/cosmos-server/client/internal/statemanager"
+	nbnet "github.com/ethancls/cosmos-server/client/net"
 )
 
 // IPRule contains IP rule information for debugging

@@ -10,9 +10,9 @@ import (
 
 	"go.opentelemetry.io/otel"
 
-	"github.com/ethancls/kyle-server/client/iface"
-	"github.com/ethancls/kyle-server/relay/server"
-	"github.com/ethancls/kyle-server/shared/relay/auth/allow"
+	"github.com/ethancls/cosmos-server/client/iface"
+	"github.com/ethancls/cosmos-server/relay/server"
+	"github.com/ethancls/cosmos-server/shared/relay/auth/allow"
 )
 
 // TestClient_ServerIPRecoversFromUnresolvableFQDN verifies that when the

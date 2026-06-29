@@ -9,12 +9,12 @@ import (
 	"golang.zx2c4.com/wireguard/tun/netstack"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 
-	"github.com/ethancls/kyle-server/client/iface/configurer"
-	"github.com/ethancls/kyle-server/client/iface/device"
-	"github.com/ethancls/kyle-server/client/iface/udpmux"
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
-	"github.com/ethancls/kyle-server/client/iface/wgproxy"
-	"github.com/ethancls/kyle-server/monotime"
+	"github.com/ethancls/cosmos-server/client/iface/configurer"
+	"github.com/ethancls/cosmos-server/client/iface/device"
+	"github.com/ethancls/cosmos-server/client/iface/udpmux"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
+	"github.com/ethancls/cosmos-server/client/iface/wgproxy"
+	"github.com/ethancls/cosmos-server/monotime"
 )
 
 type wgIfaceBase interface {

@@ -16,9 +16,9 @@ import (
 	"github.com/spf13/cobra"
 	"google.golang.org/grpc/status"
 
-	"github.com/ethancls/kyle-server/client/internal/expose"
-	"github.com/ethancls/kyle-server/client/proto"
-	"github.com/ethancls/kyle-server/util"
+	"github.com/ethancls/cosmos-server/client/internal/expose"
+	"github.com/ethancls/cosmos-server/client/proto"
+	"github.com/ethancls/cosmos-server/util"
 )
 
 var pinRegexp = regexp.MustCompile(`^\d{6}$`)

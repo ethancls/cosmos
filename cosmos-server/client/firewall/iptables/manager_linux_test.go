@@ -12,9 +12,9 @@ import (
 	"github.com/coreos/go-iptables/iptables"
 	"github.com/stretchr/testify/require"
 
-	fw "github.com/ethancls/kyle-server/client/firewall/manager"
-	"github.com/ethancls/kyle-server/client/iface"
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
+	fw "github.com/ethancls/cosmos-server/client/firewall/manager"
+	"github.com/ethancls/cosmos-server/client/iface"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
 )
 
 var ifaceMock = &iFaceMock{

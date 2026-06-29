@@ -17,7 +17,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	nbnet "github.com/ethancls/kyle-server/client/net"
+	nbnet "github.com/ethancls/cosmos-server/client/net"
 )
 
 var (

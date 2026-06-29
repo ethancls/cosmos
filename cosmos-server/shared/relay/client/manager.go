@@ -12,7 +12,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	relayAuth "github.com/ethancls/kyle-server/shared/relay/auth/hmac"
+	relayAuth "github.com/ethancls/cosmos-server/shared/relay/auth/hmac"
 )
 
 var (

@@ -8,7 +8,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/iface/configurer"
+	"github.com/ethancls/cosmos-server/client/iface/configurer"
 )
 
 type MocWgIface struct {

@@ -46,13 +46,13 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.zx2c4.com/wireguard/tun/netstack"
 
-	"github.com/ethancls/kyle-server/client/iface"
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
-	"github.com/ethancls/kyle-server/client/internal/dns/resutil"
-	"github.com/ethancls/kyle-server/client/internal/dns/types"
-	"github.com/ethancls/kyle-server/client/internal/peer"
-	"github.com/ethancls/kyle-server/route"
-	"github.com/ethancls/kyle-server/shared/management/domain"
+	"github.com/ethancls/cosmos-server/client/iface"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
+	"github.com/ethancls/cosmos-server/client/internal/dns/resutil"
+	"github.com/ethancls/cosmos-server/client/internal/dns/types"
+	"github.com/ethancls/cosmos-server/client/internal/peer"
+	"github.com/ethancls/cosmos-server/route"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
 )
 
 var currentMTU uint16 = iface.DefaultMTU

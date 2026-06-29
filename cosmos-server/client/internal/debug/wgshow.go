@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ethancls/kyle-server/client/iface/configurer"
+	"github.com/ethancls/cosmos-server/client/iface/configurer"
 )
 
 type WGIface interface {

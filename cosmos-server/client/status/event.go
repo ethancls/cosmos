@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ethancls/kyle-server/client/proto"
+	"github.com/ethancls/cosmos-server/client/proto"
 )
 
 type SystemEventOutput struct {

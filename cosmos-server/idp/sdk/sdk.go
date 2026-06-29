@@ -6,7 +6,7 @@ import (
 
 	"github.com/dexidp/dex/storage"
 
-	"github.com/ethancls/kyle-server/idp/dex"
+	"github.com/ethancls/cosmos-server/idp/dex"
 )
 
 // DexIdP wraps the Dex provider with a builder pattern

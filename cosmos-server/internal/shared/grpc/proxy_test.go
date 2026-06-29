@@ -15,10 +15,10 @@ import (
 	"google.golang.org/grpc/codes"
 	grpcstatus "google.golang.org/grpc/status"
 
-	"github.com/ethancls/kyle-server/internal/modules/reverseproxy/proxy"
-	nbcache "github.com/ethancls/kyle-server/server/cache"
-	"github.com/ethancls/kyle-server/server/types"
-	"github.com/ethancls/kyle-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/internal/modules/reverseproxy/proxy"
+	nbcache "github.com/ethancls/cosmos-server/server/cache"
+	"github.com/ethancls/cosmos-server/server/types"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 func testCacheStore(t *testing.T) cachestore.StoreInterface {

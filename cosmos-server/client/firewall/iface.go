@@ -3,8 +3,8 @@ package firewall
 import (
 	wgdevice "golang.zx2c4.com/wireguard/device"
 
-	"github.com/ethancls/kyle-server/client/iface/device"
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
+	"github.com/ethancls/cosmos-server/client/iface/device"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
 )
 
 // EnvForceUserspaceFirewall forces the use of the userspace packet filter even when

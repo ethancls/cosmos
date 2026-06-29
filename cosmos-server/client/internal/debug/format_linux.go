@@ -7,8 +7,8 @@ import (
 	"net/netip"
 	"sort"
 
-	"github.com/ethancls/kyle-server/client/anonymize"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/systemops"
+	"github.com/ethancls/cosmos-server/client/anonymize"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/systemops"
 )
 
 func formatIPRulesTable(ipRules []systemops.IPRule, anonymize bool, anonymizer *anonymize.Anonymizer) string {

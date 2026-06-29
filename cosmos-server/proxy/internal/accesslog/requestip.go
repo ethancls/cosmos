@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"net/netip"
 
-	"github.com/ethancls/kyle-server/proxy/internal/proxy"
+	"github.com/ethancls/cosmos-server/proxy/internal/proxy"
 )
 
 // extractSourceIP resolves the real client IP from the request using trusted

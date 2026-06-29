@@ -14,7 +14,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/kyle-server/client/internal/metrics/remoteconfig"
+	"github.com/ethancls/cosmos-server/client/internal/metrics/remoteconfig"
 )
 
 func mustVersion(s string) *goversion.Version {

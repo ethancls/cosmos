@@ -6,7 +6,7 @@ import (
 
 	v "github.com/hashicorp/go-version"
 
-	"github.com/ethancls/kyle-server/client/internal/peer"
+	"github.com/ethancls/cosmos-server/client/internal/peer"
 )
 
 type versionUpdateMock struct {

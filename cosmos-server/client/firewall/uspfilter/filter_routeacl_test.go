@@ -10,11 +10,11 @@ import (
 	"github.com/stretchr/testify/require"
 	wgdevice "golang.zx2c4.com/wireguard/device"
 
-	fw "github.com/ethancls/kyle-server/client/firewall/manager"
-	"github.com/ethancls/kyle-server/client/iface"
-	"github.com/ethancls/kyle-server/client/iface/device"
-	"github.com/ethancls/kyle-server/client/iface/mocks"
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
+	fw "github.com/ethancls/cosmos-server/client/firewall/manager"
+	"github.com/ethancls/cosmos-server/client/iface"
+	"github.com/ethancls/cosmos-server/client/iface/device"
+	"github.com/ethancls/cosmos-server/client/iface/mocks"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
 )
 
 // TestAddRouteFilteringReturnsExistingRule verifies that adding the same route

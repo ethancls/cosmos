@@ -5,7 +5,7 @@ package service
 import (
 	"context"
 
-	"github.com/ethancls/kyle-server/internal/modules/reverseproxy/proxy"
+	"github.com/ethancls/cosmos-server/internal/modules/reverseproxy/proxy"
 )
 
 type Manager interface {

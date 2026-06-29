@@ -5,7 +5,7 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/ethancls/kyle-server/client/internal/listener"
+	"github.com/ethancls/cosmos-server/client/internal/listener"
 )
 
 type notifier struct {

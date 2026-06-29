@@ -3,8 +3,8 @@ package peerid
 import (
 	"crypto/sha256"
 
-	v2 "github.com/ethancls/kyle-server/shared/relay/auth/hmac/v2"
-	"github.com/ethancls/kyle-server/shared/relay/messages"
+	v2 "github.com/ethancls/cosmos-server/shared/relay/auth/hmac/v2"
+	"github.com/ethancls/cosmos-server/shared/relay/messages"
 )
 
 var (

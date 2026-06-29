@@ -14,7 +14,7 @@ import (
 	"github.com/google/gopacket/layers"
 	"github.com/miekg/dns"
 
-	nbdns "github.com/ethancls/kyle-server/dns"
+	nbdns "github.com/ethancls/cosmos-server/dns"
 )
 
 // TextWriter writes human-readable one-line-per-packet summaries.

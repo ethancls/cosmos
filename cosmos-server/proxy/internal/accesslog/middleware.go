@@ -8,9 +8,9 @@ import (
 
 	"github.com/rs/xid"
 
-	"github.com/ethancls/kyle-server/proxy/internal/proxy"
-	"github.com/ethancls/kyle-server/proxy/internal/responsewriter"
-	"github.com/ethancls/kyle-server/proxy/web"
+	"github.com/ethancls/cosmos-server/proxy/internal/proxy"
+	"github.com/ethancls/cosmos-server/proxy/internal/responsewriter"
+	"github.com/ethancls/cosmos-server/proxy/web"
 )
 
 // Middleware wraps an HTTP handler to log access entries and resolve client IPs.

@@ -7,7 +7,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"go.opentelemetry.io/otel/metric"
 
-	"github.com/ethancls/kyle-server/internal/modules/reverseproxy/proxy"
+	"github.com/ethancls/cosmos-server/internal/modules/reverseproxy/proxy"
 )
 
 // store defines the interface for proxy persistence operations

@@ -15,14 +15,14 @@ import (
 	"github.com/libp2p/go-netroute"
 	log "github.com/sirupsen/logrus"
 
-	nberrors "github.com/ethancls/kyle-server/client/errors"
-	"github.com/ethancls/kyle-server/client/iface/netstack"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/refcounter"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/util"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/vars"
-	"github.com/ethancls/kyle-server/client/internal/statemanager"
-	nbnet "github.com/ethancls/kyle-server/client/net"
-	"github.com/ethancls/kyle-server/client/net/hooks"
+	nberrors "github.com/ethancls/cosmos-server/client/errors"
+	"github.com/ethancls/cosmos-server/client/iface/netstack"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/refcounter"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/util"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/vars"
+	"github.com/ethancls/cosmos-server/client/internal/statemanager"
+	nbnet "github.com/ethancls/cosmos-server/client/net"
+	"github.com/ethancls/cosmos-server/client/net/hooks"
 )
 
 const localSubnetsCacheTTL = 15 * time.Minute

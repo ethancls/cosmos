@@ -16,8 +16,8 @@ import (
 	"github.com/pion/stun/v3"
 	"github.com/pion/transport/v3"
 
-	"github.com/ethancls/kyle-server/client/iface/bufsize"
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
+	"github.com/ethancls/cosmos-server/client/iface/bufsize"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
 )
 
 // UniversalUDPMuxDefault handles STUN and TURN servers packets by wrapping the original UDPConn

@@ -14,11 +14,11 @@ import (
 	"github.com/miekg/dns"
 	log "github.com/sirupsen/logrus"
 
-	nberrors "github.com/ethancls/kyle-server/client/errors"
+	nberrors "github.com/ethancls/cosmos-server/client/errors"
 
-	firewall "github.com/ethancls/kyle-server/client/firewall/manager"
-	"github.com/ethancls/kyle-server/client/internal/ebpf"
-	ebpfMgr "github.com/ethancls/kyle-server/client/internal/ebpf/manager"
+	firewall "github.com/ethancls/cosmos-server/client/firewall/manager"
+	"github.com/ethancls/cosmos-server/client/internal/ebpf"
+	ebpfMgr "github.com/ethancls/cosmos-server/client/internal/ebpf/manager"
 )
 
 const (

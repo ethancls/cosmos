@@ -8,7 +8,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/ethancls/kyle-server/client/proto"
+	"github.com/ethancls/cosmos-server/client/proto"
 )
 
 var logoutCmd = &cobra.Command{

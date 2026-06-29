@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/kyle-server/shared/relay/messages"
+	"github.com/ethancls/cosmos-server/shared/relay/messages"
 
 	"github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"

@@ -21,16 +21,16 @@ import (
 	"github.com/hashicorp/go-multierror"
 	log "github.com/sirupsen/logrus"
 
-	nberrors "github.com/ethancls/kyle-server/client/errors"
-	firewall "github.com/ethancls/kyle-server/client/firewall/manager"
-	"github.com/ethancls/kyle-server/client/firewall/uspfilter/common"
-	"github.com/ethancls/kyle-server/client/firewall/uspfilter/conntrack"
-	"github.com/ethancls/kyle-server/client/firewall/uspfilter/forwarder"
-	nblog "github.com/ethancls/kyle-server/client/firewall/uspfilter/log"
-	"github.com/ethancls/kyle-server/client/iface/netstack"
-	nbid "github.com/ethancls/kyle-server/client/internal/acl/id"
-	nftypes "github.com/ethancls/kyle-server/client/internal/netflow/types"
-	"github.com/ethancls/kyle-server/client/internal/statemanager"
+	nberrors "github.com/ethancls/cosmos-server/client/errors"
+	firewall "github.com/ethancls/cosmos-server/client/firewall/manager"
+	"github.com/ethancls/cosmos-server/client/firewall/uspfilter/common"
+	"github.com/ethancls/cosmos-server/client/firewall/uspfilter/conntrack"
+	"github.com/ethancls/cosmos-server/client/firewall/uspfilter/forwarder"
+	nblog "github.com/ethancls/cosmos-server/client/firewall/uspfilter/log"
+	"github.com/ethancls/cosmos-server/client/iface/netstack"
+	nbid "github.com/ethancls/cosmos-server/client/internal/acl/id"
+	nftypes "github.com/ethancls/cosmos-server/client/internal/netflow/types"
+	"github.com/ethancls/cosmos-server/client/internal/statemanager"
 )
 
 const (

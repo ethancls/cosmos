@@ -6,8 +6,8 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/ethancls/kyle-server/shared/management/domain"
-	"github.com/ethancls/kyle-server/shared/management/status"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
+	"github.com/ethancls/cosmos-server/shared/management/status"
 )
 
 // Windows has some limitation regarding metric size that differ from Unix-like systems.

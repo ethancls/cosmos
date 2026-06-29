@@ -14,14 +14,14 @@ import (
 	"github.com/stretchr/testify/assert"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 
-	"github.com/ethancls/kyle-server/client/iface"
-	pfmock "github.com/ethancls/kyle-server/client/iface/mocks"
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
-	"github.com/ethancls/kyle-server/client/internal/dns/local"
-	"github.com/ethancls/kyle-server/client/internal/dns/test"
-	"github.com/ethancls/kyle-server/client/internal/peer"
-	"github.com/ethancls/kyle-server/client/internal/stdnet"
-	nbdns "github.com/ethancls/kyle-server/dns"
+	"github.com/ethancls/cosmos-server/client/iface"
+	pfmock "github.com/ethancls/cosmos-server/client/iface/mocks"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
+	"github.com/ethancls/cosmos-server/client/internal/dns/local"
+	"github.com/ethancls/cosmos-server/client/internal/dns/test"
+	"github.com/ethancls/cosmos-server/client/internal/peer"
+	"github.com/ethancls/cosmos-server/client/internal/stdnet"
+	nbdns "github.com/ethancls/cosmos-server/dns"
 )
 
 func TestUpdateDNSServer(t *testing.T) {

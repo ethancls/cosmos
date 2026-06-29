@@ -18,11 +18,11 @@ import (
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/status"
 
-	nbgrpc "github.com/ethancls/kyle-server/client/grpc"
-	"github.com/ethancls/kyle-server/encryption"
-	"github.com/ethancls/kyle-server/shared/management/client"
-	"github.com/ethancls/kyle-server/shared/signal/proto"
-	"github.com/ethancls/kyle-server/util/wsproxy"
+	nbgrpc "github.com/ethancls/cosmos-server/client/grpc"
+	"github.com/ethancls/cosmos-server/encryption"
+	"github.com/ethancls/cosmos-server/shared/management/client"
+	"github.com/ethancls/cosmos-server/shared/signal/proto"
+	"github.com/ethancls/cosmos-server/util/wsproxy"
 )
 
 const (

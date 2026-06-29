@@ -6,8 +6,8 @@ import (
 	"net/netip"
 	"sync"
 
-	"github.com/ethancls/kyle-server/client/iface/device"
-	"github.com/ethancls/kyle-server/client/internal/lazyconn"
+	"github.com/ethancls/cosmos-server/client/iface/device"
+	"github.com/ethancls/cosmos-server/client/internal/lazyconn"
 )
 
 type bindProvider interface {

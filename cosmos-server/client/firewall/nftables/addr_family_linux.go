@@ -7,7 +7,7 @@ import (
 	"github.com/google/nftables"
 	"golang.org/x/sys/unix"
 
-	firewall "github.com/ethancls/kyle-server/client/firewall/manager"
+	firewall "github.com/ethancls/cosmos-server/client/firewall/manager"
 )
 
 var (

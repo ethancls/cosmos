@@ -5,7 +5,7 @@ import (
 	"math/rand/v2"
 	"time"
 
-	"github.com/ethancls/kyle-server/shared/management/status"
+	"github.com/ethancls/cosmos-server/shared/management/status"
 	log "github.com/sirupsen/logrus"
 )
 

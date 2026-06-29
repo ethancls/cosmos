@@ -7,8 +7,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/kyle-server/client/internal/routeselector"
-	"github.com/ethancls/kyle-server/route"
+	"github.com/ethancls/cosmos-server/client/internal/routeselector"
+	"github.com/ethancls/cosmos-server/route"
 )
 
 // TestUpdateRouteSelectorFromManagement_MirrorsV6ExitPair reproduces the bug seen

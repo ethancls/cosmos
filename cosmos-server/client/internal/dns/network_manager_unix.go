@@ -16,8 +16,8 @@ import (
 	"github.com/hashicorp/go-version"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/internal/statemanager"
-	nbversion "github.com/ethancls/kyle-server/version"
+	"github.com/ethancls/cosmos-server/client/internal/statemanager"
+	nbversion "github.com/ethancls/cosmos-server/version"
 )
 
 const (

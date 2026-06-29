@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/kyle-server/client/internal/lazyconn"
+	"github.com/ethancls/cosmos-server/client/internal/lazyconn"
 )
 
 func TestUDPListener_Creation(t *testing.T) {

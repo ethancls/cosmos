@@ -8,16 +8,16 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/kyle-server/internal/modules/zones"
-	"github.com/ethancls/kyle-server/internal/modules/zones/records"
-	"github.com/ethancls/kyle-server/server/activity"
-	"github.com/ethancls/kyle-server/server/mock_server"
-	"github.com/ethancls/kyle-server/server/permissions"
-	"github.com/ethancls/kyle-server/server/permissions/modules"
-	"github.com/ethancls/kyle-server/server/permissions/operations"
-	"github.com/ethancls/kyle-server/server/store"
-	"github.com/ethancls/kyle-server/server/types"
-	"github.com/ethancls/kyle-server/shared/management/status"
+	"github.com/ethancls/cosmos-server/internal/modules/zones"
+	"github.com/ethancls/cosmos-server/internal/modules/zones/records"
+	"github.com/ethancls/cosmos-server/server/activity"
+	"github.com/ethancls/cosmos-server/server/mock_server"
+	"github.com/ethancls/cosmos-server/server/permissions"
+	"github.com/ethancls/cosmos-server/server/permissions/modules"
+	"github.com/ethancls/cosmos-server/server/permissions/operations"
+	"github.com/ethancls/cosmos-server/server/store"
+	"github.com/ethancls/cosmos-server/server/types"
+	"github.com/ethancls/cosmos-server/shared/management/status"
 )
 
 const (

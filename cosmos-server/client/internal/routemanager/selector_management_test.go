@@ -6,8 +6,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/kyle-server/client/internal/routeselector"
-	"github.com/ethancls/kyle-server/route"
+	"github.com/ethancls/cosmos-server/client/internal/routeselector"
+	"github.com/ethancls/cosmos-server/route"
 )
 
 func exitNodeRoutes(netID route.NetID, skipAutoApply bool) route.HAMap {

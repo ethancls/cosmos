@@ -14,14 +14,14 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	nbcontext "github.com/ethancls/kyle-server/server/context"
-	"github.com/ethancls/kyle-server/server/permissions"
-	"github.com/ethancls/kyle-server/server/permissions/modules"
-	"github.com/ethancls/kyle-server/server/permissions/operations"
-	"github.com/ethancls/kyle-server/server/store"
-	"github.com/ethancls/kyle-server/server/types"
-	"github.com/ethancls/kyle-server/shared/auth"
-	"github.com/ethancls/kyle-server/shared/management/http/api"
+	nbcontext "github.com/ethancls/cosmos-server/server/context"
+	"github.com/ethancls/cosmos-server/server/permissions"
+	"github.com/ethancls/cosmos-server/server/permissions/modules"
+	"github.com/ethancls/cosmos-server/server/permissions/operations"
+	"github.com/ethancls/cosmos-server/server/store"
+	"github.com/ethancls/cosmos-server/server/types"
+	"github.com/ethancls/cosmos-server/shared/auth"
+	"github.com/ethancls/cosmos-server/shared/management/http/api"
 )
 
 func authContext(accountID, userID string) context.Context {

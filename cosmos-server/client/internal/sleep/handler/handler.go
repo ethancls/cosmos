@@ -6,7 +6,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/internal"
+	"github.com/ethancls/cosmos-server/client/internal"
 )
 
 type Agent interface {

@@ -9,15 +9,15 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	nbdns "github.com/ethancls/kyle-server/client/internal/dns"
-	"github.com/ethancls/kyle-server/client/internal/peer"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/common"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/dnsinterceptor"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/dynamic"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/iface"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/static"
-	"github.com/ethancls/kyle-server/client/proto"
-	"github.com/ethancls/kyle-server/route"
+	nbdns "github.com/ethancls/cosmos-server/client/internal/dns"
+	"github.com/ethancls/cosmos-server/client/internal/peer"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/common"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/dnsinterceptor"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/dynamic"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/iface"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/static"
+	"github.com/ethancls/cosmos-server/client/proto"
+	"github.com/ethancls/cosmos-server/route"
 )
 
 const (

@@ -3,7 +3,7 @@
 package dns
 
 import (
-	"github.com/ethancls/kyle-server/client/configs"
+	"github.com/ethancls/cosmos-server/client/configs"
 	"os"
 	"path/filepath"
 )

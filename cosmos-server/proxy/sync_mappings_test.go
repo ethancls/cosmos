@@ -16,8 +16,8 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 	grpcstatus "google.golang.org/grpc/status"
 
-	"github.com/ethancls/kyle-server/internal/modules/reverseproxy/service"
-	"github.com/ethancls/kyle-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/internal/modules/reverseproxy/service"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 func TestIntegration_SyncMappings_HappyPath(t *testing.T) {

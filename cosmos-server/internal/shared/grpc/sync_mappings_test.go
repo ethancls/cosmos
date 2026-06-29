@@ -13,8 +13,8 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
 
-	rpservice "github.com/ethancls/kyle-server/internal/modules/reverseproxy/service"
-	"github.com/ethancls/kyle-server/shared/management/proto"
+	rpservice "github.com/ethancls/cosmos-server/internal/modules/reverseproxy/service"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 // syncRecordingStream is a mock ProxyService_SyncMappingsServer that records

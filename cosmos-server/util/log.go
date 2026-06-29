@@ -12,7 +12,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"google.golang.org/grpc/grpclog"
 
-	"github.com/ethancls/kyle-server/formatter"
+	"github.com/ethancls/cosmos-server/formatter"
 )
 
 const defaultLogSize = 15

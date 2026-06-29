@@ -5,10 +5,10 @@ package network_map
 import (
 	"context"
 
-	nbdns "github.com/ethancls/kyle-server/dns"
-	nbpeer "github.com/ethancls/kyle-server/server/peer"
-	"github.com/ethancls/kyle-server/server/posture"
-	"github.com/ethancls/kyle-server/server/types"
+	nbdns "github.com/ethancls/cosmos-server/dns"
+	nbpeer "github.com/ethancls/cosmos-server/server/peer"
+	"github.com/ethancls/cosmos-server/server/posture"
+	"github.com/ethancls/cosmos-server/server/types"
 )
 
 const (

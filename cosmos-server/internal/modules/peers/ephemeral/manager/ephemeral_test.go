@@ -11,14 +11,14 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 
-	nbdns "github.com/ethancls/kyle-server/dns"
-	"github.com/ethancls/kyle-server/internal/modules/peers"
-	"github.com/ethancls/kyle-server/internal/modules/peers/ephemeral"
-	nbAccount "github.com/ethancls/kyle-server/server/account"
-	nbpeer "github.com/ethancls/kyle-server/server/peer"
-	"github.com/ethancls/kyle-server/server/store"
-	"github.com/ethancls/kyle-server/server/types"
-	"github.com/ethancls/kyle-server/route"
+	nbdns "github.com/ethancls/cosmos-server/dns"
+	"github.com/ethancls/cosmos-server/internal/modules/peers"
+	"github.com/ethancls/cosmos-server/internal/modules/peers/ephemeral"
+	nbAccount "github.com/ethancls/cosmos-server/server/account"
+	nbpeer "github.com/ethancls/cosmos-server/server/peer"
+	"github.com/ethancls/cosmos-server/server/store"
+	"github.com/ethancls/cosmos-server/server/types"
+	"github.com/ethancls/cosmos-server/route"
 )
 
 type MockStore struct {

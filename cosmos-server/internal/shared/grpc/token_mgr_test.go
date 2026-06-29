@@ -13,14 +13,14 @@ import (
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/kyle-server/internal/controllers/network_map"
-	"github.com/ethancls/kyle-server/internal/controllers/network_map/update_channel"
-	"github.com/ethancls/kyle-server/internal/server/config"
-	"github.com/ethancls/kyle-server/server/groups"
-	"github.com/ethancls/kyle-server/server/settings"
-	"github.com/ethancls/kyle-server/server/types"
-	"github.com/ethancls/kyle-server/shared/management/proto"
-	"github.com/ethancls/kyle-server/util"
+	"github.com/ethancls/cosmos-server/internal/controllers/network_map"
+	"github.com/ethancls/cosmos-server/internal/controllers/network_map/update_channel"
+	"github.com/ethancls/cosmos-server/internal/server/config"
+	"github.com/ethancls/cosmos-server/server/groups"
+	"github.com/ethancls/cosmos-server/server/settings"
+	"github.com/ethancls/cosmos-server/server/types"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/util"
 )
 
 var TurnTestHost = &config.Host{

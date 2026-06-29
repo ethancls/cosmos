@@ -9,8 +9,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/internal/debug"
-	"github.com/ethancls/kyle-server/upload-server/types"
+	"github.com/ethancls/cosmos-server/client/internal/debug"
+	"github.com/ethancls/cosmos-server/upload-server/types"
 )
 
 const (

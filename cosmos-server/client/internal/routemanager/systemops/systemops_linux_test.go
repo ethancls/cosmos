@@ -12,7 +12,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/vishvananda/netlink"
 
-	"github.com/ethancls/kyle-server/client/internal/routemanager/vars"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/vars"
 )
 
 func init() {

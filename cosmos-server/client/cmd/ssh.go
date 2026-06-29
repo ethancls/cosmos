@@ -18,12 +18,12 @@ import (
 	"github.com/spf13/cobra"
 	"golang.org/x/crypto/ssh"
 
-	"github.com/ethancls/kyle-server/client/internal"
-	sshclient "github.com/ethancls/kyle-server/client/ssh/client"
-	"github.com/ethancls/kyle-server/client/ssh/detection"
-	sshproxy "github.com/ethancls/kyle-server/client/ssh/proxy"
-	sshserver "github.com/ethancls/kyle-server/client/ssh/server"
-	"github.com/ethancls/kyle-server/util"
+	"github.com/ethancls/cosmos-server/client/internal"
+	sshclient "github.com/ethancls/cosmos-server/client/ssh/client"
+	"github.com/ethancls/cosmos-server/client/ssh/detection"
+	sshproxy "github.com/ethancls/cosmos-server/client/ssh/proxy"
+	sshserver "github.com/ethancls/cosmos-server/client/ssh/server"
+	"github.com/ethancls/cosmos-server/util"
 )
 
 const (

@@ -14,7 +14,7 @@ import (
 	"golang.org/x/net/ipv4"
 	"golang.org/x/net/ipv6"
 
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
 )
 
 func TestICEBind_CreatesReceiverForBothIPv4AndIPv6(t *testing.T) {

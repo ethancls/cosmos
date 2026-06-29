@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/netip"
 
-	"github.com/ethancls/kyle-server/shared/netiputil"
+	"github.com/ethancls/cosmos-server/shared/netiputil"
 )
 
 // Address WireGuard parsed address

@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/ethancls/kyle-server/client/internal/statemanager"
+	"github.com/ethancls/cosmos-server/client/internal/statemanager"
 )
 
 type ShutdownState struct {

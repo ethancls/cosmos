@@ -9,9 +9,9 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
-	"github.com/ethancls/kyle-server/client/internal/lazyconn"
-	peerid "github.com/ethancls/kyle-server/client/internal/peer/id"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
+	"github.com/ethancls/cosmos-server/client/internal/lazyconn"
+	peerid "github.com/ethancls/cosmos-server/client/internal/peer/id"
 )
 
 type MocPeer struct {

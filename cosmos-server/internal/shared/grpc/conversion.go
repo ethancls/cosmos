@@ -9,25 +9,25 @@ import (
 	"time"
 
 	"github.com/hashicorp/go-version"
-	nbversion "github.com/ethancls/kyle-server/version"
+	nbversion "github.com/ethancls/cosmos-server/version"
 	log "github.com/sirupsen/logrus"
 	goproto "google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/types/known/timestamppb"
 
-	integrationsConfig "github.com/netbirdio/management-integrations/integrations/config"
+	integrationsConfig "github.com/ethancls/cosmos-server/management-integrations/integrations/config"
 
-	"github.com/ethancls/kyle-server/client/ssh/auth"
+	"github.com/ethancls/cosmos-server/client/ssh/auth"
 
-	nbdns "github.com/ethancls/kyle-server/dns"
-	"github.com/ethancls/kyle-server/internal/controllers/network_map/controller/cache"
-	nbconfig "github.com/ethancls/kyle-server/internal/server/config"
-	nbpeer "github.com/ethancls/kyle-server/server/peer"
-	"github.com/ethancls/kyle-server/server/posture"
-	"github.com/ethancls/kyle-server/server/types"
-	nbroute "github.com/ethancls/kyle-server/route"
-	"github.com/ethancls/kyle-server/shared/management/proto"
-	"github.com/ethancls/kyle-server/shared/netiputil"
-	"github.com/ethancls/kyle-server/shared/sshauth"
+	nbdns "github.com/ethancls/cosmos-server/dns"
+	"github.com/ethancls/cosmos-server/internal/controllers/network_map/controller/cache"
+	nbconfig "github.com/ethancls/cosmos-server/internal/server/config"
+	nbpeer "github.com/ethancls/cosmos-server/server/peer"
+	"github.com/ethancls/cosmos-server/server/posture"
+	"github.com/ethancls/cosmos-server/server/types"
+	nbroute "github.com/ethancls/cosmos-server/route"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/shared/netiputil"
+	"github.com/ethancls/cosmos-server/shared/sshauth"
 )
 
 const (

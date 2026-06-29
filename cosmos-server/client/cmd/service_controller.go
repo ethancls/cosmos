@@ -16,10 +16,10 @@ import (
 	"github.com/spf13/cobra"
 	"google.golang.org/grpc"
 
-	"github.com/ethancls/kyle-server/client/proto"
-	"github.com/ethancls/kyle-server/client/server"
-	"github.com/ethancls/kyle-server/client/system"
-	"github.com/ethancls/kyle-server/util"
+	"github.com/ethancls/cosmos-server/client/proto"
+	"github.com/ethancls/cosmos-server/client/server"
+	"github.com/ethancls/cosmos-server/client/system"
+	"github.com/ethancls/cosmos-server/util"
 )
 
 func (p *program) Start(svc service.Service) error {

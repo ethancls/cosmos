@@ -16,11 +16,11 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.zx2c4.com/wireguard/tun/netstack"
 
-	nberrors "github.com/ethancls/kyle-server/client/errors"
-	firewall "github.com/ethancls/kyle-server/client/firewall/manager"
-	"github.com/ethancls/kyle-server/client/internal/dns/resutil"
-	"github.com/ethancls/kyle-server/client/internal/peer"
-	"github.com/ethancls/kyle-server/route"
+	nberrors "github.com/ethancls/cosmos-server/client/errors"
+	firewall "github.com/ethancls/cosmos-server/client/firewall/manager"
+	"github.com/ethancls/cosmos-server/client/internal/dns/resutil"
+	"github.com/ethancls/cosmos-server/client/internal/peer"
+	"github.com/ethancls/cosmos-server/route"
 )
 
 const errResolveFailed = "failed to resolve query for domain=%s: %v"

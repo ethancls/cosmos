@@ -12,8 +12,8 @@ import (
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 	"google.golang.org/grpc"
 
-	sigProto "github.com/ethancls/kyle-server/shared/signal/proto"
-	"github.com/ethancls/kyle-server/signal/server"
+	sigProto "github.com/ethancls/cosmos-server/shared/signal/proto"
+	"github.com/ethancls/cosmos-server/signal/server"
 )
 
 func startTestSignalServer(t *testing.T) string {

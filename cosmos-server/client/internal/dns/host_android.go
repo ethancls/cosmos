@@ -3,7 +3,7 @@ package dns
 import (
 	"net/netip"
 
-	"github.com/ethancls/kyle-server/client/internal/statemanager"
+	"github.com/ethancls/cosmos-server/client/internal/statemanager"
 )
 
 // androidHostManager is a noop on the OS side (Android's VPN service handles

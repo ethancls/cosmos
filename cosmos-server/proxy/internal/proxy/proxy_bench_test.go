@@ -9,8 +9,8 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/ethancls/kyle-server/proxy/internal/proxy"
-	"github.com/ethancls/kyle-server/proxy/internal/types"
+	"github.com/ethancls/cosmos-server/proxy/internal/proxy"
+	"github.com/ethancls/cosmos-server/proxy/internal/types"
 )
 
 type nopTransport struct{}

@@ -9,8 +9,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	rpservice "github.com/ethancls/kyle-server/internal/modules/reverseproxy/service"
-	"github.com/ethancls/kyle-server/server/store"
+	rpservice "github.com/ethancls/cosmos-server/internal/modules/reverseproxy/service"
+	"github.com/ethancls/cosmos-server/server/store"
 )
 
 func TestReapExpiredExposes(t *testing.T) {

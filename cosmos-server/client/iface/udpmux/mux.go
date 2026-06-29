@@ -15,7 +15,7 @@ import (
 	"github.com/pion/transport/v3"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/internal/stdnet"
+	"github.com/ethancls/cosmos-server/client/internal/stdnet"
 )
 
 /*

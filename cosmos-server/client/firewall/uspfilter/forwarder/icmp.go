@@ -13,8 +13,8 @@ import (
 	"gvisor.dev/gvisor/pkg/tcpip/header"
 	"gvisor.dev/gvisor/pkg/tcpip/stack"
 
-	nblog "github.com/ethancls/kyle-server/client/firewall/uspfilter/log"
-	nftypes "github.com/ethancls/kyle-server/client/internal/netflow/types"
+	nblog "github.com/ethancls/cosmos-server/client/firewall/uspfilter/log"
+	nftypes "github.com/ethancls/cosmos-server/client/internal/netflow/types"
 )
 
 // handleICMP handles ICMP packets from the network stack

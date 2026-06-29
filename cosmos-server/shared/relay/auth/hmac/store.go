@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"sync"
 
-	v2 "github.com/ethancls/kyle-server/shared/relay/auth/hmac/v2"
+	v2 "github.com/ethancls/cosmos-server/shared/relay/auth/hmac/v2"
 )
 
 // TokenStore is a simple in-memory store for token

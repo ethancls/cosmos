@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/kyle-server/shared/sshauth"
+	"github.com/ethancls/cosmos-server/shared/sshauth"
 )
 
 func TestAuthorizer_Authorize_UserNotInList(t *testing.T) {

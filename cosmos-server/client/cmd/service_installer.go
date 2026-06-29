@@ -15,7 +15,7 @@ import (
 	"github.com/kardianos/service"
 	"github.com/spf13/cobra"
 
-	"github.com/ethancls/kyle-server/util"
+	"github.com/ethancls/cosmos-server/util"
 )
 
 var ErrGetServiceStatus = fmt.Errorf("failed to get service status")

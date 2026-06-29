@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/ethancls/kyle-server/signal/cmd"
+	"github.com/ethancls/cosmos-server/signal/cmd"
 	"os"
 )
 

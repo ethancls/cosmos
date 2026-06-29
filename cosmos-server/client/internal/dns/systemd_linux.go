@@ -15,8 +15,8 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/sys/unix"
 
-	"github.com/ethancls/kyle-server/client/internal/statemanager"
-	nbdns "github.com/ethancls/kyle-server/dns"
+	"github.com/ethancls/cosmos-server/client/internal/statemanager"
+	nbdns "github.com/ethancls/cosmos-server/dns"
 )
 
 const (

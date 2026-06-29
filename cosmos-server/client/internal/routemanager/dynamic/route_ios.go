@@ -9,9 +9,9 @@ import (
 
 	"github.com/miekg/dns"
 
-	nbdns "github.com/ethancls/kyle-server/client/internal/dns"
+	nbdns "github.com/ethancls/cosmos-server/client/internal/dns"
 
-	"github.com/ethancls/kyle-server/shared/management/domain"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
 )
 
 const dialTimeout = 10 * time.Second

@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/ethancls/kyle-server/shared/management/operations"
+	"github.com/ethancls/cosmos-server/shared/management/operations"
 )
 
 const (

@@ -12,7 +12,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/vishvananda/netlink"
 
-	"github.com/ethancls/kyle-server/client/iface/netstack"
+	"github.com/ethancls/cosmos-server/client/iface/netstack"
 )
 
 const (

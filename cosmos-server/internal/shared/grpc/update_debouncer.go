@@ -3,7 +3,7 @@ package grpc
 import (
 	"time"
 
-	"github.com/ethancls/kyle-server/internal/controllers/network_map"
+	"github.com/ethancls/cosmos-server/internal/controllers/network_map"
 )
 
 // UpdateDebouncer implements a backpressure mechanism that:

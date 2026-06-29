@@ -8,7 +8,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/version"
+	"github.com/ethancls/cosmos-server/version"
 )
 
 func UpdateStaticInfoAsync() {

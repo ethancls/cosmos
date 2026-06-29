@@ -9,7 +9,7 @@ import (
 	"github.com/cilium/ebpf/rlimit"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/internal/ebpf/manager"
+	"github.com/ethancls/cosmos-server/client/internal/ebpf/manager"
 )
 
 const (

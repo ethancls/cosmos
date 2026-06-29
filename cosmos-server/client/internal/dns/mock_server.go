@@ -7,10 +7,10 @@ import (
 
 	"github.com/miekg/dns"
 
-	dnsconfig "github.com/ethancls/kyle-server/client/internal/dns/config"
-	nbdns "github.com/ethancls/kyle-server/dns"
-	"github.com/ethancls/kyle-server/route"
-	"github.com/ethancls/kyle-server/shared/management/domain"
+	dnsconfig "github.com/ethancls/cosmos-server/client/internal/dns/config"
+	nbdns "github.com/ethancls/cosmos-server/dns"
+	"github.com/ethancls/cosmos-server/route"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
 )
 
 // MockServer is the mock instance of a dns server

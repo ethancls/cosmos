@@ -3,7 +3,7 @@ package cache
 import (
 	"sync"
 
-	"github.com/ethancls/kyle-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 // DNSConfigCache is a thread-safe cache for DNS configuration components

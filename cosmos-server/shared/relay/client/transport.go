@@ -8,7 +8,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/shared/relay/client/dialer"
+	"github.com/ethancls/cosmos-server/shared/relay/client/dialer"
 )
 
 // EnvRelayTransport pins the relay transport. Valid values: "auto" (default,

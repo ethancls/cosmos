@@ -17,14 +17,14 @@ import (
 	"google.golang.org/protobuf/types/known/durationpb"
 	"google.golang.org/protobuf/types/known/timestamppb"
 
-	firewall "github.com/ethancls/kyle-server/client/firewall/manager"
-	"github.com/ethancls/kyle-server/client/iface/configurer"
-	"github.com/ethancls/kyle-server/client/internal/ingressgw"
-	"github.com/ethancls/kyle-server/client/internal/relay"
-	"github.com/ethancls/kyle-server/client/proto"
-	"github.com/ethancls/kyle-server/route"
-	"github.com/ethancls/kyle-server/shared/management/domain"
-	relayClient "github.com/ethancls/kyle-server/shared/relay/client"
+	firewall "github.com/ethancls/cosmos-server/client/firewall/manager"
+	"github.com/ethancls/cosmos-server/client/iface/configurer"
+	"github.com/ethancls/cosmos-server/client/internal/ingressgw"
+	"github.com/ethancls/cosmos-server/client/internal/relay"
+	"github.com/ethancls/cosmos-server/client/proto"
+	"github.com/ethancls/cosmos-server/route"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
+	relayClient "github.com/ethancls/cosmos-server/shared/relay/client"
 )
 
 const eventQueueSize = 10

@@ -8,7 +8,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/monotime"
+	"github.com/ethancls/cosmos-server/monotime"
 )
 
 const (

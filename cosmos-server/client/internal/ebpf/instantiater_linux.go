@@ -3,8 +3,8 @@
 package ebpf
 
 import (
-	"github.com/ethancls/kyle-server/client/internal/ebpf/ebpf"
-	"github.com/ethancls/kyle-server/client/internal/ebpf/manager"
+	"github.com/ethancls/cosmos-server/client/internal/ebpf/ebpf"
+	"github.com/ethancls/cosmos-server/client/internal/ebpf/manager"
 )
 
 // GetEbpfManagerInstance is a wrapper function. This encapsulation is required because if the code import the internal

@@ -20,8 +20,8 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/oauth2"
 
-	"github.com/ethancls/kyle-server/client/internal/templates"
-	"github.com/ethancls/kyle-server/shared/management/client/common"
+	"github.com/ethancls/cosmos-server/client/internal/templates"
+	"github.com/ethancls/cosmos-server/shared/management/client/common"
 )
 
 var _ OAuthFlow = &PKCEAuthorizationFlow{}

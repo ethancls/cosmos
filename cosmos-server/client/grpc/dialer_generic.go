@@ -15,7 +15,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
 
-	nbnet "github.com/ethancls/kyle-server/client/net"
+	nbnet "github.com/ethancls/cosmos-server/client/net"
 )
 
 func WithCustomDialer(_ bool, _ string) grpc.DialOption {

@@ -5,8 +5,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/ethancls/kyle-server/upload-server/server"
-	"github.com/ethancls/kyle-server/util"
+	"github.com/ethancls/cosmos-server/upload-server/server"
+	"github.com/ethancls/cosmos-server/util"
 )
 
 func main() {

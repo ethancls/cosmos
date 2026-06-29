@@ -10,7 +10,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/internal/updater/downloader"
+	"github.com/ethancls/cosmos-server/client/internal/updater/downloader"
 )
 
 const (

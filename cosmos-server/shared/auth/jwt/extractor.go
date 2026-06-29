@@ -8,7 +8,7 @@ import (
 	"github.com/golang-jwt/jwt/v5"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/shared/auth"
+	"github.com/ethancls/cosmos-server/shared/auth"
 )
 
 const (

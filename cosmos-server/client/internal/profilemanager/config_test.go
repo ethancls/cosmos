@@ -12,9 +12,9 @@ import (
 	"github.com/stretchr/testify/require"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 
-	"github.com/ethancls/kyle-server/client/iface"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/dynamic"
-	"github.com/ethancls/kyle-server/util"
+	"github.com/ethancls/cosmos-server/client/iface"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/dynamic"
+	"github.com/ethancls/cosmos-server/util"
 )
 
 type mockMgmProber struct{}

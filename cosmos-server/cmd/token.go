@@ -7,11 +7,11 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	"github.com/ethancls/kyle-server/formatter/hook"
-	tokencmd "github.com/ethancls/kyle-server/cmd/token"
-	nbconfig "github.com/ethancls/kyle-server/internal/server/config"
-	"github.com/ethancls/kyle-server/server/store"
-	"github.com/ethancls/kyle-server/util"
+	"github.com/ethancls/cosmos-server/formatter/hook"
+	tokencmd "github.com/ethancls/cosmos-server/cmd/token"
+	nbconfig "github.com/ethancls/cosmos-server/internal/server/config"
+	"github.com/ethancls/cosmos-server/server/store"
+	"github.com/ethancls/cosmos-server/util"
 )
 
 var tokenDatadir string

@@ -11,8 +11,8 @@ import (
 	log "github.com/sirupsen/logrus"
 	"google.golang.org/protobuf/proto"
 
-	mgmProto "github.com/ethancls/kyle-server/shared/management/proto"
-	"github.com/ethancls/kyle-server/util"
+	mgmProto "github.com/ethancls/cosmos-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/util"
 )
 
 // syncResponseFileName is the name of the file the sync response is serialized

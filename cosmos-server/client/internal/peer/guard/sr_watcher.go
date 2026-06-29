@@ -6,8 +6,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/internal/peer/ice"
-	"github.com/ethancls/kyle-server/client/internal/stdnet"
+	"github.com/ethancls/cosmos-server/client/internal/peer/ice"
+	"github.com/ethancls/cosmos-server/client/internal/stdnet"
 )
 
 type chNotifier interface {

@@ -10,8 +10,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/kyle-server/client/internal/statemanager"
-	"github.com/ethancls/kyle-server/util"
+	"github.com/ethancls/cosmos-server/client/internal/statemanager"
+	"github.com/ethancls/cosmos-server/util"
 )
 
 func TestMain(m *testing.M) {

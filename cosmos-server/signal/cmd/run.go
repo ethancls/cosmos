@@ -18,15 +18,15 @@ import (
 	"golang.org/x/net/http2"
 	"golang.org/x/net/http2/h2c"
 
-	"github.com/ethancls/kyle-server/shared/metrics"
+	"github.com/ethancls/cosmos-server/shared/metrics"
 
-	"github.com/ethancls/kyle-server/encryption"
-	"github.com/ethancls/kyle-server/shared/signal/proto"
-	"github.com/ethancls/kyle-server/signal/server"
-	"github.com/ethancls/kyle-server/util"
-	"github.com/ethancls/kyle-server/util/wsproxy"
-	wsproxyserver "github.com/ethancls/kyle-server/util/wsproxy/server"
-	"github.com/ethancls/kyle-server/version"
+	"github.com/ethancls/cosmos-server/encryption"
+	"github.com/ethancls/cosmos-server/shared/signal/proto"
+	"github.com/ethancls/cosmos-server/signal/server"
+	"github.com/ethancls/cosmos-server/util"
+	"github.com/ethancls/cosmos-server/util/wsproxy"
+	wsproxyserver "github.com/ethancls/cosmos-server/util/wsproxy/server"
+	"github.com/ethancls/cosmos-server/version"
 
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"

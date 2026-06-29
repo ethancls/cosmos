@@ -13,21 +13,21 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	nbpeer "github.com/ethancls/kyle-server/server/peer"
+	nbpeer "github.com/ethancls/cosmos-server/server/peer"
 
-	resourcetypes "github.com/ethancls/kyle-server/server/networks/resources/types"
+	resourcetypes "github.com/ethancls/cosmos-server/server/networks/resources/types"
 
-	"github.com/ethancls/kyle-server/internal/modules/reverseproxy/proxy"
-	"github.com/ethancls/kyle-server/internal/modules/reverseproxy/service"
-	"github.com/ethancls/kyle-server/internal/modules/reverseproxy/sessionkey"
-	"github.com/ethancls/kyle-server/server/account"
-	"github.com/ethancls/kyle-server/server/activity"
-	"github.com/ethancls/kyle-server/server/permissions"
-	"github.com/ethancls/kyle-server/server/permissions/modules"
-	"github.com/ethancls/kyle-server/server/permissions/operations"
-	"github.com/ethancls/kyle-server/server/store"
-	"github.com/ethancls/kyle-server/server/types"
-	"github.com/ethancls/kyle-server/shared/management/status"
+	"github.com/ethancls/cosmos-server/internal/modules/reverseproxy/proxy"
+	"github.com/ethancls/cosmos-server/internal/modules/reverseproxy/service"
+	"github.com/ethancls/cosmos-server/internal/modules/reverseproxy/sessionkey"
+	"github.com/ethancls/cosmos-server/server/account"
+	"github.com/ethancls/cosmos-server/server/activity"
+	"github.com/ethancls/cosmos-server/server/permissions"
+	"github.com/ethancls/cosmos-server/server/permissions/modules"
+	"github.com/ethancls/cosmos-server/server/permissions/operations"
+	"github.com/ethancls/cosmos-server/server/store"
+	"github.com/ethancls/cosmos-server/server/types"
+	"github.com/ethancls/cosmos-server/shared/management/status"
 )
 
 const (

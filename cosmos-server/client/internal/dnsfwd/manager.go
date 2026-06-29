@@ -12,14 +12,14 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.zx2c4.com/wireguard/tun/netstack"
 
-	nberrors "github.com/ethancls/kyle-server/client/errors"
-	firewall "github.com/ethancls/kyle-server/client/firewall/manager"
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
-	nftypes "github.com/ethancls/kyle-server/client/internal/netflow/types"
-	"github.com/ethancls/kyle-server/client/internal/peer"
-	nbdns "github.com/ethancls/kyle-server/dns"
-	"github.com/ethancls/kyle-server/route"
-	"github.com/ethancls/kyle-server/shared/management/domain"
+	nberrors "github.com/ethancls/cosmos-server/client/errors"
+	firewall "github.com/ethancls/cosmos-server/client/firewall/manager"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
+	nftypes "github.com/ethancls/cosmos-server/client/internal/netflow/types"
+	"github.com/ethancls/cosmos-server/client/internal/peer"
+	nbdns "github.com/ethancls/cosmos-server/dns"
+	"github.com/ethancls/cosmos-server/route"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
 )
 
 const (

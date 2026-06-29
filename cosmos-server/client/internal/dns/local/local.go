@@ -14,10 +14,10 @@ import (
 	"github.com/miekg/dns"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/internal/dns/resutil"
-	"github.com/ethancls/kyle-server/client/internal/dns/types"
-	nbdns "github.com/ethancls/kyle-server/dns"
-	"github.com/ethancls/kyle-server/shared/management/domain"
+	"github.com/ethancls/cosmos-server/client/internal/dns/resutil"
+	"github.com/ethancls/cosmos-server/client/internal/dns/types"
+	nbdns "github.com/ethancls/cosmos-server/dns"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
 )
 
 const externalResolutionTimeout = 4 * time.Second

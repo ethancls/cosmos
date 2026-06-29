@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/kyle-server/util"
+	"github.com/ethancls/cosmos-server/util"
 )
 
 func TestMain(m *testing.M) {

@@ -10,7 +10,7 @@ import (
 	"google.golang.org/grpc/codes"
 	gstatus "google.golang.org/grpc/status"
 
-	"github.com/ethancls/kyle-server/client/internal/profilemanager"
+	"github.com/ethancls/cosmos-server/client/internal/profilemanager"
 )
 
 // OAuthFlow represents an interface for authorization using different OAuth 2.0 flows

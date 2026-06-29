@@ -12,11 +12,11 @@ import (
 	"golang.zx2c4.com/wireguard/device"
 	"golang.zx2c4.com/wireguard/tun/netstack"
 
-	"github.com/ethancls/kyle-server/client/iface/configurer"
-	"github.com/ethancls/kyle-server/client/iface/udpmux"
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
-	nbnet "github.com/ethancls/kyle-server/client/net"
-	"github.com/ethancls/kyle-server/sharedsock"
+	"github.com/ethancls/cosmos-server/client/iface/configurer"
+	"github.com/ethancls/cosmos-server/client/iface/udpmux"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
+	nbnet "github.com/ethancls/cosmos-server/client/net"
+	"github.com/ethancls/cosmos-server/sharedsock"
 )
 
 type TunKernelDevice struct {

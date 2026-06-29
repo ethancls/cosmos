@@ -3,10 +3,10 @@
 package client
 
 import (
-	"github.com/ethancls/kyle-server/client/iface"
-	"github.com/ethancls/kyle-server/shared/relay/client/dialer"
-	"github.com/ethancls/kyle-server/shared/relay/client/dialer/quic"
-	"github.com/ethancls/kyle-server/shared/relay/client/dialer/ws"
+	"github.com/ethancls/cosmos-server/client/iface"
+	"github.com/ethancls/cosmos-server/shared/relay/client/dialer"
+	"github.com/ethancls/cosmos-server/shared/relay/client/dialer/quic"
+	"github.com/ethancls/cosmos-server/shared/relay/client/dialer/ws"
 )
 
 // getDialers returns the ordered dialers for connecting to the relay server. It

@@ -10,9 +10,9 @@ import (
 	"github.com/hashicorp/go-multierror"
 	log "github.com/sirupsen/logrus"
 
-	nberrors "github.com/ethancls/kyle-server/client/errors"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/util"
-	"github.com/ethancls/kyle-server/client/net/hooks"
+	nberrors "github.com/ethancls/cosmos-server/client/errors"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/util"
+	"github.com/ethancls/cosmos-server/client/net/hooks"
 )
 
 // DialContext wraps the net.Dialer's DialContext method to use the custom connection

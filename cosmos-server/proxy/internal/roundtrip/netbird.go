@@ -19,11 +19,11 @@ import (
 	"google.golang.org/grpc/codes"
 	grpcstatus "google.golang.org/grpc/status"
 
-	"github.com/ethancls/kyle-server/client/embed"
-	nberrors "github.com/ethancls/kyle-server/client/errors"
-	"github.com/ethancls/kyle-server/proxy/internal/types"
-	"github.com/ethancls/kyle-server/shared/management/proto"
-	"github.com/ethancls/kyle-server/util"
+	"github.com/ethancls/cosmos-server/client/embed"
+	nberrors "github.com/ethancls/cosmos-server/client/errors"
+	"github.com/ethancls/cosmos-server/proxy/internal/types"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/util"
 )
 
 const deviceNamePrefix = "ingress-proxy-"

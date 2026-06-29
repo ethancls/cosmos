@@ -17,12 +17,12 @@ import (
 
 	"golang.org/x/exp/maps"
 
-	"github.com/ethancls/kyle-server/client/anonymize"
-	"github.com/ethancls/kyle-server/client/internal/peer"
-	probeRelay "github.com/ethancls/kyle-server/client/internal/relay"
-	"github.com/ethancls/kyle-server/client/proto"
-	"github.com/ethancls/kyle-server/shared/management/domain"
-	"github.com/ethancls/kyle-server/version"
+	"github.com/ethancls/cosmos-server/client/anonymize"
+	"github.com/ethancls/cosmos-server/client/internal/peer"
+	probeRelay "github.com/ethancls/cosmos-server/client/internal/relay"
+	"github.com/ethancls/cosmos-server/client/proto"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
+	"github.com/ethancls/cosmos-server/version"
 )
 
 // DaemonStatus represents the current state of the NetBird daemon.

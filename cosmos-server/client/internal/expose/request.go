@@ -1,8 +1,8 @@
 package expose
 
 import (
-	daemonProto "github.com/ethancls/kyle-server/client/proto"
-	mgm "github.com/ethancls/kyle-server/shared/management/client"
+	daemonProto "github.com/ethancls/cosmos-server/client/proto"
+	mgm "github.com/ethancls/cosmos-server/shared/management/client"
 )
 
 // NewRequest converts a daemon ExposeServiceRequest to a management ExposeServiceRequest.

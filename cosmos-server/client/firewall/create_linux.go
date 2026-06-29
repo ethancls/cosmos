@@ -12,12 +12,12 @@ import (
 	"github.com/google/nftables"
 	log "github.com/sirupsen/logrus"
 
-	nbiptables "github.com/ethancls/kyle-server/client/firewall/iptables"
-	firewall "github.com/ethancls/kyle-server/client/firewall/manager"
-	nbnftables "github.com/ethancls/kyle-server/client/firewall/nftables"
-	"github.com/ethancls/kyle-server/client/firewall/uspfilter"
-	nftypes "github.com/ethancls/kyle-server/client/internal/netflow/types"
-	"github.com/ethancls/kyle-server/client/internal/statemanager"
+	nbiptables "github.com/ethancls/cosmos-server/client/firewall/iptables"
+	firewall "github.com/ethancls/cosmos-server/client/firewall/manager"
+	nbnftables "github.com/ethancls/cosmos-server/client/firewall/nftables"
+	"github.com/ethancls/cosmos-server/client/firewall/uspfilter"
+	nftypes "github.com/ethancls/cosmos-server/client/internal/netflow/types"
+	"github.com/ethancls/cosmos-server/client/internal/statemanager"
 )
 
 const (

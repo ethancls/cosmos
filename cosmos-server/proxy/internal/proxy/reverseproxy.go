@@ -14,10 +14,10 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/proxy/auth"
-	"github.com/ethancls/kyle-server/proxy/internal/roundtrip"
-	"github.com/ethancls/kyle-server/proxy/internal/types"
-	"github.com/ethancls/kyle-server/proxy/web"
+	"github.com/ethancls/cosmos-server/proxy/auth"
+	"github.com/ethancls/cosmos-server/proxy/internal/roundtrip"
+	"github.com/ethancls/cosmos-server/proxy/internal/types"
+	"github.com/ethancls/cosmos-server/proxy/web"
 )
 
 type ReverseProxy struct {

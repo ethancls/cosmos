@@ -12,7 +12,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	mgmtProto "github.com/ethancls/kyle-server/shared/management/proto"
+	mgmtProto "github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 func TestMaxRecvMsgSize(t *testing.T) {

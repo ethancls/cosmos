@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/ethancls/kyle-server/internal/modules/reverseproxy/domain"
+	"github.com/ethancls/cosmos-server/internal/modules/reverseproxy/domain"
 )
 
 type resolver struct {

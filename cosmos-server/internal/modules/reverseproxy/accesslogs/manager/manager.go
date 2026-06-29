@@ -7,13 +7,13 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/internal/modules/reverseproxy/accesslogs"
-	"github.com/ethancls/kyle-server/server/geolocation"
-	"github.com/ethancls/kyle-server/server/permissions"
-	"github.com/ethancls/kyle-server/server/permissions/modules"
-	"github.com/ethancls/kyle-server/server/permissions/operations"
-	"github.com/ethancls/kyle-server/server/store"
-	"github.com/ethancls/kyle-server/shared/management/status"
+	"github.com/ethancls/cosmos-server/internal/modules/reverseproxy/accesslogs"
+	"github.com/ethancls/cosmos-server/server/geolocation"
+	"github.com/ethancls/cosmos-server/server/permissions"
+	"github.com/ethancls/cosmos-server/server/permissions/modules"
+	"github.com/ethancls/cosmos-server/server/permissions/operations"
+	"github.com/ethancls/cosmos-server/server/store"
+	"github.com/ethancls/cosmos-server/shared/management/status"
 )
 
 type managerImpl struct {

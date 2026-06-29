@@ -12,8 +12,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/ethancls/kyle-server/client/configs"
-	"github.com/ethancls/kyle-server/util"
+	"github.com/ethancls/cosmos-server/client/configs"
+	"github.com/ethancls/cosmos-server/util"
 )
 
 const serviceParamsFile = "service.json"

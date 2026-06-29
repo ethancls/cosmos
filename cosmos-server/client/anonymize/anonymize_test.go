@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/kyle-server/client/anonymize"
+	"github.com/ethancls/cosmos-server/client/anonymize"
 )
 
 func TestAnonymizeIP(t *testing.T) {

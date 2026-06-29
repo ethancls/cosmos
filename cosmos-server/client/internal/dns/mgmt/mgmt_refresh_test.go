@@ -13,8 +13,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/kyle-server/client/internal/dns/test"
-	"github.com/ethancls/kyle-server/shared/management/domain"
+	"github.com/ethancls/cosmos-server/client/internal/dns/test"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
 )
 
 type fakeChain struct {

@@ -17,14 +17,14 @@ import (
 	gstatus "google.golang.org/grpc/status"
 	"google.golang.org/protobuf/types/known/durationpb"
 
-	"github.com/ethancls/kyle-server/client/iface"
-	"github.com/ethancls/kyle-server/client/internal"
-	"github.com/ethancls/kyle-server/client/internal/peer"
-	"github.com/ethancls/kyle-server/client/internal/profilemanager"
-	"github.com/ethancls/kyle-server/client/proto"
-	"github.com/ethancls/kyle-server/client/system"
-	"github.com/ethancls/kyle-server/shared/management/domain"
-	"github.com/ethancls/kyle-server/util"
+	"github.com/ethancls/cosmos-server/client/iface"
+	"github.com/ethancls/cosmos-server/client/internal"
+	"github.com/ethancls/cosmos-server/client/internal/peer"
+	"github.com/ethancls/cosmos-server/client/internal/profilemanager"
+	"github.com/ethancls/cosmos-server/client/proto"
+	"github.com/ethancls/cosmos-server/client/system"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
+	"github.com/ethancls/cosmos-server/util"
 )
 
 const (

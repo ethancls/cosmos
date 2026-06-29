@@ -5,7 +5,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/internal/routemanager/systemops"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/systemops"
 )
 
 // IPForwardingState is a struct that keeps track of the IP forwarding state.

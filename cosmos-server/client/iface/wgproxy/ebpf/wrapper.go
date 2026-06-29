@@ -14,8 +14,8 @@ import (
 	"github.com/google/gopacket/layers"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/iface/bufsize"
-	"github.com/ethancls/kyle-server/client/iface/wgproxy/listener"
+	"github.com/ethancls/cosmos-server/client/iface/bufsize"
+	"github.com/ethancls/cosmos-server/client/iface/wgproxy/listener"
 )
 
 var (

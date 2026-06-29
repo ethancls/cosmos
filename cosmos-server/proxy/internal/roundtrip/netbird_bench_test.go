@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/kyle-server/proxy/internal/types"
+	"github.com/ethancls/cosmos-server/proxy/internal/types"
 )
 
 // Simple benchmark for comparison with AddPeer contention.

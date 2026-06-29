@@ -11,9 +11,9 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/iface"
-	"github.com/ethancls/kyle-server/shared/relay/auth/hmac"
-	"github.com/ethancls/kyle-server/shared/relay/client"
+	"github.com/ethancls/cosmos-server/client/iface"
+	"github.com/ethancls/cosmos-server/shared/relay/auth/hmac"
+	"github.com/ethancls/cosmos-server/shared/relay/client"
 )
 
 var (

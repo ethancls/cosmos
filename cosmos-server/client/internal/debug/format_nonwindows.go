@@ -3,8 +3,8 @@
 package debug
 
 import (
-	"github.com/ethancls/kyle-server/client/anonymize"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/systemops"
+	"github.com/ethancls/cosmos-server/client/anonymize"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/systemops"
 )
 
 // buildPlatformSpecificRouteTable builds headers and rows for non-Windows platforms

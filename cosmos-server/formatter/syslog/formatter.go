@@ -6,7 +6,7 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/formatter/levels"
+	"github.com/ethancls/cosmos-server/formatter/levels"
 )
 
 // Formatter formats logs into text

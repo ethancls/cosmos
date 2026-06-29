@@ -16,15 +16,15 @@ import (
 	"github.com/stretchr/testify/require"
 	wgdevice "golang.zx2c4.com/wireguard/device"
 
-	fw "github.com/ethancls/kyle-server/client/firewall/manager"
-	"github.com/ethancls/kyle-server/client/firewall/uspfilter/conntrack"
-	"github.com/ethancls/kyle-server/client/firewall/uspfilter/log"
-	nbiface "github.com/ethancls/kyle-server/client/iface"
-	"github.com/ethancls/kyle-server/client/iface/device"
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
-	"github.com/ethancls/kyle-server/client/internal/netflow"
-	nftypes "github.com/ethancls/kyle-server/client/internal/netflow/types"
-	"github.com/ethancls/kyle-server/shared/management/domain"
+	fw "github.com/ethancls/cosmos-server/client/firewall/manager"
+	"github.com/ethancls/cosmos-server/client/firewall/uspfilter/conntrack"
+	"github.com/ethancls/cosmos-server/client/firewall/uspfilter/log"
+	nbiface "github.com/ethancls/cosmos-server/client/iface"
+	"github.com/ethancls/cosmos-server/client/iface/device"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
+	"github.com/ethancls/cosmos-server/client/internal/netflow"
+	nftypes "github.com/ethancls/cosmos-server/client/internal/netflow/types"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
 )
 
 var logger = log.NewFromLogrus(logrus.StandardLogger())

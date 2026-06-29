@@ -6,11 +6,11 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/ethancls/kyle-server/client/iface/bind"
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
-	bindproxy "github.com/ethancls/kyle-server/client/iface/wgproxy/bind"
-	"github.com/ethancls/kyle-server/client/iface/wgproxy/ebpf"
-	"github.com/ethancls/kyle-server/client/iface/wgproxy/udp"
+	"github.com/ethancls/cosmos-server/client/iface/bind"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
+	bindproxy "github.com/ethancls/cosmos-server/client/iface/wgproxy/bind"
+	"github.com/ethancls/cosmos-server/client/iface/wgproxy/ebpf"
+	"github.com/ethancls/cosmos-server/client/iface/wgproxy/udp"
 )
 
 func seedProxies() ([]proxyInstance, error) {

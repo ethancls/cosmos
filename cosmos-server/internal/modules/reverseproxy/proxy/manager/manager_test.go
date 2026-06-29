@@ -11,7 +11,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"go.opentelemetry.io/otel/metric/noop"
 
-	"github.com/ethancls/kyle-server/internal/modules/reverseproxy/proxy"
+	"github.com/ethancls/cosmos-server/internal/modules/reverseproxy/proxy"
 )
 
 type mockStore struct {

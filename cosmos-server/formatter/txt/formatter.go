@@ -3,7 +3,7 @@ package txt
 import (
 	"github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/formatter/levels"
+	"github.com/ethancls/cosmos-server/formatter/levels"
 )
 
 // TextFormatter formats logs into text with included source code's path

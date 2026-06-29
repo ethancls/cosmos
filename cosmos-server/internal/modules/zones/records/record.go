@@ -6,8 +6,8 @@ import (
 
 	"github.com/rs/xid"
 
-	"github.com/ethancls/kyle-server/shared/management/domain"
-	"github.com/ethancls/kyle-server/shared/management/http/api"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
+	"github.com/ethancls/cosmos-server/shared/management/http/api"
 )
 
 type RecordType string

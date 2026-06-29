@@ -5,7 +5,7 @@ package dynamic
 import (
 	"net"
 
-	"github.com/ethancls/kyle-server/shared/management/domain"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
 )
 
 func (r *Route) getIPsFromResolver(domain domain.Domain) ([]net.IP, error) {

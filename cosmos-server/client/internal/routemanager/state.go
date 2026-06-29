@@ -1,7 +1,7 @@
 package routemanager
 
 import (
-	"github.com/ethancls/kyle-server/client/internal/routeselector"
+	"github.com/ethancls/cosmos-server/client/internal/routeselector"
 )
 
 type SelectorState routeselector.RouteSelector

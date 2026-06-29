@@ -13,10 +13,10 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/proxy/internal/accesslog"
-	"github.com/ethancls/kyle-server/proxy/internal/restrict"
-	"github.com/ethancls/kyle-server/proxy/internal/types"
-	"github.com/ethancls/kyle-server/util/netrelay"
+	"github.com/ethancls/cosmos-server/proxy/internal/accesslog"
+	"github.com/ethancls/cosmos-server/proxy/internal/restrict"
+	"github.com/ethancls/cosmos-server/proxy/internal/types"
+	"github.com/ethancls/cosmos-server/util/netrelay"
 )
 
 // defaultDialTimeout is the fallback dial timeout when no per-route

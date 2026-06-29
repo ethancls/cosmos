@@ -11,8 +11,8 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
 
-	"github.com/ethancls/kyle-server/proxy/internal/health"
-	"github.com/ethancls/kyle-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/proxy/internal/health"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 type mockMappingStream struct {

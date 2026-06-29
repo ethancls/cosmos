@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/kyle-server/internal/controllers/network_map"
-	"github.com/ethancls/kyle-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/internal/controllers/network_map"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 func TestUpdateDebouncer_FirstUpdateSentImmediately(t *testing.T) {

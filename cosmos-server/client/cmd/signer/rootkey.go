@@ -7,7 +7,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/ethancls/kyle-server/client/internal/updater/reposign"
+	"github.com/ethancls/cosmos-server/client/internal/updater/reposign"
 )
 
 var (

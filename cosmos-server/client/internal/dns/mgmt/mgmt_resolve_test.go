@@ -11,8 +11,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	dnsconfig "github.com/ethancls/kyle-server/client/internal/dns/config"
-	"github.com/ethancls/kyle-server/shared/management/domain"
+	dnsconfig "github.com/ethancls/cosmos-server/client/internal/dns/config"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
 )
 
 // A domain already in the cache must not be re-resolved on a subsequent server

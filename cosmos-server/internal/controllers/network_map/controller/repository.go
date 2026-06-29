@@ -3,10 +3,10 @@ package controller
 import (
 	"context"
 
-	"github.com/ethancls/kyle-server/internal/modules/zones"
-	"github.com/ethancls/kyle-server/server/peer"
-	"github.com/ethancls/kyle-server/server/store"
-	"github.com/ethancls/kyle-server/server/types"
+	"github.com/ethancls/cosmos-server/internal/modules/zones"
+	"github.com/ethancls/cosmos-server/server/peer"
+	"github.com/ethancls/cosmos-server/server/store"
+	"github.com/ethancls/cosmos-server/server/types"
 )
 
 type Repository interface {

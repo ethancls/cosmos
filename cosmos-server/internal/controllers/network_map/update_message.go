@@ -1,7 +1,7 @@
 package network_map
 
 import (
-	"github.com/ethancls/kyle-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 // MessageType indicates the type of update message for debouncing strategy

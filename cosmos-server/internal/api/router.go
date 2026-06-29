@@ -9,7 +9,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/ethancls/kyle-server/internal/config"
+	"github.com/ethancls/cosmos-server/internal/config"
 	"github.com/golang-jwt/jwt/v5"
 )
 

@@ -6,7 +6,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	mgm "github.com/ethancls/kyle-server/shared/management/client"
+	mgm "github.com/ethancls/cosmos-server/shared/management/client"
 )
 
 const (

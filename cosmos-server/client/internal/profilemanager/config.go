@@ -20,13 +20,13 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/iface"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/dynamic"
-	"github.com/ethancls/kyle-server/client/mdm"
-	"github.com/ethancls/kyle-server/client/ssh"
-	mgm "github.com/ethancls/kyle-server/shared/management/client"
-	"github.com/ethancls/kyle-server/shared/management/domain"
-	"github.com/ethancls/kyle-server/util"
+	"github.com/ethancls/cosmos-server/client/iface"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/dynamic"
+	"github.com/ethancls/cosmos-server/client/mdm"
+	"github.com/ethancls/cosmos-server/client/ssh"
+	mgm "github.com/ethancls/cosmos-server/shared/management/client"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
+	"github.com/ethancls/cosmos-server/util"
 )
 
 const (

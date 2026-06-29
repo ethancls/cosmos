@@ -15,8 +15,8 @@ import (
 	nfct "github.com/ti-mo/conntrack"
 	"github.com/ti-mo/netfilter"
 
-	nftypes "github.com/ethancls/kyle-server/client/internal/netflow/types"
-	nbnet "github.com/ethancls/kyle-server/client/net"
+	nftypes "github.com/ethancls/cosmos-server/client/internal/netflow/types"
+	nbnet "github.com/ethancls/cosmos-server/client/net"
 )
 
 const (

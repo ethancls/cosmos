@@ -9,14 +9,14 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	firewallManager "github.com/ethancls/kyle-server/client/firewall/manager"
-	"github.com/ethancls/kyle-server/client/iface/netstack"
-	nftypes "github.com/ethancls/kyle-server/client/internal/netflow/types"
-	sshauth "github.com/ethancls/kyle-server/client/ssh/auth"
-	sshconfig "github.com/ethancls/kyle-server/client/ssh/config"
-	sshserver "github.com/ethancls/kyle-server/client/ssh/server"
-	mgmProto "github.com/ethancls/kyle-server/shared/management/proto"
-	sshuserhash "github.com/ethancls/kyle-server/shared/sshauth"
+	firewallManager "github.com/ethancls/cosmos-server/client/firewall/manager"
+	"github.com/ethancls/cosmos-server/client/iface/netstack"
+	nftypes "github.com/ethancls/cosmos-server/client/internal/netflow/types"
+	sshauth "github.com/ethancls/cosmos-server/client/ssh/auth"
+	sshconfig "github.com/ethancls/cosmos-server/client/ssh/config"
+	sshserver "github.com/ethancls/cosmos-server/client/ssh/server"
+	mgmProto "github.com/ethancls/cosmos-server/shared/management/proto"
+	sshuserhash "github.com/ethancls/cosmos-server/shared/sshauth"
 )
 
 type sshServer interface {

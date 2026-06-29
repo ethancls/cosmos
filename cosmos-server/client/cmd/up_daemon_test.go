@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/kyle-server/client/internal"
-	"github.com/ethancls/kyle-server/client/internal/profilemanager"
+	"github.com/ethancls/cosmos-server/client/internal"
+	"github.com/ethancls/cosmos-server/client/internal/profilemanager"
 )
 
 var cliAddr string

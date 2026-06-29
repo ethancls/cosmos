@@ -8,8 +8,8 @@ import (
 
 	"golang.org/x/sync/singleflight"
 
-	"github.com/ethancls/kyle-server/proxy/internal/types"
-	"github.com/ethancls/kyle-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/proxy/internal/types"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 // tunnelCacheTTL caps how long a positive ValidateTunnelPeer result is

@@ -20,10 +20,10 @@ import (
 	"gvisor.dev/gvisor/pkg/tcpip/transport/tcp"
 	"gvisor.dev/gvisor/pkg/tcpip/transport/udp"
 
-	"github.com/ethancls/kyle-server/client/firewall/uspfilter/common"
-	"github.com/ethancls/kyle-server/client/firewall/uspfilter/conntrack"
-	nblog "github.com/ethancls/kyle-server/client/firewall/uspfilter/log"
-	nftypes "github.com/ethancls/kyle-server/client/internal/netflow/types"
+	"github.com/ethancls/cosmos-server/client/firewall/uspfilter/common"
+	"github.com/ethancls/cosmos-server/client/firewall/uspfilter/conntrack"
+	nblog "github.com/ethancls/cosmos-server/client/firewall/uspfilter/log"
+	nftypes "github.com/ethancls/cosmos-server/client/internal/netflow/types"
 )
 
 const (

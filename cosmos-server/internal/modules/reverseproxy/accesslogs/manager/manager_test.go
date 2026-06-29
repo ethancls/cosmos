@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/kyle-server/server/store"
+	"github.com/ethancls/cosmos-server/server/store"
 )
 
 func TestCleanupOldAccessLogs(t *testing.T) {

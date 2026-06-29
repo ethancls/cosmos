@@ -11,7 +11,7 @@ import (
 	"github.com/pion/randutil"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/internal/stdnet"
+	"github.com/ethancls/cosmos-server/client/internal/stdnet"
 )
 
 const (
@@ -88,7 +88,7 @@ func (a *ThreadSafeAgent) Close() error {
 	a.once.Do(func() {
 		// Defensive check to prevent nil pointer dereference
 		// This can happen during sleep/wake transitions or memory corruption scenarios
-		// github.com/ethancls/kyle-server/client/internal/peer/ice.(*ThreadSafeAgent).Close(0x40006883f0?)
+		// github.com/ethancls/cosmos-server/client/internal/peer/ice.(*ThreadSafeAgent).Close(0x40006883f0?)
 		//  [signal 0xc0000005 code=0x0 addr=0x0 pc=0x7ff7e73af83c]
 		agent := a.Agent
 		if agent == nil {

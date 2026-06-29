@@ -5,7 +5,7 @@ import (
 
 	"github.com/google/gopacket"
 
-	firewall "github.com/ethancls/kyle-server/client/firewall/manager"
+	firewall "github.com/ethancls/cosmos-server/client/firewall/manager"
 )
 
 // PeerRule to handle management of rules

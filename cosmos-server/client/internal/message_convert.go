@@ -6,8 +6,8 @@ import (
 	"net"
 	"net/netip"
 
-	firewallManager "github.com/ethancls/kyle-server/client/firewall/manager"
-	mgmProto "github.com/ethancls/kyle-server/shared/management/proto"
+	firewallManager "github.com/ethancls/cosmos-server/client/firewall/manager"
+	mgmProto "github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 func convertToFirewallProtocol(protocol mgmProto.RuleProtocol) (firewallManager.Protocol, error) {

@@ -6,9 +6,9 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/internal/routemanager/common"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/refcounter"
-	"github.com/ethancls/kyle-server/route"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/common"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/refcounter"
+	"github.com/ethancls/cosmos-server/route"
 )
 
 type Route struct {

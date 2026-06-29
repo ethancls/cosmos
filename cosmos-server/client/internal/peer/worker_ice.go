@@ -11,13 +11,13 @@ import (
 	"github.com/pion/ice/v4"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/iface"
-	"github.com/ethancls/kyle-server/client/iface/udpmux"
-	"github.com/ethancls/kyle-server/client/internal/peer/conntype"
-	icemaker "github.com/ethancls/kyle-server/client/internal/peer/ice"
-	"github.com/ethancls/kyle-server/client/internal/portforward"
-	"github.com/ethancls/kyle-server/client/internal/stdnet"
-	"github.com/ethancls/kyle-server/route"
+	"github.com/ethancls/cosmos-server/client/iface"
+	"github.com/ethancls/cosmos-server/client/iface/udpmux"
+	"github.com/ethancls/cosmos-server/client/internal/peer/conntype"
+	icemaker "github.com/ethancls/cosmos-server/client/internal/peer/ice"
+	"github.com/ethancls/cosmos-server/client/internal/portforward"
+	"github.com/ethancls/cosmos-server/client/internal/stdnet"
+	"github.com/ethancls/cosmos-server/route"
 )
 
 type ICEConnInfo struct {

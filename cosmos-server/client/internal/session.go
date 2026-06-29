@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethancls/kyle-server/client/internal/peer"
+	"github.com/ethancls/cosmos-server/client/internal/peer"
 )
 
 type SessionWatcher struct {

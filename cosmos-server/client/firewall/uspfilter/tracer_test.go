@@ -7,12 +7,12 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	fw "github.com/ethancls/kyle-server/client/firewall/manager"
-	"github.com/ethancls/kyle-server/client/firewall/uspfilter/conntrack"
-	"github.com/ethancls/kyle-server/client/firewall/uspfilter/forwarder"
-	"github.com/ethancls/kyle-server/client/iface"
-	"github.com/ethancls/kyle-server/client/iface/device"
-	"github.com/ethancls/kyle-server/client/iface/wgaddr"
+	fw "github.com/ethancls/cosmos-server/client/firewall/manager"
+	"github.com/ethancls/cosmos-server/client/firewall/uspfilter/conntrack"
+	"github.com/ethancls/cosmos-server/client/firewall/uspfilter/forwarder"
+	"github.com/ethancls/cosmos-server/client/iface"
+	"github.com/ethancls/cosmos-server/client/iface/device"
+	"github.com/ethancls/cosmos-server/client/iface/wgaddr"
 )
 
 func verifyTraceStages(t *testing.T, trace *PacketTrace, expectedStages []PacketStage) {

@@ -18,14 +18,14 @@ import (
 	"google.golang.org/grpc/metadata"
 	grpcstatus "google.golang.org/grpc/status"
 
-	proxymanager "github.com/ethancls/kyle-server/internal/modules/reverseproxy/proxy/manager"
-	"github.com/ethancls/kyle-server/internal/modules/reverseproxy/service"
-	nbgrpc "github.com/ethancls/kyle-server/internal/shared/grpc"
-	nbcache "github.com/ethancls/kyle-server/server/cache"
-	"github.com/ethancls/kyle-server/server/store"
-	"github.com/ethancls/kyle-server/server/types"
-	"github.com/ethancls/kyle-server/server/users"
-	"github.com/ethancls/kyle-server/shared/management/proto"
+	proxymanager "github.com/ethancls/cosmos-server/internal/modules/reverseproxy/proxy/manager"
+	"github.com/ethancls/cosmos-server/internal/modules/reverseproxy/service"
+	nbgrpc "github.com/ethancls/cosmos-server/internal/shared/grpc"
+	nbcache "github.com/ethancls/cosmos-server/server/cache"
+	"github.com/ethancls/cosmos-server/server/store"
+	"github.com/ethancls/cosmos-server/server/types"
+	"github.com/ethancls/cosmos-server/server/users"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
 )
 
 type byopTestSetup struct {

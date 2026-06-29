@@ -15,17 +15,17 @@ import (
 	wgdevice "golang.zx2c4.com/wireguard/device"
 	wgnetstack "golang.zx2c4.com/wireguard/tun/netstack"
 
-	"github.com/ethancls/kyle-server/client/iface"
-	"github.com/ethancls/kyle-server/client/iface/netstack"
-	"github.com/ethancls/kyle-server/client/internal"
-	"github.com/ethancls/kyle-server/client/internal/auth"
-	"github.com/ethancls/kyle-server/client/internal/peer"
-	"github.com/ethancls/kyle-server/client/internal/profilemanager"
-	sshcommon "github.com/ethancls/kyle-server/client/ssh"
-	"github.com/ethancls/kyle-server/client/system"
-	"github.com/ethancls/kyle-server/shared/management/domain"
-	mgmProto "github.com/ethancls/kyle-server/shared/management/proto"
-	"github.com/ethancls/kyle-server/util/capture"
+	"github.com/ethancls/cosmos-server/client/iface"
+	"github.com/ethancls/cosmos-server/client/iface/netstack"
+	"github.com/ethancls/cosmos-server/client/internal"
+	"github.com/ethancls/cosmos-server/client/internal/auth"
+	"github.com/ethancls/cosmos-server/client/internal/peer"
+	"github.com/ethancls/cosmos-server/client/internal/profilemanager"
+	sshcommon "github.com/ethancls/cosmos-server/client/ssh"
+	"github.com/ethancls/cosmos-server/client/system"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
+	mgmProto "github.com/ethancls/cosmos-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/util/capture"
 )
 
 var (

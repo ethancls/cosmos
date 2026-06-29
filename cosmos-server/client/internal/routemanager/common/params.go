@@ -4,14 +4,14 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ethancls/kyle-server/client/firewall/manager"
-	"github.com/ethancls/kyle-server/client/internal/dns"
-	"github.com/ethancls/kyle-server/client/internal/peer"
-	"github.com/ethancls/kyle-server/client/internal/peerstore"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/fakeip"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/iface"
-	"github.com/ethancls/kyle-server/client/internal/routemanager/refcounter"
-	"github.com/ethancls/kyle-server/route"
+	"github.com/ethancls/cosmos-server/client/firewall/manager"
+	"github.com/ethancls/cosmos-server/client/internal/dns"
+	"github.com/ethancls/cosmos-server/client/internal/peer"
+	"github.com/ethancls/cosmos-server/client/internal/peerstore"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/fakeip"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/iface"
+	"github.com/ethancls/cosmos-server/client/internal/routemanager/refcounter"
+	"github.com/ethancls/cosmos-server/route"
 )
 
 type HandlerParams struct {

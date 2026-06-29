@@ -12,7 +12,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/crypto/ssh"
 
-	"github.com/ethancls/kyle-server/client/proto"
+	"github.com/ethancls/cosmos-server/client/proto"
 )
 
 const (

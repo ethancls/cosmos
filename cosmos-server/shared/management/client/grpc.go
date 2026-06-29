@@ -20,12 +20,12 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/connectivity"
 
-	nbgrpc "github.com/ethancls/kyle-server/client/grpc"
-	"github.com/ethancls/kyle-server/client/system"
-	"github.com/ethancls/kyle-server/encryption"
-	"github.com/ethancls/kyle-server/shared/management/domain"
-	"github.com/ethancls/kyle-server/shared/management/proto"
-	"github.com/ethancls/kyle-server/util/wsproxy"
+	nbgrpc "github.com/ethancls/cosmos-server/client/grpc"
+	"github.com/ethancls/cosmos-server/client/system"
+	"github.com/ethancls/cosmos-server/encryption"
+	"github.com/ethancls/cosmos-server/shared/management/domain"
+	"github.com/ethancls/cosmos-server/shared/management/proto"
+	"github.com/ethancls/cosmos-server/util/wsproxy"
 )
 
 const ConnectTimeout = 10 * time.Second

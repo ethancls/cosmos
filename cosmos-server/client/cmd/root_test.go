@@ -7,7 +7,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/ethancls/kyle-server/client/iface"
+	"github.com/ethancls/cosmos-server/client/iface"
 )
 
 func TestInitCommands(t *testing.T) {

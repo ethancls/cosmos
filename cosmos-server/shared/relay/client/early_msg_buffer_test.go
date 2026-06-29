@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/kyle-server/shared/relay/messages"
+	"github.com/ethancls/cosmos-server/shared/relay/messages"
 )
 
 func newTestPool() *sync.Pool {

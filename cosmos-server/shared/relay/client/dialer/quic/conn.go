@@ -9,7 +9,7 @@ import (
 
 	"github.com/quic-go/quic-go"
 
-	netErr "github.com/ethancls/kyle-server/shared/relay/client/dialer/net"
+	netErr "github.com/ethancls/cosmos-server/shared/relay/client/dialer/net"
 )
 
 const (

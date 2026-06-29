@@ -5,8 +5,8 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 
-	signal "github.com/ethancls/kyle-server/shared/signal/client"
-	sProto "github.com/ethancls/kyle-server/shared/signal/proto"
+	signal "github.com/ethancls/cosmos-server/shared/signal/client"
+	sProto "github.com/ethancls/cosmos-server/shared/signal/proto"
 )
 
 type Signaler struct {

@@ -11,8 +11,8 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	"github.com/ethancls/kyle-server/client/internal/updater/installer"
-	"github.com/ethancls/kyle-server/util"
+	"github.com/ethancls/cosmos-server/client/internal/updater/installer"
+	"github.com/ethancls/cosmos-server/util"
 )
 
 var (

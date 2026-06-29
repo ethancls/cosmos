@@ -13,7 +13,7 @@ import (
 	"github.com/libp2p/go-nat"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/kyle-server/client/internal/portforward/pcp"
+	"github.com/ethancls/cosmos-server/client/internal/portforward/pcp"
 )
 
 const (

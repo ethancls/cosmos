@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/ethancls/kyle-server/client/internal/expose"
+	"github.com/ethancls/cosmos-server/client/internal/expose"
 )
 
 const (

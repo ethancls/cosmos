@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ethancls/kyle-server/proxy/internal/types"
+	"github.com/ethancls/cosmos-server/proxy/internal/types"
 )
 
 // PathRewriteMode controls how the request path is rewritten before forwarding.
