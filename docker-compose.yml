@@ -1,0 +1,55 @@
+version: "3.9"
+
+services:
+  kyle-dashboard:
+    build:
+      context: ./kyle-dashboard
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      KYLE_MGMT_API_ENDPOINT: http://kyle-server:8080
+    depends_on:
+      - kyle-server
+
+  kyle-server:
+    build:
+      context: ./kyle-server
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: "8080"
+      DATABASE_URL: "postgres://kyle:kyle@postgres:5432/kyle?sslmode=disable"
+      GUACD_HOST: guacd
+      GUACD_PORT: "4822"
+      JWT_SECRET: "change-me-in-production"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      guacd:
+        condition: service_started
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: kyle
+      POSTGRES_PASSWORD: kyle
+      POSTGRES_DB: kyle
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kyle"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  guacd:
+    image: guacamole/guacd:latest
+    ports:
+      - "4822:4822"
+
+volumes:
+  pgdata:
