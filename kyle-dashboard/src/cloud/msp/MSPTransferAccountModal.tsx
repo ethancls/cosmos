@@ -11,11 +11,10 @@ import {
   SettingsIcon,
   UserIcon,
 } from "lucide-react";
-import Image from "next/image";
 import * as React from "react";
 import { useState } from "react";
 import { useSWRConfig } from "swr";
-import netBirdLogo from "@/assets/netbird.svg";
+import { KyleLogo } from "@components/KyleLogo";
 import { useMSP } from "@/cloud/msp/contexts/MSPProvider";
 import { TenantDNSResponse, TenantStatus } from "@/cloud/msp/interfaces/Tenant";
 import { useDialog } from "@/contexts/DialogProvider";
@@ -126,11 +125,7 @@ export const MSPTransferAccountModal = () => {
                 "h-12 w-12 flex items-center justify-center rounded-md bg-nb-gray-900/70 p-2 border border-nb-gray-900/70"
               }
             >
-              <Image
-                src={netBirdLogo}
-                alt={"NetBird"}
-                className={"rounded-[4px]"}
-              />
+              <KyleLogo />
             </div>
           </div>
           <div

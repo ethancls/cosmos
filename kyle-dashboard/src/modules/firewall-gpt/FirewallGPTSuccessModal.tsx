@@ -51,14 +51,14 @@ export const FirewallGPTSuccessModal = ({
             duration={3000}
             particleCount={120}
             width={1600}
-            colors={["#f68330", "#ffc196", "#ffffff"]}
+            colors={["#2563EB", "#93c5fd", "#ffffff"]}
           />
           <h2 className={"text-xl my-0 leading-[1.5] mb-2 max-w-xs"}>
             Policy {"'" + policy?.name + "'"} has been created successfully!
           </h2>
           <Paragraph className={cn("text-sm text-center max-w-xs")}>
             {
-              "How would you rate your experience with NetBird's Smart Firewall?"
+              "How would you rate your experience with Kyle's Smart Firewall?"
             }
           </Paragraph>
 
