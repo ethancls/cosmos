@@ -14,9 +14,10 @@ import (
 )
 
 type Router struct {
-	mux *http.ServeMux
-	db  *sql.DB
-	cfg *config.Config
+	mux           *http.ServeMux
+	db            *sql.DB
+	cfg           *config.Config
+	setupComplete bool
 }
 
 func SetupRouter(database *sql.DB, cfg *config.Config) http.Handler {
@@ -158,7 +159,7 @@ func (r *Router) handleUserInfo(w http.ResponseWriter, req *http.Request) {
 
 func (r *Router) handleInstance(w http.ResponseWriter, req *http.Request) {
 	json.NewEncoder(w).Encode(map[string]interface{}{
-		"setup_required": true,
+		"setup_required": !r.setupComplete,
 	})
 }
 
@@ -216,16 +217,24 @@ func (r *Router) handleStatus(w http.ResponseWriter, req *http.Request) {
 // GET /api/users/current
 func (r *Router) handleCurrentUser(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
+	var id, email, name, role, status string
+	err := r.db.QueryRow(`SELECT id, email, COALESCE(display_name,''), role, status
+		FROM users WHERE deleted_at IS NULL ORDER BY created_at LIMIT 1`).
+		Scan(&id, &email, &name, &role, &status)
+	if err != nil {
+		json.NewEncoder(w).Encode(map[string]string{"error": "no user found"})
+		return
+	}
 	isCurrent := true
 	isService := false
 	apiIssued := "api"
 	json.NewEncoder(w).Encode(map[string]interface{}{
-		"id":               "dev-user",
-		"email":            "dev@kyle.local",
-		"name":             "Dev User",
-		"role":             "owner",
+		"id":               id,
+		"email":            email,
+		"name":             name,
+		"role":             role,
 		"auto_groups":      []string{},
-		"status":           "active",
+		"status":           status,
 		"is_current":       &isCurrent,
 		"is_service_user":  &isService,
 		"is_blocked":       false,
@@ -326,6 +335,27 @@ func (r *Router) handlePostSetup(w http.ResponseWriter, req *http.Request) {
 	}
 
 	userID := "user-" + randomString(12)
+
+	// Create default tenant if none exists
+	_, err := r.db.Exec(`INSERT INTO tenants (id, name, slug, tier)
+		VALUES ($1, $2, $3, 'free') ON CONFLICT DO NOTHING`,
+		"dev-tenant", "Kyle", "kyle")
+	if err != nil {
+		log.Printf("create tenant failed: %v", err)
+	}
+
+	// Insert user
+	_, err = r.db.Exec(`INSERT INTO users (id, tenant_id, email, display_name, role, status, password_hash)
+		VALUES ($1, $2, $3, $4, 'owner', 'active', $5)`,
+		userID, "dev-tenant", body.Email, body.Name, body.Password)
+	if err != nil {
+		log.Printf("insert user failed: %v", err)
+		w.WriteHeader(http.StatusInternalServerError)
+		json.NewEncoder(w).Encode(map[string]string{"error": "failed to create user"})
+		return
+	}
+
+	r.setupComplete = true
 	json.NewEncoder(w).Encode(map[string]interface{}{
 		"user_id": userID,
 		"email":   body.Email,
