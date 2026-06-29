@@ -2,7 +2,7 @@
   {
     "tag": "BETA",
     "text": "Cosmos is still in alpha version and may contain breaking changes or non-working features.",
-    "link": "https://github.com/ethancls/cosmos",
+    "link": "https://github.com/ethancls/cosmos/discussions",
     "linkText": "Learn more",
     "variant": "important",
     "isExternal": true,
