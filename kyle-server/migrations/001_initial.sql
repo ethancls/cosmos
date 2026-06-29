@@ -210,7 +210,7 @@ CREATE TYPE audit_event_type AS ENUM (
 CREATE TYPE audit_severity AS ENUM ('info', 'warning', 'critical');
 
 CREATE TABLE audit_logs (
-    id            UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    id            UUID DEFAULT gen_random_uuid(),
     tenant_id     UUID NOT NULL REFERENCES tenants(id),
     actor_type    TEXT NOT NULL,
     actor_id      UUID,
@@ -223,7 +223,8 @@ CREATE TABLE audit_logs (
     changes       JSONB,
     metadata      JSONB DEFAULT '{}',
     severity      audit_severity NOT NULL DEFAULT 'info',
-    created_at    TIMESTAMPTZ NOT NULL DEFAULT now()
+    created_at    TIMESTAMPTZ NOT NULL DEFAULT now(),
+    PRIMARY KEY (id, created_at)
 ) PARTITION BY RANGE (created_at);
 
 CREATE TYPE recording_status AS ENUM ('recording', 'completed', 'deleted');

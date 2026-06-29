@@ -35,6 +35,8 @@ func SetupRouter(database *sql.DB, cfg *config.Config) http.Handler {
 	r.mux.HandleFunc("POST /oauth/token", r.handleToken)
 	r.mux.HandleFunc("GET /userinfo", r.handleUserInfo)
 	r.mux.HandleFunc("GET /api/instance", r.handleInstance)
+	r.mux.HandleFunc("GET /api/instance/version", r.handleInstanceVersion)
+	r.mux.HandleFunc("GET /api/locations/countries", r.handleEmptyList)
 
 	// Users (Netbird-compatible)
 	r.mux.HandleFunc("GET /api/users/current", r.handleCurrentUser)
@@ -156,10 +158,22 @@ func (r *Router) handleUserInfo(w http.ResponseWriter, req *http.Request) {
 
 func (r *Router) handleInstance(w http.ResponseWriter, req *http.Request) {
 	json.NewEncoder(w).Encode(map[string]interface{}{
-		"name":    "Kyle Dev",
-		"version": "0.1.0",
-		"setup":   true,
+		"setup_required": true,
 	})
+}
+
+func (r *Router) handleInstanceVersion(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(map[string]interface{}{
+		"management_current_version":   "0.1.0",
+		"management_available_version": "0.1.0",
+		"dashboard_available_version":  "0.1.0",
+	})
+}
+
+func (r *Router) handleEmptyList(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode([]interface{}{})
 }
 
 // ---------------------------------------------------------------------------

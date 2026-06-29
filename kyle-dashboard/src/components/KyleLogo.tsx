@@ -2,6 +2,7 @@ import { cn } from "@utils/helpers";
 import Image from "next/image";
 import * as React from "react";
 import KyleLogoMark from "@/assets/kyle.svg";
+import KyleLogoFull from "@/assets/kyle-full.svg";
 
 type Props = {
   size?: "default" | "large";
@@ -10,37 +11,32 @@ type Props = {
 
 const sizes = {
   default: {
-    desktop: 28,
-    mobile: 36,
+    desktop: 22,
+    mobile: 30,
   },
   large: {
-    desktop: 32,
-    mobile: 44,
+    desktop: 24,
+    mobile: 40,
   },
 };
 
 export const KyleLogo = ({ size = "default", mobile = true }: Props) => {
   return (
-    <div className="flex items-center gap-2.5">
+    <>
       <Image
-        src={KyleLogoMark}
+        src={KyleLogoFull}
         height={sizes[size].desktop}
-        width={sizes[size].desktop}
-        alt={"Kyle Logo"}
+        alt={"Kyle"}
         className={cn(mobile && "hidden md:block")}
       />
       {mobile && (
         <Image
           src={KyleLogoMark}
           width={sizes[size].mobile}
-          height={sizes[size].mobile}
-          alt={"Kyle Logo"}
-          className={cn("md:hidden")}
+          alt={"Kyle"}
+          className={cn("md:hidden ml-4")}
         />
       )}
-      <span className="text-xl font-medium text-white hidden md:block">
-        Kyle
-      </span>
-    </div>
+    </>
   );
 };
