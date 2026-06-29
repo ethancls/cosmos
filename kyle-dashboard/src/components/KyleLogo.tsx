@@ -21,7 +21,7 @@ const sizes = {
 
 export const KyleLogo = ({ size = "default", mobile = true }: Props) => {
   return (
-    <>
+    <div className="flex items-center gap-2">
       <Image
         src={KyleLogoMark}
         height={sizes[size].desktop}
@@ -33,9 +33,12 @@ export const KyleLogo = ({ size = "default", mobile = true }: Props) => {
           src={KyleLogoMark}
           width={sizes[size].mobile}
           alt={"Kyle Logo"}
-          className={cn(mobile && "md:hidden ml-4")}
+          className={cn(mobile && "md:hidden")}
         />
       )}
-    </>
+      <span className="text-lg font-bold text-gray-900 dark:text-white hidden md:block">
+        Kyle
+      </span>
+    </div>
   );
 };
