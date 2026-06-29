@@ -1,8 +1,8 @@
-# Kyle — Design Document
+# Cosmos — Design Document
 
 ## Vision
 
-Kyle est une plateforme SaaS de remote access gateway (RDP, SSH, VNC via navigateur) avec architecture zero trust / bastion. Logo : un petit dragon bleu. Double distribution : SaaS hébergé (free/pro/enterprise) + self-hosted.
+Cosmos est une plateforme SaaS de remote access gateway (RDP, SSH, VNC via navigateur) avec architecture zero trust / bastion. Logo : un petit dragon bleu. Double distribution : SaaS hébergé (free/pro/enterprise) + self-hosted.
 
 ---
 
@@ -23,12 +23,12 @@ Kyle est une plateforme SaaS de remote access gateway (RDP, SSH, VNC via navigat
 
 ```
 ┌──────────────────────┐
-│  kyle-dashboard       │  Next.js 15, shadcn/ui, thème bleu
+│  cosmos-dashboard       │  Next.js 15, shadcn/ui, thème bleu
 │  (port 3000)          │  Fork du design system Netbird
 └──────────┬───────────┘
            │ REST / WebSocket
 ┌──────────▼───────────┐
-│  kyle-server (Go)     │  API REST + WebSocket + auth + audit
+│  cosmos-server (Go)     │  API REST + WebSocket + auth + audit
 │  (port 8080)          │  Communication guacd, gestion policies
 └──────────┬───────────┘
            │
@@ -45,7 +45,7 @@ Kyle est une plateforme SaaS de remote access gateway (RDP, SSH, VNC via navigat
 Un seul binaire, organisé en domaines internes :
 
 ```
-kyle-server/
+cosmos-server/
 ├── cmd/server/main.go
 ├── internal/
 │   ├── api/         # Handlers HTTP (REST + WebSocket)
@@ -69,7 +69,7 @@ kyle-server/
 Fork du dashboard Netbird (https://github.com/netbirdio/dashboard), avec :
 - Remplacement de la couleur primaire orange → bleu SaaS (`#2563EB`)
 - Ajout du light theme (le code Netbird est dark-first)
-- Remplacement du logo par le petit dragon Kyle
+- Remplacement du logo par le petit dragon Cosmos
 - Mêmes icônes (Tabler Icons + Lucide), mêmes composants Radix UI
 - shadcn/ui pour accélérer le dev des composants de base
 
@@ -447,18 +447,18 @@ CREATE TABLE webhooks (
 ## Arborescence projet
 
 ```
-kyle/
-├── kyle-dashboard/        # Fork de netbirdio/dashboard
+cosmos/
+├── cosmos-dashboard/        # Fork de netbirdio/dashboard
 │   ├── src/
 │   │   ├── components/    # Composants UI (fork Netbird)
-│   │   ├── modules/       # Pages métier Kyle
+│   │   ├── modules/       # Pages métier Cosmos
 │   │   ├── hooks/
 │   │   ├── contexts/      # ThemeProvider, AuthProvider...
 │   │   ├── app/           # App Router pages
-│   │   └── assets/        # Logo dragon Kyle
+│   │   └── assets/        # Logo dragon Cosmos
 │   ├── tailwind.config.ts
 │   └── package.json
-├── kyle-server/           # Backend Go
+├── cosmos-server/           # Backend Go
 │   ├── cmd/server/
 │   ├── internal/
 │   └── migrations/

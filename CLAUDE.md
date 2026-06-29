@@ -64,10 +64,10 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
 
-## Kyle Project Context
+## Cosmos Project Context
 
 - **Product:** Remote access gateway (RDP, SSH, VNC via browser) with zero trust / bastion
 - **Stack:** Next.js 15 (fork Netbird dashboard) + Go backend + Apache Guacamole (guacd) + PostgreSQL
 - **Distribution:** SaaS (free/pro/enterprise) + self-hosted
 - **Compliance:** DORA, RGPD, ISO 27001
-- **Repo:** https://github.com/ethancls/kyle
+- **Repo:** https://github.com/ethancls/cosmos

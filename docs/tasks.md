@@ -1,15 +1,15 @@
-# Kyle — Tasks
+# Cosmos — Tasks
 
 ## Palier 0 — Setup & Fondations
-- [ ] Init repo kyle-dashboard (fork netbird/dashboard)
-- [ ] Init repo kyle-server (Go)
-- [ ] docker-compose.yml (kyle-server + dashboard + guacd + postgres)
+- [ ] Init repo cosmos-dashboard (fork netbird/dashboard)
+- [ ] Init repo cosmos-server (Go)
+- [ ] docker-compose.yml (cosmos-server + dashboard + guacd + postgres)
 - [ ] CI/CD basique (build, lint, test)
 
 ## Palier 1 — Dashboard Core
-- [ ] Remplacer les couleurs Netbird (orange) → Kyle (bleu)
+- [ ] Remplacer les couleurs Netbird (orange) → Cosmos (bleu)
 - [ ] Ajouter le light theme
-- [ ] Remplacer le logo par le dragon Kyle
+- [ ] Remplacer le logo par le dragon Cosmos
 - [ ] Page Dashboard (overview)
 - [ ] Sidebar + navigation (servers, connections, users, audit, policies, settings)
 - [ ] Auth pages (login, MFA, SSO)
@@ -24,7 +24,7 @@
 ## Palier 3 — Connexions
 - [ ] Intégration guacd (client Go → guacd)
 - [ ] Module connections (SSH, RDP, VNC)
-- [ ] WebSocket proxy (navigateur → kyle-server → guacd)
+- [ ] WebSocket proxy (navigateur → cosmos-server → guacd)
 - [ ] Terminal SSH dans le navigateur
 - [ ] RDP/VNC dans le navigateur
 

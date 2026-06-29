@@ -1,20 +1,20 @@
 version: "3.9"
 
 services:
-  kyle-dashboard:
+  cosmos-dashboard:
     build:
-      context: ./kyle-dashboard
+      context: ./cosmos-dashboard
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
     environment:
-      KYLE_MGMT_API_ENDPOINT: http://kyle-server:8080
+      COSMOS_MGMT_API_ENDPOINT: http://cosmos-server:8080
     depends_on:
-      - kyle-server
+      - cosmos-server
 
-  kyle-server:
+  cosmos-server:
     build:
-      context: ./kyle-server
+      context: ./cosmos-server
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
@@ -33,15 +33,15 @@ services:
   postgres:
     image: postgres:16-alpine
     environment:
-      POSTGRES_USER: kyle
-      POSTGRES_PASSWORD: kyle
-      POSTGRES_DB: kyle
+      POSTGRES_USER: cosmos
+      POSTGRES_PASSWORD: cosmos
+      POSTGRES_DB: cosmos
     ports:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U kyle"]
+      test: ["CMD-SHELL", "pg_isready -U cosmos"]
       interval: 5s
       timeout: 5s
       retries: 5

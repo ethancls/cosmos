@@ -1,9 +1,9 @@
-# Kyle — Milestones
+# Cosmos — Milestones
 
 ## M0 — Fondations (Semaine 1)
 - Repo init, docker-compose, CI
-- kyle-dashboard fork et rebranding couleur
-- kyle-server squelette Go + migrations
+- cosmos-dashboard fork et rebranding couleur
+- cosmos-server squelette Go + migrations
 
 ## M1 — Dashboard Admin (Semaine 2-3)
 - UI complète : servers, users, audit logs, policies
