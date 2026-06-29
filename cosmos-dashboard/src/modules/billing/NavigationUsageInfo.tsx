@@ -1,7 +1,7 @@
 import Button from "@components/Button";
 import { IconInfoCircle } from "@tabler/icons-react";
 import { cn } from "@utils/helpers";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/cosmos";
 import { MonitorSmartphoneIcon, Users2Icon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import * as React from "react";
@@ -21,7 +21,7 @@ export const NavigationUsageInfo = () => {
   const { isAccountWithMSPParent } = useMSP();
   if (isAccountWithMSPParent) return;
 
-  const canViewBilling = permission?.billing?.update && isNetBirdCloud();
+  const canViewBilling = permission?.billing?.update && isCosmosCloud();
   if (!canViewBilling) return;
 
   return (

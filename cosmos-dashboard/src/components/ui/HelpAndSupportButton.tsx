@@ -22,7 +22,7 @@ import { useState } from "react";
 import Button from "@components/Button";
 import { cn } from "@utils/helpers";
 import SlackIcon from "@/assets/icons/SlackIcon";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/cosmos";
 
 export default function HelpAndSupportButton() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -55,7 +55,7 @@ export default function HelpAndSupportButton() {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem
-          href="https://docs.netbird.io/"
+          href="https://docs.cosmos.io/"
           target="_blank"
           rel="noopener noreferrer"
           asChild
@@ -69,7 +69,7 @@ export default function HelpAndSupportButton() {
           </DropdownMenuShortcut>
         </DropdownMenuItem>
         <DropdownMenuItem
-          href="https://docs.netbird.io/help/troubleshooting-client"
+          href="https://docs.cosmos.io/help/troubleshooting-client"
           target="_blank"
           rel="noopener noreferrer"
           asChild
@@ -83,7 +83,7 @@ export default function HelpAndSupportButton() {
           </DropdownMenuShortcut>
         </DropdownMenuItem>
 
-        {isNetBirdCloud() && (
+        {isCosmosCloud() && (
           <DropdownMenuItem href="mailto:support@cosmos.sh?subject=Support Request">
             <div className={"flex gap-3 items-center"}>
               <MailIcon size={14} />
@@ -95,7 +95,7 @@ export default function HelpAndSupportButton() {
         <DropdownMenuSeparator />
 
         <DropdownMenuItem
-          href="https://forum.netbird.io/"
+          href="https://forum.cosmos.io/"
           target="_blank"
           rel="noopener noreferrer"
           asChild
@@ -109,7 +109,7 @@ export default function HelpAndSupportButton() {
           </DropdownMenuShortcut>
         </DropdownMenuItem>
         <DropdownMenuItem
-          href="https://docs.netbird.io/slack-url"
+          href="https://docs.cosmos.io/slack-url"
           target="_blank"
           rel="noopener noreferrer"
           asChild

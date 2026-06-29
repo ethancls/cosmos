@@ -29,7 +29,7 @@ type Props = {
 };
 
 export const TRAFFIC_EVENTS_DOC_LINK =
-  "https://docs.netbird.io/how-to/traffic-events-logging";
+  "https://docs.cosmos.io/how-to/traffic-events-logging";
 
 export const TrafficEventSetting = ({ account }: Props) => {
   const { permission } = usePermissions();

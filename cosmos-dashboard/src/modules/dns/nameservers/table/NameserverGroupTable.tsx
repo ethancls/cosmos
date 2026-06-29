@@ -146,7 +146,7 @@ export default function NameserverGroupTable({
 
   // Default sorting state of the table
   const [sorting, setSorting] = useLocalStorage<SortingState>(
-    "netbird-table-sort" + path,
+    "cosmos-table-sort" + path,
     [
       {
         id: "name",
@@ -304,7 +304,7 @@ export default function NameserverGroupTable({
                   Learn more about
                   <InlineLink
                     href={
-                      "https://docs.netbird.io/how-to/manage-dns-in-your-network"
+                      "https://docs.cosmos.io/how-to/manage-dns-in-your-network"
                     }
                     target={"_blank"}
                   >

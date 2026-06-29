@@ -117,7 +117,7 @@ export default function DistributorCustomersTable({
     );
 
   const [sorting, setSorting] = useLocalStorage<SortingState>(
-    "netbird-table-sort" + path,
+    "cosmos-table-sort" + path,
     [
       {
         id: "name",

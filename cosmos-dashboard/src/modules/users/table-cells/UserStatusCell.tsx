@@ -1,7 +1,7 @@
 import FullTooltip from "@components/FullTooltip";
 import InlineLink from "@components/InlineLink";
 import { cn } from "@utils/helpers";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/cosmos";
 import { ExternalLinkIcon, HelpCircle } from "lucide-react";
 import React from "react";
 import { User } from "@/interfaces/User";
@@ -37,7 +37,7 @@ export default function UserStatusCell({ user }: Readonly<Props>) {
     return { text: status || "Unknown", color: "bg-gray-400" };
   };
 
-  const isInvitedOnCloud = status === "invited" && isNetBirdCloud();
+  const isInvitedOnCloud = status === "invited" && isCosmosCloud();
 
   const tooltipContent = isLocalAuthDisabled ? (
     <div className={"max-w-xs text-xs flex flex-col gap-2"}>
@@ -48,7 +48,7 @@ export default function UserStatusCell({ user }: Readonly<Props>) {
       <div>
         <InlineLink
           href={
-            "https://docs.netbird.io/selfhosted/identity-providers/disable-local-authentication"
+            "https://docs.cosmos.io/selfhosted/identity-providers/disable-local-authentication"
           }
           target={"_blank"}
         >
@@ -76,7 +76,7 @@ export default function UserStatusCell({ user }: Readonly<Props>) {
       </div>
       <div>
         <InlineLink
-          href={"https://docs.netbird.io/how-to/approve-users"}
+          href={"https://docs.cosmos.io/how-to/approve-users"}
           target={"_blank"}
         >
           Learn more <ExternalLinkIcon size={12} />

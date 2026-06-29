@@ -266,7 +266,7 @@ export function SetupContent({ onSuccess }: ModalProps) {
               },
               {
                 label: "Redirect URI",
-                value: "https://app.netbird.io/silent-auth",
+                value: "https://app.cosmos.io/silent-auth",
               },
             ]}
           />

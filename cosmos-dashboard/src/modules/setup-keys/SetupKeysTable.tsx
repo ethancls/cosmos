@@ -157,7 +157,7 @@ export default function SetupKeysTable({
 
   // Default sorting state of the table
   const [sorting, setSorting] = useLocalStorage<SortingState>(
-    "netbird-table-sort" + path,
+    "cosmos-table-sort" + path,
     [
       {
         id: "valid",
@@ -338,7 +338,7 @@ export default function SetupKeysTable({
                   Learn more about
                   <InlineLink
                     href={
-                      "https://docs.netbird.io/how-to/register-machines-using-setup-keys"
+                      "https://docs.cosmos.io/how-to/register-machines-using-setup-keys"
                     }
                     target={"_blank"}
                   >

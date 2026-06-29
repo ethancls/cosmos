@@ -1,5 +1,5 @@
 import loadConfig from "@utils/config";
-import { isProduction } from "@utils/netbird";
+import { isProduction } from "@utils/cosmos";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
 import React, { useEffect, useState } from "react";

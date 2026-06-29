@@ -1,6 +1,6 @@
 "use client";
 
-import { isAgentNetworkEnabled } from "@utils/netbird";
+import { isAgentNetworkEnabled } from "@utils/cosmos";
 import { notFound } from "next/navigation";
 import * as React from "react";
 

@@ -280,7 +280,7 @@ export default function TrafficEventsTable({
   const router = useRouter();
 
   const [sorting, setSorting] = useLocalStorage<SortingState>(
-    "netbird-table-sort" + path,
+    "cosmos-table-sort" + path,
     [
       {
         id: "timestamp",

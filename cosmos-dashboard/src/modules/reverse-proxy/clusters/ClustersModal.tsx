@@ -28,7 +28,7 @@ import React, { useCallback, useMemo, useState } from "react";
 import { useSWRConfig } from "swr";
 import { useApiCall } from "@/utils/api";
 import { cn, validator } from "@utils/helpers";
-import { GRPC_API_ORIGIN, isNetBirdCloud } from "@/utils/netbird";
+import { GRPC_API_ORIGIN, isCosmosCloud } from "@/utils/cosmos";
 import { SelectDropdown } from "@components/select/SelectDropdown";
 import {
   REVERSE_PROXY_CLUSTERS_DOCS_LINK,
@@ -96,8 +96,8 @@ export const ClustersModal = ({ open, onOpenChange }: Props) => {
     return "";
   }, [domain]);
 
-  const managementUrl = isNetBirdCloud()
-    ? "https://api.netbird.io"
+  const managementUrl = isCosmosCloud()
+    ? "https://api.cosmos.io"
     : GRPC_API_ORIGIN || "";
 
   const tokenValue = token || "<TOKEN>";
@@ -141,18 +141,18 @@ volumes:
   const kubernetesCommand = `apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: netbird-reverse-proxy
+  name: cosmos-reverse-proxy
   labels:
-    app: netbird-reverse-proxy
+    app: cosmos-reverse-proxy
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: netbird-reverse-proxy
+      app: cosmos-reverse-proxy
   template:
     metadata:
       labels:
-        app: netbird-reverse-proxy
+        app: cosmos-reverse-proxy
     spec:
       containers:
         - name: reverse-proxy
@@ -189,11 +189,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: netbird-reverse-proxy
+  name: cosmos-reverse-proxy
 spec:
   type: LoadBalancer
   selector:
-    app: netbird-reverse-proxy
+    app: cosmos-reverse-proxy
   ports:
     - name: http
       port: 80
@@ -394,7 +394,7 @@ spec:
                 </div>
               </div>
 
-              {!isNetBirdCloud() && (
+              {!isCosmosCloud() && (
                 <Callout variant={"warning"}>
                   For self-hosted deployments, make sure the proxy service
                   routes are configured on your NetBird management server before

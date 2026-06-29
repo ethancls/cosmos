@@ -1,5 +1,5 @@
 import { SegmentedTabs } from "@components/SegmentedTabs";
-import { isAgentNetworkOnly } from "@utils/netbird";
+import { isAgentNetworkOnly } from "@utils/cosmos";
 import {
   FolderGit2,
   MonitorSmartphoneIcon,

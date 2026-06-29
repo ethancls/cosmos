@@ -222,7 +222,7 @@ export default function PostureCheckModal({
               <Paragraph className={"text-sm mt-auto"}>
                 Learn more about
                 <InlineLink
-                  href={"https://docs.netbird.io/how-to/manage-posture-checks"}
+                  href={"https://docs.cosmos.io/how-to/manage-posture-checks"}
                   target={"_blank"}
                 >
                   Posture Checks

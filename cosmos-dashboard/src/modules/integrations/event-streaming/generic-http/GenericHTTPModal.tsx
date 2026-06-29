@@ -317,7 +317,7 @@ export function GenericHTTPModalContent({
                 how to use them.
                 <InlineLink
                   href={
-                    "https://docs.netbird.io/how-to/stream-activity-to-generic-http#custom-body-template-optional"
+                    "https://docs.cosmos.io/how-to/stream-activity-to-generic-http#custom-body-template-optional"
                   }
                   className={"relative top-[0px] ml-1"}
                 >
@@ -361,7 +361,7 @@ export function GenericHTTPModalContent({
             Learn more about
             <InlineLink
               href={
-                "https://docs.netbird.io/how-to/stream-activity-to-generic-http"
+                "https://docs.cosmos.io/how-to/stream-activity-to-generic-http"
               }
               target={"_blank"}
             >

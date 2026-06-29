@@ -130,7 +130,7 @@ export default function IdentityProvidersTab() {
   );
 
   const [sorting, setSorting] = useLocalStorage<SortingState>(
-    "netbird-table-sort-identity-providers",
+    "cosmos-table-sort-identity-providers",
     [
       {
         id: "name",

@@ -5,8 +5,8 @@ import { cn } from "@utils/helpers";
 import {
   isAgentNetworkEnabled,
   isAgentNetworkOnly,
-  isNetBirdCloud,
-} from "@utils/netbird";
+  isCosmosCloud,
+} from "@utils/cosmos";
 import AccessControlIcon from "@/assets/icons/AccessControlIcon";
 import AgentNetworkIcon from "@/assets/icons/AgentNetworkIcon";
 import ControlCenterIcon from "@/assets/icons/ControlCenterIcon";
@@ -312,12 +312,12 @@ export default function Navigation({
                     permission?.edr?.read ||
                     permission?.idp?.read ||
                     permission?.event_streaming?.read ||
-                    (!isNetBirdCloud() && (permission?.settings?.read ?? false))
+                    (!isCosmosCloud() && (permission?.settings?.read ?? false))
                   }
                 />
                 <SidebarItem
                   icon={<DocsIcon />}
-                  href={"https://docs.netbird.io/"}
+                  href={"https://docs.cosmos.io/"}
                   target={"_blank"}
                   label="Documentation"
                   visible={true}

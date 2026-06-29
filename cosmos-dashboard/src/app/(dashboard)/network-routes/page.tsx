@@ -48,7 +48,7 @@ export default function NetworkRoutes() {
               NetBird on every resource.{" "}
               <InlineLink
                 href={
-                  "https://docs.netbird.io/how-to/routing-traffic-to-private-networks"
+                  "https://docs.cosmos.io/how-to/routing-traffic-to-private-networks"
                 }
                 target={"_blank"}
                 aria-label={

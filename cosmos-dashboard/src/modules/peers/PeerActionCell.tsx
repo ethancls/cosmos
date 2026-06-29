@@ -171,7 +171,7 @@ export default function PeerActionCell() {
           explicit access control policy and update your NetBird client to
           restore SSH functionality.{" "}
           <InlineLink
-            href={"https://docs.netbird.io/manage/peers/ssh"}
+            href={"https://docs.cosmos.io/manage/peers/ssh"}
             target={"_blank"}
             onClick={(e) => e.stopPropagation()}
           >

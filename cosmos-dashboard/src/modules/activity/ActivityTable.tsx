@@ -104,7 +104,7 @@ export default function ActivityTable({
   // Initial Date Range
   const [initialDateRange, setInitialDateRange] = useLocalStorage<
     DateRange | undefined
-  >("netbird-table-range" + path, {
+  >("cosmos-table-range" + path, {
     from: defaultFromDate,
     to: defaultToDate,
   });
@@ -202,7 +202,7 @@ export default function ActivityTable({
             <>
               Learn more in our{" "}
               <InlineLink
-                href={"https://docs.netbird.io/how-to/getting-started"}
+                href={"https://docs.cosmos.io/how-to/getting-started"}
                 target={"_blank"}
               >
                 Getting Started Guide

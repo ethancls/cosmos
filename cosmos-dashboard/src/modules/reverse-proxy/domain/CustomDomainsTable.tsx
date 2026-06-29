@@ -97,7 +97,7 @@ export default function CustomDomainsTable({ headingTarget }: Readonly<Props>) {
   const [selectedTargetCluster, setSelectedTargetCluster] = useState("");
 
   const [sorting, setSorting] = useLocalStorage<SortingState>(
-    "netbird-table-sort" + path,
+    "cosmos-table-sort" + path,
     [
       {
         id: "domain",

@@ -12,7 +12,7 @@ import SquareIcon from "@components/SquareIcon";
 import GetStartedTest from "@components/ui/GetStartedTest";
 import { SmallBadge } from "@components/ui/SmallBadge";
 import useFetchApi from "@utils/api";
-import { isAgentNetworkEnabled, isAgentNetworkOnly } from "@utils/netbird";
+import { isAgentNetworkEnabled, isAgentNetworkOnly } from "@utils/cosmos";
 import {
   Background,
   Edge,
@@ -1944,7 +1944,7 @@ function ControlCenterView() {
                   <>
                     Learn more about
                     <InlineLink
-                      href={"https://docs.netbird.io/how-to/networks"}
+                      href={"https://docs.cosmos.io/how-to/networks"}
                       target={"_blank"}
                     >
                       Networks

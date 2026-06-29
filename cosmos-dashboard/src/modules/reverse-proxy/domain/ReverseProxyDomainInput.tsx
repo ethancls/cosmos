@@ -4,7 +4,7 @@ import { Label } from "@components/Label";
 import { Callout } from "@components/Callout";
 import React from "react";
 import { CustomDomainSelector } from "./CustomDomainSelector";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/cosmos";
 import InlineLink from "@components/InlineLink";
 
 type Props = {
@@ -67,11 +67,11 @@ export default function ReverseProxyDomainInput({
       </div>
 
       {clusterOffline &&
-        (isNetBirdCloud() ? (
+        (isCosmosCloud() ? (
           <Callout variant={"warning"} className={"mt-3"}>
             Cluster {clusterOffline.clusterName} is offline. Please try again in
             a few minutes. If the issue persists, check{" "}
-            <InlineLink href={"https://status.netbird.io/"} target={"_blank"}>
+            <InlineLink href={"https://status.cosmos.io/"} target={"_blank"}>
               NetBird Status
             </InlineLink>{" "}
             or reach out to{"  "}

@@ -57,7 +57,7 @@ export const PeerSSHToggle = () => {
     return orderBy(
       policies?.filter((policy) => {
         const rule = policy?.rules?.[0];
-        const isSSHProtocol = rule?.protocol === "netbird-ssh";
+        const isSSHProtocol = rule?.protocol === "cosmos-ssh";
         if (!isSSHProtocol) return false;
         const destinationResource = policy.rules
           ?.map((rule) => rule?.destinationResource?.id === peer?.id)
@@ -88,7 +88,7 @@ export const PeerSSHToggle = () => {
           explicit access control policy and update your NetBird client to
           restore SSH functionality.{" "}
           <InlineLink
-            href={"https://docs.netbird.io/manage/peers/ssh"}
+            href={"https://docs.cosmos.io/manage/peers/ssh"}
             target={"_blank"}
             onClick={(e) => e.stopPropagation()}
           >

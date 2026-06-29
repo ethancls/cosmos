@@ -3,7 +3,7 @@ import { Modal, ModalContent } from "@components/modal/Modal";
 import { ArrowRightIcon, CheckCircle2Icon, DownloadIcon, Loader2Icon } from "lucide-react";
 import * as React from "react";
 import { useEffect, useState } from "react";
-import { SetupModalContent } from "@/modules/setup-netbird-modal/SetupModal";
+import { SetupModalContent } from "@/modules/setup-cosmos-modal/SetupModal";
 
 type Props = {
   onBack: () => void;

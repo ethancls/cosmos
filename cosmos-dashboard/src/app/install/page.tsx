@@ -8,7 +8,7 @@ import { createPortal } from "react-dom";
 import AnnouncementProvider, {
   useAnnouncement,
 } from "@/contexts/AnnouncementProvider";
-import SetupModal from "@/modules/setup-netbird-modal/SetupModal";
+import SetupModal from "@/modules/setup-cosmos-modal/SetupModal";
 
 function InstallContent() {
   const [open, setOpen] = useState(false);

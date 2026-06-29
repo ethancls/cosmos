@@ -12,7 +12,7 @@ import { ChevronDown, PlusCircle } from "lucide-react";
 import React, { memo, useState } from "react";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { Peer } from "@/interfaces/Peer";
-import SetupModal from "@/modules/setup-netbird-modal/SetupModal";
+import SetupModal from "@/modules/setup-cosmos-modal/SetupModal";
 
 // What the operator chose to add. The setup flow only distinguishes user
 // devices (SSO login) from no-user peers (setup key). Autonomous agents are
@@ -28,7 +28,7 @@ function AddPeerDropdown() {
   const { oidcUser: user } = useOidcUser();
 
   const [isFirstRun, setIsFirstRun] = useLocalStorage<boolean>(
-    "netbird-first-run",
+    "cosmos-first-run",
     !(peers && peers.length > 0),
   );
 

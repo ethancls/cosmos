@@ -1,5 +1,5 @@
 import SidebarItem from "@components/SidebarItem";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/cosmos";
 import * as React from "react";
 import { useMemo } from "react";
 import MSPIcon from "@/assets/icons/MSPIcon";
@@ -20,7 +20,7 @@ export const MSPNavigationItem = () => {
   if (!showNavigationItem) return;
 
   return (
-    isNetBirdCloud() && (
+    isCosmosCloud() && (
       <SidebarItem
         icon={<MSPIcon size={17} />}
         visible={permission?.tenants?.read}

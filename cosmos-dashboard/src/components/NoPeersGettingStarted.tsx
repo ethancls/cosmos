@@ -33,7 +33,7 @@ export const NoPeersGettingStarted = ({
         <>
           Learn more in our{" "}
           <InlineLink
-            href={"https://docs.netbird.io/how-to/getting-started"}
+            href={"https://docs.cosmos.io/how-to/getting-started"}
             target={"_blank"}
           >
             Getting Started Guide

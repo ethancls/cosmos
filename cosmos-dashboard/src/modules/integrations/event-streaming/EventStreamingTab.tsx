@@ -36,7 +36,7 @@ export default function EventStreamingTab() {
         </Paragraph>
         <Paragraph>
           <InlineLink
-            href={"https://docs.netbird.io/how-to/activity-event-streaming"}
+            href={"https://docs.cosmos.io/how-to/activity-event-streaming"}
             target={"_blank"}
           >
             Learn more

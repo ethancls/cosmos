@@ -97,7 +97,7 @@ function SSHTerminal({ username, port, peer, ipVersion }: Props) {
     try {
       const aclPort = isNativeSSHSupported(peer.version) ? "22022" : port;
       const protocol = isNetbirdSSHProtocolSupported(peer.version)
-        ? "netbird-ssh"
+        ? "cosmos-ssh"
         : "tcp";
       const rules = [`${protocol}/${aclPort}`];
       await client?.connectTemporary(peer.id, rules);
@@ -124,7 +124,7 @@ function SSHTerminal({ username, port, peer, ipVersion }: Props) {
       try {
         const aclPort = isNativeSSHSupported(peer.version) ? "22022" : port;
         const protocol = isNetbirdSSHProtocolSupported(peer.version)
-          ? "netbird-ssh"
+          ? "cosmos-ssh"
           : "tcp";
         const rules = [`${protocol}/${aclPort}`];
         await client?.connectTemporary(peer.id, rules);

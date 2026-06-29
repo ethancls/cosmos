@@ -2,7 +2,7 @@
 
 import { notify } from "@components/Notification";
 import useFetchApi, { useApiCall } from "@utils/api";
-import { isAgentNetworkEnabled } from "@utils/netbird";
+import { isAgentNetworkEnabled } from "@utils/cosmos";
 import React, {
   createContext,
   useCallback,

@@ -258,7 +258,7 @@ function AgentBudgetRuleModalContent({
         <div className={"w-full"}>
           <Paragraph className={"text-sm mt-auto"}>
             Learn more about
-            <InlineLink href={"https://docs.netbird.io/"} target={"_blank"}>
+            <InlineLink href={"https://docs.cosmos.io/"} target={"_blank"}>
               Agent Network
               <ExternalLinkIcon size={12} />
             </InlineLink>

@@ -23,7 +23,7 @@ import {
 } from "@/interfaces/ReverseProxy";
 import HelpText from "@components/HelpText";
 import Separator from "@components/Separator";
-import { isNetBirdCloud } from "@/utils/netbird";
+import { isCosmosCloud } from "@/utils/cosmos";
 import {
   SelectDropdown,
   SelectOption,
@@ -100,12 +100,12 @@ export const CustomDomainModal = ({
 
         <div className={"px-8 flex flex-col gap-6 pt-6 pb-8"}>
           {availableClusters.length === 0 ? (
-            isNetBirdCloud() ? (
+            isCosmosCloud() ? (
               <Callout variant={"warning"}>
                 No proxy clusters are currently connected. Please try again in a
                 few minutes. If the issue persists, check{" "}
                 <InlineLink
-                  href={"https://status.netbird.io/"}
+                  href={"https://status.cosmos.io/"}
                   target={"_blank"}
                 >
                   NetBird Status

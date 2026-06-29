@@ -2,7 +2,7 @@ import Button from "@components/Button";
 import { CommandItem } from "@components/Command";
 import { Popover, PopoverContent, PopoverTrigger } from "@components/Popover";
 import { ScrollArea } from "@components/ScrollArea";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/cosmos";
 import { Command, CommandGroup, CommandList } from "cmdk";
 import { trim } from "lodash";
 import {
@@ -198,7 +198,7 @@ export function UserRoleSelector({
                       return null;
 
                     // Cloud only
-                    if (item.value === Role.BillingAdmin && !isNetBirdCloud())
+                    if (item.value === Role.BillingAdmin && !isCosmosCloud())
                       return null;
                     if (
                       item.value === Role.BillingAdmin &&

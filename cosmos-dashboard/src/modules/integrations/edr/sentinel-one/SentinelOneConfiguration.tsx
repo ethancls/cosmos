@@ -372,7 +372,7 @@ export function ConfigurationContent({
           <Paragraph className={"text-sm mt-auto"}>
             Learn more about
             <InlineLink
-              href={"https://docs.netbird.io/how-to/sentinelone-edr"}
+              href={"https://docs.cosmos.io/how-to/sentinelone-edr"}
               target={"_blank"}
             >
               SentinelOne Integration

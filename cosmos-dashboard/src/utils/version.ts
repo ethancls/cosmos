@@ -18,7 +18,7 @@ export const getLatestNetbirdRelease = async (
 
   if (runFetch) {
     const data = (await fetch(
-      `${GITHUB_API_ENDPOINT}/repos/netbirdio/netbird/releases/latest`,
+      `${GITHUB_API_ENDPOINT}/repos/ethancls/cosmos/releases/latest`,
     ).then((response) => response.json())) as any;
 
     try {

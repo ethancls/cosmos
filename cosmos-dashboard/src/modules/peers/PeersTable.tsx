@@ -300,7 +300,7 @@ export default function PeersTable({
 
   // Default sorting state of the table
   const [sorting, setSorting] = useLocalStorage<SortingState>(
-    "netbird-table-sort" + path,
+    "cosmos-table-sort" + path,
     [
       {
         id: "last_seen",

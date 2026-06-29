@@ -8,7 +8,7 @@ import { useSWRConfig } from "swr";
 import { Group, GroupPeer } from "@/interfaces/Group";
 import { Peer } from "@/interfaces/Peer";
 import { Policy } from "@/interfaces/Policy";
-import { SetupModalContent } from "@/modules/setup-netbird-modal/SetupModal";
+import { SetupModalContent } from "@/modules/setup-cosmos-modal/SetupModal";
 
 type Props = {
   device?: Peer;

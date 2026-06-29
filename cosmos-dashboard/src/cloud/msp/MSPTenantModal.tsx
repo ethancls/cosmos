@@ -102,7 +102,7 @@ const MspAccountModalContent = ({ setOpen, tenant, initialTab }: Props) => {
   const domainInputError = useMemo(() => {
     if (domain === "") return "";
     if (!validator.isValidDomain(domain)) {
-      return "Please enter a valid domain, e.g. netbird.io";
+      return "Please enter a valid domain, e.g. cosmos.io";
     }
     return "";
   }, [domain]);
@@ -303,7 +303,7 @@ const MspAccountModalContent = ({ setOpen, tenant, initialTab }: Props) => {
               <>
                 Learn more about
                 <InlineLink
-                  href={"https://netbird.io/pricing"}
+                  href={"https://cosmos.io/pricing"}
                   target={"_blank"}
                 >
                   Pricing & Plans

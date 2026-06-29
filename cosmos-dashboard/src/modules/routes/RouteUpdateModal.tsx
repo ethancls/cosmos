@@ -517,7 +517,7 @@ function RouteUpdateModalContent({ onSuccess, route, cell }: ModalProps) {
             Learn more about
             <InlineLink
               href={
-                "https://docs.netbird.io/how-to/routing-traffic-to-private-networks"
+                "https://docs.cosmos.io/how-to/routing-traffic-to-private-networks"
               }
               target={"_blank"}
             >

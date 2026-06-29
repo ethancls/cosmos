@@ -16,7 +16,7 @@ import {
 } from "@/contexts/ReverseProxiesProvider";
 import { HelpTooltip } from "@components/HelpTooltip";
 import InlineLink, { InlineButtonLink } from "@components/InlineLink";
-import SetupModal from "@/modules/setup-netbird-modal/SetupModal";
+import SetupModal from "@/modules/setup-cosmos-modal/SetupModal";
 
 export type Target = {
   type: ReverseProxyTargetType;

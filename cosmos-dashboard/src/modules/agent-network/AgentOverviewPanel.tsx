@@ -16,7 +16,7 @@ import {
   Tooltip,
 } from "chart.js";
 import useFetchApi from "@utils/api";
-import { isAgentNetworkEnabled } from "@utils/netbird";
+import { isAgentNetworkEnabled } from "@utils/cosmos";
 import dayjs from "dayjs";
 import { ActivityIcon, ExternalLinkIcon } from "lucide-react";
 import * as React from "react";
@@ -259,7 +259,7 @@ function DailyBreakdownTable({ daily }: { daily: DayBucket[] }) {
           learnMore={
             <>
               Learn more about
-              <InlineLink href={"https://docs.netbird.io/"} target={"_blank"}>
+              <InlineLink href={"https://docs.cosmos.io/"} target={"_blank"}>
                 Agent Network
                 <ExternalLinkIcon size={12} />
               </InlineLink>

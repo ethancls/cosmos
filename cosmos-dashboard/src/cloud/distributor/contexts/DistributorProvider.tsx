@@ -1,5 +1,5 @@
 import useFetchApi from "@utils/api";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/cosmos";
 import React, { useEffect, useMemo } from "react";
 import { Distributor } from "@/cloud/distributor/interfaces/Distributor";
 
@@ -52,7 +52,7 @@ export default function DistributorProvider({ children }: Readonly<Props>) {
     "/integrations/msp/reseller",
     true,
     true,
-    isNetBirdCloud(),
+    isCosmosCloud(),
   );
 
   const isActive = useMemo(() => {

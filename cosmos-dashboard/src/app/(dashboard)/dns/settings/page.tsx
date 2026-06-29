@@ -55,7 +55,7 @@ export default function NameServerSettings() {
         <Paragraph>
           {"Manage your account's DNS settings."}{" "}
           <InlineLink
-            href={"https://docs.netbird.io/how-to/manage-dns-in-your-network"}
+            href={"https://docs.cosmos.io/how-to/manage-dns-in-your-network"}
             target={"_blank"}
           >
             Learn more

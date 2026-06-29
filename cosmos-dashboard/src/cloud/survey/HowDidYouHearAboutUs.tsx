@@ -25,7 +25,7 @@ export default function HowDidYouHearAboutUs() {
 
   const [open, setOpen] = useState(false);
   const [isPending, setIsPending] = useLocalStorage(
-    "netbird-survey-pending",
+    "cosmos-survey-pending",
     true,
   );
 

@@ -12,7 +12,7 @@ import { Tabs, TabsList, TabsTrigger } from "@components/Tabs";
 import { IconInfoCircle } from "@tabler/icons-react";
 import { useApiCall } from "@utils/api";
 import { cn } from "@utils/helpers";
-import { getNetBirdUpCommand } from "@utils/netbird";
+import { getNetBirdUpCommand } from "@utils/cosmos";
 import {
   CopyIcon,
   ExternalLinkIcon,
@@ -31,12 +31,12 @@ import { useLocalStorage } from "@/hooks/useLocalStorage";
 import useOperatingSystem from "@/hooks/useOperatingSystem";
 import { OperatingSystem } from "@/interfaces/OperatingSystem";
 import { SetupKey } from "@/interfaces/SetupKey";
-import AndroidTab from "@/modules/setup-netbird-modal/AndroidTab";
-import DockerTab from "@/modules/setup-netbird-modal/DockerTab";
-import IOSTab from "@/modules/setup-netbird-modal/IOSTab";
-import LinuxTab from "@/modules/setup-netbird-modal/LinuxTab";
-import MacOSTab from "@/modules/setup-netbird-modal/MacOSTab";
-import WindowsTab from "@/modules/setup-netbird-modal/WindowsTab";
+import AndroidTab from "@/modules/setup-cosmos-modal/AndroidTab";
+import DockerTab from "@/modules/setup-cosmos-modal/DockerTab";
+import IOSTab from "@/modules/setup-cosmos-modal/IOSTab";
+import LinuxTab from "@/modules/setup-cosmos-modal/LinuxTab";
+import MacOSTab from "@/modules/setup-cosmos-modal/MacOSTab";
+import WindowsTab from "@/modules/setup-cosmos-modal/WindowsTab";
 
 type OidcUserInfo = {
   given_name?: string;
@@ -74,7 +74,7 @@ export default function SetupModal({
         className,
       )}
       style={style}
-      data-testid={"setup-netbird-modal"}
+      data-testid={"setup-cosmos-modal"}
     >
       <SetupModalContent
         user={user}
@@ -110,7 +110,7 @@ export function SetupModalContent({
   isUserDevice,
 }: Readonly<SetupModalContentProps>) {
   const os = useOperatingSystem();
-  const [isFirstRun] = useLocalStorage<boolean>("netbird-first-run", true);
+  const [isFirstRun] = useLocalStorage<boolean>("cosmos-first-run", true);
   const pathname = usePathname();
   const isInstallPage = pathname === "/install";
 
@@ -146,14 +146,14 @@ export function SetupModalContent({
             <>
               A setup key is a one-time, pre-authentication token used to
               enroll an unattended machine with NetBird. Pass it to{" "}
-              <code>netbird up</code> via <code>--setup-key</code> and the
+              <code>cosmos up</code> via <code>--setup-key</code> and the
               peer registers without an interactive login.
             </>
           }
         />
         <InlineLink
           href={
-            "https://docs.netbird.io/how-to/register-machines-using-setup-keys"
+            "https://docs.cosmos.io/how-to/register-machines-using-setup-keys"
           }
           target={"_blank"}
         >
@@ -329,7 +329,7 @@ export function SetupModalContent({
               have further questions check out our{" "}
               <InlineLink
                 href={
-                  "https://docs.netbird.io/how-to/getting-started#installation"
+                  "https://docs.cosmos.io/how-to/getting-started#installation"
                 }
                 target={"_blank"}
               >
@@ -377,7 +377,7 @@ type NetBirdUpCommandProps = {
   continuation?: string;
 };
 
-// NetBirdUpCommand renders `netbird up` inside a <Code> block. When
+// NetBirdUpCommand renders `cosmos up` inside a <Code> block. When
 // extra flags are present it splits across multiple lines with the
 // shell's line-continuation character (purely visual) so long commands
 // stay readable; the clipboard always gets the single-line form.
@@ -471,7 +471,7 @@ type SetupKeyGeneratorProps = {
 // SetupKeyGenerator renders the inline banner that lets the operator
 // create a one-off setup key without leaving the install modal. The
 // resulting key is lifted to the parent so the OS tabs can splice it
-// into the `netbird up --setup-key=...` command.
+// into the `cosmos up --setup-key=...` command.
 function SetupKeyGenerator({
   generatedKey,
   onGenerated,

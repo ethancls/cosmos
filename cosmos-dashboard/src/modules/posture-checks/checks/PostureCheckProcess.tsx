@@ -227,7 +227,7 @@ const CheckContent = ({ value, onChange, disabled }: Props) => {
                           )}
                         />
                       }
-                      placeholder={`C:\\ProgramData\\NetBird\\netbird.exe`}
+                      placeholder={`C:\\ProgramData\\NetBird\\cosmos.exe`}
                       value={p.windows_path}
                       errorTooltip={true}
                       errorTooltipPosition={"top-right"}
@@ -277,7 +277,7 @@ const CheckContent = ({ value, onChange, disabled }: Props) => {
             Learn more about
             <InlineLink
               href={
-                "https://docs.netbird.io/how-to/manage-posture-checks#process-check"
+                "https://docs.cosmos.io/how-to/manage-posture-checks#process-check"
               }
               target={"_blank"}
             >

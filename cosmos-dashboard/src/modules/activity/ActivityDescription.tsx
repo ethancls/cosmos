@@ -2,7 +2,7 @@ import FullTooltip from "@components/FullTooltip";
 import { Label } from "@components/Label";
 import { IconInfoCircle } from "@tabler/icons-react";
 import { cn } from "@utils/helpers";
-import { isLocalDev, isProduction } from "@utils/netbird";
+import { isLocalDev, isProduction } from "@utils/cosmos";
 import { isEmpty } from "lodash";
 import { GlobeIcon } from "lucide-react";
 import React, { useMemo } from "react";

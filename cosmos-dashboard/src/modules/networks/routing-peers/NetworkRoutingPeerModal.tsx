@@ -44,7 +44,7 @@ import { Peer } from "@/interfaces/Peer";
 import { SetupKey } from "@/interfaces/SetupKey";
 import useGroupHelper from "@/modules/groups/useGroupHelper";
 import { RoutingPeerMasqueradeSwitch } from "@/modules/networks/routing-peers/RoutingPeerMasqueradeSwitch";
-import SetupModal from "@/modules/setup-netbird-modal/SetupModal";
+import SetupModal from "@/modules/setup-cosmos-modal/SetupModal";
 
 type Props = {
   network: Network;
@@ -358,7 +358,7 @@ function RoutingPeerModalContent({
           <Paragraph className={"text-sm mt-auto"}>
             Learn more about
             <InlineLink
-              href={"https://docs.netbird.io/how-to/networks#routing-peers"}
+              href={"https://docs.cosmos.io/how-to/networks#routing-peers"}
               target={"_blank"}
             >
               Routing Peers

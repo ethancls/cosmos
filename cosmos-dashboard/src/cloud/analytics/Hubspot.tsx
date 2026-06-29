@@ -51,7 +51,7 @@ export const Hubspot = () => {
 
   // Submit form only when localStorage key is false
   const [submittedSignUpForm, setSubmittedSignUpForm] = useLocalStorage(
-    "netbird-signup-form",
+    "cosmos-signup-form",
     false,
   );
 

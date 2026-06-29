@@ -4,7 +4,7 @@ import { DownloadIcon } from "lucide-react";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { Peer } from "@/interfaces/Peer";
-import { SetupModalContent } from "@/modules/setup-netbird-modal/SetupModal";
+import { SetupModalContent } from "@/modules/setup-cosmos-modal/SetupModal";
 
 type Props = {
   onBack: () => void;

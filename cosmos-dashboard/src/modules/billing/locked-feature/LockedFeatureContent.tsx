@@ -1,6 +1,6 @@
 import Button from "@components/Button";
 import { cn } from "@utils/helpers";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/cosmos";
 import { LockIcon, MailIcon } from "lucide-react";
 import * as React from "react";
 import { PlanFeatureAvailability } from "@/cloud/cloud-hooks/useIsFeatureLocked";
@@ -41,7 +41,7 @@ export const LockedFeatureContent = ({
             size={isTooltip ? 12 : 14}
             className={cn("relative", isTooltip && "-top-[1px]")}
           />
-            { isNetBirdCloud()? (plan == "team" ? PLAN_TEXT.TEAM : PLAN_TEXT.BUSINESS) : PLAN_TEXT.ENTERPRISE }
+            { isCosmosCloud()? (plan == "team" ? PLAN_TEXT.TEAM : PLAN_TEXT.BUSINESS) : PLAN_TEXT.ENTERPRISE }
         </div>
         <div
           className={cn(
@@ -54,7 +54,7 @@ export const LockedFeatureContent = ({
           <UpgradeOrTrialText offerTrial={offerTrial} />
         </div>
       </div>
-      {(isOwnerOrAdmin || !isNetBirdCloud()) && (
+      {(isOwnerOrAdmin || !isCosmosCloud()) && (
         <TrialOrUpgradeButton
           plan={plan}
           feature={feature}
@@ -82,7 +82,7 @@ const AvailableOnPlanText = ({
   const isOrAre = featureText.includes("Posture Checks") ? "are" : "is";
   const teamOrBusiness =
     plan == "team" ? "Team plan or higher. " : "Business plan. ";
-  if (!isNetBirdCloud()) {
+  if (!isCosmosCloud()) {
       return (
       <>
         {featureText} {isOrAre} available with a NetBird Enterprise commercial license, or on NetBird Cloud with the {teamOrBusiness}
@@ -111,7 +111,7 @@ const UpgradeOrTrialText = ({
   const { isTrialAvailable } = useTrial();
   const { isOwnerOrAdmin } = useLoggedInUser();
 
-  if (!isNetBirdCloud()) {
+  if (!isCosmosCloud()) {
     return (
       <>
       </>

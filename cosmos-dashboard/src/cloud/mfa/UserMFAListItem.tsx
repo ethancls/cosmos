@@ -6,7 +6,7 @@ import { notify } from "@components/Notification";
 import useFetchApi, { useApiCall } from "@utils/api";
 import loadConfig from "@utils/config";
 import { cn } from "@utils/helpers";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/cosmos";
 import {
   ArrowUpRightIcon,
   ExternalLinkIcon,
@@ -31,7 +31,7 @@ type Props = {
 
 export const UserMfaListItem = ({ userId }: Props) => {
   const { permission } = usePermissions();
-  return permission.settings.update && isNetBirdCloud() ? (
+  return permission.settings.update && isCosmosCloud() ? (
     <ListItem userId={userId} />
   ) : null;
 };
@@ -78,7 +78,7 @@ const ListItem = ({ userId }: Props) => {
                 provider (e.g., Google, Microsoft) already has MFA enabled.{" "}
                 <InlineLink
                   href={
-                    "https://docs.netbird.io/how-to/multi-factor-authentication"
+                    "https://docs.cosmos.io/how-to/multi-factor-authentication"
                   }
                   target={"_blank"}
                 >

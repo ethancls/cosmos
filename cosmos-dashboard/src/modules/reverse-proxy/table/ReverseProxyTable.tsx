@@ -114,7 +114,7 @@ export default function ReverseProxyTable({ headingTarget }: Readonly<Props>) {
   const { reverseProxies, isLoading, openModal } = useReverseProxies();
 
   const [sorting, setSorting] = useLocalStorage<SortingState>(
-    "netbird-table-sort" + path,
+    "cosmos-table-sort" + path,
     [
       {
         id: "domain",

@@ -40,7 +40,7 @@ import { useHasChanges } from "@/hooks/useHasChanges";
 import { Account } from "@/interfaces/Account";
 import { LockedFeatureBadge } from "@/modules/billing/locked-feature/LockedFeatureBadge";
 import { useIntegrations } from "@/modules/integrations/edr/useIntegrations";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/cosmos";
 
 type Props = {
   account: Account;
@@ -197,7 +197,7 @@ export default function AuthenticationTab({ account }: Readonly<Props>) {
               Learn more about
               <InlineLink
                 href={
-                  "https://docs.netbird.io/how-to/enforce-periodic-user-authentication"
+                  "https://docs.cosmos.io/how-to/enforce-periodic-user-authentication"
                 }
                 target={"_blank"}
               >
@@ -207,7 +207,7 @@ export default function AuthenticationTab({ account }: Readonly<Props>) {
               or{" "}
               <InlineLink
                 href={
-                  "https://docs.netbird.io/how-to/multi-factor-authentication"
+                  "https://docs.cosmos.io/how-to/multi-factor-authentication"
                 }
                 target={"_blank"}
               >
@@ -421,7 +421,7 @@ export default function AuthenticationTab({ account }: Readonly<Props>) {
         </div>
       </div>
 
-      {isNetBirdCloud() && (
+      {isCosmosCloud() && (
         <>
           <Separator />
           <div className={"p-default py-8 max-w-2xl"}>

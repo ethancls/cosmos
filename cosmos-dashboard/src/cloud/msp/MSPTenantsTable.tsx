@@ -135,7 +135,7 @@ export default function MSPTenantsTable({
 
   // Default sorting state of the table
   const [sorting, setSorting] = useLocalStorage<SortingState>(
-    "netbird-table-sort" + path,
+    "cosmos-table-sort" + path,
     [
       {
         id: "created_at",

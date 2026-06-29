@@ -99,7 +99,7 @@ export default function ClustersTable({ headingTarget }: Readonly<Props>) {
   const [addModalOpen, setAddModalOpen] = useState(false);
 
   const [sorting, setSorting] = useLocalStorage<SortingState>(
-    "netbird-table-sort" + path,
+    "cosmos-table-sort" + path,
     [
       {
         id: "address",

@@ -7,7 +7,7 @@ import { DialogContent, DialogTitle } from "@radix-ui/react-dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import useFetchApi, { useApiCall } from "@utils/api";
 import { cn } from "@utils/helpers";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/cosmos";
 import { useRouter } from "next/navigation";
 import * as React from "react";
 import { useEffect, useMemo, useReducer, useState } from "react";
@@ -358,8 +358,8 @@ export const Onboarding = ({
                 >
                   {isOnboardingPending && (
                     <Stepper
-                      step={isNetBirdCloud() ? step : step - 1}
-                      maxSteps={isNetBirdCloud() ? maxSteps : maxSteps - 1}
+                      step={isCosmosCloud() ? step : step - 1}
+                      maxSteps={isCosmosCloud() ? maxSteps : maxSteps - 1}
                     />
                   )}
 

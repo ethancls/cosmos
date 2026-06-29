@@ -228,7 +228,7 @@ export function SetupContent({ onSuccess }: Readonly<ModalProps>) {
             <Steps.Step step={5}>
               <p className={"font-normal"}>
                 Give it a descriptive name like{" "}
-                <Mark copy>netbird-activity-events</Mark>
+                <Mark copy>cosmos-activity-events</Mark>
                 and click <Mark>Create Firehose stream</Mark>
                 <Tooltip>
                   <TooltipTrigger>
@@ -256,7 +256,7 @@ export function SetupContent({ onSuccess }: Readonly<ModalProps>) {
                       <PencilLine size={16} className={"text-nb-gray-300"} />
                     </div>
                   }
-                  placeholder={"netbird-activity-events"}
+                  placeholder={"cosmos-activity-events"}
                   value={streamName}
                   onChange={(e) => setStreamName(e.target.value)}
                 />

@@ -8,7 +8,7 @@ import { useReverseProxies } from "@/contexts/ReverseProxiesProvider";
 
 // Helper to parse domain into subdomain and base domain.
 // When availableDomains is provided, matches against them first (longest match wins)
-// to avoid e.g. "netbird.io" matching when the actual domain is "eu.proxy.netbird.io".
+// to avoid e.g. "cosmos.io" matching when the actual domain is "eu.proxy.cosmos.io".
 function parseDomain(
   fullDomain: string,
   availableDomains?: ReverseProxyDomain[],
@@ -41,7 +41,7 @@ function parseDomain(
   }
 
   // Fallback to hardcoded known domains
-  const knownDomains = ["netbird.cloud", "netbird.io", "netbird.app"];
+  const knownDomains = ["cosmos.cloud", "cosmos.io", "cosmos.app"];
 
   for (const known of knownDomains) {
     if (fullDomain.endsWith(`.${known}`)) {
@@ -65,7 +65,7 @@ function parseDomain(
 
   return {
     subdomain: fullDomain,
-    baseDomain: "netbird.cloud",
+    baseDomain: "cosmos.cloud",
     isCustom: false,
   };
 }

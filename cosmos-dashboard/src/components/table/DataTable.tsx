@@ -271,13 +271,13 @@ export function DataTable<TData, TValue>({
 
   const [localColumnFilters, setLocalColumnFilters] =
     useLocalStorage<ColumnFiltersState>(
-      `netbird-table-columns${uniqueKey ? "/" + (uniqueKey as string) : path}`,
+      `cosmos-table-columns${uniqueKey ? "/" + (uniqueKey as string) : path}`,
       [],
       keepStateInLocalStorage && !manualColumnFiltering,
       initialFilters,
     );
   const [localGlobalSearch, setLocalGlobalSearch] = useLocalStorage(
-    `netbird-table-search${uniqueKey ? "/" + (uniqueKey as string) : path}`,
+    `cosmos-table-search${uniqueKey ? "/" + (uniqueKey as string) : path}`,
     globalFilter || "",
     keepStateInLocalStorage && !manualFiltering,
     initialSearch,
@@ -285,7 +285,7 @@ export function DataTable<TData, TValue>({
 
   const [paginationState, setPaginationState] =
     useLocalStorage<PaginationState>(
-      `netbird-table-pagination${
+      `cosmos-table-pagination${
         uniqueKey ? "/" + (uniqueKey as string) : path
       }`,
       {

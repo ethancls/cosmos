@@ -134,7 +134,7 @@ const Content = ({ network, onCreated, onUpdated }: ContentProps) => {
           <Paragraph className={"text-sm mt-auto"}>
             Learn more about
             <InlineLink
-              href={"https://docs.netbird.io/how-to/networks"}
+              href={"https://docs.cosmos.io/how-to/networks"}
               target={"_blank"}
             >
               Networks

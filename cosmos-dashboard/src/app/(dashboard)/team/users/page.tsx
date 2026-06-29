@@ -7,7 +7,7 @@ import SkeletonTable from "@components/skeletons/SkeletonTable";
 import { RestrictedAccess } from "@components/ui/RestrictedAccess";
 import { usePortalElement } from "@hooks/usePortalElement";
 import useFetchApi from "@utils/api";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/cosmos";
 import { ExternalLinkIcon, User2 } from "lucide-react";
 import React, { lazy, Suspense } from "react";
 import TeamIcon from "@/assets/icons/TeamIcon";
@@ -51,7 +51,7 @@ export default function TeamUsers() {
           Manage users and their permissions. Same-domain email users are added
           automatically on first sign-in.{" "}
           <InlineLink
-            href={"https://docs.netbird.io/how-to/add-users-to-your-network"}
+            href={"https://docs.cosmos.io/how-to/add-users-to-your-network"}
             target={"_blank"}
           >
             Learn more
@@ -63,7 +63,7 @@ export default function TeamUsers() {
         <Suspense fallback={<SkeletonTable />}>
           {permission.settings.read && (
             <div className={"flex flex-wrap gap-4 p-default pb-6"}>
-              {(permission?.idp?.read || !isNetBirdCloud()) && (
+              {(permission?.idp?.read || !isCosmosCloud()) && (
                 <IdentityProviderCard />
               )}
               <AccountMfaCard />

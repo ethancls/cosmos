@@ -11,7 +11,7 @@ import {
 import Separator from "@components/Separator";
 import { VerticalTabs } from "@components/VerticalTabs";
 import * as Tabs from "@radix-ui/react-tabs";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/cosmos";
 import {
   CreditCardIcon,
   DollarSignIcon,
@@ -38,7 +38,7 @@ export const PlansAndBillingTab = () => {
   const { isAccountWithMSPParent } = useMSP();
   if (isAccountWithMSPParent) return;
 
-  const canViewBilling = permission?.billing?.update && isNetBirdCloud();
+  const canViewBilling = permission?.billing?.update && isCosmosCloud();
   if (!canViewBilling) return;
 
   return <PlansAndBillingTabContent />;
@@ -50,7 +50,7 @@ export const PlansAndBillingTabTrigger = () => {
   const { isAccountWithMSPParent } = useMSP();
   if (isAccountWithMSPParent) return;
 
-  const canViewBilling = permission?.billing?.update && isNetBirdCloud();
+  const canViewBilling = permission?.billing?.update && isCosmosCloud();
   if (!canViewBilling) return;
 
   return (
@@ -254,7 +254,7 @@ const PlansAndBillingTabContent = () => {
           </Paragraph>
           <Paragraph>
             Find out which{" "}
-            <InlineLink href={"https://netbird.io/pricing"} target={"_blank"}>
+            <InlineLink href={"https://cosmos.io/pricing"} target={"_blank"}>
               Pricing Plan
               <ExternalLinkIcon size={12} />
             </InlineLink>

@@ -7,7 +7,7 @@ export const MSPTenantDocsLink = () => {
     <>
       Learn more about
       <InlineLink
-        href={"https://docs.netbird.io/how-to/msp-portal"}
+        href={"https://docs.cosmos.io/how-to/msp-portal"}
         target={"_blank"}
       >
         MSP Portal

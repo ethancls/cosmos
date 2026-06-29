@@ -8,7 +8,7 @@ import {
 } from "@components/DropdownMenu";
 import { notify } from "@components/Notification";
 import { useApiCall } from "@utils/api";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/cosmos";
 import { Ban, MoreVertical, Trash2, UndoIcon, XCircle } from "lucide-react";
 import * as React from "react";
 import { useMemo } from "react";
@@ -180,7 +180,7 @@ export default function UserActionCell({
 
   return (
     <div className={"flex justify-end pr-4 items-center gap-2"}>
-      {!serviceUser && isNetBirdCloud() && (
+      {!serviceUser && isCosmosCloud() && (
         <UserResendInviteButton user={user} />
       )}
       <DropdownMenu modal={false}>

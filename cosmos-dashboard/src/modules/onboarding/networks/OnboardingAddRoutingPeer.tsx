@@ -11,7 +11,7 @@ import { Group } from "@/interfaces/Group";
 import { Network, NetworkRouter } from "@/interfaces/Network";
 import { Peer } from "@/interfaces/Peer";
 import { SetupKey } from "@/interfaces/SetupKey";
-import { SetupModalContent } from "@/modules/setup-netbird-modal/SetupModal";
+import { SetupModalContent } from "@/modules/setup-cosmos-modal/SetupModal";
 
 type Props = {
   network?: Network;

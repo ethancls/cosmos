@@ -47,7 +47,7 @@ export default function NameServers() {
         <Paragraph>
           Add nameservers for domain name resolution in your NetBird network.{" "}
           <InlineLink
-            href={"https://docs.netbird.io/how-to/manage-dns-in-your-network"}
+            href={"https://docs.cosmos.io/how-to/manage-dns-in-your-network"}
             target={"_blank"}
           >
             Learn more

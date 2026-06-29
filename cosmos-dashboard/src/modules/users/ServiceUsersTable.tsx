@@ -100,7 +100,7 @@ export default function ServiceUsersTable({
 
   // Default sorting state of the table
   const [sorting, setSorting] = useLocalStorage<SortingState>(
-    "netbird-table-sort" + path,
+    "cosmos-table-sort" + path,
     [
       {
         id: "is_current",
@@ -225,7 +225,7 @@ export default function ServiceUsersTable({
               Learn more about
               <InlineLink
                 href={
-                  "https://docs.netbird.io/how-to/access-cosmos-public-api"
+                  "https://docs.cosmos.io/how-to/access-cosmos-public-api"
                 }
                 target={"_blank"}
               >

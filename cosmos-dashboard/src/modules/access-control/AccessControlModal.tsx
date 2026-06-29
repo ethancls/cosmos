@@ -300,7 +300,7 @@ export function AccessControlModalContent({
                   <SelectItem value="udp">UDP</SelectItem>
                   <SelectItem value="icmp">ICMP</SelectItem>
                   <SelectItem
-                    value="netbird-ssh"
+                    value="cosmos-ssh"
                     extra={
                       <HelpTooltip
                         triggerClassName={"ml-[0.01rem]"}
@@ -341,15 +341,15 @@ export function AccessControlModalContent({
                   data-testid={"source-group-selector"}
                   popoverWidth={500}
                   placeholder={"Select source(s)..."}
-                  showRoutes={protocol !== "netbird-ssh"}
+                  showRoutes={protocol !== "cosmos-ssh"}
                   showResources={false}
-                  showPeers={protocol !== "netbird-ssh"}
+                  showPeers={protocol !== "cosmos-ssh"}
                   showResourceCounter={false}
                   showPeerCount={allowEditPeers}
                   disableInlineRemoveGroup={false}
                   values={sourceGroups}
                   onChange={setSourceGroups}
-                  users={protocol === "netbird-ssh" ? users : undefined}
+                  users={protocol === "cosmos-ssh" ? users : undefined}
                   resource={sourceResource}
                   onResourceChange={setSourceResource}
                   saveGroupAssignments={useSave}
@@ -385,7 +385,7 @@ export function AccessControlModalContent({
                   popoverWidth={500}
                   placeholder={"Select destination(s)..."}
                   showRoutes={true}
-                  showResources={protocol !== "netbird-ssh"}
+                  showResources={protocol !== "cosmos-ssh"}
                   showPeers={true}
                   showResourceCounter={true}
                   showPeerCount={allowEditPeers}
@@ -423,7 +423,7 @@ export function AccessControlModalContent({
                 </Callout>
               )}
 
-            {protocol === "netbird-ssh" ? (
+            {protocol === "cosmos-ssh" ? (
               <div>
                 {destinationHasResources && (
                   <Callout
@@ -564,7 +564,7 @@ export function AccessControlModalContent({
           <Paragraph className={"text-sm mt-auto"}>
             Learn more about
             <InlineLink
-              href={"https://docs.netbird.io/how-to/manage-network-access"}
+              href={"https://docs.cosmos.io/how-to/manage-network-access"}
               target={"_blank"}
             >
               Access Controls

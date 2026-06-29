@@ -4,12 +4,12 @@ import InlineLink from "@components/InlineLink";
 import Steps from "@components/Steps";
 import TabsContentPadding, { TabsContent } from "@components/Tabs";
 import { IconBrandUbuntu } from "@tabler/icons-react";
-import { GRPC_API_ORIGIN } from "@utils/netbird";
+import { GRPC_API_ORIGIN } from "@utils/cosmos";
 import { ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { OperatingSystem } from "@/interfaces/OperatingSystem";
-import { RoutingPeerSetupKeyInfo } from "@/modules/setup-netbird-modal/SetupModal";
+import { RoutingPeerSetupKeyInfo } from "@/modules/setup-cosmos-modal/SetupModal";
 
 type Props = {
   setupKey?: string;
@@ -78,7 +78,7 @@ export default function DockerTab({
                 </Code.Line>
               )}
 
-              <Code.Line> -v netbird-client:/var/lib/netbird \</Code.Line>
+              <Code.Line> -v cosmos-client:/var/lib/netbird \</Code.Line>
               {GRPC_API_ORIGIN && (
                 <Code.Line>
                   {" "}
@@ -86,13 +86,13 @@ export default function DockerTab({
                   <span className={"text-kyle"}>{GRPC_API_ORIGIN}</span> \
                 </Code.Line>
               )}
-              <Code.Line> netbirdio/netbird:latest</Code.Line>
+              <Code.Line> ethancls/cosmos:latest</Code.Line>
             </Code>
           </Steps.Step>
           <Steps.Step step={3 + offset} line={false}>
             <p>Read our documentation</p>
             <InlineLink
-              href={"https://docs.netbird.io/how-to/installation/docker"}
+              href={"https://docs.cosmos.io/how-to/installation/docker"}
               passHref={true}
               target={"_blank"}
             >

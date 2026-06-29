@@ -179,7 +179,7 @@ const CheckContent = ({ value, onChange, disabled }: Props) => {
             Learn more about
             <InlineLink
               href={
-                "https://docs.netbird.io/how-to/manage-posture-checks#geolocation-check"
+                "https://docs.cosmos.io/how-to/manage-posture-checks#geolocation-check"
               }
               target={"_blank"}
             >

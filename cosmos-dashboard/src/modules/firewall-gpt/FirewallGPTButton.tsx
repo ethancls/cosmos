@@ -1,6 +1,6 @@
 import FullTooltip from "@components/FullTooltip";
 import { cn } from "@utils/helpers";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/cosmos";
 import { LockIcon, Sparkles } from "lucide-react";
 import * as React from "react";
 import { usePermissions } from "@/contexts/PermissionsProvider";
@@ -14,7 +14,7 @@ type Props = {
 export const FirewallGPTButton = ({ onClick }: Props) => {
   const { permission } = usePermissions();
 
-  if (!isNetBirdCloud()) {
+  if (!isCosmosCloud()) {
     return (
       <FullTooltip
         interactive={true}

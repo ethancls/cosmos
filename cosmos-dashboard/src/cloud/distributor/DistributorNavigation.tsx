@@ -7,7 +7,7 @@ import TeamIcon from "@/assets/icons/TeamIcon";
 import { useDistributor } from "@/cloud/distributor/contexts/DistributorProvider";
 import { usePermissions } from "@/contexts/PermissionsProvider";
 import { useLoggedInUser } from "@/contexts/UsersProvider";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/cosmos";
 import { Role } from "@/interfaces/User";
 import PeerIcon from "@/assets/icons/PeerIcon";
 
@@ -18,7 +18,7 @@ export const DistributorNavigation = () => {
   const isBillingAdmin = loggedInUser?.role === Role.BillingAdmin;
 
   const show = useMemo(() => {
-    return isActive && isNetBirdCloud();
+    return isActive && isCosmosCloud();
   }, [isActive, isOwnerOrAdmin]);
 
   /**

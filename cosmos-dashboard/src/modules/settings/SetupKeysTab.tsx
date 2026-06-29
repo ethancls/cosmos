@@ -58,7 +58,7 @@ export default function SetupKeysTab() {
           machines in your network.{" "}
           <InlineLink
             href={
-              "https://docs.netbird.io/how-to/register-machines-using-setup-keys"
+              "https://docs.cosmos.io/how-to/register-machines-using-setup-keys"
             }
             target={"_blank"}
           >

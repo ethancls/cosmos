@@ -8,7 +8,7 @@ import { notify } from "@components/Notification";
 import * as Tabs from "@radix-ui/react-tabs";
 import { useApiCall } from "@utils/api";
 import { cn } from "@utils/helpers";
-import { isLocalDev, isNetBirdCloud } from "@utils/netbird";
+import { isLocalDev, isCosmosCloud } from "@utils/cosmos";
 import { AnimatePresence, motion } from "framer-motion";
 import { isEmpty } from "lodash";
 import {
@@ -177,7 +177,7 @@ export default function GroupsSettings({ account }: Props) {
             }
             disabled={!permission.settings.update}
           />
-          {(!isNetBirdCloud() || isLocalDev()) && (
+          {(!isCosmosCloud() || isLocalDev()) && (
             <FancyToggleSwitch
               value={jwtGroupSync}
               onChange={setJwtGroupSync}
@@ -195,7 +195,7 @@ export default function GroupsSettings({ account }: Props) {
           )}
         </div>
 
-        {(!isNetBirdCloud() || isLocalDev()) && (
+        {(!isCosmosCloud() || isLocalDev()) && (
           <AnimatePresence>
             {jwtGroupSync && (
               <div className={"overflow-hidden -top-4 relative z-0"}>

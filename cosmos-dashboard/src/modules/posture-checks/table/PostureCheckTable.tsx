@@ -110,7 +110,7 @@ export default function PostureCheckTable({
 
   // Default sorting state of the table
   const [sorting, setSorting] = useLocalStorage<SortingState>(
-    "netbird-table-sort" + path,
+    "cosmos-table-sort" + path,
     [
       {
         id: "active",
@@ -250,7 +250,7 @@ export default function PostureCheckTable({
                     Learn more about
                     <InlineLink
                       href={
-                        "https://docs.netbird.io/how-to/manage-posture-checks"
+                        "https://docs.cosmos.io/how-to/manage-posture-checks"
                       }
                       target={"_blank"}
                     >

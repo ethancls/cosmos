@@ -40,7 +40,7 @@ export const AccessiblePeersSection = ({ peerID }: Props) => {
               This peer can connect to the following peers within the NetBird
               network.{" "}
               <InlineLink
-                href={"https://docs.netbird.io/how-to/manage-network-access"}
+                href={"https://docs.cosmos.io/how-to/manage-network-access"}
                 target={"_blank"}
               >
                 Learn more

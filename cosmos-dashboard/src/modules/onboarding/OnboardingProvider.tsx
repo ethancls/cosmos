@@ -1,6 +1,6 @@
 import { useLocalStorage } from "@hooks/useLocalStorage";
 import useFetchApi, { useApiCall } from "@utils/api";
-import { isAgentNetworkOnly, isLocalDev, isNetBirdCloud } from "@utils/netbird";
+import { isAgentNetworkOnly, isLocalDev, isCosmosCloud } from "@utils/cosmos";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useMemo } from "react";
 import { useSWRConfig } from "swr";
@@ -45,11 +45,11 @@ export const OnboardingProvider = ({
   const gaId = params?.get("ga_id") ?? "";
 
   const accountId = account?.id ?? "unknown";
-  const onboardingKey = `netbird-onboarding-flow:${accountId}`;
+  const onboardingKey = `cosmos-onboarding-flow:${accountId}`;
 
   // Migrate old onboarding state to new key if needed
   if (typeof window !== "undefined" && account?.id) {
-    const oldKey = "netbird-onboarding-flow";
+    const oldKey = "cosmos-onboarding-flow";
     const oldValue = window.localStorage.getItem(oldKey);
     const newValue = window.localStorage.getItem(onboardingKey);
     if (oldValue && !newValue) {
@@ -75,14 +75,14 @@ export const OnboardingProvider = ({
     // while either the signup form or the onboarding flow is still pending.
     if (isAgentNetworkOnly()) {
       const signupPending =
-        !isNetBirdCloud() && !!account?.onboarding?.signup_form_pending;
+        !isCosmosCloud() && !!account?.onboarding?.signup_form_pending;
       return (
         isOwner &&
         (signupPending || !!account?.onboarding?.onboarding_flow_pending)
       );
     }
-    if (!isNetBirdCloud()) return false;
-    const isSignupFormPending = isNetBirdCloud()
+    if (!isCosmosCloud()) return false;
+    const isSignupFormPending = isCosmosCloud()
       ? !!account?.onboarding?.signup_form_pending
       : false;
     const show =
@@ -93,7 +93,7 @@ export const OnboardingProvider = ({
   // Self-hosted only: the cloud survey relies on a JWT domain claim self-hosted
   // IdPs don't emit, so the agent-network flow uses its own signup step.
   const agentSignupPending =
-    !isNetBirdCloud() && !!account?.onboarding?.signup_form_pending;
+    !isCosmosCloud() && !!account?.onboarding?.signup_form_pending;
 
   const updateAccountMeta = async (meta: Partial<Account["onboarding"]>) => {
     if (!account) return;
@@ -215,7 +215,7 @@ export const OnboardingProvider = ({
     });
   };
 
-  const formSubmitted = isNetBirdCloud()
+  const formSubmitted = isCosmosCloud()
     ? !account?.onboarding?.signup_form_pending
     : true;
 

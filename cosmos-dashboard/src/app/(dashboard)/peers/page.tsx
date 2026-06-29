@@ -17,7 +17,7 @@ import { usePermissions } from "@/contexts/PermissionsProvider";
 import { useUsers } from "@/contexts/UsersProvider";
 import PageContainer from "@/layouts/PageContainer";
 import type { PeersTableKind } from "@/modules/peers/PeersTable";
-import { SetupModalContent } from "@/modules/setup-netbird-modal/SetupModal";
+import { SetupModalContent } from "@/modules/setup-cosmos-modal/SetupModal";
 
 const PeersTable = lazy(() => import("@/modules/peers/PeersTable"));
 
@@ -102,7 +102,7 @@ function PeersView() {
         <Paragraph>
             User devices and headless machines, such as servers and autonomous agents, connected to your network.{" "}
           <InlineLink
-            href={"https://docs.netbird.io/how-to/add-machines-to-your-network"}
+            href={"https://docs.cosmos.io/how-to/add-machines-to-your-network"}
             target={"_blank"}
           >
             Learn more
@@ -133,7 +133,7 @@ function PeersBlockedView() {
           After that you should be connected. If you have further questions
           check out our{" "}
           <InlineLink
-            href={"https://docs.netbird.io/how-to/getting-started#installation"}
+            href={"https://docs.cosmos.io/how-to/getting-started#installation"}
             target={"_blank"}
           >
             Installation Guide

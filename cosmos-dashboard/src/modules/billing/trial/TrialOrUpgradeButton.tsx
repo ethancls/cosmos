@@ -2,7 +2,7 @@ import Button from "@components/Button";
 import FullTooltip from "@components/FullTooltip";
 import { IconHelpCircle } from "@tabler/icons-react";
 import { cn } from "@utils/helpers";
-import { isAgentNetworkOnly, isNetBirdCloud } from "@utils/netbird";
+import { isAgentNetworkOnly, isCosmosCloud } from "@utils/cosmos";
 import { ExternalLinkIcon, Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import * as React from "react";
@@ -130,7 +130,7 @@ export const TrialOrUpgradeButton = ({
     );
   };
 
-  if (!isNetBirdCloud()) return <SelfHostedUpgradeButton variant={variant} />;
+  if (!isCosmosCloud()) return <SelfHostedUpgradeButton variant={variant} />;
   if (!isOwnerOrAdmin) return <RegularUserContent />;
   if (!isTrialAvailable) return <PlansAndBillingButton />;
   if (!offerTrial) return <PlansAndBillingButton />;
@@ -147,8 +147,8 @@ export const SelfHostedUpgradeButton = ({
   // (tagged so the visit is attributable); the regular self-hosted product
   // keeps the on-prem pricing anchor.
   const href = isAgentNetworkOnly()
-    ? "https://netbird.ai/pricing?utm_source=dashboard_oss"
-    : "https://netbird.io/pricing#on-prem";
+    ? "https://cosmos.ai/pricing?utm_source=dashboard_oss"
+    : "https://cosmos.io/pricing#on-prem";
   return (
     <div className={"relative top-1 min-w-[160px]"}>
       <a

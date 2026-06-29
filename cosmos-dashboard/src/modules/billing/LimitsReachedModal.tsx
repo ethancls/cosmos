@@ -15,7 +15,7 @@ export const LimitsReachedModal = () => {
     useBilling();
 
   const [firstTimeOpen, setFirstTimeOpen] = useLocalStorage<Date | undefined>(
-    "netbird-limits-first-open",
+    "cosmos-limits-first-open",
     undefined,
   );
 
@@ -37,12 +37,12 @@ const LimitReachedContent = () => {
   const [open, setOpen] = useState(false);
 
   const [firstTimeOpen, setFirstTimeOpen] = useLocalStorage<Date | undefined>(
-    "netbird-limits-first-open",
+    "cosmos-limits-first-open",
     undefined,
   );
 
   const [lastClose, setLastClose] = useLocalStorage<Date | undefined>(
-    "netbird-limits-last-close",
+    "cosmos-limits-last-close",
     undefined,
   );
 

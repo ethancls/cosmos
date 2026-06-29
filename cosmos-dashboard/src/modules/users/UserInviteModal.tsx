@@ -29,7 +29,7 @@ import { Group } from "@/interfaces/Group";
 import { Role, User, UserInvite } from "@/interfaces/User";
 import useGroupHelper from "@/modules/groups/useGroupHelper";
 import { UserRoleSelector } from "@/modules/users/UserRoleSelector";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/cosmos";
 
 type UserCreationMode = "create" | "invite";
 
@@ -211,7 +211,7 @@ export function UserInviteModalContent({
       initial: groups,
     });
 
-  const isCloud = isNetBirdCloud();
+  const isCloud = isCosmosCloud();
   const [mode, setMode] = useState<UserCreationMode>("invite");
 
   const createUser = async () => {
@@ -372,7 +372,7 @@ export function UserInviteModalContent({
                 <MailIcon size={16} className={"text-nb-gray-300"} />
               </div>
             }
-            placeholder={"hello@netbird.io"}
+            placeholder={"hello@cosmos.io"}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />

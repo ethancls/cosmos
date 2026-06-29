@@ -36,14 +36,14 @@ const ApplicationContext = React.createContext(
 export default function ApplicationProvider({ children }: Props) {
   const [latestRelease, setLatestRelease] = useLocalStorage<
     NetbirdRelease | undefined
-  >("netbird-latest-release", undefined);
+  >("cosmos-latest-release", undefined);
   const { oidcUser: user } = useOidcUser();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const isMd = useIsMd();
   const userRequest = useApiCall<User[]>(`/users`, true);
   const [show, setShow] = useState(false);
   const [isNavigationCollapsed, setIsNavigationCollapsed] = useLocalStorage(
-    "netbird-nav-collapsed",
+    "cosmos-nav-collapsed",
     false,
   );
   const requestCalled = useRef(false);
@@ -51,7 +51,7 @@ export default function ApplicationProvider({ children }: Props) {
 
   const [globalApiParams, setGlobalApiParams] = useLocalStorage<
     Params | undefined
-  >("netbird-api-params", undefined);
+  >("cosmos-api-params", undefined);
 
   const populateCache = useCallback(
     async (tries = 0) => {

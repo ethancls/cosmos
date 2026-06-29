@@ -10,7 +10,7 @@ import {
   ReverseProxyDomainType,
 } from "@/interfaces/ReverseProxy";
 import FullTooltip from "@components/FullTooltip";
-import { isNetBirdCloud } from "@/utils/netbird";
+import { isCosmosCloud } from "@/utils/cosmos";
 import InlineLink from "@components/InlineLink";
 
 type Props = {
@@ -92,11 +92,11 @@ export default function ReverseProxyClusterCell({
   return (
     <FullTooltip
       content={
-        isNetBirdCloud() ? (
+        isCosmosCloud() ? (
           <div className={"text-xs max-w-xs"}>
             Cluster {reverseProxy.proxy_cluster} is offline. Please try again in
             a few minutes. If the issue persists, check{" "}
-            <InlineLink href={"https://status.netbird.io/"} target={"_blank"}>
+            <InlineLink href={"https://status.cosmos.io/"} target={"_blank"}>
               NetBird Status
             </InlineLink>{" "}
             or reach out to{"  "}

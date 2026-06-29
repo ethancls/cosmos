@@ -1,7 +1,7 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
 
-const STORAGE_KEY = "netbird-experiments";
+const STORAGE_KEY = "cosmos-experiments";
 
 interface ExperimentStorage {
   [experimentId: string]: string;

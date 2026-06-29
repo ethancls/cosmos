@@ -233,7 +233,7 @@ const CheckContent = ({ value, onChange, disabled }: Props) => {
             Learn more about
             <InlineLink
               href={
-                "https://docs.netbird.io/how-to/manage-posture-checks#operating-system-version-check"
+                "https://docs.cosmos.io/how-to/manage-posture-checks#operating-system-version-check"
               }
               target={"_blank"}
             >

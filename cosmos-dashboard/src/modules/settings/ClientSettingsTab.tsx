@@ -249,7 +249,7 @@ function ClientSettingsTabContent({ account }: Readonly<Props>) {
               This requires at least NetBird{" "}
               <span className={"text-white font-medium"}>v0.61.0</span>.{" "}
               <InlineLink
-                href={"https://docs.netbird.io/manage/peers/auto-update"}
+                href={"https://docs.cosmos.io/manage/peers/auto-update"}
                 target={"_blank"}
               >
                 Learn more
@@ -324,7 +324,7 @@ function ClientSettingsTabContent({ account }: Readonly<Props>) {
                 <span className={"text-white font-medium"}>v0.66.0</span>.{" "}
                 <InlineLink
                   href={
-                    "https://docs.netbird.io/manage/reverse-proxy/expose-from-cli"
+                    "https://docs.cosmos.io/manage/reverse-proxy/expose-from-cli"
                   }
                   target={"_blank"}
                 >
@@ -381,7 +381,7 @@ function ClientSettingsTabContent({ account }: Readonly<Props>) {
               behavior may evolve. Instead of maintaining always-on connections,
               NetBird activates them on-demand based on activity or signaling.{" "}
               <InlineLink
-                href={"https://docs.netbird.io/how-to/lazy-connection"}
+                href={"https://docs.cosmos.io/how-to/lazy-connection"}
                 target={"_blank"}
               >
                 Learn more

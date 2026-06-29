@@ -36,7 +36,7 @@ import SetupKeysIcon from "@/assets/icons/SetupKeysIcon";
 import { Group } from "@/interfaces/Group";
 import { SetupKey } from "@/interfaces/SetupKey";
 import useGroupHelper from "@/modules/groups/useGroupHelper";
-import SetupModal from "@/modules/setup-netbird-modal/SetupModal";
+import SetupModal from "@/modules/setup-cosmos-modal/SetupModal";
 
 type Props = {
   children?: React.ReactNode;
@@ -369,7 +369,7 @@ export function SetupKeyModalContent({
             Learn more about
             <InlineLink
               href={
-                "https://docs.netbird.io/how-to/register-machines-using-setup-keys"
+                "https://docs.cosmos.io/how-to/register-machines-using-setup-keys"
               }
               target={"_blank"}
             >

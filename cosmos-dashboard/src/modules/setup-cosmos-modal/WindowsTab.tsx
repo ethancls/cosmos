@@ -3,7 +3,7 @@ import Code from "@components/Code";
 import { SelectDropdown } from "@components/select/SelectDropdown";
 import Steps from "@components/Steps";
 import TabsContentPadding, { TabsContent } from "@components/Tabs";
-import { GRPC_API_ORIGIN, pkgsDownloadUrl } from "@utils/netbird";
+import { GRPC_API_ORIGIN, pkgsDownloadUrl } from "@utils/cosmos";
 import { DownloadIcon, PackageOpenIcon } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -11,7 +11,7 @@ import { OperatingSystem } from "@/interfaces/OperatingSystem";
 import {
   NetBirdUpCommand,
   RoutingPeerSetupKeyInfo,
-} from "@/modules/setup-netbird-modal/SetupModal";
+} from "@/modules/setup-cosmos-modal/SetupModal";
 
 type Props = {
   setupKey?: string;

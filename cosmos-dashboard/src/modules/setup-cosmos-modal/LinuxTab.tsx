@@ -15,7 +15,7 @@ import { OperatingSystem } from "@/interfaces/OperatingSystem";
 import {
   NetBirdUpCommand,
   RoutingPeerSetupKeyInfo,
-} from "@/modules/setup-netbird-modal/SetupModal";
+} from "@/modules/setup-cosmos-modal/SetupModal";
 
 type Props = {
   setupKey?: string;
@@ -43,7 +43,7 @@ export default function LinuxTab({
         </p>
         <Steps>
           <Steps.Step step={1}>
-            <Code>curl -fsSL https://pkgs.netbird.io/install.sh | sh</Code>
+            <Code>curl -fsSL https://pkgs.cosmos.io/install.sh | sh</Code>
           </Steps.Step>
           {setupKeyContent && (
             <Steps.Step step={2}>{setupKeyContent}</Steps.Step>
@@ -79,12 +79,12 @@ export default function LinuxTab({
                       sudo apt install ca-certificates curl gnupg -y
                     </Code.Line>
                     <Code.Line>
-                      curl -sSL https://pkgs.netbird.io/debian/public.key | sudo
+                      curl -sSL https://pkgs.cosmos.io/debian/public.key | sudo
                       gpg --dearmor --output
-                      /usr/share/keyrings/netbird-archive-keyring.gpg
+                      /usr/share/keyrings/cosmos-archive-keyring.gpg
                     </Code.Line>
                     <Code.Line>
-                      {`echo 'deb [signed-by=/usr/share/keyrings/netbird-archive-keyring.gpg] https://pkgs.netbird.io/debian stable main' | sudo tee /etc/apt/sources.list.d/netbird.list`}
+                      {`echo 'deb [signed-by=/usr/share/keyrings/cosmos-archive-keyring.gpg] https://pkgs.cosmos.io/debian stable main' | sudo tee /etc/apt/sources.list.d/cosmos.list`}
                     </Code.Line>
                   </Code>
                 </Steps.Step>
@@ -94,14 +94,14 @@ export default function LinuxTab({
                     codeToCopy={[
                       `sudo apt-get update`,
                       `sudo apt-get install netbird`,
-                      `sudo apt-get install netbird-ui`,
+                      `sudo apt-get install cosmos-ui`,
                     ].join("\n")}
                   >
                     <Code.Line>sudo apt-get update</Code.Line>
                     <Code.Comment># for CLI only</Code.Comment>
                     <Code.Line>sudo apt-get install netbird</Code.Line>
                     <Code.Comment># for GUI package</Code.Comment>
-                    <Code.Line>sudo apt-get install netbird-ui</Code.Line>
+                    <Code.Line>sudo apt-get install cosmos-ui</Code.Line>
                   </Code>
                 </Steps.Step>
                 <Steps.Step step={3} line={false}>

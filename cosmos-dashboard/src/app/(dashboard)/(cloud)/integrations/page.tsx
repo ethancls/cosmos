@@ -17,7 +17,7 @@ import EDRTab from "@/modules/integrations/edr/EDRTab";
 import EventStreamingTab from "@/modules/integrations/event-streaming/EventStreamingTab";
 import IdentityProviderTab from "@/modules/integrations/idp-sync/IdentityProviderTab";
 import SSOTab from "@/modules/integrations/sso/SSOTab";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/cosmos";
 
 export default function Integrations() {
   const searchParams = useSearchParams();
@@ -35,7 +35,7 @@ export default function Integrations() {
             Identity Provider Sync
           </VerticalTabs.Trigger>
 
-          {isNetBirdCloud() && (
+          {isCosmosCloud() && (
             <VerticalTabs.Trigger value="sso">
               <KeyRoundIcon size={14} />
               Single Sign-On
@@ -57,7 +57,7 @@ export default function Integrations() {
             permission?.edr?.read ||
             permission?.idp?.read ||
             permission?.event_streaming?.read ||
-            (!isNetBirdCloud() && (permission?.settings?.read ?? false))
+            (!isCosmosCloud() && (permission?.settings?.read ?? false))
           }
         >
           <div className={"border-l border-nb-gray-930 w-full"}>

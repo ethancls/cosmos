@@ -11,7 +11,7 @@ import { useHasChanges } from "@hooks/useHasChanges";
 import * as Tabs from "@radix-ui/react-tabs";
 import { useApiCall } from "@utils/api";
 import { validator } from "@utils/helpers";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/cosmos";
 import cidr from "ip-cidr";
 import { ExternalLinkIcon, GlobeIcon, NetworkIcon } from "lucide-react";
 import React, { useMemo, useState } from "react";
@@ -237,7 +237,7 @@ function NetworkSettingsTabContent({ account }: Readonly<Props>) {
               <div className={"w-full"}>
                 <Input
                   placeholder={
-                    isNetBirdCloud() ? "netbird.cloud" : "netbird.selfhosted"
+                    isCosmosCloud() ? "cosmos.cloud" : "cosmos.selfhosted"
                   }
                   errorTooltip={true}
                   errorTooltipPosition={"top"}
@@ -343,7 +343,7 @@ function NetworkSettingsTabContent({ account }: Readonly<Props>) {
                 will only take effect after restarting the clients.{" "}
                 <InlineLink
                   href={
-                    "https://docs.netbird.io/how-to/accessing-entire-domains-within-networks#enabling-dns-wildcard-routing"
+                    "https://docs.cosmos.io/how-to/accessing-entire-domains-within-networks#enabling-dns-wildcard-routing"
                   }
                   target={"_blank"}
                   onClick={(e) => e.stopPropagation()}

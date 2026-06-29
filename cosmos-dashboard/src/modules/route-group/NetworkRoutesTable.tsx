@@ -154,7 +154,7 @@ export default function NetworkRoutesTable({
 
   // Default sorting state of the table
   const [sorting, setSorting] = useLocalStorage<SortingState>(
-    "netbird-table-sort" + path,
+    "cosmos-table-sort" + path,
     [
       {
         id: "network_id",
@@ -338,7 +338,7 @@ export default function NetworkRoutesTable({
                   Learn more about
                   <InlineLink
                     href={
-                      "https://docs.netbird.io/how-to/routing-traffic-to-private-networks"
+                      "https://docs.cosmos.io/how-to/routing-traffic-to-private-networks"
                     }
                     target={"_blank"}
                   >

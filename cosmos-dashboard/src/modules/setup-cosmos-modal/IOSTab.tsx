@@ -1,35 +1,33 @@
 import Code from "@components/Code";
 import Steps from "@components/Steps";
 import TabsContentPadding, { TabsContent } from "@components/Tabs";
-import { GRPC_API_ORIGIN } from "@utils/netbird";
+import { GRPC_API_ORIGIN } from "@utils/cosmos";
 import { ShoppingBagIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import GooglePlayButton from "@/assets/google-play-badge.png";
+import AppStoreButton from "@/assets/app-store-badge.png";
 import { OperatingSystem } from "@/interfaces/OperatingSystem";
 
-export default function AndroidTab() {
+export default function IOSTab() {
   return (
-    <TabsContent value={String(OperatingSystem.ANDROID)}>
+    <TabsContent value={String(OperatingSystem.IOS)}>
       <TabsContentPadding>
         <p className={"font-medium flex gap-3 items-center text-base"}>
           <ShoppingBagIcon size={16} />
-          Install on Android
+          Install on iOS
         </p>
         <Steps>
           <Steps.Step step={1}>
-            <p>Download and install the application from Google Play Store:</p>
+            <p>Download and install the application on the App Store:</p>
             <div className={"flex gap-4 mt-1"}>
               <Link
-                href={
-                  "https://play.google.com/store/apps/details?id=io.netbird.client"
-                }
+                href={"https://apps.apple.com/app/cosmos-p2p-vpn/id6469329339"}
                 target={"_blank"}
               >
                 <Image
-                  src={GooglePlayButton}
-                  alt={"Download NetBird from Google Play"}
+                  src={AppStoreButton}
+                  alt={"Download NetBird on the App Store"}
                   height={50}
                 />
               </Link>

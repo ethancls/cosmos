@@ -49,7 +49,7 @@ export default function ServiceUsers() {
           Use service users to create API tokens and avoid losing automated
           access.{" "}
           <InlineLink
-            href={"https://docs.netbird.io/how-to/access-cosmos-public-api"}
+            href={"https://docs.cosmos.io/how-to/access-cosmos-public-api"}
             target={"_blank"}
           >
             Learn more

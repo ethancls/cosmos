@@ -12,7 +12,7 @@ import * as React from "react";
 type Props = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  // Bare endpoint host, e.g. "sailcloth.eu.proxy.netbird.io".
+  // Bare endpoint host, e.g. "sailcloth.eu.proxy.cosmos.io".
   endpoint: string;
 };
 

@@ -9,7 +9,7 @@ import * as React from "react";
 import { useMemo, useState } from "react";
 import { NetworkResource } from "@/interfaces/Network";
 import { Peer } from "@/interfaces/Peer";
-import { SetupModalContent } from "@/modules/setup-netbird-modal/SetupModal";
+import { SetupModalContent } from "@/modules/setup-cosmos-modal/SetupModal";
 
 type Props = {
   resource?: NetworkResource;
@@ -73,7 +73,7 @@ export const OnboardingTestResource = ({
             Everything working? Great! You can now continue with the onboarding.
             If something isn’t right, please check our{" "}
             <InlineLink
-              href={"https://docs.netbird.io/how-to/troubleshooting-client"}
+              href={"https://docs.cosmos.io/how-to/troubleshooting-client"}
               target={"_blank"}
               onClick={onTroubleshootingClick}
             >

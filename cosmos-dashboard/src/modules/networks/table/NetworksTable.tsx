@@ -102,7 +102,7 @@ export default function NetworksTable({
 
   // Default sorting state of the table
   const [sorting, setSorting] = useLocalStorage<SortingState>(
-    "netbird-table-sort" + path,
+    "cosmos-table-sort" + path,
     [
       {
         id: "name",
@@ -191,7 +191,7 @@ export default function NetworksTable({
                   <>
                     Learn more about
                     <InlineLink
-                      href={"https://docs.netbird.io/how-to/networks"}
+                      href={"https://docs.cosmos.io/how-to/networks"}
                       target={"_blank"}
                     >
                       Networks

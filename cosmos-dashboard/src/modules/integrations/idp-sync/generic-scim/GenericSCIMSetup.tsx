@@ -8,7 +8,7 @@ import { MinimalList } from "@components/ui/MinimalList";
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { useApiCall } from "@utils/api";
 import { cn } from "@utils/helpers";
-import { isAuth0 } from "@utils/netbird";
+import { isAuth0 } from "@utils/cosmos";
 import { isEmpty, trim } from "lodash";
 import {
   BoxIcon,
@@ -218,7 +218,7 @@ export function SetupContent({
               className={"inline"}
               target={"_blank"}
               href={
-                "https://docs.netbird.io/how-to/idp-sync#supported-identity-providers"
+                "https://docs.cosmos.io/how-to/idp-sync#supported-identity-providers"
               }
             >
               IdP Documentation
@@ -246,7 +246,7 @@ export function SetupContent({
                 Single-Sign-On needs to be enabled and active before you can
                 enable IdP sync.{" "}
                 <InlineLink
-                  href={"https://docs.netbird.io/how-to/single-sign-on"}
+                  href={"https://docs.cosmos.io/how-to/single-sign-on"}
                   target={"_blank"}
                 >
                   How to enable SSO
@@ -323,7 +323,7 @@ export function SetupContent({
               },
               {
                 label: "Base URL",
-                value: "https://api.netbird.io/api/scim/v2",
+                value: "https://api.cosmos.io/api/scim/v2",
               },
               {
                 label: "Token",

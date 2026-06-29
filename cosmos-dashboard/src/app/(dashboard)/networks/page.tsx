@@ -36,7 +36,7 @@ export default function Networks() {
           Access internal resources in LANs and VPCs without installing NetBird
           on every machine.{" "}
           <InlineLink
-            href={"https://docs.netbird.io/how-to/networks"}
+            href={"https://docs.cosmos.io/how-to/networks"}
             target={"_blank"}
           >
             Learn more

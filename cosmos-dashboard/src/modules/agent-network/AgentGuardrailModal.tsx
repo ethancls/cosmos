@@ -182,7 +182,7 @@ export default function AgentGuardrailModal({
           <div className={"w-full"}>
             <Paragraph className={"text-sm mt-auto"}>
               Learn more about
-              <InlineLink href={"https://docs.netbird.io/"} target={"_blank"}>
+              <InlineLink href={"https://docs.cosmos.io/"} target={"_blank"}>
                 Agent Network
                 <ExternalLinkIcon size={12} />
               </InlineLink>
@@ -352,7 +352,7 @@ function ModelAllowlistContent({
         <div className={"w-full"}>
           <Paragraph className={"text-sm mt-auto"}>
             Learn more about
-            <InlineLink href={"https://docs.netbird.io/"} target={"_blank"}>
+            <InlineLink href={"https://docs.cosmos.io/"} target={"_blank"}>
               Model Allowlist
               <ExternalLinkIcon size={12} />
             </InlineLink>
@@ -422,7 +422,7 @@ function PromptCaptureContent({ onConfirm }: { onConfirm: () => void }) {
         <div className={"w-full"}>
           <Paragraph className={"text-sm mt-auto"}>
             Learn more about
-            <InlineLink href={"https://docs.netbird.io/"} target={"_blank"}>
+            <InlineLink href={"https://docs.cosmos.io/"} target={"_blank"}>
               Prompt Capture
               <ExternalLinkIcon size={12} />
             </InlineLink>

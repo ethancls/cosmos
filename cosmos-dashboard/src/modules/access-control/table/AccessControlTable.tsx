@@ -224,7 +224,7 @@ export default function AccessControlTable({
 
   // Default sorting state of the table
   const [sorting, setSorting] = useLocalStorage<SortingState>(
-    "netbird-table-sort" + path,
+    "cosmos-table-sort" + path,
     [
       {
         id: "name",
@@ -291,7 +291,7 @@ export default function AccessControlTable({
       { value: "tcp", label: "TCP" },
       { value: "udp", label: "UDP" },
       { value: "icmp", label: "ICMP" },
-      { value: "netbird-ssh", label: "NetBird SSH" },
+      { value: "cosmos-ssh", label: "NetBird SSH" },
     ],
     [],
   );
@@ -571,7 +571,7 @@ export default function AccessControlTable({
                   Learn more about
                   <InlineLink
                     href={
-                      "https://docs.netbird.io/how-to/manage-network-access"
+                      "https://docs.cosmos.io/how-to/manage-network-access"
                     }
                     target={"_blank"}
                   >

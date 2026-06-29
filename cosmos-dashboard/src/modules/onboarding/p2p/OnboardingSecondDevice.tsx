@@ -4,14 +4,14 @@ import InlineLink from "@components/InlineLink";
 import { Modal, ModalContent } from "@components/modal/Modal";
 import { useApiCall } from "@utils/api";
 import { cn } from "@utils/helpers";
-import { getInstallUrl } from "@utils/netbird";
+import { getInstallUrl } from "@utils/cosmos";
 import { ArrowUpRightIcon, ShareIcon } from "lucide-react";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { useDialog } from "@/contexts/DialogProvider";
 import { Peer } from "@/interfaces/Peer";
 import { SetupKey } from "@/interfaces/SetupKey";
-import { SetupModalContent } from "@/modules/setup-netbird-modal/SetupModal";
+import { SetupModalContent } from "@/modules/setup-cosmos-modal/SetupModal";
 
 type Props = {
   secondDevice?: Peer;

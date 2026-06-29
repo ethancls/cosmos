@@ -1,6 +1,6 @@
 import useFetchApi from "@utils/api";
 import loadConfig from "@utils/config";
-import { hasLicensedFlag, testEditionOverride } from "@utils/netbird";
+import { hasLicensedFlag, testEditionOverride } from "@utils/cosmos";
 import { useEffect, useState } from "react";
 
 /**
@@ -20,7 +20,7 @@ const ENDPOINT_EXISTS_ERROR_CODES = [401, 403, 405];
  * licensed-only endpoint on every page load. The TTL lets a later license
  * activation be picked up without forcing the user to clear storage.
  */
-const LICENSE_CACHE_PREFIX = "netbird-licensed:";
+const LICENSE_CACHE_PREFIX = "cosmos-licensed:";
 const LICENSE_CACHE_TTL_MS = 60 * 60 * 1000;
 
 const licenseCacheKey = () => `${LICENSE_CACHE_PREFIX}${loadConfig().apiOrigin}`;

@@ -1,4 +1,4 @@
-import { isNetBirdCloud, testEditionOverride } from "@utils/netbird";
+import { isCosmosCloud, testEditionOverride } from "@utils/cosmos";
 import { useTrial } from "@/cloud/cloud-hooks/useTrial";
 import { useBilling } from "@/contexts/BillingProvider";
 import { useIsLicensed } from "@/hooks/useIsLicensed";
@@ -52,7 +52,7 @@ export const useIsFeatureLocked = (feature: keyof typeof PlanFeatures) => {
 
   if (process.env.APP_ENV === "test" && !testEditionOverride()) return false;
 
-  if (!isNetBirdCloud()) {
+  if (!isCosmosCloud()) {
     if (OPEN_SOURCE_FEATURES.includes(feature)) return false;
     return !isLicensed;
   }

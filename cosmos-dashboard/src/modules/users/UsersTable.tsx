@@ -36,7 +36,7 @@ import {
   Table,
 } from "@tanstack/react-table";
 import useFetchApi from "@utils/api";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/cosmos";
 import dayjs from "dayjs";
 import { ExternalLinkIcon, Link2, MailPlus } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
@@ -179,7 +179,7 @@ export default function UsersTable({
   const path = usePathname();
   const account = useAccount();
 
-  const isCloud = isNetBirdCloud();
+  const isCloud = isCosmosCloud();
   const embeddedIdpEnabled = account?.settings.embedded_idp_enabled;
   const showInvitesToggle = !isCloud && embeddedIdpEnabled;
 
@@ -195,7 +195,7 @@ export default function UsersTable({
 
   // Default sorting state of the table
   const [sorting, setSorting] = useLocalStorage<SortingState>(
-    "netbird-table-sort" + path,
+    "cosmos-table-sort" + path,
     [
       {
         id: "is_current",
@@ -384,7 +384,7 @@ export default function UsersTable({
                 Learn more about
                 <InlineLink
                   href={
-                    "https://docs.netbird.io/how-to/add-users-to-your-network"
+                    "https://docs.cosmos.io/how-to/add-users-to-your-network"
                   }
                   target={"_blank"}
                 >
@@ -474,7 +474,7 @@ export const InviteUserButton = ({
 
   // On cloud: always show "Invite User"
   // On self-hosted: only show when embedded_idp_enabled is true
-  const isCloud = isNetBirdCloud();
+  const isCloud = isCosmosCloud();
   const embeddedIdpEnabled = account?.settings.embedded_idp_enabled;
   const localAuthDisabled = account?.settings.local_auth_disabled;
 
@@ -502,7 +502,7 @@ export const InviteUserButton = ({
             <div className={"text-xs mt-1.5"}>
               <InlineLink
                 href={
-                  "https://docs.netbird.io/selfhosted/identity-providers/disable-local-authentication"
+                  "https://docs.cosmos.io/selfhosted/identity-providers/disable-local-authentication"
                 }
                 target={"_blank"}
                 className={"flex gap-1 items-center"}

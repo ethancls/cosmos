@@ -62,9 +62,9 @@ export default function NetworkTrafficPage() {
   });
 
   useEffect(() => {
-    localStorage.removeItem(`netbird-table-pagination${pathname}`);
-    localStorage.removeItem(`netbird-table-range${pathname}`);
-    localStorage.removeItem(`netbird-table-search${pathname}`);
+    localStorage.removeItem(`cosmos-table-pagination${pathname}`);
+    localStorage.removeItem(`cosmos-table-range${pathname}`);
+    localStorage.removeItem(`cosmos-table-search${pathname}`);
 
     const keysToRemove = [];
     for (let i = 0; i < localStorage.length; i++) {

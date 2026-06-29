@@ -13,7 +13,7 @@ type Props = {
 };
 
 // shortDnsLabel returns the leading segment of a DNS label
-// ("misha.netbird.selfhosted" → "misha"). The base domain is operator-
+// ("misha.cosmos.selfhosted" → "misha"). The base domain is operator-
 // configurable so we keep everything before the first dot rather than
 // trying to strip a known suffix. The full label still lands on the
 // clipboard via CopyToClipboardText's textToCopy prop.

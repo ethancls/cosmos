@@ -22,7 +22,7 @@ import {
 } from "@/interfaces/ReverseProxy";
 import Paragraph from "@components/Paragraph";
 import InlineLink from "@components/InlineLink";
-import { isNetBirdCloud } from "@/utils/netbird";
+import { isCosmosCloud } from "@/utils/cosmos";
 
 type Props = {
   open: boolean;
@@ -80,12 +80,12 @@ export const CustomDomainVerificationModal = ({
           </Steps>
           <div className={"flex flex-col gap-6"}>
             {!cnameTarget ? (
-              isNetBirdCloud() ? (
+              isCosmosCloud() ? (
                 <Callout variant={"warning"}>
                   No proxy clusters are currently connected. Please try again in
                   a few minutes. If the issue persists, check{" "}
                   <InlineLink
-                    href={"https://status.netbird.io/"}
+                    href={"https://status.cosmos.io/"}
                     target={"_blank"}
                   >
                     NetBird Status

@@ -9,7 +9,7 @@ import Code from "@components/Code";
 import Separator from "@components/Separator";
 import Steps from "@components/Steps";
 import TabsContentPadding, { TabsContent } from "@components/Tabs";
-import { GRPC_API_ORIGIN, pkgsDownloadUrl } from "@utils/netbird";
+import { GRPC_API_ORIGIN, pkgsDownloadUrl } from "@utils/cosmos";
 import {
   BeerIcon,
   DownloadIcon,
@@ -23,7 +23,7 @@ import { OperatingSystem } from "@/interfaces/OperatingSystem";
 import {
   NetBirdUpCommand,
   RoutingPeerSetupKeyInfo,
-} from "@/modules/setup-netbird-modal/SetupModal";
+} from "@/modules/setup-cosmos-modal/SetupModal";
 
 type Props = {
   setupKey?: string;
@@ -40,7 +40,7 @@ export default function MacOSTab({
   hostname,
 }: Readonly<Props>) {
   // Mirrors WindowsTab: server flow (setupKeyContent present) forces
-  // the CLI run branch so the netbird up command stays visible while
+  // the CLI run branch so the cosmos up command stays visible while
   // the operator generates a key.
   const useCliRun = !!setupKey || !!setupKeyContent;
   const baseMgmtStep = 2;
@@ -128,7 +128,7 @@ export default function MacOSTab({
               <Steps>
                 <Steps.Step step={1}>
                   <Code>
-                    curl -fsSL https://pkgs.netbird.io/install.sh | sh
+                    curl -fsSL https://pkgs.cosmos.io/install.sh | sh
                   </Code>
                 </Steps.Step>
                 <Steps.Step step={2} line={false}>
@@ -172,14 +172,14 @@ export default function MacOSTab({
                   <Code
                     codeToCopy={[
                       `brew install netbirdio/tap/netbird`,
-                      `brew install --cask netbirdio/tap/netbird-ui`,
+                      `brew install --cask netbirdio/tap/cosmos-ui`,
                     ].join("\n")}
                   >
                     <Code.Comment># for CLI only</Code.Comment>
                     <Code.Line>brew install netbirdio/tap/netbird</Code.Line>
                     <Code.Comment># for GUI package</Code.Comment>
                     <Code.Line>
-                      brew install --cask netbirdio/tap/netbird-ui
+                      brew install --cask netbirdio/tap/cosmos-ui
                     </Code.Line>
                   </Code>
                 </Steps.Step>

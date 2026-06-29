@@ -400,7 +400,7 @@ export function ResourceModalContent({
           <Paragraph className={"text-sm mt-auto"}>
             Learn more about
             <InlineLink
-              href={"https://docs.netbird.io/how-to/networks#resources"}
+              href={"https://docs.cosmos.io/how-to/networks#resources"}
               target={"_blank"}
             >
               Resources

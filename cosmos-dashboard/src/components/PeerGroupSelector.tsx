@@ -52,7 +52,7 @@ import TruncatedText from "@components/ui/TruncatedText";
 type PeerGroupSelectorTab = "peers" | "groups" | "resources" | "clusters";
 
 export type ClusterOption = {
-  /** Cluster apex domain (e.g. "eu.proxy.netbird.io"); also the value
+  /** Cluster apex domain (e.g. "eu.proxy.cosmos.io"); also the value
    *  that downstream code stores in target_id / proxy_cluster. */
   domain: string;
   /** Human-friendly label; falls back to domain. */

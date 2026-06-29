@@ -7,7 +7,7 @@ export const DistributorDocsLink = () => {
     <>
       Learn more about
       <InlineLink
-        href={"https://docs.netbird.io/manage/for-partners/distributor-portal"}
+        href={"https://docs.cosmos.io/manage/for-partners/distributor-portal"}
         target={"_blank"}
       >
         Customers

@@ -74,7 +74,7 @@ export default function AccessTokensTable({ user }: Readonly<Props>) {
 
   // Default sorting state of the table
   const [sorting, setSorting] = useLocalStorage<SortingState>(
-    "netbird-table-sort" + path,
+    "cosmos-table-sort" + path,
     [
       {
         id: "name",

@@ -2,7 +2,7 @@ import Button from "@components/Button";
 import { Modal, ModalTrigger } from "@components/modal/Modal";
 import { DownloadIcon } from "lucide-react";
 import React, { useState } from "react";
-import SetupModal from "@/modules/setup-netbird-modal/SetupModal";
+import SetupModal from "@/modules/setup-cosmos-modal/SetupModal";
 
 export function InstallNetBirdButton() {
   const [installModal, setInstallModal] = useState(false);

@@ -48,7 +48,7 @@ export default function PostureChecksPage() {
           <Paragraph>
             Use posture checks to further restrict access in your network.{" "}
             <InlineLink
-              href={"https://docs.netbird.io/how-to/manage-posture-checks"}
+              href={"https://docs.cosmos.io/how-to/manage-posture-checks"}
               target={"_blank"}
             >
               Learn more

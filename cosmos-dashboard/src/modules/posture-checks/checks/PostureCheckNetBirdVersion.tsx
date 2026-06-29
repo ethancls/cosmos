@@ -100,7 +100,7 @@ const CheckContent = ({ value, onChange, disabled }: Props) => {
             Learn more about
             <InlineLink
               href={
-                "https://docs.netbird.io/how-to/manage-posture-checks#net-bird-client-version-check"
+                "https://docs.cosmos.io/how-to/manage-posture-checks#net-bird-client-version-check"
               }
               target={"_blank"}
             >

@@ -38,7 +38,7 @@ export default function SSOTab() {
         <Paragraph>
           <InlineLink
             href={
-              "https://docs.netbird.io/how-to/okta-sync#configuring-sso-in-okta"
+              "https://docs.cosmos.io/how-to/okta-sync#configuring-sso-in-okta"
             }
             target={"_blank"}
           >

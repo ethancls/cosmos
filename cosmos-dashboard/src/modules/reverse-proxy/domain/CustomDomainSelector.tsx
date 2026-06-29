@@ -9,7 +9,7 @@ import * as React from "react";
 import { useMemo } from "react";
 import { useReverseProxies } from "@/contexts/ReverseProxiesProvider";
 import { ReverseProxyDomainType } from "@/interfaces/ReverseProxy";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/cosmos";
 import TruncatedText from "@components/ui/TruncatedText";
 
 interface DomainSelectorProps {
@@ -33,7 +33,7 @@ export function CustomDomainSelector({
   const options: SelectOption[] = useMemo(() => {
     const opts: SelectOption[] = [];
 
-    // Add free domains (connected proxy clusters, e.g., .eu.proxy.netbird.io)
+    // Add free domains (connected proxy clusters, e.g., .eu.proxy.cosmos.io)
     domains
       ?.filter((d) => d.type === ReverseProxyDomainType.FREE)
       .forEach((domain) => {
@@ -50,7 +50,7 @@ export function CustomDomainSelector({
               </div>
               {isAccountCluster ? (
                 <SmallBadge text="Account" variant="sky" size="md" />
-              ) : isNetBirdCloud() ? (
+              ) : isCosmosCloud() ? (
                 <SmallBadge text="Free" variant="green" size="md" />
               ) : (
                 <SmallBadge text="Shared" variant="green" size="md" />

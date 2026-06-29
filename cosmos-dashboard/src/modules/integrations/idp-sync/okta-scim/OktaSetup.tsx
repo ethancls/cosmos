@@ -598,8 +598,8 @@ export function SetupSSOContent() {
               <p className={"font-normal"}>
                 Once the NetBird team has enabled the authentication for your
                 account you will receive an email. After that you can visit{" "}
-                <InlineLink href={"https://app.netbird.io"}>
-                  app.netbird.io
+                <InlineLink href={"https://app.cosmos.io"}>
+                  app.cosmos.io
                 </InlineLink>{" "}
                 and authenticate using your Okta’s credentials
               </p>

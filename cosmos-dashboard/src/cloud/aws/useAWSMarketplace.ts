@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export const AWS_MARKETPLACE_LOCAL_STORAGE_KEY = "netbird-aws-marketplace";
+export const AWS_MARKETPLACE_LOCAL_STORAGE_KEY = "cosmos-aws-marketplace";
 
 /**
  * Store aws_user_id query into localStorage

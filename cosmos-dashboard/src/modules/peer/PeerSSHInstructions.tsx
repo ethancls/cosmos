@@ -77,11 +77,11 @@ export const PeerSSHInstructions = ({
                   If you are using NetBird via CLI, you can enable SSH by
                   running
                 </p>
-                <Code codeToCopy={"netbird down"}>
-                  <Code.Line>{`netbird down # if NetBird is already running`}</Code.Line>
+                <Code codeToCopy={"cosmos down"}>
+                  <Code.Line>{`cosmos down # if NetBird is already running`}</Code.Line>
                 </Code>
                 <Code>
-                  <Code.Line>{`netbird up --allow-server-ssh --enable-ssh-root`}</Code.Line>
+                  <Code.Line>{`cosmos up --allow-server-ssh --enable-ssh-root`}</Code.Line>
                 </Code>
               </Steps.Step>
             ) : (
@@ -126,7 +126,7 @@ export const PeerSSHInstructions = ({
             <Paragraph className={"text-sm mt-auto"}>
               Learn more about
               <InlineLink
-                href={"https://docs.netbird.io/how-to/ssh"}
+                href={"https://docs.cosmos.io/how-to/ssh"}
                 target={"_blank"}
               >
                 SSH

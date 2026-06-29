@@ -316,7 +316,7 @@ export default function AgentPoliciesTable({ headingTarget }: Readonly<Props>) {
   const { groups: realGroups } = useGroups();
 
   const [sorting, setSorting] = useLocalStorage<SortingState>(
-    "netbird-table-sort" + path,
+    "cosmos-table-sort" + path,
     [{ id: "name", desc: false }],
   );
 
@@ -508,7 +508,7 @@ export default function AgentPoliciesTable({ headingTarget }: Readonly<Props>) {
             learnMore={
               <>
                 Learn more about
-                <InlineLink href={"https://docs.netbird.io/"} target={"_blank"}>
+                <InlineLink href={"https://docs.cosmos.io/"} target={"_blank"}>
                   Agent Network
                   <ExternalLinkIcon size={12} />
                 </InlineLink>

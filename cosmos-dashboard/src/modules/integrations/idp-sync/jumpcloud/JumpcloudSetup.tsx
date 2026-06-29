@@ -34,7 +34,7 @@ import { GroupPrefixHelpText } from "@/modules/integrations/idp-sync/GroupPrefix
 import { GroupPrefixInput } from "@/modules/integrations/idp-sync/GroupPrefixInput";
 import { IntegrationModalHeader } from "@/modules/integrations/IntegrationModalHeader";
 import { useSSOConnections } from "@/modules/integrations/sso/useSSOConnections";
-import { isAuth0 } from "@utils/netbird";
+import { isAuth0 } from "@utils/cosmos";
 
 type Props = {
   open: boolean;
@@ -268,7 +268,7 @@ export function SetupContent({ onSuccess, onClose }: ModalProps) {
                 sync.{" "}
                 <InlineLink
                   href={
-                    "https://docs.netbird.io/how-to/single-sign-on#jump-cloud"
+                    "https://docs.cosmos.io/how-to/single-sign-on#jump-cloud"
                   }
                   target={"_blank"}
                 >
@@ -367,7 +367,7 @@ export function SetupContent({ onSuccess, onClose }: ModalProps) {
                   },
                   {
                     label: "Base URL",
-                    value: "https://api.netbird.io/api/scim/v2",
+                    value: "https://api.cosmos.io/api/scim/v2",
                   },
                   {
                     label: "Token Key",
