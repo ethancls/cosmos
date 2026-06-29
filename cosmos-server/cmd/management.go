@@ -224,9 +224,9 @@ func ApplyEmbeddedIdPConfig(ctx context.Context, cfg *nbconfig.Config) error {
 
 	// Set HttpConfig values from EmbeddedIdP
 	cfg.HttpConfig.AuthIssuer = issuer
-	cfg.HttpConfig.AuthAudience = "netbird-dashboard"
-	cfg.HttpConfig.AuthClientID = cfg.HttpConfig.AuthAudience
-	cfg.HttpConfig.CLIAuthAudience = "netbird-cli"
+	cfg.HttpConfig.AuthAudience = "cosmos-api"
+	cfg.HttpConfig.AuthClientID = "cosmos"
+	cfg.HttpConfig.CLIAuthAudience = "cosmos-cli"
 	cfg.HttpConfig.AuthUserIDClaim = "sub"
 	cfg.HttpConfig.AuthKeysLocation = issuer + "/keys"
 	cfg.HttpConfig.OIDCConfigEndpoint = issuer + "/.well-known/openid-configuration"
