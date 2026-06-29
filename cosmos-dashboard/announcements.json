@@ -4,7 +4,7 @@
     "text": "Cosmos is still in alpha version and may contain breaking changes or non-working features.",
     "link": "https://github.com/ethancls/cosmos",
     "linkText": "Learn more",
-    "variant": "warning",
+    "variant": "important",
     "isExternal": true,
     "closeable": true,
     "isCloudOnly": false
