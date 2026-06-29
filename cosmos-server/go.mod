@@ -3,7 +3,7 @@ module github.com/ethancls/cosmos-server
 go 1.26.2
 
 require (
-	cunicu.li/go-rosenpass v0.4.0
+	cunicu.li/go-rosenpass v0.5.42
 	github.com/DeRuina/timberjack v1.4.5
 	github.com/awnumar/memguard v0.23.0
 	github.com/aws/aws-sdk-go-v2 v1.41.7
@@ -13,7 +13,7 @@ require (
 	github.com/c-robinson/iplib v1.0.3
 	github.com/caddyserver/certmagic v0.21.3
 	github.com/cenkalti/backoff/v4 v4.3.0
-	github.com/cilium/ebpf v0.15.0
+	github.com/cilium/ebpf v0.19.0
 	github.com/coder/websocket v1.8.14
 	github.com/coreos/go-iptables v0.7.0
 	github.com/coreos/go-oidc/v3 v3.18.0
@@ -38,7 +38,7 @@ require (
 	github.com/google/gopacket v1.1.19
 	github.com/google/nftables v0.3.0
 	github.com/google/uuid v1.6.0
-	github.com/gopacket/gopacket v1.1.1
+	github.com/gopacket/gopacket v1.4.0
 	github.com/gorilla/mux v1.8.1
 	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.0.2-0.20240212192251-757544f21357
 	github.com/hashicorp/go-multierror v1.1.1
@@ -49,7 +49,7 @@ require (
 	github.com/lib/pq v1.12.3
 	github.com/libdns/route53 v1.5.0
 	github.com/libp2p/go-nat v0.2.0
-	github.com/libp2p/go-netroute v0.2.1
+	github.com/libp2p/go-netroute v0.4.0
 	github.com/lrh3321/ipset-go v0.0.0-20250619021614-54a0a98ace81
 	github.com/mdlayher/socket v0.5.1
 	github.com/mdp/qrterminal/v3 v3.2.1
@@ -99,7 +99,7 @@ require (
 	github.com/zcalusic/sysinfo v1.1.3
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.67.0
 	go.opentelemetry.io/otel v1.43.0
-	go.opentelemetry.io/otel/exporters/prometheus v0.48.0
+	go.opentelemetry.io/otel/exporters/prometheus v0.64.0
 	go.opentelemetry.io/otel/metric v1.43.0
 	go.opentelemetry.io/otel/sdk/metric v1.43.0
 	go.uber.org/mock v0.6.0
@@ -114,8 +114,8 @@ require (
 	golang.org/x/sys v0.43.0
 	golang.org/x/term v0.42.0
 	golang.org/x/time v0.15.0
-	golang.zx2c4.com/wireguard v0.0.0-20230704135630-469159ecf7d1
-	golang.zx2c4.com/wireguard/wgctrl v0.0.0-20230429144221-925a1e7659e6
+	golang.zx2c4.com/wireguard v0.0.0-20231211153847-12269c276173
+	golang.zx2c4.com/wireguard/wgctrl v0.0.0-20241231184526-a9ab2273dd10
 	golang.zx2c4.com/wireguard/windows v0.5.3
 	google.golang.org/api v0.276.0
 	google.golang.org/grpc v1.81.0
@@ -125,7 +125,7 @@ require (
 	gorm.io/driver/postgres v1.5.7
 	gorm.io/driver/sqlite v1.5.7
 	gorm.io/gorm v1.25.12
-	gvisor.dev/gvisor v0.0.0-20251031020517-ecfcdd2f171c
+	gvisor.dev/gvisor v0.0.0-20260219192049-0f2374377e89
 	howett.net/plist v1.0.1
 )
 
@@ -213,7 +213,7 @@ require (
 	github.com/go-webauthn/x v0.2.3 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang-jwt/jwt/v4 v4.5.2 // indirect
-	github.com/google/btree v1.1.2 // indirect
+	github.com/google/btree v1.1.3 // indirect
 	github.com/google/go-querystring v1.2.0 // indirect
 	github.com/google/go-tpm v0.9.8 // indirect
 	github.com/google/s2a-go v0.1.9 // indirect
@@ -265,7 +265,7 @@ require (
 	github.com/moby/term v0.5.2 // indirect
 	github.com/morikuni/aec v1.0.0 // indirect
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
-	github.com/netbirdio/netbird v0.65.3 // indirect
+	github.com/netbirdio/netbird v0.73.2 // indirect
 	github.com/nxadm/tail v1.4.11 // indirect
 	github.com/oklog/ulid/v2 v2.1.1 // indirect
 	github.com/openbao/openbao/api/v2 v2.5.1 // indirect
@@ -283,11 +283,12 @@ require (
 	github.com/pquerna/otp v1.5.0 // indirect
 	github.com/prometheus/client_model v0.6.2 // indirect
 	github.com/prometheus/common v0.67.5 // indirect
+	github.com/prometheus/otlptranslator v1.0.0 // indirect
 	github.com/prometheus/procfs v0.20.1 // indirect
 	github.com/russellhaering/goxmldsig v1.6.0 // indirect
 	github.com/ryanuber/go-glob v1.0.0 // indirect
 	github.com/shirou/gopsutil/v4 v4.26.4 // indirect
-	github.com/shoenig/go-m1cpu v0.1.6 // indirect
+	github.com/shoenig/go-m1cpu v0.2.1 // indirect
 	github.com/shopspring/decimal v1.4.0 // indirect
 	github.com/spf13/cast v1.10.0 // indirect
 	github.com/stretchr/objx v0.5.2 // indirect
