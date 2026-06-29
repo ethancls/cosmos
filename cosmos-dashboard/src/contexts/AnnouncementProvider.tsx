@@ -13,8 +13,8 @@ import { usePermissions } from "@/contexts/PermissionsProvider";
 import { isNetBirdCloud } from "@utils/netbird";
 
 const ANNOUNCEMENTS_URL =
-  "https://raw.githubusercontent.com/netbirdio/dashboard/main/announcements.json";
-const STORAGE_KEY = "netbird-announcements";
+  "https://raw.githubusercontent.com/ethancls/cosmos/main/cosmos-dashboard/announcements.json";
+const STORAGE_KEY = "cosmos-announcements";
 const CACHE_DURATION_MS = 30 * 60 * 1000;
 
 // MSP only
