@@ -48,8 +48,6 @@ export const generateColorFromUser = (user?: {
 }) => {
   if (user?.email === "NetBird") return "#9c9c9c";
   return "#217ce7";
-        .hex()
-    : "#9c9c9c";
 };
 
 export const sleep = (ms: number) => {
