@@ -34,7 +34,7 @@ type ReverseProxy struct {
 	logger         *log.Logger
 }
 
-// NewReverseProxy configures a new NetBird ReverseProxy.
+// NewReverseProxy configures a new Cosmos ReverseProxy.
 // This is a wrapper around an httputil.ReverseProxy set
 // to dynamically route requests based on internal mapping
 // between requested URLs and targets.
@@ -187,7 +187,7 @@ func (p *ReverseProxy) rewriteFunc(target *url.URL, matchedPath string, passHost
 			r.Out.Header.Set(k, v)
 		}
 
-		stampNetBirdIdentity(r)
+		stampCosmosIdentity(r)
 
 		clientIP := extractHostIP(r.In.RemoteAddr)
 
@@ -411,7 +411,7 @@ func classifyProxyError(err error) (title, message string, code int, status web.
 	case errors.Is(err, roundtrip.ErrNoPeerConnection),
 		errors.Is(err, roundtrip.ErrClientStartFailed):
 		return "Proxy Not Connected",
-			"The proxy is not connected to the NetBird network. Please try again later or contact your administrator.",
+			"The proxy is not connected to the Cosmos network. Please try again later or contact your administrator.",
 			http.StatusBadGateway,
 			web.ErrorStatus{Proxy: false, Destination: false}
 
@@ -429,7 +429,7 @@ func classifyProxyError(err error) (title, message string, code int, status web.
 
 	case isHostUnreachable(err):
 		return "Peer Not Connected",
-			"The connection to the peer could not be established. Please ensure the peer is running and connected to the NetBird network.",
+			"The connection to the peer could not be established. Please ensure the peer is running and connected to the Cosmos network.",
 			http.StatusBadGateway,
 			web.ErrorStatus{Proxy: true, Destination: false}
 	}
@@ -475,17 +475,17 @@ func opErrorContains(err error, substr string) bool {
 }
 
 const (
-	// headerNetBirdUser carries the authenticated user's display identity
+	// headerCosmosUser carries the authenticated user's display identity
 	// (email when the peer is attached to a user, else peer name) onto
 	// upstream requests. Stripped from inbound requests before stamping
 	// so a client can't spoof identity by setting the header themselves.
-	headerNetBirdUser = "X-NetBird-User"
-	// headerNetBirdGroups carries the user's group display names as a
+	headerCosmosUser = "X-Cosmos-User"
+	// headerCosmosGroups carries the user's group display names as a
 	// comma-separated list. Falls back to group IDs at positions where a
 	// name wasn't available at session-mint time. Labels containing a
 	// comma or any non-printable byte are dropped at stamp time so the
 	// list is unambiguously splittable by consumers.
-	headerNetBirdGroups = "X-NetBird-Groups"
+	headerCosmosGroups = "X-Cosmos-Groups"
 )
 
 // isHeaderValueSafe reports whether v is a valid RFC 7230 field-value:
@@ -505,20 +505,20 @@ func isHeaderValueSafe(v string) bool {
 	return true
 }
 
-// stampNetBirdIdentity injects authenticated identity onto outbound
-// requests as X-NetBird-User and X-NetBird-Groups. Always strips any
+// stampCosmosIdentity injects authenticated identity onto outbound
+// requests as X-Cosmos-User and X-Cosmos-Groups. Always strips any
 // client-sent values first (anti-spoof). Skips when the request didn't
 // carry CapturedData (early-path errors, internal endpoints).
-func stampNetBirdIdentity(r *httputil.ProxyRequest) {
-	r.Out.Header.Del(headerNetBirdUser)
-	r.Out.Header.Del(headerNetBirdGroups)
+func stampCosmosIdentity(r *httputil.ProxyRequest) {
+	r.Out.Header.Del(headerCosmosUser)
+	r.Out.Header.Del(headerCosmosGroups)
 
 	cd := CapturedDataFromContext(r.In.Context())
 	if cd == nil {
 		return
 	}
 	if email := cd.GetUserEmail(); isHeaderValueSafe(email) {
-		r.Out.Header.Set(headerNetBirdUser, email)
+		r.Out.Header.Set(headerCosmosUser, email)
 	}
 	groupIDs := cd.GetUserGroups()
 	if len(groupIDs) == 0 {
@@ -537,6 +537,6 @@ func stampNetBirdIdentity(r *httputil.ProxyRequest) {
 		labels = append(labels, label)
 	}
 	if len(labels) > 0 {
-		r.Out.Header.Set(headerNetBirdGroups, strings.Join(labels, ","))
+		r.Out.Header.Set(headerCosmosGroups, strings.Join(labels, ","))
 	}
 }

@@ -9,7 +9,7 @@ import (
 )
 
 func TestExtractClusterFromFreeDomain(t *testing.T) {
-	clusters := []string{"eu1.proxy.netbird.io", "us1.proxy.netbird.io"}
+	clusters := []string{"eu1.proxy.cosmos.io", "us1.proxy.cosmos.io"}
 
 	tests := []struct {
 		name    string
@@ -19,21 +19,21 @@ func TestExtractClusterFromFreeDomain(t *testing.T) {
 	}{
 		{
 			name:    "subdomain of cluster matches",
-			domain:  "myapp.eu1.proxy.netbird.io",
+			domain:  "myapp.eu1.proxy.cosmos.io",
 			wantOK:  true,
-			wantVal: "eu1.proxy.netbird.io",
+			wantVal: "eu1.proxy.cosmos.io",
 		},
 		{
 			name:    "deep subdomain of cluster matches",
-			domain:  "foo.bar.eu1.proxy.netbird.io",
+			domain:  "foo.bar.eu1.proxy.cosmos.io",
 			wantOK:  true,
-			wantVal: "eu1.proxy.netbird.io",
+			wantVal: "eu1.proxy.cosmos.io",
 		},
 		{
 			name:    "bare cluster domain matches",
-			domain:  "eu1.proxy.netbird.io",
+			domain:  "eu1.proxy.cosmos.io",
 			wantOK:  true,
-			wantVal: "eu1.proxy.netbird.io",
+			wantVal: "eu1.proxy.cosmos.io",
 		},
 		{
 			name:   "unrelated domain does not match",
@@ -42,14 +42,14 @@ func TestExtractClusterFromFreeDomain(t *testing.T) {
 		},
 		{
 			name:   "partial suffix does not match",
-			domain: "fakeu1.proxy.netbird.io",
+			domain: "fakeu1.proxy.cosmos.io",
 			wantOK: false,
 		},
 		{
 			name:    "second cluster matches",
-			domain:  "app.us1.proxy.netbird.io",
+			domain:  "app.us1.proxy.cosmos.io",
 			wantOK:  true,
-			wantVal: "us1.proxy.netbird.io",
+			wantVal: "us1.proxy.cosmos.io",
 		},
 	}
 
@@ -66,8 +66,8 @@ func TestExtractClusterFromFreeDomain(t *testing.T) {
 
 func TestExtractClusterFromCustomDomains(t *testing.T) {
 	customDomains := []*domain.Domain{
-		{Domain: "example.com", TargetCluster: "eu1.proxy.netbird.io"},
-		{Domain: "proxy.corp.io", TargetCluster: "us1.proxy.netbird.io"},
+		{Domain: "example.com", TargetCluster: "eu1.proxy.cosmos.io"},
+		{Domain: "proxy.corp.io", TargetCluster: "us1.proxy.cosmos.io"},
 	}
 
 	tests := []struct {
@@ -80,31 +80,31 @@ func TestExtractClusterFromCustomDomains(t *testing.T) {
 			name:    "subdomain of custom domain matches",
 			domain:  "app.example.com",
 			wantOK:  true,
-			wantVal: "eu1.proxy.netbird.io",
+			wantVal: "eu1.proxy.cosmos.io",
 		},
 		{
 			name:    "bare custom domain matches",
 			domain:  "example.com",
 			wantOK:  true,
-			wantVal: "eu1.proxy.netbird.io",
+			wantVal: "eu1.proxy.cosmos.io",
 		},
 		{
 			name:    "deep subdomain of custom domain matches",
 			domain:  "a.b.example.com",
 			wantOK:  true,
-			wantVal: "eu1.proxy.netbird.io",
+			wantVal: "eu1.proxy.cosmos.io",
 		},
 		{
 			name:    "subdomain of multi-level custom domain matches",
 			domain:  "app.proxy.corp.io",
 			wantOK:  true,
-			wantVal: "us1.proxy.netbird.io",
+			wantVal: "us1.proxy.cosmos.io",
 		},
 		{
 			name:    "bare multi-level custom domain matches",
 			domain:  "proxy.corp.io",
 			wantOK:  true,
-			wantVal: "us1.proxy.netbird.io",
+			wantVal: "us1.proxy.cosmos.io",
 		},
 		{
 			name:   "unrelated domain does not match",

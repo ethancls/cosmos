@@ -62,10 +62,10 @@ func (m *mockStatusNotifier) calls() []statusCall {
 	return append([]statusCall{}, m.statuses...)
 }
 
-// mockNetBird creates a NetBird instance for testing without actually connecting.
+// mockCosmos creates a Cosmos instance for testing without actually connecting.
 // It uses an invalid management URL to prevent real connections.
-func mockNetBird() *NetBird {
-	nb := NewNetBird(context.Background(), "test-proxy", "invalid.test", ClientConfig{
+func mockCosmos() *Cosmos {
+	nb := NewCosmos(context.Background(), "test-proxy", "invalid.test", ClientConfig{
 		MgmtAddr:     "http://invalid.test:9999",
 		WGPort:       0,
 		PreSharedKey: "",
@@ -76,8 +76,8 @@ func mockNetBird() *NetBird {
 	return nb
 }
 
-func TestNetBird_AddPeer_CreatesClientForNewAccount(t *testing.T) {
-	nb := mockNetBird()
+func TestCosmos_AddPeer_CreatesClientForNewAccount(t *testing.T) {
+	nb := mockCosmos()
 	accountID := types.AccountID("account-1")
 
 	// Initially no client exists.
@@ -92,8 +92,8 @@ func TestNetBird_AddPeer_CreatesClientForNewAccount(t *testing.T) {
 	assert.Equal(t, 1, nb.ServiceCount(accountID), "service count should be 1")
 }
 
-func TestNetBird_AddPeer_ReuseClientForSameAccount(t *testing.T) {
-	nb := mockNetBird()
+func TestCosmos_AddPeer_ReuseClientForSameAccount(t *testing.T) {
+	nb := mockCosmos()
 	accountID := types.AccountID("account-1")
 
 	// Add first service.
@@ -115,8 +115,8 @@ func TestNetBird_AddPeer_ReuseClientForSameAccount(t *testing.T) {
 	assert.True(t, nb.HasClient(accountID))
 }
 
-func TestNetBird_AddPeer_SeparateClientsForDifferentAccounts(t *testing.T) {
-	nb := mockNetBird()
+func TestCosmos_AddPeer_SeparateClientsForDifferentAccounts(t *testing.T) {
+	nb := mockCosmos()
 	account1 := types.AccountID("account-1")
 	account2 := types.AccountID("account-2")
 
@@ -135,8 +135,8 @@ func TestNetBird_AddPeer_SeparateClientsForDifferentAccounts(t *testing.T) {
 	assert.Equal(t, 1, nb.ServiceCount(account2), "account2 service count should be 1")
 }
 
-func TestNetBird_RemovePeer_KeepsClientWhenServicesRemain(t *testing.T) {
-	nb := mockNetBird()
+func TestCosmos_RemovePeer_KeepsClientWhenServicesRemain(t *testing.T) {
+	nb := mockCosmos()
 	accountID := types.AccountID("account-1")
 
 	// Add multiple services.
@@ -161,8 +161,8 @@ func TestNetBird_RemovePeer_KeepsClientWhenServicesRemain(t *testing.T) {
 	assert.Equal(t, 1, nb.ServiceCount(accountID), "service count should be 1")
 }
 
-func TestNetBird_RemovePeer_RemovesClientWhenLastServiceRemoved(t *testing.T) {
-	nb := mockNetBird()
+func TestCosmos_RemovePeer_RemovesClientWhenLastServiceRemoved(t *testing.T) {
+	nb := mockCosmos()
 	accountID := types.AccountID("account-1")
 
 	// Add single service.
@@ -178,8 +178,8 @@ func TestNetBird_RemovePeer_RemovesClientWhenLastServiceRemoved(t *testing.T) {
 	assert.Equal(t, 0, nb.ServiceCount(accountID), "service count should be 0")
 }
 
-func TestNetBird_RemovePeer_NonExistentAccountIsNoop(t *testing.T) {
-	nb := mockNetBird()
+func TestCosmos_RemovePeer_NonExistentAccountIsNoop(t *testing.T) {
+	nb := mockCosmos()
 	accountID := types.AccountID("nonexistent-account")
 
 	// Removing from non-existent account should not error.
@@ -187,8 +187,8 @@ func TestNetBird_RemovePeer_NonExistentAccountIsNoop(t *testing.T) {
 	assert.NoError(t, err, "removing from non-existent account should not error")
 }
 
-func TestNetBird_RemovePeer_NonExistentServiceIsNoop(t *testing.T) {
-	nb := mockNetBird()
+func TestCosmos_RemovePeer_NonExistentServiceIsNoop(t *testing.T) {
+	nb := mockCosmos()
 	accountID := types.AccountID("account-1")
 
 	// Add one service.
@@ -226,8 +226,8 @@ func TestAccountIDFromContext_ReturnsEmptyForWrongType(t *testing.T) {
 	assert.True(t, retrieved == "", "should return empty for wrong type")
 }
 
-func TestNetBird_StopAll_StopsAllClients(t *testing.T) {
-	nb := mockNetBird()
+func TestCosmos_StopAll_StopsAllClients(t *testing.T) {
+	nb := mockCosmos()
 	account1 := types.AccountID("account-1")
 	account2 := types.AccountID("account-2")
 	account3 := types.AccountID("account-3")
@@ -251,8 +251,8 @@ func TestNetBird_StopAll_StopsAllClients(t *testing.T) {
 	assert.False(t, nb.HasClient(account3), "account3 should not have client")
 }
 
-func TestNetBird_ClientCount(t *testing.T) {
-	nb := mockNetBird()
+func TestCosmos_ClientCount(t *testing.T) {
+	nb := mockCosmos()
 
 	assert.Equal(t, 0, nb.ClientCount(), "should start with 0 clients")
 
@@ -271,8 +271,8 @@ func TestNetBird_ClientCount(t *testing.T) {
 	assert.Equal(t, 2, nb.ClientCount(), "adding service to existing account should not increase client count")
 }
 
-func TestNetBird_RoundTrip_RequiresAccountIDInContext(t *testing.T) {
-	nb := mockNetBird()
+func TestCosmos_RoundTrip_RequiresAccountIDInContext(t *testing.T) {
+	nb := mockCosmos()
 
 	// Create a request without account ID in context.
 	req, err := http.NewRequest("GET", "http://example.com/", nil)
@@ -283,8 +283,8 @@ func TestNetBird_RoundTrip_RequiresAccountIDInContext(t *testing.T) {
 	require.ErrorIs(t, err, ErrNoAccountID)
 }
 
-func TestNetBird_RoundTrip_RequiresExistingClient(t *testing.T) {
-	nb := mockNetBird()
+func TestCosmos_RoundTrip_RequiresExistingClient(t *testing.T) {
+	nb := mockCosmos()
 	accountID := types.AccountID("nonexistent-account")
 
 	// Create a request with account ID but no client exists.
@@ -298,9 +298,9 @@ func TestNetBird_RoundTrip_RequiresExistingClient(t *testing.T) {
 	assert.Contains(t, err.Error(), "no peer connection found for account")
 }
 
-func TestNetBird_AddPeer_ExistingStartedClient_NotifiesStatus(t *testing.T) {
+func TestCosmos_AddPeer_ExistingStartedClient_NotifiesStatus(t *testing.T) {
 	notifier := &mockStatusNotifier{}
-	nb := NewNetBird(context.Background(), "test-proxy", "invalid.test", ClientConfig{
+	nb := NewCosmos(context.Background(), "test-proxy", "invalid.test", ClientConfig{
 		MgmtAddr:     "http://invalid.test:9999",
 		WGPort:       0,
 		PreSharedKey: "",
@@ -335,11 +335,11 @@ func TestNetBird_AddPeer_ExistingStartedClient_NotifiesStatus(t *testing.T) {
 		"already-started NotifyStatus must use a background ctx, not the cancelled caller ctx")
 }
 
-// TestNetBird_IdentityForIP_UnknownAccountReturnsFalse confirms that the
+// TestCosmos_IdentityForIP_UnknownAccountReturnsFalse confirms that the
 // public lookup short-circuits when no client has been registered for
 // the queried account. The auth middleware uses ok=false as a fast deny.
-func TestNetBird_IdentityForIP_UnknownAccountReturnsFalse(t *testing.T) {
-	nb := mockNetBird()
+func TestCosmos_IdentityForIP_UnknownAccountReturnsFalse(t *testing.T) {
+	nb := mockCosmos()
 	_, _, ok := nb.IdentityForIP("acct-missing", netip.MustParseAddr("100.64.0.10"))
 	assert.False(t, ok, "unknown account must yield ok=false")
 }
@@ -365,9 +365,9 @@ func TestClientEntry_IdentityForIP_InvalidIPReturnsFalse(t *testing.T) {
 	assert.False(t, ok, "invalid IP must yield ok=false")
 }
 
-func TestNetBird_RemovePeer_NotifiesDisconnection(t *testing.T) {
+func TestCosmos_RemovePeer_NotifiesDisconnection(t *testing.T) {
 	notifier := &mockStatusNotifier{}
-	nb := NewNetBird(context.Background(), "test-proxy", "invalid.test", ClientConfig{
+	nb := NewCosmos(context.Background(), "test-proxy", "invalid.test", ClientConfig{
 		MgmtAddr:     "http://invalid.test:9999",
 		WGPort:       0,
 		PreSharedKey: "",
@@ -390,12 +390,12 @@ func TestNetBird_RemovePeer_NotifiesDisconnection(t *testing.T) {
 	assert.False(t, calls[0].connected)
 }
 
-// TestNetBird_RemovePeer_TeardownIsAsync proves the fix for the receive-loop
+// TestCosmos_RemovePeer_TeardownIsAsync proves the fix for the receive-loop
 // stall: RemovePeer must return promptly even when the client teardown blocks,
 // because teardown runs off the caller's goroutine. The receive loop calls
 // RemovePeer synchronously, so a blocking teardown inline would wedge it.
-func TestNetBird_RemovePeer_TeardownIsAsync(t *testing.T) {
-	nb := NewNetBird(context.Background(), "test-proxy", "invalid.test", ClientConfig{
+func TestCosmos_RemovePeer_TeardownIsAsync(t *testing.T) {
+	nb := NewCosmos(context.Background(), "test-proxy", "invalid.test", ClientConfig{
 		MgmtAddr: "http://invalid.test:9999",
 	}, nil, &mockStatusNotifier{}, &mockMgmtClient{})
 
@@ -436,7 +436,7 @@ func TestNetBird_RemovePeer_TeardownIsAsync(t *testing.T) {
 	close(releaseTeardown)
 }
 
-// TestNetBird_AddPeer_WaitsForTeardown proves the lifecycle lock serialises a
+// TestCosmos_AddPeer_WaitsForTeardown proves the lifecycle lock serialises a
 // new client bringup behind an in-flight teardown for the same account, so a
 // slow client.Stop can never race a new client.Start for that account.
 //
@@ -446,8 +446,8 @@ func TestNetBird_RemovePeer_TeardownIsAsync(t *testing.T) {
 // (before returning) and hands it to the teardown goroutine — if the goroutine
 // acquired the lock itself, AddPeer could win the lock in this window and start
 // a replacement client while the old teardown is still pending.
-func TestNetBird_AddPeer_WaitsForTeardown(t *testing.T) {
-	nb := NewNetBird(context.Background(), "test-proxy", "invalid.test", ClientConfig{
+func TestCosmos_AddPeer_WaitsForTeardown(t *testing.T) {
+	nb := NewCosmos(context.Background(), "test-proxy", "invalid.test", ClientConfig{
 		MgmtAddr: "http://invalid.test:9999",
 	}, nil, &mockStatusNotifier{}, &mockMgmtClient{})
 	nb.startClient = func(types.AccountID, *embed.Client) {}
@@ -510,7 +510,7 @@ func TestNetBird_AddPeer_WaitsForTeardown(t *testing.T) {
 // account in a half-connected state.
 func TestNotifyClientReady_UsesBackgroundCtx(t *testing.T) {
 	notifier := &mockStatusNotifier{}
-	nb := NewNetBird(context.Background(), "test-proxy", "invalid.test", ClientConfig{
+	nb := NewCosmos(context.Background(), "test-proxy", "invalid.test", ClientConfig{
 		MgmtAddr: "http://invalid.test:9999",
 	}, nil, notifier, &mockMgmtClient{})
 

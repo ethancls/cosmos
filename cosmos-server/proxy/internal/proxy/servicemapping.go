@@ -29,7 +29,7 @@ type PathTarget struct {
 	PathRewrite    PathRewriteMode
 	CustomHeaders  map[string]string
 	// DirectUpstream selects the stdlib HTTP transport (host network stack)
-	// over the embedded NetBird WireGuard client when forwarding requests
+	// over the embedded Cosmos WireGuard client when forwarding requests
 	// to this target. Default false → embedded client (existing behaviour).
 	DirectUpstream bool
 }

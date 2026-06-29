@@ -15,14 +15,14 @@ import (
 
 func TestManager_SetupSSHClientConfig(t *testing.T) {
 	// Create temporary directory for test
-	tempDir, err := os.MkdirTemp("", "netbird-ssh-config-test")
+	tempDir, err := os.MkdirTemp("", "cosmos-ssh-config-test")
 	require.NoError(t, err)
 	defer func() { assert.NoError(t, os.RemoveAll(tempDir)) }()
 
 	// Override manager paths to use temp directory
 	manager := &Manager{
 		sshConfigDir:  filepath.Join(tempDir, "ssh_config.d"),
-		sshConfigFile: "99-netbird.conf",
+		sshConfigFile: "99-cosmos.conf",
 	}
 
 	// Test SSH config generation with peers
@@ -50,7 +50,7 @@ func TestManager_SetupSSHClientConfig(t *testing.T) {
 	configStr := string(content)
 
 	// Verify the basic SSH config structure exists
-	assert.Contains(t, configStr, "# NetBird SSH client configuration")
+	assert.Contains(t, configStr, "# Cosmos SSH client configuration")
 	assert.Contains(t, configStr, "Generated automatically - do not edit manually")
 
 	// Check that peer hostnames are included
@@ -87,14 +87,14 @@ func TestGetSystemSSHConfigDir(t *testing.T) {
 
 func TestManager_PeerLimit(t *testing.T) {
 	// Create temporary directory for test
-	tempDir, err := os.MkdirTemp("", "netbird-ssh-config-test")
+	tempDir, err := os.MkdirTemp("", "cosmos-ssh-config-test")
 	require.NoError(t, err)
 	defer func() { assert.NoError(t, os.RemoveAll(tempDir)) }()
 
 	// Override manager paths to use temp directory
 	manager := &Manager{
 		sshConfigDir:  filepath.Join(tempDir, "ssh_config.d"),
-		sshConfigFile: "99-netbird.conf",
+		sshConfigFile: "99-cosmos.conf",
 	}
 
 	// Generate many peers (more than limit)
@@ -118,13 +118,13 @@ func TestManager_PeerLimit(t *testing.T) {
 }
 
 func TestManager_MatchHostFormat(t *testing.T) {
-	tempDir, err := os.MkdirTemp("", "netbird-ssh-config-test")
+	tempDir, err := os.MkdirTemp("", "cosmos-ssh-config-test")
 	require.NoError(t, err)
 	defer func() { assert.NoError(t, os.RemoveAll(tempDir)) }()
 
 	manager := &Manager{
 		sshConfigDir:  filepath.Join(tempDir, "ssh_config.d"),
-		sshConfigFile: "99-netbird.conf",
+		sshConfigFile: "99-cosmos.conf",
 	}
 
 	peers := []PeerSSHInfo{
@@ -153,14 +153,14 @@ func TestManager_ForcedSSHConfig(t *testing.T) {
 	t.Setenv(EnvForceSSHConfig, "true")
 
 	// Create temporary directory for test
-	tempDir, err := os.MkdirTemp("", "netbird-ssh-config-test")
+	tempDir, err := os.MkdirTemp("", "cosmos-ssh-config-test")
 	require.NoError(t, err)
 	defer func() { assert.NoError(t, os.RemoveAll(tempDir)) }()
 
 	// Override manager paths to use temp directory
 	manager := &Manager{
 		sshConfigDir:  filepath.Join(tempDir, "ssh_config.d"),
-		sshConfigFile: "99-netbird.conf",
+		sshConfigFile: "99-cosmos.conf",
 	}
 
 	// Generate many peers (more than limit)

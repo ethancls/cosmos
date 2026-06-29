@@ -53,7 +53,7 @@ func (t *TunDevice) Create() (WGConfigurer, error) {
 	t.device = device.NewDevice(
 		t.filteredDevice,
 		t.iceBind,
-		device.NewLogger(wgLogLevel(), "[netbird] "),
+		device.NewLogger(wgLogLevel(), "[cosmos] "),
 	)
 
 	err = t.assignAddr()

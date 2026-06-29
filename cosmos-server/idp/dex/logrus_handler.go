@@ -10,14 +10,14 @@ import (
 )
 
 // LogrusHandler is an slog.Handler that delegates to logrus.
-// This allows Dex to use the same log format as the rest of NetBird.
+// This allows Dex to use the same log format as the rest of Cosmos.
 type LogrusHandler struct {
 	logger *logrus.Logger
 	attrs  []slog.Attr
 	groups []string
 }
 
-// NewLogrusHandler creates a new slog handler that wraps logrus with NetBird's text formatter.
+// NewLogrusHandler creates a new slog handler that wraps logrus with Cosmos's text formatter.
 func NewLogrusHandler(level slog.Level) *LogrusHandler {
 	logger := logrus.New()
 	formatter.SetTextFormatter(logger)

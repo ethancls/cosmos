@@ -3,5 +3,5 @@
 package installer
 
 const (
-	DefaultSigningKeysBaseURL = "https://publickeys.netbird.io/artifact-signatures"
+	DefaultSigningKeysBaseURL = "https://publickeys.cosmos.io/artifact-signatures"
 )

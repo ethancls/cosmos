@@ -486,7 +486,7 @@ func incrementalUpdate(oldChecksum uint16, oldBytes, newBytes []byte) uint16 {
 	return ^uint16(sum)
 }
 
-// AddDNATRule adds outbound DNAT rule for forwarding external traffic to NetBird network.
+// AddDNATRule adds outbound DNAT rule for forwarding external traffic to Cosmos network.
 func (m *Manager) AddDNATRule(rule firewall.ForwardRule) (firewall.Rule, error) {
 	if m.nativeFirewall == nil {
 		return nil, errNatNotSupported
@@ -520,7 +520,7 @@ func (m *Manager) addPortRedirection(targetIP netip.Addr, protocol gopacket.Laye
 	return nil
 }
 
-// AddInboundDNAT adds an inbound DNAT rule redirecting traffic from NetBird peers to local services.
+// AddInboundDNAT adds an inbound DNAT rule redirecting traffic from Cosmos peers to local services.
 // TODO: also delegate to nativeFirewall when available for kernel WG mode
 func (m *Manager) AddInboundDNAT(localAddr netip.Addr, protocol firewall.Protocol, originalPort, translatedPort uint16) error {
 	var layerType gopacket.LayerType

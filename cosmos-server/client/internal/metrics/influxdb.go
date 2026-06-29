@@ -82,7 +82,7 @@ func (m *influxDBMetrics) RecordConnectionStages(
 	defer m.mu.Unlock()
 
 	m.samples = append(m.samples, influxSample{
-		measurement: "netbird_peer_connection",
+		measurement: "cosmos_peer_connection",
 		tags:        tags,
 		fields: map[string]float64{
 			"signaling_to_connection_seconds":    signalingReceivedToConnection,
@@ -110,7 +110,7 @@ func (m *influxDBMetrics) RecordSyncDuration(_ context.Context, agentInfo AgentI
 	defer m.mu.Unlock()
 
 	m.samples = append(m.samples, influxSample{
-		measurement: "netbird_sync",
+		measurement: "cosmos_sync",
 		tags:        tags,
 		fields: map[string]float64{
 			"duration_seconds": duration.Seconds(),
@@ -134,7 +134,7 @@ func (m *influxDBMetrics) RecordSyncPhase(_ context.Context, agentInfo AgentInfo
 	defer m.mu.Unlock()
 
 	m.samples = append(m.samples, influxSample{
-		measurement: "netbird_sync_phase",
+		measurement: "cosmos_sync_phase",
 		tags:        tags,
 		fields: map[string]float64{
 			"duration_seconds": duration.Seconds(),
@@ -163,7 +163,7 @@ func (m *influxDBMetrics) RecordLoginDuration(_ context.Context, agentInfo Agent
 	defer m.mu.Unlock()
 
 	m.samples = append(m.samples, influxSample{
-		measurement: "netbird_login",
+		measurement: "cosmos_login",
 		tags:        tags,
 		fields: map[string]float64{
 			"duration_seconds": duration.Seconds(),

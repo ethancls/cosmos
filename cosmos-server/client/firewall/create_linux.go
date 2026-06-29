@@ -106,7 +106,7 @@ func createUserspaceFirewall(iface IFaceMapper, fm firewall.Manager, disableServ
 	}
 
 	if err := fm.AllowNetbird(); err != nil {
-		log.Errorf("failed to allow netbird interface traffic: %v", err)
+		log.Errorf("failed to allow cosmos interface traffic: %v", err)
 	}
 	return fm, nil
 }

@@ -16,7 +16,7 @@ func BenchmarkHasClient(b *testing.B) {
 	// Knobs for dialling in:
 	initialClientCount := 100 // Size of initial peer map to generate.
 
-	nb := mockNetBird()
+	nb := mockCosmos()
 
 	var target types.AccountID
 	targetIndex, err := rand.Int(rand.Reader, big.NewInt(int64(initialClientCount)))
@@ -53,9 +53,9 @@ func BenchmarkHasClientDuringAddPeer(b *testing.B) {
 	initialClientCount := 100 // Size of initial peer map to generate.
 	addPeerWorkers := 5       // Number of workers to concurrently call AddPeer.
 
-	nb := mockNetBird()
+	nb := mockCosmos()
 
-	// Add random client entries to the netbird instance.
+	// Add random client entries to the cosmos instance.
 	// We're trying to test map lock contention, so starting with
 	// a populated map should help with this.
 	// Pick a random one to target for retrieval later.

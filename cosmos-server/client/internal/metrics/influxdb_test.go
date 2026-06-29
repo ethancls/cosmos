@@ -35,7 +35,7 @@ func TestInfluxDBMetrics_RecordAndExport(t *testing.T) {
 	require.NoError(t, err)
 
 	output := buf.String()
-	assert.Contains(t, output, "netbird_peer_connection,")
+	assert.Contains(t, output, "cosmos_peer_connection,")
 	assert.Contains(t, output, "connection_to_wg_handshake_seconds=")
 	assert.Contains(t, output, "signaling_to_connection_seconds=")
 	assert.Contains(t, output, "total_seconds=")
@@ -105,7 +105,7 @@ func TestInfluxDBMetrics_RecordSyncDuration(t *testing.T) {
 	require.NoError(t, err)
 
 	output := buf.String()
-	assert.Contains(t, output, "netbird_sync,")
+	assert.Contains(t, output, "cosmos_sync,")
 	assert.Contains(t, output, "duration_seconds=1.5")
 	assert.Contains(t, output, "deployment_type=selfhosted")
 }
@@ -180,7 +180,7 @@ func TestInfluxDBMetrics_RecordLoginDuration(t *testing.T) {
 	require.NoError(t, err)
 
 	output := buf.String()
-	assert.Contains(t, output, "netbird_login,")
+	assert.Contains(t, output, "cosmos_login,")
 	assert.Contains(t, output, "duration_seconds=2.5")
 	assert.Contains(t, output, "result=success")
 }
@@ -203,7 +203,7 @@ func TestInfluxDBMetrics_RecordLoginDurationFailure(t *testing.T) {
 	require.NoError(t, err)
 
 	output := buf.String()
-	assert.Contains(t, output, "netbird_login,")
+	assert.Contains(t, output, "cosmos_login,")
 	assert.Contains(t, output, "result=failure")
 	assert.Contains(t, output, "deployment_type=selfhosted")
 }

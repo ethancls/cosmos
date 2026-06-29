@@ -16,7 +16,7 @@ import (
 )
 
 const (
-	NetBirdSSHConfigFile = "99-netbird.conf"
+	CosmosSSHConfigFile = "99-cosmos.conf"
 
 	UnixSSHConfigDir    = "/etc/ssh/ssh_config.d"
 	WindowsSSHConfigDir = "ssh/ssh_config.d"
@@ -34,7 +34,7 @@ type HostKeyVerifier interface {
 	VerifySSHHostKey(peerAddress string, key []byte) error
 }
 
-// DaemonHostKeyVerifier implements HostKeyVerifier using the NetBird daemon
+// DaemonHostKeyVerifier implements HostKeyVerifier using the Cosmos daemon
 type DaemonHostKeyVerifier struct {
 	client proto.DaemonServiceClient
 }
@@ -46,7 +46,7 @@ func NewDaemonHostKeyVerifier(client proto.DaemonServiceClient) *DaemonHostKeyVe
 	}
 }
 
-// VerifySSHHostKey verifies an SSH host key by querying the NetBird daemon
+// VerifySSHHostKey verifies an SSH host key by querying the Cosmos daemon
 func (d *DaemonHostKeyVerifier) VerifySSHHostKey(peerAddress string, presentedKey []byte) error {
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()

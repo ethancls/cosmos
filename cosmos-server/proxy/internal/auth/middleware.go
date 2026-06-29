@@ -230,7 +230,7 @@ func (mw *Middleware) checkIPRestrictions(w http.ResponseWriter, r *http.Request
 	var verdict restrict.Verdict
 	if types.IsOverlayOrigin(r.Context()) {
 		// Geo/CrowdSec checks don't apply over the WireGuard overlay:
-		// the source address is always inside the NetBird CGNAT range,
+		// the source address is always inside the Cosmos CGNAT range,
 		// which is never in a GeoIP database or a CrowdSec decision
 		// list. Enforcing them here would either no-op (best case) or
 		// fail-closed when the geo database is missing.
@@ -337,7 +337,7 @@ func (mw *Middleware) forwardWithSessionCookie(w http.ResponseWriter, r *http.Re
 }
 
 // forwardWithTunnelPeer is the OIDC fast-path for requests originating on the
-// netbird mesh. When the source IP belongs to a private/CGNAT range the proxy
+// cosmos mesh. When the source IP belongs to a private/CGNAT range the proxy
 // asks management to resolve it to a peer/user and to gate by the service's
 // distribution_groups. On success the proxy installs the freshly minted JWT
 // as a session cookie, sets UserID + Method=oidc on the captured data, and
@@ -415,14 +415,14 @@ func (mw *Middleware) validateTunnelPeer(ctx context.Context, req *proto.Validat
 	return mw.sessionValidator.ValidateTunnelPeer(ctx, req)
 }
 
-// cgnatPrefix covers RFC 6598 100.64.0.0/10, the CGNAT block NetBird
+// cgnatPrefix covers RFC 6598 100.64.0.0/10, the CGNAT block Cosmos
 // allocates tunnel addresses from by default. IsPrivate() doesn't include
 // it, so we check it explicitly.
 var cgnatPrefix = netip.MustParsePrefix("100.64.0.0/10")
 
 // isTunnelSourceIP reports whether ip falls within an address range typical
-// of NetBird tunnels: RFC1918 private space, IPv6 ULA, or CGNAT 100.64/10
-// (NetBird's default range). Loopback and link-local are excluded — the
+// of Cosmos tunnels: RFC1918 private space, IPv6 ULA, or CGNAT 100.64/10
+// (Cosmos's default range). Loopback and link-local are excluded — the
 // fast-path is meant for peer-to-peer mesh traffic, not localhost.
 func isTunnelSourceIP(ip netip.Addr) bool {
 	if !ip.IsValid() || ip.IsLoopback() || ip.IsLinkLocalUnicast() {

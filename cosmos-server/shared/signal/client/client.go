@@ -76,7 +76,7 @@ func MarshalCredential(myKey wgtypes.Key, remoteKey string, p CredentialPayload)
 		Type:           p.Type,
 		Payload:        fmt.Sprintf("%s:%s", p.Credential.UFrag, p.Credential.Pwd),
 		WgListenPort:   uint32(p.WgListenPort),
-		NetBirdVersion: version.NetbirdVersion(),
+		CosmosVersion: version.NetbirdVersion(),
 		RosenpassConfig: &proto.RosenpassConfig{
 			RosenpassPubKey:     p.RosenpassPubKey,
 			RosenpassServerAddr: p.RosenpassAddr,

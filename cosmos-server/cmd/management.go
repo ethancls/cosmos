@@ -42,7 +42,7 @@ var (
 
 	mgmtCmd = &cobra.Command{
 		Use:   "management",
-		Short: "start NetBird Management Server",
+		Short: "start Cosmos Management Server",
 		PreRunE: func(cmd *cobra.Command, args []string) error {
 			flag.Parse()
 

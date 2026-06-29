@@ -38,114 +38,114 @@ type Client struct {
 	httpClient    HttpClient
 	userAgent     string
 
-	// Accounts NetBird account APIs
-	// see more: https://docs.netbird.io/api/resources/accounts
+	// Accounts Cosmos account APIs
+	// see more: https://docs.cosmos.io/api/resources/accounts
 	Accounts *AccountsAPI
 
-	// Users NetBird users APIs
-	// see more: https://docs.netbird.io/api/resources/users
+	// Users Cosmos users APIs
+	// see more: https://docs.cosmos.io/api/resources/users
 	Users *UsersAPI
 
-	// Tokens NetBird tokens APIs
-	// see more: https://docs.netbird.io/api/resources/tokens
+	// Tokens Cosmos tokens APIs
+	// see more: https://docs.cosmos.io/api/resources/tokens
 	Tokens *TokensAPI
 
-	// Peers NetBird peers APIs
-	// see more: https://docs.netbird.io/api/resources/peers
+	// Peers Cosmos peers APIs
+	// see more: https://docs.cosmos.io/api/resources/peers
 	Peers *PeersAPI
 
-	// SetupKeys NetBird setup keys APIs
-	// see more: https://docs.netbird.io/api/resources/setup-keys
+	// SetupKeys Cosmos setup keys APIs
+	// see more: https://docs.cosmos.io/api/resources/setup-keys
 	SetupKeys *SetupKeysAPI
 
-	// Groups NetBird groups APIs
-	// see more: https://docs.netbird.io/api/resources/groups
+	// Groups Cosmos groups APIs
+	// see more: https://docs.cosmos.io/api/resources/groups
 	Groups *GroupsAPI
 
-	// Policies NetBird policies APIs
-	// see more: https://docs.netbird.io/api/resources/policies
+	// Policies Cosmos policies APIs
+	// see more: https://docs.cosmos.io/api/resources/policies
 	Policies *PoliciesAPI
 
-	// PostureChecks NetBird posture checks APIs
-	// see more: https://docs.netbird.io/api/resources/posture-checks
+	// PostureChecks Cosmos posture checks APIs
+	// see more: https://docs.cosmos.io/api/resources/posture-checks
 	PostureChecks *PostureChecksAPI
 
-	// Networks NetBird networks APIs
-	// see more: https://docs.netbird.io/api/resources/networks
+	// Networks Cosmos networks APIs
+	// see more: https://docs.cosmos.io/api/resources/networks
 	Networks *NetworksAPI
 
-	// Routes NetBird routes APIs
-	// see more: https://docs.netbird.io/api/resources/routes
+	// Routes Cosmos routes APIs
+	// see more: https://docs.cosmos.io/api/resources/routes
 	Routes *RoutesAPI
 
-	// DNS NetBird DNS APIs
-	// see more: https://docs.netbird.io/api/resources/dns
+	// DNS Cosmos DNS APIs
+	// see more: https://docs.cosmos.io/api/resources/dns
 	DNS *DNSAPI
 
-	// DNSZones NetBird DNS Zones APIs
-	// see more: https://docs.netbird.io/api/resources/dns-zones
+	// DNSZones Cosmos DNS Zones APIs
+	// see more: https://docs.cosmos.io/api/resources/dns-zones
 	DNSZones *DNSZonesAPI
 
-	// GeoLocation NetBird Geo Location APIs
-	// see more: https://docs.netbird.io/api/resources/geo-locations
+	// GeoLocation Cosmos Geo Location APIs
+	// see more: https://docs.cosmos.io/api/resources/geo-locations
 	GeoLocation *GeoLocationAPI
 
-	// Events NetBird Events APIs
-	// see more: https://docs.netbird.io/api/resources/events
+	// Events Cosmos Events APIs
+	// see more: https://docs.cosmos.io/api/resources/events
 	Events *EventsAPI
 
-	// Billing NetBird Billing APIs for subscriptions, plans, and invoices
-	// see more: https://docs.netbird.io/api/resources/billing
+	// Billing Cosmos Billing APIs for subscriptions, plans, and invoices
+	// see more: https://docs.cosmos.io/api/resources/billing
 	Billing *BillingAPI
 
-	// MSP NetBird MSP tenant management APIs
-	// see more: https://docs.netbird.io/api/resources/msp
+	// MSP Cosmos MSP tenant management APIs
+	// see more: https://docs.cosmos.io/api/resources/msp
 	MSP *MSPAPI
 
-	// EDR NetBird EDR integration APIs (Intune, SentinelOne, Falcon, Huntress)
-	// see more: https://docs.netbird.io/api/resources/edr
+	// EDR Cosmos EDR integration APIs (Intune, SentinelOne, Falcon, Huntress)
+	// see more: https://docs.cosmos.io/api/resources/edr
 	EDR *EDRAPI
 
-	// SCIM NetBird SCIM IDP integration APIs
-	// see more: https://docs.netbird.io/api/resources/scim
+	// SCIM Cosmos SCIM IDP integration APIs
+	// see more: https://docs.cosmos.io/api/resources/scim
 	SCIM *SCIMAPI
 
-	// GoogleIDP NetBird Google Workspace IDP integration APIs
+	// GoogleIDP Cosmos Google Workspace IDP integration APIs
 	GoogleIDP *GoogleIDPAPI
 
-	// AzureIDP NetBird Azure AD IDP integration APIs
+	// AzureIDP Cosmos Azure AD IDP integration APIs
 	AzureIDP *AzureIDPAPI
 
-	// OktaScimIDP NetBird Okta SCIM IDP integration APIs
+	// OktaScimIDP Cosmos Okta SCIM IDP integration APIs
 	OktaScimIDP *OktaScimIDPAPI
 
-	// EventStreaming NetBird Event Streaming integration APIs
-	// see more: https://docs.netbird.io/api/resources/event-streaming
+	// EventStreaming Cosmos Event Streaming integration APIs
+	// see more: https://docs.cosmos.io/api/resources/event-streaming
 	EventStreaming *EventStreamingAPI
 
-	// IdentityProviders NetBird Identity Providers APIs
-	// see more: https://docs.netbird.io/api/resources/identity-providers
+	// IdentityProviders Cosmos Identity Providers APIs
+	// see more: https://docs.cosmos.io/api/resources/identity-providers
 	IdentityProviders *IdentityProvidersAPI
 
-	// Ingress NetBird Ingress Peers APIs
-	// see more: https://docs.netbird.io/api/resources/ingress-ports
+	// Ingress Cosmos Ingress Peers APIs
+	// see more: https://docs.cosmos.io/api/resources/ingress-ports
 	Ingress *IngressAPI
 
-	// Instance NetBird Instance API
-	// see more: https://docs.netbird.io/api/resources/instance
+	// Instance Cosmos Instance API
+	// see more: https://docs.cosmos.io/api/resources/instance
 	Instance *InstanceAPI
 
-	// ReverseProxyServices NetBird reverse proxy services APIs
+	// ReverseProxyServices Cosmos reverse proxy services APIs
 	ReverseProxyServices *ReverseProxyServicesAPI
 
-	// ReverseProxyClusters NetBird reverse proxy clusters APIs
+	// ReverseProxyClusters Cosmos reverse proxy clusters APIs
 	ReverseProxyClusters *ReverseProxyClustersAPI
 
-	// ReverseProxyDomains NetBird reverse proxy domains APIs
+	// ReverseProxyDomains Cosmos reverse proxy domains APIs
 	ReverseProxyDomains *ReverseProxyDomainsAPI
 
 	// ReverseProxyTokens account-scoped proxy access tokens used to register
-	// self-hosted (bring-your-own-proxy) `netbird proxy` instances.
+	// self-hosted (bring-your-own-proxy) `cosmos proxy` instances.
 	ReverseProxyTokens *ReverseProxyTokensAPI
 }
 

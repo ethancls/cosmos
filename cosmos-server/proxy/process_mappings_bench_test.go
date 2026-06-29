@@ -73,7 +73,7 @@ func benchServerWithLatency(b *testing.B, createPeerDelay, statusDelay time.Dura
 		statusUpdateDelay: statusDelay,
 	}
 
-	nb := roundtrip.NewNetBird(b.Context(), "bench-proxy", "bench.test",
+	nb := roundtrip.NewCosmos(b.Context(), "bench-proxy", "bench.test",
 		roundtrip.ClientConfig{MgmtAddr: "http://bench.test:9999"},
 		logger, nil, mgmtClient)
 
@@ -84,7 +84,7 @@ func benchServerWithLatency(b *testing.B, createPeerDelay, statusDelay time.Dura
 	return &Server{
 		Logger:           logger,
 		mgmtClient:       mgmtClient,
-		netbird:          nb,
+		cosmos:          nb,
 		proxy:            proxy.NewReverseProxy(nil, "auto", nil, logger),
 		auth:             auth.NewMiddleware(logger, nil, nil),
 		mainRouter:       mainRouter,

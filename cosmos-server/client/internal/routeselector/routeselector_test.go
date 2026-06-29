@@ -382,7 +382,7 @@ func TestRouteSelector_V6ExitPairSync(t *testing.T) {
 			"v6 explicit state is cleared so it follows management like its base")
 	})
 
-	// Regression for the observed bug (see netbird-engine.log): persisted state has
+	// Regression for the observed bug (see cosmos-engine.log): persisted state has
 	// the v4 base deselected but the v6 sibling explicitly selected (orphaned). The
 	// sync must reset the orphan so the ::/0 route does not leak onto the tunnel.
 	t.Run("sync clears orphaned explicit v6 selection on deselected base", func(t *testing.T) {

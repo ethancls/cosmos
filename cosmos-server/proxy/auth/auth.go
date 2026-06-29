@@ -27,7 +27,7 @@ func (m Method) String() string {
 const (
 	SessionCookieName    = "nb_session"
 	DefaultSessionExpiry = 24 * time.Hour
-	SessionJWTIssuer     = "netbird-management"
+	SessionJWTIssuer     = "cosmos-management"
 )
 
 // ResolveProto determines the protocol scheme based on the forwarded proto

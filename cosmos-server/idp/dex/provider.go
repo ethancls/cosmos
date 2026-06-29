@@ -125,7 +125,7 @@ func NewProvider(ctx context.Context, config *Config) (*Provider, error) {
 		IDTokensValidFor:           24 * time.Hour,
 		RefreshTokenPolicy:         refreshPolicy,
 		Web: server.WebConfig{
-			Issuer: "NetBird",
+			Issuer: "Cosmos",
 		},
 		Signer: localSigner,
 	}
@@ -305,7 +305,7 @@ func buildDexConfig(yamlConfig *YAMLConfig, stor storage.Storage, logger *slog.L
 		cfg.IDTokensValidFor = 24 * time.Hour
 	}
 	if cfg.Web.Issuer == "" {
-		cfg.Web.Issuer = "NetBird"
+		cfg.Web.Issuer = "Cosmos"
 	}
 	if len(cfg.SupportedResponseTypes) == 0 {
 		cfg.SupportedResponseTypes = []string{"code"}
@@ -382,7 +382,7 @@ func (p *Provider) startGRPCServer() error {
 	p.grpcServer = grpc.NewServer()
 	// Use Dex's built-in API server implementation
 	// server.NewAPI(storage, logger, version, dexServer)
-	dexapi.RegisterDexServer(p.grpcServer, server.NewAPI(p.storage, p.logger, "netbird-dex", p.dexServer))
+	dexapi.RegisterDexServer(p.grpcServer, server.NewAPI(p.storage, p.logger, "cosmos-dex", p.dexServer))
 
 	go func() {
 		if err := p.grpcServer.Serve(grpcListener); err != nil {
@@ -452,14 +452,14 @@ func (p *Provider) Stop(ctx context.Context) error {
 func (p *Provider) EnsureDefaultClients(ctx context.Context, dashboardURIs, cliURIs []string) error {
 	clients := []storage.Client{
 		{
-			ID:           "netbird-dashboard",
-			Name:         "NetBird Dashboard",
+			ID:           "cosmos-dashboard",
+			Name:         "Cosmos Dashboard",
 			RedirectURIs: dashboardURIs,
 			Public:       true,
 		},
 		{
-			ID:           "netbird-cli",
-			Name:         "NetBird CLI",
+			ID:           "cosmos-cli",
+			Name:         "Cosmos CLI",
 			RedirectURIs: cliURIs,
 			Public:       true,
 		},

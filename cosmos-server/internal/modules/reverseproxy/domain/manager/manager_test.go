@@ -51,14 +51,14 @@ func TestGetClusterAllowList_BYOPMergedWithPublic(t *testing.T) {
 			return []string{"byop.example.com"}, nil
 		},
 		getActiveClusterAddressesFunc: func(_ context.Context) ([]string, error) {
-			return []string{"eu.proxy.netbird.io"}, nil
+			return []string{"eu.proxy.cosmos.io"}, nil
 		},
 	}
 
 	mgr := Manager{proxyManager: pm}
 	result, err := mgr.getClusterAllowList(context.Background(), "acc-123")
 	require.NoError(t, err)
-	assert.Equal(t, []string{"byop.example.com", "eu.proxy.netbird.io"}, result)
+	assert.Equal(t, []string{"byop.example.com", "eu.proxy.cosmos.io"}, result)
 }
 
 func TestGetClusterAllowList_DeduplicatesBYOPAndPublic(t *testing.T) {
@@ -67,14 +67,14 @@ func TestGetClusterAllowList_DeduplicatesBYOPAndPublic(t *testing.T) {
 			return []string{"shared.example.com", "byop.example.com"}, nil
 		},
 		getActiveClusterAddressesFunc: func(_ context.Context) ([]string, error) {
-			return []string{"shared.example.com", "eu.proxy.netbird.io"}, nil
+			return []string{"shared.example.com", "eu.proxy.cosmos.io"}, nil
 		},
 	}
 
 	mgr := Manager{proxyManager: pm}
 	result, err := mgr.getClusterAllowList(context.Background(), "acc-123")
 	require.NoError(t, err)
-	assert.Equal(t, []string{"shared.example.com", "byop.example.com", "eu.proxy.netbird.io"}, result)
+	assert.Equal(t, []string{"shared.example.com", "byop.example.com", "eu.proxy.cosmos.io"}, result)
 }
 
 func TestGetClusterAllowList_NoBYOP_FallbackToShared(t *testing.T) {
@@ -83,14 +83,14 @@ func TestGetClusterAllowList_NoBYOP_FallbackToShared(t *testing.T) {
 			return nil, nil
 		},
 		getActiveClusterAddressesFunc: func(_ context.Context) ([]string, error) {
-			return []string{"eu.proxy.netbird.io", "us.proxy.netbird.io"}, nil
+			return []string{"eu.proxy.cosmos.io", "us.proxy.cosmos.io"}, nil
 		},
 	}
 
 	mgr := Manager{proxyManager: pm}
 	result, err := mgr.getClusterAllowList(context.Background(), "acc-123")
 	require.NoError(t, err)
-	assert.Equal(t, []string{"eu.proxy.netbird.io", "us.proxy.netbird.io"}, result)
+	assert.Equal(t, []string{"eu.proxy.cosmos.io", "us.proxy.cosmos.io"}, result)
 }
 
 func TestGetClusterAllowList_BYOPError_ReturnsError(t *testing.T) {
@@ -130,14 +130,14 @@ func TestGetClusterAllowList_BYOPEmptySlice_FallbackToShared(t *testing.T) {
 			return []string{}, nil
 		},
 		getActiveClusterAddressesFunc: func(_ context.Context) ([]string, error) {
-			return []string{"eu.proxy.netbird.io"}, nil
+			return []string{"eu.proxy.cosmos.io"}, nil
 		},
 	}
 
 	mgr := Manager{proxyManager: pm}
 	result, err := mgr.getClusterAllowList(context.Background(), "acc-123")
 	require.NoError(t, err)
-	assert.Equal(t, []string{"eu.proxy.netbird.io"}, result)
+	assert.Equal(t, []string{"eu.proxy.cosmos.io"}, result)
 }
 
 func TestGetClusterAllowList_PublicEmpty_BYOPOnly(t *testing.T) {

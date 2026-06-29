@@ -372,17 +372,17 @@ func (m *Manager) Close(stateManager *statemanager.Manager) error {
 	return nberrors.FormatErrorOrNil(merr)
 }
 
-// AllowNetbird allows netbird interface traffic.
+// AllowNetbird allows cosmos interface traffic.
 // This is called when USPFilter wraps the native firewall, adding blanket accept
 // rules so that packet filtering is handled in userspace instead of by netfilter.
 func (m *Manager) AllowNetbird() error {
 	var merr *multierror.Error
 	if _, err := m.AddPeerFiltering(nil, net.IP{0, 0, 0, 0}, firewall.ProtocolALL, nil, nil, firewall.ActionAccept, ""); err != nil {
-		merr = multierror.Append(merr, fmt.Errorf("allow netbird v4 interface traffic: %w", err))
+		merr = multierror.Append(merr, fmt.Errorf("allow cosmos v4 interface traffic: %w", err))
 	}
 	if m.hasIPv6() {
 		if _, err := m.AddPeerFiltering(nil, net.IPv6zero, firewall.ProtocolALL, nil, nil, firewall.ActionAccept, ""); err != nil {
-			merr = multierror.Append(merr, fmt.Errorf("allow netbird v6 interface traffic: %w", err))
+			merr = multierror.Append(merr, fmt.Errorf("allow cosmos v6 interface traffic: %w", err))
 		}
 	}
 
@@ -467,7 +467,7 @@ func (m *Manager) UpdateSet(set firewall.Set, prefixes []netip.Prefix) error {
 	return nil
 }
 
-// AddInboundDNAT adds an inbound DNAT rule redirecting traffic from NetBird peers to local services.
+// AddInboundDNAT adds an inbound DNAT rule redirecting traffic from Cosmos peers to local services.
 func (m *Manager) AddInboundDNAT(localAddr netip.Addr, protocol firewall.Protocol, originalPort, translatedPort uint16) error {
 	m.mutex.Lock()
 	defer m.mutex.Unlock()

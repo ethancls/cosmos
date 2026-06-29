@@ -6,13 +6,13 @@ import (
 )
 
 const (
-	urlMacIntel = "https://pkgs.netbird.io/macos/amd64"
-	urlMacM1M2  = "https://pkgs.netbird.io/macos/arm64"
+	urlMacIntel = "https://pkgs.cosmos.io/macos/amd64"
+	urlMacM1M2  = "https://pkgs.cosmos.io/macos/arm64"
 )
 
 // DownloadUrl return with the proper download link
 func DownloadUrl() string {
-	cmd := exec.Command("brew", "list --formula | grep -i netbird")
+	cmd := exec.Command("brew", "list --formula | grep -i cosmos")
 	if err := cmd.Start(); err != nil {
 		goto PKGINSTALL
 	}

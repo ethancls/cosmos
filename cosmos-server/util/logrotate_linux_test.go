@@ -13,8 +13,8 @@ import (
 func TestFindFirstLogrotateConflict(t *testing.T) {
 	t.Run("conflict in confDir", func(t *testing.T) {
 		confPath, confDir := newLogrotateLayout(t)
-		conflictPath := filepath.Join(confDir, "netbird")
-		writeLogrotateConfig(t, conflictPath, `/var/log/netbird/*.log {
+		conflictPath := filepath.Join(confDir, "cosmos")
+		writeLogrotateConfig(t, conflictPath, `/var/log/cosmos/*.log {
     daily
     rotate 7
 }`)
@@ -30,14 +30,14 @@ func TestFindFirstLogrotateConflict(t *testing.T) {
 		writeLogrotateConfig(t, confPath, `weekly
 rotate 4
 include /etc/logrotate.d
-/var/log/netbird/client.log { rotate 5 }`)
+/var/log/cosmos/client.log { rotate 5 }`)
 
 		got, path := findFirstLogrotateConflictIn(confPath, confDir)
 		require.True(t, got)
 		require.Equal(t, confPath, path)
 	})
 
-	t.Run("no conflict when netbird is absent", func(t *testing.T) {
+	t.Run("no conflict when cosmos is absent", func(t *testing.T) {
 		confPath, confDir := newLogrotateLayout(t)
 		writeLogrotateConfig(t, filepath.Join(confDir, "nginx"), `/var/log/nginx/*.log { daily }`)
 		writeLogrotateConfig(t, filepath.Join(confDir, "syslog"), `/var/log/syslog { weekly }`)
@@ -47,9 +47,9 @@ include /etc/logrotate.d
 		require.Empty(t, path)
 	})
 
-	t.Run("commented-out netbird line is ignored", func(t *testing.T) {
+	t.Run("commented-out cosmos line is ignored", func(t *testing.T) {
 		confPath, confDir := newLogrotateLayout(t)
-		writeLogrotateConfig(t, filepath.Join(confDir, "misc"), `# /var/log/netbird/*.log { daily }
+		writeLogrotateConfig(t, filepath.Join(confDir, "misc"), `# /var/log/cosmos/*.log { daily }
 /var/log/other.log { weekly }`)
 
 		got, path := findFirstLogrotateConflictIn(confPath, confDir)
@@ -61,7 +61,7 @@ include /etc/logrotate.d
 		confPath, confDir := newLogrotateLayout(t)
 		sub := filepath.Join(confDir, "nested")
 		require.NoError(t, os.MkdirAll(sub, 0o755))
-		writeLogrotateConfig(t, filepath.Join(sub, "netbird"), `/var/log/netbird/*.log { daily }`)
+		writeLogrotateConfig(t, filepath.Join(sub, "cosmos"), `/var/log/cosmos/*.log { daily }`)
 
 		got, path := findFirstLogrotateConflictIn(confPath, confDir)
 		require.False(t, got)

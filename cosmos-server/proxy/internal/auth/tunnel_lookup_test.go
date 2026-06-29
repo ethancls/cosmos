@@ -132,7 +132,7 @@ func TestForwardWithTunnelPeer_LocalLookupKnownPeerStillRPCs(t *testing.T) {
 	knownIP := netip.MustParseAddr("100.64.0.10")
 	lookup := TunnelLookupFunc(func(ip netip.Addr) (PeerIdentity, bool) {
 		if ip == knownIP {
-			return PeerIdentity{PubKey: "pk", TunnelIP: ip, FQDN: "peer.netbird.cloud"}, true
+			return PeerIdentity{PubKey: "pk", TunnelIP: ip, FQDN: "peer.cosmos.cloud"}, true
 		}
 		return PeerIdentity{}, false
 	})

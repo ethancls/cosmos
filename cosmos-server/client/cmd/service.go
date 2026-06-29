@@ -19,7 +19,7 @@ import (
 
 var serviceCmd = &cobra.Command{
 	Use:   "service",
-	Short: "Manage the NetBird daemon service",
+	Short: "Manage the Cosmos daemon service",
 }
 
 var (
@@ -36,16 +36,16 @@ type program struct {
 }
 
 func init() {
-	defaultServiceName := "netbird"
+	defaultServiceName := "cosmos"
 	if runtime.GOOS == "windows" {
 		defaultServiceName = "Netbird"
 	}
 
 	serviceCmd.AddCommand(runCmd, startCmd, stopCmd, restartCmd, svcStatusCmd, installCmd, uninstallCmd, reconfigureCmd, resetParamsCmd)
-	serviceCmd.PersistentFlags().BoolVar(&profilesDisabled, "disable-profiles", false, "Disables profiles feature. If enabled, the client will not be able to change or edit any profile. To persist this setting, use: netbird service install --disable-profiles")
-	serviceCmd.PersistentFlags().BoolVar(&updateSettingsDisabled, "disable-update-settings", false, "Disables update settings feature. If enabled, the client will not be able to change or edit any settings. To persist this setting, use: netbird service install --disable-update-settings")
-	serviceCmd.PersistentFlags().BoolVar(&captureEnabled, "enable-capture", false, "Enables packet capture via 'netbird debug capture'. To persist, use: netbird service install --enable-capture")
-	serviceCmd.PersistentFlags().BoolVar(&networksDisabled, "disable-networks", false, "Disables network selection. If enabled, the client will not allow listing, selecting, or deselecting networks. To persist, use: netbird service install --disable-networks")
+	serviceCmd.PersistentFlags().BoolVar(&profilesDisabled, "disable-profiles", false, "Disables profiles feature. If enabled, the client will not be able to change or edit any profile. To persist this setting, use: cosmos service install --disable-profiles")
+	serviceCmd.PersistentFlags().BoolVar(&updateSettingsDisabled, "disable-update-settings", false, "Disables update settings feature. If enabled, the client will not be able to change or edit any settings. To persist this setting, use: cosmos service install --disable-update-settings")
+	serviceCmd.PersistentFlags().BoolVar(&captureEnabled, "enable-capture", false, "Enables packet capture via 'cosmos debug capture'. To persist, use: cosmos service install --enable-capture")
+	serviceCmd.PersistentFlags().BoolVar(&networksDisabled, "disable-networks", false, "Disables network selection. If enabled, the client will not allow listing, selecting, or deselecting networks. To persist, use: cosmos service install --disable-networks")
 
 	rootCmd.PersistentFlags().StringVarP(&serviceName, "service", "s", defaultServiceName, "Netbird system service name")
 	serviceEnvDesc := `Sets extra environment variables for the service. ` +
@@ -69,7 +69,7 @@ func newSVCConfig() (*service.Config, error) {
 	config := &service.Config{
 		Name:        serviceName,
 		DisplayName: "Netbird",
-		Description: "NetBird mesh network client",
+		Description: "Cosmos mesh network client",
 		Option:      make(service.KeyValue),
 		EnvVars:     make(map[string]string),
 	}

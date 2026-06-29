@@ -9,7 +9,7 @@ import (
 )
 
 func TestLegacyEncryptDecrypt(t *testing.T) {
-	testData := "exampl@netbird.io"
+	testData := "exampl@cosmos.io"
 	key, err := GenerateKey()
 	require.NoError(t, err)
 

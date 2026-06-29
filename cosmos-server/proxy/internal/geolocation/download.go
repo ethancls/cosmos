@@ -19,8 +19,8 @@ import (
 )
 
 const (
-	mmdbTarGZURL  = "https://pkgs.netbird.io/geolocation-dbs/GeoLite2-City/download?suffix=tar.gz"
-	mmdbSha256URL = "https://pkgs.netbird.io/geolocation-dbs/GeoLite2-City/download?suffix=tar.gz.sha256"
+	mmdbTarGZURL  = "https://pkgs.cosmos.io/geolocation-dbs/GeoLite2-City/download?suffix=tar.gz"
+	mmdbSha256URL = "https://pkgs.cosmos.io/geolocation-dbs/GeoLite2-City/download?suffix=tar.gz.sha256"
 	mmdbInnerName = "GeoLite2-City.mmdb"
 
 	downloadTimeout = 2 * time.Minute
@@ -28,7 +28,7 @@ const (
 )
 
 // ensureMMDB checks for an existing MMDB file in dataDir. If none is found,
-// it downloads from pkgs.netbird.io with SHA256 verification.
+// it downloads from pkgs.cosmos.io with SHA256 verification.
 func ensureMMDB(logger *log.Logger, dataDir string) (string, error) {
 	if err := os.MkdirAll(dataDir, 0o755); err != nil {
 		return "", fmt.Errorf("create geo data directory %s: %w", dataDir, err)
@@ -41,7 +41,7 @@ func ensureMMDB(logger *log.Logger, dataDir string) (string, error) {
 		return mmdbPath, nil
 	}
 
-	logger.Info("geolocation database not found, downloading from pkgs.netbird.io")
+	logger.Info("geolocation database not found, downloading from pkgs.cosmos.io")
 	return downloadMMDB(logger, dataDir)
 }
 

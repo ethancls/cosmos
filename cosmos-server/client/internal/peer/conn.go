@@ -892,14 +892,14 @@ func (conn *Conn) presharedKey(remoteRosenpassKey []byte) *wgtypes.Key {
 		return nil
 	}
 
-	// Use NetBird PSK as the seed for Rosenpass. This same PSK is passed to
+	// Use Cosmos PSK as the seed for Rosenpass. This same PSK is passed to
 	// Rosenpass as PeerConfig.PresharedKey, ensuring the derived post-quantum
 	// key is cryptographically bound to the original secret.
 	if conn.config.WgConfig.PreSharedKey != nil {
 		return conn.config.WgConfig.PreSharedKey
 	}
 
-	// Fallback to deterministic key if no NetBird PSK is configured
+	// Fallback to deterministic key if no Cosmos PSK is configured
 	determKey, err := rosenpass.DeterministicSeedKey(conn.config.LocalKey, conn.config.Key)
 	if err != nil {
 		conn.Log.Errorf("failed to generate Rosenpass initial key: %v", err)

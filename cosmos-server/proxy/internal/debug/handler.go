@@ -57,7 +57,7 @@ func sortedAccountIDs(m map[types.AccountID]roundtrip.ClientDebugInfo) []types.A
 	return slices.Sorted(maps.Keys(m))
 }
 
-// clientProvider provides access to NetBird clients.
+// clientProvider provides access to Cosmos clients.
 type clientProvider interface {
 	GetClient(accountID types.AccountID) (*nbembed.Client, bool)
 	ListClientsForDebug() map[types.AccountID]roundtrip.ClientDebugInfo

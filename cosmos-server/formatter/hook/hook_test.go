@@ -14,12 +14,12 @@ func TestFilePathParsing(t *testing.T) {
 	}{
 		// locally cloned repo
 		{
-			filePath:         "/Users/user/Github/Netbird/netbird/formatter/formatter.go",
+			filePath:         "/Users/user/Github/Netbird/cosmos/formatter/formatter.go",
 			expectedFileName: "formatter/formatter.go",
 		},
 		// locally cloned repo with duplicated name in path
 		{
-			filePath:         "/Users/user/netbird/repos/netbird/formatter/formatter.go",
+			filePath:         "/Users/user/cosmos/repos/cosmos/formatter/formatter.go",
 			expectedFileName: "formatter/formatter.go",
 		},
 		// locally cloned repo with renamed package root

@@ -46,7 +46,7 @@ func TestAnonymizeStateFile(t *testing.T) {
 			"domain":         "test.example.com",
 			"uri":            "stun:stun.example.com:3478",
 			"uri_with_ip":    "turn:203.0.113.1:3478",
-			"netbird_domain": "device.netbird.cloud",
+			"cosmos_domain": "device.cosmos.cloud",
 
 			// Test CIDR ranges
 			"public_cidr":       "203.0.113.0/24",
@@ -185,7 +185,7 @@ func TestAnonymizeStateFile(t *testing.T) {
 	assert.NotEqual(t, "fd00::1", state["private_ipv6"]) // ULA IPv6 anonymized (global ID is a fingerprint)
 	assert.NotEqual(t, "test.example.com", state["domain"])
 	assert.True(t, strings.HasSuffix(state["domain"].(string), ".domain"))
-	assert.Equal(t, "device.netbird.cloud", state["netbird_domain"]) // Netbird domain unchanged
+	assert.Equal(t, "device.cosmos.cloud", state["cosmos_domain"]) // Netbird domain unchanged
 
 	// CIDR ranges
 	assert.NotEqual(t, "203.0.113.0/24", state["public_cidr"])

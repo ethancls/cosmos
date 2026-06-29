@@ -26,7 +26,7 @@ const (
 	testUserID    = "test-user-id"
 	testZoneID    = "test-zone-id"
 	testGroupID   = "test-group-id"
-	testDNSDomain = "netbird.selfhosted"
+	testDNSDomain = "cosmos.selfhosted"
 )
 
 func setupTest(t *testing.T) (*managerImpl, store.Store, *mock_server.MockAccountManager, *permissions.MockManager, *gomock.Controller, func()) {

@@ -135,14 +135,14 @@ func TestAnonymizeDomain(t *testing.T) {
 		},
 		{
 			"Protected Domain",
-			"netbird.io",
-			`^netbird\.io$`,
+			"cosmos.io",
+			`^cosmos\.io$`,
 			false,
 		},
 		{
 			"Protected Domain with Trailing Dot",
-			"netbird.io.",
-			`^netbird\.io.$`,
+			"cosmos.io.",
+			`^cosmos\.io.$`,
 			false,
 		},
 	}

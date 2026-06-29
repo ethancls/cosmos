@@ -1121,7 +1121,7 @@ func TestValidate_HeaderAuths(t *testing.T) {
 func TestValidate_HTTPClusterTarget(t *testing.T) {
 	rp := validProxy()
 	rp.Targets = []*Target{{
-		TargetId:   "eu.proxy.netbird.io",
+		TargetId:   "eu.proxy.cosmos.io",
 		TargetType: TargetTypeCluster,
 		Protocol:   "http",
 		Host:       "backend.lan",
@@ -1150,7 +1150,7 @@ func TestValidate_HTTPClusterTarget_RequiresTargetId(t *testing.T) {
 func TestValidate_HTTPClusterTarget_RequiresHost(t *testing.T) {
 	rp := validProxy()
 	rp.Targets = []*Target{{
-		TargetId:   "eu.proxy.netbird.io",
+		TargetId:   "eu.proxy.cosmos.io",
 		TargetType: TargetTypeCluster,
 		Protocol:   "http",
 		Options:    TargetOptions{DirectUpstream: true},
@@ -1162,12 +1162,12 @@ func TestValidate_HTTPClusterTarget_RequiresHost(t *testing.T) {
 // TestValidate_HTTPClusterTarget_RequiresDirectUpstream pins the second
 // half of the cluster-target rule: DirectUpstream must be true so the
 // stdlib transport branch in MultiTransport is taken. Without it the
-// embedded NetBird client would try to dial the cluster address through
+// embedded Cosmos client would try to dial the cluster address through
 // the WG tunnel, which is the wrong network for a cluster upstream.
 func TestValidate_HTTPClusterTarget_RequiresDirectUpstream(t *testing.T) {
 	rp := validProxy()
 	rp.Targets = []*Target{{
-		TargetId:   "eu.proxy.netbird.io",
+		TargetId:   "eu.proxy.cosmos.io",
 		TargetType: TargetTypeCluster,
 		Protocol:   "http",
 		Host:       "backend.lan",
@@ -1186,7 +1186,7 @@ func TestValidate_L4ClusterTarget_RequiresPort(t *testing.T) {
 	rp.Mode = ModeTCP
 	rp.ListenPort = 9000
 	rp.Targets = []*Target{{
-		TargetId:   "eu.proxy.netbird.io",
+		TargetId:   "eu.proxy.cosmos.io",
 		TargetType: TargetTypeCluster,
 		Protocol:   "tcp",
 		Enabled:    true,
@@ -1220,7 +1220,7 @@ func TestService_APIRoundtrip_Private(t *testing.T) {
 	private := true
 	accessGroups := []string{"grp-admins"}
 	targets := []api.ServiceTarget{{
-		TargetId:   "eu.proxy.netbird.io",
+		TargetId:   "eu.proxy.cosmos.io",
 		TargetType: api.ServiceTargetTargetType("cluster"),
 		Protocol:   "http",
 		Port:       80,
@@ -1228,7 +1228,7 @@ func TestService_APIRoundtrip_Private(t *testing.T) {
 	}}
 	req := &api.ServiceRequest{
 		Name:         "svc-private",
-		Domain:       "myapp.eu.proxy.netbird.io",
+		Domain:       "myapp.eu.proxy.cosmos.io",
 		Enabled:      enabled,
 		Private:      &private,
 		AccessGroups: &accessGroups,
@@ -1251,7 +1251,7 @@ func TestValidate_Private_RequiresAccessGroups(t *testing.T) {
 	rp := validProxy()
 	rp.Private = true
 	rp.Targets = []*Target{{
-		TargetId:   "eu.proxy.netbird.io",
+		TargetId:   "eu.proxy.cosmos.io",
 		TargetType: TargetTypeCluster,
 		Protocol:   "http",
 		Host:       "backend.lan",
@@ -1270,7 +1270,7 @@ func TestValidate_Private_RejectsBearerAuth(t *testing.T) {
 		DistributionGroups: []string{"grp-sso"},
 	}
 	rp.Targets = []*Target{{
-		TargetId:   "eu.proxy.netbird.io",
+		TargetId:   "eu.proxy.cosmos.io",
 		TargetType: TargetTypeCluster,
 		Protocol:   "http",
 		Host:       "backend.lan",
@@ -1292,7 +1292,7 @@ func TestValidate_Private_AcceptsClusterTargetWithAccessGroups(t *testing.T) {
 	rp.Private = true
 	rp.AccessGroups = []string{"grp-admins"}
 	rp.Targets = []*Target{{
-		TargetId:   "eu.proxy.netbird.io",
+		TargetId:   "eu.proxy.cosmos.io",
 		TargetType: TargetTypeCluster,
 		Protocol:   "http",
 		Host:       "backend.lan",
@@ -1308,7 +1308,7 @@ func TestValidate_Private_RejectsNonHTTPMode(t *testing.T) {
 	rp.AccessGroups = []string{"grp-admins"}
 	rp.Mode = ModeTCP
 	rp.Targets = []*Target{{
-		TargetId:   "eu.proxy.netbird.io",
+		TargetId:   "eu.proxy.cosmos.io",
 		TargetType: TargetTypeCluster,
 		Protocol:   "tcp",
 		Enabled:    true,

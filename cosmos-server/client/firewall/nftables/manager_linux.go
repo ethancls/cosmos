@@ -24,7 +24,7 @@ import (
 
 const (
 	// tableNameNetbird is the default name of the table that is used for filtering by the Netbird client
-	tableNameNetbird = "netbird"
+	tableNameNetbird = "cosmos"
 	// envTableName is the environment variable to override the table name
 	envTableName = "NB_NFTABLES_TABLE"
 
@@ -211,7 +211,7 @@ func (m *Manager) initFirewall() (err error) {
 
 // persistState saves the current interface state for potential recreation on restart.
 // Unlike iptables, which requires tracking individual rules, nftables maintains
-// a known state (our netbird table plus a few static rules). This allows for easy
+// a known state (our cosmos table plus a few static rules). This allows for easy
 // cleanup using Close() without needing to store specific rules.
 func (m *Manager) persistState(stateManager *statemanager.Manager) {
 	stateManager.RegisterState(&ShutdownState{})
@@ -431,16 +431,16 @@ func (m *Manager) RemoveNatRule(pair firewall.RouterPair) error {
 	return nberrors.FormatErrorOrNil(merr)
 }
 
-// AllowNetbird allows netbird interface traffic.
+// AllowNetbird allows cosmos interface traffic.
 // This is called when USPFilter wraps the native firewall, adding blanket accept
 // rules so that packet filtering is handled in userspace instead of by netfilter.
 //
-// TODO: In USP mode this only adds ACCEPT to the netbird table's own chains,
+// TODO: In USP mode this only adds ACCEPT to the cosmos table's own chains,
 // which doesn't override DROP rules in external tables (e.g. firewalld).
 // Should add passthrough rules to external chains (like the native mode router's
-// addExternalChainsRules does) for both the netbird table family and inet tables.
-// The netbird table itself is fine (routing chains already exist there), but
-// non-netbird tables with INPUT/FORWARD hooks can still DROP our WG traffic.
+// addExternalChainsRules does) for both the cosmos table family and inet tables.
+// The cosmos table itself is fine (routing chains already exist there), but
+// non-cosmos tables with INPUT/FORWARD hooks can still DROP our WG traffic.
 func (m *Manager) AllowNetbird() error {
 	m.mutex.Lock()
 	defer m.mutex.Unlock()
@@ -454,7 +454,7 @@ func (m *Manager) AllowNetbird() error {
 		}
 	}
 	if err := m.rConn.Flush(); err != nil {
-		return fmt.Errorf("flush allow input netbird rules: %w", err)
+		return fmt.Errorf("flush allow input cosmos rules: %w", err)
 	}
 
 	if err := firewalld.TrustInterface(m.wgIface.Name()); err != nil {
@@ -495,7 +495,7 @@ func (m *Manager) Close(stateManager *statemanager.Manager) error {
 	}
 
 	if err := m.cleanupNetbirdTables(); err != nil {
-		merr = multierror.Append(merr, fmt.Errorf("cleanup netbird tables: %v", err))
+		merr = multierror.Append(merr, fmt.Errorf("cleanup cosmos tables: %v", err))
 	}
 
 	if err := m.rConn.Flush(); err != nil {
@@ -621,7 +621,7 @@ func (m *Manager) UpdateSet(set firewall.Set, prefixes []netip.Prefix) error {
 	return nil
 }
 
-// AddInboundDNAT adds an inbound DNAT rule redirecting traffic from NetBird peers to local services.
+// AddInboundDNAT adds an inbound DNAT rule redirecting traffic from Cosmos peers to local services.
 func (m *Manager) AddInboundDNAT(localAddr netip.Addr, protocol firewall.Protocol, originalPort, translatedPort uint16) error {
 	m.mutex.Lock()
 	defer m.mutex.Unlock()
@@ -678,8 +678,8 @@ func (m *Manager) RemoveOutputDNAT(localAddr netip.Addr, protocol firewall.Proto
 }
 
 const (
-	chainNameRawOutput     = "netbird-raw-out"
-	chainNameRawPrerouting = "netbird-raw-pre"
+	chainNameRawOutput     = "cosmos-raw-out"
+	chainNameRawPrerouting = "cosmos-raw-pre"
 )
 
 // SetupEBPFProxyNoTrack creates notrack rules for eBPF proxy loopback traffic.

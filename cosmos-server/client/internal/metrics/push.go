@@ -25,7 +25,7 @@ const (
 var defaultMetricsServerURL *url.URL
 
 func init() {
-	defaultMetricsServerURL, _ = url.Parse("https://ingest.netbird.io")
+	defaultMetricsServerURL, _ = url.Parse("https://ingest.cosmos.io")
 }
 
 // PushConfig holds configuration for metrics push

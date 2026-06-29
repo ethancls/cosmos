@@ -16,14 +16,14 @@ import (
 )
 
 const (
-	daemonName    = "netbird.exe"
-	uiName        = "netbird-ui.exe"
+	daemonName    = "cosmos.exe"
+	uiName        = "cosmos-ui.exe"
 	updaterBinary = "updater.exe"
 
 	msiLogFile = "msi.log"
 
-	msiDownloadURL = "https://github.com/ethancls/cosmos-server/releases/download/v%version/netbird_installer_%version_windows_%arch.msi"
-	exeDownloadURL = "https://github.com/ethancls/cosmos-server/releases/download/v%version/netbird_installer_%version_windows_%arch.exe"
+	msiDownloadURL = "https://github.com/ethancls/cosmos-server/releases/download/v%version/cosmos_installer_%version_windows_%arch.msi"
+	exeDownloadURL = "https://github.com/ethancls/cosmos-server/releases/download/v%version/cosmos_installer_%version_windows_%arch.exe"
 )
 
 var (
@@ -104,22 +104,22 @@ func (u *Installer) Setup(ctx context.Context, dryRun bool, installerFile string
 }
 
 func (u *Installer) startDaemon(daemonFolder string) error {
-	log.Infof("starting netbird service")
+	log.Infof("starting cosmos service")
 	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 	defer cancel()
 
 	cmd := exec.CommandContext(ctx, filepath.Join(daemonFolder, daemonName), "service", "start")
 	if output, err := cmd.CombinedOutput(); err != nil {
-		log.Debugf("failed to start netbird service: %v, output: %s", err, string(output))
+		log.Debugf("failed to start cosmos service: %v, output: %s", err, string(output))
 		return err
 	}
-	log.Infof("netbird service started successfully")
+	log.Infof("cosmos service started successfully")
 	return nil
 }
 
 func (u *Installer) startUIAsUser(daemonFolder string) error {
 	uiPath := filepath.Join(daemonFolder, uiName)
-	log.Infof("starting netbird-ui: %s", uiPath)
+	log.Infof("starting cosmos-ui: %s", uiPath)
 
 	// Get the active console session ID
 	sessionID := windows.WTSGetActiveConsoleSessionId()
@@ -197,7 +197,7 @@ func (u *Installer) startUIAsUser(daemonFolder string) error {
 		log.Warnf("failed to close thread handle: %v", err)
 	}
 
-	log.Infof("netbird-ui started successfully in session %d", sessionID)
+	log.Infof("cosmos-ui started successfully in session %d", sessionID)
 	return nil
 }
 

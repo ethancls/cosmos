@@ -34,12 +34,12 @@ const (
 	tableSecurity = "security"
 
 	chainNameNatPrerouting = "PREROUTING"
-	chainNameRoutingFw     = "netbird-rt-fwd"
-	chainNameRoutingNat    = "netbird-rt-postrouting"
-	chainNameRoutingRdr    = "netbird-rt-redirect"
-	chainNameNATOutput     = "netbird-nat-output"
+	chainNameRoutingFw     = "cosmos-rt-fwd"
+	chainNameRoutingNat    = "cosmos-rt-postrouting"
+	chainNameRoutingRdr    = "cosmos-rt-redirect"
+	chainNameNATOutput     = "cosmos-nat-output"
 	chainNameForward       = "FORWARD"
-	chainNameMangleForward = "netbird-mangle-forward"
+	chainNameMangleForward = "cosmos-mangle-forward"
 
 	firewalldTableName = "firewalld"
 
@@ -685,7 +685,7 @@ func (r *router) AddNatRule(pair firewall.RouterPair) error {
 	}
 
 	if r.legacyManagement {
-		log.Warnf("This peer is connected to a NetBird Management service with an older version. Allowing all traffic for %s", pair.Destination)
+		log.Warnf("This peer is connected to a Cosmos Management service with an older version. Allowing all traffic for %s", pair.Destination)
 		if err := r.addLegacyRouteRule(pair); err != nil {
 			return fmt.Errorf("add legacy routing rule: %w", err)
 		}
@@ -1163,7 +1163,7 @@ func (r *router) acceptFilterRulesNftables(table *nftables.Table) error {
 	return r.conn.Flush()
 }
 
-// acceptExternalChainsRules adds accept rules to external chains (non-netbird, non-iptables tables).
+// acceptExternalChainsRules adds accept rules to external chains (non-cosmos, non-iptables tables).
 // It dynamically finds chains at call time to handle chains that may have been created after startup.
 func (r *router) acceptExternalChainsRules() error {
 	chains := r.findExternalChains()
@@ -1264,7 +1264,7 @@ func (r *router) insertInputAcceptRule(chain *nftables.Chain, intf []byte) {
 	})
 }
 
-// existingNetbirdRulesInChain returns the set of netbird-owned UserData tags present in a chain; callers must bail on error since InsertRule is additive.
+// existingNetbirdRulesInChain returns the set of cosmos-owned UserData tags present in a chain; callers must bail on error since InsertRule is additive.
 func (r *router) existingNetbirdRulesInChain(chain *nftables.Chain) (map[string]bool, error) {
 	rules, err := r.conn.GetRules(chain.Table, chain)
 	if err != nil {
@@ -1381,7 +1381,7 @@ func (r *router) removeExternalChainsRules() error {
 	return r.conn.Flush()
 }
 
-// findExternalChains scans for chains from non-netbird tables that have FORWARD or INPUT hooks.
+// findExternalChains scans for chains from non-cosmos tables that have FORWARD or INPUT hooks.
 // This is used both at startup (to know where to add rules) and at cleanup (to ensure deterministic removal).
 func (r *router) findExternalChains() []*nftables.Chain {
 	var chains []*nftables.Chain
@@ -1847,7 +1847,7 @@ func (r *router) UpdateSet(set firewall.Set, prefixes []netip.Prefix) error {
 	return nil
 }
 
-// AddInboundDNAT adds an inbound DNAT rule redirecting traffic from NetBird peers to local services.
+// AddInboundDNAT adds an inbound DNAT rule redirecting traffic from Cosmos peers to local services.
 func (r *router) AddInboundDNAT(localAddr netip.Addr, protocol firewall.Protocol, originalPort, translatedPort uint16) error {
 	ruleID := fmt.Sprintf("inbound-dnat-%s-%s-%d-%d", localAddr.String(), protocol, originalPort, translatedPort)
 

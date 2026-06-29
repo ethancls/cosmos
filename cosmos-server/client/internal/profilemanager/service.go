@@ -63,8 +63,8 @@ func (e *ErrAmbiguousHandle) Error() string {
 
 func init() {
 
-	DefaultConfigPathDir = "/var/lib/netbird/"
-	oldDefaultConfigPathDir = "/etc/netbird/"
+	DefaultConfigPathDir = "/var/lib/cosmos/"
+	oldDefaultConfigPathDir = "/etc/cosmos/"
 
 	if stateDir := os.Getenv("NB_STATE_DIR"); stateDir != "" {
 		DefaultConfigPathDir = stateDir
@@ -75,7 +75,7 @@ func init() {
 			DefaultConfigPathDir = oldDefaultConfigPathDir
 
 		case "freebsd":
-			oldDefaultConfigPathDir = "/var/db/netbird/"
+			oldDefaultConfigPathDir = "/var/db/cosmos/"
 			DefaultConfigPathDir = oldDefaultConfigPathDir
 		}
 	}

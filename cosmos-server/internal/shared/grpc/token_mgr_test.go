@@ -25,7 +25,7 @@ import (
 
 var TurnTestHost = &config.Host{
 	Proto:    config.UDP,
-	URI:      "turn:turn.netbird.io:77777",
+	URI:      "turn:turn.cosmos.io:77777",
 	Username: "username",
 	Password: "",
 }

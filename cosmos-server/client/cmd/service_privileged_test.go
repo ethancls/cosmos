@@ -71,15 +71,15 @@ func TestServiceLifecycle(t *testing.T) {
 	}
 
 	originalServiceName := serviceName
-	serviceName = "netbirdtest" + fmt.Sprintf("%d", time.Now().Unix())
+	serviceName = "cosmostest" + fmt.Sprintf("%d", time.Now().Unix())
 	defer func() {
 		serviceName = originalServiceName
 	}()
 
 	tempDir := t.TempDir()
-	configPath = fmt.Sprintf("%s/netbird-test-config.json", tempDir)
+	configPath = fmt.Sprintf("%s/cosmos-test-config.json", tempDir)
 	logLevel = "info"
-	daemonAddr = fmt.Sprintf("unix://%s/netbird-test.sock", tempDir)
+	daemonAddr = fmt.Sprintf("unix://%s/cosmos-test.sock", tempDir)
 
 	// Ensure cleanup even if a subtest fails and Stop/Uninstall subtests don't run.
 	t.Cleanup(func() {

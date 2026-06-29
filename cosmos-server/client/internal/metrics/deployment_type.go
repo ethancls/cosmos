@@ -5,17 +5,17 @@ import (
 	"strings"
 )
 
-// DeploymentType represents the type of NetBird deployment
+// DeploymentType represents the type of Cosmos deployment
 type DeploymentType int
 
 const (
 	// DeploymentTypeUnknown represents an unknown or uninitialized deployment type
 	DeploymentTypeUnknown DeploymentType = iota
 
-	// DeploymentTypeCloud represents a cloud-hosted NetBird deployment
+	// DeploymentTypeCloud represents a cloud-hosted Cosmos deployment
 	DeploymentTypeCloud
 
-	// DeploymentTypeSelfHosted represents a self-hosted NetBird deployment
+	// DeploymentTypeSelfHosted represents a self-hosted Cosmos deployment
 	DeploymentTypeSelfHosted
 )
 
@@ -43,7 +43,7 @@ func DetermineDeploymentType(managementURL string) DeploymentType {
 		return DeploymentTypeSelfHosted
 	}
 
-	if strings.ToLower(u.Hostname()) == "api.netbird.io" {
+	if strings.ToLower(u.Hostname()) == "api.cosmos.io" {
 		return DeploymentTypeCloud
 	}
 

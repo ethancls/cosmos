@@ -223,7 +223,7 @@ func TestServer_ConcurrentClients(t *testing.T) {
 	maxRequestDelay := 500 * time.Millisecond // Random delay between requests
 
 	// Remote server to test against via env var STUN_TEST_SERVER
-	// Example: STUN_TEST_SERVER=example.netbird.io:3478 go test -v ./stun/... -run ConcurrentClients
+	// Example: STUN_TEST_SERVER=example.cosmos.io:3478 go test -v ./stun/... -run ConcurrentClients
 	remoteServer := os.Getenv("STUN_TEST_SERVER")
 
 	var serverAddr *net.UDPAddr

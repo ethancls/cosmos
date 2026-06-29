@@ -13,7 +13,7 @@ import (
 
 func TestCreatePTRRecord_IPv4(t *testing.T) {
 	record := nbdns.SimpleRecord{
-		Name:  "peer1.netbird.cloud.",
+		Name:  "peer1.cosmos.cloud.",
 		Type:  int(dns.TypeA),
 		Class: nbdns.DefaultClass,
 		TTL:   300,
@@ -25,12 +25,12 @@ func TestCreatePTRRecord_IPv4(t *testing.T) {
 	require.True(t, ok)
 	assert.Equal(t, "5.0.64.100.in-addr.arpa.", ptr.Name)
 	assert.Equal(t, int(dns.TypePTR), ptr.Type)
-	assert.Equal(t, "peer1.netbird.cloud.", ptr.RData)
+	assert.Equal(t, "peer1.cosmos.cloud.", ptr.RData)
 }
 
 func TestCreatePTRRecord_IPv6(t *testing.T) {
 	record := nbdns.SimpleRecord{
-		Name:  "peer1.netbird.cloud.",
+		Name:  "peer1.cosmos.cloud.",
 		Type:  int(dns.TypeAAAA),
 		Class: nbdns.DefaultClass,
 		TTL:   300,
@@ -42,12 +42,12 @@ func TestCreatePTRRecord_IPv6(t *testing.T) {
 	require.True(t, ok)
 	assert.Equal(t, "1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.7.6.5.4.3.2.1.0.0.d.f.ip6.arpa.", ptr.Name)
 	assert.Equal(t, int(dns.TypePTR), ptr.Type)
-	assert.Equal(t, "peer1.netbird.cloud.", ptr.RData)
+	assert.Equal(t, "peer1.cosmos.cloud.", ptr.RData)
 }
 
 func TestCreatePTRRecord_OutOfRange(t *testing.T) {
 	record := nbdns.SimpleRecord{
-		Name:  "peer1.netbird.cloud.",
+		Name:  "peer1.cosmos.cloud.",
 		Type:  int(dns.TypeA),
 		RData: "10.0.0.1",
 	}
@@ -99,11 +99,11 @@ func TestCollectPTRRecords_BothFamilies(t *testing.T) {
 	config := &nbdns.Config{
 		CustomZones: []nbdns.CustomZone{
 			{
-				Domain: "netbird.cloud.",
+				Domain: "cosmos.cloud.",
 				Records: []nbdns.SimpleRecord{
-					{Name: "peer1.netbird.cloud.", Type: int(dns.TypeA), RData: "100.64.0.1"},
-					{Name: "peer1.netbird.cloud.", Type: int(dns.TypeAAAA), RData: "fd00::1"},
-					{Name: "peer2.netbird.cloud.", Type: int(dns.TypeA), RData: "100.64.0.2"},
+					{Name: "peer1.cosmos.cloud.", Type: int(dns.TypeA), RData: "100.64.0.1"},
+					{Name: "peer1.cosmos.cloud.", Type: int(dns.TypeAAAA), RData: "fd00::1"},
+					{Name: "peer2.cosmos.cloud.", Type: int(dns.TypeA), RData: "100.64.0.2"},
 				},
 			},
 		},
@@ -120,9 +120,9 @@ func TestAddReverseZone_IPv6(t *testing.T) {
 	config := &nbdns.Config{
 		CustomZones: []nbdns.CustomZone{
 			{
-				Domain: "netbird.cloud.",
+				Domain: "cosmos.cloud.",
 				Records: []nbdns.SimpleRecord{
-					{Name: "peer1.netbird.cloud.", Type: int(dns.TypeAAAA), RData: "fd00:1234:5678::1"},
+					{Name: "peer1.cosmos.cloud.", Type: int(dns.TypeAAAA), RData: "fd00:1234:5678::1"},
 				},
 			},
 		},

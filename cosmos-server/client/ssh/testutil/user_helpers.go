@@ -95,7 +95,7 @@ func CleanupTestUsers() {
 
 // GetOrCreateTestUser creates a test user on Windows if needed
 func GetOrCreateTestUser(t *testing.T) string {
-	testUsername := "netbird-test-user"
+	testUsername := "cosmos-test-user"
 
 	if _, err := user.Lookup(testUsername); err == nil {
 		return testUsername
@@ -147,7 +147,7 @@ func CreateWindowsTestUser(t *testing.T, username string) bool {
 	psCmd := fmt.Sprintf(`
 		try {
 			$password = ConvertTo-SecureString "TestPassword123!" -AsPlainText -Force
-			New-LocalUser -Name "%s" -Password $password -Description "NetBird test user" -UserMayNotChangePassword -PasswordNeverExpires
+			New-LocalUser -Name "%s" -Password $password -Description "Cosmos test user" -UserMayNotChangePassword -PasswordNeverExpires
 			Add-LocalGroupMember -Group "Users" -Member "%s"
 			Write-Output "User created successfully"
 		} catch {

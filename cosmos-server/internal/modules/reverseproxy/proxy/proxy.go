@@ -21,7 +21,7 @@ type Capabilities struct {
 	// SupportsCrowdsec indicates whether this proxy has CrowdSec configured.
 	SupportsCrowdsec *bool
 	// Private indicates whether this proxy supports inbound access via Wireguard
-	// tunnel and netbird-only authentication policies
+	// tunnel and cosmos-only authentication policies
 	Private *bool
 }
 
@@ -52,7 +52,7 @@ const (
 	// ClusterTypeAccount is a cluster operated by the account itself (BYOP) —
 	// at least one proxy row in the cluster carries a non-NULL account_id.
 	ClusterTypeAccount ClusterType = "account"
-	// ClusterTypeShared is a cluster operated by NetBird and shared across
+	// ClusterTypeShared is a cluster operated by Cosmos and shared across
 	// accounts — all proxy rows in the cluster have account_id IS NULL.
 	ClusterTypeShared ClusterType = "shared"
 )

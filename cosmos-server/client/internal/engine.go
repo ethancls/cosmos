@@ -320,7 +320,7 @@ func NewEngine(
 
 func (e *Engine) Stop() error {
 	if e == nil {
-		// this seems to be a very odd case but there was the possibility if the netbird down command comes before the engine is fully started
+		// this seems to be a very odd case but there was the possibility if the cosmos down command comes before the engine is fully started
 		log.Debugf("tried stopping engine that is nil")
 		return nil
 	}
@@ -457,7 +457,7 @@ func waitWithContext(ctx context.Context, wg *sync.WaitGroup) error {
 // Start creates a new WireGuard tunnel interface and listens to events from Signal and Management services
 // Connections to remote peers are not established here.
 // However, they will be established once an event with a list of peers to connect to will be received from Management Service
-func (e *Engine) Start(netbirdConfig *mgmProto.NetbirdConfig, mgmtURL *url.URL) (err error) {
+func (e *Engine) Start(cosmosConfig *mgmProto.NetbirdConfig, mgmtURL *url.URL) (err error) {
 	e.syncMsgMux.Lock()
 	defer e.syncMsgMux.Unlock()
 
@@ -532,7 +532,7 @@ func (e *Engine) Start(netbirdConfig *mgmProto.NetbirdConfig, mgmtURL *url.URL) 
 	e.dnsServer = dnsServer
 
 	// Populate DNS cache with NetbirdConfig and management URL for early resolution
-	if err := e.PopulateNetbirdConfig(netbirdConfig, mgmtURL); err != nil {
+	if err := e.PopulateNetbirdConfig(cosmosConfig, mgmtURL); err != nil {
 		log.Warnf("failed to populate DNS cache: %v", err)
 	}
 
@@ -854,7 +854,7 @@ func (e *Engine) removePeer(peerKey string) error {
 }
 
 // PopulateNetbirdConfig populates the DNS cache with infrastructure domains from login response
-func (e *Engine) PopulateNetbirdConfig(netbirdConfig *mgmProto.NetbirdConfig, mgmtURL *url.URL) error {
+func (e *Engine) PopulateNetbirdConfig(cosmosConfig *mgmProto.NetbirdConfig, mgmtURL *url.URL) error {
 	if e.dnsServer == nil {
 		return nil
 	}
@@ -867,8 +867,8 @@ func (e *Engine) PopulateNetbirdConfig(netbirdConfig *mgmProto.NetbirdConfig, mg
 	}
 
 	// Populate NetbirdConfig domains if provided
-	if netbirdConfig != nil {
-		serverDomains := dnsconfig.ExtractFromNetbirdConfig(netbirdConfig)
+	if cosmosConfig != nil {
+		serverDomains := dnsconfig.ExtractFromNetbirdConfig(cosmosConfig)
 		if err := e.dnsServer.UpdateServerConfig(serverDomains); err != nil {
 			return fmt.Errorf("update DNS server config from NetbirdConfig: %w", err)
 		}
@@ -924,7 +924,7 @@ func (e *Engine) handleSync(update *mgmProto.SyncResponse) error {
 		e.handleAutoUpdateVersion(update.NetworkMap.PeerConfig.AutoUpdate)
 	}
 
-	done := e.phase("netbird_config")
+	done := e.phase("cosmos_config")
 	err := e.updateNetbirdConfig(update.GetNetbirdConfig())
 	done()
 	if err != nil {
@@ -962,7 +962,7 @@ func (e *Engine) handleSync(update *mgmProto.SyncResponse) error {
 	return nil
 }
 
-// updateNetbirdConfig applies the management-provided NetBird configuration:
+// updateNetbirdConfig applies the management-provided Cosmos configuration:
 // STUN/TURN and relay servers, flow logging and DNS settings. A nil config is a no-op,
 // which is the case for sync updates carrying only a network map.
 func (e *Engine) updateNetbirdConfig(wCfg *mgmProto.NetbirdConfig) error {
@@ -2728,7 +2728,7 @@ func convertToOfferAnswer(msg *sProto.Message) (*peer.OfferAnswer, error) {
 			Pwd:   remoteCred.Pwd,
 		},
 		WgListenPort:    int(msg.GetBody().GetWgListenPort()),
-		Version:         msg.GetBody().GetNetBirdVersion(),
+		Version:         msg.GetBody().GetCosmosVersion(),
 		RosenpassPubKey: rosenpassPubKey,
 		RosenpassAddr:   rosenpassAddr,
 		RelaySrvAddress: msg.GetBody().GetRelayServerAddress(),

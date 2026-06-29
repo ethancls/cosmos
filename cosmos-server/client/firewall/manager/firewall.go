@@ -17,10 +17,10 @@ import (
 var ErrIPv6NotInitialized = errors.New("IPv6 firewall not initialized")
 
 const (
-	ForwardingFormatPrefix = "netbird-fwd-"
-	ForwardingFormat       = "netbird-fwd-%s-%t"
-	PreroutingFormat       = "netbird-prerouting-%s-%t"
-	NatFormat              = "netbird-nat-%s-%t"
+	ForwardingFormatPrefix = "cosmos-fwd-"
+	ForwardingFormat       = "cosmos-fwd-%s-%t"
+	PreroutingFormat       = "cosmos-prerouting-%s-%t"
+	NatFormat              = "cosmos-nat-%s-%t"
 )
 
 // Rule abstraction should be implemented by each firewall manager
@@ -98,7 +98,7 @@ func (d Network) IsPrefix() bool {
 type Manager interface {
 	Init(stateManager *statemanager.Manager) error
 
-	// AllowNetbird allows netbird interface traffic
+	// AllowNetbird allows cosmos interface traffic
 	AllowNetbird() error
 
 	// AddPeerFiltering adds a rule to the firewall
@@ -159,7 +159,7 @@ type Manager interface {
 
 	DisableRouting() error
 
-	// AddDNATRule adds outbound DNAT rule for forwarding external traffic to the NetBird network.
+	// AddDNATRule adds outbound DNAT rule for forwarding external traffic to the Cosmos network.
 	AddDNATRule(ForwardRule) (Rule, error)
 
 	// DeleteDNATRule deletes the outbound DNAT rule.
@@ -168,7 +168,7 @@ type Manager interface {
 	// UpdateSet updates the set with the given prefixes
 	UpdateSet(hash Set, prefixes []netip.Prefix) error
 
-	// AddInboundDNAT adds an inbound DNAT rule redirecting traffic from NetBird peers to local services
+	// AddInboundDNAT adds an inbound DNAT rule redirecting traffic from Cosmos peers to local services
 	AddInboundDNAT(localAddr netip.Addr, protocol Protocol, originalPort, translatedPort uint16) error
 
 	// RemoveInboundDNAT removes inbound DNAT rule

@@ -13,7 +13,7 @@ import (
 )
 
 // TestExternalChainMonitorRootIntegration verifies that adding a new chain
-// in an external (non-netbird) filter table triggers the reconciler.
+// in an external (non-cosmos) filter table triggers the reconciler.
 // Requires CAP_NET_ADMIN; skip otherwise.
 func TestExternalChainMonitorRootIntegration(t *testing.T) {
 	if os.Geteuid() != 0 {

@@ -11,11 +11,11 @@ import (
 	"golang.org/x/sys/windows/registry"
 )
 
-// policyRegistryPath is the well-known MDM policy registry key for NetBird.
+// policyRegistryPath is the well-known MDM policy registry key for Cosmos.
 // Admins push values here through Group Policy, Intune ADMX ingestion, an
 // Intune custom Registry CSP profile, or `reg add` during MSI deployment.
-// Listed in the project's docs/mdm/netbird.admx schema.
-const policyRegistryPath = `Software\Policies\NetBird`
+// Listed in the project's docs/mdm/cosmos.admx schema.
+const policyRegistryPath = `Software\Policies\Cosmos`
 
 // readRegistryValue reads a single value under policyRegistryPath and,
 // on success, stores the type-coerced result in out[canonical]. Type
@@ -62,8 +62,8 @@ func readRegistryValue(k registry.Key, name, canonical string, out map[string]an
 }
 
 // loadPlatformPolicy reads the MDM-managed configuration from the
-// Windows registry under HKLM\Software\Policies\NetBird. Returns:
-//   - (nil, nil)  when the key is absent (device not MDM-enrolled for NetBird)
+// Windows registry under HKLM\Software\Policies\Cosmos. Returns:
+//   - (nil, nil)  when the key is absent (device not MDM-enrolled for Cosmos)
 //   - (map, nil)  with N entries when N managed values are set (N may be 0)
 //   - (nil, err)  on open / enumerate registry errors
 //

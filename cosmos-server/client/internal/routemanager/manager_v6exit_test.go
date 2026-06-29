@@ -12,7 +12,7 @@ import (
 )
 
 // TestUpdateRouteSelectorFromManagement_MirrorsV6ExitPair reproduces the bug seen
-// in netbird-engine.log: persisted selector state has the v4 exit node deselected
+// in cosmos-engine.log: persisted selector state has the v4 exit node deselected
 // but its synthesized "-v6" pair explicitly selected (orphaned), so the ::/0 route
 // leaked onto the tunnel. The management update must mirror the v4 deselect onto the
 // v6 pair so FilterSelectedExitNodes drops it.

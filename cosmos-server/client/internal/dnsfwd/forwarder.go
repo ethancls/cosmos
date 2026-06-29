@@ -242,7 +242,7 @@ func (f *DNSForwarder) handleDNSQuery(logger *log.Entry, w dns.ResponseWriter, q
 		// authoritative one. The OPT pseudo-record must not appear unless the
 		// query advertised EDNS0.
 		if reqHasEdns {
-			attachEDE(resp, dns.ExtendedErrorCodeNotSupported, "netbird forwarder: unsupported query type")
+			attachEDE(resp, dns.ExtendedErrorCodeNotSupported, "cosmos forwarder: unsupported query type")
 		}
 		f.writeResponse(logger, w, resp, qname, startTime)
 	}
@@ -485,7 +485,7 @@ func (f *DNSForwarder) getMatchingEntries(domain string) (route.ResID, []*Forwar
 	return selectedResId, matches
 }
 
-// edeCodeFor maps an upstream lookup error to the NetBird EDE info code.
+// edeCodeFor maps an upstream lookup error to the Cosmos EDE info code.
 func edeCodeFor(dnsErr *net.DNSError) uint16 {
 	if dnsErr != nil && dnsErr.IsTimeout {
 		return edeNetbirdUpstreamTimeout
@@ -499,9 +499,9 @@ func edeCodeFor(dnsErr *net.DNSError) uint16 {
 // detail stays in the forwarder's local log.
 func edeText(dnsErr *net.DNSError) string {
 	if dnsErr != nil && dnsErr.IsTimeout {
-		return "netbird forwarder: upstream timeout"
+		return "cosmos forwarder: upstream timeout"
 	}
-	return "netbird forwarder: upstream failure"
+	return "cosmos forwarder: upstream failure"
 }
 
 // attachEDE adds an Extended DNS Error (RFC 8914) option to the response,

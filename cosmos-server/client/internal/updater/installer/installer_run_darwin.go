@@ -16,13 +16,13 @@ import (
 )
 
 const (
-	daemonName    = "netbird"
+	daemonName    = "cosmos"
 	updaterBinary = "updater"
-	uiBinary      = "/Applications/NetBird.app"
+	uiBinary      = "/Applications/Cosmos.app"
 
-	defaultTempDir = "/var/lib/netbird/tmp-install"
+	defaultTempDir = "/var/lib/cosmos/tmp-install"
 
-	pkgDownloadURL = "https://github.com/ethancls/cosmos-server/releases/download/v%version/netbird_%version_darwin_%arch.pkg"
+	pkgDownloadURL = "https://github.com/ethancls/cosmos-server/releases/download/v%version/cosmos_%version_darwin_%arch.pkg"
 )
 
 var (
@@ -82,21 +82,21 @@ func (u *Installer) Setup(ctx context.Context, dryRun bool, installerFile string
 }
 
 func (u *Installer) startDaemon(daemonFolder string) error {
-	log.Infof("starting netbird service")
+	log.Infof("starting cosmos service")
 	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 	defer cancel()
 
 	cmd := exec.CommandContext(ctx, filepath.Join(daemonFolder, daemonName), "service", "start")
 	if output, err := cmd.CombinedOutput(); err != nil {
-		log.Warnf("failed to start netbird service: %v, output: %s", err, string(output))
+		log.Warnf("failed to start cosmos service: %v, output: %s", err, string(output))
 		return err
 	}
-	log.Infof("netbird service started successfully")
+	log.Infof("cosmos service started successfully")
 	return nil
 }
 
 func (u *Installer) startUIAsUser() error {
-	log.Infof("starting netbird-ui: %s", uiBinary)
+	log.Infof("starting cosmos-ui: %s", uiBinary)
 
 	// Get the current console user
 	cmd := exec.Command("stat", "-f", "%Su", "/dev/console")
@@ -135,7 +135,7 @@ func (u *Installer) startUIAsUser() error {
 		log.Warnf("failed to release UI process: %v", err)
 	}
 
-	log.Infof("netbird-ui started successfully for user %s", username)
+	log.Infof("cosmos-ui started successfully for user %s", username)
 	return nil
 }
 
@@ -168,13 +168,13 @@ func (u *Installer) updateHomeBrew(ctx context.Context) error {
 	u.killUI()
 
 	// Homebrew must be run as a non-root user
-	// To find out which user installed NetBird using HomeBrew we can check the owner of our brew tap directory
+	// To find out which user installed Cosmos using HomeBrew we can check the owner of our brew tap directory
 	// Check both Apple Silicon and Intel Mac paths
-	brewTapPath := "/opt/homebrew/Library/Taps/netbirdio/homebrew-tap/"
+	brewTapPath := "/opt/homebrew/Library/Taps/cosmosio/homebrew-tap/"
 	brewBinPath := "/opt/homebrew/bin/brew"
 	if _, err := os.Stat(brewTapPath); os.IsNotExist(err) {
 		// Try Intel Mac path
-		brewTapPath = "/usr/local/Homebrew/Library/Taps/netbirdio/homebrew-tap/"
+		brewTapPath = "/usr/local/Homebrew/Library/Taps/cosmosio/homebrew-tap/"
 		brewBinPath = "/usr/local/bin/brew"
 	}
 
@@ -198,16 +198,16 @@ func (u *Installer) updateHomeBrew(ctx context.Context) error {
 	// https://github.com/Homebrew/brew/issues/15833
 	homeDir := brewUser.HomeDir
 
-	// Check if netbird-ui is installed (must run as the brew user, not root)
-	checkUICmd := exec.CommandContext(ctx, "sudo", "-u", userName, brewBinPath, "list", "--formula", "netbirdio/tap/netbird-ui")
+	// Check if cosmos-ui is installed (must run as the brew user, not root)
+	checkUICmd := exec.CommandContext(ctx, "sudo", "-u", userName, brewBinPath, "list", "--formula", "cosmosio/tap/cosmos-ui")
 	checkUICmd.Env = append(os.Environ(), "HOME="+homeDir)
 	uiInstalled := checkUICmd.Run() == nil
 
 	// Homebrew does not support installing specific versions
 	// Thus it will always update to latest and ignore targetVersion
-	upgradeArgs := []string{"-u", userName, brewBinPath, "upgrade", "netbirdio/tap/netbird"}
+	upgradeArgs := []string{"-u", userName, brewBinPath, "upgrade", "cosmosio/tap/cosmos"}
 	if uiInstalled {
-		upgradeArgs = append(upgradeArgs, "netbirdio/tap/netbird-ui")
+		upgradeArgs = append(upgradeArgs, "cosmosio/tap/cosmos-ui")
 	}
 
 	cmd := exec.CommandContext(ctx, "sudo", upgradeArgs...)
@@ -222,13 +222,13 @@ func (u *Installer) updateHomeBrew(ctx context.Context) error {
 }
 
 func (u *Installer) killUI() {
-	log.Infof("killing existing netbird-ui processes")
-	cmd := exec.Command("pkill", "-x", "netbird-ui")
+	log.Infof("killing existing cosmos-ui processes")
+	cmd := exec.Command("pkill", "-x", "cosmos-ui")
 	if output, err := cmd.CombinedOutput(); err != nil {
 		// pkill returns exit code 1 if no processes matched, which is fine
-		log.Debugf("pkill netbird-ui result: %v, output: %s", err, string(output))
+		log.Debugf("pkill cosmos-ui result: %v, output: %s", err, string(output))
 	} else {
-		log.Infof("netbird-ui processes killed")
+		log.Infof("cosmos-ui processes killed")
 	}
 }
 

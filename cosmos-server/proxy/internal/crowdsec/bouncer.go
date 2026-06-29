@@ -62,7 +62,7 @@ func (b *Bouncer) Start(ctx context.Context) error {
 		APIKey:              b.apiKey,
 		APIUrl:              b.apiURL,
 		TickerInterval:      interval.String(),
-		UserAgent:           "netbird-proxy/1.0",
+		UserAgent:           "cosmos-proxy/1.0",
 		Scopes:              []string{"ip", "range"},
 		RetryInitialConnect: true,
 	}

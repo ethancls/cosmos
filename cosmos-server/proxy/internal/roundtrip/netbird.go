@@ -36,7 +36,7 @@ const createProxyPeerTimeout = 30 * time.Second
 type backendKey string
 
 // ServiceKey uniquely identifies a service (HTTP reverse proxy or L4 service)
-// that holds a reference to an embedded NetBird client. Callers should use the
+// that holds a reference to an embedded Cosmos client. Callers should use the
 // DomainServiceKey and L4ServiceKey constructors to avoid namespace collisions.
 type ServiceKey string
 
@@ -71,7 +71,7 @@ type serviceNotification struct {
 	serviceID types.ServiceID
 }
 
-// clientEntry holds an embedded NetBird client and tracks which services use it.
+// clientEntry holds an embedded Cosmos client and tracks which services use it.
 type clientEntry struct {
 	client    *embed.Client
 	transport *http.Transport
@@ -81,7 +81,7 @@ type clientEntry struct {
 	services          map[ServiceKey]serviceInfo
 	createdAt         time.Time
 	started           bool
-	// inbound is opaque per-account state owned by the NetBird parent's
+	// inbound is opaque per-account state owned by the Cosmos parent's
 	// ReadyHandler. The roundtrip package never inspects this value; it
 	// only stores it so RemovePeer / StopAll can hand it back to the
 	// matching StopHandler. Nil when no inbound integration is active.
@@ -130,7 +130,7 @@ func (e *clientEntry) acquireInflight(backend backendKey) (release func(), ok bo
 	}
 }
 
-// ClientConfig holds configuration for the embedded NetBird client.
+// ClientConfig holds configuration for the embedded Cosmos client.
 type ClientConfig struct {
 	MgmtAddr     string
 	WGPort       uint16
@@ -152,10 +152,10 @@ type managementClient interface {
 	CreateProxyPeer(ctx context.Context, req *proto.CreateProxyPeerRequest, opts ...grpc.CallOption) (*proto.CreateProxyPeerResponse, error)
 }
 
-// NetBird provides an http.RoundTripper implementation
-// backed by underlying NetBird connections.
+// Cosmos provides an http.RoundTripper implementation
+// backed by underlying Cosmos connections.
 // Clients are keyed by AccountID, allowing multiple services to share the same connection.
-type NetBird struct {
+type Cosmos struct {
 	ctx          context.Context
 	proxyID      string
 	proxyAddr    string
@@ -206,7 +206,7 @@ type skipTLSVerifyContextKey struct{}
 // AddPeer registers a service for an account. If the account doesn't have a client yet,
 // one is created by authenticating with the management server using the provided token.
 // Multiple services can share the same client.
-func (n *NetBird) AddPeer(ctx context.Context, accountID types.AccountID, key ServiceKey, authToken string, serviceID types.ServiceID) error {
+func (n *Cosmos) AddPeer(ctx context.Context, accountID types.AccountID, key ServiceKey, authToken string, serviceID types.ServiceID) error {
 	si := serviceInfo{serviceID: serviceID}
 
 	if n.registerExistingClient(accountID, key, si) {
@@ -253,7 +253,7 @@ func (n *NetBird) AddPeer(ctx context.Context, accountID types.AccountID, key Se
 	return nil
 }
 
-func (n *NetBird) startClientStartup(accountID types.AccountID, client *embed.Client) {
+func (n *Cosmos) startClientStartup(accountID types.AccountID, client *embed.Client) {
 	if n.startClient != nil {
 		n.startClient(accountID, client)
 		return
@@ -264,7 +264,7 @@ func (n *NetBird) startClientStartup(accountID types.AccountID, client *embed.Cl
 // registerExistingClient registers the service against an already-present
 // client for the account and returns true when it did. It notifies management
 // of the new service when the client is already started.
-func (n *NetBird) registerExistingClient(accountID types.AccountID, key ServiceKey, si serviceInfo) bool {
+func (n *Cosmos) registerExistingClient(accountID types.AccountID, key ServiceKey, si serviceInfo) bool {
 	n.clientsMux.Lock()
 	entry, exists := n.clients[accountID]
 	if !exists {
@@ -294,15 +294,15 @@ func (n *NetBird) registerExistingClient(accountID types.AccountID, key ServiceK
 // accountLifecycle returns the per-account lifecycle mutex, serialising client
 // creation against teardown so a slow client.Stop cannot race a new
 // client.Start for the same account, without blocking clientsMux.
-func (n *NetBird) accountLifecycle(accountID types.AccountID) *sync.Mutex {
+func (n *Cosmos) accountLifecycle(accountID types.AccountID) *sync.Mutex {
 	mu, _ := n.lifecycleMu.LoadOrStore(accountID, &sync.Mutex{})
 	return mu.(*sync.Mutex)
 }
 
 // createClientEntry generates a WireGuard keypair, authenticates with management,
-// and creates an embedded NetBird client. Must be called with the account's
+// and creates an embedded Cosmos client. Must be called with the account's
 // lifecycle mutex held.
-func (n *NetBird) createClientEntry(ctx context.Context, accountID types.AccountID, key ServiceKey, authToken string, si serviceInfo) (*clientEntry, error) {
+func (n *Cosmos) createClientEntry(ctx context.Context, accountID types.AccountID, key ServiceKey, authToken string, si serviceInfo) (*clientEntry, error) {
 	serviceID := si.serviceID
 	n.logger.WithFields(log.Fields{
 		"account_id": accountID,
@@ -353,7 +353,7 @@ func (n *NetBird) createClientEntry(ctx context.Context, accountID types.Account
 		}
 	})
 
-	// Create embedded NetBird client with the generated private key.
+	// Create embedded Cosmos client with the generated private key.
 	// The peer has already been created via CreateProxyPeer RPC with the public key.
 	wgPort := int(n.clientCfg.WGPort)
 	client, err := embed.New(embed.Options{
@@ -363,7 +363,7 @@ func (n *NetBird) createClientEntry(ctx context.Context, accountID types.Account
 		LogLevel:      log.WarnLevel.String(),
 		BlockInbound:  n.clientCfg.BlockInbound,
 		// The embedded proxy peer must never be a stepping stone into
-		// the proxy host's LAN: it only exists to reach NetBird mesh
+		// the proxy host's LAN: it only exists to reach Cosmos mesh
 		// targets or, when direct_upstream is set, the host network
 		// stack via the MultiTransport's direct branch (which bypasses
 		// the engine routing entirely).
@@ -373,7 +373,7 @@ func (n *NetBird) createClientEntry(ctx context.Context, accountID types.Account
 		Performance:    n.clientCfg.Performance,
 	})
 	if err != nil {
-		return nil, fmt.Errorf("create netbird client: %w", err)
+		return nil, fmt.Errorf("create cosmos client: %w", err)
 	}
 
 	// Create a transport using the client dialer. We do this instead of using
@@ -416,15 +416,15 @@ func (n *NetBird) createClientEntry(ctx context.Context, accountID types.Account
 // status notification. The embedded client.Start gets its own bounded
 // startCtx; once Start succeeds, notifyClientReady takes over with a
 // fresh context.Background() (see that function for the contract).
-func (n *NetBird) runClientStartup(accountID types.AccountID, client *embed.Client) {
+func (n *Cosmos) runClientStartup(accountID types.AccountID, client *embed.Client) {
 	startCtx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
 	defer cancel()
 
 	if err := client.Start(startCtx); err != nil {
 		if errors.Is(err, context.DeadlineExceeded) {
-			n.logger.WithField("account_id", accountID).Warn("netbird client start timed out, will retry on first request")
+			n.logger.WithField("account_id", accountID).Warn("cosmos client start timed out, will retry on first request")
 		} else {
-			n.logger.WithField("account_id", accountID).WithError(err).Error("failed to start netbird client")
+			n.logger.WithField("account_id", accountID).WithError(err).Error("failed to start cosmos client")
 		}
 		return
 	}
@@ -439,7 +439,7 @@ func (n *NetBird) runClientStartup(accountID types.AccountID, client *embed.Clie
 // without needing a live embedded client. The contract that the
 // hooks/notifier see context.Background() — never the AddPeer caller's
 // ctx — lives here.
-func (n *NetBird) notifyClientReady(accountID types.AccountID, client *embed.Client) {
+func (n *Cosmos) notifyClientReady(accountID types.AccountID, client *embed.Client) {
 	n.clientsMux.Lock()
 	entry, exists := n.clients[accountID]
 	if exists {
@@ -490,7 +490,7 @@ func (n *NetBird) notifyClientReady(accountID types.AccountID, client *embed.Cli
 
 // RemovePeer unregisters a service from an account. The client is only stopped
 // when no services are using it anymore.
-func (n *NetBird) RemovePeer(ctx context.Context, accountID types.AccountID, key ServiceKey) error {
+func (n *Cosmos) RemovePeer(ctx context.Context, accountID types.AccountID, key ServiceKey) error {
 	lifecycle := n.accountLifecycle(accountID)
 	lifecycle.Lock()
 	transferred := false
@@ -548,7 +548,7 @@ func (n *NetBird) RemovePeer(ctx context.Context, accountID types.AccountID, key
 // slow client.Stop cannot wedge the mapping receive loop (which calls RemovePeer
 // synchronously). It unlocks lifecycle when done so a new client.Start for the
 // same account waits for this teardown.
-func (n *NetBird) stopClientLocked(accountID types.AccountID, lifecycle *sync.Mutex, entry *clientEntry) {
+func (n *Cosmos) stopClientLocked(accountID types.AccountID, lifecycle *sync.Mutex, entry *clientEntry) {
 	defer lifecycle.Unlock()
 
 	if entry.inbound != nil && n.stopHandler != nil {
@@ -567,11 +567,11 @@ func (n *NetBird) stopClientLocked(accountID types.AccountID, lifecycle *sync.Mu
 	ctx, cancel := context.WithTimeout(context.Background(), clientStopTimeout)
 	defer cancel()
 	if err := entry.client.Stop(ctx); err != nil {
-		n.logger.WithField("account_id", accountID).WithError(err).Warn("failed to stop netbird client")
+		n.logger.WithField("account_id", accountID).WithError(err).Warn("failed to stop cosmos client")
 	}
 }
 
-func (n *NetBird) notifyDisconnect(ctx context.Context, accountID types.AccountID, key ServiceKey, serviceID types.ServiceID) {
+func (n *Cosmos) notifyDisconnect(ctx context.Context, accountID types.AccountID, key ServiceKey, serviceID types.ServiceID) {
 	if n.statusNotifier == nil {
 		return
 	}
@@ -589,7 +589,7 @@ func (n *NetBird) notifyDisconnect(ctx context.Context, accountID types.AccountI
 
 // RoundTrip implements http.RoundTripper. It looks up the client for the account
 // specified in the request context and uses it to dial the backend.
-func (n *NetBird) RoundTrip(req *http.Request) (*http.Response, error) {
+func (n *Cosmos) RoundTrip(req *http.Request) (*http.Response, error) {
 	accountID := AccountIDFromContext(req.Context())
 	if accountID == "" {
 		return nil, ErrNoAccountID
@@ -643,7 +643,7 @@ func (n *NetBird) RoundTrip(req *http.Request) (*http.Response, error) {
 }
 
 // StopAll stops all clients.
-func (n *NetBird) StopAll(ctx context.Context) error {
+func (n *Cosmos) StopAll(ctx context.Context) error {
 	n.clientsMux.Lock()
 	defer n.clientsMux.Unlock()
 
@@ -658,7 +658,7 @@ func (n *NetBird) StopAll(ctx context.Context) error {
 		if err := entry.client.Stop(ctx); err != nil {
 			n.logger.WithFields(log.Fields{
 				"account_id": accountID,
-			}).WithError(err).Warn("failed to stop netbird client during shutdown")
+			}).WithError(err).Warn("failed to stop cosmos client during shutdown")
 			merr = multierror.Append(merr, err)
 		}
 	}
@@ -668,7 +668,7 @@ func (n *NetBird) StopAll(ctx context.Context) error {
 }
 
 // HasClient returns true if there is a client for the given account.
-func (n *NetBird) HasClient(accountID types.AccountID) bool {
+func (n *Cosmos) HasClient(accountID types.AccountID) bool {
 	n.clientsMux.RLock()
 	defer n.clientsMux.RUnlock()
 	_, exists := n.clients[accountID]
@@ -677,7 +677,7 @@ func (n *NetBird) HasClient(accountID types.AccountID) bool {
 
 // ServiceCount returns the number of services registered for the given account.
 // Returns 0 if the account has no client.
-func (n *NetBird) ServiceCount(accountID types.AccountID) int {
+func (n *Cosmos) ServiceCount(accountID types.AccountID) int {
 	n.clientsMux.RLock()
 	defer n.clientsMux.RUnlock()
 	entry, exists := n.clients[accountID]
@@ -688,14 +688,14 @@ func (n *NetBird) ServiceCount(accountID types.AccountID) int {
 }
 
 // ClientCount returns the total number of active clients.
-func (n *NetBird) ClientCount() int {
+func (n *Cosmos) ClientCount() int {
 	n.clientsMux.RLock()
 	defer n.clientsMux.RUnlock()
 	return len(n.clients)
 }
 
 // GetClient returns the embed.Client for the given account ID.
-func (n *NetBird) GetClient(accountID types.AccountID) (*embed.Client, bool) {
+func (n *Cosmos) GetClient(accountID types.AccountID) (*embed.Client, bool) {
 	n.clientsMux.RLock()
 	defer n.clientsMux.RUnlock()
 	entry, exists := n.clients[accountID]
@@ -708,7 +708,7 @@ func (n *NetBird) GetClient(accountID types.AccountID) (*embed.Client, bool) {
 // IdentityForIP resolves a tunnel IP to a peer identity local to the given
 // account. Delegates to clientEntry.IdentityForIP. Returns ok=false when
 // the account has no client or the IP is not in its peerstore.
-func (n *NetBird) IdentityForIP(accountID types.AccountID, ip netip.Addr) (pubKey, fqdn string, ok bool) {
+func (n *Cosmos) IdentityForIP(accountID types.AccountID, ip netip.Addr) (pubKey, fqdn string, ok bool) {
 	n.clientsMux.RLock()
 	entry, exists := n.clients[accountID]
 	n.clientsMux.RUnlock()
@@ -719,7 +719,7 @@ func (n *NetBird) IdentityForIP(accountID types.AccountID, ip netip.Addr) (pubKe
 }
 
 // ListClientsForDebug returns information about all clients for debug purposes.
-func (n *NetBird) ListClientsForDebug() map[types.AccountID]ClientDebugInfo {
+func (n *Cosmos) ListClientsForDebug() map[types.AccountID]ClientDebugInfo {
 	n.clientsMux.RLock()
 	defer n.clientsMux.RUnlock()
 
@@ -741,7 +741,7 @@ func (n *NetBird) ListClientsForDebug() map[types.AccountID]ClientDebugInfo {
 }
 
 // ListClientsForStartup returns all embed.Client instances for health checks.
-func (n *NetBird) ListClientsForStartup() map[types.AccountID]*embed.Client {
+func (n *Cosmos) ListClientsForStartup() map[types.AccountID]*embed.Client {
 	n.clientsMux.RLock()
 	defer n.clientsMux.RUnlock()
 
@@ -754,14 +754,14 @@ func (n *NetBird) ListClientsForStartup() map[types.AccountID]*embed.Client {
 	return result
 }
 
-// NewNetBird creates a new NetBird transport. Set clientCfg.WGPort to 0 for a random
+// NewCosmos creates a new Cosmos transport. Set clientCfg.WGPort to 0 for a random
 // OS-assigned port. A fixed port only works with single-account deployments;
 // multiple accounts will fail to bind the same port.
-func NewNetBird(ctx context.Context, proxyID, proxyAddr string, clientCfg ClientConfig, logger *log.Logger, notifier statusNotifier, mgmtClient managementClient) *NetBird {
+func NewCosmos(ctx context.Context, proxyID, proxyAddr string, clientCfg ClientConfig, logger *log.Logger, notifier statusNotifier, mgmtClient managementClient) *Cosmos {
 	if logger == nil {
 		logger = log.StandardLogger()
 	}
-	return &NetBird{
+	return &Cosmos{
 		ctx:            ctx,
 		proxyID:        proxyID,
 		proxyAddr:      proxyAddr,
@@ -779,7 +779,7 @@ func NewNetBird(ctx context.Context, proxyID, proxyAddr string, clientCfg Client
 // returned by ready is stored on the entry and handed back to stop on
 // cleanup. Must be called before AddPeer. A nil pair leaves the
 // outbound-only behaviour intact.
-func (n *NetBird) SetClientLifecycle(ready func(ctx context.Context, accountID types.AccountID, client *embed.Client) any, stop func(accountID types.AccountID, state any)) {
+func (n *Cosmos) SetClientLifecycle(ready func(ctx context.Context, accountID types.AccountID, client *embed.Client) any, stop func(accountID types.AccountID, state any)) {
 	n.clientsMux.Lock()
 	defer n.clientsMux.Unlock()
 	n.readyHandler = ready
@@ -830,19 +830,19 @@ func skipTLSVerifyFromContext(ctx context.Context) bool {
 }
 
 // directUpstreamContextKey signals that the request should bypass the embedded
-// NetBird WireGuard client and dial via the host's network stack instead.
+// Cosmos WireGuard client and dial via the host's network stack instead.
 // Set by the reverse-proxy rewrite step when the matched target carries
 // PathTarget.DirectUpstream; consumed by MultiTransport.
 type directUpstreamContextKey struct{}
 
 // WithDirectUpstream marks the context so MultiTransport routes the request
-// through its stdlib transport instead of the embedded NetBird roundtripper.
+// through its stdlib transport instead of the embedded Cosmos roundtripper.
 func WithDirectUpstream(ctx context.Context) context.Context {
 	return context.WithValue(ctx, directUpstreamContextKey{}, true)
 }
 
 // DirectUpstreamFromContext reports whether the context has been marked to
-// bypass the embedded NetBird client.
+// bypass the embedded Cosmos client.
 func DirectUpstreamFromContext(ctx context.Context) bool {
 	v, _ := ctx.Value(directUpstreamContextKey{}).(bool)
 	return v

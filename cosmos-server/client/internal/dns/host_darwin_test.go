@@ -52,7 +52,7 @@ func TestDarwinDNSUncleanShutdownCleanup(t *testing.T) {
 
 	require.NoError(t, sm.PersistState(context.Background()))
 
-	localKey := getKeyWithInput(netbirdDNSStateKeyFormat, localSuffix)
+	localKey := getKeyWithInput(cosmosDNSStateKeyFormat, localSuffix)
 
 	// Collect all created keys for cleanup verification
 	createdKeys := make([]string, 0, len(configurator.createdKeys))
@@ -293,7 +293,7 @@ func TestMatchDomainBatching(t *testing.T) {
 			// Read back all domains from all batched keys
 			var got []string
 			for i := range batches {
-				key := fmt.Sprintf(netbirdDNSStateKeyIndexedFormat, matchSuffix, i)
+				key := fmt.Sprintf(cosmosDNSStateKeyIndexedFormat, matchSuffix, i)
 				exists, err := checkDNSKeyExists(key)
 				require.NoError(t, err)
 				require.True(t, exists, "key %s should exist", key)
@@ -382,16 +382,16 @@ func setupTestConfigurator(t *testing.T) (*systemConfigurator, *statemanager.Man
 			_ = removeTestDNSKey(key)
 		}
 		// Also clean up old-format keys and local key in case they exist
-		_ = removeTestDNSKey(getKeyWithInput(netbirdDNSStateKeyFormat, searchSuffix))
-		_ = removeTestDNSKey(getKeyWithInput(netbirdDNSStateKeyFormat, matchSuffix))
-		_ = removeTestDNSKey(getKeyWithInput(netbirdDNSStateKeyFormat, localSuffix))
+		_ = removeTestDNSKey(getKeyWithInput(cosmosDNSStateKeyFormat, searchSuffix))
+		_ = removeTestDNSKey(getKeyWithInput(cosmosDNSStateKeyFormat, matchSuffix))
+		_ = removeTestDNSKey(getKeyWithInput(cosmosDNSStateKeyFormat, localSuffix))
 	}
 
 	return configurator, sm, cleanup
 }
 
 func TestOriginalNameserversNoTransition(t *testing.T) {
-	netbirdIP := netip.MustParseAddr("100.64.0.1")
+	cosmosIP := netip.MustParseAddr("100.64.0.1")
 
 	testCases := []struct {
 		name     string
@@ -413,11 +413,11 @@ func TestOriginalNameserversNoTransition(t *testing.T) {
 			require.NotEmpty(t, initialServers)
 
 			for _, srv := range initialServers {
-				require.NotEqual(t, netbirdIP, srv, "initial servers should not contain NetBird IP")
+				require.NotEqual(t, cosmosIP, srv, "initial servers should not contain Cosmos IP")
 			}
 
 			config := HostDNSConfig{
-				ServerIP:   netbirdIP,
+				ServerIP:   cosmosIP,
 				ServerPort: 53,
 				RouteAll:   tc.routeAll,
 				Domains:    []DomainConfig{{Domain: "example.com", MatchOnly: true}},
@@ -436,7 +436,7 @@ func TestOriginalNameserversNoTransition(t *testing.T) {
 }
 
 func TestOriginalNameserversRouteAllTransition(t *testing.T) {
-	netbirdIP := netip.MustParseAddr("100.64.0.1")
+	cosmosIP := netip.MustParseAddr("100.64.0.1")
 
 	testCases := []struct {
 		name         string
@@ -458,7 +458,7 @@ func TestOriginalNameserversRouteAllTransition(t *testing.T) {
 			require.NotEmpty(t, initialServers)
 
 			config := HostDNSConfig{
-				ServerIP:   netbirdIP,
+				ServerIP:   cosmosIP,
 				ServerPort: 53,
 				RouteAll:   tc.initialRoute,
 				Domains:    []DomainConfig{{Domain: "example.com", MatchOnly: true}},
@@ -488,7 +488,7 @@ func TestOriginalNameserversRouteAllTransition(t *testing.T) {
 			assert.Equal(t, initialServers, servers)
 
 			for _, srv := range servers {
-				assert.NotEqual(t, netbirdIP, srv, "servers should not contain NetBird IP")
+				assert.NotEqual(t, cosmosIP, srv, "servers should not contain Cosmos IP")
 			}
 		})
 	}

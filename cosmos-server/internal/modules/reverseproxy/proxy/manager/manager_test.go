@@ -147,7 +147,7 @@ func TestConnect_WithoutAccountID(t *testing.T) {
 	}
 
 	mgr := newTestManager(s)
-	_, err := mgr.Connect(context.Background(), "proxy-1", "session-1", "eu.proxy.netbird.io", "10.0.0.1", nil, nil)
+	_, err := mgr.Connect(context.Background(), "proxy-1", "session-1", "eu.proxy.cosmos.io", "10.0.0.1", nil, nil)
 	require.NoError(t, err)
 
 	require.NotNil(t, savedProxy)

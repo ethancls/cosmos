@@ -1069,35 +1069,35 @@ func TestClassifyProxyError(t *testing.T) {
 	}
 }
 
-func TestStampNetBirdIdentity_NoCapturedData_StripsOnly(t *testing.T) {
+func TestStampCosmosIdentity_NoCapturedData_StripsOnly(t *testing.T) {
 	target, _ := url.Parse("http://backend.internal:8080")
 	p := &ReverseProxy{forwardedProto: "auto"}
 	rewrite := p.rewriteFunc(target, "", false, PathRewriteDefault, nil, nil)
 
 	pr := newProxyRequest(t, "http://example.com/", "203.0.113.50:9999")
-	pr.In.Header.Set(headerNetBirdUser, "spoofed@evil.io")
-	pr.In.Header.Set(headerNetBirdGroups, "admin")
+	pr.In.Header.Set(headerCosmosUser, "spoofed@evil.io")
+	pr.In.Header.Set(headerCosmosGroups, "admin")
 	pr.Out.Header = pr.In.Header.Clone()
 
 	rewrite(pr)
 
-	assert.Empty(t, pr.Out.Header.Get(headerNetBirdUser),
-		"client-supplied X-NetBird-User must be stripped when no captured identity is present")
-	assert.Empty(t, pr.Out.Header.Get(headerNetBirdGroups),
-		"client-supplied X-NetBird-Groups must be stripped when no captured identity is present")
+	assert.Empty(t, pr.Out.Header.Get(headerCosmosUser),
+		"client-supplied X-Cosmos-User must be stripped when no captured identity is present")
+	assert.Empty(t, pr.Out.Header.Get(headerCosmosGroups),
+		"client-supplied X-Cosmos-Groups must be stripped when no captured identity is present")
 }
 
-func TestStampNetBirdIdentity_StampsFromCapturedData(t *testing.T) {
+func TestStampCosmosIdentity_StampsFromCapturedData(t *testing.T) {
 	target, _ := url.Parse("http://backend.internal:8080")
 	p := &ReverseProxy{forwardedProto: "auto"}
 	rewrite := p.rewriteFunc(target, "", false, PathRewriteDefault, nil, nil)
 
 	pr := newProxyRequest(t, "http://example.com/", "203.0.113.50:9999")
-	pr.In.Header.Set(headerNetBirdUser, "spoofed@evil.io")
+	pr.In.Header.Set(headerCosmosUser, "spoofed@evil.io")
 	pr.Out.Header = pr.In.Header.Clone()
 
 	cd := NewCapturedData("req-1")
-	cd.SetUserEmail("alice@netbird.io")
+	cd.SetUserEmail("alice@cosmos.io")
 	cd.SetUserGroups([]string{"grp-eng", "grp-ops"})
 	cd.SetUserGroupNames([]string{"engineering", "operations"})
 
@@ -1105,24 +1105,24 @@ func TestStampNetBirdIdentity_StampsFromCapturedData(t *testing.T) {
 
 	rewrite(pr)
 
-	assert.Equal(t, "alice@netbird.io", pr.Out.Header.Get(headerNetBirdUser),
+	assert.Equal(t, "alice@cosmos.io", pr.Out.Header.Get(headerCosmosUser),
 		"captured email must overwrite any spoofed value")
-	assert.Equal(t, "engineering,operations", pr.Out.Header.Get(headerNetBirdGroups),
+	assert.Equal(t, "engineering,operations", pr.Out.Header.Get(headerCosmosGroups),
 		"group display names must be CSV-joined in positional order")
 }
 
-// TestStampNetBirdIdentity_GroupsOnlyWhenEmailEmpty covers the
+// TestStampCosmosIdentity_GroupsOnlyWhenEmailEmpty covers the
 // tunnel-peer-without-user case (machine agents, unattached proxy peers).
 // The proxy must still stamp the peer's groups so downstream services can
-// authorise, but X-NetBird-User stays unset — only its inbound stripping
+// authorise, but X-Cosmos-User stays unset — only its inbound stripping
 // must happen.
-func TestStampNetBirdIdentity_GroupsOnlyWhenEmailEmpty(t *testing.T) {
+func TestStampCosmosIdentity_GroupsOnlyWhenEmailEmpty(t *testing.T) {
 	target, _ := url.Parse("http://backend.internal:8080")
 	p := &ReverseProxy{forwardedProto: "auto"}
 	rewrite := p.rewriteFunc(target, "", false, PathRewriteDefault, nil, nil)
 
 	pr := newProxyRequest(t, "http://example.com/", "203.0.113.50:9999")
-	pr.In.Header.Set(headerNetBirdUser, "spoofed@evil.io")
+	pr.In.Header.Set(headerCosmosUser, "spoofed@evil.io")
 	pr.Out.Header = pr.In.Header.Clone()
 
 	cd := NewCapturedData("req-1")
@@ -1133,37 +1133,37 @@ func TestStampNetBirdIdentity_GroupsOnlyWhenEmailEmpty(t *testing.T) {
 
 	rewrite(pr)
 
-	assert.Empty(t, pr.Out.Header.Get(headerNetBirdUser),
-		"X-NetBird-User must remain unset when CapturedData carries no email")
-	assert.Equal(t, "machines", pr.Out.Header.Get(headerNetBirdGroups),
+	assert.Empty(t, pr.Out.Header.Get(headerCosmosUser),
+		"X-Cosmos-User must remain unset when CapturedData carries no email")
+	assert.Equal(t, "machines", pr.Out.Header.Get(headerCosmosGroups),
 		"groups must still be stamped for peers without a user identity")
 }
 
-// TestStampNetBirdIdentity_EmailOnlyWhenGroupsEmpty covers the symmetric
+// TestStampCosmosIdentity_EmailOnlyWhenGroupsEmpty covers the symmetric
 // case: identity-resolved user without resolved group memberships.
-func TestStampNetBirdIdentity_EmailOnlyWhenGroupsEmpty(t *testing.T) {
+func TestStampCosmosIdentity_EmailOnlyWhenGroupsEmpty(t *testing.T) {
 	target, _ := url.Parse("http://backend.internal:8080")
 	p := &ReverseProxy{forwardedProto: "auto"}
 	rewrite := p.rewriteFunc(target, "", false, PathRewriteDefault, nil, nil)
 
 	pr := newProxyRequest(t, "http://example.com/", "203.0.113.50:9999")
-	pr.In.Header.Set(headerNetBirdGroups, "spoofed-admin")
+	pr.In.Header.Set(headerCosmosGroups, "spoofed-admin")
 	pr.Out.Header = pr.In.Header.Clone()
 
 	cd := NewCapturedData("req-1")
-	cd.SetUserEmail("carol@netbird.io")
+	cd.SetUserEmail("carol@cosmos.io")
 
 	pr.In = pr.In.WithContext(WithCapturedData(pr.In.Context(), cd))
 
 	rewrite(pr)
 
-	assert.Equal(t, "carol@netbird.io", pr.Out.Header.Get(headerNetBirdUser),
+	assert.Equal(t, "carol@cosmos.io", pr.Out.Header.Get(headerCosmosUser),
 		"email must be stamped even when no groups are captured")
-	assert.Empty(t, pr.Out.Header.Get(headerNetBirdGroups),
-		"X-NetBird-Groups must remain unset when CapturedData carries no groups")
+	assert.Empty(t, pr.Out.Header.Get(headerCosmosGroups),
+		"X-Cosmos-Groups must remain unset when CapturedData carries no groups")
 }
 
-func TestStampNetBirdIdentity_FallsBackToGroupIDsWhenNameMissing(t *testing.T) {
+func TestStampCosmosIdentity_FallsBackToGroupIDsWhenNameMissing(t *testing.T) {
 	target, _ := url.Parse("http://backend.internal:8080")
 	p := &ReverseProxy{forwardedProto: "auto"}
 	rewrite := p.rewriteFunc(target, "", false, PathRewriteDefault, nil, nil)
@@ -1171,7 +1171,7 @@ func TestStampNetBirdIdentity_FallsBackToGroupIDsWhenNameMissing(t *testing.T) {
 	pr := newProxyRequest(t, "http://example.com/", "203.0.113.50:9999")
 
 	cd := NewCapturedData("req-1")
-	cd.SetUserEmail("bob@netbird.io")
+	cd.SetUserEmail("bob@cosmos.io")
 	cd.SetUserGroups([]string{"grp-a", "grp-b", "grp-c"})
 	// "grp-b" gets an explicit empty-string display name (not just a
 	// shorter slice). Both gap shapes must fall back to the id.
@@ -1181,15 +1181,15 @@ func TestStampNetBirdIdentity_FallsBackToGroupIDsWhenNameMissing(t *testing.T) {
 
 	rewrite(pr)
 
-	assert.Equal(t, "alpha,grp-b,grp-c", pr.Out.Header.Get(headerNetBirdGroups),
+	assert.Equal(t, "alpha,grp-b,grp-c", pr.Out.Header.Get(headerCosmosGroups),
 		"empty-string and out-of-range name slots must both fall back to the group id")
 }
 
-// TestStampNetBirdIdentity_DropsLabelsWithComma covers the
+// TestStampCosmosIdentity_DropsLabelsWithComma covers the
 // comma-separator constraint: a group display name that itself contains
 // a comma is dropped from the header (rather than corrupting the list),
 // and the remaining labels are stamped.
-func TestStampNetBirdIdentity_DropsLabelsWithComma(t *testing.T) {
+func TestStampCosmosIdentity_DropsLabelsWithComma(t *testing.T) {
 	target, _ := url.Parse("http://backend.internal:8080")
 	p := &ReverseProxy{forwardedProto: "auto"}
 	rewrite := p.rewriteFunc(target, "", false, PathRewriteDefault, nil, nil)
@@ -1197,7 +1197,7 @@ func TestStampNetBirdIdentity_DropsLabelsWithComma(t *testing.T) {
 	pr := newProxyRequest(t, "http://example.com/", "203.0.113.50:9999")
 
 	cd := NewCapturedData("req-1")
-	cd.SetUserEmail("alice@netbird.io")
+	cd.SetUserEmail("alice@cosmos.io")
 	cd.SetUserGroups([]string{"grp-a", "grp-b", "grp-c"})
 	cd.SetUserGroupNames([]string{"engineering", "EU, EMEA", "operations"})
 
@@ -1205,25 +1205,25 @@ func TestStampNetBirdIdentity_DropsLabelsWithComma(t *testing.T) {
 
 	rewrite(pr)
 
-	assert.Equal(t, "engineering,operations", pr.Out.Header.Get(headerNetBirdGroups),
+	assert.Equal(t, "engineering,operations", pr.Out.Header.Get(headerCosmosGroups),
 		"group label with embedded comma must be dropped, remaining labels stamped")
 }
 
-// TestStampNetBirdIdentity_RejectsControlCharsInEmail covers the
+// TestStampCosmosIdentity_RejectsControlCharsInEmail covers the
 // header-injection defence: an email value containing CR/LF/control
 // chars is omitted entirely (not partially stamped) so the upstream
 // request stays well-formed and no header injection is possible.
-func TestStampNetBirdIdentity_RejectsControlCharsInEmail(t *testing.T) {
+func TestStampCosmosIdentity_RejectsControlCharsInEmail(t *testing.T) {
 	target, _ := url.Parse("http://backend.internal:8080")
 	p := &ReverseProxy{forwardedProto: "auto"}
 	rewrite := p.rewriteFunc(target, "", false, PathRewriteDefault, nil, nil)
 
 	pr := newProxyRequest(t, "http://example.com/", "203.0.113.50:9999")
-	pr.In.Header.Set(headerNetBirdUser, "spoofed@evil.io")
+	pr.In.Header.Set(headerCosmosUser, "spoofed@evil.io")
 	pr.Out.Header = pr.In.Header.Clone()
 
 	cd := NewCapturedData("req-1")
-	cd.SetUserEmail("alice@netbird.io\r\nX-Admin: yes")
+	cd.SetUserEmail("alice@cosmos.io\r\nX-Admin: yes")
 	cd.SetUserGroups([]string{"grp-a"})
 	cd.SetUserGroupNames([]string{"engineering"})
 
@@ -1231,16 +1231,16 @@ func TestStampNetBirdIdentity_RejectsControlCharsInEmail(t *testing.T) {
 
 	rewrite(pr)
 
-	assert.Empty(t, pr.Out.Header.Get(headerNetBirdUser),
+	assert.Empty(t, pr.Out.Header.Get(headerCosmosUser),
 		"email with CR/LF must be dropped, not partially stamped")
-	assert.Equal(t, "engineering", pr.Out.Header.Get(headerNetBirdGroups),
+	assert.Equal(t, "engineering", pr.Out.Header.Get(headerCosmosGroups),
 		"groups remain stampable even when email is invalid")
 }
 
-// TestStampNetBirdIdentity_RejectsControlCharsInGroup covers the
+// TestStampCosmosIdentity_RejectsControlCharsInGroup covers the
 // per-label defence: a group name with a control char is silently
 // dropped, the rest are stamped.
-func TestStampNetBirdIdentity_RejectsControlCharsInGroup(t *testing.T) {
+func TestStampCosmosIdentity_RejectsControlCharsInGroup(t *testing.T) {
 	target, _ := url.Parse("http://backend.internal:8080")
 	p := &ReverseProxy{forwardedProto: "auto"}
 	rewrite := p.rewriteFunc(target, "", false, PathRewriteDefault, nil, nil)
@@ -1248,7 +1248,7 @@ func TestStampNetBirdIdentity_RejectsControlCharsInGroup(t *testing.T) {
 	pr := newProxyRequest(t, "http://example.com/", "203.0.113.50:9999")
 
 	cd := NewCapturedData("req-1")
-	cd.SetUserEmail("alice@netbird.io")
+	cd.SetUserEmail("alice@cosmos.io")
 	cd.SetUserGroups([]string{"grp-a", "grp-b"})
 	cd.SetUserGroupNames([]string{"engineering\r\nsneaky", "operations"})
 
@@ -1256,24 +1256,24 @@ func TestStampNetBirdIdentity_RejectsControlCharsInGroup(t *testing.T) {
 
 	rewrite(pr)
 
-	assert.Equal(t, "operations", pr.Out.Header.Get(headerNetBirdGroups),
+	assert.Equal(t, "operations", pr.Out.Header.Get(headerCosmosGroups),
 		"group label with control char must be dropped, valid ones kept")
 }
 
-// TestStampNetBirdIdentity_OmitsGroupsHeaderWhenAllInvalid covers the
+// TestStampCosmosIdentity_OmitsGroupsHeaderWhenAllInvalid covers the
 // edge case where every group label is rejected: the header must not be
 // set at all (rather than set to an empty string).
-func TestStampNetBirdIdentity_OmitsGroupsHeaderWhenAllInvalid(t *testing.T) {
+func TestStampCosmosIdentity_OmitsGroupsHeaderWhenAllInvalid(t *testing.T) {
 	target, _ := url.Parse("http://backend.internal:8080")
 	p := &ReverseProxy{forwardedProto: "auto"}
 	rewrite := p.rewriteFunc(target, "", false, PathRewriteDefault, nil, nil)
 
 	pr := newProxyRequest(t, "http://example.com/", "203.0.113.50:9999")
-	pr.In.Header.Set(headerNetBirdGroups, "spoofed-admin")
+	pr.In.Header.Set(headerCosmosGroups, "spoofed-admin")
 	pr.Out.Header = pr.In.Header.Clone()
 
 	cd := NewCapturedData("req-1")
-	cd.SetUserEmail("alice@netbird.io")
+	cd.SetUserEmail("alice@cosmos.io")
 	cd.SetUserGroups([]string{"grp-a", "grp-b"})
 	cd.SetUserGroupNames([]string{"with,comma", "with\nbreak"})
 
@@ -1281,9 +1281,9 @@ func TestStampNetBirdIdentity_OmitsGroupsHeaderWhenAllInvalid(t *testing.T) {
 
 	rewrite(pr)
 
-	_, present := pr.Out.Header[http.CanonicalHeaderKey(headerNetBirdGroups)]
+	_, present := pr.Out.Header[http.CanonicalHeaderKey(headerCosmosGroups)]
 	assert.False(t, present,
-		"X-NetBird-Groups must not be set when every group label is rejected")
+		"X-Cosmos-Groups must not be set when every group label is rejected")
 }
 
 // nopOKTransport returns 200 for every request without dialing — used
@@ -1383,18 +1383,18 @@ func TestServeHTTP_SelfTargetLoop_OverlayDifferentIPPassesThrough(t *testing.T) 
 		"overlay request with a non-matching source IP must not be flagged as a loop")
 }
 
-// TestStampNetBirdIdentity_CapturedDataPresentButEmpty covers requests
+// TestStampCosmosIdentity_CapturedDataPresentButEmpty covers requests
 // that carry CapturedData with no identity fields populated (e.g. the
 // auth middleware ran but the request didn't authenticate). Both
 // headers must be cleared and neither stamped.
-func TestStampNetBirdIdentity_CapturedDataPresentButEmpty(t *testing.T) {
+func TestStampCosmosIdentity_CapturedDataPresentButEmpty(t *testing.T) {
 	target, _ := url.Parse("http://backend.internal:8080")
 	p := &ReverseProxy{forwardedProto: "auto"}
 	rewrite := p.rewriteFunc(target, "", false, PathRewriteDefault, nil, nil)
 
 	pr := newProxyRequest(t, "http://example.com/", "203.0.113.50:9999")
-	pr.In.Header.Set(headerNetBirdUser, "spoofed@evil.io")
-	pr.In.Header.Set(headerNetBirdGroups, "spoofed-admin")
+	pr.In.Header.Set(headerCosmosUser, "spoofed@evil.io")
+	pr.In.Header.Set(headerCosmosGroups, "spoofed-admin")
 	pr.Out.Header = pr.In.Header.Clone()
 
 	cd := NewCapturedData("req-1")
@@ -1402,8 +1402,8 @@ func TestStampNetBirdIdentity_CapturedDataPresentButEmpty(t *testing.T) {
 
 	rewrite(pr)
 
-	assert.Empty(t, pr.Out.Header.Get(headerNetBirdUser),
-		"X-NetBird-User must be stripped when CapturedData has no email")
-	assert.Empty(t, pr.Out.Header.Get(headerNetBirdGroups),
-		"X-NetBird-Groups must be stripped when CapturedData has no groups")
+	assert.Empty(t, pr.Out.Header.Get(headerCosmosUser),
+		"X-Cosmos-User must be stripped when CapturedData has no email")
+	assert.Empty(t, pr.Out.Header.Get(headerCosmosGroups),
+		"X-Cosmos-Groups must be stripped when CapturedData has no groups")
 }

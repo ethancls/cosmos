@@ -346,7 +346,7 @@ func extractClusterFromCustomDomains(serviceDomain string, customDomains []*doma
 }
 
 // ExtractClusterFromFreeDomain extracts the cluster address from a free domain.
-// Free domains have the format: <name>.<nonce>.<cluster> (e.g., myapp.abc123.eu.proxy.netbird.io)
+// Free domains have the format: <name>.<nonce>.<cluster> (e.g., myapp.abc123.eu.proxy.cosmos.io)
 // It matches the domain suffix against available clusters and returns the matching cluster.
 func ExtractClusterFromFreeDomain(domain string, availableClusters []string) (string, bool) {
 	for _, cluster := range availableClusters {

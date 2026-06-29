@@ -98,7 +98,7 @@ func setupL4Test(t *testing.T, customPortsSupported *bool) (*Manager, store.Stor
 		permissionsManager: permissions.NewManager(testStore),
 		proxyController:    mockCtrl,
 		capabilities:       mockCaps,
-		clusterDeriver:     &testClusterDeriver{domains: []string{"test.netbird.io"}},
+		clusterDeriver:     &testClusterDeriver{domains: []string{"test.cosmos.io"}},
 	}
 	mgr.exposeReaper = &exposeReaper{manager: mgr}
 
@@ -688,7 +688,7 @@ func TestCreateServiceFromPeer_TCP(t *testing.T) {
 	require.NoError(t, err)
 
 	assert.NotEmpty(t, resp.ServiceName)
-	assert.Contains(t, resp.Domain, ".test.netbird.io", "TCP uses unique subdomain")
+	assert.Contains(t, resp.Domain, ".test.cosmos.io", "TCP uses unique subdomain")
 	assert.True(t, resp.PortAutoAssigned, "port should be auto-assigned when cluster doesn't support custom ports")
 	assert.Contains(t, resp.ServiceURL, "tcp://")
 }
@@ -733,7 +733,7 @@ func TestCreateServiceFromPeer_TLS(t *testing.T) {
 	})
 	require.NoError(t, err)
 
-	assert.Contains(t, resp.Domain, ".test.netbird.io", "TLS uses subdomain")
+	assert.Contains(t, resp.Domain, ".test.cosmos.io", "TLS uses subdomain")
 	assert.Contains(t, resp.ServiceURL, "tls://")
 	assert.Contains(t, resp.ServiceURL, ":443")
 	// TLS always keeps its port (not port-based protocol for auto-assign)

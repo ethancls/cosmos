@@ -118,10 +118,10 @@ func (a *Anonymizer) AnonymizeDomain(domain string) string {
 		baseDomain = domain[:len(domain)-1]
 	}
 
-	if strings.HasSuffix(baseDomain, "netbird.io") ||
-		strings.HasSuffix(baseDomain, "netbird.selfhosted") ||
-		strings.HasSuffix(baseDomain, "netbird.cloud") ||
-		strings.HasSuffix(baseDomain, "netbird.stage") ||
+	if strings.HasSuffix(baseDomain, "cosmos.io") ||
+		strings.HasSuffix(baseDomain, "cosmos.selfhosted") ||
+		strings.HasSuffix(baseDomain, "cosmos.cloud") ||
+		strings.HasSuffix(baseDomain, "cosmos.stage") ||
 		strings.HasSuffix(baseDomain, anonTLD) {
 		return domain
 	}

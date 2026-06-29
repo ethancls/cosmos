@@ -32,9 +32,9 @@ var (
 )
 
 const (
-	dnsPolicyConfigMatchPath    = `SYSTEM\CurrentControlSet\Services\Dnscache\Parameters\DnsPolicyConfig\NetBird-Match`
+	dnsPolicyConfigMatchPath    = `SYSTEM\CurrentControlSet\Services\Dnscache\Parameters\DnsPolicyConfig\Cosmos-Match`
 	gpoDnsPolicyRoot            = `SOFTWARE\Policies\Microsoft\Windows NT\DNSClient\DnsPolicyConfig`
-	gpoDnsPolicyConfigMatchPath = gpoDnsPolicyRoot + `\NetBird-Match`
+	gpoDnsPolicyConfigMatchPath = gpoDnsPolicyRoot + `\Cosmos-Match`
 
 	dnsPolicyConfigVersionKey           = "Version"
 	dnsPolicyConfigVersionValue         = 2

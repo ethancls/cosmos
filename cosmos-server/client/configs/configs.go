@@ -17,8 +17,8 @@ func init() {
 	case "windows":
 		StateDir = filepath.Join(os.Getenv("PROGRAMDATA"), "Netbird")
 	case "darwin", "linux":
-		StateDir = "/var/lib/netbird"
+		StateDir = "/var/lib/cosmos"
 	case "freebsd", "openbsd", "netbsd", "dragonfly":
-		StateDir = "/var/db/netbird"
+		StateDir = "/var/db/cosmos"
 	}
 }

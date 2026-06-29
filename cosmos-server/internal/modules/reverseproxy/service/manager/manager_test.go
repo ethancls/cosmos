@@ -734,7 +734,7 @@ func setupIntegrationTest(t *testing.T) (*Manager, store.Store) {
 		permissionsManager: permsMgr,
 		proxyController:    proxyController,
 		clusterDeriver: &testClusterDeriver{
-			domains: []string{"test.netbird.io"},
+			domains: []string{"test.cosmos.io"},
 		},
 	}
 	mgr.exposeReaper = &exposeReaper{manager: mgr}
@@ -828,7 +828,7 @@ func TestCreateServiceFromPeer(t *testing.T) {
 		resp, err := mgr.CreateServiceFromPeer(ctx, testAccountID, testPeerID, req)
 		require.NoError(t, err)
 		assert.NotEmpty(t, resp.ServiceName, "service name should be generated")
-		assert.Contains(t, resp.Domain, "test.netbird.io", "domain should use cluster domain")
+		assert.Contains(t, resp.Domain, "test.cosmos.io", "domain should use cluster domain")
 		assert.NotEmpty(t, resp.ServiceURL, "service URL should be set")
 
 		// Verify service is persisted in store
@@ -1361,36 +1361,36 @@ func TestValidateSubdomainRequirement(t *testing.T) {
 	}{
 		{
 			name:             "subdomain present, require_subdomain true",
-			domain:           "app.eu1.proxy.netbird.io",
-			cluster:          "eu1.proxy.netbird.io",
+			domain:           "app.eu1.proxy.cosmos.io",
+			cluster:          "eu1.proxy.cosmos.io",
 			requireSubdomain: ptrBool(true),
 			wantErr:          false,
 		},
 		{
 			name:             "bare cluster domain, require_subdomain true",
-			domain:           "eu1.proxy.netbird.io",
-			cluster:          "eu1.proxy.netbird.io",
+			domain:           "eu1.proxy.cosmos.io",
+			cluster:          "eu1.proxy.cosmos.io",
 			requireSubdomain: ptrBool(true),
 			wantErr:          true,
 		},
 		{
 			name:             "bare cluster domain, require_subdomain false",
-			domain:           "eu1.proxy.netbird.io",
-			cluster:          "eu1.proxy.netbird.io",
+			domain:           "eu1.proxy.cosmos.io",
+			cluster:          "eu1.proxy.cosmos.io",
 			requireSubdomain: ptrBool(false),
 			wantErr:          false,
 		},
 		{
 			name:             "bare cluster domain, require_subdomain nil (default)",
-			domain:           "eu1.proxy.netbird.io",
-			cluster:          "eu1.proxy.netbird.io",
+			domain:           "eu1.proxy.cosmos.io",
+			cluster:          "eu1.proxy.cosmos.io",
 			requireSubdomain: nil,
 			wantErr:          false,
 		},
 		{
 			name:             "custom domain apex is not the cluster",
 			domain:           "example.com",
-			cluster:          "eu1.proxy.netbird.io",
+			cluster:          "eu1.proxy.cosmos.io",
 			requireSubdomain: ptrBool(true),
 			wantErr:          false,
 		},
@@ -1424,7 +1424,7 @@ func TestValidateTargetReferences_ClusterTargetSkipsLookup(t *testing.T) {
 	// No peer or resource lookups must be issued for cluster targets.
 	targets := []*rpservice.Target{
 		{
-			TargetId:   "eu.proxy.netbird.io",
+			TargetId:   "eu.proxy.cosmos.io",
 			TargetType: rpservice.TargetTypeCluster,
 			Options:    rpservice.TargetOptions{DirectUpstream: true},
 		},
@@ -1435,7 +1435,7 @@ func TestValidateTargetReferences_ClusterTargetSkipsLookup(t *testing.T) {
 // TestValidateTargetReferences_ClusterTargetRequiresDirectUpstream pins the
 // store-side check that cluster targets must opt into the host-stack dial
 // path. Without DirectUpstream the proxy would route this target through
-// the embedded NetBird client and fail on every request.
+// the embedded Cosmos client and fail on every request.
 func TestValidateTargetReferences_ClusterTargetRequiresDirectUpstream(t *testing.T) {
 	ctx := context.Background()
 	ctrl := gomock.NewController(t)
@@ -1444,7 +1444,7 @@ func TestValidateTargetReferences_ClusterTargetRequiresDirectUpstream(t *testing
 
 	targets := []*rpservice.Target{
 		{
-			TargetId:   "eu.proxy.netbird.io",
+			TargetId:   "eu.proxy.cosmos.io",
 			TargetType: rpservice.TargetTypeCluster,
 			Host:       "backend.lan",
 		},
@@ -1467,7 +1467,7 @@ func TestReplaceHostByLookup_SkipsClusterTarget(t *testing.T) {
 		AccountID: accountID,
 		Targets: []*rpservice.Target{
 			{
-				TargetId:   "eu.proxy.netbird.io",
+				TargetId:   "eu.proxy.cosmos.io",
 				TargetType: rpservice.TargetTypeCluster,
 				Host:       "127.0.0.1",
 			},

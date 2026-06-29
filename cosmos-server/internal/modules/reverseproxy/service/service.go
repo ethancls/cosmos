@@ -61,7 +61,7 @@ type TargetOptions struct {
 	SessionIdleTimeout time.Duration     `json:"session_idle_timeout,omitempty"`
 	PathRewrite        PathRewriteMode   `json:"path_rewrite,omitempty"`
 	CustomHeaders      map[string]string `gorm:"serializer:json" json:"custom_headers,omitempty"`
-	// DirectUpstream bypasses the proxy's embedded NetBird client and dials
+	// DirectUpstream bypasses the proxy's embedded Cosmos client and dials
 	// the target via the proxy host's network stack. Useful for upstreams
 	// reachable without WireGuard (public APIs, LAN services, localhost
 	// sidecars). Default false.
@@ -206,7 +206,7 @@ type Service struct {
 	Mode             string `gorm:"default:'http'"`
 	ListenPort       uint16
 	PortAutoAssigned bool
-	// Private marks the service as NetBird-only: auth via ValidateTunnelPeer against AccessGroups instead of SSO. HTTP-only.
+	// Private marks the service as Cosmos-only: auth via ValidateTunnelPeer against AccessGroups instead of SSO. HTTP-only.
 	Private bool
 	// AccessGroups is the group ID allowlist for inbound peers on private services. Mutually exclusive with bearer SSO.
 	AccessGroups []string `json:"access_groups,omitempty" gorm:"serializer:json"`
@@ -803,7 +803,7 @@ func (s *Service) validatePrivateRequirements() error {
 		return errors.New("private services require at least one access group")
 	}
 	if s.Auth.BearerAuth != nil && s.Auth.BearerAuth.Enabled {
-		return errors.New("private services cannot enable bearer auth (SSO): NetBird-only access and SSO are mutually exclusive")
+		return errors.New("private services cannot enable bearer auth (SSO): Cosmos-only access and SSO are mutually exclusive")
 	}
 	return nil
 }

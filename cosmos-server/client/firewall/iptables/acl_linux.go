@@ -315,7 +315,7 @@ func (m *aclManager) cleanChains() error {
 }
 
 func (m *aclManager) createDefaultChains() error {
-	// chain netbird-acl-input-rules
+	// chain cosmos-acl-input-rules
 	if err := m.iptablesClient.NewChain(tableName, chainNameInputRules); err != nil {
 		log.Debugf("failed to create '%s' chain: %s", chainNameInputRules, err)
 		return err

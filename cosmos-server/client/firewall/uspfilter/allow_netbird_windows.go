@@ -47,7 +47,7 @@ func (m *Manager) Close(*statemanager.Manager) error {
 	return nberrors.FormatErrorOrNil(merr)
 }
 
-// AllowNetbird allows netbird interface traffic
+// AllowNetbird allows cosmos interface traffic
 func (m *Manager) AllowNetbird() error {
 	if !isWindowsFirewallReachable() {
 		return nil

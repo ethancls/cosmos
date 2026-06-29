@@ -1,4 +1,4 @@
-// Package installer provides functionality for managing NetBird application
+// Package installer provides functionality for managing Cosmos application
 // updates and installations across Windows, macOS. It handles
 // the complete update lifecycle including artifact download, cryptographic verification,
 // installation execution, process management, and result reporting.
@@ -7,7 +7,7 @@
 //
 // The installer package uses a two-process architecture to enable self-updates:
 //
-//  1. Service Process: The main NetBird daemon process that initiates updates
+//  1. Service Process: The main Cosmos daemon process that initiates updates
 //  2. Updater Process: A detached child process that performs the actual installation
 //
 // This separation is critical because:
@@ -41,16 +41,16 @@
 //     - Windows EXE: installer.exe /S
 //     - Windows MSI: msiexec.exe /i installer.msi /quiet /qn /l*v msi.log
 //     - macOS PKG: installer -pkg installer.pkg -target /
-//     - macOS Homebrew: brew upgrade netbirdio/tap/netbird
+//     - macOS Homebrew: brew upgrade cosmosio/tap/cosmos
 //  3. Installer terminates daemon and UI processes
 //  4. Installer replaces binaries with new version
 //  5. Updater waits for installer to complete
 //  6. Updater restarts daemon:
-//     - Windows: netbird.exe service start
-//     - macOS/Linux: netbird service start
+//     - Windows: cosmos.exe service start
+//     - macOS/Linux: cosmos service start
 //  7. Updater restarts UI:
-//     - Windows: Launches netbird-ui.exe as active console user using CreateProcessAsUser
-//     - macOS: Uses launchctl asuser to launch NetBird.app for console user
+//     - Windows: Launches cosmos-ui.exe as active console user using CreateProcessAsUser
+//     - macOS: Uses launchctl asuser to launch Cosmos.app for console user
 //     - Linux: Not implemented (UI typically auto-starts)
 //  8. Updater writes result.json with success/error status
 //  9. Updater process exits
@@ -78,7 +78,7 @@
 //   - Example: C:\ProgramData\Netbird\tmp-install
 //
 // macOS:
-//   - Path: /var/lib/netbird/tmp-install
+//   - Path: /var/lib/cosmos/tmp-install
 //   - Requires root permissions
 //
 // Files created during installation:
@@ -86,7 +86,7 @@
 //		tmp-install/
 //	   installer.log
 //		  updater[.exe]                    # Copy of service binary
-//		  netbird_installer_*.[exe|msi|pkg] # Downloaded installer
+//		  cosmos_installer_*.[exe|msi|pkg] # Downloaded installer
 //		  result.json                       # Installation result
 //		  msi.log                           # MSI verbose log (Windows MSI only)
 //
@@ -107,5 +107,5 @@
 // Enable via environment variable:
 //
 //	export NB_AUTO_UPDATE_DRY_RUN=true
-//	netbird service install-update 0.29.0
+//	cosmos service install-update 0.29.0
 package installer

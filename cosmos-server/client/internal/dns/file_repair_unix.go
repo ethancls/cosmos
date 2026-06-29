@@ -134,9 +134,9 @@ func (f *repair) isEventRelevant(event fsnotify.Event) bool {
 	return false
 }
 
-// nbParamsAreMissing checks if the resolv.conf file contains all the parameters that NetBird needs
-// check the NetBird related nameserver IP at the first place
-// check the NetBird related search domains in the search domains list
+// nbParamsAreMissing checks if the resolv.conf file contains all the parameters that Cosmos needs
+// check the Cosmos related nameserver IP at the first place
+// check the Cosmos related search domains in the search domains list
 func isNbParamsMissing(nbSearchDomains []string, nbNameserverIP netip.Addr, rConf *resolvConf) bool {
 	if !isContains(nbSearchDomains, rConf.searchDomains) {
 		return true

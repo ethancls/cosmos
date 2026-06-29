@@ -33,12 +33,12 @@ const (
 	// managementLegacyPortString is the port that was used before by the Management gRPC server.
 	// It is used for backward compatibility now.
 	managementLegacyPortString = "33073"
-	// DefaultManagementURL points to the NetBird's cloud management endpoint
-	DefaultManagementURL = "https://api.netbird.io:443"
-	// oldDefaultManagementURL points to the NetBird's old cloud management endpoint
+	// DefaultManagementURL points to the Cosmos's cloud management endpoint
+	DefaultManagementURL = "https://api.cosmos.io:443"
+	// oldDefaultManagementURL points to the Cosmos's old cloud management endpoint
 	oldDefaultManagementURL = "https://api.wiretrustee.com:443"
-	// DefaultAdminURL points to NetBird's cloud management console
-	DefaultAdminURL = "https://app.netbird.io:443"
+	// DefaultAdminURL points to Cosmos's cloud management console
+	DefaultAdminURL = "https://app.cosmos.io:443"
 )
 
 // mgmProber is the subset of management client needed for URL migration probes.
@@ -214,7 +214,7 @@ func getConfigDir() (string, error) {
 		return "", err
 	}
 
-	configDir := filepath.Join(base, "netbird")
+	configDir := filepath.Join(base, "cosmos")
 	if err := os.MkdirAll(configDir, 0o755); err != nil {
 		return "", err
 	}
@@ -846,7 +846,7 @@ func GetConfig(configPath string) (*Config, error) {
 
 // UpdateOldManagementURL checks whether client can switch to the new Management URL with port 443 and the management domain.
 // If it can switch, then it updates the config and returns a new one. Otherwise, it returns the provided config.
-// The check is performed only for the NetBird's managed version.
+// The check is performed only for the Cosmos's managed version.
 func UpdateOldManagementURL(ctx context.Context, config *Config, configPath string) (*Config, error) {
 	defaultManagementURL, err := parseURL("Management URL", DefaultManagementURL)
 	if err != nil {
@@ -860,7 +860,7 @@ func UpdateOldManagementURL(ctx context.Context, config *Config, configPath stri
 
 	if config.ManagementURL.Hostname() != defaultManagementURL.Hostname() &&
 		config.ManagementURL.Hostname() != parsedOldDefaultManagementURL.Hostname() {
-		// only do the check for the NetBird's managed version
+		// only do the check for the Cosmos's managed version
 		return config, nil
 	}
 

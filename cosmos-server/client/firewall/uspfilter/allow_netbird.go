@@ -25,7 +25,7 @@ func (m *Manager) Close(stateManager *statemanager.Manager) error {
 	return nil
 }
 
-// AllowNetbird allows netbird interface traffic
+// AllowNetbird allows cosmos interface traffic
 func (m *Manager) AllowNetbird() error {
 	if m.nativeFirewall != nil {
 		return m.nativeFirewall.AllowNetbird()

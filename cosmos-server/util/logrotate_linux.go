@@ -16,11 +16,11 @@ import (
 const (
 	defaultLogrotateConfPath = "/etc/logrotate.conf"
 	defaultLogrotateConfDir  = "/etc/logrotate.d"
-	netbirdString            = "netbird"
+	cosmosString            = "cosmos"
 )
 
 // FindLogrotateConflicts scans the standard logrotate locations for
-// indications of conflict with netbird. It returns true and the config file
+// indications of conflict with cosmos. It returns true and the config file
 // path if a conflict was found.
 func FindFirstLogrotateConflict() (bool, string) {
 	return findFirstLogrotateConflictIn(defaultLogrotateConfPath, defaultLogrotateConfDir)
@@ -28,7 +28,7 @@ func FindFirstLogrotateConflict() (bool, string) {
 
 func findFirstLogrotateConflictIn(confPath, confDir string) (bool, string) {
 	for _, f := range listLogrotateConfigs(confPath, confDir) {
-		present, err := scanLogrotateFile(f, netbirdString)
+		present, err := scanLogrotateFile(f, cosmosString)
 		if err != nil {
 			if !errors.Is(err, fs.ErrNotExist) {
 				log.Debugf("scan %s: %v", f, err)

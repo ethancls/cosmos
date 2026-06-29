@@ -25,7 +25,7 @@ import (
 	"github.com/ethancls/cosmos-server/version"
 )
 
-// DaemonStatus represents the current state of the NetBird daemon.
+// DaemonStatus represents the current state of the Cosmos daemon.
 // These values mirror internal.StatusType but are defined here to avoid an import cycle.
 type DaemonStatus string
 
@@ -59,8 +59,8 @@ type ConvertOptions struct {
 
 type PeerStateDetailOutput struct {
 	FQDN                   string           `json:"fqdn" yaml:"fqdn"`
-	IP                     string           `json:"netbirdIp" yaml:"netbirdIp"`
-	IPv6                   string           `json:"netbirdIpv6,omitempty" yaml:"netbirdIpv6,omitempty"`
+	IP                     string           `json:"cosmosIp" yaml:"cosmosIp"`
+	IPv6                   string           `json:"cosmosIpv6,omitempty" yaml:"cosmosIpv6,omitempty"`
 	PubKey                 string           `json:"publicKey" yaml:"publicKey"`
 	Status                 string           `json:"status" yaml:"status"`
 	LastStatusUpdate       time.Time        `json:"lastStatusUpdate" yaml:"lastStatusUpdate"`
@@ -140,8 +140,8 @@ type OutputOverview struct {
 	ManagementState         ManagementStateOutput      `json:"management" yaml:"management"`
 	SignalState             SignalStateOutput          `json:"signal" yaml:"signal"`
 	Relays                  RelayStateOutput           `json:"relays" yaml:"relays"`
-	IP                      string                     `json:"netbirdIp" yaml:"netbirdIp"`
-	IPv6                    string                     `json:"netbirdIpv6,omitempty" yaml:"netbirdIpv6,omitempty"`
+	IP                      string                     `json:"cosmosIp" yaml:"cosmosIp"`
+	IPv6                    string                     `json:"cosmosIpv6,omitempty" yaml:"cosmosIpv6,omitempty"`
 	PubKey                  string                     `json:"publicKey" yaml:"publicKey"`
 	KernelInterface         bool                       `json:"usesKernelInterface" yaml:"usesKernelInterface"`
 	WgPort                  int                        `json:"wireguardPort" yaml:"wireguardPort"`
@@ -433,7 +433,7 @@ func (o *OutputOverview) GeneralSummary(showURL bool, showRelays bool, showNameS
 
 	ipv6Line := ""
 	if o.IPv6 != "" {
-		ipv6Line = fmt.Sprintf("NetBird IPv6: %s\n", o.IPv6)
+		ipv6Line = fmt.Sprintf("Cosmos IPv6: %s\n", o.IPv6)
 	}
 
 	var relaysString string
@@ -584,7 +584,7 @@ func (o *OutputOverview) GeneralSummary(showURL bool, showRelays bool, showNameS
 			"Relays: %s\n"+
 			"Nameservers: %s\n"+
 			"FQDN: %s\n"+
-			"NetBird IP: %s\n"+
+			"Cosmos IP: %s\n"+
 			"%s"+
 			"Interface type: %s\n"+
 			"Wireguard port: %s\n"+
@@ -777,12 +777,12 @@ func parsePeers(peers PeersStateOutput, rosenpassEnabled, rosenpassPermissive bo
 
 		ipv6Line := ""
 		if peerState.IPv6 != "" {
-			ipv6Line = fmt.Sprintf("  NetBird IPv6: %s\n", peerState.IPv6)
+			ipv6Line = fmt.Sprintf("  Cosmos IPv6: %s\n", peerState.IPv6)
 		}
 
 		peerString := fmt.Sprintf(
 			"\n %s:\n"+
-				"  NetBird IP: %s\n"+
+				"  Cosmos IP: %s\n"+
 				"%s"+
 				"  Public key: %s\n"+
 				"  Status: %s\n"+

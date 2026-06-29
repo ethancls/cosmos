@@ -765,7 +765,7 @@ func (e PolicyRuleAction) Valid() bool {
 const (
 	PolicyRuleProtocolAll        PolicyRuleProtocol = "all"
 	PolicyRuleProtocolIcmp       PolicyRuleProtocol = "icmp"
-	PolicyRuleProtocolNetbirdSsh PolicyRuleProtocol = "netbird-ssh"
+	PolicyRuleProtocolNetbirdSsh PolicyRuleProtocol = "cosmos-ssh"
 	PolicyRuleProtocolTcp        PolicyRuleProtocol = "tcp"
 	PolicyRuleProtocolUdp        PolicyRuleProtocol = "udp"
 )
@@ -810,7 +810,7 @@ func (e PolicyRuleMinimumAction) Valid() bool {
 const (
 	PolicyRuleMinimumProtocolAll        PolicyRuleMinimumProtocol = "all"
 	PolicyRuleMinimumProtocolIcmp       PolicyRuleMinimumProtocol = "icmp"
-	PolicyRuleMinimumProtocolNetbirdSsh PolicyRuleMinimumProtocol = "netbird-ssh"
+	PolicyRuleMinimumProtocolNetbirdSsh PolicyRuleMinimumProtocol = "cosmos-ssh"
 	PolicyRuleMinimumProtocolTcp        PolicyRuleMinimumProtocol = "tcp"
 	PolicyRuleMinimumProtocolUdp        PolicyRuleMinimumProtocol = "udp"
 )
@@ -855,7 +855,7 @@ func (e PolicyRuleUpdateAction) Valid() bool {
 const (
 	PolicyRuleUpdateProtocolAll        PolicyRuleUpdateProtocol = "all"
 	PolicyRuleUpdateProtocolIcmp       PolicyRuleUpdateProtocol = "icmp"
-	PolicyRuleUpdateProtocolNetbirdSsh PolicyRuleUpdateProtocol = "netbird-ssh"
+	PolicyRuleUpdateProtocolNetbirdSsh PolicyRuleUpdateProtocol = "cosmos-ssh"
 	PolicyRuleUpdateProtocolTcp        PolicyRuleUpdateProtocol = "tcp"
 	PolicyRuleUpdateProtocolUdp        PolicyRuleUpdateProtocol = "udp"
 )
@@ -1390,7 +1390,7 @@ type AccessiblePeer struct {
 	// CountryCode 2-letter ISO 3166-1 alpha-2 code that represents the country
 	CountryCode CountryCode `json:"country_code"`
 
-	// DnsLabel Peer's DNS label is the parsed peer name for domain resolution. It is used to form an FQDN by appending the account's domain to the peer label. e.g. peer-dns-label.netbird.cloud
+	// DnsLabel Peer's DNS label is the parsed peer name for domain resolution. It is used to form an FQDN by appending the account's domain to the peer label. e.g. peer-dns-label.cosmos.cloud
 	DnsLabel string `json:"dns_label"`
 
 	// GeonameId Unique identifier from the GeoNames database for a specific geographical location.
@@ -2535,7 +2535,7 @@ type InstanceStatus struct {
 	SetupRequired bool `json:"setup_required"`
 }
 
-// InstanceVersionInfo Version information for NetBird components
+// InstanceVersionInfo Version information for Cosmos components
 type InstanceVersionInfo struct {
 	// DashboardAvailableVersion The latest available version of the dashboard (from GitHub releases)
 	DashboardAvailableVersion *string `json:"dashboard_available_version,omitempty"`
@@ -3149,7 +3149,7 @@ type Peer struct {
 	// DisapprovalReason (Cloud only) Reason why the peer requires approval
 	DisapprovalReason *string `json:"disapproval_reason,omitempty"`
 
-	// DnsLabel Peer's DNS label is the parsed peer name for domain resolution. It is used to form an FQDN by appending the account's domain to the peer label. e.g. peer-dns-label.netbird.cloud
+	// DnsLabel Peer's DNS label is the parsed peer name for domain resolution. It is used to form an FQDN by appending the account's domain to the peer label. e.g. peer-dns-label.cosmos.cloud
 	DnsLabel string `json:"dns_label"`
 
 	// Ephemeral Indicates whether the peer is ephemeral or not
@@ -3243,7 +3243,7 @@ type PeerBatch struct {
 	// DisapprovalReason (Cloud only) Reason why the peer requires approval
 	DisapprovalReason *string `json:"disapproval_reason,omitempty"`
 
-	// DnsLabel Peer's DNS label is the parsed peer name for domain resolution. It is used to form an FQDN by appending the account's domain to the peer label. e.g. peer-dns-label.netbird.cloud
+	// DnsLabel Peer's DNS label is the parsed peer name for domain resolution. It is used to form an FQDN by appending the account's domain to the peer label. e.g. peer-dns-label.cosmos.cloud
 	DnsLabel string `json:"dns_label"`
 
 	// Ephemeral Indicates whether the peer is ephemeral or not
@@ -3822,7 +3822,7 @@ type ProxyCluster struct {
 	// Online Whether at least one proxy in the cluster has heartbeated within the active window
 	Online bool `json:"online"`
 
-	// Private True when at least one connected proxy in this cluster is running embedded in a netbird client (`netbird proxy`) and serving over a WireGuard tunnel. Lets the dashboard distinguish per-peer / private clusters from centralised ones.
+	// Private True when at least one connected proxy in this cluster is running embedded in a cosmos client (`cosmos proxy`) and serving over a WireGuard tunnel. Lets the dashboard distinguish per-peer / private clusters from centralised ones.
 	Private *bool `json:"private,omitempty"`
 
 	// RequireSubdomain Whether services on this cluster must include a subdomain label
@@ -3835,12 +3835,12 @@ type ProxyCluster struct {
 	SupportsCustomPorts *bool `json:"supports_custom_ports,omitempty"`
 
 	// Type Source of the proxy cluster. `account` clusters are owned and operated by the account (BYOP);
-	// `shared` clusters are operated by NetBird and shared across accounts.
+	// `shared` clusters are operated by Cosmos and shared across accounts.
 	Type ProxyClusterType `json:"type"`
 }
 
 // ProxyClusterType Source of the proxy cluster. `account` clusters are owned and operated by the account (BYOP);
-// `shared` clusters are operated by NetBird and shared across accounts.
+// `shared` clusters are operated by Cosmos and shared across accounts.
 type ProxyClusterType string
 
 // ProxyToken defines model for ProxyToken.
@@ -3902,7 +3902,7 @@ type ReverseProxyDomain struct {
 	// SupportsCustomPorts Whether the cluster supports binding arbitrary TCP/UDP ports
 	SupportsCustomPorts *bool `json:"supports_custom_ports,omitempty"`
 
-	// SupportsPrivate Whether the proxy cluster supports private (NetBird-only) services. True when at least one connected proxy in the cluster runs embedded in a netbird client.
+	// SupportsPrivate Whether the proxy cluster supports private (Cosmos-only) services. True when at least one connected proxy in the cluster runs embedded in a cosmos client.
 	SupportsPrivate *bool `json:"supports_private,omitempty"`
 
 	// TargetCluster The proxy cluster this domain is validated against (only for custom domains)
@@ -4094,7 +4094,7 @@ type SentinelOneMatchAttributesNetworkStatus string
 
 // Service defines model for Service.
 type Service struct {
-	// AccessGroups NetBird group IDs whose peers may reach this private service over the tunnel. Required when private=true; ignored otherwise. Mutually exclusive with bearer auth (SSO).
+	// AccessGroups Cosmos group IDs whose peers may reach this private service over the tunnel. Required when private=true; ignored otherwise. Mutually exclusive with bearer auth (SSO).
 	AccessGroups *[]string `json:"access_groups,omitempty"`
 
 	// AccessRestrictions Connection-level access restrictions based on IP address or geography. Applies to both HTTP and L4 services.
@@ -4126,7 +4126,7 @@ type Service struct {
 	// PortAutoAssigned Whether the listen port was auto-assigned
 	PortAutoAssigned *bool `json:"port_auto_assigned,omitempty"`
 
-	// Private When true, the service is NetBird-only — its target points at a proxy cluster, inbound peers authenticate via their WireGuard tunnel identity (no OIDC), and an ACL policy is auto-generated from access_groups to the cluster's proxy-peer group. Requires mode=http.
+	// Private When true, the service is Cosmos-only — its target points at a proxy cluster, inbound peers authenticate via their WireGuard tunnel identity (no OIDC), and an ACL policy is auto-generated from access_groups to the cluster's proxy-peer group. Requires mode=http.
 	Private *bool `json:"private,omitempty"`
 
 	// ProxyCluster The proxy cluster handling this service (derived from domain)
@@ -4171,7 +4171,7 @@ type ServiceMetaStatus string
 
 // ServiceRequest defines model for ServiceRequest.
 type ServiceRequest struct {
-	// AccessGroups NetBird group IDs whose peers may reach this private service over the tunnel. Required when private=true; ignored otherwise. Mutually exclusive with bearer auth (SSO).
+	// AccessGroups Cosmos group IDs whose peers may reach this private service over the tunnel. Required when private=true; ignored otherwise. Mutually exclusive with bearer auth (SSO).
 	AccessGroups *[]string `json:"access_groups,omitempty"`
 
 	// AccessRestrictions Connection-level access restrictions based on IP address or geography. Applies to both HTTP and L4 services.
@@ -4196,7 +4196,7 @@ type ServiceRequest struct {
 	// PassHostHeader When true, the original client Host header is passed through to the backend instead of being rewritten to the backend's address
 	PassHostHeader *bool `json:"pass_host_header,omitempty"`
 
-	// Private When true, the service is NetBird-only — its target points at a proxy cluster, inbound peers authenticate via their WireGuard tunnel identity (no OIDC), and an ACL policy is auto-generated from access_groups to the cluster's proxy-peer group. Requires mode=http.
+	// Private When true, the service is Cosmos-only — its target points at a proxy cluster, inbound peers authenticate via their WireGuard tunnel identity (no OIDC), and an ACL policy is auto-generated from access_groups to the cluster's proxy-peer group. Requires mode=http.
 	Private *bool `json:"private,omitempty"`
 
 	// RewriteRedirects When true, Location headers in backend responses are rewritten to replace the backend address with the public-facing domain
@@ -4246,7 +4246,7 @@ type ServiceTargetOptions struct {
 	CustomHeaders *map[string]string `json:"custom_headers,omitempty"`
 
 	// DirectUpstream When true, the proxy dials this target via the host's network stack
-	// instead of through its embedded NetBird client. Use for upstreams
+	// instead of through its embedded Cosmos client. Use for upstreams
 	// reachable without WireGuard (public APIs, LAN services, localhost
 	// sidecars).
 	DirectUpstream *bool `json:"direct_upstream,omitempty"`
@@ -4677,7 +4677,7 @@ type User struct {
 	PendingApproval bool             `json:"pending_approval"`
 	Permissions     *UserPermissions `json:"permissions,omitempty"`
 
-	// Role User's NetBird account role
+	// Role User's Cosmos account role
 	Role string `json:"role"`
 
 	// Status User's status
@@ -4701,7 +4701,7 @@ type UserCreateRequest struct {
 	// Name User's full name
 	Name *string `json:"name,omitempty"`
 
-	// Role User's NetBird account role
+	// Role User's Cosmos account role
 	Role string `json:"role"`
 }
 
@@ -4731,7 +4731,7 @@ type UserInvite struct {
 	// Name User's full name
 	Name string `json:"name"`
 
-	// Role User's NetBird account role
+	// Role User's Cosmos account role
 	Role string `json:"role"`
 }
 
@@ -4761,7 +4761,7 @@ type UserInviteCreateRequest struct {
 	// Name User's full name
 	Name string `json:"name"`
 
-	// Role User's NetBird account role
+	// Role User's Cosmos account role
 	Role string `json:"role"`
 }
 
@@ -4813,7 +4813,7 @@ type UserRequest struct {
 	// IsBlocked If set to true then user is blocked and can't use the system
 	IsBlocked bool `json:"is_blocked"`
 
-	// Role User's NetBird account role
+	// Role User's Cosmos account role
 	Role string `json:"role"`
 }
 

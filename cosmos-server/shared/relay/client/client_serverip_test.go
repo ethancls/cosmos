@@ -128,10 +128,10 @@ func TestSubstituteHost(t *testing.T) {
 	}{
 		{
 			name:           "rels with port",
-			serverURL:      "rels://relay.netbird.io:443",
+			serverURL:      "rels://relay.cosmos.io:443",
 			ip:             "10.0.0.5",
 			wantURL:        "rels://10.0.0.5:443",
-			wantServerName: "relay.netbird.io",
+			wantServerName: "relay.cosmos.io",
 		},
 		{
 			name:           "rel with port",

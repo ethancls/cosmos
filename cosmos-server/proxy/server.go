@@ -1,4 +1,4 @@
-// Package proxy runs a NetBird proxy server.
+// Package proxy runs a Cosmos proxy server.
 // It attempts to do everything it needs to do within the context
 // of a single request to the server to try to reduce the amount
 // of concurrency coordination that is required. However, it does
@@ -79,7 +79,7 @@ type Server struct {
 	ctx               context.Context
 	mgmtClient        proto.ProxyServiceClient
 	proxy             *proxy.ReverseProxy
-	netbird           *roundtrip.NetBird
+	cosmos           *roundtrip.Cosmos
 	acme              *acme.Manager
 	staticCertWatcher *certwatch.Watcher
 	auth              *auth.Middleware
@@ -120,7 +120,7 @@ type Server struct {
 	// The mapping worker waits on this before processing updates.
 	routerReady chan struct{}
 
-	// removePeer defaults to netbird.RemovePeer; overridable in tests.
+	// removePeer defaults to cosmos.RemovePeer; overridable in tests.
 	removePeer func(ctx context.Context, accountID types.AccountID, key roundtrip.ServiceKey) error
 
 	// inbound, when non-nil, manages per-account inbound listeners. Set by
@@ -187,7 +187,7 @@ type Server struct {
 	// When set, forwarding headers from these sources are preserved and
 	// appended to instead of being stripped.
 	TrustedProxies []netip.Prefix
-	// WireguardPort is the port for the NetBird tunnel interface. Use 0
+	// WireguardPort is the port for the Cosmos tunnel interface. Use 0
 	// for a random OS-assigned port. A fixed port only works with
 	// single-account deployments; multiple accounts will fail to bind
 	// the same port.
@@ -208,8 +208,8 @@ type Server struct {
 	// in front of this proxy's cluster domain. When true, accounts cannot
 	// create services on the bare cluster domain.
 	RequireSubdomain bool
-	// Private flags this proxy as embedded in a netbird client and serving
-	// exclusively over the WireGuard tunnel (i.e. `netbird proxy`). Reported
+	// Private flags this proxy as embedded in a cosmos client and serving
+	// exclusively over the WireGuard tunnel (i.e. `cosmos proxy`). Reported
 	// upstream as a capability so dashboards can distinguish per-peer
 	// clusters from centralised ones, and turns on per-account inbound
 	// listeners on each embedded client's netstack: every account that
@@ -346,10 +346,10 @@ func (s *Server) Start(ctx context.Context) error {
 	runCtx, runCancel := context.WithCancel(ctx)
 	s.runCancel = runCancel
 
-	s.initNetBirdClient()
+	s.initCosmosClient()
 	// Create health checker before the mapping worker so it can track
 	// management connectivity from the first stream connection.
-	s.healthChecker = health.NewChecker(s.Logger, s.netbird)
+	s.healthChecker = health.NewChecker(s.Logger, s.cosmos)
 
 	s.crowdsecRegistry = crowdsec.NewRegistry(s.CrowdSecAPIURL, s.CrowdSecAPIKey, log.NewEntry(s.Logger))
 	s.crowdsecServices = make(map[types.ServiceID]bool)
@@ -537,11 +537,11 @@ func (s *Server) initManagementClient() error {
 	return nil
 }
 
-// initNetBirdClient builds the multi-tenant embedded NetBird client used
+// initCosmosClient builds the multi-tenant embedded Cosmos client used
 // for outbound RoundTripping and (when --private is on) per-account
 // inbound listeners.
-func (s *Server) initNetBirdClient() {
-	s.netbird = roundtrip.NewNetBird(s.ctx, s.ID, s.ProxyURL, roundtrip.ClientConfig{
+func (s *Server) initCosmosClient() {
+	s.cosmos = roundtrip.NewCosmos(s.ctx, s.ID, s.ProxyURL, roundtrip.ClientConfig{
 		MgmtAddr:     s.ManagementAddress,
 		WGPort:       s.WireguardPort,
 		PreSharedKey: s.PreSharedKey,
@@ -552,16 +552,16 @@ func (s *Server) initNetBirdClient() {
 		// the embedded client never accepts inbound, so block.
 		BlockInbound: !s.Private,
 	}, s.Logger, s, s.mgmtClient)
-	s.netbird.OnAddPeer = s.meter.RecordAddPeerDuration
+	s.cosmos.OnAddPeer = s.meter.RecordAddPeerDuration
 }
 
 // initReverseProxy builds the meter-instrumented reverse proxy. MultiTransport
 // routes targets opted into direct_upstream through the host's network stack
-// (stdlib transport); everything else falls through to the embedded NetBird
+// (stdlib transport); everything else falls through to the embedded Cosmos
 // client. The split is needed so direct_upstream targets resolve DNS via the
 // proxy host's resolver instead of the tunnel's DNS.
 func (s *Server) initReverseProxy() {
-	upstreamRT := roundtrip.NewMultiTransport(s.netbird, s.Logger)
+	upstreamRT := roundtrip.NewMultiTransport(s.cosmos, s.Logger)
 	s.proxy = proxy.NewReverseProxy(s.meter.RoundTripper(upstreamRT), s.ForwardedProto, s.TrustedProxies, s.Logger)
 }
 
@@ -616,7 +616,7 @@ func (s *Server) initDefaults() {
 
 	// If no ID is set then one can be generated.
 	if s.ID == "" {
-		s.ID = fmt.Sprintf("netbird-proxy-%s", uuid.NewString())
+		s.ID = fmt.Sprintf("cosmos-proxy-%s", uuid.NewString())
 	}
 	// Fallback version option in case it is not set.
 	if s.Version == "" {
@@ -635,7 +635,7 @@ func (s *Server) startDebugEndpoint() {
 		return
 	}
 	debugAddr := debugEndpointAddr(s.DebugEndpointAddress)
-	debugHandler := debug.NewHandler(s.netbird, s.healthChecker, s.Logger)
+	debugHandler := debug.NewHandler(s.cosmos, s.healthChecker, s.Logger)
 	if s.acme != nil {
 		debugHandler.SetCertStatus(s.acme)
 	}
@@ -947,14 +947,14 @@ func (s *Server) shutdownServices() {
 		shutdownHTTP("acme http", s.http.Shutdown)
 	}
 
-	if s.netbird != nil {
+	if s.cosmos != nil {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
 			ctx, cancel := context.WithTimeout(context.Background(), shutdownDrainTimeout)
 			defer cancel()
-			if err := s.netbird.StopAll(ctx); err != nil {
-				s.Logger.Warnf("stop netbird clients: %v", err)
+			if err := s.cosmos.StopAll(ctx); err != nil {
+				s.Logger.Warnf("stop cosmos clients: %v", err)
 			}
 		}()
 	}
@@ -1014,9 +1014,9 @@ func (s *Server) shutdownCrowdSec() {
 }
 
 // resolveDialFunc returns a DialContextFunc that dials through the
-// NetBird tunnel for the given account.
+// Cosmos tunnel for the given account.
 func (s *Server) resolveDialFunc(accountID types.AccountID) (types.DialContextFunc, error) {
-	client, ok := s.netbird.GetClient(accountID)
+	client, ok := s.cosmos.GetClient(accountID)
 	if !ok {
 		return nil, fmt.Errorf("no client for account %s", accountID)
 	}
@@ -1031,7 +1031,7 @@ func (s *Server) initPrivateInbound(handler http.Handler, tlsConfig *tls.Config)
 		return
 	}
 	s.inbound = newInboundManager(s.Logger, handler, tlsConfig)
-	s.netbird.SetClientLifecycle(s.inbound.onClientReady, s.inbound.onClientStop)
+	s.cosmos.SetClientLifecycle(s.inbound.onClientReady, s.inbound.onClientStop)
 	s.Logger.Info("private inbound listeners enabled (per-account :80 + :443)")
 }
 
@@ -1579,13 +1579,13 @@ func (s *Server) addMapping(ctx context.Context, mapping *proto.ProxyMapping) er
 	authToken := mapping.GetAuthToken()
 
 	svcKey := s.serviceKeyForMapping(mapping)
-	if err := s.netbird.AddPeer(ctx, accountID, svcKey, authToken, svcID); err != nil {
+	if err := s.cosmos.AddPeer(ctx, accountID, svcKey, authToken, svcID); err != nil {
 		return fmt.Errorf("create peer for service %s: %w", svcID, err)
 	}
 
 	if err := s.setupMappingRoutes(ctx, mapping); err != nil {
 		s.cleanupMappingRoutes(mapping)
-		if peerErr := s.netbird.RemovePeer(ctx, accountID, svcKey); peerErr != nil {
+		if peerErr := s.cosmos.RemovePeer(ctx, accountID, svcKey); peerErr != nil {
 			s.Logger.WithError(peerErr).WithField("service_id", svcID).Warn("failed to remove peer after setup failure")
 		}
 		return err
@@ -1595,7 +1595,7 @@ func (s *Server) addMapping(ctx context.Context, mapping *proto.ProxyMapping) er
 }
 
 // modifyMapping updates a service mapping in place without tearing down the
-// NetBird peer. It cleans up old routes using the previously stored mapping
+// Cosmos peer. It cleans up old routes using the previously stored mapping
 // state and re-applies them from the new mapping.
 func (s *Server) modifyMapping(ctx context.Context, mapping *proto.ProxyMapping) error {
 	if old := s.loadMapping(types.ServiceID(mapping.GetId())); old != nil {
@@ -1615,7 +1615,7 @@ func (s *Server) modifyMapping(ctx context.Context, mapping *proto.ProxyMapping)
 }
 
 // setupMappingRoutes configures the appropriate routes or relays for the given
-// service mapping based on its mode. The NetBird peer must already exist.
+// service mapping based on its mode. The Cosmos peer must already exist.
 func (s *Server) setupMappingRoutes(ctx context.Context, mapping *proto.ProxyMapping) error {
 	switch types.ServiceMode(mapping.GetMode()) {
 	case types.ServiceModeTCP:
@@ -2050,7 +2050,7 @@ func (s *Server) updateMapping(ctx context.Context, mapping *proto.ProxyMapping)
 	return nil
 }
 
-// removeMapping tears down routes/relays and the NetBird peer for a service.
+// removeMapping tears down routes/relays and the Cosmos peer for a service.
 // Uses the stored mapping state when available to ensure all previously
 // configured routes are cleaned up.
 func (s *Server) removeMapping(ctx context.Context, mapping *proto.ProxyMapping) {
@@ -2058,14 +2058,14 @@ func (s *Server) removeMapping(ctx context.Context, mapping *proto.ProxyMapping)
 	svcKey := s.serviceKeyForMapping(mapping)
 	removePeer := s.removePeer
 	if removePeer == nil {
-		removePeer = s.netbird.RemovePeer
+		removePeer = s.cosmos.RemovePeer
 	}
 	if err := removePeer(ctx, accountID, svcKey); err != nil {
 		s.Logger.WithFields(log.Fields{
 			"account_id": accountID,
 			"service_id": mapping.GetId(),
 			"error":      err,
-		}).Error("failed to remove NetBird peer, continuing cleanup")
+		}).Error("failed to remove Cosmos peer, continuing cleanup")
 	}
 
 	if old := s.deleteMapping(types.ServiceID(mapping.GetId())); old != nil {
@@ -2079,7 +2079,7 @@ func (s *Server) removeMapping(ctx context.Context, mapping *proto.ProxyMapping)
 }
 
 // cleanupMappingRoutes removes HTTP/TLS/L4 routes and custom port state for a
-// service without touching the NetBird peer. This is used for both full
+// service without touching the Cosmos peer. This is used for both full
 // removal and in-place modification of mappings.
 func (s *Server) cleanupMappingRoutes(mapping *proto.ProxyMapping) {
 	svcID := types.ServiceID(mapping.GetId())

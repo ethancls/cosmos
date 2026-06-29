@@ -216,7 +216,7 @@ func addCLI(ctx context.Context, iface string) error {
 
 	// --change-interface (no --permanent) binds the interface for the
 	// current runtime only; we do not want membership to persist across
-	// reboots because netbird re-asserts it on every startup.
+	// reboots because cosmos re-asserts it on every startup.
 	out, err := exec.CommandContext(ctx,
 		"firewall-cmd", "--zone="+TrustedZone, "--change-interface="+iface,
 	).CombinedOutput()

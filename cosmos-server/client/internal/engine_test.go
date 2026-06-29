@@ -661,10 +661,10 @@ func TestEngine_UpdateNetworkMapWithDNSUpdate(t *testing.T) {
 					ServiceEnable: true,
 					CustomZones: []*mgmtProto.CustomZone{
 						{
-							Domain: "netbird.cloud.",
+							Domain: "cosmos.cloud.",
 							Records: []*mgmtProto.SimpleRecord{
 								{
-									Name:  "peer-a.netbird.cloud.",
+									Name:  "peer-a.cosmos.cloud.",
 									Type:  1,
 									Class: nbdns.DefaultClass,
 									TTL:   300,
@@ -693,10 +693,10 @@ func TestEngine_UpdateNetworkMapWithDNSUpdate(t *testing.T) {
 			expectedZonesLen: 1,
 			expectedZones: []nbdns.CustomZone{
 				{
-					Domain: "netbird.cloud.",
+					Domain: "cosmos.cloud.",
 					Records: []nbdns.SimpleRecord{
 						{
-							Name:  "peer-a.netbird.cloud.",
+							Name:  "peer-a.cosmos.cloud.",
 							Type:  1,
 							Class: nbdns.DefaultClass,
 							TTL:   300,

@@ -18,7 +18,7 @@ func TestSetupLogFile_RotatesOnSize(t *testing.T) {
 	t.Setenv("NB_LOG_MAX_SIZE_MB", "1")
 
 	dir := t.TempDir()
-	logPath := filepath.Join(dir, "netbird.log")
+	logPath := filepath.Join(dir, "cosmos.log")
 
 	w, err := setupLogFile(logPath, false)
 	require.NoError(t, err)
@@ -46,7 +46,7 @@ func TestSetupLogFile_RotatesOnSize(t *testing.T) {
 			if name == filepath.Base(logPath) {
 				continue
 			}
-			if strings.HasPrefix(name, "netbird-") && strings.HasSuffix(name, ".log.gz") {
+			if strings.HasPrefix(name, "cosmos-") && strings.HasSuffix(name, ".log.gz") {
 				return true
 			}
 		}
@@ -60,7 +60,7 @@ func TestSetupLogFile_RotationDisabled(t *testing.T) {
 	t.Setenv("NB_LOG_MAX_SIZE_MB", "1")
 
 	dir := t.TempDir()
-	logPath := filepath.Join(dir, "netbird.log")
+	logPath := filepath.Join(dir, "cosmos.log")
 
 	w, err := setupLogFile(logPath, true)
 	require.NoError(t, err)

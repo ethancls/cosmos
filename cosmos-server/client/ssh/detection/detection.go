@@ -13,12 +13,12 @@ import (
 )
 
 const (
-	// ServerIdentifier is the base response for NetBird SSH servers
-	ServerIdentifier = "NetBird-SSH-Server"
-	// ProxyIdentifier is the base response for NetBird SSH proxy
-	ProxyIdentifier = "NetBird-SSH-Proxy"
+	// ServerIdentifier is the base response for Cosmos SSH servers
+	ServerIdentifier = "Cosmos-SSH-Server"
+	// ProxyIdentifier is the base response for Cosmos SSH proxy
+	ProxyIdentifier = "Cosmos-SSH-Proxy"
 	// JWTRequiredMarker is appended to responses when JWT is required
-	JWTRequiredMarker = "NetBird-JWT-Required"
+	JWTRequiredMarker = "Cosmos-JWT-Required"
 
 	// DefaultTimeout is the default timeout for SSH server detection
 	DefaultTimeout = 5 * time.Second
@@ -27,8 +27,8 @@ const (
 type ServerType string
 
 const (
-	ServerTypeNetBirdJWT   ServerType = "netbird-jwt"
-	ServerTypeNetBirdNoJWT ServerType = "netbird-no-jwt"
+	ServerTypeCosmosJWT   ServerType = "cosmos-jwt"
+	ServerTypeCosmosNoJWT ServerType = "cosmos-no-jwt"
 	ServerTypeRegular      ServerType = "regular"
 )
 
@@ -39,15 +39,15 @@ type Dialer interface {
 
 // RequiresJWT checks if the server type requires JWT authentication
 func (s ServerType) RequiresJWT() bool {
-	return s == ServerTypeNetBirdJWT
+	return s == ServerTypeCosmosJWT
 }
 
 // ExitCode returns the exit code for the detect command
 func (s ServerType) ExitCode() int {
 	switch s {
-	case ServerTypeNetBirdJWT:
+	case ServerTypeCosmosJWT:
 		return 0
-	case ServerTypeNetBirdNoJWT:
+	case ServerTypeCosmosNoJWT:
 		return 1
 	case ServerTypeRegular:
 		return 2
@@ -92,8 +92,8 @@ func DetectSSHServerType(ctx context.Context, dialer Dialer, host string, port i
 	}
 
 	if strings.Contains(serverBanner, JWTRequiredMarker) {
-		return ServerTypeNetBirdJWT, nil
+		return ServerTypeCosmosJWT, nil
 	}
 
-	return ServerTypeNetBirdNoJWT, nil
+	return ServerTypeCosmosNoJWT, nil
 }

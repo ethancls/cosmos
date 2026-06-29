@@ -31,8 +31,8 @@ func init() {
 
 var loginCmd = &cobra.Command{
 	Use:   "login",
-	Short: "Log in to the NetBird network",
-	Long:  "Log in to the NetBird network using a setup key or SSO",
+	Short: "Log in to the Cosmos network",
+	Long:  "Log in to the Cosmos network using a setup key or SSO",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if err := setEnvAndFlags(cmd); err != nil {
 			return fmt.Errorf("set env and flags: %v", err)
@@ -85,7 +85,7 @@ func doDaemonLogin(ctx context.Context, cmd *cobra.Command, providedSetupKey str
 		//nolint
 		return fmt.Errorf("failed to connect to daemon error: %v\n"+
 			"If the daemon is not running please run: "+
-			"\nnetbird service install \nnetbird service start\n", err)
+			"\ncosmos service install \ncosmos service start\n", err)
 	}
 	defer conn.Close()
 
@@ -167,7 +167,7 @@ func getActiveProfile(ctx context.Context, pm *profilemanager.ProfileManager, pr
 	}
 
 	if activeProf == nil {
-		return nil, fmt.Errorf("active profile not found, please run 'netbird profile create' first")
+		return nil, fmt.Errorf("active profile not found, please run 'cosmos profile create' first")
 	}
 	return activeProf, nil
 }
@@ -216,7 +216,7 @@ func switchProfile(ctx context.Context, handle string, username string) (profile
 		//nolint
 		return "", fmt.Errorf("failed to connect to daemon error: %v\n"+
 			"If the daemon is not running please run: "+
-			"\nnetbird service install \nnetbird service start\n", err)
+			"\ncosmos service install \ncosmos service start\n", err)
 	}
 	defer conn.Close()
 
@@ -366,7 +366,7 @@ func openURL(cmd *cobra.Command, verificationURIComplete, userCode string, noBro
 	if !noBrowser {
 		if err := util.OpenBrowser(verificationURIComplete); err != nil {
 			cmd.Println("\nAlternatively, you may want to use a setup key, see:\n\n" +
-				"https://docs.netbird.io/how-to/register-machines-using-setup-keys")
+				"https://docs.cosmos.io/how-to/register-machines-using-setup-keys")
 		}
 	}
 }

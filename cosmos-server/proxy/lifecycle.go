@@ -86,7 +86,7 @@ type Config struct {
 	// TrustedProxies is a list of IP prefixes for trusted upstream
 	// proxies that may set forwarding headers.
 	TrustedProxies []netip.Prefix
-	// WireguardPort is the UDP port for the embedded NetBird tunnel.
+	// WireguardPort is the UDP port for the embedded Cosmos tunnel.
 	// Zero asks the OS for a random port.
 	WireguardPort uint16
 	// ProxyProtocol enables PROXY protocol (v1/v2) on TCP listeners.
@@ -105,7 +105,7 @@ type Config struct {
 	// RequireSubdomain forces accounts to use a subdomain in front of
 	// the proxy's cluster domain.
 	RequireSubdomain bool
-	// Private flags this proxy as embedded in a netbird client and
+	// Private flags this proxy as embedded in a cosmos client and
 	// serving exclusively over the WireGuard tunnel. Also enables
 	// per-account inbound listeners on each embedded client's netstack.
 	Private bool

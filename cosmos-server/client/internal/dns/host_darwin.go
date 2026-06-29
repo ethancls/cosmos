@@ -23,8 +23,8 @@ import (
 )
 
 const (
-	netbirdDNSStateKeyFormat            = "State:/Network/Service/NetBird-%s/DNS"
-	netbirdDNSStateKeyIndexedFormat     = "State:/Network/Service/NetBird-%s-%d/DNS"
+	cosmosDNSStateKeyFormat            = "State:/Network/Service/Cosmos-%s/DNS"
+	cosmosDNSStateKeyIndexedFormat     = "State:/Network/Service/Cosmos-%s-%d/DNS"
 	globalIPv4State                     = "State:/Network/Global/IPv4"
 	primaryServiceStateKeyFormat        = "State:/Network/Service/%s/DNS"
 	keySupplementalMatchDomains         = "SupplementalMatchDomains"
@@ -165,7 +165,7 @@ func (s *systemConfigurator) getRemovableKeysWithDefaults() []string {
 	return keys
 }
 
-// discoverExistingKeys probes scutil for all NetBird DNS keys that may exist.
+// discoverExistingKeys probes scutil for all Cosmos DNS keys that may exist.
 // This handles the case where createdKeys is empty (e.g., state file lost after unclean shutdown).
 func (s *systemConfigurator) discoverExistingKeys() []string {
 	dnsKeys, err := getSystemDNSKeys()
@@ -177,7 +177,7 @@ func (s *systemConfigurator) discoverExistingKeys() []string {
 	var keys []string
 
 	for _, suffix := range []string{searchSuffix, matchSuffix, localSuffix} {
-		key := getKeyWithInput(netbirdDNSStateKeyFormat, suffix)
+		key := getKeyWithInput(cosmosDNSStateKeyFormat, suffix)
 		if strings.Contains(dnsKeys, key) {
 			keys = append(keys, key)
 		}
@@ -185,7 +185,7 @@ func (s *systemConfigurator) discoverExistingKeys() []string {
 
 	for _, suffix := range []string{searchSuffix, matchSuffix} {
 		for i := 0; ; i++ {
-			key := fmt.Sprintf(netbirdDNSStateKeyIndexedFormat, suffix, i)
+			key := fmt.Sprintf(cosmosDNSStateKeyIndexedFormat, suffix, i)
 			if !strings.Contains(dnsKeys, key) {
 				break
 			}
@@ -224,7 +224,7 @@ func (s *systemConfigurator) addLocalDNS() error {
 			return fmt.Errorf("recordSystemDNSSettings(): %w", err)
 		}
 	}
-	localKey := getKeyWithInput(netbirdDNSStateKeyFormat, localSuffix)
+	localKey := getKeyWithInput(cosmosDNSStateKeyFormat, localSuffix)
 	if !s.systemDNSSettings.ServerIP.IsValid() || len(s.systemDNSSettings.Domains) == 0 {
 		log.Info("Not enabling local DNS server")
 		return nil
@@ -386,7 +386,7 @@ func (s *systemConfigurator) addBatchedDomains(suffix string, domains []string, 
 	batches := splitDomainsIntoBatches(domains)
 
 	for i, batch := range batches {
-		key := fmt.Sprintf(netbirdDNSStateKeyIndexedFormat, suffix, i)
+		key := fmt.Sprintf(cosmosDNSStateKeyIndexedFormat, suffix, i)
 		domainsStr := strings.Join(batch, " ")
 
 		if err := s.addDNSState(key, domainsStr, ip, port, enableSearch); err != nil {

@@ -289,8 +289,8 @@ func TestParsingToJSON(t *testing.T) {
             "details": [
               {
                 "fqdn": "peer-1.awesome-domain.com",
-                "netbirdIp": "192.168.178.101",
-                "netbirdIpv6": "fd00::1",
+                "cosmosIp": "192.168.178.101",
+                "cosmosIpv6": "fd00::1",
                 "publicKey": "Pubkey1",
                 "status": "Connected",
                 "lastStatusUpdate": "2001-01-01T01:01:01Z",
@@ -315,7 +315,7 @@ func TestParsingToJSON(t *testing.T) {
               },
               {
                 "fqdn": "peer-2.awesome-domain.com",
-                "netbirdIp": "192.168.178.102",
+                "cosmosIp": "192.168.178.102",
                 "publicKey": "Pubkey2",
                 "status": "Connected",
                 "lastStatusUpdate": "2002-02-02T02:02:02Z",
@@ -367,8 +367,8 @@ func TestParsingToJSON(t *testing.T) {
               }
             ]
           },
-          "netbirdIp": "192.168.178.100/16",
-          "netbirdIpv6": "fd00::100",
+          "cosmosIp": "192.168.178.100/16",
+          "cosmosIpv6": "fd00::100",
           "publicKey": "Some-Pub-Key",
           "usesKernelInterface": true,
           "wireguardPort": 51820,
@@ -426,8 +426,8 @@ func TestParsingToYAML(t *testing.T) {
     connected: 2
     details:
         - fqdn: peer-1.awesome-domain.com
-          netbirdIp: 192.168.178.101
-          netbirdIpv6: fd00::1
+          cosmosIp: 192.168.178.101
+          cosmosIpv6: fd00::1
           publicKey: Pubkey1
           status: Connected
           lastStatusUpdate: 2001-01-01T01:01:01Z
@@ -447,7 +447,7 @@ func TestParsingToYAML(t *testing.T) {
           networks:
             - 10.1.0.0/24
         - fqdn: peer-2.awesome-domain.com
-          netbirdIp: 192.168.178.102
+          cosmosIp: 192.168.178.102
           publicKey: Pubkey2
           status: Connected
           lastStatusUpdate: 2002-02-02T02:02:02Z
@@ -486,8 +486,8 @@ relays:
         - uri: turns:my-awesome-turn.com:443?transport=tcp
           available: false
           error: 'context: deadline exceeded'
-netbirdIp: 192.168.178.100/16
-netbirdIpv6: fd00::100
+cosmosIp: 192.168.178.100/16
+cosmosIpv6: fd00::100
 publicKey: Some-Pub-Key
 usesKernelInterface: true
 wireguardPort: 51820
@@ -534,8 +534,8 @@ func TestParsingToDetail(t *testing.T) {
 	expectedDetail := fmt.Sprintf(
 		`Peers detail:
  peer-1.awesome-domain.com:
-  NetBird IP: 192.168.178.101
-  NetBird IPv6: fd00::1
+  Cosmos IP: 192.168.178.101
+  Cosmos IPv6: fd00::1
   Public key: Pubkey1
   Status: Connected
   -- detail --
@@ -551,7 +551,7 @@ func TestParsingToDetail(t *testing.T) {
   Latency: 10ms
 
  peer-2.awesome-domain.com:
-  NetBird IP: 192.168.178.102
+  Cosmos IP: 192.168.178.102
   Public key: Pubkey2
   Status: Connected
   -- detail --
@@ -580,8 +580,8 @@ Nameservers:
   [8.8.8.8:53] for [.] is Available
   [1.1.1.1:53, 2.2.2.2:53] for [example.com, example.net] is Unavailable, reason: timeout
 FQDN: some-localhost.awesome-domain.com
-NetBird IP: 192.168.178.100/16
-NetBird IPv6: fd00::100
+Cosmos IP: 192.168.178.100/16
+Cosmos IPv6: fd00::100
 Interface type: Kernel
 Wireguard port: %d
 Quantum resistance: false
@@ -606,8 +606,8 @@ Signal: Connected
 Relays: 1/2 Available
 Nameservers: 1/2 Available
 FQDN: some-localhost.awesome-domain.com
-NetBird IP: 192.168.178.100/16
-NetBird IPv6: fd00::100
+Cosmos IP: 192.168.178.100/16
+Cosmos IPv6: fd00::100
 Interface type: Kernel
 Wireguard port: 51820
 Quantum resistance: false

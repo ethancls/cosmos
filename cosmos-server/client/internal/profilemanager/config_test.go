@@ -302,8 +302,8 @@ func TestUpdateOldManagementURL(t *testing.T) {
 		},
 		{
 			name:                  "No update needed when not using cloud management",
-			previousManagementURL: "https://netbird.example.com:33073",
-			expectedManagementURL: "https://netbird.example.com:33073",
+			previousManagementURL: "https://cosmos.example.com:33073",
+			expectedManagementURL: "https://cosmos.example.com:33073",
 			fileShouldNotChange:   true,
 		},
 	}

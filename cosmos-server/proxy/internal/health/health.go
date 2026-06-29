@@ -23,7 +23,7 @@ const (
 	maxClientCheckTimeout = 5 * time.Minute
 )
 
-// clientProvider provides access to NetBird clients for health checks.
+// clientProvider provides access to Cosmos clients for health checks.
 type clientProvider interface {
 	ListClientsForStartup() map[types.AccountID]*embed.Client
 }
@@ -46,7 +46,7 @@ type Checker struct {
 	checkHealth func(*embed.Client) ClientHealth
 }
 
-// ClientHealth represents the health status of a single NetBird client.
+// ClientHealth represents the health status of a single Cosmos client.
 type ClientHealth struct {
 	Healthy             bool   `json:"healthy"`
 	ManagementConnected bool   `json:"management_connected"`

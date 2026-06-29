@@ -11,7 +11,7 @@ import (
 // output regardless of which side runs the function: the inputs are ordered
 // lexicographically before concatenation.
 //
-// NetBird uses this value as the initial Rosenpass-side preshared key when no
+// Cosmos uses this value as the initial Rosenpass-side preshared key when no
 // explicit account-level PSK is configured, so both peers converge on the same
 // PSK before the first post-quantum handshake completes.
 //

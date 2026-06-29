@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	netbirdManager osManagerType = iota
+	cosmosManager osManagerType = iota
 	fileManager
 	networkManager
 	systemdManager
@@ -25,8 +25,8 @@ type osManagerType int
 
 func (t osManagerType) String() string {
 	switch t {
-	case netbirdManager:
-		return "netbird"
+	case cosmosManager:
+		return "cosmos"
 	case fileManager:
 		return "file"
 	case networkManager:
@@ -142,7 +142,7 @@ func scanResolvConfHeader() (osManagerType, string, []string, error) {
 // definitive (manager, reason) or a non-empty rejected diagnostic.
 func matchResolvConfHeader(text string) (osManagerType, string, string) {
 	if strings.Contains(text, fileGeneratedResolvConfContentHeader) {
-		return netbirdManager, "netbird-managed resolv.conf header detected", ""
+		return cosmosManager, "cosmos-managed resolv.conf header detected", ""
 	}
 	if strings.Contains(text, "NetworkManager") {
 		if isDbusListenerRunning(networkManagerDest, networkManagerDbusObjectNode) && isNetworkManagerSupported() {

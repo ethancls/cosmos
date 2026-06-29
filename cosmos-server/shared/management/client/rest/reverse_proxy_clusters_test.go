@@ -20,7 +20,7 @@ func boolPtr(b bool) *bool { return &b }
 
 var testCluster = api.ProxyCluster{
 	Id:                  "cluster-1",
-	Address:             "proxy.netbird.local",
+	Address:             "proxy.cosmos.local",
 	Type:                "shared",
 	Online:              true,
 	ConnectedProxies:    2,
@@ -64,27 +64,27 @@ func TestReverseProxyClusters_List_Err(t *testing.T) {
 
 func TestReverseProxyClusters_Delete_200(t *testing.T) {
 	withMockClient(func(c *rest.Client, mux *http.ServeMux) {
-		// PathEscape on "proxy.netbird.local" leaves it intact; the route mux
+		// PathEscape on "proxy.cosmos.local" leaves it intact; the route mux
 		// matches the unescaped form. Sanity-check both the method and that
 		// path-escaping doesn't double-encode the dotted address.
-		mux.HandleFunc("/api/reverse-proxies/clusters/proxy.netbird.local", func(w http.ResponseWriter, r *http.Request) {
+		mux.HandleFunc("/api/reverse-proxies/clusters/proxy.cosmos.local", func(w http.ResponseWriter, r *http.Request) {
 			assert.Equal(t, "DELETE", r.Method, "Delete must use DELETE")
 			w.WriteHeader(200)
 		})
-		err := c.ReverseProxyClusters.Delete(context.Background(), "proxy.netbird.local")
+		err := c.ReverseProxyClusters.Delete(context.Background(), "proxy.cosmos.local")
 		require.NoError(t, err)
 	})
 }
 
 func TestReverseProxyClusters_Delete_Err(t *testing.T) {
 	withMockClient(func(c *rest.Client, mux *http.ServeMux) {
-		mux.HandleFunc("/api/reverse-proxies/clusters/proxy.netbird.local", func(w http.ResponseWriter, r *http.Request) {
+		mux.HandleFunc("/api/reverse-proxies/clusters/proxy.cosmos.local", func(w http.ResponseWriter, r *http.Request) {
 			retBytes, _ := json.Marshal(util.ErrorResponse{Message: "Not found", Code: 404})
 			w.WriteHeader(404)
 			_, err := w.Write(retBytes)
 			require.NoError(t, err)
 		})
-		err := c.ReverseProxyClusters.Delete(context.Background(), "proxy.netbird.local")
+		err := c.ReverseProxyClusters.Delete(context.Background(), "proxy.cosmos.local")
 		assert.Error(t, err)
 	})
 }

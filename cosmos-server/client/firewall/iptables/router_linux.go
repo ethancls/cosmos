@@ -265,7 +265,7 @@ func (r *router) deleteIpSet(setName string) error {
 // AddNatRule inserts an iptables rule pair into the nat chain
 func (r *router) AddNatRule(pair firewall.RouterPair) error {
 	if r.legacyManagement {
-		log.Warnf("This peer is connected to a NetBird Management service with an older version. Allowing all traffic for %s", pair.Destination)
+		log.Warnf("This peer is connected to a Cosmos Management service with an older version. Allowing all traffic for %s", pair.Destination)
 		if err := r.addLegacyRouteRule(pair); err != nil {
 			return fmt.Errorf("add legacy routing rule: %w", err)
 		}
@@ -964,7 +964,7 @@ func (r *router) UpdateSet(set firewall.Set, prefixes []netip.Prefix) error {
 	return nberrors.FormatErrorOrNil(merr)
 }
 
-// AddInboundDNAT adds an inbound DNAT rule redirecting traffic from NetBird peers to local services.
+// AddInboundDNAT adds an inbound DNAT rule redirecting traffic from Cosmos peers to local services.
 func (r *router) AddInboundDNAT(localAddr netip.Addr, protocol firewall.Protocol, originalPort, translatedPort uint16) error {
 	ruleID := fmt.Sprintf("inbound-dnat-%s-%s-%d-%d", localAddr.String(), protocol, originalPort, translatedPort)
 

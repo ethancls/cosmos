@@ -15,13 +15,13 @@ func TestAddPeer(t *testing.T) {
 	key := "abc"
 	ip := "100.108.254.1"
 	status := NewRecorder("https://mgm")
-	err := status.AddPeer(key, "abc.netbird", ip, "")
+	err := status.AddPeer(key, "abc.cosmos", ip, "")
 	assert.NoError(t, err, "shouldn't return error")
 
 	_, exists := status.peers[key]
 	assert.True(t, exists, "value was found")
 
-	err = status.AddPeer(key, "abc.netbird", ip, "")
+	err = status.AddPeer(key, "abc.cosmos", ip, "")
 
 	assert.Error(t, err, "should return error on duplicate")
 }
@@ -30,7 +30,7 @@ func TestGetPeer(t *testing.T) {
 	key := "abc"
 	ip := "100.108.254.1"
 	status := NewRecorder("https://mgm")
-	err := status.AddPeer(key, "abc.netbird", ip, "")
+	err := status.AddPeer(key, "abc.cosmos", ip, "")
 	assert.NoError(t, err, "shouldn't return error")
 
 	peerStatus, err := status.GetPeer(key)
@@ -45,7 +45,7 @@ func TestGetPeer(t *testing.T) {
 func TestUpdatePeerState(t *testing.T) {
 	key := "abc"
 	ip := "10.10.10.10"
-	fqdn := "peer-a.netbird.local"
+	fqdn := "peer-a.cosmos.local"
 	status := NewRecorder("https://mgm")
 	require.NoError(t, status.AddPeer(key, fqdn, ip, ""))
 
@@ -67,13 +67,13 @@ func TestStatus_PeerStateByIP(t *testing.T) {
 	status := NewRecorder("https://mgm")
 	req := require.New(t)
 
-	req.NoError(status.AddPeer("pk-1", "peer-1.netbird", "100.64.0.10", ""))
-	req.NoError(status.AddPeer("pk-2", "peer-2.netbird", "100.64.0.11", ""))
+	req.NoError(status.AddPeer("pk-1", "peer-1.cosmos", "100.64.0.10", ""))
+	req.NoError(status.AddPeer("pk-2", "peer-2.cosmos", "100.64.0.11", ""))
 
 	state, ok := status.PeerStateByIP("100.64.0.10")
 	req.True(ok, "known tunnel IP should resolve to a peer state")
 	req.Equal("pk-1", state.PubKey, "matching state must carry the right pub key")
-	req.Equal("peer-1.netbird", state.FQDN, "matching state must carry the right FQDN")
+	req.Equal("peer-1.cosmos", state.FQDN, "matching state must carry the right FQDN")
 
 	_, ok = status.PeerStateByIP("100.64.0.99")
 	req.False(ok, "unknown IP must report ok=false")
@@ -83,7 +83,7 @@ func TestStatus_PeerStateByIP_MatchesIPv6(t *testing.T) {
 	status := NewRecorder("https://mgm")
 	req := require.New(t)
 
-	req.NoError(status.AddPeer("pk-1", "peer-1.netbird", "100.64.0.10", "fd00::1"))
+	req.NoError(status.AddPeer("pk-1", "peer-1.cosmos", "100.64.0.10", "fd00::1"))
 
 	state, ok := status.PeerStateByIP("fd00::1")
 	req.True(ok, "IPv6-only match must resolve to the peer state")
@@ -99,7 +99,7 @@ func TestStatus_PeerStateByIP_IgnoresOfflinePeers(t *testing.T) {
 	req := require.New(t)
 
 	status.ReplaceOfflinePeers([]State{
-		{PubKey: "pk-offline", FQDN: "offline.netbird", IP: "100.64.0.20", IPv6: "fd00::20"},
+		{PubKey: "pk-offline", FQDN: "offline.cosmos", IP: "100.64.0.20", IPv6: "fd00::20"},
 	})
 
 	_, ok := status.PeerStateByIP("100.64.0.20")
@@ -115,7 +115,7 @@ func TestStatus_PeerStateByIP_RemovedPeer(t *testing.T) {
 	status := NewRecorder("https://mgm")
 	req := require.New(t)
 
-	req.NoError(status.AddPeer("pk-1", "peer-1.netbird", "100.64.0.10", "fd00::1"))
+	req.NoError(status.AddPeer("pk-1", "peer-1.cosmos", "100.64.0.10", "fd00::1"))
 
 	_, ok := status.PeerStateByIP("100.64.0.10")
 	req.True(ok, "active peer must resolve before removal")
@@ -131,7 +131,7 @@ func TestStatus_PeerStateByIP_RemovedPeer(t *testing.T) {
 
 func TestStatus_UpdatePeerFQDN(t *testing.T) {
 	key := "abc"
-	fqdn := "peer-a.netbird.local"
+	fqdn := "peer-a.cosmos.local"
 	status := NewRecorder("https://mgm")
 	peerState := State{
 		PubKey: key,
@@ -152,7 +152,7 @@ func TestGetPeerStateChangeNotifierLogic(t *testing.T) {
 	key := "abc"
 	ip := "10.10.10.10"
 	status := NewRecorder("https://mgm")
-	_ = status.AddPeer(key, "abc.netbird", ip, "")
+	_ = status.AddPeer(key, "abc.cosmos", ip, "")
 
 	sub := status.SubscribeToPeerStateChanges(context.Background(), key)
 	assert.NotNil(t, sub, "channel shouldn't be nil")

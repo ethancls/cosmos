@@ -47,7 +47,7 @@ func (d *Dispatcher) SendMessage(ctx context.Context, msg *proto.EncryptedMessag
 	}
 
 	if msg.RemoteKey == "dummy" {
-		// Test message send during netbird status
+		// Test message send during cosmos status
 		return &proto.EncryptedMessage{}, nil
 	}
 

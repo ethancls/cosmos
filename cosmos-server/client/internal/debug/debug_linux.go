@@ -72,14 +72,14 @@ func (g *BundleGenerator) trySystemdLogFallback() error {
 	return nil
 }
 
-// getServiceName gets the service name from environment or defaults to netbird
+// getServiceName gets the service name from environment or defaults to cosmos
 func getServiceName() string {
 	if unitName := os.Getenv("SYSTEMD_UNIT"); unitName != "" {
 		log.Debugf("Detected SYSTEMD_UNIT environment variable: %s", unitName)
 		return unitName
 	}
 
-	return "netbird"
+	return "cosmos"
 }
 
 // getSystemdLogs retrieves logs from systemd journal for a specific service using journalctl
@@ -810,7 +810,7 @@ func formatSetKeyType(keyType nftables.SetDatatype) string {
 	}
 }
 
-// addSysctls collects forwarding and netbird-managed sysctl values and writes them to the bundle.
+// addSysctls collects forwarding and cosmos-managed sysctl values and writes them to the bundle.
 func (g *BundleGenerator) addSysctls() error {
 	log.Info("Collecting sysctls")
 	content := collectSysctls()
@@ -823,7 +823,7 @@ func (g *BundleGenerator) addSysctls() error {
 	return nil
 }
 
-// collectSysctls reads every sysctl that the netbird client may modify, plus
+// collectSysctls reads every sysctl that the cosmos client may modify, plus
 // global IPv4/IPv6 forwarding, and returns a formatted dump grouped by topic.
 // Per-interface values are enumerated by listing /proc/sys/net/ipv{4,6}/conf.
 func collectSysctls() string {

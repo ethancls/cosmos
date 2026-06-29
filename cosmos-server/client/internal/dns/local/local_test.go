@@ -47,7 +47,7 @@ func (m mockPeerConnectivity) IsConnectedByIP(ip string) (known, connected bool)
 
 func TestLocalResolver_ServeDNS(t *testing.T) {
 	recordA := nbdns.SimpleRecord{
-		Name:  "peera.netbird.cloud.",
+		Name:  "peera.cosmos.cloud.",
 		Type:  1,
 		Class: nbdns.DefaultClass,
 		TTL:   300,
@@ -55,14 +55,14 @@ func TestLocalResolver_ServeDNS(t *testing.T) {
 	}
 
 	recordCNAME := nbdns.SimpleRecord{
-		Name:  "peerb.netbird.cloud.",
+		Name:  "peerb.cosmos.cloud.",
 		Type:  5,
 		Class: nbdns.DefaultClass,
 		TTL:   300,
-		RData: "www.netbird.io",
+		RData: "www.cosmos.io",
 	}
 
-	wild := "wild.netbird.cloud."
+	wild := "wild.cosmos.cloud."
 
 	recordWild := nbdns.SimpleRecord{
 		Name:  "*." + wild,
@@ -554,7 +554,7 @@ func TestLocalResolver_NoErrorWithDifferentRecordType(t *testing.T) {
 	}
 
 	recordA := nbdns.SimpleRecord{
-		Name:  "example.netbird.cloud.",
+		Name:  "example.cosmos.cloud.",
 		Type:  int(dns.TypeA),
 		Class: nbdns.DefaultClass,
 		TTL:   300,
@@ -562,14 +562,14 @@ func TestLocalResolver_NoErrorWithDifferentRecordType(t *testing.T) {
 	}
 
 	recordCNAME := nbdns.SimpleRecord{
-		Name:  "alias.netbird.cloud.",
+		Name:  "alias.cosmos.cloud.",
 		Type:  int(dns.TypeCNAME),
 		Class: nbdns.DefaultClass,
 		TTL:   300,
 		RData: "target.example.com.",
 	}
 
-	resolver.Update([]nbdns.CustomZone{{Domain: "netbird.cloud.", Records: []nbdns.SimpleRecord{recordA, recordCNAME}}})
+	resolver.Update([]nbdns.CustomZone{{Domain: "cosmos.cloud.", Records: []nbdns.SimpleRecord{recordA, recordCNAME}}})
 
 	testCases := []struct {
 		name           string
@@ -580,49 +580,49 @@ func TestLocalResolver_NoErrorWithDifferentRecordType(t *testing.T) {
 	}{
 		{
 			name:           "Query A record that exists",
-			queryName:      "example.netbird.cloud.",
+			queryName:      "example.cosmos.cloud.",
 			queryType:      dns.TypeA,
 			expectedRcode:  dns.RcodeSuccess,
 			shouldHaveData: true,
 		},
 		{
 			name:           "Query AAAA for domain with only A record",
-			queryName:      "example.netbird.cloud.",
+			queryName:      "example.cosmos.cloud.",
 			queryType:      dns.TypeAAAA,
 			expectedRcode:  dns.RcodeSuccess,
 			shouldHaveData: false,
 		},
 		{
 			name:           "Query other record with different case and non-fqdn",
-			queryName:      "EXAMPLE.netbird.cloud",
+			queryName:      "EXAMPLE.cosmos.cloud",
 			queryType:      dns.TypeAAAA,
 			expectedRcode:  dns.RcodeSuccess,
 			shouldHaveData: false,
 		},
 		{
 			name:           "Query TXT for domain with only A record",
-			queryName:      "example.netbird.cloud.",
+			queryName:      "example.cosmos.cloud.",
 			queryType:      dns.TypeTXT,
 			expectedRcode:  dns.RcodeSuccess,
 			shouldHaveData: false,
 		},
 		{
 			name:           "Query A for domain with only CNAME record",
-			queryName:      "alias.netbird.cloud.",
+			queryName:      "alias.cosmos.cloud.",
 			queryType:      dns.TypeA,
 			expectedRcode:  dns.RcodeSuccess,
 			shouldHaveData: true,
 		},
 		{
 			name:           "Query AAAA for domain with only CNAME record",
-			queryName:      "alias.netbird.cloud.",
+			queryName:      "alias.cosmos.cloud.",
 			queryType:      dns.TypeAAAA,
 			expectedRcode:  dns.RcodeSuccess,
 			shouldHaveData: true,
 		},
 		{
 			name:           "Query for completely non-existent domain",
-			queryName:      "nonexistent.netbird.cloud.",
+			queryName:      "nonexistent.cosmos.cloud.",
 			queryType:      dns.TypeA,
 			expectedRcode:  dns.RcodeNameError,
 			shouldHaveData: false,
@@ -2634,7 +2634,7 @@ func BenchmarkFindZone_TypicalCase(b *testing.B) {
 
 	// Typical setup: peer zone (authoritative) + one user zone (non-authoritative)
 	resolver.Update([]nbdns.CustomZone{
-		{Domain: "netbird.cloud.", NonAuthoritative: false},
+		{Domain: "cosmos.cloud.", NonAuthoritative: false},
 		{Domain: "custom.local.", NonAuthoritative: true},
 	})
 
@@ -2676,7 +2676,7 @@ func BenchmarkIsInManagedZone_ManyZones(b *testing.B) {
 // one record was dropped, the original list is restored (escape hatch
 // for the "all proxies offline" case).
 func TestLocalResolver_FilterDisconnectedPeerAnswers(t *testing.T) {
-	zone := "svc.cluster.netbird."
+	zone := "svc.cluster.cosmos."
 	connectedRec := nbdns.SimpleRecord{
 		Name:  zone,
 		Type:  int(dns.TypeA),

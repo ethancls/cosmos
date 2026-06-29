@@ -14,7 +14,7 @@ type InstanceAPI struct {
 }
 
 // GetStatus get instance status
-// See more: https://docs.netbird.io/api/resources/instance#get-instance-status
+// See more: https://docs.cosmos.io/api/resources/instance#get-instance-status
 func (a *InstanceAPI) GetStatus(ctx context.Context) (*api.InstanceStatus, error) {
 	resp, err := a.c.NewRequest(ctx, "GET", "/api/instance", nil, nil)
 	if err != nil {
@@ -28,7 +28,7 @@ func (a *InstanceAPI) GetStatus(ctx context.Context) (*api.InstanceStatus, error
 }
 
 // Setup perform initial instance setup
-// See more: https://docs.netbird.io/api/resources/instance#setup-instance
+// See more: https://docs.cosmos.io/api/resources/instance#setup-instance
 func (a *InstanceAPI) Setup(ctx context.Context, request api.PostApiSetupJSONRequestBody) (*api.SetupResponse, error) {
 	requestBytes, err := json.Marshal(request)
 	if err != nil {

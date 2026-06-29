@@ -33,7 +33,7 @@ func (e *Engine) setupSSHPortRedirection() error {
 
 	localAddr := e.wgInterface.Address().IP
 	if !localAddr.IsValid() {
-		return errors.New("invalid local NetBird address")
+		return errors.New("invalid local Cosmos address")
 	}
 
 	if err := e.firewall.AddInboundDNAT(localAddr, firewallManager.ProtocolTCP, 22, 22022); err != nil {
@@ -216,7 +216,7 @@ func (e *Engine) GetPeerSSHKey(peerAddress string) ([]byte, bool) {
 	return nil, false
 }
 
-// cleanupSSHConfig removes NetBird SSH client configuration on shutdown
+// cleanupSSHConfig removes Cosmos SSH client configuration on shutdown
 func (e *Engine) cleanupSSHConfig() {
 	if netstack.IsEnabled() {
 		return
@@ -246,8 +246,8 @@ func (e *Engine) startSSHServer(jwtConfig *sshserver.JWTConfig) error {
 	wgAddr := e.wgInterface.Address()
 	server.SetNetworkValidation(wgAddr)
 
-	netbirdIP := wgAddr.IP
-	listenAddr := netip.AddrPortFrom(netbirdIP, sshserver.InternalSSHPort)
+	cosmosIP := wgAddr.IP
+	listenAddr := netip.AddrPortFrom(cosmosIP, sshserver.InternalSSHPort)
 
 	if netstackNet := e.wgInterface.GetNet(); netstackNet != nil {
 		server.SetNetstackNet(netstackNet)
@@ -326,7 +326,7 @@ func (e *Engine) cleanupSSHPortRedirection() error {
 
 	localAddr := e.wgInterface.Address().IP
 	if !localAddr.IsValid() {
-		return errors.New("invalid local NetBird address")
+		return errors.New("invalid local Cosmos address")
 	}
 
 	if err := e.firewall.RemoveInboundDNAT(localAddr, firewallManager.ProtocolTCP, 22, 22022); err != nil {

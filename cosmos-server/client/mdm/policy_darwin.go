@@ -14,21 +14,21 @@ import (
 )
 
 // policyPlistPath is the well-known location where macOS writes the
-// device-level mandatory MDM payload for NetBird. The path is fixed by
+// device-level mandatory MDM payload for Cosmos. The path is fixed by
 // Apple convention: when an MDM provider (Jamf / Kandji / Mosyle /
 // Intune for Mac / Workspace ONE) pushes a Configuration Profile that
 // contains a com.apple.ManagedClient.preferences payload targeting the
-// bundle id io.netbird.client, the OS materializes the payload here.
+// bundle id io.cosmos.client, the OS materializes the payload here.
 //
 // Read-only — only the OS (root) is supposed to write this file. The
 // loader sanity-checks the file mode and refuses to honour a world-
 // writable plist, as a defense against tampered installs.
-const policyPlistPath = "/Library/Managed Preferences/io.netbird.client.plist"
+const policyPlistPath = "/Library/Managed Preferences/io.cosmos.client.plist"
 
 // loadPlatformPolicy reads the MDM-managed configuration from the macOS
 // managed-preferences plist at policyPlistPath. Returns:
 //   - (nil, nil)  when the plist is absent (device not MDM-enrolled for
-//     NetBird, or admin has not yet pushed a payload)
+//     Cosmos, or admin has not yet pushed a payload)
 //   - (map, nil)  with N entries when N managed values are present
 //     (N may be 0 — empty plist still signals enrollment to the caller)
 //   - (nil, err)  on permission / parse / safety errors (including
@@ -43,7 +43,7 @@ func loadPlatformPolicy() (map[string]any, error) {
 	f, err := os.Open(policyPlistPath)
 	if err != nil {
 		if errors.Is(err, fs.ErrNotExist) {
-			// Not enrolled for NetBird. Caller treats nil as
+			// Not enrolled for Cosmos. Caller treats nil as
 			// "no MDM source present".
 			//nolint:nilnil // (nil, nil) is the documented platform-absent sentinel; see LoadPolicy.
 			return nil, nil

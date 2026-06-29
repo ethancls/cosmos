@@ -123,7 +123,7 @@ func (i *Info) SetFlags(
 }
 
 // removeAddresses drops network addresses whose IP matches any of the given
-// addresses, regardless of prefix length. Used to exclude the NetBird overlay
+// addresses, regardless of prefix length. Used to exclude the Cosmos overlay
 // address, which otherwise churns the meta as the interface comes and goes.
 func (i *Info) removeAddresses(ips ...netip.Addr) {
 	if len(ips) == 0 {
@@ -146,7 +146,7 @@ func extractUserAgent(ctx context.Context) string {
 		agent, ok := md["user-agent"]
 		if ok {
 			nbAgent := strings.Split(agent[0], " ")[0]
-			if strings.HasPrefix(nbAgent, "netbird") {
+			if strings.HasPrefix(nbAgent, "cosmos") {
 				return nbAgent
 			}
 			return ""
