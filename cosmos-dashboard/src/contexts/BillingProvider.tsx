@@ -49,8 +49,8 @@ export const trialExpiresInfo: Announcement = {
   tag: "Trial",
   text: "Your trial is ending soon. Need more time? Contact us to extend your trial.",
   variant: "default", // "default" or "important"
-  link: "mailto:support@netbird.io",
-  linkText: "support@netbird.io",
+  link: "mailto:support@cosmos.sh",
+  linkText: "support@cosmos.sh",
   isExternal: false,
   closeable: false,
   isCloudOnly: true,
@@ -263,9 +263,9 @@ function BillingContextProvider({ children }: Readonly<Props>) {
           mutate("/integrations/billing/subscription");
         });
         notify({
-          title: "NetBird Subscription",
+          title: "Cosmos Subscription",
           description: `Successfully subscribed to the ${plan.name} plan`,
-          loadingMessage: "Subscribing to NetBird via AWS Marketplace...",
+          loadingMessage: "Subscribing to Cosmos via AWS Marketplace...",
           promise: promise,
         });
         return promise;

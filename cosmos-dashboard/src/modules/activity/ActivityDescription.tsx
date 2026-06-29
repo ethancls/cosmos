@@ -191,7 +191,7 @@ export default function ActivityDescription({ event }: Props) {
   if (event.activity_code == "user.join")
     return (
       <div className={"inline"}>
-        User <Value>{m.username}</Value> joined NetBird
+        User <Value>{m.username}</Value> joined Cosmos
       </div>
     );
 

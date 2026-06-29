@@ -51,8 +51,8 @@ export const MSPTrialExpiredModal = () => {
 
   const mailToEmail =
     mspInfo?.reseller_status === "active"
-      ? "support@netbird.io"
-      : mspInfo?.parent_owner_email || "support@netbird.io";
+      ? "support@cosmos.sh"
+      : mspInfo?.parent_owner_email || "support@cosmos.sh";
 
   return (
     <Modal open={true} onOpenChange={undefined}>

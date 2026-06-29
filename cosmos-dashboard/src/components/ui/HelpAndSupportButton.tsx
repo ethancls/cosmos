@@ -84,10 +84,10 @@ export default function HelpAndSupportButton() {
         </DropdownMenuItem>
 
         {isNetBirdCloud() && (
-          <DropdownMenuItem href="mailto:support@netbird.io?subject=Support Request">
+          <DropdownMenuItem href="mailto:support@cosmos.sh?subject=Support Request">
             <div className={"flex gap-3 items-center"}>
               <MailIcon size={14} />
-              support@netbird.io
+              support@cosmos.sh
             </div>
           </DropdownMenuItem>
         )}

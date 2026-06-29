@@ -615,7 +615,7 @@ export function SetupSSOContent() {
               <p className={"!text-kyle-200"}>
                 You can use{" "}
                 <InlineLink
-                  href={"mailto:support@netbird.io"}
+                  href={"mailto:support@cosmos.sh"}
                   className={"inline !text-kyle-500 font-medium"}
                 >
                   {" "}
@@ -624,11 +624,11 @@ export function SetupSSOContent() {
                 or any other secure sharing tool to share your Okta details with
                 the NetBird team. If you need help, please contact us at{" "}
                 <InlineLink
-                  href={"mailto:support@netbird.io"}
+                  href={"mailto:support@cosmos.sh"}
                   className={"inline !text-kyle-500 font-medium"}
                 >
                   {" "}
-                  support@netbird.io
+                  support@cosmos.sh
                 </InlineLink>{" "}
               </p>
             </div>

@@ -106,11 +106,11 @@ export const MSPDomainVerificationModal = ({
             If you do not have access to your DNS configuration, you can also
             verify your domain by sending us an email to{" "}
             <InlineLink
-              href={"mailto:support@netbird.io"}
+              href={"mailto:support@cosmos.sh"}
               className={"inline font-medium"}
             >
               {" "}
-              support@netbird.io
+              support@cosmos.sh
             </InlineLink>
             . The email should be sent from the domain you are trying to verify.
           </div>

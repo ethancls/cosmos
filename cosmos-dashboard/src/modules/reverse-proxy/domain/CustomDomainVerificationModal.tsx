@@ -91,8 +91,8 @@ export const CustomDomainVerificationModal = ({
                     NetBird Status
                   </InlineLink>{" "}
                   or reach out to{"  "}
-                  <InlineLink href={"mailto:support@netbird.io"}>
-                    support@netbird.io
+                  <InlineLink href={"mailto:support@cosmos.sh"}>
+                    support@cosmos.sh
                   </InlineLink>
                 </Callout>
               ) : (

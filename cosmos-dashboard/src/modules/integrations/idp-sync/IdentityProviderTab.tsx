@@ -88,11 +88,11 @@ export default function IdentityProviderTab() {
             Looking to enable a custom IdP like Keycloak? <br />
             Please contact us at{" "}
             <InlineLink
-              href={"mailto:support@netbird.io"}
+              href={"mailto:support@cosmos.sh"}
               className={"inline !text-kyle-500 font-medium"}
             >
               {" "}
-              support@netbird.io
+              support@cosmos.sh
             </InlineLink>{" "}
           </Callout>}
         </LockedFeatureOverlay>

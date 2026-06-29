@@ -145,7 +145,7 @@ const UpgradeOrTrialText = ({
 
 const GetMSPSupportButton = () => {
   const { mspInfo, hasReseller } = useMSP();
-  const mailToEmail = mspInfo?.parent_owner_email || "support@netbird.io";
+  const mailToEmail = mspInfo?.parent_owner_email || "support@cosmos.sh";
   if (hasReseller) return;
 
   return (

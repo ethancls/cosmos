@@ -234,10 +234,10 @@ export function SetupContent({
               className={"inline"}
               target={"_blank"}
               href={
-                "mailto:support@netbird.io?subject=Request%20for%20Assistance%3A%20Custom%20Identity%20Provider"
+                "mailto:support@cosmos.sh?subject=Request%20for%20Assistance%3A%20Custom%20Identity%20Provider"
               }
             >
-              support@netbird.io
+              support@cosmos.sh
             </InlineLink>
           </p>
           {!genericConnection && !isSSOLoading && isAuth0() && (
