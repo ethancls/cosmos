@@ -8,10 +8,13 @@ import (
 	"os"
 	"path/filepath"
 	"sort"
+	"strings"
 
 	_ "github.com/lib/pq"
 )
 
+// Connect opens a PostgreSQL database connection.
+// Returns an error if PostgreSQL is unavailable — the caller handles the fallback to in-memory mock data.
 func Connect(databaseURL string) (*sql.DB, error) {
 	db, err := sql.Open("postgres", databaseURL)
 	if err != nil {
@@ -24,13 +27,14 @@ func Connect(databaseURL string) (*sql.DB, error) {
 	return db, nil
 }
 
+// RunMigrations runs SQL migration files from the given directory.
 func RunMigrations(database *sql.DB, migrationsDir string) error {
 	var files []string
 	err := filepath.WalkDir(migrationsDir, func(path string, d fs.DirEntry, err error) error {
 		if err != nil {
 			return err
 		}
-		if !d.IsDir() && filepath.Ext(path) == ".sql" {
+		if !d.IsDir() && strings.EqualFold(filepath.Ext(path), ".sql") {
 			files = append(files, path)
 		}
 		return nil

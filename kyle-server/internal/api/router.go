@@ -5,9 +5,12 @@ import (
 	"database/sql"
 	"encoding/base64"
 	"encoding/json"
+	"log"
 	"net/http"
+	"time"
 
 	"github.com/ethancls/kyle-server/internal/config"
+	"github.com/golang-jwt/jwt/v5"
 )
 
 type Router struct {
@@ -33,21 +36,31 @@ func SetupRouter(database *sql.DB, cfg *config.Config) http.Handler {
 	r.mux.HandleFunc("GET /userinfo", r.handleUserInfo)
 	r.mux.HandleFunc("GET /api/instance", r.handleInstance)
 
-	// Placeholder API endpoints (return empty arrays for dashboard to render)
-	r.mux.HandleFunc("GET /api/users", r.handleList("users"))
-	r.mux.HandleFunc("GET /api/peers", r.handleList("peers"))
-	r.mux.HandleFunc("GET /api/groups", r.handleList("groups"))
-	r.mux.HandleFunc("GET /api/setup-keys", r.handleList("setup-keys"))
-	r.mux.HandleFunc("GET /api/nameservers", r.handleList("nameservers"))
-	r.mux.HandleFunc("GET /api/routes", r.handleList("routes"))
-	r.mux.HandleFunc("GET /api/dns/settings", r.handleDNS("dns/settings"))
-	r.mux.HandleFunc("GET /api/events", r.handleList("events"))
-	r.mux.HandleFunc("GET /api/accounts", r.handleList("accounts"))
-	r.mux.HandleFunc("/api/v1/servers/", r.handleList("servers"))
-	r.mux.HandleFunc("/api/v1/users/", r.handleList("users"))
-	r.mux.HandleFunc("/api/v1/connections/", r.handleList("connections"))
-	r.mux.HandleFunc("/api/v1/policies/", r.handleList("policies"))
-	r.mux.HandleFunc("/api/v1/audit/", r.handleList("audit"))
+	// Users (Netbird-compatible)
+	r.mux.HandleFunc("GET /api/users/current", r.handleCurrentUser)
+	r.mux.HandleFunc("GET /api/users", r.handleUsers)
+	r.mux.HandleFunc("POST /api/users", r.handleCreateUser)
+
+	// Setup (Netbird-compatible, unauthenticated)
+	r.mux.HandleFunc("GET /api/setup", r.handleGetSetup)
+	r.mux.HandleFunc("POST /api/setup", r.handlePostSetup)
+
+	// Other dashboard endpoints with DB or mock fallback
+	r.mux.HandleFunc("GET /api/peers", r.handlePeers)
+	r.mux.HandleFunc("GET /api/groups", r.handleGroups)
+	r.mux.HandleFunc("GET /api/setup-keys", r.handleSetupKeys)
+	r.mux.HandleFunc("GET /api/events", r.handleEvents)
+	r.mux.HandleFunc("GET /api/nameservers", r.handleNameservers)
+	r.mux.HandleFunc("GET /api/routes", r.handleRoutes)
+	r.mux.HandleFunc("GET /api/dns/settings", r.handleDNSSettings)
+	r.mux.HandleFunc("GET /api/accounts", r.handleAccounts)
+
+	// Legacy v1 endpoints
+	r.mux.HandleFunc("/api/v1/servers/", r.handleServersV1)
+	r.mux.HandleFunc("/api/v1/users/", r.handleUsersV1)
+	r.mux.HandleFunc("/api/v1/connections/", r.handleConnectionsV1)
+	r.mux.HandleFunc("/api/v1/policies/", r.handlePoliciesV1)
+	r.mux.HandleFunc("/api/v1/audit/", r.handleAuditV1)
 
 	return r
 }
@@ -63,13 +76,15 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 
 func corsHeaders(w http.ResponseWriter) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
-	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
 }
 
-// Dev OIDC: discovery endpoint
+// ---------------------------------------------------------------------------
+// Dev OIDC mock endpoints
+// ---------------------------------------------------------------------------
+
 func (r *Router) handleOIDCConfig(w http.ResponseWriter, req *http.Request) {
-	corsHeaders(w)
 	base := "http://" + req.Host
 	json.NewEncoder(w).Encode(map[string]interface{}{
 		"issuer":                 base,
@@ -82,9 +97,7 @@ func (r *Router) handleOIDCConfig(w http.ResponseWriter, req *http.Request) {
 	})
 }
 
-// Dev OIDC: authorization redirect
 func (r *Router) handleAuthorize(w http.ResponseWriter, req *http.Request) {
-	corsHeaders(w)
 	redirectURI := req.URL.Query().Get("redirect_uri")
 	if redirectURI == "" {
 		redirectURI = req.Referer()
@@ -93,25 +106,47 @@ func (r *Router) handleAuthorize(w http.ResponseWriter, req *http.Request) {
 	http.Redirect(w, req, redirectURI+"?code="+code+"&state="+req.URL.Query().Get("state"), http.StatusFound)
 }
 
-// Dev OIDC: token exchange
 func (r *Router) handleToken(w http.ResponseWriter, req *http.Request) {
-	corsHeaders(w)
 	if req.Method == http.MethodOptions {
 		w.WriteHeader(http.StatusOK)
 		return
 	}
+	now := time.Now()
+	jwtSecret := []byte(r.cfg.JWTSecret)
+	if len(jwtSecret) == 0 {
+		jwtSecret = []byte("dev-secret")
+	}
+
+	idToken := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
+		"iss":   "http://" + req.Host,
+		"sub":   "dev-user",
+		"aud":   "kyle-api",
+		"email": "dev@kyle.local",
+		"name":  "Dev User",
+		"iat":   now.Unix(),
+		"exp":   now.Add(1 * time.Hour).Unix(),
+	})
+	idTokenStr, _ := idToken.SignedString(jwtSecret)
+
+	accessToken := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
+		"iss": "http://" + req.Host,
+		"sub": "dev-user",
+		"aud": "kyle-api",
+		"iat": now.Unix(),
+		"exp": now.Add(1 * time.Hour).Unix(),
+	})
+	accessTokenStr, _ := accessToken.SignedString(jwtSecret)
+
 	json.NewEncoder(w).Encode(map[string]interface{}{
-		"access_token":  "dev-access-token-" + randomString(16),
-		"id_token":      "dev-id-token-" + randomString(16),
+		"access_token":  accessTokenStr,
+		"id_token":      idTokenStr,
 		"refresh_token": "dev-refresh-token-" + randomString(16),
 		"token_type":    "Bearer",
 		"expires_in":    3600,
 	})
 }
 
-// Dev OIDC: user info
 func (r *Router) handleUserInfo(w http.ResponseWriter, req *http.Request) {
-	corsHeaders(w)
 	json.NewEncoder(w).Encode(map[string]interface{}{
 		"sub":   "dev-user",
 		"name":  "Dev User",
@@ -119,9 +154,7 @@ func (r *Router) handleUserInfo(w http.ResponseWriter, req *http.Request) {
 	})
 }
 
-// Instance info (called by dashboard on startup)
 func (r *Router) handleInstance(w http.ResponseWriter, req *http.Request) {
-	corsHeaders(w)
 	json.NewEncoder(w).Encode(map[string]interface{}{
 		"name":    "Kyle Dev",
 		"version": "0.1.0",
@@ -129,11 +162,9 @@ func (r *Router) handleInstance(w http.ResponseWriter, req *http.Request) {
 	})
 }
 
-func randomString(n int) string {
-	b := make([]byte, n)
-	rand.Read(b)
-	return base64.RawURLEncoding.EncodeToString(b)[:n]
-}
+// ---------------------------------------------------------------------------
+// Health & Status
+// ---------------------------------------------------------------------------
 
 func (r *Router) handleHealth(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
@@ -147,7 +178,6 @@ func (r *Router) handleHealth(w http.ResponseWriter, req *http.Request) {
 	httpStatus := http.StatusOK
 	if dbStatus != "connected" {
 		status = "degraded"
-		httpStatus = http.StatusOK // still 200, just degraded
 	}
 	w.WriteHeader(httpStatus)
 	json.NewEncoder(w).Encode(map[string]string{
@@ -164,16 +194,302 @@ func (r *Router) handleStatus(w http.ResponseWriter, req *http.Request) {
 	})
 }
 
-func (r *Router) handleList(_ string) http.HandlerFunc {
-	return func(w http.ResponseWriter, req *http.Request) {
-		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte("[]"))
-	}
+// ---------------------------------------------------------------------------
+// Users (Netbird-compatible)
+// ---------------------------------------------------------------------------
+
+// handleCurrentUser returns the current authenticated user.
+// GET /api/users/current
+func (r *Router) handleCurrentUser(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	isCurrent := true
+	isService := false
+	apiIssued := "api"
+	json.NewEncoder(w).Encode(map[string]interface{}{
+		"id":               "dev-user",
+		"email":            "dev@kyle.local",
+		"name":             "Dev User",
+		"role":             "owner",
+		"auto_groups":      []string{},
+		"status":           "active",
+		"is_current":       &isCurrent,
+		"is_service_user":  &isService,
+		"is_blocked":       false,
+		"last_login":       nil,
+		"issued":           &apiIssued,
+		"pending_approval": false,
+		"permissions": map[string]interface{}{
+			"is_restricted": false,
+			"modules": map[string]map[string]bool{
+				"*": {"read": true, "write": true},
+			},
+		},
+	})
 }
 
-func (r *Router) handleDNS(_ string) http.HandlerFunc {
-	return func(w http.ResponseWriter, req *http.Request) {
-		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte("{}"))
+// handleCreateUser creates a new user.
+// POST /api/users
+func (r *Router) handleCreateUser(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	var body struct {
+		Email         *string  `json:"email"`
+		Name          *string  `json:"name"`
+		Role          string   `json:"role"`
+		AutoGroups    []string `json:"auto_groups"`
+		IsServiceUser bool     `json:"is_service_user"`
 	}
+	if err := json.NewDecoder(req.Body).Decode(&body); err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		json.NewEncoder(w).Encode(map[string]string{"error": "invalid request body"})
+		return
+	}
+
+	email := ""
+	if body.Email != nil {
+		email = *body.Email
+	}
+	name := ""
+	if body.Name != nil {
+		name = *body.Name
+	}
+	role := body.Role
+	if role == "" {
+		role = "user"
+	}
+
+	userID := "user-" + randomString(12)
+	isCurrent := false
+	isService := body.IsServiceUser
+	apiIssued := "api"
+
+	json.NewEncoder(w).Encode(map[string]interface{}{
+		"id":              userID,
+		"email":           email,
+		"name":            name,
+		"role":            role,
+		"auto_groups":     body.AutoGroups,
+		"status":          "active",
+		"is_current":      &isCurrent,
+		"is_service_user": &isService,
+		"is_blocked":      false,
+		"last_login":      nil,
+		"issued":          &apiIssued,
+		"pending_approval": false,
+	})
+}
+
+// ---------------------------------------------------------------------------
+// Setup (Netbird-compatible)
+// ---------------------------------------------------------------------------
+
+// handleGetSetup returns the setup status.
+// GET /api/setup
+func (r *Router) handleGetSetup(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(map[string]interface{}{
+		"setup_required": false,
+	})
+}
+
+// handlePostSetup creates the initial admin user.
+// POST /api/setup
+func (r *Router) handlePostSetup(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	var body struct {
+		Email    string `json:"email"`
+		Name     string `json:"name"`
+		Password string `json:"password"`
+	}
+	if err := json.NewDecoder(req.Body).Decode(&body); err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		json.NewEncoder(w).Encode(map[string]string{"error": "invalid request body"})
+		return
+	}
+	if body.Email == "" || body.Name == "" || body.Password == "" {
+		w.WriteHeader(http.StatusBadRequest)
+		json.NewEncoder(w).Encode(map[string]string{"error": "email, name, and password are required"})
+		return
+	}
+
+	userID := "user-" + randomString(12)
+	json.NewEncoder(w).Encode(map[string]interface{}{
+		"user_id": userID,
+		"email":   body.Email,
+	})
+}
+
+// ---------------------------------------------------------------------------
+// Dashboard endpoints (DB with mock fallback)
+// ---------------------------------------------------------------------------
+
+func (r *Router) handleUsers(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	if r.db != nil {
+		users, err := queryUsers(r.db)
+		if err == nil {
+			json.NewEncoder(w).Encode(users)
+			return
+		}
+		log.Printf("query users failed: %v (falling back to mock)", err)
+	}
+	json.NewEncoder(w).Encode(mockUsers())
+}
+
+func (r *Router) handleAccounts(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	if r.db != nil {
+		accounts, err := queryAccounts(r.db)
+		if err == nil {
+			json.NewEncoder(w).Encode(accounts)
+			return
+		}
+		log.Printf("query accounts failed: %v (falling back to mock)", err)
+	}
+	json.NewEncoder(w).Encode(mockAccounts())
+}
+
+func (r *Router) handlePeers(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	if r.db != nil {
+		peers, err := queryPeers(r.db)
+		if err == nil {
+			json.NewEncoder(w).Encode(peers)
+			return
+		}
+		log.Printf("query peers failed: %v (falling back to mock)", err)
+	}
+	json.NewEncoder(w).Encode(mockPeers())
+}
+
+func (r *Router) handleGroups(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	if r.db != nil {
+		groups, err := queryGroups(r.db)
+		if err == nil {
+			json.NewEncoder(w).Encode(groups)
+			return
+		}
+		log.Printf("query groups failed: %v (falling back to mock)", err)
+	}
+	json.NewEncoder(w).Encode(mockGroups())
+}
+
+func (r *Router) handleSetupKeys(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	if r.db != nil {
+		keys, err := querySetupKeys(r.db)
+		if err == nil {
+			json.NewEncoder(w).Encode(keys)
+			return
+		}
+		log.Printf("query setup keys failed: %v (falling back to mock)", err)
+	}
+	json.NewEncoder(w).Encode(mockSetupKeys())
+}
+
+func (r *Router) handleEvents(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	if r.db != nil {
+		events, err := queryEvents(r.db)
+		if err == nil {
+			json.NewEncoder(w).Encode(events)
+			return
+		}
+		log.Printf("query events failed: %v (falling back to mock)", err)
+	}
+	json.NewEncoder(w).Encode(mockEvents())
+}
+
+func (r *Router) handleNameservers(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(mockNameservers())
+}
+
+func (r *Router) handleRoutes(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(mockRoutes())
+}
+
+func (r *Router) handleDNSSettings(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(mockDNSSettings())
+}
+
+// ---------------------------------------------------------------------------
+// V1 API endpoints (DB with mock fallback)
+// ---------------------------------------------------------------------------
+
+func (r *Router) handleServersV1(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	if r.db != nil {
+		servers, err := queryServers(r.db)
+		if err == nil {
+			json.NewEncoder(w).Encode(servers)
+			return
+		}
+		log.Printf("query servers failed: %v (falling back to mock)", err)
+	}
+	json.NewEncoder(w).Encode(mockServers())
+}
+
+func (r *Router) handleUsersV1(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	if r.db != nil {
+		users, err := queryUsersV1(r.db)
+		if err == nil {
+			json.NewEncoder(w).Encode(users)
+			return
+		}
+		log.Printf("query v1 users failed: %v (falling back to mock)", err)
+	}
+	json.NewEncoder(w).Encode(mockUsersV1())
+}
+
+func (r *Router) handleConnectionsV1(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	if r.db != nil {
+		conns, err := queryConnections(r.db)
+		if err == nil {
+			json.NewEncoder(w).Encode(conns)
+			return
+		}
+		log.Printf("query connections failed: %v (falling back to mock)", err)
+	}
+	json.NewEncoder(w).Encode(mockConnections())
+}
+
+func (r *Router) handlePoliciesV1(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	if r.db != nil {
+		policies, err := queryPolicies(r.db)
+		if err == nil {
+			json.NewEncoder(w).Encode(policies)
+			return
+		}
+		log.Printf("query policies failed: %v (falling back to mock)", err)
+	}
+	json.NewEncoder(w).Encode(mockPolicies())
+}
+
+func (r *Router) handleAuditV1(w http.ResponseWriter, req *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	if r.db != nil {
+		logs, err := queryAuditLogs(r.db)
+		if err == nil {
+			json.NewEncoder(w).Encode(logs)
+			return
+		}
+		log.Printf("query audit logs failed: %v (falling back to mock)", err)
+	}
+	json.NewEncoder(w).Encode(mockAuditLogs())
+}
+
+// ---------------------------------------------------------------------------
+// Utility
+// ---------------------------------------------------------------------------
+
+func randomString(n int) string {
+	b := make([]byte, n)
+	rand.Read(b)
+	return base64.RawURLEncoding.EncodeToString(b)[:n]
 }

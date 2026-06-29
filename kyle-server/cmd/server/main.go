@@ -14,7 +14,7 @@ func main() {
 
 	database, err := db.Connect(cfg.DatabaseURL)
 	if err != nil {
-		log.Printf("WARNING: database not available: %v (server will start without persistence)", err)
+		log.Printf("WARNING: database not available: %v (server will start with in-memory fallback)", err)
 		database = nil
 	}
 	if database != nil {
