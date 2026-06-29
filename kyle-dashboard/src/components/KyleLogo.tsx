@@ -10,21 +10,22 @@ type Props = {
 
 const sizes = {
   default: {
-    desktop: 22,
-    mobile: 30,
+    desktop: 28,
+    mobile: 36,
   },
   large: {
-    desktop: 24,
-    mobile: 40,
+    desktop: 32,
+    mobile: 44,
   },
 };
 
 export const KyleLogo = ({ size = "default", mobile = true }: Props) => {
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2.5">
       <Image
         src={KyleLogoMark}
         height={sizes[size].desktop}
+        width={sizes[size].desktop}
         alt={"Kyle Logo"}
         className={cn(mobile && "hidden md:block")}
       />
@@ -32,11 +33,12 @@ export const KyleLogo = ({ size = "default", mobile = true }: Props) => {
         <Image
           src={KyleLogoMark}
           width={sizes[size].mobile}
+          height={sizes[size].mobile}
           alt={"Kyle Logo"}
-          className={cn(mobile && "md:hidden")}
+          className={cn("md:hidden")}
         />
       )}
-      <span className="text-lg font-semibold tracking-tight text-kyle hidden md:block">
+      <span className="text-xl font-medium text-white hidden md:block">
         Kyle
       </span>
     </div>
