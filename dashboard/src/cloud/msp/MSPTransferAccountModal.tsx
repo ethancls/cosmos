@@ -15,7 +15,7 @@ import Image from "next/image";
 import * as React from "react";
 import { useState } from "react";
 import { useSWRConfig } from "swr";
-import netBirdLogo from "@/assets/netbird.svg";
+import netBirdLogo from "@/assets/cosmos.svg";
 import { useMSP } from "@/cloud/msp/contexts/MSPProvider";
 import { TenantDNSResponse, TenantStatus } from "@/cloud/msp/interfaces/Tenant";
 import { useDialog } from "@/contexts/DialogProvider";

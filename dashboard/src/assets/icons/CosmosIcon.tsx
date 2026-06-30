@@ -1,7 +1,7 @@
 import Image from "next/image";
 import * as React from "react";
 import { memo } from "react";
-import CosmosLogo from "@/assets/netbird.svg";
+import CosmosLogo from "@/assets/cosmos.svg";
 
 type Props = {
   size?: number;

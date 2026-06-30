@@ -4,7 +4,7 @@ import { ArrowRightLeft } from "lucide-react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import * as React from "react";
-import netBirdLogo from "@/assets/netbird.svg";
+import netBirdLogo from "@/assets/cosmos.svg";
 
 type Props = {
   image: StaticImport | string;
