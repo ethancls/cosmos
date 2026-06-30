@@ -46,6 +46,8 @@ type CosmosSession struct {
 	Status            CosmosSessionStatus    `gorm:"not null" json:"status"`
 	ClientIP          string                 `json:"client_ip"`
 	GuacdConnectionID string                 `json:"guacd_connection_id"`
+	RecordingEnabled  bool                   `json:"recording_enabled"`
+	RecordingPath     string                 `json:"recording_path"`
 	StartedAt         time.Time              `json:"started_at"`
 	EndedAt           *time.Time             `json:"ended_at"`
 	CreatedAt         time.Time              `json:"created_at"`

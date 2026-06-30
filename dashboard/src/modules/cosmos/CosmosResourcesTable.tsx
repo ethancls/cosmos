@@ -69,6 +69,7 @@ import {
   Trash2,
 } from "lucide-react";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import { useSWRConfig } from "swr";
 import { useDialog } from "@/contexts/DialogProvider";
 import { useGroups } from "@/contexts/GroupsProvider";
@@ -93,6 +94,7 @@ export default function CosmosResourcesTable({
   headingTarget,
 }: Props) {
   const { mutate } = useSWRConfig();
+  const router = useRouter();
   const { confirm } = useDialog();
   const [modalOpen, setModalOpen] = useState(false);
   const [resourceToEdit, setResourceToEdit] = useState<CosmosResource>();
@@ -198,18 +200,19 @@ export default function CosmosResourcesTable({
       const promise = startSession({ resource_id: resource.id }).then(
         (session) => {
           mutate("/cosmos/sessions");
+          router.push(`/sessions/${session.id}`);
           return session;
         },
       );
 
       notify({
         title: "Session Started",
-        description: `${resource.name} is now tracked as an active bastion session.`,
+        description: `Connecting to ${resource.name}...`,
         loadingMessage: "Starting session...",
         promise,
       });
     },
-    [mutate, startSession],
+    [mutate, router, startSession],
   );
 
   const toggleEnabled = useCallback(

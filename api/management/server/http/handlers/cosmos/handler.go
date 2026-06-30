@@ -81,6 +81,7 @@ func AddEndpoints(accountManager account.Manager, router *mux.Router) {
 	router.HandleFunc("/cosmos/sessions", h.getSessions).Methods("GET", "OPTIONS")
 	router.HandleFunc("/cosmos/sessions", h.createSession).Methods("POST", "OPTIONS")
 	router.HandleFunc("/cosmos/sessions/{sessionId}/close", h.closeSession).Methods("POST", "OPTIONS")
+	router.HandleFunc("/cosmos/sessions/{sessionId}/access", h.accessSession).Methods("GET", "OPTIONS")
 	router.HandleFunc("/cosmos/audit/events", h.getAuditEvents).Methods("GET", "OPTIONS")
 }
 
@@ -307,6 +308,7 @@ func (h *handler) createSession(w http.ResponseWriter, r *http.Request) {
 		Protocol:     resource.Protocol,
 		Status:       types.CosmosSessionActive,
 		ClientIP:     clientIP,
+			RecordingEnabled: resource.RecordingEnabled,
 		StartedAt:    now,
 		CreatedAt:    now,
 		UpdatedAt:    now,
@@ -359,6 +361,37 @@ func (h *handler) getAuditEvents(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	util.WriteJSONObject(r.Context(), w, events)
+}
+
+func (h *handler) accessSession(w http.ResponseWriter, r *http.Request) {
+	userAuth, err := nbcontext.GetUserAuthFromContext(r.Context())
+	if err != nil {
+		util.WriteError(r.Context(), err, w)
+		return
+	}
+	session, err := h.store.GetCosmosSession(r.Context(), userAuth.AccountId, mux.Vars(r)["sessionId"])
+	if err != nil {
+		util.WriteError(r.Context(), err, w)
+		return
+	}
+	if session.Status != types.CosmosSessionActive {
+		util.WriteErrorResponse("session is not active", http.StatusPreconditionFailed, w)
+		return
+	}
+	resource, err := h.store.GetCosmosResource(r.Context(), userAuth.AccountId, session.ResourceID)
+	if err != nil {
+		util.WriteError(r.Context(), err, w)
+		return
+	}
+	util.WriteJSONObject(r.Context(), w, map[string]any{
+		"session":  session,
+		"resource": resource,
+		"connection": map[string]any{
+			"protocol": resource.Protocol,
+			"host":     resource.Host,
+			"port":     resource.Port,
+		},
+	})
 }
 
 func (h *handler) audit(r *http.Request, accountID, userID, userName, userEmail, action, targetType, targetID, targetName string, meta auditMeta) {

@@ -25,6 +25,7 @@ import { ColumnDef, SortingState } from "@tanstack/react-table";
 import { useApiCall } from "@utils/api";
 import dayjs from "dayjs";
 import {
+  CircleDotIcon,
   ExternalLinkIcon,
   MonitorIcon,
   ServerIcon,
@@ -75,6 +76,14 @@ export default function CosmosSessionsTable({
     [],
   );
 
+  const recordingOptions = useMemo<CheckboxOption<string>[]>(
+    () => [
+      { value: "true", label: "Recording" },
+      { value: "false", label: "Not recording" },
+    ],
+    [],
+  );
+
   const filterDefs = useMemo<TableFilterDef[]>(
     () => [
       {
@@ -109,8 +118,26 @@ export default function CosmosSessionsTable({
             "protocols",
           ),
       },
+      {
+        id: "recording_filter",
+        label: "Recording",
+        renderPicker: (p) => (
+          <CheckboxListPicker
+            value={p.value as string[] | undefined}
+            onChange={p.onChange}
+            close={p.close}
+            options={recordingOptions}
+          />
+        ),
+        formatChip: (v) =>
+          formatCheckboxChip(
+            v as string[] | undefined,
+            recordingOptions,
+            "recording",
+          ),
+      },
     ],
-    [protocolOptions, statusOptions],
+    [protocolOptions, recordingOptions, statusOptions],
   );
 
   const closeSession = (session: CosmosSession) => {
@@ -143,7 +170,10 @@ export default function CosmosSessionsTable({
           const Icon =
             p === "ssh" ? TerminalSquareIcon : p === "rdp" ? MonitorIcon : ServerIcon;
           return (
-            <div className="flex items-center gap-3 min-w-[220px]">
+            <button
+              className="flex items-center gap-3 min-w-[220px] hover:opacity-80 transition-opacity text-left"
+              onClick={() => router.push(`/sessions/${row.original.id}`)}
+            >
               <div className="h-9 w-9 rounded-md bg-nb-gray-900 border border-nb-gray-800 flex items-center justify-center text-cosmos">
                 <Icon size={17} />
               </div>
@@ -155,7 +185,7 @@ export default function CosmosSessionsTable({
                   {row.original.user_name || row.original.user_email || row.original.user_id}
                 </div>
               </div>
-            </div>
+            </button>
           );
         },
       },
@@ -220,6 +250,27 @@ export default function CosmosSessionsTable({
         id: "protocol_filter",
         accessorFn: (session) => [session.protocol],
         filterFn: "arrIncludesSome",
+      },
+      {
+        id: "recording_filter",
+        accessorFn: (session) => [session.recording_enabled ? "true" : "false"],
+        filterFn: "arrIncludesSome",
+      },
+      {
+        id: "recording",
+        accessorFn: (session) => session.recording_enabled,
+        header: ({ column }) => (
+          <DataTableHeader column={column}>Recording</DataTableHeader>
+        ),
+        cell: ({ row }) =>
+          row.original.recording_enabled ? (
+            <Badge variant={"green"} className={"uppercase font-medium"}>
+              <CircleDotIcon size={12} />
+              On
+            </Badge>
+          ) : (
+            <span className="text-sm text-nb-gray-400">Off</span>
+          ),
       },
       {
         id: "client_ip",
@@ -307,6 +358,7 @@ export default function CosmosSessionsTable({
       columnVisibility={{
         status_filter: false,
         protocol_filter: false,
+        recording_filter: false,
       }}
       getStartedCard={
         <GetStartedTest

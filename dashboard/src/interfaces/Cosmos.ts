@@ -40,6 +40,8 @@ export type CosmosSession = {
   status: CosmosSessionStatus;
   client_ip?: string;
   guacd_connection_id?: string;
+  recording_enabled: boolean;
+  recording_path: string;
   started_at: string;
   ended_at?: string;
   created_at: string;
