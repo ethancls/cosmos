@@ -75,7 +75,7 @@ function CosmosResourceModalContent({
   );
   const [host, setHost] = useState(resource?.host ?? "");
   const [port, setPort] = useState(String(resource?.port ?? protocolDefaults.ssh));
-  const [labels, setLabels] = useState(resource?.labels ?? "");
+  const [groupIDs, setGroupIDs] = useState(resource?.group_ids ?? "");
   const [enabled, setEnabled] = useState(resource ? resource.enabled : true);
   const [recordingEnabled, setRecordingEnabled] = useState(
     resource ? resource.recording_enabled : true,
@@ -101,9 +101,9 @@ function CosmosResourceModalContent({
       protocol,
       host: host.trim(),
       port: portNumber,
-      labels: labels
+      group_ids: groupIDs
         .split(",")
-        .map((label) => label.trim())
+        .map((g) => g.trim())
         .filter(Boolean),
       enabled,
       recording_enabled: recordingEnabled,
@@ -112,7 +112,7 @@ function CosmosResourceModalContent({
       description,
       enabled,
       host,
-      labels,
+      groupIDs,
       name,
       portNumber,
       protocol,
@@ -198,11 +198,11 @@ function CosmosResourceModalContent({
           </div>
         </div>
         <div>
-          <Label>Labels</Label>
+          <Label>Groups</Label>
           <Input
-            value={labels}
-            onChange={(e) => setLabels(e.target.value)}
-            placeholder="prod, linux, privileged"
+            value={groupIDs}
+            onChange={(e) => setGroupIDs(e.target.value)}
+            placeholder="Group IDs, comma-separated"
           />
         </div>
         <div className="grid gap-3">

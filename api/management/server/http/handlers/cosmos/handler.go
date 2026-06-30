@@ -42,9 +42,13 @@ type resourceRequest struct {
 	Protocol         types.CosmosResourceProtocol `json:"protocol"`
 	Host             string                       `json:"host"`
 	Port             int                          `json:"port"`
-	Labels           []string                     `json:"labels"`
+	GroupIDs         []string                     `json:"group_ids"`
 	Enabled          bool                         `json:"enabled"`
 	RecordingEnabled bool                         `json:"recording_enabled"`
+}
+
+type resourceGroupsRequest struct {
+	GroupIDs []string `json:"group_ids"`
 }
 
 type sessionRequest struct {
@@ -72,6 +76,8 @@ func AddEndpoints(accountManager account.Manager, router *mux.Router) {
 	router.HandleFunc("/cosmos/resources/{resourceId}", h.getResource).Methods("GET", "OPTIONS")
 	router.HandleFunc("/cosmos/resources/{resourceId}", h.updateResource).Methods("PUT", "OPTIONS")
 	router.HandleFunc("/cosmos/resources/{resourceId}", h.deleteResource).Methods("DELETE", "OPTIONS")
+	router.HandleFunc("/cosmos/resources/{resourceId}/groups", h.getResourceGroups).Methods("GET", "OPTIONS")
+	router.HandleFunc("/cosmos/resources/{resourceId}/groups", h.updateResourceGroups).Methods("PUT", "OPTIONS")
 	router.HandleFunc("/cosmos/sessions", h.getSessions).Methods("GET", "OPTIONS")
 	router.HandleFunc("/cosmos/sessions", h.createSession).Methods("POST", "OPTIONS")
 	router.HandleFunc("/cosmos/sessions/{sessionId}/close", h.closeSession).Methods("POST", "OPTIONS")
@@ -129,7 +135,7 @@ func (h *handler) createResource(w http.ResponseWriter, r *http.Request) {
 		Protocol:         req.Protocol,
 		Host:             strings.TrimSpace(req.Host),
 		Port:             defaultPort(req.Protocol, req.Port),
-		Labels:           strings.Join(normalizeLabels(req.Labels), ","),
+		GroupIDs:         strings.Join(normalizeLabels(req.GroupIDs), ","),
 		Enabled:          req.Enabled,
 		RecordingEnabled: req.RecordingEnabled,
 		CreatedAt:        now,
@@ -171,7 +177,7 @@ func (h *handler) updateResource(w http.ResponseWriter, r *http.Request) {
 	resource.Protocol = req.Protocol
 	resource.Host = strings.TrimSpace(req.Host)
 	resource.Port = defaultPort(req.Protocol, req.Port)
-	resource.Labels = strings.Join(normalizeLabels(req.Labels), ",")
+	resource.GroupIDs = strings.Join(normalizeLabels(req.GroupIDs), ",")
 	resource.Enabled = req.Enabled
 	resource.RecordingEnabled = req.RecordingEnabled
 	resource.UpdatedAt = time.Now().UTC()
@@ -205,6 +211,50 @@ func (h *handler) deleteResource(w http.ResponseWriter, r *http.Request) {
 	}
 	h.audit(r, userAuth.AccountId, userAuth.UserId, userAuth.Name, userAuth.Email, "resource.deleted", "resource", resourceID, targetName, nil)
 	util.WriteJSONObject(r.Context(), w, util.EmptyObject{})
+}
+
+func (h *handler) getResourceGroups(w http.ResponseWriter, r *http.Request) {
+	userAuth, err := nbcontext.GetUserAuthFromContext(r.Context())
+	if err != nil {
+		util.WriteError(r.Context(), err, w)
+		return
+	}
+	resource, err := h.store.GetCosmosResource(r.Context(), userAuth.AccountId, mux.Vars(r)["resourceId"])
+	if err != nil {
+		util.WriteError(r.Context(), err, w)
+		return
+	}
+	groupIDs := strings.Split(resource.GroupIDs, ",")
+	if len(groupIDs) == 1 && groupIDs[0] == "" {
+		groupIDs = nil
+	}
+	util.WriteJSONObject(r.Context(), w, map[string]any{"group_ids": groupIDs})
+}
+
+func (h *handler) updateResourceGroups(w http.ResponseWriter, r *http.Request) {
+	userAuth, err := nbcontext.GetUserAuthFromContext(r.Context())
+	if err != nil {
+		util.WriteError(r.Context(), err, w)
+		return
+	}
+	resource, err := h.store.GetCosmosResource(r.Context(), userAuth.AccountId, mux.Vars(r)["resourceId"])
+	if err != nil {
+		util.WriteError(r.Context(), err, w)
+		return
+	}
+	var req resourceGroupsRequest
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		util.WriteErrorResponse("couldn't parse JSON request", http.StatusBadRequest, w)
+		return
+	}
+	resource.GroupIDs = strings.Join(normalizeLabels(req.GroupIDs), ",")
+	resource.UpdatedAt = time.Now().UTC()
+	if err := h.store.SaveCosmosResource(r.Context(), resource); err != nil {
+		util.WriteError(r.Context(), err, w)
+		return
+	}
+	h.audit(r, userAuth.AccountId, userAuth.UserId, userAuth.Name, userAuth.Email, "resource.groups_updated", "resource", resource.ID, resource.Name, auditMeta{"group_ids": resource.GroupIDs})
+	util.WriteJSONObject(r.Context(), w, resource)
 }
 
 func (h *handler) getSessions(w http.ResponseWriter, r *http.Request) {

@@ -18,7 +18,7 @@ type CosmosResource struct {
 	Protocol         CosmosResourceProtocol `gorm:"not null" json:"protocol"`
 	Host             string                 `gorm:"not null" json:"host"`
 	Port             int                    `gorm:"not null" json:"port"`
-	Labels           string                 `json:"labels"`
+	GroupIDs         string                 `json:"group_ids"`
 	Enabled          bool                   `gorm:"not null;default:true" json:"enabled"`
 	RecordingEnabled bool                   `gorm:"not null;default:true" json:"recording_enabled"`
 	CreatedAt        time.Time              `json:"created_at"`

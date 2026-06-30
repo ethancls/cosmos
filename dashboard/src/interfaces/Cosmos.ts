@@ -10,7 +10,7 @@ export type CosmosResource = {
   protocol: CosmosProtocol;
   host: string;
   port: number;
-  labels?: string;
+  group_ids?: string;
   enabled: boolean;
   recording_enabled: boolean;
   created_at: string;
@@ -23,7 +23,7 @@ export type CosmosResourceRequest = {
   protocol: CosmosProtocol;
   host: string;
   port: number;
-  labels?: string[];
+  group_ids?: string[];
   enabled: boolean;
   recording_enabled: boolean;
 };

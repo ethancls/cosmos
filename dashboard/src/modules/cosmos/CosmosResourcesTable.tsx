@@ -32,7 +32,6 @@ import {
   TableFiltersButton,
 } from "@components/table/TableFilters";
 import GetStartedTest from "@components/ui/GetStartedTest";
-import { SmallBadge } from "@components/ui/SmallBadge";
 import DescriptionWithTooltip from "@components/ui/DescriptionWithTooltip";
 import TextWithTooltip from "@components/ui/TextWithTooltip";
 import { notify } from "@components/Notification";
@@ -57,6 +56,7 @@ import {
 import React, { useCallback, useMemo, useState } from "react";
 import { useSWRConfig } from "swr";
 import { useDialog } from "@/contexts/DialogProvider";
+import { useGroups } from "@/contexts/GroupsProvider";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { CosmosResource, CosmosSession } from "@/interfaces/Cosmos";
 import CosmosResourceModal from "@/modules/cosmos/CosmosResourceModal";
@@ -206,9 +206,9 @@ export default function CosmosResourcesTable({
             protocol: resource.protocol,
             host: resource.host,
             port: resource.port,
-            labels: resource.labels
+            group_ids: resource.group_ids
               ?.split(",")
-              .map((label) => label.trim())
+              .map((g) => g.trim())
               .filter(Boolean),
             enabled: nextEnabled,
             recording_enabled: resource.recording_enabled,
@@ -376,26 +376,14 @@ export default function CosmosResourcesTable({
         ),
       },
       {
-        id: "labels",
-        accessorFn: (resource) => resource.labels || "",
+        id: "groups",
+        accessorFn: (resource) => resource.group_ids || "",
         header: ({ column }) => (
-          <DataTableHeader column={column}>Labels</DataTableHeader>
+          <DataTableHeader column={column}>Groups</DataTableHeader>
         ),
-        cell: ({ row }) => {
-          const labels = row.original.labels
-            ?.split(",")
-            .map((l) => l.trim())
-            .filter(Boolean);
-          if (!labels || labels.length === 0)
-            return <span className="text-sm text-nb-gray-400">-</span>;
-          return (
-            <div className="flex flex-wrap gap-1">
-              {labels.map((label) => (
-                <SmallBadge key={label} text={label} variant="green" />
-              ))}
-            </div>
-          );
-        },
+        cell: ({ row }) => (
+          <ResourceGroupCell groupIds={row.original.group_ids} />
+        ),
       },
       {
         id: "recording",
@@ -608,5 +596,31 @@ function CosmosResourceActionMenu({
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
+  );
+}
+
+function ResourceGroupCell({ groupIds }: { groupIds?: string }) {
+  const { groups: allGroups } = useGroups();
+
+  const ids = groupIds
+    ?.split(",")
+    .map((g) => g.trim())
+    .filter(Boolean);
+
+  if (!ids || ids.length === 0)
+    return <span className="text-sm text-nb-gray-400">-</span>;
+
+  const groupNames = ids
+    .map((id) => allGroups?.find((g) => g.id === id)?.name)
+    .filter(Boolean) as string[];
+
+  return (
+    <div className="flex flex-wrap gap-1">
+      {groupNames.map((name) => (
+        <Badge key={name} variant={"gray"}>
+          {name}
+        </Badge>
+      ))}
+    </div>
   );
 }
