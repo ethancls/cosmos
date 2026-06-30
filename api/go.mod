@@ -361,3 +361,4 @@ replace github.com/dexidp/dex/api/v2 => github.com/netbirdio/dex/api/v2 v2.0.0-2
 replace github.com/mailru/easyjson => github.com/netbirdio/easyjson v0.9.0
 
 replace github.com/netbirdio/management-integrations => ./management-integrations
+replace github.com/netbirdio/netbird => .
