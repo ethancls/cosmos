@@ -172,7 +172,7 @@ export default function CosmosSessionsTable({
           return (
             <button
               className="flex items-center gap-3 min-w-[220px] hover:opacity-80 transition-opacity text-left"
-              onClick={() => router.push(`/sessions/${row.original.id}`)}
+              onClick={() => router.push(`/sessions/view?sid=${row.original.id}`)}
             >
               <div className="h-9 w-9 rounded-md bg-nb-gray-900 border border-nb-gray-800 flex items-center justify-center text-cosmos">
                 <Icon size={17} />

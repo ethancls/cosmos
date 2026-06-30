@@ -200,7 +200,7 @@ export default function CosmosResourcesTable({
       const promise = startSession({ resource_id: resource.id }).then(
         (session) => {
           mutate("/cosmos/sessions");
-          router.push(`/sessions/${session.id}`);
+          router.push(`/sessions/view?sid=${session.id}`);
           return session;
         },
       );

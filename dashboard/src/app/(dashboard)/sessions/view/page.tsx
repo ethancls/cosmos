@@ -16,8 +16,8 @@ import {
   StopCircleIcon,
   TerminalSquareIcon,
 } from "lucide-react";
-import { useParams, useRouter } from "next/navigation";
-import React, { useMemo } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import React, { useEffect, useMemo } from "react";
 import dayjs from "dayjs";
 import { useSWRConfig } from "swr";
 import { notify } from "@components/Notification";
@@ -34,21 +34,29 @@ type SessionAccessResponse = {
   };
 };
 
-export default function SessionPage() {
-  const params = useParams<{ id: string }>();
+export default function SessionViewPage() {
+  const params = useSearchParams();
+  const sid = params.get("sid");
   const router = useRouter();
   const { mutate } = useSWRConfig();
   const { data, isLoading, error } = useFetchApi<SessionAccessResponse>(
-    `/cosmos/sessions/${params.id}/access`,
+    sid ? `/cosmos/sessions/${sid}/access` : "",
+    false,
+    true,
+    !!sid,
   );
 
   const closeApi = useApiCall<CosmosSession>(
-    `/cosmos/sessions/${params.id}/close`,
+    sid ? `/cosmos/sessions/${sid}/close` : "",
   ).post;
 
   const session = data?.session;
   const resource = data?.resource;
   const connection = data?.connection;
+
+  useEffect(() => {
+    if (!sid) router.push("/sessions");
+  }, [sid, router]);
 
   const protocolIcon = useMemo(() => {
     const p = session?.protocol;
@@ -74,6 +82,7 @@ export default function SessionPage() {
     });
   };
 
+  if (!sid) return <FullScreenLoading />;
   if (isLoading) return <FullScreenLoading />;
   if (error || !session) {
     return (
@@ -92,7 +101,8 @@ export default function SessionPage() {
     <PageContainer>
       <div className="p-default py-6">
         <Breadcrumbs>
-          <Breadcrumbs.Item href="/sessions" label="Sessions" active />
+          <Breadcrumbs.Item href="/sessions" label="Sessions" />
+          <Breadcrumbs.Item label={resource?.name || session.id} active />
         </Breadcrumbs>
         <div className="flex items-center gap-4">
           <h1>{resource?.name || session.resource_name}</h1>
