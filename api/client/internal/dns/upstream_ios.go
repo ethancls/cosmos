@@ -14,8 +14,8 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/sys/unix"
 
-	"github.com/ethancls/cosmos/client/internal/peer"
-	"github.com/ethancls/cosmos/shared/management/domain"
+	"github.com/netbirdio/netbird/client/internal/peer"
+	"github.com/netbirdio/netbird/shared/management/domain"
 )
 
 type upstreamResolverIOS struct {

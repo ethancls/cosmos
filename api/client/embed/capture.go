@@ -3,8 +3,8 @@ package embed
 import (
 	"io"
 
-	"github.com/ethancls/cosmos/client/internal"
-	"github.com/ethancls/cosmos/util/capture"
+	"github.com/netbirdio/netbird/client/internal"
+	"github.com/netbirdio/netbird/util/capture"
 )
 
 // CaptureOptions configures a packet capture session.

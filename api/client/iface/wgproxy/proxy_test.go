@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/cosmos/util"
+	"github.com/netbirdio/netbird/util"
 )
 
 func TestMain(m *testing.M) {

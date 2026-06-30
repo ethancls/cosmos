@@ -9,8 +9,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/internal/debug"
-	"github.com/ethancls/cosmos/upload-server/types"
+	"github.com/netbirdio/netbird/client/internal/debug"
+	"github.com/netbirdio/netbird/upload-server/types"
 )
 
 const (

@@ -16,10 +16,10 @@ import (
 	"github.com/spf13/cobra"
 	"google.golang.org/grpc"
 
-	"github.com/ethancls/cosmos/client/proto"
-	"github.com/ethancls/cosmos/client/server"
-	"github.com/ethancls/cosmos/client/system"
-	"github.com/ethancls/cosmos/util"
+	"github.com/netbirdio/netbird/client/proto"
+	"github.com/netbirdio/netbird/client/server"
+	"github.com/netbirdio/netbird/client/system"
+	"github.com/netbirdio/netbird/util"
 )
 
 func (p *program) Start(svc service.Service) error {

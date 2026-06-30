@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/ethancls/cosmos/shared/management/http/api"
+	"github.com/netbirdio/netbird/shared/management/http/api"
 )
 
 // EventsAPI APIs for Events, do not use directly

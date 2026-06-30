@@ -12,10 +12,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	firewall "github.com/ethancls/cosmos/client/firewall/manager"
-	"github.com/ethancls/cosmos/client/firewall/test"
-	"github.com/ethancls/cosmos/client/iface"
-	nbnet "github.com/ethancls/cosmos/client/net"
+	firewall "github.com/netbirdio/netbird/client/firewall/manager"
+	"github.com/netbirdio/netbird/client/firewall/test"
+	"github.com/netbirdio/netbird/client/iface"
+	nbnet "github.com/netbirdio/netbird/client/net"
 )
 
 func isIptablesSupported() bool {

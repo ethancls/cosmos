@@ -9,7 +9,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/internal/statemanager"
+	"github.com/netbirdio/netbird/client/internal/statemanager"
 )
 
 // ErrIPv6NotInitialized is returned when an IPv6 address is passed to a firewall

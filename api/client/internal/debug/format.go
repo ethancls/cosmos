@@ -7,10 +7,10 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/ethancls/cosmos/client/anonymize"
-	"github.com/ethancls/cosmos/client/internal/peer"
-	"github.com/ethancls/cosmos/client/internal/routemanager/systemops"
-	"github.com/ethancls/cosmos/shared/management/domain"
+	"github.com/netbirdio/netbird/client/anonymize"
+	"github.com/netbirdio/netbird/client/internal/peer"
+	"github.com/netbirdio/netbird/client/internal/routemanager/systemops"
+	"github.com/netbirdio/netbird/shared/management/domain"
 )
 
 func formatInterfaces(interfaces []net.Interface, anonymize bool, anonymizer *anonymize.Anonymizer) string {

@@ -7,13 +7,13 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/management/internals/modules/peers"
-	"github.com/ethancls/cosmos/management/internals/modules/peers/ephemeral"
-	"github.com/ethancls/cosmos/management/server/activity"
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
-	"github.com/ethancls/cosmos/management/server/telemetry"
+	"github.com/netbirdio/netbird/management/internals/modules/peers"
+	"github.com/netbirdio/netbird/management/internals/modules/peers/ephemeral"
+	"github.com/netbirdio/netbird/management/server/activity"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
+	"github.com/netbirdio/netbird/management/server/telemetry"
 
-	"github.com/ethancls/cosmos/management/server/store"
+	"github.com/netbirdio/netbird/management/server/store"
 )
 
 const (

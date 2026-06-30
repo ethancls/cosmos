@@ -11,9 +11,9 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"github.com/ethancls/cosmos/client/internal"
-	"github.com/ethancls/cosmos/client/proto"
-	"github.com/ethancls/cosmos/util/capture"
+	"github.com/netbirdio/netbird/client/internal"
+	"github.com/netbirdio/netbird/client/proto"
+	"github.com/netbirdio/netbird/util/capture"
 )
 
 const maxBundleCaptureDuration = 10 * time.Minute

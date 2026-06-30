@@ -7,10 +7,10 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	resourceTypes "github.com/ethancls/cosmos/management/server/networks/resources/types"
-	routerTypes "github.com/ethancls/cosmos/management/server/networks/routers/types"
-	"github.com/ethancls/cosmos/management/server/store"
-	"github.com/ethancls/cosmos/management/server/types"
+	resourceTypes "github.com/netbirdio/netbird/management/server/networks/resources/types"
+	routerTypes "github.com/netbirdio/netbird/management/server/networks/routers/types"
+	"github.com/netbirdio/netbird/management/server/store"
+	"github.com/netbirdio/netbird/management/server/types"
 )
 
 // An update spans an old and a new state. The affected set must be the UNION of

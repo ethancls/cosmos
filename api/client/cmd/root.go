@@ -22,8 +22,8 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	daddr "github.com/ethancls/cosmos/client/internal/daemonaddr"
-	"github.com/ethancls/cosmos/client/internal/profilemanager"
+	daddr "github.com/netbirdio/netbird/client/internal/daemonaddr"
+	"github.com/netbirdio/netbird/client/internal/profilemanager"
 )
 
 const (

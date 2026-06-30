@@ -7,9 +7,9 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/ethancls/cosmos/shared/management/http/api"
-	"github.com/ethancls/cosmos/shared/management/proto"
-	"github.com/ethancls/cosmos/shared/management/status"
+	"github.com/netbirdio/netbird/shared/management/http/api"
+	"github.com/netbirdio/netbird/shared/management/proto"
+	"github.com/netbirdio/netbird/shared/management/status"
 )
 
 type JobStatus string

@@ -16,8 +16,8 @@ import (
 	"google.golang.org/grpc/keepalive"
 	"google.golang.org/grpc/metadata"
 
-	sigProto "github.com/ethancls/cosmos/shared/signal/proto"
-	"github.com/ethancls/cosmos/signal/server"
+	sigProto "github.com/netbirdio/netbird/shared/signal/proto"
+	"github.com/netbirdio/netbird/signal/server"
 )
 
 var _ = Describe("GrpcClient", func() {

@@ -9,11 +9,11 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/internal/lazyconn"
-	"github.com/ethancls/cosmos/client/internal/lazyconn/manager"
-	"github.com/ethancls/cosmos/client/internal/peer"
-	"github.com/ethancls/cosmos/client/internal/peerstore"
-	"github.com/ethancls/cosmos/route"
+	"github.com/netbirdio/netbird/client/internal/lazyconn"
+	"github.com/netbirdio/netbird/client/internal/lazyconn/manager"
+	"github.com/netbirdio/netbird/client/internal/peer"
+	"github.com/netbirdio/netbird/client/internal/peerstore"
+	"github.com/netbirdio/netbird/route"
 )
 
 // ConnMgr coordinates both lazy connections (established on-demand) and permanent peer connections.

@@ -3,7 +3,7 @@
 package NetBirdSDK
 
 import (
-	"github.com/ethancls/cosmos/client/internal/profilemanager"
+	"github.com/netbirdio/netbird/client/internal/profilemanager"
 )
 
 // Preferences export a subset of the internal config for gomobile

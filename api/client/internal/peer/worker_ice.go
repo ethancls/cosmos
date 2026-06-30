@@ -11,13 +11,13 @@ import (
 	"github.com/pion/ice/v4"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/iface"
-	"github.com/ethancls/cosmos/client/iface/udpmux"
-	"github.com/ethancls/cosmos/client/internal/peer/conntype"
-	icemaker "github.com/ethancls/cosmos/client/internal/peer/ice"
-	"github.com/ethancls/cosmos/client/internal/portforward"
-	"github.com/ethancls/cosmos/client/internal/stdnet"
-	"github.com/ethancls/cosmos/route"
+	"github.com/netbirdio/netbird/client/iface"
+	"github.com/netbirdio/netbird/client/iface/udpmux"
+	"github.com/netbirdio/netbird/client/internal/peer/conntype"
+	icemaker "github.com/netbirdio/netbird/client/internal/peer/ice"
+	"github.com/netbirdio/netbird/client/internal/portforward"
+	"github.com/netbirdio/netbird/client/internal/stdnet"
+	"github.com/netbirdio/netbird/route"
 )
 
 type ICEConnInfo struct {

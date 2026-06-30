@@ -6,7 +6,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/sys/windows"
 
-	nbprocess "github.com/ethancls/cosmos/client/ui/process"
+	nbprocess "github.com/netbirdio/netbird/client/ui/process"
 )
 
 // killParentUIProcess finds and kills the parent systray UI process on Windows.

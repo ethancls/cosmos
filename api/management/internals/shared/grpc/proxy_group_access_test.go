@@ -9,13 +9,13 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/management/internals/modules/peers"
-	"github.com/ethancls/cosmos/management/internals/modules/reverseproxy/proxy"
-	"github.com/ethancls/cosmos/management/internals/modules/reverseproxy/service"
-	"github.com/ethancls/cosmos/management/server/idp"
-	"github.com/ethancls/cosmos/management/server/peer"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/shared/management/proto"
+	"github.com/netbirdio/netbird/management/internals/modules/peers"
+	"github.com/netbirdio/netbird/management/internals/modules/reverseproxy/proxy"
+	"github.com/netbirdio/netbird/management/internals/modules/reverseproxy/service"
+	"github.com/netbirdio/netbird/management/server/idp"
+	"github.com/netbirdio/netbird/management/server/peer"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/shared/management/proto"
 )
 
 type mockReverseProxyManager struct {

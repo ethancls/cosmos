@@ -15,17 +15,17 @@ import (
 	wgdevice "golang.zx2c4.com/wireguard/device"
 	wgnetstack "golang.zx2c4.com/wireguard/tun/netstack"
 
-	"github.com/ethancls/cosmos/client/iface"
-	"github.com/ethancls/cosmos/client/iface/netstack"
-	"github.com/ethancls/cosmos/client/internal"
-	"github.com/ethancls/cosmos/client/internal/auth"
-	"github.com/ethancls/cosmos/client/internal/peer"
-	"github.com/ethancls/cosmos/client/internal/profilemanager"
-	sshcommon "github.com/ethancls/cosmos/client/ssh"
-	"github.com/ethancls/cosmos/client/system"
-	"github.com/ethancls/cosmos/shared/management/domain"
-	mgmProto "github.com/ethancls/cosmos/shared/management/proto"
-	"github.com/ethancls/cosmos/util/capture"
+	"github.com/netbirdio/netbird/client/iface"
+	"github.com/netbirdio/netbird/client/iface/netstack"
+	"github.com/netbirdio/netbird/client/internal"
+	"github.com/netbirdio/netbird/client/internal/auth"
+	"github.com/netbirdio/netbird/client/internal/peer"
+	"github.com/netbirdio/netbird/client/internal/profilemanager"
+	sshcommon "github.com/netbirdio/netbird/client/ssh"
+	"github.com/netbirdio/netbird/client/system"
+	"github.com/netbirdio/netbird/shared/management/domain"
+	mgmProto "github.com/netbirdio/netbird/shared/management/proto"
+	"github.com/netbirdio/netbird/util/capture"
 )
 
 var (

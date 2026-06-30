@@ -3,10 +3,10 @@
 package iface
 
 import (
-	"github.com/ethancls/cosmos/client/iface/bind"
-	"github.com/ethancls/cosmos/client/iface/device"
-	"github.com/ethancls/cosmos/client/iface/netstack"
-	"github.com/ethancls/cosmos/client/iface/wgproxy"
+	"github.com/netbirdio/netbird/client/iface/bind"
+	"github.com/netbirdio/netbird/client/iface/device"
+	"github.com/netbirdio/netbird/client/iface/netstack"
+	"github.com/netbirdio/netbird/client/iface/wgproxy"
 )
 
 // NewWGIFace Creates a new WireGuard interface instance

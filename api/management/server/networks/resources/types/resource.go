@@ -7,13 +7,13 @@ import (
 
 	"github.com/rs/xid"
 
-	routerTypes "github.com/ethancls/cosmos/management/server/networks/routers/types"
-	networkTypes "github.com/ethancls/cosmos/management/server/networks/types"
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
-	"github.com/ethancls/cosmos/route"
-	nbDomain "github.com/ethancls/cosmos/shared/management/domain"
+	routerTypes "github.com/netbirdio/netbird/management/server/networks/routers/types"
+	networkTypes "github.com/netbirdio/netbird/management/server/networks/types"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
+	"github.com/netbirdio/netbird/route"
+	nbDomain "github.com/netbirdio/netbird/shared/management/domain"
 
-	"github.com/ethancls/cosmos/shared/management/http/api"
+	"github.com/netbirdio/netbird/shared/management/http/api"
 )
 
 type NetworkResourceType string

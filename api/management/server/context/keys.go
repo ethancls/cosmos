@@ -3,7 +3,7 @@ package context
 import (
 	"context"
 
-	nbcontext "github.com/ethancls/cosmos/shared/context"
+	nbcontext "github.com/netbirdio/netbird/shared/context"
 )
 
 const (

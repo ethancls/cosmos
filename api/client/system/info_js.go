@@ -6,7 +6,7 @@ import (
 	"strings"
 	"syscall/js"
 
-	"github.com/ethancls/cosmos/version"
+	"github.com/netbirdio/netbird/version"
 )
 
 // UpdateStaticInfoAsync is a no-op on JS as there is no static info to update

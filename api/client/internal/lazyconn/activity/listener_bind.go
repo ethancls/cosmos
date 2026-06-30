@@ -6,8 +6,8 @@ import (
 	"net/netip"
 	"sync"
 
-	"github.com/ethancls/cosmos/client/iface/device"
-	"github.com/ethancls/cosmos/client/internal/lazyconn"
+	"github.com/netbirdio/netbird/client/iface/device"
+	"github.com/netbirdio/netbird/client/internal/lazyconn"
 )
 
 type bindProvider interface {

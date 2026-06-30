@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"sync"
 
-	v2 "github.com/ethancls/cosmos/shared/relay/auth/hmac/v2"
+	v2 "github.com/netbirdio/netbird/shared/relay/auth/hmac/v2"
 )
 
 // TokenStore is a simple in-memory store for token

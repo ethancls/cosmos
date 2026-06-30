@@ -13,13 +13,13 @@ import (
 	"time"
 
 	"github.com/hashicorp/go-version"
-	"github.com/ethancls/cosmos/idp/dex"
-	rpservice "github.com/ethancls/cosmos/management/internals/modules/reverseproxy/service"
+	"github.com/netbirdio/netbird/idp/dex"
+	rpservice "github.com/netbirdio/netbird/management/internals/modules/reverseproxy/service"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/management/server/store"
-	"github.com/ethancls/cosmos/management/server/types"
-	nbversion "github.com/ethancls/cosmos/version"
+	"github.com/netbirdio/netbird/management/server/store"
+	"github.com/netbirdio/netbird/management/server/types"
+	nbversion "github.com/netbirdio/netbird/version"
 )
 
 const (

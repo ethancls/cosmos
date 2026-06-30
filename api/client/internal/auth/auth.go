@@ -13,12 +13,12 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"github.com/ethancls/cosmos/client/internal/profilemanager"
-	"github.com/ethancls/cosmos/client/ssh"
-	"github.com/ethancls/cosmos/client/system"
-	mgm "github.com/ethancls/cosmos/shared/management/client"
-	"github.com/ethancls/cosmos/shared/management/client/common"
-	mgmProto "github.com/ethancls/cosmos/shared/management/proto"
+	"github.com/netbirdio/netbird/client/internal/profilemanager"
+	"github.com/netbirdio/netbird/client/ssh"
+	"github.com/netbirdio/netbird/client/system"
+	mgm "github.com/netbirdio/netbird/shared/management/client"
+	"github.com/netbirdio/netbird/shared/management/client/common"
+	mgmProto "github.com/netbirdio/netbird/shared/management/proto"
 )
 
 // Auth manages authentication operations with the management server

@@ -22,9 +22,9 @@ import (
 	"golang.org/x/crypto/acme"
 	"golang.org/x/crypto/acme/autocert"
 
-	"github.com/ethancls/cosmos/proxy/internal/certwatch"
-	"github.com/ethancls/cosmos/proxy/internal/types"
-	"github.com/ethancls/cosmos/shared/management/domain"
+	"github.com/netbirdio/netbird/proxy/internal/certwatch"
+	"github.com/netbirdio/netbird/proxy/internal/types"
+	"github.com/netbirdio/netbird/shared/management/domain"
 )
 
 // OID for the SCT list extension (1.3.6.1.4.1.11129.2.4.2)

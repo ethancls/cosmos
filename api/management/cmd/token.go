@@ -7,11 +7,11 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	"github.com/ethancls/cosmos/formatter/hook"
-	tokencmd "github.com/ethancls/cosmos/management/cmd/token"
-	nbconfig "github.com/ethancls/cosmos/management/internals/server/config"
-	"github.com/ethancls/cosmos/management/server/store"
-	"github.com/ethancls/cosmos/util"
+	"github.com/netbirdio/netbird/formatter/hook"
+	tokencmd "github.com/netbirdio/netbird/management/cmd/token"
+	nbconfig "github.com/netbirdio/netbird/management/internals/server/config"
+	"github.com/netbirdio/netbird/management/server/store"
+	"github.com/netbirdio/netbird/util"
 )
 
 var tokenDatadir string

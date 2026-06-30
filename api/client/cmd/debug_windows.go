@@ -10,9 +10,9 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/sys/windows"
 
-	"github.com/ethancls/cosmos/client/internal"
-	"github.com/ethancls/cosmos/client/internal/peer"
-	"github.com/ethancls/cosmos/client/internal/profilemanager"
+	"github.com/netbirdio/netbird/client/internal"
+	"github.com/netbirdio/netbird/client/internal/peer"
+	"github.com/netbirdio/netbird/client/internal/profilemanager"
 )
 
 const (

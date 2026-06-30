@@ -17,7 +17,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/client/configs"
+	"github.com/netbirdio/netbird/client/configs"
 )
 
 func TestServiceParamsPath(t *testing.T) {

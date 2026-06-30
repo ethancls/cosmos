@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/client/mdm"
+	"github.com/netbirdio/netbird/client/mdm"
 )
 
 // withMDMPolicy temporarily overrides the package-level loadMDMPolicy hook so

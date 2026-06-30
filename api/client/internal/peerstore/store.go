@@ -7,7 +7,7 @@ import (
 
 	"golang.org/x/exp/maps"
 
-	"github.com/ethancls/cosmos/client/internal/peer"
+	"github.com/netbirdio/netbird/client/internal/peer"
 )
 
 // Store is a thread-safe store for peer connections.

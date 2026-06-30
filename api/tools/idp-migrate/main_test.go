@@ -10,8 +10,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/idp/dex"
-	"github.com/ethancls/cosmos/management/server/idp/migration"
+	"github.com/netbirdio/netbird/idp/dex"
+	"github.com/netbirdio/netbird/management/server/idp/migration"
 )
 
 // TestMigrationServerInterface is a compile-time check that migrationServer

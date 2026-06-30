@@ -11,7 +11,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/management/server/telemetry"
+	"github.com/netbirdio/netbird/management/server/telemetry"
 )
 
 func TestNewZitadelManager(t *testing.T) {

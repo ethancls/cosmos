@@ -3,10 +3,10 @@
 package client
 
 import (
-	"github.com/ethancls/cosmos/client/iface"
-	"github.com/ethancls/cosmos/shared/relay/client/dialer"
-	"github.com/ethancls/cosmos/shared/relay/client/dialer/quic"
-	"github.com/ethancls/cosmos/shared/relay/client/dialer/ws"
+	"github.com/netbirdio/netbird/client/iface"
+	"github.com/netbirdio/netbird/shared/relay/client/dialer"
+	"github.com/netbirdio/netbird/shared/relay/client/dialer/quic"
+	"github.com/netbirdio/netbird/shared/relay/client/dialer/ws"
 )
 
 // getDialers returns the ordered dialers for connecting to the relay server. It

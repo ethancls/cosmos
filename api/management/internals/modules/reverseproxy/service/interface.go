@@ -5,7 +5,7 @@ package service
 import (
 	"context"
 
-	"github.com/ethancls/cosmos/management/internals/modules/reverseproxy/proxy"
+	"github.com/netbirdio/netbird/management/internals/modules/reverseproxy/proxy"
 )
 
 type Manager interface {

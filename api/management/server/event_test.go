@@ -7,7 +7,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ethancls/cosmos/management/server/activity"
+	"github.com/netbirdio/netbird/management/server/activity"
 )
 
 func generateAndStoreEvents(t *testing.T, manager *DefaultAccountManager, typ activity.Activity, initiatorID, targetID,

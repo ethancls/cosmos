@@ -14,14 +14,14 @@ import (
 	"github.com/stretchr/testify/assert"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 
-	"github.com/ethancls/cosmos/client/iface"
-	pfmock "github.com/ethancls/cosmos/client/iface/mocks"
-	"github.com/ethancls/cosmos/client/iface/wgaddr"
-	"github.com/ethancls/cosmos/client/internal/dns/local"
-	"github.com/ethancls/cosmos/client/internal/dns/test"
-	"github.com/ethancls/cosmos/client/internal/peer"
-	"github.com/ethancls/cosmos/client/internal/stdnet"
-	nbdns "github.com/ethancls/cosmos/dns"
+	"github.com/netbirdio/netbird/client/iface"
+	pfmock "github.com/netbirdio/netbird/client/iface/mocks"
+	"github.com/netbirdio/netbird/client/iface/wgaddr"
+	"github.com/netbirdio/netbird/client/internal/dns/local"
+	"github.com/netbirdio/netbird/client/internal/dns/test"
+	"github.com/netbirdio/netbird/client/internal/peer"
+	"github.com/netbirdio/netbird/client/internal/stdnet"
+	nbdns "github.com/netbirdio/netbird/dns"
 )
 
 func TestUpdateDNSServer(t *testing.T) {

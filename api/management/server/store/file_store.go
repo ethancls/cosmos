@@ -11,12 +11,12 @@ import (
 	"github.com/rs/xid"
 	log "github.com/sirupsen/logrus"
 
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
-	"github.com/ethancls/cosmos/management/server/telemetry"
-	"github.com/ethancls/cosmos/management/server/types"
-	nbutil "github.com/ethancls/cosmos/management/server/util"
-	"github.com/ethancls/cosmos/util"
-	"github.com/ethancls/cosmos/util/crypt"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
+	"github.com/netbirdio/netbird/management/server/telemetry"
+	"github.com/netbirdio/netbird/management/server/types"
+	nbutil "github.com/netbirdio/netbird/management/server/util"
+	"github.com/netbirdio/netbird/util"
+	"github.com/netbirdio/netbird/util/crypt"
 )
 
 // storeFileName Store file name. Stored in the datadir

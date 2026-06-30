@@ -7,10 +7,10 @@ import (
 
 	"github.com/coder/websocket"
 
-	"github.com/ethancls/cosmos/relay/healthcheck/peerid"
-	"github.com/ethancls/cosmos/relay/server"
-	"github.com/ethancls/cosmos/shared/relay"
-	"github.com/ethancls/cosmos/shared/relay/messages"
+	"github.com/netbirdio/netbird/relay/healthcheck/peerid"
+	"github.com/netbirdio/netbird/relay/server"
+	"github.com/netbirdio/netbird/shared/relay"
+	"github.com/netbirdio/netbird/shared/relay/messages"
 )
 
 func dialWS(ctx context.Context, address url.URL) error {

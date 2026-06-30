@@ -9,12 +9,12 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ethancls/cosmos/client/iface"
-	"github.com/ethancls/cosmos/client/internal/peer/dispatcher"
-	"github.com/ethancls/cosmos/client/internal/peer/guard"
-	"github.com/ethancls/cosmos/client/internal/peer/ice"
-	"github.com/ethancls/cosmos/client/internal/stdnet"
-	"github.com/ethancls/cosmos/util"
+	"github.com/netbirdio/netbird/client/iface"
+	"github.com/netbirdio/netbird/client/internal/peer/dispatcher"
+	"github.com/netbirdio/netbird/client/internal/peer/guard"
+	"github.com/netbirdio/netbird/client/internal/peer/ice"
+	"github.com/netbirdio/netbird/client/internal/stdnet"
+	"github.com/netbirdio/netbird/util"
 )
 
 var testDispatcher = dispatcher.NewConnectionDispatcher()

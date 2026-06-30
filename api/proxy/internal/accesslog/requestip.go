@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"net/netip"
 
-	"github.com/ethancls/cosmos/proxy/internal/proxy"
+	"github.com/netbirdio/netbird/proxy/internal/proxy"
 )
 
 // extractSourceIP resolves the real client IP from the request using trusted

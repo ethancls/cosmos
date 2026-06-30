@@ -5,7 +5,7 @@ import (
 	"context"
 	"encoding/json"
 
-	"github.com/ethancls/cosmos/shared/management/http/api"
+	"github.com/netbirdio/netbird/shared/management/http/api"
 )
 
 // NetworksAPI APIs for Networks, do not use directly

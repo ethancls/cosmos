@@ -17,14 +17,14 @@ import (
 	"google.golang.org/protobuf/types/known/durationpb"
 	"google.golang.org/protobuf/types/known/timestamppb"
 
-	firewall "github.com/ethancls/cosmos/client/firewall/manager"
-	"github.com/ethancls/cosmos/client/iface/configurer"
-	"github.com/ethancls/cosmos/client/internal/ingressgw"
-	"github.com/ethancls/cosmos/client/internal/relay"
-	"github.com/ethancls/cosmos/client/proto"
-	"github.com/ethancls/cosmos/route"
-	"github.com/ethancls/cosmos/shared/management/domain"
-	relayClient "github.com/ethancls/cosmos/shared/relay/client"
+	firewall "github.com/netbirdio/netbird/client/firewall/manager"
+	"github.com/netbirdio/netbird/client/iface/configurer"
+	"github.com/netbirdio/netbird/client/internal/ingressgw"
+	"github.com/netbirdio/netbird/client/internal/relay"
+	"github.com/netbirdio/netbird/client/proto"
+	"github.com/netbirdio/netbird/route"
+	"github.com/netbirdio/netbird/shared/management/domain"
+	relayClient "github.com/netbirdio/netbird/shared/relay/client"
 )
 
 const eventQueueSize = 10

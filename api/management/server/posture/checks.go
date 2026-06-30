@@ -9,9 +9,9 @@ import (
 	"github.com/hashicorp/go-version"
 	log "github.com/sirupsen/logrus"
 
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
-	"github.com/ethancls/cosmos/shared/management/http/api"
-	"github.com/ethancls/cosmos/shared/management/status"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
+	"github.com/netbirdio/netbird/shared/management/http/api"
+	"github.com/netbirdio/netbird/shared/management/status"
 )
 
 const (

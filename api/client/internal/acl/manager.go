@@ -14,12 +14,12 @@ import (
 	"github.com/mitchellh/hashstructure/v2"
 	log "github.com/sirupsen/logrus"
 
-	nberrors "github.com/ethancls/cosmos/client/errors"
-	firewall "github.com/ethancls/cosmos/client/firewall/manager"
-	"github.com/ethancls/cosmos/client/internal/acl/id"
-	"github.com/ethancls/cosmos/shared/management/domain"
-	mgmProto "github.com/ethancls/cosmos/shared/management/proto"
-	"github.com/ethancls/cosmos/shared/netiputil"
+	nberrors "github.com/netbirdio/netbird/client/errors"
+	firewall "github.com/netbirdio/netbird/client/firewall/manager"
+	"github.com/netbirdio/netbird/client/internal/acl/id"
+	"github.com/netbirdio/netbird/shared/management/domain"
+	mgmProto "github.com/netbirdio/netbird/shared/management/proto"
+	"github.com/netbirdio/netbird/shared/netiputil"
 )
 
 var ErrSourceRangesEmpty = errors.New("sources range is empty")

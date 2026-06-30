@@ -5,9 +5,9 @@ import (
 
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 
-	"github.com/ethancls/cosmos/client/iface/bind"
-	"github.com/ethancls/cosmos/client/iface/netstack"
-	"github.com/ethancls/cosmos/client/iface/wgaddr"
+	"github.com/netbirdio/netbird/client/iface/bind"
+	"github.com/netbirdio/netbird/client/iface/netstack"
+	"github.com/netbirdio/netbird/client/iface/wgaddr"
 )
 
 func TestNewNetstackDevice(t *testing.T) {

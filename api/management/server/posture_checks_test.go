@@ -8,10 +8,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/management/server/peer"
-	"github.com/ethancls/cosmos/management/server/types"
+	"github.com/netbirdio/netbird/management/server/peer"
+	"github.com/netbirdio/netbird/management/server/types"
 
-	"github.com/ethancls/cosmos/management/server/posture"
+	"github.com/netbirdio/netbird/management/server/posture"
 )
 
 const (

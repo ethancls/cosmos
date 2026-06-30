@@ -15,15 +15,15 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	nbcontext "github.com/ethancls/cosmos/management/server/context"
-	"github.com/ethancls/cosmos/management/server/mock_server"
-	"github.com/ethancls/cosmos/management/server/permissions/modules"
-	"github.com/ethancls/cosmos/management/server/permissions/roles"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/management/server/users"
-	"github.com/ethancls/cosmos/shared/auth"
-	"github.com/ethancls/cosmos/shared/management/http/api"
-	"github.com/ethancls/cosmos/shared/management/status"
+	nbcontext "github.com/netbirdio/netbird/management/server/context"
+	"github.com/netbirdio/netbird/management/server/mock_server"
+	"github.com/netbirdio/netbird/management/server/permissions/modules"
+	"github.com/netbirdio/netbird/management/server/permissions/roles"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/management/server/users"
+	"github.com/netbirdio/netbird/shared/auth"
+	"github.com/netbirdio/netbird/shared/management/http/api"
+	"github.com/netbirdio/netbird/shared/management/status"
 )
 
 const (

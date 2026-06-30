@@ -16,11 +16,11 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.zx2c4.com/wireguard/tun/netstack"
 
-	nberrors "github.com/ethancls/cosmos/client/errors"
-	firewall "github.com/ethancls/cosmos/client/firewall/manager"
-	"github.com/ethancls/cosmos/client/internal/dns/resutil"
-	"github.com/ethancls/cosmos/client/internal/peer"
-	"github.com/ethancls/cosmos/route"
+	nberrors "github.com/netbirdio/netbird/client/errors"
+	firewall "github.com/netbirdio/netbird/client/firewall/manager"
+	"github.com/netbirdio/netbird/client/internal/dns/resutil"
+	"github.com/netbirdio/netbird/client/internal/peer"
+	"github.com/netbirdio/netbird/route"
 )
 
 const errResolveFailed = "failed to resolve query for domain=%s: %v"

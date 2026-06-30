@@ -9,7 +9,7 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/shared/context"
+	"github.com/netbirdio/netbird/shared/context"
 )
 
 type ExecutionContext string

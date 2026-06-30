@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/cosmos/proxy/internal/types"
+	"github.com/netbirdio/netbird/proxy/internal/types"
 )
 
 // Simple benchmark for comparison with AddPeer contention.

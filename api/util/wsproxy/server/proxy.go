@@ -12,7 +12,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/net/http2"
 
-	"github.com/ethancls/cosmos/util/wsproxy"
+	"github.com/netbirdio/netbird/util/wsproxy"
 )
 
 const (

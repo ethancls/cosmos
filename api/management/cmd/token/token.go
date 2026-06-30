@@ -13,8 +13,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/ethancls/cosmos/management/server/store"
-	"github.com/ethancls/cosmos/management/server/types"
+	"github.com/netbirdio/netbird/management/server/store"
+	"github.com/netbirdio/netbird/management/server/types"
 )
 
 // StoreOpener initializes a store from the command context and calls fn.

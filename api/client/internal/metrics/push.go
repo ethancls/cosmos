@@ -13,7 +13,7 @@ import (
 	goversion "github.com/hashicorp/go-version"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/internal/metrics/remoteconfig"
+	"github.com/netbirdio/netbird/client/internal/metrics/remoteconfig"
 )
 
 const (

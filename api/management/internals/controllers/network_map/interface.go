@@ -5,10 +5,10 @@ package network_map
 import (
 	"context"
 
-	nbdns "github.com/ethancls/cosmos/dns"
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
-	"github.com/ethancls/cosmos/management/server/posture"
-	"github.com/ethancls/cosmos/management/server/types"
+	nbdns "github.com/netbirdio/netbird/dns"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
+	"github.com/netbirdio/netbird/management/server/posture"
+	"github.com/netbirdio/netbird/management/server/types"
 )
 
 const (

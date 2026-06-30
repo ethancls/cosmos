@@ -11,8 +11,8 @@ import (
 	"github.com/miekg/dns"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/iface"
-	nbnet "github.com/ethancls/cosmos/client/net"
+	"github.com/netbirdio/netbird/client/iface"
+	nbnet "github.com/netbirdio/netbird/client/net"
 )
 
 type ServiceViaMemory struct {

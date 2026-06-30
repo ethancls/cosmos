@@ -14,8 +14,8 @@ import (
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc"
 
-	"github.com/ethancls/cosmos/proxy/internal/proxy"
-	"github.com/ethancls/cosmos/shared/management/proto"
+	"github.com/netbirdio/netbird/proxy/internal/proxy"
+	"github.com/netbirdio/netbird/shared/management/proto"
 )
 
 // stubSessionValidator records ValidateTunnelPeer calls and returns the

@@ -13,9 +13,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/management/server/activity"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/shared/auth"
+	"github.com/netbirdio/netbird/management/server/activity"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/shared/auth"
 )
 
 func TestDefaultAccountManager_SaveSetupKey(t *testing.T) {

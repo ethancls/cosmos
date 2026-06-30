@@ -16,9 +16,9 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/sys/windows/registry"
 
-	nberrors "github.com/ethancls/cosmos/client/errors"
-	"github.com/ethancls/cosmos/client/internal/statemanager"
-	"github.com/ethancls/cosmos/client/internal/winregistry"
+	nberrors "github.com/netbirdio/netbird/client/errors"
+	"github.com/netbirdio/netbird/client/internal/statemanager"
+	"github.com/netbirdio/netbird/client/internal/winregistry"
 )
 
 var (

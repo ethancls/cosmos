@@ -8,11 +8,11 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	nberrors "github.com/ethancls/cosmos/client/errors"
-	"github.com/ethancls/cosmos/client/internal"
-	"github.com/ethancls/cosmos/client/internal/routemanager/systemops"
-	"github.com/ethancls/cosmos/client/internal/statemanager"
-	"github.com/ethancls/cosmos/client/proto"
+	nberrors "github.com/netbirdio/netbird/client/errors"
+	"github.com/netbirdio/netbird/client/internal"
+	"github.com/netbirdio/netbird/client/internal/routemanager/systemops"
+	"github.com/netbirdio/netbird/client/internal/statemanager"
+	"github.com/netbirdio/netbird/client/proto"
 )
 
 // ListStates returns a list of all saved states

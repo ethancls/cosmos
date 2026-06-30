@@ -8,8 +8,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	daemonProto "github.com/ethancls/cosmos/client/proto"
-	mgm "github.com/ethancls/cosmos/shared/management/client"
+	daemonProto "github.com/netbirdio/netbird/client/proto"
+	mgm "github.com/netbirdio/netbird/shared/management/client"
 )
 
 func TestManager_Expose_Success(t *testing.T) {

@@ -9,11 +9,11 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ethancls/cosmos/client/iface"
-	"github.com/ethancls/cosmos/shared/relay/client/dialer"
-	netErr "github.com/ethancls/cosmos/shared/relay/client/dialer/net"
-	"github.com/ethancls/cosmos/shared/relay/client/dialer/quic"
-	"github.com/ethancls/cosmos/shared/relay/client/dialer/ws"
+	"github.com/netbirdio/netbird/client/iface"
+	"github.com/netbirdio/netbird/shared/relay/client/dialer"
+	netErr "github.com/netbirdio/netbird/shared/relay/client/dialer/net"
+	"github.com/netbirdio/netbird/shared/relay/client/dialer/quic"
+	"github.com/netbirdio/netbird/shared/relay/client/dialer/ws"
 )
 
 // TestDatagramSizedCapability locks the capability the generic fallback relies

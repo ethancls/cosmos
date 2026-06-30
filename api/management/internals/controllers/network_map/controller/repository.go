@@ -3,10 +3,10 @@ package controller
 import (
 	"context"
 
-	"github.com/ethancls/cosmos/management/internals/modules/zones"
-	"github.com/ethancls/cosmos/management/server/peer"
-	"github.com/ethancls/cosmos/management/server/store"
-	"github.com/ethancls/cosmos/management/server/types"
+	"github.com/netbirdio/netbird/management/internals/modules/zones"
+	"github.com/netbirdio/netbird/management/server/peer"
+	"github.com/netbirdio/netbird/management/server/store"
+	"github.com/netbirdio/netbird/management/server/types"
 )
 
 type Repository interface {

@@ -9,13 +9,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ethancls/cosmos/client/ssh/auth"
-	nbdns "github.com/ethancls/cosmos/dns"
-	resourceTypes "github.com/ethancls/cosmos/management/server/networks/resources/types"
-	routerTypes "github.com/ethancls/cosmos/management/server/networks/routers/types"
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
-	"github.com/ethancls/cosmos/route"
-	"github.com/ethancls/cosmos/shared/management/domain"
+	"github.com/netbirdio/netbird/client/ssh/auth"
+	nbdns "github.com/netbirdio/netbird/dns"
+	resourceTypes "github.com/netbirdio/netbird/management/server/networks/resources/types"
+	routerTypes "github.com/netbirdio/netbird/management/server/networks/routers/types"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
+	"github.com/netbirdio/netbird/route"
+	"github.com/netbirdio/netbird/shared/management/domain"
 )
 
 type NetworkMapComponents struct {

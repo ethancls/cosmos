@@ -13,9 +13,9 @@ import (
 	"github.com/hashicorp/go-multierror"
 	log "github.com/sirupsen/logrus"
 
-	cerrors "github.com/ethancls/cosmos/client/errors"
-	"github.com/ethancls/cosmos/client/iface/bufsize"
-	"github.com/ethancls/cosmos/client/iface/wgproxy/listener"
+	cerrors "github.com/netbirdio/netbird/client/errors"
+	"github.com/netbirdio/netbird/client/iface/bufsize"
+	"github.com/netbirdio/netbird/client/iface/wgproxy/listener"
 )
 
 // WGUDPProxy proxies

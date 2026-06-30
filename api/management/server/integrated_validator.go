@@ -7,10 +7,10 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/management/server/integrations/integrated_validator"
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
-	"github.com/ethancls/cosmos/management/server/store"
-	"github.com/ethancls/cosmos/management/server/types"
+	"github.com/netbirdio/netbird/management/server/integrations/integrated_validator"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
+	"github.com/netbirdio/netbird/management/server/store"
+	"github.com/netbirdio/netbird/management/server/types"
 )
 
 // UpdateIntegratedValidator updates the integrated validator groups for a specified account.

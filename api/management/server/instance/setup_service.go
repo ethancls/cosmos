@@ -7,11 +7,11 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/management/server/account"
-	"github.com/ethancls/cosmos/management/server/idp"
-	"github.com/ethancls/cosmos/management/server/store"
-	"github.com/ethancls/cosmos/shared/auth"
-	"github.com/ethancls/cosmos/shared/management/status"
+	"github.com/netbirdio/netbird/management/server/account"
+	"github.com/netbirdio/netbird/management/server/idp"
+	"github.com/netbirdio/netbird/management/server/store"
+	"github.com/netbirdio/netbird/shared/auth"
+	"github.com/netbirdio/netbird/shared/management/status"
 )
 
 const (

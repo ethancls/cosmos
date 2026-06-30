@@ -3,7 +3,7 @@ package accesslog
 import (
 	"io"
 
-	"github.com/ethancls/cosmos/proxy/internal/responsewriter"
+	"github.com/netbirdio/netbird/proxy/internal/responsewriter"
 )
 
 // statusWriter captures the HTTP status code and bytes written from responses.

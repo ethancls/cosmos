@@ -7,9 +7,9 @@ import (
 
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 
-	"github.com/ethancls/cosmos/client/iface/configurer"
-	"github.com/ethancls/cosmos/client/iface/wgaddr"
-	"github.com/ethancls/cosmos/client/iface/wgproxy"
+	"github.com/netbirdio/netbird/client/iface/configurer"
+	"github.com/netbirdio/netbird/client/iface/wgaddr"
+	"github.com/netbirdio/netbird/client/iface/wgproxy"
 )
 
 type WGIface interface {

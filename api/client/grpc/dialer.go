@@ -15,7 +15,7 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/keepalive"
 
-	"github.com/ethancls/cosmos/util/embeddedroots"
+	"github.com/netbirdio/netbird/util/embeddedroots"
 )
 
 // Backoff returns a backoff configuration for gRPC calls

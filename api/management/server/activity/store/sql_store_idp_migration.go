@@ -10,8 +10,8 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/ethancls/cosmos/management/server/activity"
-	"github.com/ethancls/cosmos/management/server/idp/migration"
+	"github.com/netbirdio/netbird/management/server/activity"
+	"github.com/netbirdio/netbird/management/server/idp/migration"
 )
 
 // CheckSchema verifies that all tables and columns required by the migration exist in the event database.

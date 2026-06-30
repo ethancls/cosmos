@@ -8,8 +8,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ethancls/cosmos/management/server/activity"
-	"github.com/ethancls/cosmos/util/crypt"
+	"github.com/netbirdio/netbird/management/server/activity"
+	"github.com/netbirdio/netbird/util/crypt"
 )
 
 func TestNewSqlStore(t *testing.T) {

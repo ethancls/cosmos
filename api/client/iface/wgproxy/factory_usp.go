@@ -3,7 +3,7 @@ package wgproxy
 import (
 	log "github.com/sirupsen/logrus"
 
-	proxyBind "github.com/ethancls/cosmos/client/iface/wgproxy/bind"
+	proxyBind "github.com/netbirdio/netbird/client/iface/wgproxy/bind"
 )
 
 type USPFactory struct {

@@ -6,9 +6,9 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/internal/routemanager/common"
-	"github.com/ethancls/cosmos/client/internal/routemanager/refcounter"
-	"github.com/ethancls/cosmos/route"
+	"github.com/netbirdio/netbird/client/internal/routemanager/common"
+	"github.com/netbirdio/netbird/client/internal/routemanager/refcounter"
+	"github.com/netbirdio/netbird/route"
 )
 
 type Route struct {

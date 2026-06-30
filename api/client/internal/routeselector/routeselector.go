@@ -8,8 +8,8 @@ import (
 
 	"github.com/hashicorp/go-multierror"
 
-	"github.com/ethancls/cosmos/client/errors"
-	"github.com/ethancls/cosmos/route"
+	"github.com/netbirdio/netbird/client/errors"
+	"github.com/netbirdio/netbird/route"
 )
 
 type RouteSelector struct {

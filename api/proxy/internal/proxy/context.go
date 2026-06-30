@@ -6,7 +6,7 @@ import (
 	"net/netip"
 	"sync"
 
-	"github.com/ethancls/cosmos/proxy/internal/types"
+	"github.com/netbirdio/netbird/proxy/internal/types"
 )
 
 type requestContextKey string

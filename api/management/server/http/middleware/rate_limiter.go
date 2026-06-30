@@ -13,7 +13,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/time/rate"
 
-	"github.com/ethancls/cosmos/shared/management/http/util"
+	"github.com/netbirdio/netbird/shared/management/http/util"
 )
 
 const (

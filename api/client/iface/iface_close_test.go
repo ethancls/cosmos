@@ -11,10 +11,10 @@ import (
 	wgdevice "golang.zx2c4.com/wireguard/device"
 	"golang.zx2c4.com/wireguard/tun/netstack"
 
-	"github.com/ethancls/cosmos/client/iface/device"
-	"github.com/ethancls/cosmos/client/iface/udpmux"
-	"github.com/ethancls/cosmos/client/iface/wgaddr"
-	"github.com/ethancls/cosmos/client/iface/wgproxy"
+	"github.com/netbirdio/netbird/client/iface/device"
+	"github.com/netbirdio/netbird/client/iface/udpmux"
+	"github.com/netbirdio/netbird/client/iface/wgaddr"
+	"github.com/netbirdio/netbird/client/iface/wgproxy"
 )
 
 // fakeTunDevice implements WGTunDevice and lets the test control when

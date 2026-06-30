@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/shared/management/proto"
+	"github.com/netbirdio/netbird/shared/management/proto"
 )
 
 // authTokenField is the only per-proxy field that shallowCloneMapping must NOT

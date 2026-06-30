@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/ethancls/cosmos/management/server/peer"
+	"github.com/netbirdio/netbird/management/server/peer"
 
 	"github.com/stretchr/testify/assert"
 )

@@ -7,14 +7,14 @@ import (
 	"github.com/stretchr/testify/require"
 	"gorm.io/gorm"
 
-	nbdns "github.com/ethancls/cosmos/dns"
-	resourceTypes "github.com/ethancls/cosmos/management/server/networks/resources/types"
-	routerTypes "github.com/ethancls/cosmos/management/server/networks/routers/types"
-	networkTypes "github.com/ethancls/cosmos/management/server/networks/types"
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
-	"github.com/ethancls/cosmos/management/server/store"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/route"
+	nbdns "github.com/netbirdio/netbird/dns"
+	resourceTypes "github.com/netbirdio/netbird/management/server/networks/resources/types"
+	routerTypes "github.com/netbirdio/netbird/management/server/networks/routers/types"
+	networkTypes "github.com/netbirdio/netbird/management/server/networks/types"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
+	"github.com/netbirdio/netbird/management/server/store"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/route"
 )
 
 // GetDB extracts the *gorm.DB from a store.Store (must be *SqlStore).

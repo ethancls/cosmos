@@ -10,7 +10,7 @@ import (
 	time "time"
 
 	gomock "github.com/golang/mock/gomock"
-	proto "github.com/ethancls/cosmos/shared/management/proto"
+	proto "github.com/netbirdio/netbird/shared/management/proto"
 )
 
 // MockManager is a mock of Manager interface.

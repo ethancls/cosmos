@@ -16,12 +16,12 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/idp/dex"
-	"github.com/ethancls/cosmos/management/server/auth"
-	"github.com/ethancls/cosmos/management/server/store"
-	"github.com/ethancls/cosmos/management/server/types"
-	nbauth "github.com/ethancls/cosmos/shared/auth"
-	nbjwt "github.com/ethancls/cosmos/shared/auth/jwt"
+	"github.com/netbirdio/netbird/idp/dex"
+	"github.com/netbirdio/netbird/management/server/auth"
+	"github.com/netbirdio/netbird/management/server/store"
+	"github.com/netbirdio/netbird/management/server/types"
+	nbauth "github.com/netbirdio/netbird/shared/auth"
+	nbjwt "github.com/netbirdio/netbird/shared/auth/jwt"
 )
 
 func TestAuthManager_GetAccountInfoFromPAT(t *testing.T) {

@@ -18,15 +18,15 @@ import (
 	"golang.org/x/net/http2"
 	"golang.org/x/net/http2/h2c"
 
-	"github.com/ethancls/cosmos/shared/metrics"
+	"github.com/netbirdio/netbird/shared/metrics"
 
-	"github.com/ethancls/cosmos/encryption"
-	"github.com/ethancls/cosmos/shared/signal/proto"
-	"github.com/ethancls/cosmos/signal/server"
-	"github.com/ethancls/cosmos/util"
-	"github.com/ethancls/cosmos/util/wsproxy"
-	wsproxyserver "github.com/ethancls/cosmos/util/wsproxy/server"
-	"github.com/ethancls/cosmos/version"
+	"github.com/netbirdio/netbird/encryption"
+	"github.com/netbirdio/netbird/shared/signal/proto"
+	"github.com/netbirdio/netbird/signal/server"
+	"github.com/netbirdio/netbird/util"
+	"github.com/netbirdio/netbird/util/wsproxy"
+	wsproxyserver "github.com/netbirdio/netbird/util/wsproxy/server"
+	"github.com/netbirdio/netbird/version"
 
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"

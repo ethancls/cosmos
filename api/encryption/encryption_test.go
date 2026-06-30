@@ -1,8 +1,8 @@
 package encryption_test
 
 import (
-	"github.com/ethancls/cosmos/encryption"
-	"github.com/ethancls/cosmos/encryption/testprotos"
+	"github.com/netbirdio/netbird/encryption"
+	"github.com/netbirdio/netbird/encryption/testprotos"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"

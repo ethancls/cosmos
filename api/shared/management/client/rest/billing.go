@@ -3,7 +3,7 @@ package rest
 import (
 	"context"
 
-	"github.com/ethancls/cosmos/shared/management/http/api"
+	"github.com/netbirdio/netbird/shared/management/http/api"
 )
 
 // BillingAPI APIs for billing and invoices

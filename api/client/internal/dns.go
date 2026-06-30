@@ -9,7 +9,7 @@ import (
 	"github.com/miekg/dns"
 	log "github.com/sirupsen/logrus"
 
-	nbdns "github.com/ethancls/cosmos/dns"
+	nbdns "github.com/netbirdio/netbird/dns"
 )
 
 func createPTRRecord(record nbdns.SimpleRecord, prefix netip.Prefix) (nbdns.SimpleRecord, bool) {

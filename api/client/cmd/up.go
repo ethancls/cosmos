@@ -17,14 +17,14 @@ import (
 	gstatus "google.golang.org/grpc/status"
 	"google.golang.org/protobuf/types/known/durationpb"
 
-	"github.com/ethancls/cosmos/client/iface"
-	"github.com/ethancls/cosmos/client/internal"
-	"github.com/ethancls/cosmos/client/internal/peer"
-	"github.com/ethancls/cosmos/client/internal/profilemanager"
-	"github.com/ethancls/cosmos/client/proto"
-	"github.com/ethancls/cosmos/client/system"
-	"github.com/ethancls/cosmos/shared/management/domain"
-	"github.com/ethancls/cosmos/util"
+	"github.com/netbirdio/netbird/client/iface"
+	"github.com/netbirdio/netbird/client/internal"
+	"github.com/netbirdio/netbird/client/internal/peer"
+	"github.com/netbirdio/netbird/client/internal/profilemanager"
+	"github.com/netbirdio/netbird/client/proto"
+	"github.com/netbirdio/netbird/client/system"
+	"github.com/netbirdio/netbird/shared/management/domain"
+	"github.com/netbirdio/netbird/util"
 )
 
 const (

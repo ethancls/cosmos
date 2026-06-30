@@ -12,8 +12,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/ethancls/cosmos/client/configs"
-	"github.com/ethancls/cosmos/util"
+	"github.com/netbirdio/netbird/client/configs"
+	"github.com/netbirdio/netbird/util"
 )
 
 const serviceParamsFile = "service.json"

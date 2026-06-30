@@ -8,7 +8,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/ethancls/cosmos/shared/management/http/util"
+	"github.com/netbirdio/netbird/shared/management/http/util"
 )
 
 // APIError represents an error response from the management API.

@@ -9,12 +9,12 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/management/server/idp"
-	"github.com/ethancls/cosmos/management/server/mock_server"
-	nbstore "github.com/ethancls/cosmos/management/server/store"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/shared/auth"
-	"github.com/ethancls/cosmos/shared/management/status"
+	"github.com/netbirdio/netbird/management/server/idp"
+	"github.com/netbirdio/netbird/management/server/mock_server"
+	nbstore "github.com/netbirdio/netbird/management/server/store"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/shared/auth"
+	"github.com/netbirdio/netbird/shared/management/status"
 )
 
 type setupInstanceManagerMock struct {

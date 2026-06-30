@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/cosmos/client/iface/wgproxy/ebpf"
-	"github.com/ethancls/cosmos/client/iface/wgproxy/udp"
+	"github.com/netbirdio/netbird/client/iface/wgproxy/ebpf"
+	"github.com/netbirdio/netbird/client/iface/wgproxy/udp"
 )
 
 // compareUDPAddr compares two UDP addresses, ignoring IPv6 zone IDs

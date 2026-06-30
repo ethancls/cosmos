@@ -3,8 +3,8 @@
 package debug
 
 import (
-	"github.com/ethancls/cosmos/client/anonymize"
-	"github.com/ethancls/cosmos/client/internal/routemanager/systemops"
+	"github.com/netbirdio/netbird/client/anonymize"
+	"github.com/netbirdio/netbird/client/internal/routemanager/systemops"
 )
 
 // buildPlatformSpecificRouteTable builds headers and rows for non-Windows platforms

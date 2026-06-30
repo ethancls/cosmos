@@ -5,8 +5,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	nbconfig "github.com/ethancls/cosmos/management/internals/server/config"
-	"github.com/ethancls/cosmos/version"
+	nbconfig "github.com/netbirdio/netbird/management/internals/server/config"
+	"github.com/netbirdio/netbird/version"
 )
 
 const (

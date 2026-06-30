@@ -15,9 +15,9 @@ import (
 	"github.com/stretchr/testify/require"
 	"golang.zx2c4.com/wireguard/tun/netstack"
 
-	"github.com/ethancls/cosmos/client/iface/device"
-	"github.com/ethancls/cosmos/client/iface/wgaddr"
-	"github.com/ethancls/cosmos/client/internal/dns/test"
+	"github.com/netbirdio/netbird/client/iface/device"
+	"github.com/netbirdio/netbird/client/iface/wgaddr"
+	"github.com/netbirdio/netbird/client/internal/dns/test"
 )
 
 func TestUpstreamResolver_ServeDNS(t *testing.T) {

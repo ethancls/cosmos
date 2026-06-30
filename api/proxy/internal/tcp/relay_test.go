@@ -12,8 +12,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/proxy/internal/netutil"
-	"github.com/ethancls/cosmos/util/netrelay"
+	"github.com/netbirdio/netbird/proxy/internal/netutil"
+	"github.com/netbirdio/netbird/util/netrelay"
 )
 
 func testRelay(ctx context.Context, logger *log.Entry, src, dst net.Conn, idleTimeout time.Duration) (int64, int64) {

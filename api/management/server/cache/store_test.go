@@ -9,7 +9,7 @@ import (
 	"github.com/redis/go-redis/v9"
 	testcontainersredis "github.com/testcontainers/testcontainers-go/modules/redis"
 
-	"github.com/ethancls/cosmos/management/server/cache"
+	"github.com/netbirdio/netbird/management/server/cache"
 )
 
 func TestMemoryStore(t *testing.T) {

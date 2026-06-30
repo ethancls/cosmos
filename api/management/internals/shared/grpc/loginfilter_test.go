@@ -11,7 +11,7 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
 )
 
 func testAdvancedCfg() *lfConfig {

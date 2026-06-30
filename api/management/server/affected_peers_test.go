@@ -11,16 +11,16 @@ import (
 	"github.com/stretchr/testify/require"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 
-	nbdns "github.com/ethancls/cosmos/dns"
-	rpservice "github.com/ethancls/cosmos/management/internals/modules/reverseproxy/service"
-	"github.com/ethancls/cosmos/management/server/affectedpeers"
-	routerTypes "github.com/ethancls/cosmos/management/server/networks/routers/types"
-	networkTypes "github.com/ethancls/cosmos/management/server/networks/types"
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
-	"github.com/ethancls/cosmos/management/server/posture"
-	"github.com/ethancls/cosmos/management/server/store"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/route"
+	nbdns "github.com/netbirdio/netbird/dns"
+	rpservice "github.com/netbirdio/netbird/management/internals/modules/reverseproxy/service"
+	"github.com/netbirdio/netbird/management/server/affectedpeers"
+	routerTypes "github.com/netbirdio/netbird/management/server/networks/routers/types"
+	networkTypes "github.com/netbirdio/netbird/management/server/networks/types"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
+	"github.com/netbirdio/netbird/management/server/posture"
+	"github.com/netbirdio/netbird/management/server/store"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/route"
 )
 
 // resolveAffected is a test helper for the resolver's Load+Expand, used where a

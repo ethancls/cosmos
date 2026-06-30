@@ -7,10 +7,10 @@ import (
 	"github.com/gorilla/mux"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/management/server/account"
-	nbinstance "github.com/ethancls/cosmos/management/server/instance"
-	"github.com/ethancls/cosmos/shared/management/http/api"
-	"github.com/ethancls/cosmos/shared/management/http/util"
+	"github.com/netbirdio/netbird/management/server/account"
+	nbinstance "github.com/netbirdio/netbird/management/server/instance"
+	"github.com/netbirdio/netbird/shared/management/http/api"
+	"github.com/netbirdio/netbird/shared/management/http/util"
 )
 
 // handler handles the instance setup HTTP endpoints

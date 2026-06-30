@@ -11,8 +11,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/management/server/util"
-	"github.com/ethancls/cosmos/shared/management/http/api"
+	"github.com/netbirdio/netbird/management/server/util"
+	"github.com/netbirdio/netbird/shared/management/http/api"
 )
 
 // Peer capability constants mirror the proto enum values.

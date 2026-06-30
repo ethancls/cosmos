@@ -7,15 +7,15 @@ import (
 
 	"github.com/gorilla/mux"
 
-	nbcontext "github.com/ethancls/cosmos/management/server/context"
-	"github.com/ethancls/cosmos/management/server/permissions"
-	"github.com/ethancls/cosmos/management/server/permissions/modules"
-	"github.com/ethancls/cosmos/management/server/permissions/operations"
-	"github.com/ethancls/cosmos/management/server/store"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/shared/management/http/api"
-	"github.com/ethancls/cosmos/shared/management/http/util"
-	"github.com/ethancls/cosmos/shared/management/status"
+	nbcontext "github.com/netbirdio/netbird/management/server/context"
+	"github.com/netbirdio/netbird/management/server/permissions"
+	"github.com/netbirdio/netbird/management/server/permissions/modules"
+	"github.com/netbirdio/netbird/management/server/permissions/operations"
+	"github.com/netbirdio/netbird/management/server/store"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/shared/management/http/api"
+	"github.com/netbirdio/netbird/shared/management/http/util"
+	"github.com/netbirdio/netbird/shared/management/status"
 )
 
 type handler struct {

@@ -13,12 +13,12 @@ import (
 	log "github.com/sirupsen/logrus"
 	"google.golang.org/protobuf/types/known/timestamppb"
 
-	"github.com/ethancls/cosmos/client/internal/netflow/conntrack"
-	"github.com/ethancls/cosmos/client/internal/netflow/logger"
-	nftypes "github.com/ethancls/cosmos/client/internal/netflow/types"
-	"github.com/ethancls/cosmos/client/internal/peer"
-	"github.com/ethancls/cosmos/flow/client"
-	"github.com/ethancls/cosmos/flow/proto"
+	"github.com/netbirdio/netbird/client/internal/netflow/conntrack"
+	"github.com/netbirdio/netbird/client/internal/netflow/logger"
+	nftypes "github.com/netbirdio/netbird/client/internal/netflow/types"
+	"github.com/netbirdio/netbird/client/internal/peer"
+	"github.com/netbirdio/netbird/flow/client"
+	"github.com/netbirdio/netbird/flow/proto"
 )
 
 // Manager handles netflow tracking and logging

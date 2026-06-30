@@ -3,7 +3,7 @@ package grpc
 import (
 	"time"
 
-	"github.com/ethancls/cosmos/management/internals/controllers/network_map"
+	"github.com/netbirdio/netbird/management/internals/controllers/network_map"
 )
 
 // UpdateDebouncer implements a backpressure mechanism that:

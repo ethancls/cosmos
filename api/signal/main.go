@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/ethancls/cosmos/signal/cmd"
+	"github.com/netbirdio/netbird/signal/cmd"
 	"os"
 )
 

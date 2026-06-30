@@ -13,8 +13,8 @@ import (
 	"github.com/spf13/cobra"
 	"google.golang.org/grpc"
 
-	"github.com/ethancls/cosmos/client/internal"
-	"github.com/ethancls/cosmos/client/server"
+	"github.com/netbirdio/netbird/client/internal"
+	"github.com/netbirdio/netbird/client/server"
 )
 
 var serviceCmd = &cobra.Command{

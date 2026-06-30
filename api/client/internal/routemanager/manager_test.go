@@ -8,15 +8,15 @@ import (
 	"net/netip"
 	"testing"
 
-	"github.com/ethancls/cosmos/client/internal/stdnet"
+	"github.com/netbirdio/netbird/client/internal/stdnet"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/client/iface"
-	"github.com/ethancls/cosmos/client/iface/wgaddr"
-	"github.com/ethancls/cosmos/client/internal/peer"
-	"github.com/ethancls/cosmos/route"
+	"github.com/netbirdio/netbird/client/iface"
+	"github.com/netbirdio/netbird/client/iface/wgaddr"
+	"github.com/netbirdio/netbird/client/internal/peer"
+	"github.com/netbirdio/netbird/route"
 )
 
 // send 5 routes, one for server and 4 for clients, one normal and 2 HA and one small

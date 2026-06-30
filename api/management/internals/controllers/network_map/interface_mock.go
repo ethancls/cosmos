@@ -13,9 +13,9 @@ import (
 	context "context"
 	reflect "reflect"
 
-	peer "github.com/ethancls/cosmos/management/server/peer"
-	posture "github.com/ethancls/cosmos/management/server/posture"
-	types "github.com/ethancls/cosmos/management/server/types"
+	peer "github.com/netbirdio/netbird/management/server/peer"
+	posture "github.com/netbirdio/netbird/management/server/posture"
+	types "github.com/netbirdio/netbird/management/server/types"
 	gomock "go.uber.org/mock/gomock"
 )
 

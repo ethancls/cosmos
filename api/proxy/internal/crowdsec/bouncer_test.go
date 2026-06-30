@@ -15,7 +15,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/proxy/internal/restrict"
+	"github.com/netbirdio/netbird/proxy/internal/restrict"
 )
 
 func TestBouncer_CheckIP_Empty(t *testing.T) {

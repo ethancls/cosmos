@@ -5,7 +5,7 @@ import (
 	"math/rand/v2"
 	"time"
 
-	"github.com/ethancls/cosmos/shared/management/status"
+	"github.com/netbirdio/netbird/shared/management/status"
 	log "github.com/sirupsen/logrus"
 )
 

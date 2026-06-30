@@ -9,7 +9,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	auth "github.com/ethancls/cosmos/shared/relay/auth/hmac"
+	auth "github.com/netbirdio/netbird/shared/relay/auth/hmac"
 )
 
 const (

@@ -5,7 +5,7 @@ import (
 	"net/netip"
 	"testing"
 
-	firewall "github.com/ethancls/cosmos/client/firewall/manager"
+	firewall "github.com/netbirdio/netbird/client/firewall/manager"
 )
 
 var (

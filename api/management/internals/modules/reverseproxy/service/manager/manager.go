@@ -13,21 +13,21 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
 
-	resourcetypes "github.com/ethancls/cosmos/management/server/networks/resources/types"
+	resourcetypes "github.com/netbirdio/netbird/management/server/networks/resources/types"
 
-	"github.com/ethancls/cosmos/management/internals/modules/reverseproxy/proxy"
-	"github.com/ethancls/cosmos/management/internals/modules/reverseproxy/service"
-	"github.com/ethancls/cosmos/management/internals/modules/reverseproxy/sessionkey"
-	"github.com/ethancls/cosmos/management/server/account"
-	"github.com/ethancls/cosmos/management/server/activity"
-	"github.com/ethancls/cosmos/management/server/permissions"
-	"github.com/ethancls/cosmos/management/server/permissions/modules"
-	"github.com/ethancls/cosmos/management/server/permissions/operations"
-	"github.com/ethancls/cosmos/management/server/store"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/shared/management/status"
+	"github.com/netbirdio/netbird/management/internals/modules/reverseproxy/proxy"
+	"github.com/netbirdio/netbird/management/internals/modules/reverseproxy/service"
+	"github.com/netbirdio/netbird/management/internals/modules/reverseproxy/sessionkey"
+	"github.com/netbirdio/netbird/management/server/account"
+	"github.com/netbirdio/netbird/management/server/activity"
+	"github.com/netbirdio/netbird/management/server/permissions"
+	"github.com/netbirdio/netbird/management/server/permissions/modules"
+	"github.com/netbirdio/netbird/management/server/permissions/operations"
+	"github.com/netbirdio/netbird/management/server/store"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/shared/management/status"
 )
 
 const (

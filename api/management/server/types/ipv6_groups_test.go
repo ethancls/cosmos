@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
 )
 
 func TestPeerIPv6Allowed(t *testing.T) {

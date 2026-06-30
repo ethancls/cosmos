@@ -12,10 +12,10 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ethancls/cosmos/management/server/http/testing/testing_tools"
-	"github.com/ethancls/cosmos/management/server/http/testing/testing_tools/channel"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/shared/management/http/api"
+	"github.com/netbirdio/netbird/management/server/http/testing/testing_tools"
+	"github.com/netbirdio/netbird/management/server/http/testing/testing_tools/channel"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/shared/management/http/api"
 )
 
 func Test_Accounts_GetAll(t *testing.T) {

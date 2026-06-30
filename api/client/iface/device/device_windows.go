@@ -11,10 +11,10 @@ import (
 	"golang.zx2c4.com/wireguard/tun/netstack"
 	"golang.zx2c4.com/wireguard/windows/tunnel/winipcfg"
 
-	"github.com/ethancls/cosmos/client/iface/bind"
-	"github.com/ethancls/cosmos/client/iface/configurer"
-	"github.com/ethancls/cosmos/client/iface/udpmux"
-	"github.com/ethancls/cosmos/client/iface/wgaddr"
+	"github.com/netbirdio/netbird/client/iface/bind"
+	"github.com/netbirdio/netbird/client/iface/configurer"
+	"github.com/netbirdio/netbird/client/iface/udpmux"
+	"github.com/netbirdio/netbird/client/iface/wgaddr"
 )
 
 const defaultWindowsGUIDSTring = "{f2f29e61-d91f-4d76-8151-119b20c4bdeb}"

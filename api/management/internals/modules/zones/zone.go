@@ -5,9 +5,9 @@ import (
 
 	"github.com/rs/xid"
 
-	"github.com/ethancls/cosmos/management/internals/modules/zones/records"
-	"github.com/ethancls/cosmos/shared/management/domain"
-	"github.com/ethancls/cosmos/shared/management/http/api"
+	"github.com/netbirdio/netbird/management/internals/modules/zones/records"
+	"github.com/netbirdio/netbird/shared/management/domain"
+	"github.com/netbirdio/netbird/shared/management/http/api"
 )
 
 type Zone struct {

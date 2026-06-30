@@ -18,11 +18,11 @@ import (
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/status"
 
-	nbgrpc "github.com/ethancls/cosmos/client/grpc"
-	"github.com/ethancls/cosmos/encryption"
-	"github.com/ethancls/cosmos/shared/management/client"
-	"github.com/ethancls/cosmos/shared/signal/proto"
-	"github.com/ethancls/cosmos/util/wsproxy"
+	nbgrpc "github.com/netbirdio/netbird/client/grpc"
+	"github.com/netbirdio/netbird/encryption"
+	"github.com/netbirdio/netbird/shared/management/client"
+	"github.com/netbirdio/netbird/shared/signal/proto"
+	"github.com/netbirdio/netbird/util/wsproxy"
 )
 
 const (

@@ -11,13 +11,13 @@ import (
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ethancls/cosmos/management/server/auth"
-	nbcontext "github.com/ethancls/cosmos/management/server/context"
-	"github.com/ethancls/cosmos/management/server/http/middleware/bypass"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/management/server/util"
-	nbauth "github.com/ethancls/cosmos/shared/auth"
-	nbjwt "github.com/ethancls/cosmos/shared/auth/jwt"
+	"github.com/netbirdio/netbird/management/server/auth"
+	nbcontext "github.com/netbirdio/netbird/management/server/context"
+	"github.com/netbirdio/netbird/management/server/http/middleware/bypass"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/management/server/util"
+	nbauth "github.com/netbirdio/netbird/shared/auth"
+	nbjwt "github.com/netbirdio/netbird/shared/auth/jwt"
 )
 
 const (

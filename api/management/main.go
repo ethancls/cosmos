@@ -7,7 +7,7 @@ import (
 	_ "net/http/pprof"
 	"os"
 
-	"github.com/ethancls/cosmos/management/cmd"
+	"github.com/netbirdio/netbird/management/cmd"
 )
 
 func main() {

@@ -14,7 +14,7 @@ import (
 	"github.com/stretchr/testify/require"
 	cryptossh "golang.org/x/crypto/ssh"
 
-	nbssh "github.com/ethancls/cosmos/client/ssh"
+	nbssh "github.com/netbirdio/netbird/client/ssh"
 )
 
 func TestServer_StartStop(t *testing.T) {

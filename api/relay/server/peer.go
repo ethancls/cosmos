@@ -9,11 +9,11 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/relay/metrics"
-	"github.com/ethancls/cosmos/relay/server/listener"
-	"github.com/ethancls/cosmos/relay/server/store"
-	"github.com/ethancls/cosmos/shared/relay/healthcheck"
-	"github.com/ethancls/cosmos/shared/relay/messages"
+	"github.com/netbirdio/netbird/relay/metrics"
+	"github.com/netbirdio/netbird/relay/server/listener"
+	"github.com/netbirdio/netbird/relay/server/store"
+	"github.com/netbirdio/netbird/shared/relay/healthcheck"
+	"github.com/netbirdio/netbird/shared/relay/messages"
 )
 
 const (

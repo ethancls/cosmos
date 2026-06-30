@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/cosmos/client/internal"
-	"github.com/ethancls/cosmos/client/internal/profilemanager"
+	"github.com/netbirdio/netbird/client/internal"
+	"github.com/netbirdio/netbird/client/internal/profilemanager"
 )
 
 var cliAddr string

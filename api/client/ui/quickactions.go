@@ -19,8 +19,8 @@ import (
 	"fyne.io/fyne/v2/widget"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/internal"
-	"github.com/ethancls/cosmos/client/proto"
+	"github.com/netbirdio/netbird/client/internal"
+	"github.com/netbirdio/netbird/client/proto"
 )
 
 type quickActionsUiState struct {

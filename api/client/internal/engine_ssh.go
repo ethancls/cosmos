@@ -9,14 +9,14 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	firewallManager "github.com/ethancls/cosmos/client/firewall/manager"
-	"github.com/ethancls/cosmos/client/iface/netstack"
-	nftypes "github.com/ethancls/cosmos/client/internal/netflow/types"
-	sshauth "github.com/ethancls/cosmos/client/ssh/auth"
-	sshconfig "github.com/ethancls/cosmos/client/ssh/config"
-	sshserver "github.com/ethancls/cosmos/client/ssh/server"
-	mgmProto "github.com/ethancls/cosmos/shared/management/proto"
-	sshuserhash "github.com/ethancls/cosmos/shared/sshauth"
+	firewallManager "github.com/netbirdio/netbird/client/firewall/manager"
+	"github.com/netbirdio/netbird/client/iface/netstack"
+	nftypes "github.com/netbirdio/netbird/client/internal/netflow/types"
+	sshauth "github.com/netbirdio/netbird/client/ssh/auth"
+	sshconfig "github.com/netbirdio/netbird/client/ssh/config"
+	sshserver "github.com/netbirdio/netbird/client/ssh/server"
+	mgmProto "github.com/netbirdio/netbird/shared/management/proto"
+	sshuserhash "github.com/netbirdio/netbird/shared/sshauth"
 )
 
 type sshServer interface {

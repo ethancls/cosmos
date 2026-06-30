@@ -18,7 +18,7 @@ import (
 	"github.com/google/nftables/expr"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/internal/routemanager/systemops"
+	"github.com/netbirdio/netbird/client/internal/routemanager/systemops"
 )
 
 // addIPRules collects and adds IP rules to the archive

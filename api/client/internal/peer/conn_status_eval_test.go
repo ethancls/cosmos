@@ -3,7 +3,7 @@ package peer
 import (
 	"testing"
 
-	"github.com/ethancls/cosmos/client/internal/peer/guard"
+	"github.com/netbirdio/netbird/client/internal/peer/guard"
 )
 
 func TestEvalConnStatus_ForceRelay(t *testing.T) {

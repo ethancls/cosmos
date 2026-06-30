@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/client/internal/profilemanager"
+	"github.com/netbirdio/netbird/client/internal/profilemanager"
 )
 
 func TestPersistLoginOverrides(t *testing.T) {

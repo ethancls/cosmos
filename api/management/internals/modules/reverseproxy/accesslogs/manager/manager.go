@@ -7,13 +7,13 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/management/internals/modules/reverseproxy/accesslogs"
-	"github.com/ethancls/cosmos/management/server/geolocation"
-	"github.com/ethancls/cosmos/management/server/permissions"
-	"github.com/ethancls/cosmos/management/server/permissions/modules"
-	"github.com/ethancls/cosmos/management/server/permissions/operations"
-	"github.com/ethancls/cosmos/management/server/store"
-	"github.com/ethancls/cosmos/shared/management/status"
+	"github.com/netbirdio/netbird/management/internals/modules/reverseproxy/accesslogs"
+	"github.com/netbirdio/netbird/management/server/geolocation"
+	"github.com/netbirdio/netbird/management/server/permissions"
+	"github.com/netbirdio/netbird/management/server/permissions/modules"
+	"github.com/netbirdio/netbird/management/server/permissions/operations"
+	"github.com/netbirdio/netbird/management/server/store"
+	"github.com/netbirdio/netbird/shared/management/status"
 )
 
 type managerImpl struct {

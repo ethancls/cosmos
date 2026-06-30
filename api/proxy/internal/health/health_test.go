@@ -11,8 +11,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/client/embed"
-	"github.com/ethancls/cosmos/proxy/internal/types"
+	"github.com/netbirdio/netbird/client/embed"
+	"github.com/netbirdio/netbird/proxy/internal/types"
 )
 
 type mockClientProvider struct {

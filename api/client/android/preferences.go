@@ -1,7 +1,7 @@
 package android
 
 import (
-	"github.com/ethancls/cosmos/client/internal/profilemanager"
+	"github.com/netbirdio/netbird/client/internal/profilemanager"
 )
 
 // Preferences exports a subset of the internal config for gomobile

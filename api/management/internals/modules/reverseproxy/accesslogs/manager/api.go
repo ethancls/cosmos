@@ -5,10 +5,10 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/ethancls/cosmos/management/internals/modules/reverseproxy/accesslogs"
-	nbcontext "github.com/ethancls/cosmos/management/server/context"
-	"github.com/ethancls/cosmos/shared/management/http/api"
-	"github.com/ethancls/cosmos/shared/management/http/util"
+	"github.com/netbirdio/netbird/management/internals/modules/reverseproxy/accesslogs"
+	nbcontext "github.com/netbirdio/netbird/management/server/context"
+	"github.com/netbirdio/netbird/shared/management/http/api"
+	"github.com/netbirdio/netbird/shared/management/http/util"
 )
 
 type handler struct {

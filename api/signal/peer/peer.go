@@ -9,8 +9,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/shared/signal/proto"
-	"github.com/ethancls/cosmos/signal/metrics"
+	"github.com/netbirdio/netbird/shared/signal/proto"
+	"github.com/netbirdio/netbird/signal/metrics"
 )
 
 var (

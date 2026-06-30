@@ -6,8 +6,8 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/ethancls/cosmos/shared/management/domain"
-	"github.com/ethancls/cosmos/shared/management/status"
+	"github.com/netbirdio/netbird/shared/management/domain"
+	"github.com/netbirdio/netbird/shared/management/status"
 )
 
 // Windows has some limitation regarding metric size that differ from Unix-like systems.

@@ -14,13 +14,13 @@ import (
 	ipset "github.com/lrh3321/ipset-go"
 	log "github.com/sirupsen/logrus"
 
-	nberrors "github.com/ethancls/cosmos/client/errors"
-	firewall "github.com/ethancls/cosmos/client/firewall/manager"
-	nbid "github.com/ethancls/cosmos/client/internal/acl/id"
-	"github.com/ethancls/cosmos/client/internal/routemanager/ipfwdstate"
-	"github.com/ethancls/cosmos/client/internal/routemanager/refcounter"
-	"github.com/ethancls/cosmos/client/internal/statemanager"
-	nbnet "github.com/ethancls/cosmos/client/net"
+	nberrors "github.com/netbirdio/netbird/client/errors"
+	firewall "github.com/netbirdio/netbird/client/firewall/manager"
+	nbid "github.com/netbirdio/netbird/client/internal/acl/id"
+	"github.com/netbirdio/netbird/client/internal/routemanager/ipfwdstate"
+	"github.com/netbirdio/netbird/client/internal/routemanager/refcounter"
+	"github.com/netbirdio/netbird/client/internal/statemanager"
+	nbnet "github.com/netbirdio/netbird/client/net"
 )
 
 // constants needed to manage and create iptable rules

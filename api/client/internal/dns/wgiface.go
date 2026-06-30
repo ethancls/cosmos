@@ -7,8 +7,8 @@ import (
 
 	"golang.zx2c4.com/wireguard/tun/netstack"
 
-	"github.com/ethancls/cosmos/client/iface/device"
-	"github.com/ethancls/cosmos/client/iface/wgaddr"
+	"github.com/netbirdio/netbird/client/iface/device"
+	"github.com/netbirdio/netbird/client/iface/wgaddr"
 )
 
 // WGIface defines subset methods of interface required for manager

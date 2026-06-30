@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	nbgrpc "github.com/ethancls/cosmos/management/internals/shared/grpc"
+	nbgrpc "github.com/netbirdio/netbird/management/internals/shared/grpc"
 )
 
 func TestAuthCallbackHandler_RateLimiting(t *testing.T) {

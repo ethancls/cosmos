@@ -8,10 +8,10 @@ import (
 	"sync"
 
 	"github.com/hashicorp/go-multierror"
-	nberrors "github.com/ethancls/cosmos/client/errors"
+	nberrors "github.com/netbirdio/netbird/client/errors"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/formatter"
+	"github.com/netbirdio/netbird/formatter"
 	"github.com/pion/stun/v3"
 )
 

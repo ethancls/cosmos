@@ -8,8 +8,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/client/internal/routeselector"
-	"github.com/ethancls/cosmos/route"
+	"github.com/netbirdio/netbird/client/internal/routeselector"
+	"github.com/netbirdio/netbird/route"
 )
 
 func TestRouteSelector_SelectRoutes(t *testing.T) {

@@ -11,7 +11,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/upload-server/types"
+	"github.com/netbirdio/netbird/upload-server/types"
 )
 
 func Test_LocalHandlerGetUploadURL(t *testing.T) {

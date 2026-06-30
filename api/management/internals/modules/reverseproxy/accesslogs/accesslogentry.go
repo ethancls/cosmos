@@ -6,9 +6,9 @@ import (
 	"net/netip"
 	"time"
 
-	"github.com/ethancls/cosmos/management/server/peer"
-	"github.com/ethancls/cosmos/shared/management/http/api"
-	"github.com/ethancls/cosmos/shared/management/proto"
+	"github.com/netbirdio/netbird/management/server/peer"
+	"github.com/netbirdio/netbird/shared/management/http/api"
+	"github.com/netbirdio/netbird/shared/management/proto"
 )
 
 // AccessLogProtocol identifies the transport protocol of an access log entry.

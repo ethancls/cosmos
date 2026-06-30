@@ -5,8 +5,8 @@ import (
 	"net/netip"
 	"sync/atomic"
 
-	"github.com/ethancls/cosmos/client/firewall/uspfilter/common"
-	"github.com/ethancls/cosmos/client/iface/device"
+	"github.com/netbirdio/netbird/client/firewall/uspfilter/common"
+	"github.com/netbirdio/netbird/client/iface/device"
 )
 
 const (

@@ -11,10 +11,10 @@ import (
 	"github.com/stretchr/testify/require"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 
-	"github.com/ethancls/cosmos/client/iface/device"
-	"github.com/ethancls/cosmos/client/iface/wgaddr"
-	"github.com/ethancls/cosmos/client/internal/lazyconn"
-	peerid "github.com/ethancls/cosmos/client/internal/peer/id"
+	"github.com/netbirdio/netbird/client/iface/device"
+	"github.com/netbirdio/netbird/client/iface/wgaddr"
+	"github.com/netbirdio/netbird/client/internal/lazyconn"
+	peerid "github.com/netbirdio/netbird/client/internal/peer/id"
 )
 
 // mockEndpointManager implements device.EndpointManager for testing

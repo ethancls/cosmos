@@ -1,8 +1,8 @@
 package types
 
 import (
-	"github.com/ethancls/cosmos/route"
-	"github.com/ethancls/cosmos/shared/management/domain"
+	"github.com/netbirdio/netbird/route"
+	"github.com/netbirdio/netbird/shared/management/domain"
 )
 
 // RouteFirewallRule a firewall rule applicable for a routed network.

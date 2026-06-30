@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/netip"
 
-	"github.com/ethancls/cosmos/shared/netiputil"
+	"github.com/netbirdio/netbird/shared/netiputil"
 )
 
 // Address WireGuard parsed address

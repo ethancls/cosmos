@@ -18,14 +18,14 @@ import (
 	"golang.org/x/net/http2/h2c"
 	"google.golang.org/grpc"
 
-	"github.com/ethancls/cosmos/encryption"
-	nbconfig "github.com/ethancls/cosmos/management/internals/server/config"
-	"github.com/ethancls/cosmos/management/server/idp"
-	"github.com/ethancls/cosmos/management/server/metrics"
-	"github.com/ethancls/cosmos/management/server/store"
-	"github.com/ethancls/cosmos/util/wsproxy"
-	wsproxyserver "github.com/ethancls/cosmos/util/wsproxy/server"
-	"github.com/ethancls/cosmos/version"
+	"github.com/netbirdio/netbird/encryption"
+	nbconfig "github.com/netbirdio/netbird/management/internals/server/config"
+	"github.com/netbirdio/netbird/management/server/idp"
+	"github.com/netbirdio/netbird/management/server/metrics"
+	"github.com/netbirdio/netbird/management/server/store"
+	"github.com/netbirdio/netbird/util/wsproxy"
+	wsproxyserver "github.com/netbirdio/netbird/util/wsproxy/server"
+	"github.com/netbirdio/netbird/version"
 )
 
 const (
@@ -229,7 +229,7 @@ func (s *BaseServer) Start(ctx context.Context) error {
 	s.update = version.NewUpdateAndStart("nb/management")
 	s.update.SetDaemonVersion(version.NetbirdVersion())
 	s.update.SetOnUpdateListener(func() {
-		log.WithContext(ctx).Infof("your management version, \"%s\", is outdated, a new management version is available. Learn more here: https://github.com/ethancls/cosmos/releases", version.NetbirdVersion())
+		log.WithContext(ctx).Infof("your management version, \"%s\", is outdated, a new management version is available. Learn more here: https://github.com/netbirdio/netbird/releases", version.NetbirdVersion())
 	})
 
 	return nil

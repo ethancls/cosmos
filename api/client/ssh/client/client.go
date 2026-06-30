@@ -19,13 +19,13 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	"github.com/ethancls/cosmos/client/internal/daemonaddr"
-	"github.com/ethancls/cosmos/client/internal/profilemanager"
-	"github.com/ethancls/cosmos/client/proto"
-	nbssh "github.com/ethancls/cosmos/client/ssh"
-	"github.com/ethancls/cosmos/client/ssh/detection"
-	"github.com/ethancls/cosmos/util"
-	"github.com/ethancls/cosmos/util/netrelay"
+	"github.com/netbirdio/netbird/client/internal/daemonaddr"
+	"github.com/netbirdio/netbird/client/internal/profilemanager"
+	"github.com/netbirdio/netbird/client/proto"
+	nbssh "github.com/netbirdio/netbird/client/ssh"
+	"github.com/netbirdio/netbird/client/ssh/detection"
+	"github.com/netbirdio/netbird/util"
+	"github.com/netbirdio/netbird/util/netrelay"
 )
 
 const (

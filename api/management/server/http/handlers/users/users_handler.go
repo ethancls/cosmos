@@ -8,14 +8,14 @@ import (
 	"github.com/gorilla/mux"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/management/server/account"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/management/server/users"
-	"github.com/ethancls/cosmos/shared/management/http/api"
-	"github.com/ethancls/cosmos/shared/management/http/util"
-	"github.com/ethancls/cosmos/shared/management/status"
+	"github.com/netbirdio/netbird/management/server/account"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/management/server/users"
+	"github.com/netbirdio/netbird/shared/management/http/api"
+	"github.com/netbirdio/netbird/shared/management/http/util"
+	"github.com/netbirdio/netbird/shared/management/status"
 
-	nbcontext "github.com/ethancls/cosmos/management/server/context"
+	nbcontext "github.com/netbirdio/netbird/management/server/context"
 )
 
 // handler is a handler that returns users of the account

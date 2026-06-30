@@ -11,8 +11,8 @@ import (
 	log "github.com/sirupsen/logrus"
 	"google.golang.org/protobuf/proto"
 
-	mgmProto "github.com/ethancls/cosmos/shared/management/proto"
-	"github.com/ethancls/cosmos/util"
+	mgmProto "github.com/netbirdio/netbird/shared/management/proto"
+	"github.com/netbirdio/netbird/util"
 )
 
 // syncResponseFileName is the name of the file the sync response is serialized

@@ -3,7 +3,7 @@ package cache
 import (
 	"sync"
 
-	"github.com/ethancls/cosmos/shared/management/proto"
+	"github.com/netbirdio/netbird/shared/management/proto"
 )
 
 // DNSConfigCache is a thread-safe cache for DNS configuration components

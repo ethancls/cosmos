@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/idp/dex"
+	"github.com/netbirdio/netbird/idp/dex"
 )
 
 func TestEmbeddedIdPManager_CreateUser_EndToEnd(t *testing.T) {

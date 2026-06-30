@@ -5,9 +5,9 @@ package wgproxy
 import (
 	"net"
 
-	"github.com/ethancls/cosmos/client/iface/bind"
-	"github.com/ethancls/cosmos/client/iface/wgaddr"
-	bindproxy "github.com/ethancls/cosmos/client/iface/wgproxy/bind"
+	"github.com/netbirdio/netbird/client/iface/bind"
+	"github.com/netbirdio/netbird/client/iface/wgaddr"
+	bindproxy "github.com/netbirdio/netbird/client/iface/wgproxy/bind"
 )
 
 func seedProxies() ([]proxyInstance, error) {

@@ -3,8 +3,8 @@ package auth
 import (
 	"time"
 
-	auth "github.com/ethancls/cosmos/shared/relay/auth/hmac"
-	authv2 "github.com/ethancls/cosmos/shared/relay/auth/hmac/v2"
+	auth "github.com/netbirdio/netbird/shared/relay/auth/hmac"
+	authv2 "github.com/netbirdio/netbird/shared/relay/auth/hmac/v2"
 )
 
 type TimedHMACValidator struct {

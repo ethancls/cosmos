@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethancls/cosmos/shared/relay/messages"
+	"github.com/netbirdio/netbird/shared/relay/messages"
 )
 
 const (

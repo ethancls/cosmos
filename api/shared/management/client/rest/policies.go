@@ -5,7 +5,7 @@ import (
 	"context"
 	"encoding/json"
 
-	"github.com/ethancls/cosmos/shared/management/http/api"
+	"github.com/netbirdio/netbird/shared/management/http/api"
 )
 
 // PoliciesAPI APIs for Policies, do not use directly

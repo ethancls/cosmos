@@ -17,8 +17,8 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	flow "github.com/ethancls/cosmos/flow/client"
-	"github.com/ethancls/cosmos/flow/proto"
+	flow "github.com/netbirdio/netbird/flow/client"
+	"github.com/netbirdio/netbird/flow/proto"
 )
 
 type testServer struct {

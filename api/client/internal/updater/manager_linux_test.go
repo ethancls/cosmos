@@ -11,8 +11,8 @@ import (
 
 	v "github.com/hashicorp/go-version"
 
-	"github.com/ethancls/cosmos/client/internal/peer"
-	"github.com/ethancls/cosmos/client/internal/statemanager"
+	"github.com/netbirdio/netbird/client/internal/peer"
+	"github.com/netbirdio/netbird/client/internal/statemanager"
 )
 
 // On Linux, only Mode 1 (downloadOnly) is supported.

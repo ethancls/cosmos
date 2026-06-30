@@ -14,8 +14,8 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"github.com/ethancls/cosmos/client/proto"
-	"github.com/ethancls/cosmos/version"
+	"github.com/netbirdio/netbird/client/proto"
+	"github.com/netbirdio/netbird/version"
 )
 
 type eventHandler struct {
@@ -204,7 +204,7 @@ func (h *eventHandler) handleQuitClick() {
 }
 
 func (h *eventHandler) handleGitHubClick() {
-	if err := openURL("https://github.com/ethancls/cosmos"); err != nil {
+	if err := openURL("https://github.com/netbirdio/netbird"); err != nil {
 		log.Errorf("failed to open GitHub URL: %v", err)
 	}
 }

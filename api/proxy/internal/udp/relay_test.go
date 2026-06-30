@@ -12,7 +12,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/proxy/internal/types"
+	"github.com/netbirdio/netbird/proxy/internal/types"
 )
 
 func TestRelay_BasicPacketExchange(t *testing.T) {

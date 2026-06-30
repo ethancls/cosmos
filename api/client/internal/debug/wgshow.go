@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ethancls/cosmos/client/iface/configurer"
+	"github.com/netbirdio/netbird/client/iface/configurer"
 )
 
 type WGIface interface {

@@ -6,7 +6,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/internal/updater/installer"
+	"github.com/netbirdio/netbird/client/internal/updater/installer"
 )
 
 func isAutoUpdateSupported() bool {

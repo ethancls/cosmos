@@ -3,7 +3,7 @@ package extra_settings
 import (
 	"context"
 
-	"github.com/ethancls/cosmos/management/server/types"
+	"github.com/netbirdio/netbird/management/server/types"
 )
 
 type Manager interface {

@@ -12,14 +12,14 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.zx2c4.com/wireguard/tun/netstack"
 
-	nberrors "github.com/ethancls/cosmos/client/errors"
-	firewall "github.com/ethancls/cosmos/client/firewall/manager"
-	"github.com/ethancls/cosmos/client/iface/wgaddr"
-	nftypes "github.com/ethancls/cosmos/client/internal/netflow/types"
-	"github.com/ethancls/cosmos/client/internal/peer"
-	nbdns "github.com/ethancls/cosmos/dns"
-	"github.com/ethancls/cosmos/route"
-	"github.com/ethancls/cosmos/shared/management/domain"
+	nberrors "github.com/netbirdio/netbird/client/errors"
+	firewall "github.com/netbirdio/netbird/client/firewall/manager"
+	"github.com/netbirdio/netbird/client/iface/wgaddr"
+	nftypes "github.com/netbirdio/netbird/client/internal/netflow/types"
+	"github.com/netbirdio/netbird/client/internal/peer"
+	nbdns "github.com/netbirdio/netbird/dns"
+	"github.com/netbirdio/netbird/route"
+	"github.com/netbirdio/netbird/shared/management/domain"
 )
 
 const (

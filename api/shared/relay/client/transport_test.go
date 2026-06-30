@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	netErr "github.com/ethancls/cosmos/shared/relay/client/dialer/net"
+	netErr "github.com/netbirdio/netbird/shared/relay/client/dialer/net"
 )
 
 // closeTrackingConn records whether Close was called; only Close is exercised.

@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/ethancls/cosmos/proxy/auth"
-	"github.com/ethancls/cosmos/proxy/internal/types"
-	"github.com/ethancls/cosmos/shared/management/proto"
+	"github.com/netbirdio/netbird/proxy/auth"
+	"github.com/netbirdio/netbird/proxy/internal/types"
+	"github.com/netbirdio/netbird/shared/management/proto"
 )
 
 const pinFormId = "pin"

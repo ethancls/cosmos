@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/ethancls/cosmos/shared/auth"
+	"github.com/netbirdio/netbird/shared/auth"
 )
 
 type key int

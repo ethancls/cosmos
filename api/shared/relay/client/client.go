@@ -14,11 +14,11 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	auth "github.com/ethancls/cosmos/shared/relay/auth/hmac"
-	"github.com/ethancls/cosmos/shared/relay/client/dialer"
-	netErr "github.com/ethancls/cosmos/shared/relay/client/dialer/net"
-	"github.com/ethancls/cosmos/shared/relay/healthcheck"
-	"github.com/ethancls/cosmos/shared/relay/messages"
+	auth "github.com/netbirdio/netbird/shared/relay/auth/hmac"
+	"github.com/netbirdio/netbird/shared/relay/client/dialer"
+	netErr "github.com/netbirdio/netbird/shared/relay/client/dialer/net"
+	"github.com/netbirdio/netbird/shared/relay/healthcheck"
+	"github.com/netbirdio/netbird/shared/relay/messages"
 )
 
 const (

@@ -17,10 +17,10 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/keepalive"
 
-	nbgrpc "github.com/ethancls/cosmos/client/grpc"
-	"github.com/ethancls/cosmos/flow/proto"
-	"github.com/ethancls/cosmos/util/embeddedroots"
-	"github.com/ethancls/cosmos/util/wsproxy"
+	nbgrpc "github.com/netbirdio/netbird/client/grpc"
+	"github.com/netbirdio/netbird/flow/proto"
+	"github.com/netbirdio/netbird/util/embeddedroots"
+	"github.com/netbirdio/netbird/util/wsproxy"
 )
 
 var ErrClientClosed = errors.New("client is closed")

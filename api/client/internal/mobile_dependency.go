@@ -3,10 +3,10 @@ package internal
 import (
 	"net/netip"
 
-	"github.com/ethancls/cosmos/client/iface/device"
-	"github.com/ethancls/cosmos/client/internal/dns"
-	"github.com/ethancls/cosmos/client/internal/listener"
-	"github.com/ethancls/cosmos/client/internal/stdnet"
+	"github.com/netbirdio/netbird/client/iface/device"
+	"github.com/netbirdio/netbird/client/internal/dns"
+	"github.com/netbirdio/netbird/client/internal/listener"
+	"github.com/netbirdio/netbird/client/internal/stdnet"
 )
 
 // MobileDependency collect all dependencies for mobile platform

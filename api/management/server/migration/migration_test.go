@@ -16,11 +16,11 @@ import (
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 
-	"github.com/ethancls/cosmos/management/server/migration"
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
-	"github.com/ethancls/cosmos/management/server/testutil"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/route"
+	"github.com/netbirdio/netbird/management/server/migration"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
+	"github.com/netbirdio/netbird/management/server/testutil"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/route"
 )
 
 func setupDatabase(t *testing.T) *gorm.DB {

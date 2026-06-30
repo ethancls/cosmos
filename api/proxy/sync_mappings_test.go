@@ -16,8 +16,8 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 	grpcstatus "google.golang.org/grpc/status"
 
-	"github.com/ethancls/cosmos/management/internals/modules/reverseproxy/service"
-	"github.com/ethancls/cosmos/shared/management/proto"
+	"github.com/netbirdio/netbird/management/internals/modules/reverseproxy/service"
+	"github.com/netbirdio/netbird/shared/management/proto"
 )
 
 func TestIntegration_SyncMappings_HappyPath(t *testing.T) {

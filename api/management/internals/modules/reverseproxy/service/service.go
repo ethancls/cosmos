@@ -18,12 +18,12 @@ import (
 	"github.com/rs/xid"
 	"google.golang.org/protobuf/types/known/durationpb"
 
-	"github.com/ethancls/cosmos/management/internals/modules/reverseproxy/proxy"
-	"github.com/ethancls/cosmos/shared/hash/argon2id"
-	"github.com/ethancls/cosmos/util/crypt"
+	"github.com/netbirdio/netbird/management/internals/modules/reverseproxy/proxy"
+	"github.com/netbirdio/netbird/shared/hash/argon2id"
+	"github.com/netbirdio/netbird/util/crypt"
 
-	"github.com/ethancls/cosmos/shared/management/http/api"
-	"github.com/ethancls/cosmos/shared/management/proto"
+	"github.com/netbirdio/netbird/shared/management/http/api"
+	"github.com/netbirdio/netbird/shared/management/proto"
 )
 
 type Operation string

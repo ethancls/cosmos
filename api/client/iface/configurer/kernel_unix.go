@@ -12,7 +12,7 @@ import (
 	"golang.zx2c4.com/wireguard/wgctrl"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 
-	"github.com/ethancls/cosmos/monotime"
+	"github.com/netbirdio/netbird/monotime"
 )
 
 type KernelConfigurer struct {

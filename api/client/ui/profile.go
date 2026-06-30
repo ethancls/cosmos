@@ -20,9 +20,9 @@ import (
 	"fyne.io/systray"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/internal"
-	"github.com/ethancls/cosmos/client/internal/profilemanager"
-	"github.com/ethancls/cosmos/client/proto"
+	"github.com/netbirdio/netbird/client/internal"
+	"github.com/netbirdio/netbird/client/internal/profilemanager"
+	"github.com/netbirdio/netbird/client/proto"
 )
 
 // showProfilesUI creates and displays the Profiles window with a list of existing profiles,

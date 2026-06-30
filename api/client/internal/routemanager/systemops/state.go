@@ -3,7 +3,7 @@ package systemops
 import (
 	"net/netip"
 
-	"github.com/ethancls/cosmos/client/internal/routemanager/refcounter"
+	"github.com/netbirdio/netbird/client/internal/routemanager/refcounter"
 )
 
 type ShutdownState ExclusionCounter

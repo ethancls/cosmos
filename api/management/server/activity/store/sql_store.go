@@ -16,9 +16,9 @@ import (
 	"gorm.io/gorm/clause"
 	"gorm.io/gorm/logger"
 
-	"github.com/ethancls/cosmos/management/server/activity"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/util/crypt"
+	"github.com/netbirdio/netbird/management/server/activity"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/util/crypt"
 )
 
 const (

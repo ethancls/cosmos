@@ -3,8 +3,8 @@ package controller
 import (
 	"testing"
 
-	"github.com/ethancls/cosmos/management/internals/controllers/network_map"
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
+	"github.com/netbirdio/netbird/management/internals/controllers/network_map"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
 )
 
 func TestComputeForwarderPort(t *testing.T) {

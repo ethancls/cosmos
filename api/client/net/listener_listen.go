@@ -12,9 +12,9 @@ import (
 	"github.com/hashicorp/go-multierror"
 	log "github.com/sirupsen/logrus"
 
-	nberrors "github.com/ethancls/cosmos/client/errors"
-	"github.com/ethancls/cosmos/client/internal/routemanager/util"
-	"github.com/ethancls/cosmos/client/net/hooks"
+	nberrors "github.com/netbirdio/netbird/client/errors"
+	"github.com/netbirdio/netbird/client/internal/routemanager/util"
+	"github.com/netbirdio/netbird/client/net/hooks"
 )
 
 // ListenPacket listens on the network address and returns a PacketConn

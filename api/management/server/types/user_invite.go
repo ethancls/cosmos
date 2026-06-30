@@ -11,8 +11,8 @@ import (
 	b "github.com/hashicorp/go-secure-stdlib/base62"
 	"github.com/rs/xid"
 
-	"github.com/ethancls/cosmos/base62"
-	"github.com/ethancls/cosmos/util/crypt"
+	"github.com/netbirdio/netbird/base62"
+	"github.com/netbirdio/netbird/util/crypt"
 )
 
 const (

@@ -10,7 +10,7 @@ import (
 	"github.com/okta/okta-sdk-golang/v2/okta"
 	"github.com/okta/okta-sdk-golang/v2/okta/query"
 
-	"github.com/ethancls/cosmos/management/server/telemetry"
+	"github.com/netbirdio/netbird/management/server/telemetry"
 )
 
 // OktaManager okta manager client instance.

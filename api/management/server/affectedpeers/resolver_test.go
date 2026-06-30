@@ -5,9 +5,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	resourceTypes "github.com/ethancls/cosmos/management/server/networks/resources/types"
-	networkTypes "github.com/ethancls/cosmos/management/server/networks/types"
-	"github.com/ethancls/cosmos/management/server/types"
+	resourceTypes "github.com/netbirdio/netbird/management/server/networks/resources/types"
+	networkTypes "github.com/netbirdio/netbird/management/server/networks/types"
+	"github.com/netbirdio/netbird/management/server/types"
 )
 
 // policyGroupsAndPeers mirrors the both-sides extraction (RuleGroups + direct peers)

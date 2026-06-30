@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/ethancls/cosmos/client/internal/statemanager"
+	"github.com/netbirdio/netbird/client/internal/statemanager"
 )
 
 type ShutdownState struct {

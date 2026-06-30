@@ -17,12 +17,12 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/client/anonymize"
-	"github.com/ethancls/cosmos/client/configs"
-	"github.com/ethancls/cosmos/client/internal/profilemanager"
-	"github.com/ethancls/cosmos/shared/management/domain"
-	mgmProto "github.com/ethancls/cosmos/shared/management/proto"
-	"github.com/ethancls/cosmos/shared/netiputil"
+	"github.com/netbirdio/netbird/client/anonymize"
+	"github.com/netbirdio/netbird/client/configs"
+	"github.com/netbirdio/netbird/client/internal/profilemanager"
+	"github.com/netbirdio/netbird/shared/management/domain"
+	mgmProto "github.com/netbirdio/netbird/shared/management/proto"
+	"github.com/netbirdio/netbird/shared/netiputil"
 )
 
 func mustEncodePrefix(t *testing.T, p netip.Prefix) []byte {

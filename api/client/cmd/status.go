@@ -10,10 +10,10 @@ import (
 	"github.com/spf13/cobra"
 	"google.golang.org/grpc/status"
 
-	"github.com/ethancls/cosmos/client/internal"
-	"github.com/ethancls/cosmos/client/proto"
-	nbstatus "github.com/ethancls/cosmos/client/status"
-	"github.com/ethancls/cosmos/util"
+	"github.com/netbirdio/netbird/client/internal"
+	"github.com/netbirdio/netbird/client/proto"
+	nbstatus "github.com/netbirdio/netbird/client/status"
+	"github.com/netbirdio/netbird/util"
 )
 
 var (

@@ -8,7 +8,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
 )
 
 // diffFrom builds a MetaDiff from the old/new snapshots AffectsPosture replays against.

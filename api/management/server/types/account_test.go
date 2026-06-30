@@ -11,15 +11,15 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	nbdns "github.com/ethancls/cosmos/dns"
-	"github.com/ethancls/cosmos/management/internals/modules/reverseproxy/service"
-	"github.com/ethancls/cosmos/management/internals/modules/zones"
-	"github.com/ethancls/cosmos/management/internals/modules/zones/records"
-	resourceTypes "github.com/ethancls/cosmos/management/server/networks/resources/types"
-	routerTypes "github.com/ethancls/cosmos/management/server/networks/routers/types"
-	networkTypes "github.com/ethancls/cosmos/management/server/networks/types"
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
-	"github.com/ethancls/cosmos/route"
+	nbdns "github.com/netbirdio/netbird/dns"
+	"github.com/netbirdio/netbird/management/internals/modules/reverseproxy/service"
+	"github.com/netbirdio/netbird/management/internals/modules/zones"
+	"github.com/netbirdio/netbird/management/internals/modules/zones/records"
+	resourceTypes "github.com/netbirdio/netbird/management/server/networks/resources/types"
+	routerTypes "github.com/netbirdio/netbird/management/server/networks/routers/types"
+	networkTypes "github.com/netbirdio/netbird/management/server/networks/types"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
+	"github.com/netbirdio/netbird/route"
 )
 
 func setupTestAccount() *Account {

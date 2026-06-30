@@ -20,13 +20,13 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/iface"
-	"github.com/ethancls/cosmos/client/internal/routemanager/dynamic"
-	"github.com/ethancls/cosmos/client/mdm"
-	"github.com/ethancls/cosmos/client/ssh"
-	mgm "github.com/ethancls/cosmos/shared/management/client"
-	"github.com/ethancls/cosmos/shared/management/domain"
-	"github.com/ethancls/cosmos/util"
+	"github.com/netbirdio/netbird/client/iface"
+	"github.com/netbirdio/netbird/client/internal/routemanager/dynamic"
+	"github.com/netbirdio/netbird/client/mdm"
+	"github.com/netbirdio/netbird/client/ssh"
+	mgm "github.com/netbirdio/netbird/shared/management/client"
+	"github.com/netbirdio/netbird/shared/management/domain"
+	"github.com/netbirdio/netbird/util"
 )
 
 const (

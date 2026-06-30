@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
 )
 
 const (

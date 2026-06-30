@@ -11,13 +11,13 @@ import (
 	log "github.com/sirupsen/logrus"
 	"go.opentelemetry.io/otel/metric"
 
-	serverauth "github.com/ethancls/cosmos/management/server/auth"
-	nbcontext "github.com/ethancls/cosmos/management/server/context"
-	"github.com/ethancls/cosmos/management/server/http/middleware/bypass"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/shared/auth"
-	"github.com/ethancls/cosmos/shared/management/http/util"
-	"github.com/ethancls/cosmos/shared/management/status"
+	serverauth "github.com/netbirdio/netbird/management/server/auth"
+	nbcontext "github.com/netbirdio/netbird/management/server/context"
+	"github.com/netbirdio/netbird/management/server/http/middleware/bypass"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/shared/auth"
+	"github.com/netbirdio/netbird/shared/management/http/util"
+	"github.com/netbirdio/netbird/shared/management/status"
 )
 
 type EnsureAccountFunc func(ctx context.Context, userAuth auth.UserAuth) (string, string, error)

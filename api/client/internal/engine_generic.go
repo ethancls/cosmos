@@ -3,7 +3,7 @@
 package internal
 
 import (
-	icemaker "github.com/ethancls/cosmos/client/internal/peer/ice"
+	icemaker "github.com/netbirdio/netbird/client/internal/peer/ice"
 )
 
 // createICEConfig creates ICE configuration for non-WASM environments

@@ -10,9 +10,9 @@ import (
 	log "github.com/sirupsen/logrus"
 	"go.opentelemetry.io/otel"
 
-	"github.com/ethancls/cosmos/client/iface"
-	"github.com/ethancls/cosmos/relay/server"
-	"github.com/ethancls/cosmos/shared/relay/auth/allow"
+	"github.com/netbirdio/netbird/client/iface"
+	"github.com/netbirdio/netbird/relay/server"
+	"github.com/netbirdio/netbird/shared/relay/auth/allow"
 )
 
 // newManagerTestServerConfig creates a new server config for manager testing with the given address

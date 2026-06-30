@@ -12,14 +12,14 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	nbdns "github.com/ethancls/cosmos/dns"
-	resourceTypes "github.com/ethancls/cosmos/management/server/networks/resources/types"
-	routerTypes "github.com/ethancls/cosmos/management/server/networks/routers/types"
-	networkTypes "github.com/ethancls/cosmos/management/server/networks/types"
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
-	"github.com/ethancls/cosmos/management/server/posture"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/route"
+	nbdns "github.com/netbirdio/netbird/dns"
+	resourceTypes "github.com/netbirdio/netbird/management/server/networks/resources/types"
+	routerTypes "github.com/netbirdio/netbird/management/server/networks/routers/types"
+	networkTypes "github.com/netbirdio/netbird/management/server/networks/types"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
+	"github.com/netbirdio/netbird/management/server/posture"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/route"
 )
 
 // scalableTestAccountWithoutDefaultPolicy creates an account without the blanket "Allow All" policy.

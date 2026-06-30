@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	rpservice "github.com/ethancls/cosmos/management/internals/modules/reverseproxy/service"
+	rpservice "github.com/netbirdio/netbird/management/internals/modules/reverseproxy/service"
 )
 
 func TestSqlStore_GetAccount_PrivateServiceRoundtrip(t *testing.T) {

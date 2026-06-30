@@ -18,10 +18,10 @@ import (
 	"github.com/skratchdot/open-golang/open"
 	"google.golang.org/protobuf/types/known/durationpb"
 
-	"github.com/ethancls/cosmos/client/internal"
-	"github.com/ethancls/cosmos/client/proto"
-	uptypes "github.com/ethancls/cosmos/upload-server/types"
-	"github.com/ethancls/cosmos/version"
+	"github.com/netbirdio/netbird/client/internal"
+	"github.com/netbirdio/netbird/client/proto"
+	uptypes "github.com/netbirdio/netbird/upload-server/types"
+	"github.com/netbirdio/netbird/version"
 )
 
 // Initial state for the debug collection

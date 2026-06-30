@@ -7,8 +7,8 @@ import (
 	"net/netip"
 	"strings"
 
-	"github.com/ethancls/cosmos/shared/signal/proto"
-	"github.com/ethancls/cosmos/version"
+	"github.com/netbirdio/netbird/shared/signal/proto"
+	"github.com/netbirdio/netbird/version"
 
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 )

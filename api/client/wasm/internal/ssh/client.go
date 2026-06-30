@@ -13,8 +13,8 @@ import (
 	"github.com/sirupsen/logrus"
 	"golang.org/x/crypto/ssh"
 
-	netbird "github.com/ethancls/cosmos/client/embed"
-	nbssh "github.com/ethancls/cosmos/client/ssh"
+	netbird "github.com/netbirdio/netbird/client/embed"
+	nbssh "github.com/netbirdio/netbird/client/ssh"
 )
 
 const (

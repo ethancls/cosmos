@@ -13,9 +13,9 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/idp/dex"
-	"github.com/ethancls/cosmos/management/server/idp"
-	"github.com/ethancls/cosmos/management/server/types"
+	"github.com/netbirdio/netbird/idp/dex"
+	"github.com/netbirdio/netbird/management/server/idp"
+	"github.com/netbirdio/netbird/management/server/types"
 )
 
 // Server is the dependency interface that migration functions use to access

@@ -7,8 +7,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/management/internals/controllers/network_map"
-	"github.com/ethancls/cosmos/management/server/telemetry"
+	"github.com/netbirdio/netbird/management/internals/controllers/network_map"
+	"github.com/netbirdio/netbird/management/server/telemetry"
 )
 
 const channelBufferSize = 100

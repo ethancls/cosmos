@@ -9,8 +9,8 @@ import (
 	"google.golang.org/grpc/codes"
 	gstatus "google.golang.org/grpc/status"
 
-	"github.com/ethancls/cosmos/client/mdm"
-	"github.com/ethancls/cosmos/client/proto"
+	"github.com/netbirdio/netbird/client/mdm"
+	"github.com/netbirdio/netbird/client/proto"
 )
 
 // preSharedKeyRedactedSentinel is the value GetConfig returns in place

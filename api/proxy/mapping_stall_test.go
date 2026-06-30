@@ -12,9 +12,9 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
 
-	"github.com/ethancls/cosmos/proxy/internal/roundtrip"
-	"github.com/ethancls/cosmos/proxy/internal/types"
-	"github.com/ethancls/cosmos/shared/management/proto"
+	"github.com/netbirdio/netbird/proxy/internal/roundtrip"
+	"github.com/netbirdio/netbird/proxy/internal/types"
+	"github.com/netbirdio/netbird/shared/management/proto"
 )
 
 // blockingMgmtClient implements roundtrip's managementClient interface.

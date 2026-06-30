@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/cosmos/client/internal/peer"
-	"github.com/ethancls/cosmos/client/internal/routemanager/common"
-	"github.com/ethancls/cosmos/client/internal/routemanager/static"
-	"github.com/ethancls/cosmos/route"
+	"github.com/netbirdio/netbird/client/internal/peer"
+	"github.com/netbirdio/netbird/client/internal/routemanager/common"
+	"github.com/netbirdio/netbird/client/internal/routemanager/static"
+	"github.com/netbirdio/netbird/route"
 )
 
 func TestGetBestrouteFromStatuses(t *testing.T) {

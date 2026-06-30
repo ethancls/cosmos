@@ -7,8 +7,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/iface"
-	"github.com/ethancls/cosmos/sharedsock"
+	"github.com/netbirdio/netbird/client/iface"
+	"github.com/netbirdio/netbird/sharedsock"
 )
 
 func main() {

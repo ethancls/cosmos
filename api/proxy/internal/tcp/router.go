@@ -13,10 +13,10 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/proxy/internal/accesslog"
-	"github.com/ethancls/cosmos/proxy/internal/restrict"
-	"github.com/ethancls/cosmos/proxy/internal/types"
-	"github.com/ethancls/cosmos/util/netrelay"
+	"github.com/netbirdio/netbird/proxy/internal/accesslog"
+	"github.com/netbirdio/netbird/proxy/internal/restrict"
+	"github.com/netbirdio/netbird/proxy/internal/types"
+	"github.com/netbirdio/netbird/util/netrelay"
 )
 
 // defaultDialTimeout is the fallback dial timeout when no per-route

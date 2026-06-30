@@ -10,8 +10,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/shared/management/domain"
-	mgmProto "github.com/ethancls/cosmos/shared/management/proto"
+	"github.com/netbirdio/netbird/shared/management/domain"
+	mgmProto "github.com/netbirdio/netbird/shared/management/proto"
 )
 
 var (

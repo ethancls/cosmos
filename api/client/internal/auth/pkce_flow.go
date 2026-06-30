@@ -20,8 +20,8 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/oauth2"
 
-	"github.com/ethancls/cosmos/client/internal/templates"
-	"github.com/ethancls/cosmos/shared/management/client/common"
+	"github.com/netbirdio/netbird/client/internal/templates"
+	"github.com/netbirdio/netbird/shared/management/client/common"
 )
 
 var _ OAuthFlow = &PKCEAuthorizationFlow{}

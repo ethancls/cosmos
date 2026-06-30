@@ -11,8 +11,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/base62"
-	"github.com/ethancls/cosmos/util/crypt"
+	"github.com/netbirdio/netbird/base62"
+	"github.com/netbirdio/netbird/util/crypt"
 )
 
 func TestUserInviteRecord_TableName(t *testing.T) {

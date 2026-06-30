@@ -15,7 +15,7 @@ import (
 	"github.com/stretchr/testify/require"
 	cryptossh "golang.org/x/crypto/ssh"
 
-	"github.com/ethancls/cosmos/client/ssh"
+	"github.com/netbirdio/netbird/client/ssh"
 )
 
 func TestSSHServer_SFTPSubsystem(t *testing.T) {

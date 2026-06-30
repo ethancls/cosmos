@@ -2,7 +2,7 @@
 
 package android
 
-import "github.com/ethancls/cosmos/client/internal/peer"
+import "github.com/netbirdio/netbird/client/internal/peer"
 
 // Connection status constants exported via gomobile.
 const (

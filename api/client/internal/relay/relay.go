@@ -14,8 +14,8 @@ import (
 	"github.com/pion/turn/v3"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/internal/stdnet"
-	nbnet "github.com/ethancls/cosmos/client/net"
+	"github.com/netbirdio/netbird/client/internal/stdnet"
+	nbnet "github.com/netbirdio/netbird/client/net"
 )
 
 const (

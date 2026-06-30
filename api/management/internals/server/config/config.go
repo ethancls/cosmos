@@ -3,10 +3,10 @@ package config
 import (
 	"net/netip"
 
-	"github.com/ethancls/cosmos/management/server/idp"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/shared/management/client/common"
-	"github.com/ethancls/cosmos/util"
+	"github.com/netbirdio/netbird/management/server/idp"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/shared/management/client/common"
+	"github.com/netbirdio/netbird/util"
 )
 
 type (

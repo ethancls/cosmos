@@ -11,9 +11,9 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/iface"
-	"github.com/ethancls/cosmos/shared/relay/auth/hmac"
-	"github.com/ethancls/cosmos/shared/relay/client"
+	"github.com/netbirdio/netbird/client/iface"
+	"github.com/netbirdio/netbird/shared/relay/auth/hmac"
+	"github.com/netbirdio/netbird/shared/relay/client"
 )
 
 var (

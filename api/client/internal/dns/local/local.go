@@ -14,10 +14,10 @@ import (
 	"github.com/miekg/dns"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/internal/dns/resutil"
-	"github.com/ethancls/cosmos/client/internal/dns/types"
-	nbdns "github.com/ethancls/cosmos/dns"
-	"github.com/ethancls/cosmos/shared/management/domain"
+	"github.com/netbirdio/netbird/client/internal/dns/resutil"
+	"github.com/netbirdio/netbird/client/internal/dns/types"
+	nbdns "github.com/netbirdio/netbird/dns"
+	"github.com/netbirdio/netbird/shared/management/domain"
 )
 
 const externalResolutionTimeout = 4 * time.Second

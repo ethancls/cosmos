@@ -12,9 +12,9 @@ import (
 	"github.com/coder/websocket"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/relay/protocol"
-	relaylistener "github.com/ethancls/cosmos/relay/server/listener"
-	"github.com/ethancls/cosmos/shared/relay"
+	"github.com/netbirdio/netbird/relay/protocol"
+	relaylistener "github.com/netbirdio/netbird/relay/server/listener"
+	"github.com/netbirdio/netbird/shared/relay"
 )
 
 const (

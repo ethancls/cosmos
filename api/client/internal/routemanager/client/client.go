@@ -9,15 +9,15 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	nbdns "github.com/ethancls/cosmos/client/internal/dns"
-	"github.com/ethancls/cosmos/client/internal/peer"
-	"github.com/ethancls/cosmos/client/internal/routemanager/common"
-	"github.com/ethancls/cosmos/client/internal/routemanager/dnsinterceptor"
-	"github.com/ethancls/cosmos/client/internal/routemanager/dynamic"
-	"github.com/ethancls/cosmos/client/internal/routemanager/iface"
-	"github.com/ethancls/cosmos/client/internal/routemanager/static"
-	"github.com/ethancls/cosmos/client/proto"
-	"github.com/ethancls/cosmos/route"
+	nbdns "github.com/netbirdio/netbird/client/internal/dns"
+	"github.com/netbirdio/netbird/client/internal/peer"
+	"github.com/netbirdio/netbird/client/internal/routemanager/common"
+	"github.com/netbirdio/netbird/client/internal/routemanager/dnsinterceptor"
+	"github.com/netbirdio/netbird/client/internal/routemanager/dynamic"
+	"github.com/netbirdio/netbird/client/internal/routemanager/iface"
+	"github.com/netbirdio/netbird/client/internal/routemanager/static"
+	"github.com/netbirdio/netbird/client/proto"
+	"github.com/netbirdio/netbird/route"
 )
 
 const (

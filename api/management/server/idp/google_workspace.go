@@ -11,7 +11,7 @@ import (
 	admin "google.golang.org/api/admin/directory/v1"
 	"google.golang.org/api/option"
 
-	"github.com/ethancls/cosmos/management/server/telemetry"
+	"github.com/netbirdio/netbird/management/server/telemetry"
 )
 
 // GoogleWorkspaceManager Google Workspace manager client instance.

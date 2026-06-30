@@ -5,7 +5,7 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/ethancls/cosmos/client/internal/listener"
+	"github.com/netbirdio/netbird/client/internal/listener"
 )
 
 type notifier struct {

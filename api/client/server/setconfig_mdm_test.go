@@ -11,9 +11,9 @@ import (
 	"google.golang.org/grpc/codes"
 	gstatus "google.golang.org/grpc/status"
 
-	"github.com/ethancls/cosmos/client/internal/profilemanager"
-	"github.com/ethancls/cosmos/client/mdm"
-	"github.com/ethancls/cosmos/client/proto"
+	"github.com/netbirdio/netbird/client/internal/profilemanager"
+	"github.com/netbirdio/netbird/client/mdm"
+	"github.com/netbirdio/netbird/client/proto"
 )
 
 // withMDMPolicy temporarily overrides the server-package loadMDMPolicy hook

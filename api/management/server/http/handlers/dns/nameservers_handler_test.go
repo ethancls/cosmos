@@ -12,16 +12,16 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	nbdns "github.com/ethancls/cosmos/dns"
-	"github.com/ethancls/cosmos/shared/management/http/api"
-	"github.com/ethancls/cosmos/shared/management/status"
+	nbdns "github.com/netbirdio/netbird/dns"
+	"github.com/netbirdio/netbird/shared/management/http/api"
+	"github.com/netbirdio/netbird/shared/management/status"
 
 	"github.com/gorilla/mux"
 
-	nbcontext "github.com/ethancls/cosmos/management/server/context"
-	"github.com/ethancls/cosmos/shared/auth"
+	nbcontext "github.com/netbirdio/netbird/management/server/context"
+	"github.com/netbirdio/netbird/shared/auth"
 
-	"github.com/ethancls/cosmos/management/server/mock_server"
+	"github.com/netbirdio/netbird/management/server/mock_server"
 )
 
 const (

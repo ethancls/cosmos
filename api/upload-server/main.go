@@ -5,8 +5,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/ethancls/cosmos/upload-server/server"
-	"github.com/ethancls/cosmos/util"
+	"github.com/netbirdio/netbird/upload-server/server"
+	"github.com/netbirdio/netbird/util"
 )
 
 func main() {

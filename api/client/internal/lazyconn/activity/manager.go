@@ -10,9 +10,9 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 
-	"github.com/ethancls/cosmos/client/iface/wgaddr"
-	"github.com/ethancls/cosmos/client/internal/lazyconn"
-	peerid "github.com/ethancls/cosmos/client/internal/peer/id"
+	"github.com/netbirdio/netbird/client/iface/wgaddr"
+	"github.com/netbirdio/netbird/client/internal/lazyconn"
+	peerid "github.com/netbirdio/netbird/client/internal/peer/id"
 )
 
 // listener defines the contract for activity detection listeners.

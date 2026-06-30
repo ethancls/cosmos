@@ -11,7 +11,7 @@ import (
 	"github.com/hashicorp/go-multierror"
 	log "github.com/sirupsen/logrus"
 
-	nberrors "github.com/ethancls/cosmos/client/errors"
+	nberrors "github.com/netbirdio/netbird/client/errors"
 )
 
 const logLevel = log.TraceLevel

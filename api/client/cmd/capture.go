@@ -15,9 +15,9 @@ import (
 	"google.golang.org/grpc/status"
 	"google.golang.org/protobuf/types/known/durationpb"
 
-	nberrors "github.com/ethancls/cosmos/client/errors"
-	"github.com/ethancls/cosmos/client/proto"
-	"github.com/ethancls/cosmos/util/capture"
+	nberrors "github.com/netbirdio/netbird/client/errors"
+	"github.com/netbirdio/netbird/client/proto"
+	"github.com/netbirdio/netbird/util/capture"
 )
 
 var captureCmd = &cobra.Command{

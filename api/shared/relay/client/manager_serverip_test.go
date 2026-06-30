@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/cosmos/client/iface"
-	"github.com/ethancls/cosmos/relay/server"
+	"github.com/netbirdio/netbird/client/iface"
+	"github.com/netbirdio/netbird/relay/server"
 )
 
 // TestManager_ForeignRelayServerIP exercises the foreign-relay path

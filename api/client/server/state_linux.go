@@ -3,12 +3,12 @@
 package server
 
 import (
-	"github.com/ethancls/cosmos/client/firewall/iptables"
-	"github.com/ethancls/cosmos/client/firewall/nftables"
-	"github.com/ethancls/cosmos/client/internal/dns"
-	"github.com/ethancls/cosmos/client/internal/routemanager/systemops"
-	"github.com/ethancls/cosmos/client/internal/statemanager"
-	"github.com/ethancls/cosmos/client/ssh/config"
+	"github.com/netbirdio/netbird/client/firewall/iptables"
+	"github.com/netbirdio/netbird/client/firewall/nftables"
+	"github.com/netbirdio/netbird/client/internal/dns"
+	"github.com/netbirdio/netbird/client/internal/routemanager/systemops"
+	"github.com/netbirdio/netbird/client/internal/statemanager"
+	"github.com/netbirdio/netbird/client/ssh/config"
 )
 
 // registerStates registers all states that need crash recovery cleanup.

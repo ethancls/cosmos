@@ -15,11 +15,11 @@ import (
 	"sync"
 
 	"github.com/hashicorp/go-multierror"
-	nberrors "github.com/ethancls/cosmos/client/errors"
+	nberrors "github.com/netbirdio/netbird/client/errors"
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/exp/maps"
 
-	"github.com/ethancls/cosmos/client/internal/statemanager"
+	"github.com/netbirdio/netbird/client/internal/statemanager"
 )
 
 const (

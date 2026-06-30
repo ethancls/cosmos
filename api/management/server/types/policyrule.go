@@ -3,7 +3,7 @@ package types
 import (
 	"slices"
 
-	"github.com/ethancls/cosmos/shared/management/proto"
+	"github.com/netbirdio/netbird/shared/management/proto"
 )
 
 // PolicyUpdateOperationType operation type

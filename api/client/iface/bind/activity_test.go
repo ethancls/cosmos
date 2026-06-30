@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/cosmos/monotime"
+	"github.com/netbirdio/netbird/monotime"
 )
 
 func TestActivityRecorder_GetLastActivities(t *testing.T) {

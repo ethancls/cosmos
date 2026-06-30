@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethancls/cosmos/client/system/detect_cloud"
-	"github.com/ethancls/cosmos/client/system/detect_platform"
+	"github.com/netbirdio/netbird/client/system/detect_cloud"
+	"github.com/netbirdio/netbird/client/system/detect_platform"
 )
 
 func newStaticInfo() StaticInfo {

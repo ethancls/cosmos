@@ -1,8 +1,8 @@
 package android
 
 import (
-	"github.com/ethancls/cosmos/client/internal/lazyconn"
-	"github.com/ethancls/cosmos/client/internal/peer"
+	"github.com/netbirdio/netbird/client/internal/lazyconn"
+	"github.com/netbirdio/netbird/client/internal/peer"
 )
 
 var (

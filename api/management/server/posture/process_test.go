@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ethancls/cosmos/management/server/peer"
+	"github.com/netbirdio/netbird/management/server/peer"
 )
 
 func TestProcessCheck_Check(t *testing.T) {

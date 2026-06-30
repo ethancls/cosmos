@@ -10,8 +10,8 @@ import (
 	"github.com/stretchr/testify/require"
 	"go.opentelemetry.io/otel"
 
-	"github.com/ethancls/cosmos/shared/signal/proto"
-	"github.com/ethancls/cosmos/signal/peer"
+	"github.com/netbirdio/netbird/shared/signal/proto"
+	"github.com/netbirdio/netbird/signal/peer"
 )
 
 // concurrencyCheckStream records the maximum number of Send calls in flight at

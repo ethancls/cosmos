@@ -12,7 +12,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/s3"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/upload-server/types"
+	"github.com/netbirdio/netbird/upload-server/types"
 )
 
 type sThree struct {

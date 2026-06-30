@@ -9,13 +9,13 @@ import (
 
 	"github.com/golang-jwt/jwt/v5"
 
-	"github.com/ethancls/cosmos/shared/auth"
+	"github.com/netbirdio/netbird/shared/auth"
 
-	"github.com/ethancls/cosmos/base62"
-	"github.com/ethancls/cosmos/idp/dex"
-	"github.com/ethancls/cosmos/management/server/store"
-	"github.com/ethancls/cosmos/management/server/types"
-	nbjwt "github.com/ethancls/cosmos/shared/auth/jwt"
+	"github.com/netbirdio/netbird/base62"
+	"github.com/netbirdio/netbird/idp/dex"
+	"github.com/netbirdio/netbird/management/server/store"
+	"github.com/netbirdio/netbird/management/server/types"
+	nbjwt "github.com/netbirdio/netbird/shared/auth/jwt"
 )
 
 var _ Manager = (*manager)(nil)

@@ -11,7 +11,7 @@ import (
 	"go.opentelemetry.io/otel/exporters/prometheus"
 	"go.opentelemetry.io/otel/sdk/metric"
 
-	"github.com/ethancls/cosmos/proxy/internal/metrics"
+	"github.com/netbirdio/netbird/proxy/internal/metrics"
 )
 
 type testRoundTripper struct {

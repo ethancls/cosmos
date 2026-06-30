@@ -9,7 +9,7 @@
 package syncstore
 
 import (
-	mgmProto "github.com/ethancls/cosmos/shared/management/proto"
+	mgmProto "github.com/netbirdio/netbird/shared/management/proto"
 )
 
 // Store persists the latest sync response and returns it on demand.

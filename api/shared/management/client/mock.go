@@ -3,9 +3,9 @@ package client
 import (
 	"context"
 
-	"github.com/ethancls/cosmos/client/system"
-	"github.com/ethancls/cosmos/shared/management/domain"
-	"github.com/ethancls/cosmos/shared/management/proto"
+	"github.com/netbirdio/netbird/client/system"
+	"github.com/netbirdio/netbird/shared/management/domain"
+	"github.com/netbirdio/netbird/shared/management/proto"
 )
 
 // MockClient is a mock implementation of the Client interface for testing.

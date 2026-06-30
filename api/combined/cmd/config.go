@@ -14,12 +14,12 @@ import (
 	log "github.com/sirupsen/logrus"
 	"gopkg.in/yaml.v3"
 
-	"github.com/ethancls/cosmos/management/server/idp"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/util"
-	"github.com/ethancls/cosmos/util/crypt"
+	"github.com/netbirdio/netbird/management/server/idp"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/util"
+	"github.com/netbirdio/netbird/util/crypt"
 
-	nbconfig "github.com/ethancls/cosmos/management/internals/server/config"
+	nbconfig "github.com/netbirdio/netbird/management/internals/server/config"
 )
 
 // CombinedConfig is the root configuration for the combined server.

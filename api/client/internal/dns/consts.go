@@ -3,7 +3,7 @@
 package dns
 
 import (
-	"github.com/ethancls/cosmos/client/configs"
+	"github.com/netbirdio/netbird/client/configs"
 	"os"
 	"path/filepath"
 )

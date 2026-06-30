@@ -7,9 +7,9 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/internal"
-	"github.com/ethancls/cosmos/client/internal/sleep"
-	"github.com/ethancls/cosmos/client/proto"
+	"github.com/netbirdio/netbird/client/internal"
+	"github.com/netbirdio/netbird/client/internal/sleep"
+	"github.com/netbirdio/netbird/client/proto"
 )
 
 const envDisableSleepDetector = "NB_DISABLE_SLEEP_DETECTOR"

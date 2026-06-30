@@ -9,8 +9,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/iface/bufsize"
-	"github.com/ethancls/cosmos/client/internal/lazyconn"
+	"github.com/netbirdio/netbird/client/iface/bufsize"
+	"github.com/netbirdio/netbird/client/internal/lazyconn"
 )
 
 // UDPListener uses UDP sockets for activity detection in kernel mode.

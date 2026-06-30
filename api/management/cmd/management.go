@@ -19,14 +19,14 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	"github.com/ethancls/cosmos/management/server/types"
+	"github.com/netbirdio/netbird/management/server/types"
 
-	"github.com/ethancls/cosmos/formatter/hook"
-	"github.com/ethancls/cosmos/management/internals/server"
-	nbconfig "github.com/ethancls/cosmos/management/internals/server/config"
-	nbdomain "github.com/ethancls/cosmos/shared/management/domain"
-	"github.com/ethancls/cosmos/util"
-	"github.com/ethancls/cosmos/util/crypt"
+	"github.com/netbirdio/netbird/formatter/hook"
+	"github.com/netbirdio/netbird/management/internals/server"
+	nbconfig "github.com/netbirdio/netbird/management/internals/server/config"
+	nbdomain "github.com/netbirdio/netbird/shared/management/domain"
+	"github.com/netbirdio/netbird/util"
+	"github.com/netbirdio/netbird/util/crypt"
 )
 
 var newServer = func(cfg *server.Config) server.Server {
@@ -224,7 +224,7 @@ func ApplyEmbeddedIdPConfig(ctx context.Context, cfg *nbconfig.Config) error {
 
 	// Set HttpConfig values from EmbeddedIdP
 	cfg.HttpConfig.AuthIssuer = issuer
-	cfg.HttpConfig.AuthAudience = "cosmos"
+	cfg.HttpConfig.AuthAudience = "cosmos-dashboard"
 	cfg.HttpConfig.AuthClientID = cfg.HttpConfig.AuthAudience
 	cfg.HttpConfig.CLIAuthAudience = "cosmos-cli"
 	cfg.HttpConfig.AuthUserIDClaim = "sub"

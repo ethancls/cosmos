@@ -11,8 +11,8 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	"github.com/ethancls/cosmos/client/internal/updater/installer"
-	"github.com/ethancls/cosmos/util"
+	"github.com/netbirdio/netbird/client/internal/updater/installer"
+	"github.com/netbirdio/netbird/util"
 )
 
 var (

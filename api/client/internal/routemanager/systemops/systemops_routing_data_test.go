@@ -5,7 +5,7 @@ package systemops
 import (
 	"net"
 
-	nbnet "github.com/ethancls/cosmos/client/net"
+	nbnet "github.com/netbirdio/netbird/client/net"
 )
 
 // Shared, non-privileged routing test fixtures. The privileged TestRouting (and its

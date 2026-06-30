@@ -6,7 +6,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/ethancls/cosmos/shared/management/proto"
+	"github.com/netbirdio/netbird/shared/management/proto"
 )
 
 // Manager defines the interface for proxy operations

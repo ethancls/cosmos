@@ -5,12 +5,12 @@ import (
 
 	cachestore "github.com/eko/gocache/lib/v4/store"
 
-	"github.com/ethancls/cosmos/management/internals/modules/peers"
-	"github.com/ethancls/cosmos/management/server/activity"
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
-	"github.com/ethancls/cosmos/management/server/settings"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/shared/management/proto"
+	"github.com/netbirdio/netbird/management/internals/modules/peers"
+	"github.com/netbirdio/netbird/management/server/activity"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
+	"github.com/netbirdio/netbird/management/server/settings"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/shared/management/proto"
 )
 
 type IntegratedValidatorImpl struct{}

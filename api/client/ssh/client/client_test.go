@@ -16,9 +16,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/client/ssh"
-	sshserver "github.com/ethancls/cosmos/client/ssh/server"
-	"github.com/ethancls/cosmos/client/ssh/testutil"
+	"github.com/netbirdio/netbird/client/ssh"
+	sshserver "github.com/netbirdio/netbird/client/ssh/server"
+	"github.com/netbirdio/netbird/client/ssh/testutil"
 )
 
 // TestMain handles package-level setup and cleanup

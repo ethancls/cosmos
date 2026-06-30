@@ -12,9 +12,9 @@ import (
 	ipset "github.com/lrh3321/ipset-go"
 	log "github.com/sirupsen/logrus"
 
-	firewall "github.com/ethancls/cosmos/client/firewall/manager"
-	"github.com/ethancls/cosmos/client/internal/statemanager"
-	nbnet "github.com/ethancls/cosmos/client/net"
+	firewall "github.com/netbirdio/netbird/client/firewall/manager"
+	"github.com/netbirdio/netbird/client/internal/statemanager"
+	nbnet "github.com/netbirdio/netbird/client/net"
 )
 
 const (

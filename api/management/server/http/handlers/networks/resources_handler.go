@@ -6,12 +6,12 @@ import (
 
 	"github.com/gorilla/mux"
 
-	nbcontext "github.com/ethancls/cosmos/management/server/context"
-	"github.com/ethancls/cosmos/management/server/groups"
-	"github.com/ethancls/cosmos/management/server/networks/resources"
-	"github.com/ethancls/cosmos/management/server/networks/resources/types"
-	"github.com/ethancls/cosmos/shared/management/http/api"
-	"github.com/ethancls/cosmos/shared/management/http/util"
+	nbcontext "github.com/netbirdio/netbird/management/server/context"
+	"github.com/netbirdio/netbird/management/server/groups"
+	"github.com/netbirdio/netbird/management/server/networks/resources"
+	"github.com/netbirdio/netbird/management/server/networks/resources/types"
+	"github.com/netbirdio/netbird/shared/management/http/api"
+	"github.com/netbirdio/netbird/shared/management/http/util"
 )
 
 type resourceHandler struct {

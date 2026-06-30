@@ -13,12 +13,12 @@ import (
 	"github.com/pion/logging"
 	"github.com/pion/turn/v3"
 
-	"github.com/ethancls/cosmos/client/iface"
-	"github.com/ethancls/cosmos/relay/server"
-	"github.com/ethancls/cosmos/shared/relay/auth/allow"
-	"github.com/ethancls/cosmos/shared/relay/auth/hmac"
-	"github.com/ethancls/cosmos/shared/relay/client"
-	"github.com/ethancls/cosmos/util"
+	"github.com/netbirdio/netbird/client/iface"
+	"github.com/netbirdio/netbird/relay/server"
+	"github.com/netbirdio/netbird/shared/relay/auth/allow"
+	"github.com/netbirdio/netbird/shared/relay/auth/hmac"
+	"github.com/netbirdio/netbird/shared/relay/client"
+	"github.com/netbirdio/netbird/util"
 )
 
 var (

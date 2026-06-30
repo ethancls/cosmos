@@ -13,8 +13,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/client/ssh"
-	sshclient "github.com/ethancls/cosmos/client/ssh/client"
+	"github.com/netbirdio/netbird/client/ssh"
+	sshclient "github.com/netbirdio/netbird/client/ssh/client"
 )
 
 func TestServer_RootLoginRestriction(t *testing.T) {

@@ -7,7 +7,7 @@ import (
 
 	"github.com/hashicorp/go-version"
 
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
 )
 
 type NBVersionCheck struct {

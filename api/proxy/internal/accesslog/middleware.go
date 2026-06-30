@@ -8,9 +8,9 @@ import (
 
 	"github.com/rs/xid"
 
-	"github.com/ethancls/cosmos/proxy/internal/proxy"
-	"github.com/ethancls/cosmos/proxy/internal/responsewriter"
-	"github.com/ethancls/cosmos/proxy/web"
+	"github.com/netbirdio/netbird/proxy/internal/proxy"
+	"github.com/netbirdio/netbird/proxy/internal/responsewriter"
+	"github.com/netbirdio/netbird/proxy/web"
 )
 
 // Middleware wraps an HTTP handler to log access entries and resolve client IPs.

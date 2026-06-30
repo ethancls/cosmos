@@ -9,8 +9,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/ethancls/cosmos/client/internal/listener"
-	"github.com/ethancls/cosmos/route"
+	"github.com/netbirdio/netbird/client/internal/listener"
+	"github.com/netbirdio/netbird/route"
 )
 
 type Notifier struct {

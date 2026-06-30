@@ -6,11 +6,11 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/ethancls/cosmos/client/iface/bind"
-	"github.com/ethancls/cosmos/client/iface/wgaddr"
-	bindproxy "github.com/ethancls/cosmos/client/iface/wgproxy/bind"
-	"github.com/ethancls/cosmos/client/iface/wgproxy/ebpf"
-	"github.com/ethancls/cosmos/client/iface/wgproxy/udp"
+	"github.com/netbirdio/netbird/client/iface/bind"
+	"github.com/netbirdio/netbird/client/iface/wgaddr"
+	bindproxy "github.com/netbirdio/netbird/client/iface/wgproxy/bind"
+	"github.com/netbirdio/netbird/client/iface/wgproxy/ebpf"
+	"github.com/netbirdio/netbird/client/iface/wgproxy/udp"
 )
 
 func seedProxies() ([]proxyInstance, error) {

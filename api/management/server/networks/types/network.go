@@ -3,7 +3,7 @@ package types
 import (
 	"github.com/rs/xid"
 
-	"github.com/ethancls/cosmos/shared/management/http/api"
+	"github.com/netbirdio/netbird/shared/management/http/api"
 )
 
 type Network struct {

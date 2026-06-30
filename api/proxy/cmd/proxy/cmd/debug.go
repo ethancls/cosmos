@@ -12,7 +12,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/ethancls/cosmos/proxy/internal/debug"
+	"github.com/netbirdio/netbird/proxy/internal/debug"
 )
 
 var (

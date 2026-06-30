@@ -8,8 +8,8 @@ import (
 
 	"golang.org/x/sync/singleflight"
 
-	"github.com/ethancls/cosmos/proxy/internal/types"
-	"github.com/ethancls/cosmos/shared/management/proto"
+	"github.com/netbirdio/netbird/proxy/internal/types"
+	"github.com/netbirdio/netbird/shared/management/proto"
 )
 
 // tunnelCacheTTL caps how long a positive ValidateTunnelPeer result is

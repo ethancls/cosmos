@@ -9,10 +9,10 @@ import (
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 
-	"github.com/ethancls/cosmos/management/server/activity"
-	"github.com/ethancls/cosmos/management/server/migration"
-	"github.com/ethancls/cosmos/management/server/testutil"
-	"github.com/ethancls/cosmos/util/crypt"
+	"github.com/netbirdio/netbird/management/server/activity"
+	"github.com/netbirdio/netbird/management/server/migration"
+	"github.com/netbirdio/netbird/management/server/testutil"
+	"github.com/netbirdio/netbird/util/crypt"
 )
 
 const (

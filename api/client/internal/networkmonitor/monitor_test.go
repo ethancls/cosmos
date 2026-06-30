@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/cosmos/client/internal/routemanager/systemops"
+	"github.com/netbirdio/netbird/client/internal/routemanager/systemops"
 )
 
 type MocMultiEvent struct {

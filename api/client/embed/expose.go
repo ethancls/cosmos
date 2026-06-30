@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/ethancls/cosmos/client/internal/expose"
+	"github.com/netbirdio/netbird/client/internal/expose"
 )
 
 const (

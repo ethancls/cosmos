@@ -4,7 +4,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/ethancls/cosmos/shared/relay/messages"
+	"github.com/netbirdio/netbird/shared/relay/messages"
 )
 
 // Conn represent a connection to a relayed remote peer.

@@ -22,8 +22,8 @@ import (
 	"github.com/stretchr/testify/require"
 	"golang.org/x/crypto/ssh"
 
-	nbssh "github.com/ethancls/cosmos/client/ssh"
-	"github.com/ethancls/cosmos/client/ssh/testutil"
+	nbssh "github.com/netbirdio/netbird/client/ssh"
+	"github.com/netbirdio/netbird/client/ssh/testutil"
 )
 
 func TestMain(m *testing.M) {

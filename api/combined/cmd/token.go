@@ -9,11 +9,11 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	"github.com/ethancls/cosmos/formatter/hook"
-	tokencmd "github.com/ethancls/cosmos/management/cmd/token"
-	"github.com/ethancls/cosmos/management/server/store"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/util"
+	"github.com/netbirdio/netbird/formatter/hook"
+	tokencmd "github.com/netbirdio/netbird/management/cmd/token"
+	"github.com/netbirdio/netbird/management/server/store"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/util"
 )
 
 // newTokenCommands creates the token command tree with combined-specific store opener.

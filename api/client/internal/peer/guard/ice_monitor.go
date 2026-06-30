@@ -11,8 +11,8 @@ import (
 	"github.com/pion/ice/v4"
 	log "github.com/sirupsen/logrus"
 
-	icemaker "github.com/ethancls/cosmos/client/internal/peer/ice"
-	"github.com/ethancls/cosmos/client/internal/stdnet"
+	icemaker "github.com/netbirdio/netbird/client/internal/peer/ice"
+	"github.com/netbirdio/netbird/client/internal/stdnet"
 )
 
 const (

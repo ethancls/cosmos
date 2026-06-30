@@ -9,7 +9,7 @@ import (
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
-	proxy "github.com/ethancls/cosmos/management/internals/modules/reverseproxy/proxy"
+	proxy "github.com/netbirdio/netbird/management/internals/modules/reverseproxy/proxy"
 )
 
 // MockManager is a mock of Manager interface.

@@ -9,9 +9,9 @@ import (
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/metric"
 
-	"github.com/ethancls/cosmos/proxy/internal/proxy"
-	"github.com/ethancls/cosmos/proxy/internal/responsewriter"
-	"github.com/ethancls/cosmos/proxy/internal/types"
+	"github.com/netbirdio/netbird/proxy/internal/proxy"
+	"github.com/netbirdio/netbird/proxy/internal/responsewriter"
+	"github.com/netbirdio/netbird/proxy/internal/types"
 )
 
 // Metrics collects OpenTelemetry metrics for the proxy.

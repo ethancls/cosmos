@@ -13,9 +13,9 @@ import (
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc"
 
-	"github.com/ethancls/cosmos/client/internal"
-	"github.com/ethancls/cosmos/client/internal/profilemanager"
-	daemonProto "github.com/ethancls/cosmos/client/proto"
+	"github.com/netbirdio/netbird/client/internal"
+	"github.com/netbirdio/netbird/client/internal/profilemanager"
+	daemonProto "github.com/netbirdio/netbird/client/proto"
 )
 
 func TestServer_Up(t *testing.T) {

@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/cosmos/client/internal/peer"
-	"github.com/ethancls/cosmos/route"
+	"github.com/netbirdio/netbird/client/internal/peer"
+	"github.com/netbirdio/netbird/route"
 )
 
 type benchmarkTier struct {

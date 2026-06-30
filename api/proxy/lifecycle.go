@@ -7,8 +7,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/embed"
-	"github.com/ethancls/cosmos/proxy/internal/acme"
+	"github.com/netbirdio/netbird/client/embed"
+	"github.com/netbirdio/netbird/proxy/internal/acme"
 )
 
 // Config bundles every knob the proxy reads at construction time. It mirrors

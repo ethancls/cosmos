@@ -14,7 +14,7 @@ import (
 	"github.com/miekg/dns"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/internal/dns/resutil"
+	"github.com/netbirdio/netbird/client/internal/dns/resutil"
 )
 
 const (

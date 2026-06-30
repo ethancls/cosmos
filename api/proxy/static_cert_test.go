@@ -16,8 +16,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/proxy/internal/certwatch"
-	"github.com/ethancls/cosmos/shared/management/domain"
+	"github.com/netbirdio/netbird/proxy/internal/certwatch"
+	"github.com/netbirdio/netbird/shared/management/domain"
 )
 
 func generateCertWithSANs(t *testing.T, dnsNames []string) (certPEM, keyPEM []byte) {

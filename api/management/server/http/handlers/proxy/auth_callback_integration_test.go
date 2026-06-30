@@ -18,15 +18,15 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/management/internals/modules/reverseproxy/accesslogs"
-	nbproxy "github.com/ethancls/cosmos/management/internals/modules/reverseproxy/proxy"
-	"github.com/ethancls/cosmos/management/internals/modules/reverseproxy/service"
-	nbgrpc "github.com/ethancls/cosmos/management/internals/shared/grpc"
-	nbcache "github.com/ethancls/cosmos/management/server/cache"
-	"github.com/ethancls/cosmos/management/server/store"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/management/server/users"
-	"github.com/ethancls/cosmos/shared/management/proto"
+	"github.com/netbirdio/netbird/management/internals/modules/reverseproxy/accesslogs"
+	nbproxy "github.com/netbirdio/netbird/management/internals/modules/reverseproxy/proxy"
+	"github.com/netbirdio/netbird/management/internals/modules/reverseproxy/service"
+	nbgrpc "github.com/netbirdio/netbird/management/internals/shared/grpc"
+	nbcache "github.com/netbirdio/netbird/management/server/cache"
+	"github.com/netbirdio/netbird/management/server/store"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/management/server/users"
+	"github.com/netbirdio/netbird/shared/management/proto"
 )
 
 // fakeOIDCServer creates a minimal OIDC provider for testing.

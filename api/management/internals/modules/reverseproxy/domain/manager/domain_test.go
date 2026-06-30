@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ethancls/cosmos/management/internals/modules/reverseproxy/domain"
+	"github.com/netbirdio/netbird/management/internals/modules/reverseproxy/domain"
 )
 
 func TestExtractClusterFromFreeDomain(t *testing.T) {

@@ -3,10 +3,10 @@ package formatter
 import (
 	"github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/formatter/hook"
-	"github.com/ethancls/cosmos/formatter/logcat"
-	"github.com/ethancls/cosmos/formatter/syslog"
-	"github.com/ethancls/cosmos/formatter/txt"
+	"github.com/netbirdio/netbird/formatter/hook"
+	"github.com/netbirdio/netbird/formatter/logcat"
+	"github.com/netbirdio/netbird/formatter/syslog"
+	"github.com/netbirdio/netbird/formatter/txt"
 )
 
 // SetTextFormatter set the text formatter for given logger.

@@ -11,7 +11,7 @@ import (
 	"syscall/js"
 	"time"
 
-	netbird "github.com/ethancls/cosmos/client/embed"
+	netbird "github.com/netbirdio/netbird/client/embed"
 )
 
 const (

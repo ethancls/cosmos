@@ -8,10 +8,10 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	firewall "github.com/ethancls/cosmos/client/firewall/manager"
-	"github.com/ethancls/cosmos/client/firewall/uspfilter"
-	nftypes "github.com/ethancls/cosmos/client/internal/netflow/types"
-	"github.com/ethancls/cosmos/client/internal/statemanager"
+	firewall "github.com/netbirdio/netbird/client/firewall/manager"
+	"github.com/netbirdio/netbird/client/firewall/uspfilter"
+	nftypes "github.com/netbirdio/netbird/client/internal/netflow/types"
+	"github.com/netbirdio/netbird/client/internal/statemanager"
 )
 
 // NewFirewall creates a firewall manager instance

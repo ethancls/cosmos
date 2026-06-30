@@ -9,7 +9,7 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/ethancls/cosmos/management/server/telemetry"
+	"github.com/netbirdio/netbird/management/server/telemetry"
 )
 
 type PocketIdManager struct {

@@ -18,8 +18,8 @@ import (
 	"gvisor.dev/gvisor/pkg/tcpip/transport/udp"
 	"gvisor.dev/gvisor/pkg/waiter"
 
-	nblog "github.com/ethancls/cosmos/client/firewall/uspfilter/log"
-	nftypes "github.com/ethancls/cosmos/client/internal/netflow/types"
+	nblog "github.com/netbirdio/netbird/client/firewall/uspfilter/log"
+	nftypes "github.com/netbirdio/netbird/client/internal/netflow/types"
 )
 
 const (

@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	mgmtServer "github.com/ethancls/cosmos/management/internals/server"
+	mgmtServer "github.com/netbirdio/netbird/management/internals/server"
 )
 
 var newServer = func(cfg *mgmtServer.Config) mgmtServer.Server {

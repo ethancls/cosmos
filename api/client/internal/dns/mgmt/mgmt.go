@@ -17,9 +17,9 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/sync/singleflight"
 
-	dnsconfig "github.com/ethancls/cosmos/client/internal/dns/config"
-	"github.com/ethancls/cosmos/client/internal/dns/resutil"
-	"github.com/ethancls/cosmos/shared/management/domain"
+	dnsconfig "github.com/netbirdio/netbird/client/internal/dns/config"
+	"github.com/netbirdio/netbird/client/internal/dns/resutil"
+	"github.com/netbirdio/netbird/shared/management/domain"
 )
 
 const (

@@ -17,12 +17,12 @@ import (
 	log "github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
 
-	"github.com/ethancls/cosmos/proxy/auth"
-	"github.com/ethancls/cosmos/proxy/internal/proxy"
-	"github.com/ethancls/cosmos/proxy/internal/restrict"
-	"github.com/ethancls/cosmos/proxy/internal/types"
-	"github.com/ethancls/cosmos/proxy/web"
-	"github.com/ethancls/cosmos/shared/management/proto"
+	"github.com/netbirdio/netbird/proxy/auth"
+	"github.com/netbirdio/netbird/proxy/internal/proxy"
+	"github.com/netbirdio/netbird/proxy/internal/restrict"
+	"github.com/netbirdio/netbird/proxy/internal/types"
+	"github.com/netbirdio/netbird/proxy/web"
+	"github.com/netbirdio/netbird/shared/management/proto"
 )
 
 // errValidationUnavailable indicates that session validation failed due to

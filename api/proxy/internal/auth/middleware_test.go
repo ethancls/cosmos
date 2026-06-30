@@ -20,12 +20,12 @@ import (
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc"
 
-	"github.com/ethancls/cosmos/management/internals/modules/reverseproxy/sessionkey"
-	"github.com/ethancls/cosmos/proxy/auth"
-	"github.com/ethancls/cosmos/proxy/internal/proxy"
-	"github.com/ethancls/cosmos/proxy/internal/restrict"
-	"github.com/ethancls/cosmos/proxy/internal/types"
-	"github.com/ethancls/cosmos/shared/management/proto"
+	"github.com/netbirdio/netbird/management/internals/modules/reverseproxy/sessionkey"
+	"github.com/netbirdio/netbird/proxy/auth"
+	"github.com/netbirdio/netbird/proxy/internal/proxy"
+	"github.com/netbirdio/netbird/proxy/internal/restrict"
+	"github.com/netbirdio/netbird/proxy/internal/types"
+	"github.com/netbirdio/netbird/shared/management/proto"
 )
 
 func generateTestKeyPair(t *testing.T) *sessionkey.KeyPair {

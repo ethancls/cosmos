@@ -8,8 +8,8 @@ import (
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 
-	nbconfig "github.com/ethancls/cosmos/management/internals/server/config"
-	"github.com/ethancls/cosmos/management/server/store"
+	nbconfig "github.com/netbirdio/netbird/management/internals/server/config"
+	"github.com/netbirdio/netbird/management/server/store"
 )
 
 func TestResolveDomains_FreshInstallUsesDefault(t *testing.T) {

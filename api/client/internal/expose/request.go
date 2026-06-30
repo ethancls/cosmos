@@ -1,8 +1,8 @@
 package expose
 
 import (
-	daemonProto "github.com/ethancls/cosmos/client/proto"
-	mgm "github.com/ethancls/cosmos/shared/management/client"
+	daemonProto "github.com/netbirdio/netbird/client/proto"
+	mgm "github.com/netbirdio/netbird/shared/management/client"
 )
 
 // NewRequest converts a daemon ExposeServiceRequest to a management ExposeServiceRequest.

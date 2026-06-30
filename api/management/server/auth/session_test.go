@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	nbcache "github.com/ethancls/cosmos/management/server/cache"
+	nbcache "github.com/netbirdio/netbird/management/server/cache"
 )
 
 func newTestSessionStore(t *testing.T) *SessionStore {

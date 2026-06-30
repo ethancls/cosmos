@@ -12,8 +12,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/relay/protocol"
-	"github.com/ethancls/cosmos/relay/server"
+	"github.com/netbirdio/netbird/relay/protocol"
+	"github.com/netbirdio/netbird/relay/server"
 )
 
 const (

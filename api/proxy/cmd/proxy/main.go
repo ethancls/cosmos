@@ -8,7 +8,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/proxy/cmd/proxy/cmd"
+	"github.com/netbirdio/netbird/proxy/cmd/proxy/cmd"
 )
 
 var (

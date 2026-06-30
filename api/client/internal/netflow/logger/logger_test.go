@@ -7,8 +7,8 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/ethancls/cosmos/client/internal/netflow/logger"
-	"github.com/ethancls/cosmos/client/internal/netflow/types"
+	"github.com/netbirdio/netbird/client/internal/netflow/logger"
+	"github.com/netbirdio/netbird/client/internal/netflow/types"
 )
 
 func TestStore(t *testing.T) {

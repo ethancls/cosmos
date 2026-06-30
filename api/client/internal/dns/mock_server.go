@@ -7,10 +7,10 @@ import (
 
 	"github.com/miekg/dns"
 
-	dnsconfig "github.com/ethancls/cosmos/client/internal/dns/config"
-	nbdns "github.com/ethancls/cosmos/dns"
-	"github.com/ethancls/cosmos/route"
-	"github.com/ethancls/cosmos/shared/management/domain"
+	dnsconfig "github.com/netbirdio/netbird/client/internal/dns/config"
+	nbdns "github.com/netbirdio/netbird/dns"
+	"github.com/netbirdio/netbird/route"
+	"github.com/netbirdio/netbird/shared/management/domain"
 )
 
 // MockServer is the mock instance of a dns server

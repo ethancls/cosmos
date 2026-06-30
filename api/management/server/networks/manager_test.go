@@ -6,13 +6,13 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/management/server/groups"
-	"github.com/ethancls/cosmos/management/server/mock_server"
-	"github.com/ethancls/cosmos/management/server/networks/resources"
-	"github.com/ethancls/cosmos/management/server/networks/routers"
-	"github.com/ethancls/cosmos/management/server/networks/types"
-	"github.com/ethancls/cosmos/management/server/permissions"
-	"github.com/ethancls/cosmos/management/server/store"
+	"github.com/netbirdio/netbird/management/server/groups"
+	"github.com/netbirdio/netbird/management/server/mock_server"
+	"github.com/netbirdio/netbird/management/server/networks/resources"
+	"github.com/netbirdio/netbird/management/server/networks/routers"
+	"github.com/netbirdio/netbird/management/server/networks/types"
+	"github.com/netbirdio/netbird/management/server/permissions"
+	"github.com/netbirdio/netbird/management/server/store"
 )
 
 func Test_GetAllNetworksReturnsNetworks(t *testing.T) {

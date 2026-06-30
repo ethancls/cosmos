@@ -8,7 +8,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/version"
+	"github.com/netbirdio/netbird/version"
 )
 
 func UpdateStaticInfoAsync() {

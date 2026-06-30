@@ -13,8 +13,8 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	"github.com/ethancls/cosmos/client/proto"
-	"github.com/ethancls/cosmos/client/ui/desktop"
+	"github.com/netbirdio/netbird/client/proto"
+	"github.com/netbirdio/netbird/client/ui/desktop"
 )
 
 // Notifier sends desktop notifications. Defined here so the event package

@@ -11,13 +11,13 @@ import (
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/metric"
 
-	"github.com/ethancls/cosmos/relay/healthcheck/peerid"
-	"github.com/ethancls/cosmos/relay/protocol"
-	"github.com/ethancls/cosmos/relay/server/listener"
+	"github.com/netbirdio/netbird/relay/healthcheck/peerid"
+	"github.com/netbirdio/netbird/relay/protocol"
+	"github.com/netbirdio/netbird/relay/server/listener"
 
 	//nolint:staticcheck
-	"github.com/ethancls/cosmos/relay/metrics"
-	"github.com/ethancls/cosmos/relay/server/store"
+	"github.com/netbirdio/netbird/relay/metrics"
+	"github.com/netbirdio/netbird/relay/server/store"
 )
 
 type Listener interface {

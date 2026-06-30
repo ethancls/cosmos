@@ -15,8 +15,8 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/exp/maps"
 
-	nberrors "github.com/ethancls/cosmos/client/errors"
-	"github.com/ethancls/cosmos/util"
+	nberrors "github.com/netbirdio/netbird/client/errors"
+	"github.com/netbirdio/netbird/util"
 )
 
 const (

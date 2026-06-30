@@ -6,15 +6,15 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/ethancls/cosmos/management/internals/modules/reverseproxy/accesslogs"
-	accesslogsmanager "github.com/ethancls/cosmos/management/internals/modules/reverseproxy/accesslogs/manager"
-	domainmanager "github.com/ethancls/cosmos/management/internals/modules/reverseproxy/domain/manager"
-	rpservice "github.com/ethancls/cosmos/management/internals/modules/reverseproxy/service"
-	nbcontext "github.com/ethancls/cosmos/management/server/context"
-	"github.com/ethancls/cosmos/management/server/permissions"
-	"github.com/ethancls/cosmos/shared/management/http/api"
-	"github.com/ethancls/cosmos/shared/management/http/util"
-	"github.com/ethancls/cosmos/shared/management/status"
+	"github.com/netbirdio/netbird/management/internals/modules/reverseproxy/accesslogs"
+	accesslogsmanager "github.com/netbirdio/netbird/management/internals/modules/reverseproxy/accesslogs/manager"
+	domainmanager "github.com/netbirdio/netbird/management/internals/modules/reverseproxy/domain/manager"
+	rpservice "github.com/netbirdio/netbird/management/internals/modules/reverseproxy/service"
+	nbcontext "github.com/netbirdio/netbird/management/server/context"
+	"github.com/netbirdio/netbird/management/server/permissions"
+	"github.com/netbirdio/netbird/shared/management/http/api"
+	"github.com/netbirdio/netbird/shared/management/http/util"
+	"github.com/netbirdio/netbird/shared/management/status"
 )
 
 type handler struct {

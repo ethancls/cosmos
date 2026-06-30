@@ -8,8 +8,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	nbdns "github.com/ethancls/cosmos/dns"
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
+	nbdns "github.com/netbirdio/netbird/dns"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
 )
 
 func TestPrivateService_NetworkMap_UserPeer_AndProxyPeer(t *testing.T) {

@@ -22,12 +22,12 @@ import (
 	log "github.com/sirupsen/logrus"
 	"google.golang.org/protobuf/encoding/protojson"
 
-	nbembed "github.com/ethancls/cosmos/client/embed"
-	nbstatus "github.com/ethancls/cosmos/client/status"
-	"github.com/ethancls/cosmos/proxy/internal/health"
-	"github.com/ethancls/cosmos/proxy/internal/roundtrip"
-	"github.com/ethancls/cosmos/proxy/internal/types"
-	"github.com/ethancls/cosmos/version"
+	nbembed "github.com/netbirdio/netbird/client/embed"
+	nbstatus "github.com/netbirdio/netbird/client/status"
+	"github.com/netbirdio/netbird/proxy/internal/health"
+	"github.com/netbirdio/netbird/proxy/internal/roundtrip"
+	"github.com/netbirdio/netbird/proxy/internal/types"
+	"github.com/netbirdio/netbird/version"
 )
 
 //go:embed templates/*.html

@@ -3,8 +3,8 @@ package peerid
 import (
 	"crypto/sha256"
 
-	v2 "github.com/ethancls/cosmos/shared/relay/auth/hmac/v2"
-	"github.com/ethancls/cosmos/shared/relay/messages"
+	v2 "github.com/netbirdio/netbird/shared/relay/auth/hmac/v2"
+	"github.com/netbirdio/netbird/shared/relay/messages"
 )
 
 var (

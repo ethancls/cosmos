@@ -10,11 +10,11 @@ import (
 	v "github.com/hashicorp/go-version"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/internal/peer"
-	"github.com/ethancls/cosmos/client/internal/statemanager"
-	"github.com/ethancls/cosmos/client/internal/updater/installer"
-	cProto "github.com/ethancls/cosmos/client/proto"
-	"github.com/ethancls/cosmos/version"
+	"github.com/netbirdio/netbird/client/internal/peer"
+	"github.com/netbirdio/netbird/client/internal/statemanager"
+	"github.com/netbirdio/netbird/client/internal/updater/installer"
+	cProto "github.com/netbirdio/netbird/client/proto"
+	"github.com/netbirdio/netbird/version"
 )
 
 const (

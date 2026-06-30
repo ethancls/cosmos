@@ -8,10 +8,10 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ethancls/cosmos/client/iface/wgaddr"
-	"github.com/ethancls/cosmos/client/internal/routemanager/notifier"
-	"github.com/ethancls/cosmos/client/internal/routemanager/refcounter"
-	"github.com/ethancls/cosmos/client/internal/routemanager/vars"
+	"github.com/netbirdio/netbird/client/iface/wgaddr"
+	"github.com/netbirdio/netbird/client/internal/routemanager/notifier"
+	"github.com/netbirdio/netbird/client/internal/routemanager/refcounter"
+	"github.com/netbirdio/netbird/client/internal/routemanager/vars"
 )
 
 type Nexthop struct {

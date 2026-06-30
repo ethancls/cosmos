@@ -8,7 +8,7 @@ import (
 	"github.com/spf13/cobra"
 	"google.golang.org/grpc/status"
 
-	"github.com/ethancls/cosmos/client/proto"
+	"github.com/netbirdio/netbird/client/proto"
 )
 
 var traceCmd = &cobra.Command{

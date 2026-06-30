@@ -1,7 +1,7 @@
 package network_map
 
 import (
-	"github.com/ethancls/cosmos/shared/management/proto"
+	"github.com/netbirdio/netbird/shared/management/proto"
 )
 
 // MessageType indicates the type of update message for debouncing strategy

@@ -22,13 +22,13 @@ import (
 	"golang.org/x/exp/maps"
 	"golang.zx2c4.com/wireguard/tun/netstack"
 
-	"github.com/ethancls/cosmos/client/iface/wgaddr"
-	sshauth "github.com/ethancls/cosmos/client/ssh/auth"
-	"github.com/ethancls/cosmos/client/ssh/detection"
-	"github.com/ethancls/cosmos/shared/auth"
-	"github.com/ethancls/cosmos/shared/auth/jwt"
-	"github.com/ethancls/cosmos/util/netrelay"
-	"github.com/ethancls/cosmos/version"
+	"github.com/netbirdio/netbird/client/iface/wgaddr"
+	sshauth "github.com/netbirdio/netbird/client/ssh/auth"
+	"github.com/netbirdio/netbird/client/ssh/detection"
+	"github.com/netbirdio/netbird/shared/auth"
+	"github.com/netbirdio/netbird/shared/auth/jwt"
+	"github.com/netbirdio/netbird/util/netrelay"
+	"github.com/netbirdio/netbird/version"
 )
 
 // DefaultSSHPort is the default SSH port of the NetBird's embedded SSH server

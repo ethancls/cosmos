@@ -19,8 +19,8 @@ import (
 	"golang.org/x/net/route"
 	"golang.org/x/sys/unix"
 
-	nberrors "github.com/ethancls/cosmos/client/errors"
-	"github.com/ethancls/cosmos/client/internal/statemanager"
+	nberrors "github.com/netbirdio/netbird/client/errors"
+	"github.com/netbirdio/netbird/client/internal/statemanager"
 )
 
 const (

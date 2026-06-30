@@ -12,12 +12,12 @@ import (
 	"github.com/pion/transport/v3"
 	log "github.com/sirupsen/logrus"
 
-	nberrors "github.com/ethancls/cosmos/client/errors"
-	"github.com/ethancls/cosmos/client/iface/bufsize"
-	"github.com/ethancls/cosmos/client/iface/wgproxy/rawsocket"
-	"github.com/ethancls/cosmos/client/internal/ebpf"
-	ebpfMgr "github.com/ethancls/cosmos/client/internal/ebpf/manager"
-	nbnet "github.com/ethancls/cosmos/client/net"
+	nberrors "github.com/netbirdio/netbird/client/errors"
+	"github.com/netbirdio/netbird/client/iface/bufsize"
+	"github.com/netbirdio/netbird/client/iface/wgproxy/rawsocket"
+	"github.com/netbirdio/netbird/client/internal/ebpf"
+	ebpfMgr "github.com/netbirdio/netbird/client/internal/ebpf/manager"
+	nbnet "github.com/netbirdio/netbird/client/net"
 )
 
 const (

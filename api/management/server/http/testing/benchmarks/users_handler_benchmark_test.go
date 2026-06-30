@@ -16,10 +16,10 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ethancls/cosmos/management/server"
-	"github.com/ethancls/cosmos/management/server/http/testing/testing_tools"
-	"github.com/ethancls/cosmos/management/server/http/testing/testing_tools/channel"
-	"github.com/ethancls/cosmos/shared/management/http/api"
+	"github.com/netbirdio/netbird/management/server"
+	"github.com/netbirdio/netbird/management/server/http/testing/testing_tools"
+	"github.com/netbirdio/netbird/management/server/http/testing/testing_tools/channel"
+	"github.com/netbirdio/netbird/shared/management/http/api"
 )
 
 const moduleUsers = "users"

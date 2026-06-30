@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ethancls/cosmos/proxy/internal/types"
+	"github.com/netbirdio/netbird/proxy/internal/types"
 )
 
 // PathRewriteMode controls how the request path is rewritten before forwarding.

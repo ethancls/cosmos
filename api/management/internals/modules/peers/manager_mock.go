@@ -10,11 +10,11 @@ import (
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
-	network_map "github.com/ethancls/cosmos/management/internals/controllers/network_map"
-	account "github.com/ethancls/cosmos/management/server/account"
-	integrated_validator "github.com/ethancls/cosmos/management/server/integrations/integrated_validator"
-	peer "github.com/ethancls/cosmos/management/server/peer"
-	types "github.com/ethancls/cosmos/management/server/types"
+	network_map "github.com/netbirdio/netbird/management/internals/controllers/network_map"
+	account "github.com/netbirdio/netbird/management/server/account"
+	integrated_validator "github.com/netbirdio/netbird/management/server/integrations/integrated_validator"
+	peer "github.com/netbirdio/netbird/management/server/peer"
+	types "github.com/netbirdio/netbird/management/server/types"
 )
 
 // MockManager is a mock of Manager interface.

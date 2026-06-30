@@ -18,20 +18,20 @@ import (
 	ugomock "go.uber.org/mock/gomock"
 	"golang.org/x/exp/maps"
 
-	"github.com/ethancls/cosmos/management/internals/controllers/network_map"
-	nbcontext "github.com/ethancls/cosmos/management/server/context"
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
-	"github.com/ethancls/cosmos/management/server/permissions"
-	"github.com/ethancls/cosmos/management/server/permissions/modules"
-	"github.com/ethancls/cosmos/management/server/permissions/operations"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/shared/auth"
-	"github.com/ethancls/cosmos/shared/management/http/api"
+	"github.com/netbirdio/netbird/management/internals/controllers/network_map"
+	nbcontext "github.com/netbirdio/netbird/management/server/context"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
+	"github.com/netbirdio/netbird/management/server/permissions"
+	"github.com/netbirdio/netbird/management/server/permissions/modules"
+	"github.com/netbirdio/netbird/management/server/permissions/operations"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/shared/auth"
+	"github.com/netbirdio/netbird/shared/management/http/api"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/management/server/mock_server"
+	"github.com/netbirdio/netbird/management/server/mock_server"
 )
 
 const (

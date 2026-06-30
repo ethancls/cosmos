@@ -9,10 +9,10 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	nbdns "github.com/ethancls/cosmos/dns"
-	"github.com/ethancls/cosmos/management/internals/controllers/network_map"
-	"github.com/ethancls/cosmos/management/internals/controllers/network_map/controller/cache"
-	nbconfig "github.com/ethancls/cosmos/management/internals/server/config"
+	nbdns "github.com/netbirdio/netbird/dns"
+	"github.com/netbirdio/netbird/management/internals/controllers/network_map"
+	"github.com/netbirdio/netbird/management/internals/controllers/network_map/controller/cache"
+	nbconfig "github.com/netbirdio/netbird/management/internals/server/config"
 )
 
 func TestToProtocolDNSConfigWithCache(t *testing.T) {

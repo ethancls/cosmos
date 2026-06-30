@@ -13,8 +13,8 @@ import (
 	"google.golang.org/protobuf/types/known/durationpb"
 	"google.golang.org/protobuf/types/known/timestamppb"
 
-	"github.com/ethancls/cosmos/client/proto"
-	"github.com/ethancls/cosmos/version"
+	"github.com/netbirdio/netbird/client/proto"
+	"github.com/netbirdio/netbird/version"
 )
 
 func init() {

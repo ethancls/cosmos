@@ -17,7 +17,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	cryptossh "golang.org/x/crypto/ssh"
 
-	"github.com/ethancls/cosmos/util/netrelay"
+	"github.com/netbirdio/netbird/util/netrelay"
 )
 
 const privilegedPortThreshold = 1024

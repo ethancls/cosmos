@@ -10,9 +10,9 @@ import (
 	"github.com/hashicorp/go-multierror"
 	log "github.com/sirupsen/logrus"
 
-	nberrors "github.com/ethancls/cosmos/client/errors"
-	"github.com/ethancls/cosmos/client/internal/routemanager/util"
-	"github.com/ethancls/cosmos/client/net/hooks"
+	nberrors "github.com/netbirdio/netbird/client/errors"
+	"github.com/netbirdio/netbird/client/internal/routemanager/util"
+	"github.com/netbirdio/netbird/client/net/hooks"
 )
 
 // DialContext wraps the net.Dialer's DialContext method to use the custom connection

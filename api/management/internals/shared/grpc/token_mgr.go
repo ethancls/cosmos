@@ -13,13 +13,13 @@ import (
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 
 	integrationsConfig "github.com/netbirdio/management-integrations/integrations/config"
-	"github.com/ethancls/cosmos/management/internals/controllers/network_map"
-	nbconfig "github.com/ethancls/cosmos/management/internals/server/config"
-	"github.com/ethancls/cosmos/management/server/groups"
-	"github.com/ethancls/cosmos/management/server/settings"
-	"github.com/ethancls/cosmos/shared/management/proto"
-	auth "github.com/ethancls/cosmos/shared/relay/auth/hmac"
-	authv2 "github.com/ethancls/cosmos/shared/relay/auth/hmac/v2"
+	"github.com/netbirdio/netbird/management/internals/controllers/network_map"
+	nbconfig "github.com/netbirdio/netbird/management/internals/server/config"
+	"github.com/netbirdio/netbird/management/server/groups"
+	"github.com/netbirdio/netbird/management/server/settings"
+	"github.com/netbirdio/netbird/shared/management/proto"
+	auth "github.com/netbirdio/netbird/shared/relay/auth/hmac"
+	authv2 "github.com/netbirdio/netbird/shared/relay/auth/hmac/v2"
 )
 
 const defaultDuration = 12 * time.Hour

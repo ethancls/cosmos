@@ -11,7 +11,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/shared/management/status"
+	"github.com/netbirdio/netbird/shared/management/status"
 )
 
 // EmptyObject is an empty struct used to return empty JSON object

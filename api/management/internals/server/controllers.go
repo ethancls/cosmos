@@ -7,22 +7,22 @@ import (
 
 	"github.com/netbirdio/management-integrations/integrations"
 
-	"github.com/ethancls/cosmos/management/internals/modules/reverseproxy/proxy"
-	proxymanager "github.com/ethancls/cosmos/management/internals/modules/reverseproxy/proxy/manager"
+	"github.com/netbirdio/netbird/management/internals/modules/reverseproxy/proxy"
+	proxymanager "github.com/netbirdio/netbird/management/internals/modules/reverseproxy/proxy/manager"
 
-	"github.com/ethancls/cosmos/management/internals/controllers/network_map"
-	nmapcontroller "github.com/ethancls/cosmos/management/internals/controllers/network_map/controller"
-	"github.com/ethancls/cosmos/management/internals/controllers/network_map/update_channel"
-	"github.com/ethancls/cosmos/management/internals/modules/peers/ephemeral"
-	"github.com/ethancls/cosmos/management/internals/modules/peers/ephemeral/manager"
-	"github.com/ethancls/cosmos/management/internals/shared/grpc"
-	"github.com/ethancls/cosmos/management/server"
-	"github.com/ethancls/cosmos/management/server/auth"
-	"github.com/ethancls/cosmos/management/server/integrations/integrated_validator"
-	"github.com/ethancls/cosmos/management/server/integrations/integrated_validator/validator"
-	"github.com/ethancls/cosmos/management/server/integrations/port_forwarding"
-	"github.com/ethancls/cosmos/management/server/job"
-	nbjwt "github.com/ethancls/cosmos/shared/auth/jwt"
+	"github.com/netbirdio/netbird/management/internals/controllers/network_map"
+	nmapcontroller "github.com/netbirdio/netbird/management/internals/controllers/network_map/controller"
+	"github.com/netbirdio/netbird/management/internals/controllers/network_map/update_channel"
+	"github.com/netbirdio/netbird/management/internals/modules/peers/ephemeral"
+	"github.com/netbirdio/netbird/management/internals/modules/peers/ephemeral/manager"
+	"github.com/netbirdio/netbird/management/internals/shared/grpc"
+	"github.com/netbirdio/netbird/management/server"
+	"github.com/netbirdio/netbird/management/server/auth"
+	"github.com/netbirdio/netbird/management/server/integrations/integrated_validator"
+	"github.com/netbirdio/netbird/management/server/integrations/integrated_validator/validator"
+	"github.com/netbirdio/netbird/management/server/integrations/port_forwarding"
+	"github.com/netbirdio/netbird/management/server/job"
+	nbjwt "github.com/netbirdio/netbird/shared/auth/jwt"
 )
 
 func (s *BaseServer) PeersUpdateManager() network_map.PeersUpdateManager {

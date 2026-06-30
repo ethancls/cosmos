@@ -4,14 +4,14 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ethancls/cosmos/client/firewall/manager"
-	"github.com/ethancls/cosmos/client/internal/dns"
-	"github.com/ethancls/cosmos/client/internal/peer"
-	"github.com/ethancls/cosmos/client/internal/peerstore"
-	"github.com/ethancls/cosmos/client/internal/routemanager/fakeip"
-	"github.com/ethancls/cosmos/client/internal/routemanager/iface"
-	"github.com/ethancls/cosmos/client/internal/routemanager/refcounter"
-	"github.com/ethancls/cosmos/route"
+	"github.com/netbirdio/netbird/client/firewall/manager"
+	"github.com/netbirdio/netbird/client/internal/dns"
+	"github.com/netbirdio/netbird/client/internal/peer"
+	"github.com/netbirdio/netbird/client/internal/peerstore"
+	"github.com/netbirdio/netbird/client/internal/routemanager/fakeip"
+	"github.com/netbirdio/netbird/client/internal/routemanager/iface"
+	"github.com/netbirdio/netbird/client/internal/routemanager/refcounter"
+	"github.com/netbirdio/netbird/route"
 )
 
 type HandlerParams struct {

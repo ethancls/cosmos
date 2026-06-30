@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/cosmos/management/internals/controllers/network_map"
-	"github.com/ethancls/cosmos/shared/management/proto"
+	"github.com/netbirdio/netbird/management/internals/controllers/network_map"
+	"github.com/netbirdio/netbird/shared/management/proto"
 )
 
 func TestUpdateDebouncer_FirstUpdateSentImmediately(t *testing.T) {

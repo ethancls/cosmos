@@ -8,8 +8,8 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ethancls/cosmos/client/internal/lazyconn"
-	"github.com/ethancls/cosmos/monotime"
+	"github.com/netbirdio/netbird/client/internal/lazyconn"
+	"github.com/netbirdio/netbird/monotime"
 )
 
 type mockWgInterface struct {

@@ -7,12 +7,12 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/relay/server/listener"
-	"github.com/ethancls/cosmos/shared/relay/messages"
+	"github.com/netbirdio/netbird/relay/server/listener"
+	"github.com/netbirdio/netbird/shared/relay/messages"
 	//nolint:staticcheck
-	"github.com/ethancls/cosmos/shared/relay/messages/address"
+	"github.com/netbirdio/netbird/shared/relay/messages/address"
 	//nolint:staticcheck
-	authmsg "github.com/ethancls/cosmos/shared/relay/messages/auth"
+	authmsg "github.com/netbirdio/netbird/shared/relay/messages/auth"
 )
 
 const (

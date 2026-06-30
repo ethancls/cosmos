@@ -7,7 +7,7 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/firewall/uspfilter/log"
+	"github.com/netbirdio/netbird/client/firewall/uspfilter/log"
 )
 
 type discard struct{}

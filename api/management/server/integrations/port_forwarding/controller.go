@@ -3,8 +3,8 @@ package port_forwarding
 import (
 	"context"
 
-	"github.com/ethancls/cosmos/management/server/peer"
-	nbtypes "github.com/ethancls/cosmos/management/server/types"
+	"github.com/netbirdio/netbird/management/server/peer"
+	nbtypes "github.com/netbirdio/netbird/management/server/types"
 )
 
 type Controller interface {

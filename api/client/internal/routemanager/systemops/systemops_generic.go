@@ -15,14 +15,14 @@ import (
 	"github.com/libp2p/go-netroute"
 	log "github.com/sirupsen/logrus"
 
-	nberrors "github.com/ethancls/cosmos/client/errors"
-	"github.com/ethancls/cosmos/client/iface/netstack"
-	"github.com/ethancls/cosmos/client/internal/routemanager/refcounter"
-	"github.com/ethancls/cosmos/client/internal/routemanager/util"
-	"github.com/ethancls/cosmos/client/internal/routemanager/vars"
-	"github.com/ethancls/cosmos/client/internal/statemanager"
-	nbnet "github.com/ethancls/cosmos/client/net"
-	"github.com/ethancls/cosmos/client/net/hooks"
+	nberrors "github.com/netbirdio/netbird/client/errors"
+	"github.com/netbirdio/netbird/client/iface/netstack"
+	"github.com/netbirdio/netbird/client/internal/routemanager/refcounter"
+	"github.com/netbirdio/netbird/client/internal/routemanager/util"
+	"github.com/netbirdio/netbird/client/internal/routemanager/vars"
+	"github.com/netbirdio/netbird/client/internal/statemanager"
+	nbnet "github.com/netbirdio/netbird/client/net"
+	"github.com/netbirdio/netbird/client/net/hooks"
 )
 
 const localSubnetsCacheTTL = 15 * time.Minute

@@ -1,6 +1,6 @@
 package internal
 
-import "github.com/ethancls/cosmos/client/internal/stdnet"
+import "github.com/netbirdio/netbird/client/internal/stdnet"
 
 func (e *Engine) newStdNet() (*stdnet.Net, error) {
 	return stdnet.NewNetWithDiscover(e.clientCtx, e.mobileDep.IFaceDiscover, e.config.IFaceBlackList)

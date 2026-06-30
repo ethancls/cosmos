@@ -10,8 +10,8 @@ import (
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/layers"
 
-	firewall "github.com/ethancls/cosmos/client/firewall/manager"
-	nblog "github.com/ethancls/cosmos/client/firewall/uspfilter/log"
+	firewall "github.com/netbirdio/netbird/client/firewall/manager"
+	nblog "github.com/netbirdio/netbird/client/firewall/uspfilter/log"
 )
 
 var (

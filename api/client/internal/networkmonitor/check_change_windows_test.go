@@ -7,7 +7,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ethancls/cosmos/client/internal/routemanager/systemops"
+	"github.com/netbirdio/netbird/client/internal/routemanager/systemops"
 )
 
 func TestRouteChanged(t *testing.T) {

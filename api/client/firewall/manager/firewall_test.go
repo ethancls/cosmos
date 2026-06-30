@@ -6,7 +6,7 @@ import (
 	"regexp"
 	"testing"
 
-	"github.com/ethancls/cosmos/client/firewall/manager"
+	"github.com/netbirdio/netbird/client/firewall/manager"
 )
 
 func TestGenerateSetName(t *testing.T) {

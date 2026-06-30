@@ -3,7 +3,7 @@ package server
 import (
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/proto"
+	"github.com/netbirdio/netbird/client/proto"
 )
 
 func (s *Server) SubscribeEvents(req *proto.SubscribeRequest, stream proto.DaemonService_SubscribeEventsServer) error {

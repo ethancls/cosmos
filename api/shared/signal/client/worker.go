@@ -5,7 +5,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/shared/signal/proto"
+	"github.com/netbirdio/netbird/shared/signal/proto"
 )
 
 type Worker struct {

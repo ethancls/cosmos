@@ -8,7 +8,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/net/hooks"
+	"github.com/netbirdio/netbird/client/net/hooks"
 )
 
 // Conn wraps a net.Conn to override the Close method

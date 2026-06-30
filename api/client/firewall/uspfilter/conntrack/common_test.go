@@ -6,8 +6,8 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/firewall/uspfilter/log"
-	"github.com/ethancls/cosmos/client/internal/netflow"
+	"github.com/netbirdio/netbird/client/firewall/uspfilter/log"
+	"github.com/netbirdio/netbird/client/internal/netflow"
 )
 
 var logger = log.NewFromLogrus(logrus.StandardLogger())

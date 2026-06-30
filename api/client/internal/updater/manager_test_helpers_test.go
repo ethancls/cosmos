@@ -6,7 +6,7 @@ import (
 
 	v "github.com/hashicorp/go-version"
 
-	"github.com/ethancls/cosmos/client/internal/peer"
+	"github.com/netbirdio/netbird/client/internal/peer"
 )
 
 type versionUpdateMock struct {

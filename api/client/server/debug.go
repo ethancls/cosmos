@@ -11,10 +11,10 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/internal/debug"
-	"github.com/ethancls/cosmos/client/proto"
-	mgmProto "github.com/ethancls/cosmos/shared/management/proto"
-	"github.com/ethancls/cosmos/version"
+	"github.com/netbirdio/netbird/client/internal/debug"
+	"github.com/netbirdio/netbird/client/proto"
+	mgmProto "github.com/netbirdio/netbird/shared/management/proto"
+	"github.com/netbirdio/netbird/version"
 )
 
 // DebugBundle creates a debug bundle and returns the location.

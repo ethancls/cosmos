@@ -6,7 +6,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/ethancls/cosmos/util"
+	"github.com/netbirdio/netbird/util"
 )
 
 type migrationConfig struct {

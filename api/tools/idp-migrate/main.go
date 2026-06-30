@@ -25,15 +25,15 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/idp/dex"
-	nbconfig "github.com/ethancls/cosmos/management/internals/server/config"
-	activitystore "github.com/ethancls/cosmos/management/server/activity/store"
-	"github.com/ethancls/cosmos/management/server/idp"
-	"github.com/ethancls/cosmos/management/server/idp/migration"
-	"github.com/ethancls/cosmos/management/server/store"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/util"
-	"github.com/ethancls/cosmos/util/crypt"
+	"github.com/netbirdio/netbird/idp/dex"
+	nbconfig "github.com/netbirdio/netbird/management/internals/server/config"
+	activitystore "github.com/netbirdio/netbird/management/server/activity/store"
+	"github.com/netbirdio/netbird/management/server/idp"
+	"github.com/netbirdio/netbird/management/server/idp/migration"
+	"github.com/netbirdio/netbird/management/server/store"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/util"
+	"github.com/netbirdio/netbird/util/crypt"
 )
 
 // migrationServer implements migration.Server by wrapping the migration-specific interfaces.

@@ -15,10 +15,10 @@ import (
 	"github.com/google/gopacket/layers"
 	"github.com/stretchr/testify/require"
 
-	fw "github.com/ethancls/cosmos/client/firewall/manager"
-	"github.com/ethancls/cosmos/client/firewall/uspfilter/conntrack"
-	"github.com/ethancls/cosmos/client/iface"
-	"github.com/ethancls/cosmos/client/iface/device"
+	fw "github.com/netbirdio/netbird/client/firewall/manager"
+	"github.com/netbirdio/netbird/client/firewall/uspfilter/conntrack"
+	"github.com/netbirdio/netbird/client/iface"
+	"github.com/netbirdio/netbird/client/iface/device"
 )
 
 // generateRandomIPs generates n different random IPs in the 100.64.0.0/10 range

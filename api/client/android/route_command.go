@@ -8,8 +8,8 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/exp/maps"
 
-	"github.com/ethancls/cosmos/client/internal/routemanager"
-	"github.com/ethancls/cosmos/route"
+	"github.com/netbirdio/netbird/client/internal/routemanager"
+	"github.com/netbirdio/netbird/route"
 )
 
 func executeRouteToggle(id string, manager routemanager.Manager,

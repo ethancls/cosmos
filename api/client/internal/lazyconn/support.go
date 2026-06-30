@@ -5,7 +5,7 @@ import (
 
 	"github.com/hashicorp/go-version"
 
-	nbversion "github.com/ethancls/cosmos/version"
+	nbversion "github.com/netbirdio/netbird/version"
 )
 
 var (

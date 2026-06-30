@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethancls/cosmos/client/internal/metrics"
+	"github.com/netbirdio/netbird/client/internal/metrics"
 )
 
 type MetricsStages struct {

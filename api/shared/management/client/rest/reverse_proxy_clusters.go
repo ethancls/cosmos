@@ -5,7 +5,7 @@ import (
 	"errors"
 	"net/url"
 
-	"github.com/ethancls/cosmos/shared/management/http/api"
+	"github.com/netbirdio/netbird/shared/management/http/api"
 )
 
 // ReverseProxyClustersAPI APIs for Reverse Proxy Clusters, do not use directly

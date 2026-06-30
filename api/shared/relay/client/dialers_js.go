@@ -3,8 +3,8 @@
 package client
 
 import (
-	"github.com/ethancls/cosmos/shared/relay/client/dialer"
-	"github.com/ethancls/cosmos/shared/relay/client/dialer/ws"
+	"github.com/netbirdio/netbird/shared/relay/client/dialer"
+	"github.com/netbirdio/netbird/shared/relay/client/dialer/ws"
 )
 
 func (c *Client) getDialers(_ TransportMode) []dialer.DialeFn {

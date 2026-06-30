@@ -1,8 +1,8 @@
 package roles
 
 import (
-	"github.com/ethancls/cosmos/management/server/permissions/operations"
-	"github.com/ethancls/cosmos/management/server/types"
+	"github.com/netbirdio/netbird/management/server/permissions/operations"
+	"github.com/netbirdio/netbird/management/server/types"
 )
 
 var User = RolePermissions{

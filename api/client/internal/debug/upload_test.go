@@ -12,8 +12,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/upload-server/server"
-	"github.com/ethancls/cosmos/upload-server/types"
+	"github.com/netbirdio/netbird/upload-server/server"
+	"github.com/netbirdio/netbird/upload-server/types"
 )
 
 func TestUpload(t *testing.T) {

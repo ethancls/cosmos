@@ -16,11 +16,11 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/embed"
-	"github.com/ethancls/cosmos/proxy/internal/auth"
-	"github.com/ethancls/cosmos/proxy/internal/debug"
-	nbtcp "github.com/ethancls/cosmos/proxy/internal/tcp"
-	"github.com/ethancls/cosmos/proxy/internal/types"
+	"github.com/netbirdio/netbird/client/embed"
+	"github.com/netbirdio/netbird/proxy/internal/auth"
+	"github.com/netbirdio/netbird/proxy/internal/debug"
+	nbtcp "github.com/netbirdio/netbird/proxy/internal/tcp"
+	"github.com/netbirdio/netbird/proxy/internal/types"
 )
 
 // httpInboundReadHeaderTimeout matches the host-listener read header timeout

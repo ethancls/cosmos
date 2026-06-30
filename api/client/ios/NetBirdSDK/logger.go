@@ -3,7 +3,7 @@
 package NetBirdSDK
 
 import (
-	"github.com/ethancls/cosmos/util"
+	"github.com/netbirdio/netbird/util"
 )
 
 // InitializeLog initializes the log file.

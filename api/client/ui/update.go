@@ -13,7 +13,7 @@ import (
 	"fyne.io/fyne/v2/widget"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/proto"
+	"github.com/netbirdio/netbird/client/proto"
 )
 
 func (s *serviceClient) showUpdateProgress(ctx context.Context, version string) {

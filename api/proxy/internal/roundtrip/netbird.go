@@ -19,11 +19,11 @@ import (
 	"google.golang.org/grpc/codes"
 	grpcstatus "google.golang.org/grpc/status"
 
-	"github.com/ethancls/cosmos/client/embed"
-	nberrors "github.com/ethancls/cosmos/client/errors"
-	"github.com/ethancls/cosmos/proxy/internal/types"
-	"github.com/ethancls/cosmos/shared/management/proto"
-	"github.com/ethancls/cosmos/util"
+	"github.com/netbirdio/netbird/client/embed"
+	nberrors "github.com/netbirdio/netbird/client/errors"
+	"github.com/netbirdio/netbird/proxy/internal/types"
+	"github.com/netbirdio/netbird/shared/management/proto"
+	"github.com/netbirdio/netbird/util"
 )
 
 const deviceNamePrefix = "ingress-proxy-"

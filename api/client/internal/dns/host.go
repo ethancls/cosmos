@@ -7,8 +7,8 @@ import (
 
 	"github.com/miekg/dns"
 
-	"github.com/ethancls/cosmos/client/internal/statemanager"
-	nbdns "github.com/ethancls/cosmos/dns"
+	"github.com/netbirdio/netbird/client/internal/statemanager"
+	nbdns "github.com/netbirdio/netbird/dns"
 )
 
 type hostManager interface {

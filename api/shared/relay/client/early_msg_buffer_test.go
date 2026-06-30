@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/cosmos/shared/relay/messages"
+	"github.com/netbirdio/netbird/shared/relay/messages"
 )
 
 func newTestPool() *sync.Pool {

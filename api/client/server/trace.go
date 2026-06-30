@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"net/netip"
 
-	fw "github.com/ethancls/cosmos/client/firewall/manager"
-	"github.com/ethancls/cosmos/client/firewall/uspfilter"
-	"github.com/ethancls/cosmos/client/internal"
-	"github.com/ethancls/cosmos/client/proto"
+	fw "github.com/netbirdio/netbird/client/firewall/manager"
+	"github.com/netbirdio/netbird/client/firewall/uspfilter"
+	"github.com/netbirdio/netbird/client/internal"
+	"github.com/netbirdio/netbird/client/proto"
 )
 
 type packetTracer interface {

@@ -12,8 +12,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/embed"
-	"github.com/ethancls/cosmos/proxy/internal/types"
+	"github.com/netbirdio/netbird/client/embed"
+	"github.com/netbirdio/netbird/proxy/internal/types"
 )
 
 const handshakeStaleThreshold = 5 * time.Minute

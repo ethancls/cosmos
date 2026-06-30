@@ -6,8 +6,8 @@ import (
 	"os"
 	"testing"
 
-	nbdns "github.com/ethancls/cosmos/dns"
-	"github.com/ethancls/cosmos/management/server/types"
+	nbdns "github.com/netbirdio/netbird/dns"
+	"github.com/netbirdio/netbird/management/server/types"
 )
 
 type benchmarkScale struct {

@@ -9,12 +9,12 @@ import (
 	"github.com/hashicorp/go-multierror"
 	log "github.com/sirupsen/logrus"
 
-	nberrors "github.com/ethancls/cosmos/client/errors"
-	"github.com/ethancls/cosmos/relay/protocol"
-	"github.com/ethancls/cosmos/relay/server/listener"
-	"github.com/ethancls/cosmos/relay/server/listener/quic"
-	"github.com/ethancls/cosmos/relay/server/listener/ws"
-	quictls "github.com/ethancls/cosmos/shared/relay/tls"
+	nberrors "github.com/netbirdio/netbird/client/errors"
+	"github.com/netbirdio/netbird/relay/protocol"
+	"github.com/netbirdio/netbird/relay/server/listener"
+	"github.com/netbirdio/netbird/relay/server/listener/quic"
+	"github.com/netbirdio/netbird/relay/server/listener/ws"
+	quictls "github.com/netbirdio/netbird/shared/relay/tls"
 )
 
 // ListenerConfig is the configuration for the listener.

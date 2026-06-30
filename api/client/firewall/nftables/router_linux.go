@@ -18,13 +18,13 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/sys/unix"
 
-	nberrors "github.com/ethancls/cosmos/client/errors"
-	"github.com/ethancls/cosmos/client/firewall/firewalld"
-	firewall "github.com/ethancls/cosmos/client/firewall/manager"
-	nbid "github.com/ethancls/cosmos/client/internal/acl/id"
-	"github.com/ethancls/cosmos/client/internal/routemanager/ipfwdstate"
-	"github.com/ethancls/cosmos/client/internal/routemanager/refcounter"
-	nbnet "github.com/ethancls/cosmos/client/net"
+	nberrors "github.com/netbirdio/netbird/client/errors"
+	"github.com/netbirdio/netbird/client/firewall/firewalld"
+	firewall "github.com/netbirdio/netbird/client/firewall/manager"
+	nbid "github.com/netbirdio/netbird/client/internal/acl/id"
+	"github.com/netbirdio/netbird/client/internal/routemanager/ipfwdstate"
+	"github.com/netbirdio/netbird/client/internal/routemanager/refcounter"
+	nbnet "github.com/netbirdio/netbird/client/net"
 )
 
 const (

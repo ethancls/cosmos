@@ -15,14 +15,14 @@ import (
 
 	wgdevice "golang.zx2c4.com/wireguard/device"
 
-	"github.com/ethancls/cosmos/client/errors"
-	"github.com/ethancls/cosmos/client/iface/configurer"
-	"github.com/ethancls/cosmos/client/iface/device"
-	nbnetstack "github.com/ethancls/cosmos/client/iface/netstack"
-	"github.com/ethancls/cosmos/client/iface/udpmux"
-	"github.com/ethancls/cosmos/client/iface/wgaddr"
-	"github.com/ethancls/cosmos/client/iface/wgproxy"
-	"github.com/ethancls/cosmos/monotime"
+	"github.com/netbirdio/netbird/client/errors"
+	"github.com/netbirdio/netbird/client/iface/configurer"
+	"github.com/netbirdio/netbird/client/iface/device"
+	nbnetstack "github.com/netbirdio/netbird/client/iface/netstack"
+	"github.com/netbirdio/netbird/client/iface/udpmux"
+	"github.com/netbirdio/netbird/client/iface/wgaddr"
+	"github.com/netbirdio/netbird/client/iface/wgproxy"
+	"github.com/netbirdio/netbird/monotime"
 )
 
 const (

@@ -14,7 +14,7 @@ import (
 
 	"github.com/gobwas/ws"
 	"github.com/gobwas/ws/wsutil"
-	netbird "github.com/ethancls/cosmos/client/embed"
+	netbird "github.com/netbirdio/netbird/client/embed"
 	log "github.com/sirupsen/logrus"
 )
 

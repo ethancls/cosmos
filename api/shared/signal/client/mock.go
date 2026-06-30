@@ -3,7 +3,7 @@ package client
 import (
 	"context"
 
-	"github.com/ethancls/cosmos/shared/signal/proto"
+	"github.com/netbirdio/netbird/shared/signal/proto"
 )
 
 type MockClient struct {

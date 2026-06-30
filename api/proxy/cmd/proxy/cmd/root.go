@@ -13,12 +13,12 @@ import (
 	"github.com/spf13/cobra"
 	"golang.org/x/crypto/acme"
 
-	"github.com/ethancls/cosmos/shared/management/domain"
+	"github.com/netbirdio/netbird/shared/management/domain"
 
-	"github.com/ethancls/cosmos/client/embed"
-	"github.com/ethancls/cosmos/proxy"
-	nbacme "github.com/ethancls/cosmos/proxy/internal/acme"
-	"github.com/ethancls/cosmos/util"
+	"github.com/netbirdio/netbird/client/embed"
+	"github.com/netbirdio/netbird/proxy"
+	nbacme "github.com/netbirdio/netbird/proxy/internal/acme"
+	"github.com/netbirdio/netbird/util"
 )
 
 const (

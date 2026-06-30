@@ -18,13 +18,13 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	"github.com/ethancls/cosmos/encryption"
-	"github.com/ethancls/cosmos/relay/healthcheck"
-	"github.com/ethancls/cosmos/relay/server"
-	"github.com/ethancls/cosmos/shared/metrics"
-	"github.com/ethancls/cosmos/shared/relay/auth"
-	"github.com/ethancls/cosmos/stun"
-	"github.com/ethancls/cosmos/util"
+	"github.com/netbirdio/netbird/encryption"
+	"github.com/netbirdio/netbird/relay/healthcheck"
+	"github.com/netbirdio/netbird/relay/server"
+	"github.com/netbirdio/netbird/shared/metrics"
+	"github.com/netbirdio/netbird/shared/relay/auth"
+	"github.com/netbirdio/netbird/stun"
+	"github.com/netbirdio/netbird/util"
 )
 
 type Config struct {

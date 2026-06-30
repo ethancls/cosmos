@@ -3,11 +3,11 @@ package auth
 import (
 	"context"
 
-	"github.com/ethancls/cosmos/shared/auth"
+	"github.com/netbirdio/netbird/shared/auth"
 
 	"github.com/golang-jwt/jwt/v5"
 
-	"github.com/ethancls/cosmos/management/server/types"
+	"github.com/netbirdio/netbird/management/server/types"
 )
 
 var (

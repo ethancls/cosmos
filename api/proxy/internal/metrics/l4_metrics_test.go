@@ -9,8 +9,8 @@ import (
 	promexporter "go.opentelemetry.io/otel/exporters/prometheus"
 	sdkmetric "go.opentelemetry.io/otel/sdk/metric"
 
-	"github.com/ethancls/cosmos/proxy/internal/metrics"
-	"github.com/ethancls/cosmos/proxy/internal/types"
+	"github.com/netbirdio/netbird/proxy/internal/metrics"
+	"github.com/netbirdio/netbird/proxy/internal/types"
 )
 
 func newTestMetrics(t *testing.T) *metrics.Metrics {

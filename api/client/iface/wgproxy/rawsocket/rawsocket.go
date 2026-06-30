@@ -11,7 +11,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/sys/unix"
 
-	nbnet "github.com/ethancls/cosmos/client/net"
+	nbnet "github.com/netbirdio/netbird/client/net"
 )
 
 // PrepareSenderRawSocketIPv4 creates and configures a raw socket for sending IPv4 packets

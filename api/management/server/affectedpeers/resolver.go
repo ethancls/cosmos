@@ -19,14 +19,14 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	nbdns "github.com/ethancls/cosmos/dns"
-	rpservice "github.com/ethancls/cosmos/management/internals/modules/reverseproxy/service"
-	resourceTypes "github.com/ethancls/cosmos/management/server/networks/resources/types"
-	routerTypes "github.com/ethancls/cosmos/management/server/networks/routers/types"
-	networkTypes "github.com/ethancls/cosmos/management/server/networks/types"
-	"github.com/ethancls/cosmos/management/server/store"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/route"
+	nbdns "github.com/netbirdio/netbird/dns"
+	rpservice "github.com/netbirdio/netbird/management/internals/modules/reverseproxy/service"
+	resourceTypes "github.com/netbirdio/netbird/management/server/networks/resources/types"
+	routerTypes "github.com/netbirdio/netbird/management/server/networks/routers/types"
+	networkTypes "github.com/netbirdio/netbird/management/server/networks/types"
+	"github.com/netbirdio/netbird/management/server/store"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/route"
 )
 
 // Snapshot is an in-memory view of the collections needed to expand a Change.

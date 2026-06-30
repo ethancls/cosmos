@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ethancls/cosmos/management/server/telemetry"
+	"github.com/netbirdio/netbird/management/server/telemetry"
 )
 
 const (

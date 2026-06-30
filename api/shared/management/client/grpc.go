@@ -20,12 +20,12 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/connectivity"
 
-	nbgrpc "github.com/ethancls/cosmos/client/grpc"
-	"github.com/ethancls/cosmos/client/system"
-	"github.com/ethancls/cosmos/encryption"
-	"github.com/ethancls/cosmos/shared/management/domain"
-	"github.com/ethancls/cosmos/shared/management/proto"
-	"github.com/ethancls/cosmos/util/wsproxy"
+	nbgrpc "github.com/netbirdio/netbird/client/grpc"
+	"github.com/netbirdio/netbird/client/system"
+	"github.com/netbirdio/netbird/encryption"
+	"github.com/netbirdio/netbird/shared/management/domain"
+	"github.com/netbirdio/netbird/shared/management/proto"
+	"github.com/netbirdio/netbird/util/wsproxy"
 )
 
 const ConnectTimeout = 10 * time.Second

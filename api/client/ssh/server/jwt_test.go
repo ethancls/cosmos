@@ -22,13 +22,13 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	nbssh "github.com/ethancls/cosmos/client/ssh"
-	sshauth "github.com/ethancls/cosmos/client/ssh/auth"
-	"github.com/ethancls/cosmos/client/ssh/client"
-	"github.com/ethancls/cosmos/client/ssh/detection"
-	"github.com/ethancls/cosmos/client/ssh/testutil"
-	nbjwt "github.com/ethancls/cosmos/shared/auth/jwt"
-	sshuserhash "github.com/ethancls/cosmos/shared/sshauth"
+	nbssh "github.com/netbirdio/netbird/client/ssh"
+	sshauth "github.com/netbirdio/netbird/client/ssh/auth"
+	"github.com/netbirdio/netbird/client/ssh/client"
+	"github.com/netbirdio/netbird/client/ssh/detection"
+	"github.com/netbirdio/netbird/client/ssh/testutil"
+	nbjwt "github.com/netbirdio/netbird/shared/auth/jwt"
+	sshuserhash "github.com/netbirdio/netbird/shared/sshauth"
 )
 
 func TestJWTEnforcement(t *testing.T) {

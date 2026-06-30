@@ -3,7 +3,7 @@ package networkmonitor
 import (
 	"context"
 
-	"github.com/ethancls/cosmos/client/internal/routemanager/systemops"
+	"github.com/netbirdio/netbird/client/internal/routemanager/systemops"
 )
 
 func checkChange(ctx context.Context, nexthopv4, nexthopv6 systemops.Nexthop) error {

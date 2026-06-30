@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	nbdns "github.com/ethancls/cosmos/dns"
+	nbdns "github.com/netbirdio/netbird/dns"
 )
 
 func TestCreatePTRRecord_IPv4(t *testing.T) {

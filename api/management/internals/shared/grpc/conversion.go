@@ -9,25 +9,25 @@ import (
 	"time"
 
 	"github.com/hashicorp/go-version"
-	nbversion "github.com/ethancls/cosmos/version"
+	nbversion "github.com/netbirdio/netbird/version"
 	log "github.com/sirupsen/logrus"
 	goproto "google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/types/known/timestamppb"
 
 	integrationsConfig "github.com/netbirdio/management-integrations/integrations/config"
 
-	"github.com/ethancls/cosmos/client/ssh/auth"
+	"github.com/netbirdio/netbird/client/ssh/auth"
 
-	nbdns "github.com/ethancls/cosmos/dns"
-	"github.com/ethancls/cosmos/management/internals/controllers/network_map/controller/cache"
-	nbconfig "github.com/ethancls/cosmos/management/internals/server/config"
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
-	"github.com/ethancls/cosmos/management/server/posture"
-	"github.com/ethancls/cosmos/management/server/types"
-	nbroute "github.com/ethancls/cosmos/route"
-	"github.com/ethancls/cosmos/shared/management/proto"
-	"github.com/ethancls/cosmos/shared/netiputil"
-	"github.com/ethancls/cosmos/shared/sshauth"
+	nbdns "github.com/netbirdio/netbird/dns"
+	"github.com/netbirdio/netbird/management/internals/controllers/network_map/controller/cache"
+	nbconfig "github.com/netbirdio/netbird/management/internals/server/config"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
+	"github.com/netbirdio/netbird/management/server/posture"
+	"github.com/netbirdio/netbird/management/server/types"
+	nbroute "github.com/netbirdio/netbird/route"
+	"github.com/netbirdio/netbird/shared/management/proto"
+	"github.com/netbirdio/netbird/shared/netiputil"
+	"github.com/netbirdio/netbird/shared/sshauth"
 )
 
 const (

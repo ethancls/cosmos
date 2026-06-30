@@ -13,14 +13,14 @@ import (
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/management/internals/controllers/network_map"
-	"github.com/ethancls/cosmos/management/internals/controllers/network_map/update_channel"
-	"github.com/ethancls/cosmos/management/internals/server/config"
-	"github.com/ethancls/cosmos/management/server/groups"
-	"github.com/ethancls/cosmos/management/server/settings"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/shared/management/proto"
-	"github.com/ethancls/cosmos/util"
+	"github.com/netbirdio/netbird/management/internals/controllers/network_map"
+	"github.com/netbirdio/netbird/management/internals/controllers/network_map/update_channel"
+	"github.com/netbirdio/netbird/management/internals/server/config"
+	"github.com/netbirdio/netbird/management/server/groups"
+	"github.com/netbirdio/netbird/management/server/settings"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/shared/management/proto"
+	"github.com/netbirdio/netbird/util"
 )
 
 var TurnTestHost = &config.Host{

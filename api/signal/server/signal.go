@@ -17,9 +17,9 @@ import (
 
 	"github.com/netbirdio/signal-dispatcher/dispatcher"
 
-	"github.com/ethancls/cosmos/shared/signal/proto"
-	"github.com/ethancls/cosmos/signal/metrics"
-	"github.com/ethancls/cosmos/signal/peer"
+	"github.com/netbirdio/netbird/shared/signal/proto"
+	"github.com/netbirdio/netbird/signal/metrics"
+	"github.com/netbirdio/netbird/signal/peer"
 )
 
 const (

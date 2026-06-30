@@ -5,7 +5,7 @@ import (
 	"sync"
 	"syscall"
 
-	"github.com/ethancls/cosmos/client/iface/netstack"
+	"github.com/netbirdio/netbird/client/iface/netstack"
 )
 
 var (

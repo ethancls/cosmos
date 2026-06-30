@@ -3,7 +3,7 @@ package dispatcher
 import (
 	"sync"
 
-	"github.com/ethancls/cosmos/client/internal/peer/id"
+	"github.com/netbirdio/netbird/client/internal/peer/id"
 )
 
 type ConnectionListener struct {

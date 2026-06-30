@@ -10,7 +10,7 @@ import (
 	"github.com/google/uuid"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/upload-server/types"
+	"github.com/netbirdio/netbird/upload-server/types"
 )
 
 const (

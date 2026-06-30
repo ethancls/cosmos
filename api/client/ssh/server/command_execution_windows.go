@@ -15,7 +15,7 @@ import (
 	"golang.org/x/sys/windows"
 	"golang.org/x/sys/windows/registry"
 
-	"github.com/ethancls/cosmos/client/ssh/server/winpty"
+	"github.com/netbirdio/netbird/client/ssh/server/winpty"
 )
 
 // getUserEnvironment retrieves the Windows environment for the target user.

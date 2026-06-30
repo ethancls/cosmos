@@ -14,12 +14,12 @@ import (
 	"github.com/rs/xid"
 	"golang.org/x/exp/maps"
 
-	nbdns "github.com/ethancls/cosmos/dns"
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
-	"github.com/ethancls/cosmos/management/server/util"
-	"github.com/ethancls/cosmos/route"
-	"github.com/ethancls/cosmos/shared/management/proto"
-	"github.com/ethancls/cosmos/shared/management/status"
+	nbdns "github.com/netbirdio/netbird/dns"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
+	"github.com/netbirdio/netbird/management/server/util"
+	"github.com/netbirdio/netbird/route"
+	"github.com/netbirdio/netbird/shared/management/proto"
+	"github.com/netbirdio/netbird/shared/management/status"
 )
 
 const (

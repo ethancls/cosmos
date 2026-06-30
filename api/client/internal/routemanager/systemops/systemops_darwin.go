@@ -14,9 +14,9 @@ import (
 	"golang.org/x/net/route"
 	"golang.org/x/sys/unix"
 
-	nberrors "github.com/ethancls/cosmos/client/errors"
-	"github.com/ethancls/cosmos/client/internal/routemanager/vars"
-	nbnet "github.com/ethancls/cosmos/client/net"
+	nberrors "github.com/netbirdio/netbird/client/errors"
+	"github.com/netbirdio/netbird/client/internal/routemanager/vars"
+	nbnet "github.com/netbirdio/netbird/client/net"
 )
 
 // scopedRouteBudget bounds retries for the scoped default route. Installing or

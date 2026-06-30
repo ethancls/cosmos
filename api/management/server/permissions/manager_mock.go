@@ -9,11 +9,11 @@ import (
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
-	account "github.com/ethancls/cosmos/management/server/account"
-	modules "github.com/ethancls/cosmos/management/server/permissions/modules"
-	operations "github.com/ethancls/cosmos/management/server/permissions/operations"
-	roles "github.com/ethancls/cosmos/management/server/permissions/roles"
-	types "github.com/ethancls/cosmos/management/server/types"
+	account "github.com/netbirdio/netbird/management/server/account"
+	modules "github.com/netbirdio/netbird/management/server/permissions/modules"
+	operations "github.com/netbirdio/netbird/management/server/permissions/operations"
+	roles "github.com/netbirdio/netbird/management/server/permissions/roles"
+	types "github.com/netbirdio/netbird/management/server/types"
 )
 
 // MockManager is a mock of Manager interface.

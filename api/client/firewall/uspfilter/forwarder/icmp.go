@@ -13,8 +13,8 @@ import (
 	"gvisor.dev/gvisor/pkg/tcpip/header"
 	"gvisor.dev/gvisor/pkg/tcpip/stack"
 
-	nblog "github.com/ethancls/cosmos/client/firewall/uspfilter/log"
-	nftypes "github.com/ethancls/cosmos/client/internal/netflow/types"
+	nblog "github.com/netbirdio/netbird/client/firewall/uspfilter/log"
+	nftypes "github.com/netbirdio/netbird/client/internal/netflow/types"
 )
 
 // handleICMP handles ICMP packets from the network stack

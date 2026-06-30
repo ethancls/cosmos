@@ -7,12 +7,12 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/internal/lazyconn"
-	"github.com/ethancls/cosmos/client/internal/lazyconn/activity"
-	"github.com/ethancls/cosmos/client/internal/lazyconn/inactivity"
-	peerid "github.com/ethancls/cosmos/client/internal/peer/id"
-	"github.com/ethancls/cosmos/client/internal/peerstore"
-	"github.com/ethancls/cosmos/route"
+	"github.com/netbirdio/netbird/client/internal/lazyconn"
+	"github.com/netbirdio/netbird/client/internal/lazyconn/activity"
+	"github.com/netbirdio/netbird/client/internal/lazyconn/inactivity"
+	peerid "github.com/netbirdio/netbird/client/internal/peer/id"
+	"github.com/netbirdio/netbird/client/internal/peerstore"
+	"github.com/netbirdio/netbird/route"
 )
 
 const (

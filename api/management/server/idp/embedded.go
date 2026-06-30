@@ -15,14 +15,14 @@ import (
 	"github.com/google/uuid"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/idp/dex"
-	"github.com/ethancls/cosmos/management/server/telemetry"
-	nbjwt "github.com/ethancls/cosmos/shared/auth/jwt"
+	"github.com/netbirdio/netbird/idp/dex"
+	"github.com/netbirdio/netbird/management/server/telemetry"
+	nbjwt "github.com/netbirdio/netbird/shared/auth/jwt"
 )
 
 const (
-	staticClientDashboard = "cosmos"
-	staticClientCLI = "cosmos-cli"
+	staticClientDashboard         = "cosmos-dashboard"
+	staticClientCLI               = "cosmos-cli"
 	defaultCLIRedirectURL1        = "http://localhost:53000/"
 	defaultCLIRedirectURL2        = "http://localhost:54000/"
 	defaultScopes                 = "openid profile email groups"
@@ -177,7 +177,7 @@ func (c *EmbeddedIdPConfig) ToYAMLConfig() (*dex.YAMLConfig, error) {
 			SkipApprovalScreen: true,
 		},
 		Frontend: dex.Frontend{
-			Issuer: "NetBird",
+			Issuer: "Cosmos",
 			Theme:  "light",
 		},
 		// Always enable password DB initially - we disable the local connector after startup if needed.
@@ -186,7 +186,7 @@ func (c *EmbeddedIdPConfig) ToYAMLConfig() (*dex.YAMLConfig, error) {
 		StaticClients: []storage.Client{
 			{
 				ID:                     staticClientDashboard,
-				Name:                   "NetBird Dashboard",
+				Name:                   "Cosmos Dashboard",
 				Public:                 true,
 				RedirectURIs:           redirectURIs,
 				PostLogoutRedirectURIs: sanitizePostLogoutRedirectURIs(dashboardPostLogoutRedirectURIs),

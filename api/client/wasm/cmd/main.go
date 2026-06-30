@@ -14,15 +14,15 @@ import (
 	log "github.com/sirupsen/logrus"
 	"google.golang.org/protobuf/encoding/protojson"
 
-	netbird "github.com/ethancls/cosmos/client/embed"
-	sshdetection "github.com/ethancls/cosmos/client/ssh/detection"
-	nbstatus "github.com/ethancls/cosmos/client/status"
-	wasmcapture "github.com/ethancls/cosmos/client/wasm/internal/capture"
-	"github.com/ethancls/cosmos/client/wasm/internal/http"
-	"github.com/ethancls/cosmos/client/wasm/internal/rdp"
-	"github.com/ethancls/cosmos/client/wasm/internal/ssh"
-	nbwebsocket "github.com/ethancls/cosmos/client/wasm/internal/websocket"
-	"github.com/ethancls/cosmos/util"
+	netbird "github.com/netbirdio/netbird/client/embed"
+	sshdetection "github.com/netbirdio/netbird/client/ssh/detection"
+	nbstatus "github.com/netbirdio/netbird/client/status"
+	wasmcapture "github.com/netbirdio/netbird/client/wasm/internal/capture"
+	"github.com/netbirdio/netbird/client/wasm/internal/http"
+	"github.com/netbirdio/netbird/client/wasm/internal/rdp"
+	"github.com/netbirdio/netbird/client/wasm/internal/ssh"
+	nbwebsocket "github.com/netbirdio/netbird/client/wasm/internal/websocket"
+	"github.com/netbirdio/netbird/util"
 )
 
 const (

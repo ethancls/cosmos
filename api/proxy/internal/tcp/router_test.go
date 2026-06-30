@@ -16,8 +16,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethancls/cosmos/proxy/internal/restrict"
-	"github.com/ethancls/cosmos/proxy/internal/types"
+	"github.com/netbirdio/netbird/proxy/internal/restrict"
+	"github.com/netbirdio/netbird/proxy/internal/types"
 )
 
 func TestRouter_HTTPRouting(t *testing.T) {

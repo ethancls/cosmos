@@ -3,7 +3,7 @@ package store
 import (
 	"sync"
 
-	"github.com/ethancls/cosmos/shared/relay/messages"
+	"github.com/netbirdio/netbird/shared/relay/messages"
 )
 
 type IPeer interface {

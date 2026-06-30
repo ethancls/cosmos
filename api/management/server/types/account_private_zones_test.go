@@ -10,10 +10,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	nbdns "github.com/ethancls/cosmos/dns"
-	proxydomain "github.com/ethancls/cosmos/management/internals/modules/reverseproxy/domain"
-	"github.com/ethancls/cosmos/management/internals/modules/reverseproxy/service"
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
+	nbdns "github.com/netbirdio/netbird/dns"
+	proxydomain "github.com/netbirdio/netbird/management/internals/modules/reverseproxy/domain"
+	"github.com/netbirdio/netbird/management/internals/modules/reverseproxy/service"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
 )
 
 func privateZoneTestAccount(t *testing.T) *Account {

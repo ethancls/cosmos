@@ -1,7 +1,7 @@
 package routemanager
 
 import (
-	"github.com/ethancls/cosmos/client/internal/routeselector"
+	"github.com/netbirdio/netbird/client/internal/routeselector"
 )
 
 type SelectorState routeselector.RouteSelector

@@ -13,7 +13,7 @@ import (
 	"golang.org/x/net/route"
 	"golang.org/x/sys/unix"
 
-	"github.com/ethancls/cosmos/client/internal/routemanager/systemops"
+	"github.com/netbirdio/netbird/client/internal/routemanager/systemops"
 )
 
 func prepareFd() (int, error) {

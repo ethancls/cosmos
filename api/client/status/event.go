@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ethancls/cosmos/client/proto"
+	"github.com/netbirdio/netbird/client/proto"
 )
 
 type SystemEventOutput struct {

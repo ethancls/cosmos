@@ -1,36 +1,76 @@
 {
-  "Stuns": [],
-  "TURNConfig": {
-    "TimeBasedCredentials": false,
-    "Turns": []
-  },
-  "Signal": {
-    "Proto": "http",
-    "URI": "localhost:10000"
-  },
-  "Datadir": "./data",
-  "HttpConfig": {
-    "LetsEncryptDomain": "",
-    "CertFile": "",
-    "CertKey": "",
-    "AuthAudience": "cosmos-api",
-    "AuthIssuer": "",
-    "AuthKeysLocation": "",
-    "OIDCConfigEndpoint": "",
-    "IdpSignKeyRefreshEnabled": false
-  },
-  "EmbeddedIdP": {
-    "Enabled": true,
-    "Issuer": "http://localhost:8080/oauth2",
-    "LocalAddress": "localhost:8080",
-    "Storage": {
-      "Type": "sqlite3",
-      "Config": {
-        "File": "./data/idp.db"
-      }
+    "Stuns": [],
+    "TURNConfig": {
+        "TimeBasedCredentials": false,
+        "CredentialsTTL": "0s",
+        "Secret": "",
+        "Turns": []
     },
-    "DashboardRedirectURIs": ["http://localhost:3000/#callback"],
-    "CLIRedirectURIs": ["http://localhost:3000/#silent-callback"],
-    "DashboardPostLogoutRedirectURIs": ["http://localhost:3000"]
-  }
+    "Relay": null,
+    "Signal": {
+        "Proto": "http",
+        "URI": "localhost:10000",
+        "Username": "",
+        "Password": ""
+    },
+    "Datadir": "./data",
+    "DataStoreEncryptionKey": "IAubY7Ms5hVlQA7hCbt6BFV6wkwGfwRDGkJBVSV12+I=",
+    "HttpConfig": {
+        "LetsEncryptDomain": "",
+        "CertFile": "",
+        "CertKey": "",
+        "AuthClientID": "cosmos-dashboard",
+        "AuthAudience": "cosmos-dashboard",
+        "CLIAuthAudience": "cosmos-cli",
+        "AuthIssuer": "http://localhost:8080/oauth2",
+        "AuthUserIDClaim": "sub",
+        "AuthKeysLocation": "http://localhost:8080/oauth2/keys",
+        "OIDCConfigEndpoint": "http://localhost:8080/oauth2/.well-known/openid-configuration",
+        "IdpSignKeyRefreshEnabled": true,
+        "ExtraAuthAudience": "",
+        "AuthCallbackURL": "http://localhost:8080/api/reverse-proxy/callback"
+    },
+    "IdpManagerConfig": null,
+    "DeviceAuthorizationFlow": null,
+    "PKCEAuthorizationFlow": null,
+    "StoreConfig": {
+        "Engine": ""
+    },
+    "ReverseProxy": {
+        "TrustedHTTPProxies": null,
+        "TrustedHTTPProxiesCount": 0,
+        "TrustedPeers": null,
+        "AccessLogRetentionDays": 0,
+        "AccessLogCleanupIntervalHours": 0
+    },
+    "DisableDefaultPolicy": false,
+    "EmbeddedIdP": {
+        "Enabled": true,
+        "Issuer": "http://localhost:8080/oauth2",
+        "LocalAddress": "localhost:8080",
+        "Storage": {
+            "Type": "sqlite3",
+            "Config": {
+                "File": "./data/idp.db",
+                "DSN": ""
+            }
+        },
+        "DashboardRedirectURIs": [
+            "http://localhost:3000/#callback"
+        ],
+        "CLIRedirectURIs": [
+            "http://localhost:3000/#silent-callback"
+        ],
+        "Owner": null,
+        "SignKeyRefreshEnabled": false,
+        "LocalAuthDisabled": false,
+        "MfaSessionMaxLifetime": "",
+        "MfaSessionIdleTimeout": "",
+        "MfaSessionRememberMe": false,
+        "SessionCookieEncryptionKey": "",
+        "DashboardPostLogoutRedirectURIs": [
+            "http://localhost:3000"
+        ],
+        "StaticConnectors": null
+    }
 }

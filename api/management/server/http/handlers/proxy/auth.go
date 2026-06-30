@@ -14,10 +14,10 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/oauth2"
 
-	nbgrpc "github.com/ethancls/cosmos/management/internals/shared/grpc"
-	"github.com/ethancls/cosmos/management/server/http/middleware"
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/proxy/auth"
+	nbgrpc "github.com/netbirdio/netbird/management/internals/shared/grpc"
+	"github.com/netbirdio/netbird/management/server/http/middleware"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/proxy/auth"
 )
 
 // AuthCallbackHandler handles OAuth callbacks for proxy authentication.

@@ -7,7 +7,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	sshuserhash "github.com/ethancls/cosmos/shared/sshauth"
+	sshuserhash "github.com/netbirdio/netbird/shared/sshauth"
 )
 
 const (

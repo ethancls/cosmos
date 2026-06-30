@@ -7,8 +7,8 @@ import (
 	"github.com/hashicorp/go-multierror"
 	log "github.com/sirupsen/logrus"
 
-	nberrors "github.com/ethancls/cosmos/client/errors"
-	firewall "github.com/ethancls/cosmos/client/firewall/manager"
+	nberrors "github.com/netbirdio/netbird/client/errors"
+	firewall "github.com/netbirdio/netbird/client/firewall/manager"
 )
 
 type DNATFirewall interface {

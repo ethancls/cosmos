@@ -11,8 +11,8 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	nbdns "github.com/ethancls/cosmos/client/internal/dns"
-	"github.com/ethancls/cosmos/client/internal/dns/test"
+	nbdns "github.com/netbirdio/netbird/client/internal/dns"
+	"github.com/netbirdio/netbird/client/internal/dns/test"
 )
 
 // TestHandlerChain_ServeDNS_Priorities tests that handlers are executed in priority order

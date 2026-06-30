@@ -17,7 +17,7 @@ import (
 	"github.com/pion/transport/v3"
 	"github.com/pion/transport/v3/stdnet"
 
-	"github.com/ethancls/cosmos/client/iface/netstack"
+	"github.com/netbirdio/netbird/client/iface/netstack"
 )
 
 const (

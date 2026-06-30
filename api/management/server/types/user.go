@@ -5,9 +5,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ethancls/cosmos/management/server/idp"
-	"github.com/ethancls/cosmos/management/server/integration_reference"
-	"github.com/ethancls/cosmos/util/crypt"
+	"github.com/netbirdio/netbird/management/server/idp"
+	"github.com/netbirdio/netbird/management/server/integration_reference"
+	"github.com/netbirdio/netbird/util/crypt"
 )
 
 const (

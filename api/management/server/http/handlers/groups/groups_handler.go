@@ -7,14 +7,14 @@ import (
 	"github.com/gorilla/mux"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/management/server/account"
-	nbcontext "github.com/ethancls/cosmos/management/server/context"
-	nbpeer "github.com/ethancls/cosmos/management/server/peer"
+	"github.com/netbirdio/netbird/management/server/account"
+	nbcontext "github.com/netbirdio/netbird/management/server/context"
+	nbpeer "github.com/netbirdio/netbird/management/server/peer"
 
-	"github.com/ethancls/cosmos/management/server/types"
-	"github.com/ethancls/cosmos/shared/management/http/api"
-	"github.com/ethancls/cosmos/shared/management/http/util"
-	"github.com/ethancls/cosmos/shared/management/status"
+	"github.com/netbirdio/netbird/management/server/types"
+	"github.com/netbirdio/netbird/shared/management/http/api"
+	"github.com/netbirdio/netbird/shared/management/http/util"
+	"github.com/netbirdio/netbird/shared/management/status"
 )
 
 // handler is a handler that returns groups of the account

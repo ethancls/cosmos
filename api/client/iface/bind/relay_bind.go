@@ -9,7 +9,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"golang.zx2c4.com/wireguard/conn"
 
-	"github.com/ethancls/cosmos/client/iface/udpmux"
+	"github.com/netbirdio/netbird/client/iface/udpmux"
 )
 
 // RelayBindJS is a conn.Bind implementation for WebAssembly environments.

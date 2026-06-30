@@ -35,18 +35,18 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	"github.com/ethancls/cosmos/client/iface"
-	"github.com/ethancls/cosmos/client/internal"
-	"github.com/ethancls/cosmos/client/internal/profilemanager"
-	"github.com/ethancls/cosmos/client/mdm"
-	"github.com/ethancls/cosmos/client/proto"
-	"github.com/ethancls/cosmos/client/ui/desktop"
-	"github.com/ethancls/cosmos/client/ui/event"
-	"github.com/ethancls/cosmos/client/ui/notifier"
-	"github.com/ethancls/cosmos/client/ui/process"
-	"github.com/ethancls/cosmos/util"
+	"github.com/netbirdio/netbird/client/iface"
+	"github.com/netbirdio/netbird/client/internal"
+	"github.com/netbirdio/netbird/client/internal/profilemanager"
+	"github.com/netbirdio/netbird/client/mdm"
+	"github.com/netbirdio/netbird/client/proto"
+	"github.com/netbirdio/netbird/client/ui/desktop"
+	"github.com/netbirdio/netbird/client/ui/event"
+	"github.com/netbirdio/netbird/client/ui/notifier"
+	"github.com/netbirdio/netbird/client/ui/process"
+	"github.com/netbirdio/netbird/util"
 
-	"github.com/ethancls/cosmos/version"
+	"github.com/netbirdio/netbird/version"
 )
 
 const (

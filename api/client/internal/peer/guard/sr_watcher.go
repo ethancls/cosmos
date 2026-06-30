@@ -6,8 +6,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/internal/peer/ice"
-	"github.com/ethancls/cosmos/client/internal/stdnet"
+	"github.com/netbirdio/netbird/client/internal/peer/ice"
+	"github.com/netbirdio/netbird/client/internal/stdnet"
 )
 
 type chNotifier interface {

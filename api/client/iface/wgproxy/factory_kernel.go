@@ -8,8 +8,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/iface/wgproxy/ebpf"
-	udpProxy "github.com/ethancls/cosmos/client/iface/wgproxy/udp"
+	"github.com/netbirdio/netbird/client/iface/wgproxy/ebpf"
+	udpProxy "github.com/netbirdio/netbird/client/iface/wgproxy/udp"
 )
 
 const (

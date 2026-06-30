@@ -10,8 +10,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethancls/cosmos/client/internal/statemanager"
-	"github.com/ethancls/cosmos/util"
+	"github.com/netbirdio/netbird/client/internal/statemanager"
+	"github.com/netbirdio/netbird/util"
 )
 
 func TestMain(m *testing.M) {

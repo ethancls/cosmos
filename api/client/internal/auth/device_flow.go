@@ -15,7 +15,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/util/embeddedroots"
+	"github.com/netbirdio/netbird/util/embeddedroots"
 )
 
 // HostedGrantType grant type for device flow on Hosted

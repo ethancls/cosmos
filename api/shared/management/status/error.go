@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/ethancls/cosmos/shared/management/operations"
+	"github.com/netbirdio/netbird/shared/management/operations"
 )
 
 const (

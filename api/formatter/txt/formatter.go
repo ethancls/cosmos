@@ -3,7 +3,7 @@ package txt
 import (
 	"github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/formatter/levels"
+	"github.com/netbirdio/netbird/formatter/levels"
 )
 
 // TextFormatter formats logs into text with included source code's path

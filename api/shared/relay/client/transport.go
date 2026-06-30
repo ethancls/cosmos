@@ -8,7 +8,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/shared/relay/client/dialer"
+	"github.com/netbirdio/netbird/shared/relay/client/dialer"
 )
 
 // EnvRelayTransport pins the relay transport. Valid values: "auto" (default,

@@ -7,9 +7,9 @@ import (
 	"github.com/stretchr/testify/require"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 
-	"github.com/ethancls/cosmos/encryption"
-	"github.com/ethancls/cosmos/management/internals/server/config"
-	mgmtProto "github.com/ethancls/cosmos/shared/management/proto"
+	"github.com/netbirdio/netbird/encryption"
+	"github.com/netbirdio/netbird/management/internals/server/config"
+	mgmtProto "github.com/netbirdio/netbird/shared/management/proto"
 )
 
 func TestServer_GetDeviceAuthorizationFlow(t *testing.T) {

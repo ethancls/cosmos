@@ -11,9 +11,9 @@ import (
 	"github.com/miekg/dns"
 	"github.com/stretchr/testify/assert"
 
-	dnsconfig "github.com/ethancls/cosmos/client/internal/dns/config"
-	"github.com/ethancls/cosmos/client/internal/dns/test"
-	"github.com/ethancls/cosmos/shared/management/domain"
+	dnsconfig "github.com/netbirdio/netbird/client/internal/dns/config"
+	"github.com/netbirdio/netbird/client/internal/dns/test"
+	"github.com/netbirdio/netbird/shared/management/domain"
 )
 
 func TestResolver_NewResolver(t *testing.T) {

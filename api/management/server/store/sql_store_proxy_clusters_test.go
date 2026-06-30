@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	rpproxy "github.com/ethancls/cosmos/management/internals/modules/reverseproxy/proxy"
+	rpproxy "github.com/netbirdio/netbird/management/internals/modules/reverseproxy/proxy"
 )
 
 // TestSqlStore_GetProxyClusters_DerivesOnlineAndType guards the

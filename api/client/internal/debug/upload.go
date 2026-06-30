@@ -9,7 +9,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/ethancls/cosmos/upload-server/types"
+	"github.com/netbirdio/netbird/upload-server/types"
 )
 
 const maxBundleUploadSize = 50 * 1024 * 1024

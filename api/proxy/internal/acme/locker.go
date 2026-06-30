@@ -6,8 +6,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/proxy/internal/flock"
-	"github.com/ethancls/cosmos/proxy/internal/k8s"
+	"github.com/netbirdio/netbird/proxy/internal/flock"
+	"github.com/netbirdio/netbird/proxy/internal/k8s"
 )
 
 // certLocker provides distributed mutual exclusion for certificate operations.

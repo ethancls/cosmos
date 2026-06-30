@@ -5,8 +5,8 @@ package uspfilter
 import (
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/firewall/firewalld"
-	"github.com/ethancls/cosmos/client/internal/statemanager"
+	"github.com/netbirdio/netbird/client/firewall/firewalld"
+	"github.com/netbirdio/netbird/client/internal/statemanager"
 )
 
 // Close cleans up the firewall manager by removing all rules and closing trackers

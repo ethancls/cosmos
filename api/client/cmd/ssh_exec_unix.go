@@ -8,7 +8,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	sshserver "github.com/ethancls/cosmos/client/ssh/server"
+	sshserver "github.com/netbirdio/netbird/client/ssh/server"
 )
 
 var (

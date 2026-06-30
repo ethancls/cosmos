@@ -11,8 +11,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	dnsconfig "github.com/ethancls/cosmos/client/internal/dns/config"
-	"github.com/ethancls/cosmos/shared/management/domain"
+	dnsconfig "github.com/netbirdio/netbird/client/internal/dns/config"
+	"github.com/netbirdio/netbird/shared/management/domain"
 )
 
 // A domain already in the cache must not be re-resolved on a subsequent server

@@ -8,7 +8,7 @@ import (
 	"sync"
 	"syscall/js"
 
-	netbird "github.com/ethancls/cosmos/client/embed"
+	netbird "github.com/netbirdio/netbird/client/embed"
 )
 
 // Handle holds a running capture session so it can be stopped later.

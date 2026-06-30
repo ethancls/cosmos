@@ -9,9 +9,9 @@ import (
 	"github.com/quic-go/quic-go"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/relay/protocol"
-	relaylistener "github.com/ethancls/cosmos/relay/server/listener"
-	nbRelay "github.com/ethancls/cosmos/shared/relay"
+	"github.com/netbirdio/netbird/relay/protocol"
+	relaylistener "github.com/netbirdio/netbird/relay/server/listener"
+	nbRelay "github.com/netbirdio/netbird/shared/relay"
 )
 
 const Proto protocol.Protocol = "quic"

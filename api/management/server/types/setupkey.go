@@ -10,7 +10,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/rs/xid"
 
-	"github.com/ethancls/cosmos/management/server/util"
+	"github.com/netbirdio/netbird/management/server/util"
 )
 
 const (

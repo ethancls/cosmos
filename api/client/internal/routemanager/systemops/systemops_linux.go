@@ -16,11 +16,11 @@ import (
 	"github.com/vishvananda/netlink"
 	"golang.org/x/sys/unix"
 
-	nberrors "github.com/ethancls/cosmos/client/errors"
-	"github.com/ethancls/cosmos/client/internal/routemanager/sysctl"
-	"github.com/ethancls/cosmos/client/internal/routemanager/vars"
-	"github.com/ethancls/cosmos/client/internal/statemanager"
-	nbnet "github.com/ethancls/cosmos/client/net"
+	nberrors "github.com/netbirdio/netbird/client/errors"
+	"github.com/netbirdio/netbird/client/internal/routemanager/sysctl"
+	"github.com/netbirdio/netbird/client/internal/routemanager/vars"
+	"github.com/netbirdio/netbird/client/internal/statemanager"
+	nbnet "github.com/netbirdio/netbird/client/net"
 )
 
 // IPRule contains IP rule information for debugging

@@ -21,16 +21,16 @@ import (
 	"github.com/hashicorp/go-multierror"
 	log "github.com/sirupsen/logrus"
 
-	nberrors "github.com/ethancls/cosmos/client/errors"
-	firewall "github.com/ethancls/cosmos/client/firewall/manager"
-	"github.com/ethancls/cosmos/client/firewall/uspfilter/common"
-	"github.com/ethancls/cosmos/client/firewall/uspfilter/conntrack"
-	"github.com/ethancls/cosmos/client/firewall/uspfilter/forwarder"
-	nblog "github.com/ethancls/cosmos/client/firewall/uspfilter/log"
-	"github.com/ethancls/cosmos/client/iface/netstack"
-	nbid "github.com/ethancls/cosmos/client/internal/acl/id"
-	nftypes "github.com/ethancls/cosmos/client/internal/netflow/types"
-	"github.com/ethancls/cosmos/client/internal/statemanager"
+	nberrors "github.com/netbirdio/netbird/client/errors"
+	firewall "github.com/netbirdio/netbird/client/firewall/manager"
+	"github.com/netbirdio/netbird/client/firewall/uspfilter/common"
+	"github.com/netbirdio/netbird/client/firewall/uspfilter/conntrack"
+	"github.com/netbirdio/netbird/client/firewall/uspfilter/forwarder"
+	nblog "github.com/netbirdio/netbird/client/firewall/uspfilter/log"
+	"github.com/netbirdio/netbird/client/iface/netstack"
+	nbid "github.com/netbirdio/netbird/client/internal/acl/id"
+	nftypes "github.com/netbirdio/netbird/client/internal/netflow/types"
+	"github.com/netbirdio/netbird/client/internal/statemanager"
 )
 
 const (

@@ -1,7 +1,7 @@
 package iface
 
 import (
-	"github.com/ethancls/cosmos/client/iface/device"
+	"github.com/netbirdio/netbird/client/iface/device"
 )
 
 // GetInterfaceGUIDString returns an interface GUID. This is useful on Windows only

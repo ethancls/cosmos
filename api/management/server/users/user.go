@@ -1,8 +1,8 @@
 package users
 
 import (
-	"github.com/ethancls/cosmos/management/server/permissions/roles"
-	"github.com/ethancls/cosmos/management/server/types"
+	"github.com/netbirdio/netbird/management/server/permissions/roles"
+	"github.com/netbirdio/netbird/management/server/types"
 )
 
 // Wrapped UserInfo with Role Permissions

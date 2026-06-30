@@ -16,8 +16,8 @@ import (
 	"github.com/hashicorp/go-version"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/client/internal/statemanager"
-	nbversion "github.com/ethancls/cosmos/version"
+	"github.com/netbirdio/netbird/client/internal/statemanager"
+	nbversion "github.com/netbirdio/netbird/version"
 )
 
 const (
