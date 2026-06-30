@@ -1,4 +1,7 @@
-# Dev compose — SQLite, no PostgreSQL needed
+# Dev compose — SQLite, persistent data
+# For hot reload dev, run locally instead:
+#   cd cosmos-dashboard && npm run dev
+#   cd cosmos-server && go run ./management/
 services:
   cosmos-server:
     build:
