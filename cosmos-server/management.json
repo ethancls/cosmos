@@ -51,7 +51,7 @@
     "Storage": {
       "Type": "sqlite3",
       "Config": {
-        "File": "/Users/ethan/Local/kyle/cosmos-server/data/idp.db"
+        "File": "/Users/ethan/Local/cosmos/cosmos-server/data/idp.db"
       }
     },
     "DashboardRedirectURIs": [
