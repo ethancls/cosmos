@@ -1,0 +1,33 @@
+# Dev compose — SQLite, no PostgreSQL needed
+services:
+  cosmos-server:
+    build:
+      context: ./cosmos-server
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+      - "9090:9090"
+    volumes:
+      - ./cosmos-server/management.json:/etc/cosmos/management.json:ro
+      - cosmos-data:/var/lib/cosmos
+    command: >
+      management
+      --config /etc/cosmos/management.json
+      --datadir /var/lib/cosmos
+      --port 8080
+      --log-file console
+      --disable-anonymous-metrics
+
+  cosmos-dashboard:
+    build:
+      context: ./cosmos-dashboard
+      dockerfile: docker/Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - cosmos-server
+
+volumes:
+  cosmos-data:

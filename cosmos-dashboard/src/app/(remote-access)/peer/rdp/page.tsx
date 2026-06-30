@@ -88,7 +88,7 @@ function RDPSession({ peer }: Props) {
         setIsNetBirdConnecting(false);
       } catch (error) {
         sendErrorNotification(
-          "NetBird Connection Error",
+          "Cosmos Connection Error",
           (error as Error).message,
         );
         setIsNetBirdConnecting(false);
