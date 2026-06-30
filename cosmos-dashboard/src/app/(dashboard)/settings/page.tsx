@@ -32,7 +32,7 @@ import {
   CloudSettingsTabTrigger,
 } from "@/cloud/settings/CloudSettings";
 
-export default function NetBirdSettings() {
+export default function CosmosSettings() {
   const queryParams = useSearchParams();
   const queryTab = queryParams.get("tab");
   const { permission } = usePermissions();

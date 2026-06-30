@@ -25,7 +25,7 @@ export const ReverseProxyFlatTargetsTabContent = ({
   isLoading,
   hideResourceColumn,
   emptyTableTitle = "This network has no services",
-  emptyTableDescription = "Create resources and expose services securely through NetBird's reverse proxy.",
+  emptyTableDescription = "Create resources and expose services securely through Cosmos reverse proxy.",
 }: Props) => {
   return (
     <div className={"pb-10 px-8"}>

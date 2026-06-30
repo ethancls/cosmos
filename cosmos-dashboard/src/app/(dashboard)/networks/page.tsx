@@ -33,7 +33,7 @@ export default function Networks() {
         </Breadcrumbs>
         <h1 ref={headingRef}>Networks</h1>
         <Paragraph>
-          Access internal resources in LANs and VPCs without installing NetBird
+          Access internal resources in LANs and VPCs without installing Cosmos
           on every machine.{" "}
           <InlineLink
             href={"https://docs.cosmos.io/how-to/networks"}

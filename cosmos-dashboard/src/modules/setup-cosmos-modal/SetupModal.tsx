@@ -211,7 +211,7 @@ export function SetupModalContent({
           >
             {isUserDevice === false || effectiveSetupKey
               ? "To get started, install and run NetBird with the setup key as a parameter."
-              : "To get started, install NetBird and log in with your email account."}
+              : "To get started, install Cosmos and log in with your email account."}
           </Paragraph>
         </div>
       )}

@@ -86,7 +86,7 @@ export const OnboardingIntent = ({onSelect, useCases, isBusiness}: Props) => {
                     <IntentCard
                         title={"Remote Network Access"}
                         description={
-                        isBusiness ? "Enable employee remote access to VMs, Kubernetes clusters, and cloud or on-prem resources without installing NetBird on every machine." : "Securely access your homelab remotely from anywhere without installing NetBird on every device."
+                        isBusiness ? "Enable employee remote access to VMs, Kubernetes clusters, and cloud or on-prem resources without installing Cosmos on every machine." : "Securely access your homelab remotely from anywhere without installing Cosmos on every device."
                         }
                         recommended={isNetworksRecommended}
                         icon={<NetworkRoutesIcon size={18} className={"fill-kyle"}/>}

@@ -569,7 +569,7 @@ export default function ReverseProxyModal({
     () =>
       isL4Mode
         ? "Forward traffic directly to your backend service."
-        : "Expose services securely through NetBird's reverse proxy.",
+        : "Expose services securely through Cosmos reverse proxy.",
     [isL4Mode],
   );
 

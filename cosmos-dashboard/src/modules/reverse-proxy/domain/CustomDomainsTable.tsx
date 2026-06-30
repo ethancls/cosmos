@@ -196,7 +196,7 @@ export default function CustomDomainsTable({ headingTarget }: Readonly<Props>) {
             }
             title={"Add Custom Domains"}
             description={
-              "Use your own domains with NetBird's reverse proxy. To get started, add a CNAME record that points to a cluster and verify domain ownership."
+              "Use your own domains with Cosmos reverse proxy. To get started, add a CNAME record that points to a cluster and verify domain ownership."
             }
             button={
               <Button
