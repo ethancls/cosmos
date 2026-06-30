@@ -7,7 +7,7 @@ import SkeletonTable from "@components/skeletons/SkeletonTable";
 import { RestrictedAccess } from "@components/ui/RestrictedAccess";
 import { usePortalElement } from "@hooks/usePortalElement";
 import useFetchApi from "@utils/api";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 import { ExternalLinkIcon, User2 } from "lucide-react";
 import React, { lazy, Suspense } from "react";
 import TeamIcon from "@/assets/icons/TeamIcon";
@@ -63,7 +63,7 @@ export default function TeamUsers() {
         <Suspense fallback={<SkeletonTable />}>
           {permission.settings.read && (
             <div className={"flex flex-wrap gap-4 p-default pb-6"}>
-              {(permission?.idp?.read || !isNetBirdCloud()) && (
+              {(permission?.idp?.read || !isCosmosCloud()) && (
                 <IdentityProviderCard />
               )}
               <AccountMfaCard />

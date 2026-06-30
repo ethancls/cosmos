@@ -32,8 +32,8 @@ export type UserSelectOption = {
 const searchPredicate = (item: UserSelectOption, query: string) => {
   const lowerCaseQuery = query.toLowerCase();
   if (
-    item.email === "NetBird" &&
-    "NetBird System".toLowerCase().includes(lowerCaseQuery)
+    item.email === "Cosmos" &&
+    "Cosmos System".toLowerCase().includes(lowerCaseQuery)
   )
     return true;
   if (item.name.toLowerCase().includes(lowerCaseQuery)) return true;
@@ -117,7 +117,7 @@ export function UsersDropdownSelector({
                   }
                   style={{
                     color:
-                      selectedUser?.email === "NetBird"
+                      selectedUser?.email === "Cosmos"
                         ? "#808080"
                         : generateColorFromString(
                             selectedUser?.name ||
@@ -126,7 +126,7 @@ export function UsersDropdownSelector({
                           ),
                   }}
                 >
-                  {selectedUser?.email === "NetBird" ? (
+                  {selectedUser?.email === "Cosmos" ? (
                     <Cog size={12} />
                   ) : (
                     selectedUser?.name?.charAt(0) || selectedUser?.id?.charAt(0)
@@ -135,7 +135,7 @@ export function UsersDropdownSelector({
                 <div className={"flex items-center gap-2"}>
                   <TextWithTooltip
                     text={
-                      selectedUser?.email === "NetBird"
+                      selectedUser?.email === "Cosmos"
                         ? "System"
                         : selectedUser?.name
                     }
@@ -199,7 +199,7 @@ export function UsersDropdownSelector({
                 toggle(item.email);
               }}
               renderItem={(user) => {
-                const isSystemUser = user.email === "NetBird";
+                const isSystemUser = user.email === "Cosmos";
 
                 return (
                   <div className={"flex items-center gap-2 w-full"}>
@@ -238,7 +238,7 @@ export function UsersDropdownSelector({
                         }
                       >
                         <TextWithTooltip
-                          text={user?.email || "NetBird"}
+                          text={user?.email || "Cosmos"}
                           maxChars={20}
                         />
                       </span>

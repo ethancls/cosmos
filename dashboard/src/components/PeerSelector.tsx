@@ -193,8 +193,8 @@ export function PeerSelector({
                     className={"w-full flex items-center justify-between"}
                     content={
                       <div className={"max-w-[240px] text-xs"}>
-                        Please update NetBird to at least{" "}
-                        <span className={"text-netbird"}>v0.36.6</span> or later
+                        Please update Cosmos to at least{" "}
+                        <span className={"text-kyle"}>v0.36.6</span> or later
                         to use this peer as a routing peer.
                       </div>
                     }
@@ -220,10 +220,10 @@ export function PeerSelector({
                       </div>
                       {!isSupported && (
                         <div className={"relative"}>
-                          <span className="animate-ping absolute left-0 inline-flex h-[14px] w-[14px] rounded-full bg-netbird opacity-20"></span>
+                          <span className="animate-ping absolute left-0 inline-flex h-[14px] w-[14px] rounded-full bg-kyle opacity-20"></span>
                           <ArrowUpCircleIcon
                             size={14}
-                            className={"text-netbird"}
+                            className={"text-kyle"}
                           />
                         </div>
                       )}

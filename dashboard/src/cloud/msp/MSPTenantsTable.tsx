@@ -88,7 +88,7 @@ const TenantsTableColumns: ColumnDef<Tenant>[] = [
           <HelpCircle
             size={12}
             className={
-              "text-nb-gray-300 hover:text-netbird transition-all cursor-pointer mr-2"
+              "text-nb-gray-300 hover:text-kyle transition-all cursor-pointer mr-2"
             }
           />
         </FullTooltip>

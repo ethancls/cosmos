@@ -1,6 +1,6 @@
 import FullScreenLoading from "@components/ui/FullScreenLoading";
 import useFetchApi from "@utils/api";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { MSP } from "@/cloud/msp/interfaces/MSP";
 import { TenantListItem, TenantStatus } from "@/cloud/msp/interfaces/Tenant";
@@ -36,9 +36,9 @@ const MSPContext = React.createContext(
 );
 
 export default function MSPProvider({ children }: Readonly<Props>) {
-  // MSP is a NetBird Cloud-only feature. Skip the calls on self-hosted
+  // MSP is a Cosmos Cloud-only feature. Skip the calls on self-hosted
   // deployments where the endpoints are not served.
-  const isCloud = isNetBirdCloud();
+  const isCloud = isCosmosCloud();
   const {
     data: mspInfo,
     isLoading: isMspInfoLoading,

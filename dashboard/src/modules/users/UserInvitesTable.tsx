@@ -41,7 +41,7 @@ import { ColumnDef, SortingState } from "@tanstack/react-table";
 import useFetchApi, { useApiCall } from "@utils/api";
 import { notify } from "@components/Notification";
 import { MoreVertical, RefreshCw } from "lucide-react";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 import dayjs from "dayjs";
 import {
   Cog,
@@ -55,7 +55,7 @@ import {
   Trash2,
   User2,
 } from "lucide-react";
-import NetBirdIcon from "@/assets/icons/NetBirdIcon";
+import CosmosIcon from "@/assets/icons/CosmosIcon";
 import Badge from "@components/Badge";
 import { usePathname } from "next/navigation";
 import React, { useMemo, useState } from "react";
@@ -123,7 +123,7 @@ function InviteRoleCell({ invite }: { invite: UserInvite }) {
         )}
         {role === Role.Owner && (
           <>
-            <NetBirdIcon size={14} />
+            <CosmosIcon size={14} />
             Owner
           </>
         )}
@@ -664,7 +664,7 @@ export const InviteUserButton = ({
 
   // On cloud: always show "Invite User"
   // On self-hosted: only show when embedded_idp_enabled is true
-  const isCloud = isNetBirdCloud();
+  const isCloud = isCosmosCloud();
   const embeddedIdpEnabled = account?.settings.embedded_idp_enabled;
 
   if (!isCloud && !embeddedIdpEnabled) return null;

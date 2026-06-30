@@ -213,7 +213,7 @@ export function SetupContent({
               key={index}
               className={cn(
                 "w-8 h-1 rounded-full bg-nb-gray-800",
-                step >= index + 1 && "bg-netbird",
+                step >= index + 1 && "bg-kyle",
               )}
             />
           ))}
@@ -222,8 +222,8 @@ export function SetupContent({
 
       <IntegrationModalHeader
         image={image || integrationImage}
-        title={`Connect NetBird with ${name}`}
-        description={`Start syncing your users and groups from ${name} to NetBird. Follow the steps below to get started.`}
+        title={`Connect Cosmos with ${name}`}
+        description={`Start syncing your users and groups from ${name} to Cosmos. Follow the steps below to get started.`}
       />
 
       {step === -1 && (
@@ -334,7 +334,7 @@ export function SetupContent({
             </Steps.Step>
             <Steps.Step step={4}>
               <p className={"font-normal"}>
-                Enter <Mark copy={true}>NetBird SCIM</Mark> as the name and
+                Enter <Mark copy={true}>Cosmos SCIM</Mark> as the name and
                 select
                 <Mark>
                   Integrate any other application you don&apos;t find in the
@@ -511,7 +511,7 @@ export function SetupContent({
           <Steps>
             <Steps.Step step={1}>
               <p>
-                Navigate to your NetBird enterprise application and click on{" "}
+                Navigate to your Cosmos enterprise application and click on{" "}
                 <Mark>Users and groups</Mark> in the left menu
               </p>
               <Lightbox image={entraAssignUsers} />
@@ -519,7 +519,7 @@ export function SetupContent({
             <Steps.Step step={2}>
               <p className={"font-normal"}>
                 Click <Mark>+ Add user/group</Mark> and select the users and
-                groups you want to synchronize to NetBird
+                groups you want to synchronize to Cosmos
               </p>
             </Steps.Step>
             <Steps.Step step={3} line={false}>

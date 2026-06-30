@@ -11,7 +11,7 @@ import {
 import Separator from "@components/Separator";
 import { VerticalTabs } from "@components/VerticalTabs";
 import * as Tabs from "@radix-ui/react-tabs";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 import {
   CreditCardIcon,
   DollarSignIcon,
@@ -38,7 +38,7 @@ export const PlansAndBillingTab = () => {
   const { isAccountWithMSPParent } = useMSP();
   if (isAccountWithMSPParent) return;
 
-  const canViewBilling = permission?.billing?.update && isNetBirdCloud();
+  const canViewBilling = permission?.billing?.update && isCosmosCloud();
   if (!canViewBilling) return;
 
   return <PlansAndBillingTabContent />;
@@ -50,7 +50,7 @@ export const PlansAndBillingTabTrigger = () => {
   const { isAccountWithMSPParent } = useMSP();
   if (isAccountWithMSPParent) return;
 
-  const canViewBilling = permission?.billing?.update && isNetBirdCloud();
+  const canViewBilling = permission?.billing?.update && isCosmosCloud();
   if (!canViewBilling) return;
 
   return (
@@ -219,8 +219,8 @@ const PlansAndBillingTabContent = () => {
           <div className={"flex justify-between"}>
             <h2>
               {subscription?.active
-                ? "Update your NetBird Plan"
-                : "Upgrade your NetBird Plan"}
+                ? "Update your Cosmos Plan"
+                : "Upgrade your Cosmos Plan"}
             </h2>
             <Select
               value={currency}

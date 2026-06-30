@@ -71,7 +71,7 @@ async function apiRequest<T>(
   }
 }
 
-export function useNetBirdFetch(ignoreError: boolean = false): {
+export function useCosmosFetch(ignoreError: boolean = false): {
   fetch: (input: RequestInfo, init?: RequestInit) => Promise<Response>;
 } {
   const tokenSource = config.tokenSource || "accessToken";
@@ -125,7 +125,7 @@ export default function useFetchApi<T>(
   allowFetch = true,
   options?: RequestOptions,
 ) {
-  const { fetch } = useNetBirdFetch(ignoreError);
+  const { fetch } = useCosmosFetch(ignoreError);
   const handleErrors = useApiErrorHandling(ignoreError);
   const { globalApiParams } = useApplicationContext();
 
@@ -173,7 +173,7 @@ export function useApiCall<T>(
   ignoreError = false,
   requestOptions?: RequestOptions,
 ) {
-  const { fetch } = useNetBirdFetch(ignoreError);
+  const { fetch } = useCosmosFetch(ignoreError);
   const handleErrors = useApiErrorHandling(ignoreError);
   const { globalApiParams } = useApplicationContext();
 

@@ -17,7 +17,7 @@ const WASM_CONFIG = {
   RETRY_DELAY: 100,
 } as const;
 
-export enum NetBirdStatus {
+export enum CosmosStatus {
   DISCONNECTED = 0,
   CONNECTED = 1,
   CONNECTING = 2,
@@ -29,23 +29,23 @@ export enum WASMStatus {
   INITIALIZING,
 }
 
-type NetBirdState = {
-  status: NetBirdStatus;
+type CosmosState = {
+  status: CosmosStatus;
   wasmStatus: WASMStatus;
   error: string;
 };
 
-class NetBirdStore {
-  private state: NetBirdState = {
-    status: NetBirdStatus.DISCONNECTED,
+class CosmosStore {
+  private state: CosmosState = {
+    status: CosmosStatus.DISCONNECTED,
     wasmStatus: WASMStatus.UNINITIALIZED,
     error: "",
   };
   private listeners = new Set<() => void>();
 
-  getState = (): NetBirdState => this.state;
+  getState = (): CosmosState => this.state;
 
-  setState = (newState: Partial<NetBirdState>): void => {
+  setState = (newState: Partial<CosmosState>): void => {
     this.state = { ...this.state, ...newState };
     this.listeners.forEach((listener) => listener());
   };
@@ -58,9 +58,9 @@ class NetBirdStore {
   };
 }
 
-const netBirdStore = new NetBirdStore();
+const netBirdStore = new CosmosStore();
 
-export const useNetBirdClient = () => {
+export const useCosmosClient = () => {
   const netBirdClient = useRef<any>(null);
   const state = useSyncExternalStore(
     netBirdStore.subscribe,
@@ -90,7 +90,7 @@ export const useNetBirdClient = () => {
   }, []);
 
   const loadGoClient = useCallback(async (): Promise<void> => {
-    if ((window as any).NetBirdClient) return;
+    if ((window as any).CosmosClient) return;
 
     const go = new (window as any).Go();
     const wasmModule = await WebAssembly.instantiateStreaming(
@@ -101,12 +101,12 @@ export const useNetBirdClient = () => {
 
     const start = Date.now();
     while (Date.now() - start < WASM_CONFIG.INIT_TIMEOUT) {
-      if ((window as any).NetBirdClient) return;
+      if ((window as any).CosmosClient) return;
       await new Promise((resolve) =>
         setTimeout(resolve, WASM_CONFIG.RETRY_DELAY),
       );
     }
-    throw new Error("NetBird WASM failed to initialize in time");
+    throw new Error("Cosmos WASM failed to initialize in time");
   }, []);
 
   const initIronRDP = useCallback(() => {
@@ -163,18 +163,18 @@ export const useNetBirdClient = () => {
     async (privateKey: string): Promise<boolean> => {
       await initialize();
 
-      if (typeof (window as any).NetBirdClient !== "function") {
+      if (typeof (window as any).CosmosClient !== "function") {
         netBirdStore.setState({
-          status: NetBirdStatus.DISCONNECTED,
-          error: "NetBirdClient is not available or not a function",
+          status: CosmosStatus.DISCONNECTED,
+          error: "CosmosClient is not available or not a function",
         });
         return false;
       }
 
-      netBirdStore.setState({ status: NetBirdStatus.CONNECTING });
+      netBirdStore.setState({ status: CosmosStatus.CONNECTING });
 
       try {
-        netBirdClient.current = await (window as any).NetBirdClient({
+        netBirdClient.current = await (window as any).CosmosClient({
           privateKey,
           logLevel: "warn",
           managementURL: config.apiOrigin,
@@ -182,11 +182,11 @@ export const useNetBirdClient = () => {
 
         await netBirdClient.current.start();
         (window as any).netbird = netBirdClient.current;
-        netBirdStore.setState({ status: NetBirdStatus.CONNECTED });
+        netBirdStore.setState({ status: CosmosStatus.CONNECTED });
         return true;
       } catch (error) {
         netBirdStore.setState({
-          status: NetBirdStatus.DISCONNECTED,
+          status: CosmosStatus.DISCONNECTED,
           error: error instanceof Error ? error.message : "Connection failed",
         });
         console.log(error);
@@ -201,7 +201,7 @@ export const useNetBirdClient = () => {
       throw new Error("Go client not ready");
     }
 
-    netBirdStore.setState({ status: NetBirdStatus.DISCONNECTED });
+    netBirdStore.setState({ status: CosmosStatus.DISCONNECTED });
     await netBirdClient.current.stop();
     netBirdClient.current = null;
     delete (window as any).netbird;
@@ -211,7 +211,7 @@ export const useNetBirdClient = () => {
   const detectSSHServerType = useCallback(
     async (host: string, port: number, timeoutMs: number): Promise<boolean> => {
       if (!netBirdClient.current?.detectSSHServerType) {
-        throw new Error("NetBird client not ready");
+        throw new Error("Cosmos client not ready");
       }
       return netBirdClient.current.detectSSHServerType(host, port, timeoutMs);
     },
@@ -268,13 +268,13 @@ export const useNetBirdClient = () => {
     async (peerId: string, rules?: string[]) => {
       const currentStatus = netBirdStore.getState().status;
       if (
-        currentStatus === NetBirdStatus.CONNECTING ||
-        currentStatus === NetBirdStatus.CONNECTED
+        currentStatus === CosmosStatus.CONNECTING ||
+        currentStatus === CosmosStatus.CONNECTED
       ) {
-        return currentStatus === NetBirdStatus.CONNECTED;
+        return currentStatus === CosmosStatus.CONNECTED;
       }
 
-      netBirdStore.setState({ status: NetBirdStatus.CONNECTING });
+      netBirdStore.setState({ status: CosmosStatus.CONNECTING });
 
       try {
         const keyPairs = generateKeypair();
@@ -295,7 +295,7 @@ export const useNetBirdClient = () => {
         );
         return await connect(keyPairs.privateKey);
       } catch (error) {
-        netBirdStore.setState({ status: NetBirdStatus.DISCONNECTED });
+        netBirdStore.setState({ status: CosmosStatus.DISCONNECTED });
         throw error;
       }
     },

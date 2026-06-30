@@ -13,7 +13,7 @@ import { TerminalSquareIcon } from "lucide-react";
 import React from "react";
 import { OperatingSystem } from "@/interfaces/OperatingSystem";
 import {
-  NetBirdUpCommand,
+  CosmosUpCommand,
   RoutingPeerSetupKeyInfo,
 } from "@/modules/setup-netbird-modal/SetupModal";
 
@@ -50,10 +50,10 @@ export default function LinuxTab({
           )}
           <Steps.Step step={runStep} line={false}>
             <p>
-              Run NetBird {!usingSetupKey && "and log in the browser"}
+              Run Cosmos {!usingSetupKey && "and log in the browser"}
               {showSetupKeyInfo && <RoutingPeerSetupKeyInfo />}
             </p>
-            <NetBirdUpCommand
+            <CosmosUpCommand
               setupKey={setupKey}
               setupKeyPlaceholder={setupKeyPlaceholder}
               hostname={hostname}
@@ -89,7 +89,7 @@ export default function LinuxTab({
                   </Code>
                 </Steps.Step>
                 <Steps.Step step={2}>
-                  <p>Install NetBird</p>
+                  <p>Install Cosmos</p>
                   <Code
                     codeToCopy={[
                       `sudo apt-get update`,
@@ -106,10 +106,10 @@ export default function LinuxTab({
                 </Steps.Step>
                 <Steps.Step step={3} line={false}>
                   <p>
-                    Run NetBird {!usingSetupKey && "and log in the browser"}
+                    Run Cosmos {!usingSetupKey && "and log in the browser"}
                     {showSetupKeyInfo && <RoutingPeerSetupKeyInfo />}
                   </p>
-                  <NetBirdUpCommand
+                  <CosmosUpCommand
                     setupKey={setupKey}
                     setupKeyPlaceholder={setupKeyPlaceholder}
                     hostname={hostname}

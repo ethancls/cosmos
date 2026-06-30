@@ -20,7 +20,7 @@ export const TrialSuccessModal = ({ open, setOpen }: Props) => {
             Your 14-Day Trial has started!
           </div>
           <div className={"text-sm text-nb-gray-300 text-center"}>
-            {`Welcome aboard! You have now access to NetBird's full set of features & integrations `}
+            {`Welcome aboard! You have now access to Cosmos full set of features & integrations `}
             <b className={"text-nb-gray-200 font-medium"}>
               for the next two weeks
             </b>
@@ -34,15 +34,15 @@ export const TrialSuccessModal = ({ open, setOpen }: Props) => {
             </div>
             <ul className="flex flex-col gap-1.5 mt-4 mb-6">
               <li className="flex items-center gap-2 text-sm text-nb-gray-200">
-                <Check size={16} className={"text-netbird"} />
+                <Check size={16} className={"text-kyle"} />
                 Configure IdP sync for user & group provisioning
               </li>
               <li className="flex items-center gap-2 text-sm text-nb-gray-200">
-                <Check size={16} className={"text-netbird"} />
+                <Check size={16} className={"text-kyle"} />
                 Set up your first device posture checks
               </li>
               <li className="flex items-center gap-2 text-sm text-nb-gray-200">
-                <Check size={16} className={"text-netbird"} />
+                <Check size={16} className={"text-kyle"} />
                 Enable device approvals for added control
               </li>
             </ul>
@@ -51,7 +51,7 @@ export const TrialSuccessModal = ({ open, setOpen }: Props) => {
               variant={"primary"}
               onClick={() => setOpen(false)}
             >
-              Explore NetBird
+              Explore Cosmos
             </Button>
           </div>
         </div>

@@ -16,9 +16,9 @@ import {
   useRemoteDesktop,
 } from "@/modules/remote-access/rdp/useRemoteDesktop";
 import {
-  NetBirdStatus,
-  useNetBirdClient,
-} from "@/modules/remote-access/useNetBirdClient";
+  CosmosStatus,
+  useCosmosClient,
+} from "@/modules/remote-access/useCosmosClient";
 import { cn } from "@utils/helpers";
 
 export default function RDPPage() {
@@ -46,8 +46,8 @@ type Props = {
 };
 
 function RDPSession({ peer }: Props) {
-  const client = useNetBirdClient();
-  const [isNetBirdConnecting, setIsNetBirdConnecting] = useState(false);
+  const client = useCosmosClient();
+  const [isCosmosConnecting, setIsCosmosConnecting] = useState(false);
   const rdp = useRemoteDesktop(client);
   const [credentialsModal, setCredentialsModal] = useState(true);
   const [credentials, setCredentials] = useState<RDPCredentials | null>(null);
@@ -80,18 +80,18 @@ function RDPSession({ peer }: Props) {
    */
   const connect = async (rdpCredentials: RDPCredentials) => {
     if (!peer?.id) return;
-    if (client.status === NetBirdStatus.DISCONNECTED) {
+    if (client.status === CosmosStatus.DISCONNECTED) {
       try {
         setCredentials(rdpCredentials);
-        setIsNetBirdConnecting(true);
+        setIsCosmosConnecting(true);
         await client.connectTemporary(peer.id, [`tcp/${rdpCredentials.port}`]);
-        setIsNetBirdConnecting(false);
+        setIsCosmosConnecting(false);
       } catch (error) {
         sendErrorNotification(
-          "NetBird Connection Error",
+          "Cosmos Connection Error",
           (error as Error).message,
         );
-        setIsNetBirdConnecting(false);
+        setIsCosmosConnecting(false);
       }
     }
   };
@@ -120,15 +120,15 @@ function RDPSession({ peer }: Props) {
   }, [credentials, peer.ip, rdp, reset]);
 
   /**
-   * Establish RDP session when NetBird connection is ready
+   * Establish RDP session when Cosmos connection is ready
    */
   useEffect(() => {
     if (
-      client.status === NetBirdStatus.CONNECTED &&
+      client.status === CosmosStatus.CONNECTED &&
       rdp.status === RDPStatus.DISCONNECTED &&
       credentials &&
       !connected.current &&
-      !isNetBirdConnecting
+      !isCosmosConnecting
     ) {
       startSession().catch(console.error);
     }
@@ -138,18 +138,18 @@ function RDPSession({ peer }: Props) {
     peer.ip,
     rdp,
     startSession,
-    isNetBirdConnecting,
+    isCosmosConnecting,
   ]);
 
   /**
-   * Display notifications for RDP and NetBird client errors
+   * Display notifications for RDP and Cosmos client errors
    */
   useEffect(() => {
     if (rdp.error) {
       sendErrorNotification("RDP Error", rdp.error);
     }
     if (client.error) {
-      sendErrorNotification("NetBird Client Error", client.error);
+      sendErrorNotification("Cosmos Client Error", client.error);
     }
   }, [rdp, client]);
 
@@ -163,10 +163,10 @@ function RDPSession({ peer }: Props) {
   }, [rdp.status]);
 
   const isLoading =
-    client.status === NetBirdStatus.CONNECTING ||
+    client.status === CosmosStatus.CONNECTING ||
     rdp.status === RDPStatus.CONNECTING ||
     rdp.isResizing ||
-    isNetBirdConnecting;
+    isCosmosConnecting;
 
   return (
     <>

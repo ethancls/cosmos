@@ -10,7 +10,7 @@ import React, {
 import { useMSP } from "@/cloud/msp/contexts/MSPProvider";
 import { trialExpiresInfo, usageLimitInfo } from "@/contexts/BillingProvider";
 import { usePermissions } from "@/contexts/PermissionsProvider";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 
 const ANNOUNCEMENTS_URL =
   "https://raw.githubusercontent.com/netbirdio/dashboard/main/announcements.json";
@@ -21,7 +21,7 @@ const CACHE_DURATION_MS = 30 * 60 * 1000;
 const initialMSPAnnouncements: Announcement[] = [
   {
     tag: "New",
-    text: "Huntress now integrates with NetBird",
+    text: "Huntress now integrates with Cosmos",
     link: "https://docs.netbird.io/manage/access-control/endpoint-detection-and-response/huntress-edr",
     linkText: "Learn more",
     variant: "default",
@@ -96,7 +96,7 @@ const getRemoteAnnouncements = async (): Promise<{
       raw = await response.json();
     }
 
-    const isCloud = isNetBirdCloud();
+    const isCloud = isCosmosCloud();
     const filtered = raw.filter((a) => !a.isCloudOnly || isCloud);
     const hashes = new Set(filtered.map((a) => md5(a.text).toString()));
     const closed = (stored?.closedAnnouncements ?? []).filter((h) =>
@@ -150,7 +150,7 @@ export default function AnnouncementProvider({ children }: Readonly<Props>) {
 
     getRemoteAnnouncements()
       .then(({ announcements: remoteAnnouncements, closedAnnouncements }) => {
-        const isCloud = isNetBirdCloud();
+        const isCloud = isCosmosCloud();
 
         // Start with remote announcements
         let allAnnouncements: AnnouncementInfo[] = remoteAnnouncements.map(

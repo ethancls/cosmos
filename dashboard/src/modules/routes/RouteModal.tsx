@@ -392,7 +392,7 @@ export function RouteModalContent({
           exitNode ? (
             <IconDirectionSign size={20} />
           ) : (
-            <NetworkRoutesIcon className={"fill-netbird"} />
+            <NetworkRoutesIcon className={"fill-kyle"} />
           )
         }
         title={
@@ -423,7 +423,7 @@ export function RouteModalContent({
               <RouteIcon
                 size={16}
                 className={
-                  "text-nb-gray-500 group-data-[state=active]/trigger:text-netbird transition-all"
+                  "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
                 }
               />
               Route
@@ -434,7 +434,7 @@ export function RouteModalContent({
             <FolderGit2
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-netbird transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
               }
             />
             Groups
@@ -447,7 +447,7 @@ export function RouteModalContent({
             <Text
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-netbird transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
               }
             />
             Name & Description
@@ -459,7 +459,7 @@ export function RouteModalContent({
             <Settings2
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-netbird transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
               }
             />
             Additional Settings
@@ -755,7 +755,7 @@ export function RouteModalContent({
                   </>
                 }
                 helpText={
-                  "Automatically apply this exit node to your distribution groups. This requires NetBird client v0.55.0 or higher."
+                  "Automatically apply this exit node to your distribution groups. This requires Cosmos client v0.55.0 or higher."
                 }
               />
             )}

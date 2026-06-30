@@ -70,7 +70,7 @@ export const ActivityEntryRow = ({ event }: { event: ActivityEvent }) => {
             color == "red" && "bg-red-950 text-red-500 ",
             color == "green" && "bg-green-950 text-green-400 ",
             color == "blue-darker" && "bg-sky-950 text-sky-500 ",
-            color == "netbird" && "bg-netbird-950 text-netbird-500",
+            color == "netbird" && "bg-kyle-950 text-kyle-500",
           )}
         >
           {color && ActionIcons[color as ActionColor]}

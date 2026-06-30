@@ -2,7 +2,7 @@ import Button from "@components/Button";
 import { CommandItem } from "@components/Command";
 import { Popover, PopoverContent, PopoverTrigger } from "@components/Popover";
 import { ScrollArea } from "@components/ScrollArea";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 import { Command, CommandGroup, CommandList } from "cmdk";
 import { trim } from "lodash";
 import {
@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import * as React from "react";
 import { useState } from "react";
-import NetBirdIcon from "@/assets/icons/NetBirdIcon";
+import CosmosIcon from "@/assets/icons/CosmosIcon";
 import { useMSP } from "@/cloud/msp/contexts/MSPProvider";
 import { useDialog } from "@/contexts/DialogProvider";
 import { useLoggedInUser } from "@/contexts/UsersProvider";
@@ -39,7 +39,7 @@ export const UserRoles = [
   {
     name: "Owner",
     value: Role.Owner,
-    icon: NetBirdIcon,
+    icon: CosmosIcon,
   },
   {
     name: "Admin",
@@ -94,17 +94,17 @@ export function UserRoleSelector({
         description: (
           <div className={"inline-block"}>
             This action will transfer the{" "}
-            <span className={"text-netbird inline font-medium"}>Owner</span>{" "}
+            <span className={"text-kyle inline font-medium"}>Owner</span>{" "}
             role to{" "}
             {currentUser ? (
-              <span className={"text-netbird inline font-medium"}>
+              <span className={"text-kyle inline font-medium"}>
                 {currentUser.name}
               </span>
             ) : (
               "this user"
             )}{" "}
             and leave you with the{" "}
-            <span className={"text-netbird inline font-medium"}>Admin</span>{" "}
+            <span className={"text-kyle inline font-medium"}>Admin</span>{" "}
             role. This action can only be undone if the new owner transfers the
             role back to you.
           </div>
@@ -198,7 +198,7 @@ export function UserRoleSelector({
                       return null;
 
                     // Cloud only
-                    if (item.value === Role.BillingAdmin && !isNetBirdCloud())
+                    if (item.value === Role.BillingAdmin && !isCosmosCloud())
                       return null;
                     if (
                       item.value === Role.BillingAdmin &&

@@ -6,7 +6,7 @@ import { ArrowUpCircle } from "lucide-react";
 import * as React from "react";
 import Skeleton from "react-loading-skeleton";
 import useFetchApi from "@utils/api";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 import { useApplicationContext } from "@/contexts/ApplicationProvider";
 import { VersionInfo as VersionInfoType } from "@/interfaces/Instance";
 
@@ -46,7 +46,7 @@ export const NavigationVersionInfo = () => {
   const { isNavigationCollapsed, mobileNavOpen } = useApplicationContext();
 
   // Only show for self-hosted, not cloud
-  if (isNetBirdCloud()) return null;
+  if (isCosmosCloud()) return null;
 
   return (
     <div
@@ -135,7 +135,7 @@ const NavigationVersionInfoContent = () => {
           href="https://docs.netbird.io/selfhosted/maintenance/upgrade"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-1.5 text-white font-medium bg-netbird hover:bg-netbird-500 transition-colors rounded-md py-1.5 px-2 mt-1"
+          className="flex items-center justify-center gap-1.5 text-white font-medium bg-kyle hover:bg-kyle-500 transition-colors rounded-md py-1.5 px-2 mt-1"
         >
           <ArrowUpCircle size={12} />
           <span>Update available</span>

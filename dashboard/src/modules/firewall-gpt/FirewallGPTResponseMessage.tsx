@@ -165,13 +165,13 @@ function HighlightedText({
   return (
     <span
       className={cn(
-        "inline-block text-sm text-netbird font-medium relative px-1.5 py-0.5",
+        "inline-block text-sm text-kyle font-medium relative px-1.5 py-0.5",
         className,
       )}
     >
       <span
         className={
-          "absolute w-full h-full bg-gradient-to-r from-netbird-500/5 to-amber-300/5 rounded-md left-0 top-0"
+          "absolute w-full h-full bg-gradient-to-r from-kyle-500/5 to-amber-300/5 rounded-md left-0 top-0"
         }
       ></span>
       {children}

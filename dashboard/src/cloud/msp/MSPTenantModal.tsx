@@ -190,7 +190,7 @@ const MspAccountModalContent = ({ setOpen, tenant, initialTab }: Props) => {
             <Text
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-netbird transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
               }
             />
             General
@@ -199,7 +199,7 @@ const MspAccountModalContent = ({ setOpen, tenant, initialTab }: Props) => {
             <LockIcon
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-netbird transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
               }
             />
             Permissions

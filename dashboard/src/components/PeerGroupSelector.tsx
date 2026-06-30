@@ -603,7 +603,7 @@ export function PeerGroupSelector({
                           className={"text-neutral-500 dark:text-nb-gray-300"}
                         >
                           Add this group by pressing{" "}
-                          <span className={"font-bold text-netbird"}>
+                          <span className={"font-bold text-kyle"}>
                             {"'Enter'"}
                           </span>
                         </div>
@@ -771,7 +771,7 @@ const TabTriggers = ({
     >
       <FolderGit2
         className={
-          "text-nb-gray-500 group-data-[state=active]/trigger:text-netbird transition-all"
+          "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
         }
         size={14}
       />
@@ -788,7 +788,7 @@ const TabTriggers = ({
     >
       <Layers3Icon
         className={
-          "text-nb-gray-500 group-data-[state=active]/trigger:text-netbird transition-all"
+          "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
         }
         size={14}
       />
@@ -805,7 +805,7 @@ const TabTriggers = ({
     >
       <MonitorSmartphoneIcon
         className={
-          "text-nb-gray-500 group-data-[state=active]/trigger:text-netbird transition-all"
+          "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
         }
         size={14}
       />
@@ -822,7 +822,7 @@ const TabTriggers = ({
     >
       <ServerIcon
         className={
-          "text-nb-gray-500 group-data-[state=active]/trigger:text-netbird transition-all"
+          "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
         }
         size={14}
       />

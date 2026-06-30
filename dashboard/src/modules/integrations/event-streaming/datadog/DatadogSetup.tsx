@@ -98,7 +98,7 @@ export function SetupContent({ onSuccess }: Readonly<ModalProps>) {
   const connect = async () => {
     notify({
       title: "Datadog Integration",
-      description: `Datadog was successfully connected to NetBird.`,
+      description: `Datadog was successfully connected to Cosmos.`,
       promise: integrationRequest
         .post({
           platform: "datadog",
@@ -128,9 +128,9 @@ export function SetupContent({ onSuccess }: Readonly<ModalProps>) {
 
       <IntegrationModalHeader
         image={datadogLogo}
-        title={"Connect NetBird with Datadog"}
+        title={"Connect Cosmos with Datadog"}
         description={
-          "Start streaming your NetBird audit & traffic events to Datadog. Follow the steps below to get started."
+          "Start streaming your Cosmos audit & traffic events to Datadog. Follow the steps below to get started."
         }
       />
 
@@ -202,14 +202,14 @@ export function SetupContent({ onSuccess }: Readonly<ModalProps>) {
             <Steps.Step step={3}>
               <p className={"font-normal"}>
                 Give it a descriptive name like{" "}
-                <Mark copy>NetBird Activity Events</Mark>
+                <Mark copy>Cosmos Activity Events</Mark>
                 and click <Mark>Create Key</Mark>
                 <Tooltip>
                   <TooltipTrigger>
                     <InfoIcon
                       size={15}
                       className={
-                        "inline-block relative ml-1 -top-[1px] text-netbird hover:text-netbird-400"
+                        "inline-block relative ml-1 -top-[1px] text-kyle hover:text-kyle-400"
                       }
                     />
                   </TooltipTrigger>

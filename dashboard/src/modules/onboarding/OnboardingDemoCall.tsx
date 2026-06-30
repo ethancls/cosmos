@@ -9,7 +9,7 @@ import { CalendarClockIcon, CalendarIcon, Check } from "lucide-react";
 import Image from "next/image";
 import * as React from "react";
 import Avatar from "@/assets/avatars/jack.jpeg";
-import NetBirdIcon from "@/assets/icons/NetBirdIcon";
+import CosmosIcon from "@/assets/icons/CosmosIcon";
 import { useExperiment } from "@/cloud/cloud-hooks/useExperiment";
 import { useAnalytics } from "@/contexts/AnalyticsProvider";
 import { useAccount } from "@/modules/account/useAccount";
@@ -32,7 +32,7 @@ export const OnboardingDemoCall = ({ open, onOpenChange }: Props) => {
   const [variant, variantKey] = useExperiment("onboarding-call", {
     v1: {
       title: "Book a Technical Overview (Not a Sales Call)",
-      desc: "You’ll meet with a solutions engineer who will walk through how NetBird works, answer your implementation questions - no slides, no hard sell.",
+      desc: "You’ll meet with a solutions engineer who will walk through how Cosmos works, answer your implementation questions - no slides, no hard sell.",
       features: [
         "Live walkthrough of setup and architecture",
         "Implementation of use case, for your stack",
@@ -71,7 +71,7 @@ export const OnboardingDemoCall = ({ open, onOpenChange }: Props) => {
     },
     v4: {
       title: "Book a Technical Overview",
-      desc: "You’ll meet with a solutions engineer who will walk through how NetBird works, answer your implementation questions - no slides, no hard sell.",
+      desc: "You’ll meet with a solutions engineer who will walk through how Cosmos works, answer your implementation questions - no slides, no hard sell.",
       features: [
         "Live walkthrough of setup and architecture",
         "Implementation of use case, for your stack",
@@ -147,59 +147,59 @@ export const OnboardingDemoCall = ({ open, onOpenChange }: Props) => {
             }
           ></span>
           <div className={"flex gap-8 relative z-0 opacity-10 grayscale h-4"}>
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
           </div>
           <div
             className={
               "flex gap-8 -left-8 relative z-0 opacity-10 grayscale h-4"
             }
           >
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
           </div>
           <div className={"flex gap-4 relative z-0 opacity-10 grayscale h-4"}>
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
-            <NetBirdIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
+            <CosmosIcon size={20} />
           </div>
         </div>
 
@@ -221,7 +221,7 @@ export const OnboardingDemoCall = ({ open, onOpenChange }: Props) => {
                   className="flex items-center gap-3 text-sm text-nb-gray-200"
                   key={index}
                 >
-                  <Check size={16} className={"text-netbird shrink-0"} />
+                  <Check size={16} className={"text-kyle shrink-0"} />
                   {feature}
                 </li>
               ))}

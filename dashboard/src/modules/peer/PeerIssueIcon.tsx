@@ -51,7 +51,7 @@ export const usePeerIssueIcon = (peer: Peer): React.ReactNode | null => {
         content={
           <div className={"text-xs max-w-xs"}>
             This peer&apos;s login has expired. Re-authenticate from the
-            NetBird client on the device to bring it back online.
+            Cosmos client on the device to bring it back online.
           </div>
         }
       >

@@ -212,7 +212,7 @@ function AgentPolicyModalContent({
   return (
     <ModalContent maxWidthClass={"max-w-3xl"}>
       <ModalHeader
-        icon={<AccessControlIcon className={"fill-netbird"} />}
+        icon={<AccessControlIcon className={"fill-kyle"} />}
         title={policy ? "Update Agent Policy" : "Create Agent Policy"}
         description={
           "Govern which groups can call which AI providers and under what guardrails."
@@ -551,7 +551,7 @@ function ProviderMultiSelect({
                   className={cn(
                     "flex items-center gap-3 p-2 rounded cursor-pointer transition-colors",
                     checked
-                      ? "bg-netbird/10"
+                      ? "bg-kyle/10"
                       : "hover:bg-nb-gray-900/50",
                   )}
                 >

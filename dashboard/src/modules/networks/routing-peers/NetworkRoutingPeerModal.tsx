@@ -213,7 +213,7 @@ function RoutingPeerModalContent({
             <Share2Icon
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-netbird transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
               }
             />
             Routing Peers
@@ -223,7 +223,7 @@ function RoutingPeerModalContent({
             <Settings2
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-netbird transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
               }
             />
             Advanced Settings
@@ -289,11 +289,11 @@ function RoutingPeerModalContent({
               <div>
                 <Label>{"Don't have a routing peer?"}</Label>
                 <HelpText className={""}>
-                  You can install NetBird with a setup key on one or more
+                  You can install Cosmos with a setup key on one or more
                   machines to act as routing peers.
                 </HelpText>
               </div>
-              <InstallNetBirdWithSetupKeyButton
+              <InstallCosmosWithSetupKeyButton
                 name={`Routing Peer (${network.name})`}
               />
             </div>
@@ -413,13 +413,13 @@ function RoutingPeerModalContent({
   );
 }
 
-type InstallNetBirdWithSetupKeyButtonProps = {
+type InstallCosmosWithSetupKeyButtonProps = {
   name?: string;
 };
 
-const InstallNetBirdWithSetupKeyButton = ({
+const InstallCosmosWithSetupKeyButton = ({
   name,
-}: InstallNetBirdWithSetupKeyButtonProps) => {
+}: InstallCosmosWithSetupKeyButtonProps) => {
   const setupKeyRequest = useApiCall<SetupKey>("/setup-keys", true);
   const { mutate } = useSWRConfig();
   const { confirm } = useDialog();
@@ -432,7 +432,7 @@ const InstallNetBirdWithSetupKeyButton = ({
     const choice = await confirm({
       title: `Create a Setup Key?`,
       description:
-        "If you continue, a one-off setup key will be automatically created and you will be able to install NetBird.",
+        "If you continue, a one-off setup key will be automatically created and you will be able to install Cosmos.",
       confirmText: "Continue",
       cancelText: "Cancel",
       type: "default",
@@ -477,7 +477,7 @@ const InstallNetBirdWithSetupKeyButton = ({
         ) : (
           <DownloadIcon size={14} />
         )}
-        Install NetBird
+        Install Cosmos
       </Button>
       {setupKey && (
         <Modal

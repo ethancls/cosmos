@@ -7,7 +7,7 @@ import { MailIcon } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import * as React from "react";
 import { useEffect, useMemo, useState } from "react";
-import NetBirdIcon from "@/assets/icons/NetBirdIcon";
+import CosmosIcon from "@/assets/icons/CosmosIcon";
 import { useBilling } from "@/contexts/BillingProvider";
 
 export const LimitsReachedModal = () => {
@@ -103,7 +103,7 @@ const LimitReachedContent = () => {
               "bg-nb-gray-900 rounded-lg h-11 w-11 flex items-center justify-center mb-2"
             }
           >
-            <NetBirdIcon size={24} className={"shrink-0"} />
+            <CosmosIcon size={24} className={"shrink-0"} />
           </div>
 
           <div className={"text-xl font-medium text-center max-w-xs mb-1"}>

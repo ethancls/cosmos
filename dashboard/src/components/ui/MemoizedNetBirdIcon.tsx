@@ -1,9 +1,9 @@
 import * as React from "react";
 import { memo } from "react";
-import NetBirdIcon from "@/assets/icons/NetBirdIcon";
+import CosmosIcon from "@/assets/icons/CosmosIcon";
 
-const MemoizedNetBirdIcon = () => {
-  return <NetBirdIcon size={14} />;
+const MemoizedCosmosIcon = () => {
+  return <CosmosIcon size={14} />;
 };
 
-export default memo(MemoizedNetBirdIcon);
+export default memo(MemoizedCosmosIcon);

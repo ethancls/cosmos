@@ -15,7 +15,7 @@ const switchVariants = cva("", {
     },
     variant: {
       default: [
-        "dark:data-[state=checked]:bg-netbird dark:data-[state=unchecked]:bg-nb-gray-700",
+        "dark:data-[state=checked]:bg-kyle dark:data-[state=unchecked]:bg-nb-gray-700",
         "data-[state=checked]:bg-neutral-900 data-[state=unchecked]:bg-neutral-200",
       ],
       "red-green": [

@@ -1,7 +1,7 @@
 import { generateColorFromString } from "@utils/helpers";
 import { Cog, Loader2 } from "lucide-react";
 import * as React from "react";
-import NetBirdIcon from "@/assets/icons/NetBirdIcon";
+import CosmosIcon from "@/assets/icons/CosmosIcon";
 import { useLoggedInUser } from "@/contexts/UsersProvider";
 
 const AssistantAvatar = () => {
@@ -20,7 +20,7 @@ const AssistantAvatar = () => {
           "z-[2] h-full relative flex items-center justify-center bg-nb-gray-930/30 w-full rounded-full"
         }
       >
-        <NetBirdIcon size={17} className={"top-[1px] relative"} />
+        <CosmosIcon size={17} className={"top-[1px] relative"} />
       </span>
     </div>
   );

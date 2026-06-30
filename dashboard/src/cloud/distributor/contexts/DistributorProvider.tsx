@@ -1,5 +1,5 @@
 import useFetchApi from "@utils/api";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 import React, { useEffect, useMemo } from "react";
 import { Distributor } from "@/cloud/distributor/interfaces/Distributor";
 
@@ -42,7 +42,7 @@ const DistributorContext = React.createContext(
 );
 
 export default function DistributorProvider({ children }: Readonly<Props>) {
-  // Distributor (reseller) data lives behind an MSP endpoint that only NetBird
+  // Distributor (reseller) data lives behind an MSP endpoint that only Cosmos
   // Cloud serves. Skip the call on self-hosted deployments.
   const {
     data: distributorInfo,
@@ -52,7 +52,7 @@ export default function DistributorProvider({ children }: Readonly<Props>) {
     "/integrations/msp/reseller",
     true,
     true,
-    isNetBirdCloud(),
+    isCosmosCloud(),
   );
 
   const isActive = useMemo(() => {

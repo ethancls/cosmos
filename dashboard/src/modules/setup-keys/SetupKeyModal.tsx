@@ -149,7 +149,7 @@ export default function SetupKeyModal({
                 onClick={() => setInstallModal(true)}
               >
                 <DownloadIcon size={14} />
-                Install NetBird
+                Install Cosmos
               </Button>
             </div>
           </ModalFooter>
@@ -226,7 +226,7 @@ export function SetupKeyModalContent({
   return (
     <ModalContent maxWidthClass={"max-w-xl"}>
       <ModalHeader
-        icon={<SetupKeysIcon className={"fill-netbird"} />}
+        icon={<SetupKeysIcon className={"fill-kyle"} />}
         title={"Create New Setup Key"}
         description={"Use this key to register new machines in your network"}
         color={"netbird"}

@@ -9,7 +9,7 @@ import { useIsSm, useIsXs } from "@utils/responsive";
 import { AnimatePresence, motion } from "framer-motion";
 import { XIcon } from "lucide-react";
 import React from "react";
-import { NetBirdCloudProvider } from "@/cloud/contexts/NetBirdCloudProvider";
+import { CosmosCloudProvider } from "@/cloud/contexts/CosmosCloudProvider";
 import DistributorProvider from "@/cloud/distributor/contexts/DistributorProvider";
 import MSPProvider from "@/cloud/msp/contexts/MSPProvider";
 import AnnouncementProvider, {
@@ -26,7 +26,7 @@ import UsersProvider from "@/contexts/UsersProvider";
 import Navigation from "@/layouts/Navigation";
 import Header, { headerHeight } from "./Header";
 import { OnboardingProvider } from "@/modules/onboarding/OnboardingProvider";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 
 export default function DashboardLayout({
   children,
@@ -42,8 +42,8 @@ export default function DashboardLayout({
               <BillingProvider>
                 <GroupsProvider>
                   <CountryProvider>
-                    <NetBirdCloudProvider />
-                    {!isNetBirdCloud() && <OnboardingProvider />}
+                    <CosmosCloudProvider />
+                    {!isCosmosCloud() && <OnboardingProvider />}
                     <DashboardPageContent>{children}</DashboardPageContent>
                   </CountryProvider>
                 </GroupsProvider>

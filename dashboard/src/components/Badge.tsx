@@ -31,7 +31,7 @@ const variants = cva("", {
         "bg-nb-gray-900 border-nb-gray-800 text-nb-gray-300 border border-nb-gray-800/50",
       ],
       green: ["bg-green-950 border-green-500 border text-green-400"],
-      netbird: ["bg-netbird-950 border-netbird-500 border text-netbird-500"],
+      netbird: ["bg-kyle-950 border-kyle-500 border text-kyle-500"],
     },
     size: {
       default: "text-[0.75rem] py-1.5 px-3",
@@ -50,7 +50,7 @@ const variants = cva("", {
       grayer: ["hover:bg-nb-gray-900"],
       "gray-ghost": ["hover:bg-nb-gray-800 cursor-pointer"],
       green: ["hover:bg-green-950/50"],
-      netbird: ["hover:bg-netbird-950/50"],
+      netbird: ["hover:bg-kyle-950/50"],
     },
   },
 });

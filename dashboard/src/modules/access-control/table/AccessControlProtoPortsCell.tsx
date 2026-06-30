@@ -34,8 +34,8 @@ export default function AccessControlProtoPortsCell({
 
   if (!rule) return <EmptyRow />;
 
-  const isNetBirdSSH = rule.protocol?.toLowerCase() === "netbird-ssh";
-  const protocolLabel = isNetBirdSSH ? "NB-SSH" : rule.protocol;
+  const isCosmosSSH = rule.protocol?.toLowerCase() === "netbird-ssh";
+  const protocolLabel = isCosmosSSH ? "NB-SSH" : rule.protocol;
   const protocolBadge = (
     <Badge
       variant={"gray"}
@@ -48,7 +48,7 @@ export default function AccessControlProtoPortsCell({
 
   return (
     <div className={"flex items-center gap-2"}>
-      {isNetBirdSSH ? (
+      {isCosmosSSH ? (
         <FullTooltip
           interactive={false}
           content={

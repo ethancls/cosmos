@@ -21,7 +21,7 @@ import Link from "next/link";
 import React from "react";
 import { OperatingSystem } from "@/interfaces/OperatingSystem";
 import {
-  NetBirdUpCommand,
+  CosmosUpCommand,
   RoutingPeerSetupKeyInfo,
 } from "@/modules/setup-netbird-modal/SetupModal";
 
@@ -67,7 +67,7 @@ export default function MacOSTab({
               >
                 <Button variant={"primary"}>
                   <DownloadIcon size={14} />
-                  Download NetBird
+                  Download Cosmos
                 </Button>
               </Link>
             </div>
@@ -76,7 +76,7 @@ export default function MacOSTab({
           {GRPC_API_ORIGIN && (
             <Steps.Step step={baseMgmtStep}>
               <p>
-                {`Click on "Settings" then "Advanced Settings" from the NetBird icon in your system tray and enter the following "Management URL"`}
+                {`Click on "Settings" then "Advanced Settings" from the Cosmos icon in your system tray and enter the following "Management URL"`}
               </p>
               <Code>
                 <Code.Line>{GRPC_API_ORIGIN}</Code.Line>
@@ -91,11 +91,11 @@ export default function MacOSTab({
           {useCliRun ? (
             <Steps.Step step={runStep} line={false}>
               <p>
-                Open Terminal and run NetBird{" "}
+                Open Terminal and run Cosmos{" "}
                 {showSetupKeyInfo && <RoutingPeerSetupKeyInfo />}
               </p>
 
-              <NetBirdUpCommand
+              <CosmosUpCommand
                 setupKey={setupKey}
                 setupKeyPlaceholder={setupKeyPlaceholder}
                 hostname={hostname}
@@ -106,7 +106,7 @@ export default function MacOSTab({
               <Steps.Step step={runStep}>
                 <p>
                   {/* eslint-disable-next-line react/no-unescaped-entities */}
-                  Click on "Connect" from the NetBird icon in your system tray
+                  Click on "Connect" from the Cosmos icon in your system tray
                 </p>
               </Steps.Step>
               <Steps.Step step={runStep + 1} line={false}>
@@ -133,10 +133,10 @@ export default function MacOSTab({
                 </Steps.Step>
                 <Steps.Step step={2} line={false}>
                   <p>
-                    Run NetBird {!usingSetupKeyParam && "and log in the browser"}
+                    Run Cosmos {!usingSetupKeyParam && "and log in the browser"}
                     {showSetupKeyInfo && <RoutingPeerSetupKeyInfo />}
                   </p>
-                  <NetBirdUpCommand
+                  <CosmosUpCommand
                     setupKey={setupKey}
                     setupKeyPlaceholder={setupKeyPlaceholder}
                     hostname={hostname}
@@ -168,7 +168,7 @@ export default function MacOSTab({
                   </div>
                 </Steps.Step>
                 <Steps.Step step={2}>
-                  <p>Install NetBird </p>
+                  <p>Install Cosmos </p>
                   <Code
                     codeToCopy={[
                       `brew install netbirdio/tap/netbird`,
@@ -184,7 +184,7 @@ export default function MacOSTab({
                   </Code>
                 </Steps.Step>
                 <Steps.Step step={3}>
-                  <p>Start NetBird daemon</p>
+                  <p>Start Cosmos daemon</p>
                   <Code>
                     <Code.Line>sudo netbird service install</Code.Line>
                     <Code.Line>sudo netbird service start</Code.Line>
@@ -192,10 +192,10 @@ export default function MacOSTab({
                 </Steps.Step>
                 <Steps.Step step={4} line={false}>
                   <p>
-                    Run NetBird {!usingSetupKeyParam && "and log in the browser"}
+                    Run Cosmos {!usingSetupKeyParam && "and log in the browser"}
                     {showSetupKeyInfo && <RoutingPeerSetupKeyInfo />}
                   </p>
-                  <NetBirdUpCommand
+                  <CosmosUpCommand
                     setupKey={setupKey}
                     setupKeyPlaceholder={setupKeyPlaceholder}
                     hostname={hostname}

@@ -1,7 +1,7 @@
 import Button from "@components/Button";
 import Card from "@components/Card";
 import { Modal, ModalPortal } from "@components/modal/Modal";
-import { NetBirdLogo } from "@components/NetBirdLogo";
+import { CosmosLogo } from "@components/CosmosLogo";
 import Paragraph from "@components/Paragraph";
 import { DialogContent } from "@radix-ui/react-dialog";
 import { cn } from "@utils/helpers";
@@ -111,7 +111,7 @@ export const AWSChoosePlan = ({ onSuccess }: Props) => {
                 <span>
                   <PlusIcon size={16} className={"text-nb-gray-300"} />
                 </span>
-                <NetBirdLogo size={"large"} mobile={false} />
+                <CosmosLogo size={"large"} mobile={false} />
               </div>
 
               {isLoading ? (

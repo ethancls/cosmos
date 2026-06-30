@@ -5,7 +5,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@components/Tooltip";
-import MemoizedNetBirdIcon from "@components/ui/MemoizedNetBirdIcon";
+import MemoizedCosmosIcon from "@components/ui/MemoizedCosmosIcon";
 import { getOperatingSystem } from "@hooks/useOperatingSystem";
 import { compareVersions } from "@utils/version";
 import { ArrowRightIcon, ArrowUpCircleIcon } from "lucide-react";
@@ -43,7 +43,7 @@ export default function PeerVersionCell({
   }, [os, version, latestVersion, ephemeral]);
 
   const updateIcon = useMemo(() => {
-    return <ArrowUpCircleIcon size={15} className={"text-netbird"} />;
+    return <ArrowUpCircleIcon size={15} className={"text-kyle"} />;
   }, []);
 
   return (
@@ -53,10 +53,10 @@ export default function PeerVersionCell({
           <Tooltip delayDuration={10}>
             <TooltipTrigger>
               <div className="flex gap-2 dark:text-neutral-300 text-neutral-500 hover:text-neutral-100 transition-all rounded-md items-center">
-                <MemoizedNetBirdIcon />
+                <MemoizedCosmosIcon />
                 {version == "development" ? "dev" : version}
                 <div className={"relative"}>
-                  <span className="animate-ping absolute left-0 inline-flex h-[15px] w-[15px] rounded-full bg-netbird opacity-20"></span>
+                  <span className="animate-ping absolute left-0 inline-flex h-[15px] w-[15px] rounded-full bg-kyle opacity-20"></span>
                   {updateIcon}
                 </div>
               </div>
@@ -68,10 +68,10 @@ export default function PeerVersionCell({
                   " inline-flex gap-2 items-center rounded-md text-xs my-2"
                 }
               >
-                <MemoizedNetBirdIcon />
+                <MemoizedCosmosIcon />
                 <span>{version}</span>
-                <ArrowRightIcon size={16} className={"text-netbird"} />
-                <span className={"text-netbird"}>{latestVersion}</span>
+                <ArrowRightIcon size={16} className={"text-kyle"} />
+                <span className={"text-kyle"}>{latestVersion}</span>
               </div>
               <p className={"font-medium"}>Update available </p>
 
@@ -96,7 +96,7 @@ export default function PeerVersionCell({
         </TooltipProvider>
       ) : (
         <div className="inline-flex gap-2 dark:text-neutral-300 text-neutral-500 items-center">
-          <MemoizedNetBirdIcon />
+          <MemoizedCosmosIcon />
           {version == "development" ? "dev" : version}
         </div>
       )}

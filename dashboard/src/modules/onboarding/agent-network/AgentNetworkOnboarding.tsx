@@ -1,6 +1,6 @@
 import InlineLink from "@components/InlineLink";
 import { Modal, ModalPortal } from "@components/modal/Modal";
-import { NetBirdLogo } from "@components/NetBirdLogo";
+import { CosmosLogo } from "@components/CosmosLogo";
 import { GradientFadedBackground } from "@components/ui/GradientFadedBackground";
 import { DialogContent, DialogTitle } from "@radix-ui/react-dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
@@ -121,7 +121,7 @@ export const AgentNetworkOnboarding = ({
                 "sm:px-4 py-10 max-w-2xl mx-auto flex flex-col items-center w-full"
               }
             >
-              <NetBirdLogo size={"large"} mobile={false} />
+              <CosmosLogo size={"large"} mobile={false} />
 
               <div className={"w-full flex flex-col items-center pb-10 mt-8 sm:mt-10"}>
                 <Card
@@ -204,7 +204,7 @@ const Stepper = ({ step, maxSteps }: { step: number; maxSteps: number }) => {
           key={index}
           className={cn(
             "w-8 h-1 rounded-full bg-nb-gray-800",
-            step >= index + 1 && "bg-netbird",
+            step >= index + 1 && "bg-kyle",
           )}
         />
       ))}

@@ -10,17 +10,17 @@ import { isEmpty } from "lodash";
 import { ExternalLinkIcon } from "lucide-react";
 import * as React from "react";
 import { useMemo, useState } from "react";
-import NetBirdIcon from "@/assets/icons/NetBirdIcon";
-import { NetBirdVersionCheck } from "@/interfaces/PostureCheck";
+import CosmosIcon from "@/assets/icons/CosmosIcon";
+import { CosmosVersionCheck } from "@/interfaces/PostureCheck";
 import { PostureCheckCard } from "@/modules/posture-checks/ui/PostureCheckCard";
 
 type Props = {
-  value?: NetBirdVersionCheck;
-  onChange: (value: NetBirdVersionCheck | undefined) => void;
+  value?: CosmosVersionCheck;
+  onChange: (value: CosmosVersionCheck | undefined) => void;
   disabled?: boolean;
 };
 
-export const PostureCheckNetBirdVersion = ({
+export const PostureCheckCosmosVersion = ({
   value,
   onChange,
   disabled,
@@ -33,11 +33,11 @@ export const PostureCheckNetBirdVersion = ({
       setOpen={setOpen}
       key={open ? 1 : 0}
       active={value?.min_version !== undefined}
-      title={"NetBird Client Version"}
+      title={"Cosmos Client Version"}
       description={
-        "Restrict access to peers with a specific NetBird client version."
+        "Restrict access to peers with a specific Cosmos client version."
       }
-      icon={<NetBirdIcon size={18} />}
+      icon={<CosmosIcon size={18} />}
       modalWidthClass={"max-w-lg"}
       onReset={() => onChange(undefined)}
     >
@@ -78,7 +78,7 @@ const CheckContent = ({ value, onChange, disabled }: Props) => {
         <div>
           <Label>Minimum required version</Label>
           <HelpText>
-            Only peers with the minimum specified NetBird client version will
+            Only peers with the minimum specified Cosmos client version will
             have access to the network.
           </HelpText>
           <div>

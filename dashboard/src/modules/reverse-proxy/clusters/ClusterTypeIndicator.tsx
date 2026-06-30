@@ -25,7 +25,7 @@ export const ClusterTypeIndicator = ({ cluster }: Props) => {
           </div>
         }
       >
-        <UserCog size={12} className={"shrink-0 text-netbird"} />
+        <UserCog size={12} className={"shrink-0 text-kyle"} />
       </FullTooltip>
     );
   }

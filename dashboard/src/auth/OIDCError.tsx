@@ -6,7 +6,7 @@ import { ArrowRightIcon } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import * as React from "react";
 import { useEffect, useState } from "react";
-import NetBirdIcon from "@/assets/icons/NetBirdIcon";
+import CosmosIcon from "@/assets/icons/CosmosIcon";
 
 const config = loadConfig();
 
@@ -43,7 +43,7 @@ export const OIDCError = () => {
           "bg-nb-gray-930 mb-3 border border-nb-gray-900 h-12 w-12 rounded-md flex items-center justify-center "
         }
       >
-        <NetBirdIcon size={23} />
+        <CosmosIcon size={23} />
       </div>
       <h1 className={"text-center mt-2"}>{title}</h1>
 

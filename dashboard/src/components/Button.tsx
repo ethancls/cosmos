@@ -28,8 +28,8 @@ export const buttonVariants = cva(
           "dark:focus:ring-zinc-800/50 dark:bg-nb-gray dark:text-gray-400 dark:border-gray-700/30 dark:hover:text-white dark:hover:bg-zinc-800/50",
         ],
         primary: [
-          "dark:focus:ring-netbird-600/50 dark:ring-offset-neutral-950/50 enabled:dark:bg-netbird disabled:dark:bg-nb-gray-910 dark:text-gray-100 enabled:dark:hover:text-white enabled:dark:hover:bg-netbird-500/80",
-          "enabled:bg-netbird enabled:text-white enabled:focus:ring-netbird-400/50 enabled:hover:bg-netbird-500",
+          "dark:focus:ring-netbird-600/50 dark:ring-offset-neutral-950/50 enabled:dark:bg-kyle disabled:dark:bg-nb-gray-910 dark:text-gray-100 enabled:dark:hover:text-white enabled:dark:hover:bg-kyle-500/80",
+          "enabled:bg-kyle enabled:text-white enabled:focus:ring-netbird-400/50 enabled:hover:bg-kyle-500",
         ],
         secondary: [
           "bg-white hover:text-black focus:ring-zinc-200/50 hover:bg-gray-100 border-gray-200 text-gray-900",
@@ -66,7 +66,7 @@ export const buttonVariants = cva(
         ],
         outline: [
           "bg-white hover:text-black focus:ring-zinc-200/50  hover:bg-gray-100 border-gray-200 text-gray-900",
-          "dark:focus:ring-zinc-800/50 dark:bg-transparent dark:text-netbird dark:border-netbird dark:hover:bg-nb-gray-900/30",
+          "dark:focus:ring-zinc-800/50 dark:bg-transparent dark:text-kyle dark:border-kyle dark:hover:bg-nb-gray-900/30",
         ],
         "danger-outline": [
           "", // TODO - add danger button styles for light mode

@@ -92,7 +92,7 @@ const TabsTrigger = React.forwardRef<
         data-testid={dataTestId}
         className={cn(
           "inline-flex items-center transition-all justify-center whitespace-nowrap px-3 pt-1.5 pb-3 text-sm font-normal",
-          "data-[state=active]:text-netbird cursor-pointer  dark:data-[state=active]:text-netbird group/trigger gap-2",
+          "data-[state=active]:text-kyle cursor-pointer  dark:data-[state=active]:text-kyle group/trigger gap-2",
           "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
           "relative data-[state=inactive]:hover:text-neutral-900 dark:data-[state=inactive]:hover:text-nb-gray-500",
           className,
@@ -102,7 +102,7 @@ const TabsTrigger = React.forwardRef<
           className={cn(
             "absolute w-full h-[1px] left-0 right-0 bottom-[0px] transition-all",
             currentValue === props.value
-              ? "bg-netbird text-netbird"
+              ? "bg-kyle text-kyle"
               : "dark:bg-nb-gray-900 bg-nb-gray-100 group-hover/trigger:dark:bg-nb-gray-700 group-hover/trigger:bg-nb-gray-200",
           )}
         ></motion.div>

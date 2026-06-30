@@ -103,7 +103,7 @@ export function SetupContent({ onSuccess }: ModalProps) {
   const connect = async () => {
     notify({
       title: "Google Workspace Integration",
-      description: `Google Workspace was successfully connected to NetBird.`,
+      description: `Google Workspace was successfully connected to Cosmos.`,
       promise: googleRequest
         .post({
           service_account_key: btoa(serviceAccountKey), // Encode client secret to base64
@@ -146,7 +146,7 @@ export function SetupContent({ onSuccess }: ModalProps) {
               key={index}
               className={cn(
                 "w-8 h-1 rounded-full bg-nb-gray-800",
-                step >= index + 1 && "bg-netbird",
+                step >= index + 1 && "bg-kyle",
               )}
             />
           ))}
@@ -155,9 +155,9 @@ export function SetupContent({ onSuccess }: ModalProps) {
 
       <IntegrationModalHeader
         image={integrationImage}
-        title={"Connect NetBird with Google Workspace"}
+        title={"Connect Cosmos with Google Workspace"}
         description={
-          "Start syncing your users and groups from Google Workspace to NetBird. Follow the steps below to get started."
+          "Start syncing your users and groups from Google Workspace to Cosmos. Follow the steps below to get started."
         }
       />
 
@@ -227,12 +227,12 @@ export function SetupContent({ onSuccess }: ModalProps) {
         <div className={"px-8 py-3 flex flex-col gap-0 mt-4"}>
           <p className={"font-medium flex gap-3 items-center text-base"}>
             <Folder size={20} />
-            Create NetBird project
+            Create Cosmos project
           </p>
           <Steps>
             <Steps.Step step={1}>
               <p>
-                Create a new <Mark copy>NetBird</Mark> project in the{" "}
+                Create a new <Mark copy>Cosmos</Mark> project in the{" "}
                 <InlineLink
                   className={"inline"}
                   target={"_blank"}
@@ -255,7 +255,7 @@ export function SetupContent({ onSuccess }: ModalProps) {
                   Admin SDK API
                 </InlineLink>{" "}
                 for the
-                <Mark>NetBird</Mark> project
+                <Mark>Cosmos</Mark> project
               </p>
             </Steps.Step>
           </Steps>
@@ -299,7 +299,7 @@ export function SetupContent({ onSuccess }: ModalProps) {
             data={[
               {
                 label: "Service account name",
-                value: "NetBird",
+                value: "Cosmos",
               },
               {
                 label: "Service account ID",
@@ -333,7 +333,7 @@ export function SetupContent({ onSuccess }: ModalProps) {
             </Steps.Step>
             <Steps.Step step={1}>
               <p className={"font-normal"}>
-                Click <Mark>NetBird</Mark> to edit the service account. Copy the
+                Click <Mark>Cosmos</Mark> to edit the service account. Copy the
                 service account email address.
               </p>
               <Lightbox image={googleEditServiceAccount} />

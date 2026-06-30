@@ -67,7 +67,7 @@ export default function ActivityDescription({ event }: Props) {
     return (
       <div className={"inline"}>
         Peer <Value>{m.name}</Value> <PeerConnectionInfo meta={m} /> was added
-        with the NetBird IP <Value>{m.ip}</Value> using the setup key{" "}
+        with the Cosmos IP <Value>{m.ip}</Value> using the setup key{" "}
         <Value>{m.setup_key_name}</Value>
       </div>
     );
@@ -168,7 +168,7 @@ export default function ActivityDescription({ event }: Props) {
     return (
       <div className={"inline"}>
         Peer <Value>{m.name}</Value> <PeerConnectionInfo meta={m} /> with
-        NetBird IP <Value>{m.ip}</Value> was deleted
+        Cosmos IP <Value>{m.ip}</Value> was deleted
       </div>
     );
 
@@ -176,7 +176,7 @@ export default function ActivityDescription({ event }: Props) {
     return (
       <div className={"inline"}>
         Peer <Value>{m.name}</Value> <PeerConnectionInfo meta={m} /> was added
-        with the NetBird IP <Value>{m.ip}</Value>
+        with the Cosmos IP <Value>{m.ip}</Value>
       </div>
     );
 
@@ -184,14 +184,14 @@ export default function ActivityDescription({ event }: Props) {
     return (
       <div className={"inline"}>
         Peer <Value>{m.name}</Value> <PeerConnectionInfo meta={m} /> with
-        NetBird IP <Value>{m.ip}</Value> was updated
+        Cosmos IP <Value>{m.ip}</Value> was updated
       </div>
     );
 
   if (event.activity_code == "user.join")
     return (
       <div className={"inline"}>
-        User <Value>{m.username}</Value> joined NetBird
+        User <Value>{m.username}</Value> joined Cosmos
       </div>
     );
 
@@ -207,7 +207,7 @@ export default function ActivityDescription({ event }: Props) {
     return (
       <div className={"inline"}>
         <Value>{event.meta.username}</Value> <Value>{event.meta.email}</Value>{" "}
-        was created by <Value>{event?.initiator_name || "NetBird"}</Value>
+        was created by <Value>{event?.initiator_name || "Cosmos"}</Value>
       </div>
     );
 
@@ -347,14 +347,14 @@ export default function ActivityDescription({ event }: Props) {
     return (
       <div className={"inline"}>
         Group <Value>{m.group}</Value> was removed from the peer with the
-        NetBird IP <Value>{m.peer_ip}</Value>
+        Cosmos IP <Value>{m.peer_ip}</Value>
       </div>
     );
 
   if (event.activity_code == "peer.group.add")
     return (
       <div className={"inline"}>
-        Group <Value>{m.group}</Value> was added to the peer with the NetBird IP{" "}
+        Group <Value>{m.group}</Value> was added to the peer with the Cosmos IP{" "}
         <Value>{m.peer_ip}</Value>
       </div>
     );
@@ -397,7 +397,7 @@ export default function ActivityDescription({ event }: Props) {
   if (event.activity_code == "peer.rename")
     return (
       <div className={"inline"}>
-        Peer with the NetBird IP <Value>{m.ip}</Value> was renamed to{" "}
+        Peer with the Cosmos IP <Value>{m.ip}</Value> was renamed to{" "}
         <Value>{m.name}</Value>
       </div>
     );
@@ -405,7 +405,7 @@ export default function ActivityDescription({ event }: Props) {
   if (event.activity_code == "peer.approve")
     return (
       <div className={"inline"}>
-        Peer with the NetBird IP <Value>{m.ip}</Value> was approved
+        Peer with the Cosmos IP <Value>{m.ip}</Value> was approved
       </div>
     );
 
@@ -421,7 +421,7 @@ export default function ActivityDescription({ event }: Props) {
     return (
       <div className={"inline"}>
         Peer <Value>{m.name}</Value> <PeerConnectionInfo meta={m} /> was added
-        with the NetBird IP <Value>{m.ip}</Value>
+        with the Cosmos IP <Value>{m.ip}</Value>
       </div>
     );
 
@@ -648,7 +648,7 @@ export default function ActivityDescription({ event }: Props) {
   if (event.activity_code == "integrated-validator.peer.compliance-bypassed")
     return (
       <div className={"inline"}>
-        Peer <Value>{m?.name}</Value> with the NetBird IP <Value>{m?.ip}</Value>{" "}
+        Peer <Value>{m?.name}</Value> with the Cosmos IP <Value>{m?.ip}</Value>{" "}
         compliance bypassed for <Value>{m?.platform}</Value> integration
         {m?.original_reason && (
           <>
@@ -664,7 +664,7 @@ export default function ActivityDescription({ event }: Props) {
   )
     return (
       <div className={"inline"}>
-        Peer <Value>{m?.name}</Value> with the NetBird IP <Value>{m?.ip}</Value>{" "}
+        Peer <Value>{m?.name}</Value> with the Cosmos IP <Value>{m?.ip}</Value>{" "}
         compliance bypass revoked for <Value>{m?.platform}</Value> integration
       </div>
     );

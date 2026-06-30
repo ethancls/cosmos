@@ -1,7 +1,7 @@
 import FullTooltip from "@components/FullTooltip";
 import InlineLink from "@components/InlineLink";
 import { cn } from "@utils/helpers";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 import { ExternalLinkIcon, HelpCircle } from "lucide-react";
 import React from "react";
 import { User } from "@/interfaces/User";
@@ -23,7 +23,7 @@ export default function UserStatusCell({ user }: Readonly<Props>) {
       return { text: "Disabled", color: "bg-gray-400" };
     }
     if (isPendingApproval) {
-      return { text: "Pending", color: "bg-netbird" };
+      return { text: "Pending", color: "bg-kyle" };
     }
     if (status === "blocked") {
       return { text: "Blocked", color: "bg-red-500" };
@@ -37,7 +37,7 @@ export default function UserStatusCell({ user }: Readonly<Props>) {
     return { text: status || "Unknown", color: "bg-gray-400" };
   };
 
-  const isInvitedOnCloud = status === "invited" && isNetBirdCloud();
+  const isInvitedOnCloud = status === "invited" && isCosmosCloud();
 
   const tooltipContent = isLocalAuthDisabled ? (
     <div className={"max-w-xs text-xs flex flex-col gap-2"}>
@@ -104,7 +104,7 @@ export default function UserStatusCell({ user }: Readonly<Props>) {
           <span className={cn("h-2 w-2 rounded-full", color)}></span>
           {text}
           {showTooltip && (
-            <HelpCircle size={14} className="text-netbird cursor-help" />
+            <HelpCircle size={14} className="text-kyle cursor-help" />
           )}
         </div>
       </FullTooltip>

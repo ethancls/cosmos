@@ -3,7 +3,7 @@ import { Checkbox } from "@components/Checkbox";
 import FullTooltip from "@components/FullTooltip";
 import DataTableHeader from "@components/table/DataTableHeader";
 import { DataTableMultiSelectPopup } from "@components/table/DataTableMultiSelectPopup";
-import { InstallNetBirdButton } from "@components/ui/InstallNetBirdButton";
+import { InstallCosmosButton } from "@components/ui/InstallCosmosButton";
 import NoResults from "@components/ui/NoResults";
 import { ColumnDef, RowSelectionState } from "@tanstack/react-table";
 import { MinusCircle, PlusCircle } from "lucide-react";
@@ -127,13 +127,13 @@ export const GroupPeersSection = ({ peers, isLoading = true }: Props) => {
             className={"py-4"}
             title={"This group has no assigned peers yet"}
             description={
-              "Install NetBird and assign existing peers to this group to see them listed here."
+              "Install Cosmos and assign existing peers to this group to see them listed here."
             }
             icon={<PeerIcon size={20} className={"fill-nb-gray-300"} />}
           >
             {permission?.peers?.update && permission?.groups?.update && (
               <div className={"flex items-center justify-center mt-4 gap-4"}>
-                <InstallNetBirdButton />
+                <InstallCosmosButton />
                 <Button
                   variant={"primary"}
                   size={"sm"}
@@ -197,7 +197,7 @@ export const GroupPeersSection = ({ peers, isLoading = true }: Props) => {
             {peers && peers?.length > 0 && (
               <div className={"ml-auto flex items-center"}>
                 <div className={"flex items-center justify-center gap-4"}>
-                  <InstallNetBirdButton />
+                  <InstallCosmosButton />
                   {permission?.peers?.update && permission?.groups?.update && (
                     <Button
                       variant={"primary"}

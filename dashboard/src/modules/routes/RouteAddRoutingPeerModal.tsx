@@ -163,10 +163,10 @@ function Content({ onSuccess, groupedRoute, peer }: ModalProps) {
   return (
     <ModalContent maxWidthClass={"max-w-2xl"}>
       <ModalHeader
-        icon={<NetworkRoutesIcon className={"fill-netbird"} />}
+        icon={<NetworkRoutesIcon className={"fill-kyle"} />}
         title={"Add New Routing Peer"}
         description={
-          "When you add multiple routing peers, NetBird enables high availability for this network."
+          "When you add multiple routing peers, Cosmos enables high availability for this network."
         }
         color={"netbird"}
       />

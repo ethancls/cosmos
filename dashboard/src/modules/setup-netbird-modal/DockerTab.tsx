@@ -55,7 +55,7 @@ export default function DockerTab({
           )}
           <Steps.Step step={2 + offset}>
             <p>
-              Run NetBird container
+              Run Cosmos container
               {showSetupKeyInfo && <RoutingPeerSetupKeyInfo />}
             </p>
             <Code>
@@ -64,7 +64,7 @@ export default function DockerTab({
               <Code.Line>
                 {" "}
                 -e NB_SETUP_KEY=
-                <span className={"text-netbird"}>
+                <span className={"text-kyle"}>
                   {setupKey ?? setupKeyPlaceholder ?? "SETUP_KEY"}
                 </span>{" "}
                 \
@@ -74,7 +74,7 @@ export default function DockerTab({
                 <Code.Line>
                   {" "}
                   -e NB_HOSTNAME=
-                  <span className={"text-netbird"}>{`'${hostname}'`}</span> \
+                  <span className={"text-kyle"}>{`'${hostname}'`}</span> \
                 </Code.Line>
               )}
 
@@ -83,7 +83,7 @@ export default function DockerTab({
                 <Code.Line>
                   {" "}
                   -e NB_MANAGEMENT_URL=
-                  <span className={"text-netbird"}>{GRPC_API_ORIGIN}</span> \
+                  <span className={"text-kyle"}>{GRPC_API_ORIGIN}</span> \
                 </Code.Line>
               )}
               <Code.Line> netbirdio/netbird:latest</Code.Line>
@@ -96,7 +96,7 @@ export default function DockerTab({
               passHref={true}
               target={"_blank"}
             >
-              Running NetBird in Docker
+              Running Cosmos in Docker
             </InlineLink>
           </Steps.Step>
         </Steps>

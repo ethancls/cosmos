@@ -6,7 +6,7 @@ import { LogIn } from "lucide-react";
 import { useRouter } from "next/navigation";
 import * as React from "react";
 import { useEffect } from "react";
-import NetBirdIcon from "@/assets/icons/NetBirdIcon";
+import CosmosIcon from "@/assets/icons/CosmosIcon";
 
 const config = loadConfig();
 
@@ -29,7 +29,7 @@ export const SessionLost = () => {
           "bg-nb-gray-930 mb-3 border border-nb-gray-900 h-10 w-10 rounded-md flex items-center justify-center "
         }
       >
-        <NetBirdIcon size={20} />
+        <CosmosIcon size={20} />
       </div>
       <h1>Session Expired</h1>
       <Paragraph className={"text-center"}>

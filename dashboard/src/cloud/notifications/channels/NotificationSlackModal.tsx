@@ -89,7 +89,7 @@ function SlackModalContent({ onSave }: Readonly<ModalContentProps>) {
             key={index}
             className={cn(
               "w-8 h-1 rounded-full bg-nb-gray-800",
-              step >= index + 1 && "bg-netbird",
+              step >= index + 1 && "bg-kyle",
             )}
           />
         ))}
@@ -97,9 +97,9 @@ function SlackModalContent({ onSave }: Readonly<ModalContentProps>) {
 
       <IntegrationModalHeader
         image={slackImage}
-        title={"Connect NetBird with Slack"}
+        title={"Connect Cosmos with Slack"}
         description={
-          "Receive NetBird notification events directly in your Slack channel via an Incoming Webhook."
+          "Receive Cosmos notification events directly in your Slack channel via an Incoming Webhook."
         }
       />
 
@@ -128,7 +128,7 @@ function SlackModalContent({ onSave }: Readonly<ModalContentProps>) {
             <Steps.Step step={2} line={false}>
               <p className={"font-normal"}>
                 Set the app name to{" "}
-                <Mark copy={true}>NetBird Notifications</Mark> and select your
+                <Mark copy={true}>Cosmos Notifications</Mark> and select your
                 workspace. After that click <Mark>Create App</Mark>
               </p>
             </Steps.Step>

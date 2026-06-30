@@ -131,7 +131,7 @@ function upstreamUrlHelpText(providerId: AIProviderId): string {
     case "openrouter":
       return "OpenRouter uses a fixed endpoint, openrouter.ai/api/v1; apps choose the upstream provider via the model prefix, e.g. anthropic/claude-* or openai/gpt-*.";
     default:
-      return "Where NetBird forwards the traffic.";
+      return "Where Cosmos forwards the traffic.";
   }
 }
 
@@ -239,7 +239,7 @@ export default function AIProviderModal({
     catalog?.identity_injection?.json_metadata?.header ?? "";
 
   // showMappings reveals the Mappings tab for provider types whose
-  // downstream gateway keys identity off NetBird-stamped headers.
+  // downstream gateway keys identity off Cosmos-stamped headers.
   // For non-customizable shapes (LiteLLM, Portkey) the mapping is
   // fixed in v1 — the tab is read-only. For customizable shapes
   // (Bifrost) the operator picks the wire header names, so the tab
@@ -480,7 +480,7 @@ export default function AIProviderModal({
     <Modal open={open} onOpenChange={(o) => (o ? null : handleClose())}>
       <ModalContent maxWidthClass={"max-w-2xl"}>
         <ModalHeader
-          icon={<AgentNetworkIcon className={"fill-netbird"} size={18} />}
+          icon={<AgentNetworkIcon className={"fill-kyle"} size={18} />}
           title={isEdit ? "Edit Provider" : "Connect Provider"}
           description={
             isEdit
@@ -522,7 +522,7 @@ export default function AIProviderModal({
                   icon={
                     <AlertCircleIcon
                       size={14}
-                      className={"shrink-0 relative top-[3px] text-netbird"}
+                      className={"shrink-0 relative top-[3px] text-kyle"}
                     />
                   }
                 >
@@ -537,7 +537,7 @@ export default function AIProviderModal({
 
               <FormRow
                 label={"Provider"}
-                helpText={"API provider to expose through NetBird."}
+                helpText={"API provider to expose through Cosmos."}
               >
                 <SelectDropdown
                   value={providerId}
@@ -613,7 +613,7 @@ export default function AIProviderModal({
                         content={
                           <>
                             Upload the Vertex AI service account JSON key.
-                            NetBird base64-encodes it and prefixes it with{" "}
+                            Cosmos base64-encodes it and prefixes it with{" "}
                             <code className={"text-nb-gray-200"}>keyfile::</code>{" "}
                             before injecting it on every upstream request, so
                             agents never see the key.
@@ -658,7 +658,7 @@ export default function AIProviderModal({
                       <HelpTooltip
                         content={
                           <>
-                            NetBird injects it as{" "}
+                            Cosmos injects it as{" "}
                             <code className={"text-nb-gray-200"}>
                               {catalog?.auth_header_template}
                             </code>{" "}
@@ -839,7 +839,7 @@ export default function AIProviderModal({
 
                 <FormRow
                   label={"Groups header"}
-                  helpText={"Wire header name receiving the caller's NetBird groups as a comma-separated list. Leave empty to skip."}
+                  helpText={"Wire header name receiving the caller's Cosmos groups as a comma-separated list. Leave empty to skip."}
                 >
                   <Input
                     value={identityHeaderGroups}
@@ -857,7 +857,7 @@ export default function AIProviderModal({
                 <div>
                   <Label>Identity Metadata</Label>
                   <HelpText className={"mb-0"}>
-                    NetBird stamps a JSON object onto the{" "}
+                    Cosmos stamps a JSON object onto the{" "}
                     <code
                       className={
                         "text-xs font-mono text-nb-gray-100 bg-nb-gray-900/60 rounded px-1.5 py-0.5"
@@ -888,7 +888,7 @@ export default function AIProviderModal({
 
                 <FormRow
                   label={"Groups key"}
-                  helpText={"JSON key receiving the caller's NetBird groups as a comma-separated string. Leave empty to skip."}
+                  helpText={"JSON key receiving the caller's Cosmos groups as a comma-separated string. Leave empty to skip."}
                 >
                   <Input
                     value={identityHeaderGroups}
@@ -906,7 +906,7 @@ export default function AIProviderModal({
                 <div>
                   <Label>Identity Metadata</Label>
                   <HelpText className={"mb-0"}>
-                    NetBird stamps the{" "}
+                    Cosmos stamps the{" "}
                     <code
                       className={
                         "text-xs font-mono text-nb-gray-100 bg-nb-gray-900/60 rounded px-1.5 py-0.5"
@@ -941,7 +941,7 @@ export default function AIProviderModal({
                 <div>
                   <Label>Identity Headers</Label>
                   <HelpText className={"mb-0"}>
-                    NetBird stamps the user identity and group list onto{" "}
+                    Cosmos stamps the user identity and group list onto{" "}
                     <code
                       className={
                         "text-xs font-mono text-nb-gray-100 bg-nb-gray-900/60 rounded px-1.5 py-0.5"
@@ -1013,7 +1013,7 @@ export default function AIProviderModal({
                 <div>
                   <Label>Identity Attribution</Label>
                   <HelpText className={"mb-0"}>
-                    NetBird stamps the caller&apos;s user identity onto the
+                    Cosmos stamps the caller&apos;s user identity onto the
                     request body&apos;s{" "}
                     <code
                       className={
@@ -1043,9 +1043,9 @@ export default function AIProviderModal({
                 <HelpText className={"mb-0"}>
                   <strong>No groups dimension.</strong> OpenRouter does not
                   document a per-request tag, label, or team field — only
-                  per-user identity. NetBird&apos;s group memberships are
+                  per-user identity. Cosmos&apos;s group memberships are
                   not propagated to OpenRouter; if you need per-group
-                  attribution, query NetBird&apos;s own access log instead
+                  attribution, query Cosmos&apos;s own access log instead
                   of OpenRouter&apos;s analytics.
                 </HelpText>
                 <HelpText className={"mb-0"}>

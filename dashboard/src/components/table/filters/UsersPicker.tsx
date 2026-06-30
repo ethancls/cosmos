@@ -32,7 +32,7 @@ const ALL_USERS_ID = "all-users";
 
 const searchPredicate = (item: UserOption, query: string) => {
   const q = query.toLowerCase();
-  if (item.email === "NetBird" && "NetBird System".toLowerCase().includes(q))
+  if (item.email === "Cosmos" && "Cosmos System".toLowerCase().includes(q))
     return true;
   if (item.name?.toLowerCase().includes(q)) return true;
   if (item.email?.toLowerCase().includes(q)) return true;
@@ -103,7 +103,7 @@ export function UsersPicker({ value, onChange, close, options }: Props) {
             close();
           }}
           renderItem={(user) => {
-            const isSystemUser = user.email === "NetBird";
+            const isSystemUser = user.email === "Cosmos";
             const isSelected =
               value === user.email ||
               (user.id === ALL_USERS_ID && !value);
@@ -141,7 +141,7 @@ export function UsersPicker({ value, onChange, close, options }: Props) {
                     }
                   >
                     <TextWithTooltip
-                      text={user?.email || "NetBird"}
+                      text={user?.email || "Cosmos"}
                       maxChars={22}
                     />
                   </span>

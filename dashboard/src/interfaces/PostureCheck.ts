@@ -6,7 +6,7 @@ export interface PostureCheck {
   name: string;
   description?: string;
   checks: {
-    nb_version_check?: NetBirdVersionCheck;
+    nb_version_check?: CosmosVersionCheck;
     os_version_check?: OperatingSystemVersionCheck;
     geo_location_check?: GeoLocationCheck;
     peer_network_range_check?: PeerNetworkRangeCheck;
@@ -16,7 +16,7 @@ export interface PostureCheck {
   active?: boolean;
 }
 
-export interface NetBirdVersionCheck {
+export interface CosmosVersionCheck {
   min_version: string;
 }
 

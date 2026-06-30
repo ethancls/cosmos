@@ -7,7 +7,7 @@ import { VerticalTabs } from "@components/VerticalTabs";
 import { usePortalElement } from "@hooks/usePortalElement";
 import * as Tabs from "@radix-ui/react-tabs";
 import useFetchApi from "@utils/api";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 import { ReceiptTextIcon } from "lucide-react";
 import * as React from "react";
 import { Suspense } from "react";
@@ -35,7 +35,7 @@ export const InvoicesTabTrigger = () => {
 
   return (
     permission?.billing?.update &&
-    isNetBirdCloud() && (
+    isCosmosCloud() && (
       <VerticalTabs.Trigger
         value="invoices"
         data-testid="settings-tab-invoices"

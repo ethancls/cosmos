@@ -67,7 +67,7 @@ export interface ServiceTargetOptions {
   proxy_protocol?: boolean;
   /**
    * When true, the proxy dials this target via the host's network stack
-   * instead of through its embedded NetBird client. Use for upstreams
+   * instead of through its embedded Cosmos client. Use for upstreams
    * reachable without WireGuard (public APIs, LAN services, localhost
    * sidecars).
    */

@@ -3,7 +3,7 @@ import InlineLink from "@components/InlineLink";
 import Paragraph from "@components/Paragraph";
 import { SkeletonIntegration } from "@components/skeletons/SkeletonIntegration";
 import * as Tabs from "@radix-ui/react-tabs";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 import { ExternalLinkIcon, FingerprintIcon } from "lucide-react";
 import React from "react";
 import IntegrationIcon from "@/assets/icons/IntegrationIcon";
@@ -43,7 +43,7 @@ export default function IdentityProviderTab() {
         <h1>Identity Provider Sync</h1>
         <Paragraph>
           Configure your preferred Identity Provider (IdP) to synchronize your
-          users and groups to NetBird.
+          users and groups to Cosmos.
         </Paragraph>
         <Paragraph>
           <InlineLink
@@ -84,12 +84,12 @@ export default function IdentityProviderTab() {
               </>
             )}
           </div>
-            { isNetBirdCloud() && <Callout variant={"warning"} className={"max-w-lg mt-6"}>
+            { isCosmosCloud() && <Callout variant={"warning"} className={"max-w-lg mt-6"}>
             Looking to enable a custom IdP like Keycloak? <br />
             Please contact us at{" "}
             <InlineLink
               href={"mailto:support@netbird.io"}
-              className={"inline !text-netbird-500 font-medium"}
+              className={"inline !text-kyle-500 font-medium"}
             >
               {" "}
               support@netbird.io

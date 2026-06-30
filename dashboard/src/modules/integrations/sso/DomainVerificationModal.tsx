@@ -96,7 +96,7 @@ export const DomainVerificationModal = ({
 
           <Paragraph className={"text-sm mt-4"}>
             {
-              "Note: DNS changes may take some time to apply. If NetBird doesn't find the record immediately, please wait a day and try again."
+              "Note: DNS changes may take some time to apply. If Cosmos doesn't find the record immediately, please wait a day and try again."
             }
           </Paragraph>
 

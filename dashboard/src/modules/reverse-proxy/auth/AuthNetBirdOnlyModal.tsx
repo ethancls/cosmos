@@ -18,7 +18,7 @@ type Props = {
   onRemove: () => void;
 };
 
-export default function AuthNetBirdOnlyModal({
+export default function AuthCosmosOnlyModal({
   open,
   onOpenChange,
   currentGroups,
@@ -45,7 +45,7 @@ export default function AuthNetBirdOnlyModal({
     <Modal open={open} onOpenChange={onOpenChange}>
       <ModalContent maxWidthClass="max-w-xl">
         <ModalHeader
-          title="NetBird-Only Access"
+          title="Cosmos-Only Access"
           description="Reachable from peers in selected groups only."
         />
 

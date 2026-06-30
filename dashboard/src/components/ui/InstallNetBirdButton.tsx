@@ -4,7 +4,7 @@ import { DownloadIcon } from "lucide-react";
 import React, { useState } from "react";
 import SetupModal from "@/modules/setup-netbird-modal/SetupModal";
 
-export function InstallNetBirdButton() {
+export function InstallCosmosButton() {
   const [installModal, setInstallModal] = useState(false);
 
   return (
@@ -12,7 +12,7 @@ export function InstallNetBirdButton() {
       <ModalTrigger asChild>
         <Button variant={"secondary"} size={"sm"}>
           <DownloadIcon size={16} />
-          Install NetBird
+          Install Cosmos
         </Button>
       </ModalTrigger>
       <SetupModal />

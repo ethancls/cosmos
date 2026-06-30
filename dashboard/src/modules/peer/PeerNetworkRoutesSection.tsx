@@ -26,7 +26,7 @@ export const PeerNetworkRoutesSection = ({ peer }: Props) => {
         <div className={"flex justify-between items-center mb-5"}>
           <div>
             <Paragraph>
-              Access other networks without installing NetBird on every
+              Access other networks without installing Cosmos on every
               resource.{" "}
               <InlineLink
                 href={

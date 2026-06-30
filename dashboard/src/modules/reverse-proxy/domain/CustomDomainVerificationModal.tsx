@@ -22,7 +22,7 @@ import {
 } from "@/interfaces/ReverseProxy";
 import Paragraph from "@components/Paragraph";
 import InlineLink from "@components/InlineLink";
-import { isNetBirdCloud } from "@/utils/netbird";
+import { isCosmosCloud } from "@/utils/netbird";
 
 type Props = {
   open: boolean;
@@ -80,7 +80,7 @@ export const CustomDomainVerificationModal = ({
           </Steps>
           <div className={"flex flex-col gap-6"}>
             {!cnameTarget ? (
-              isNetBirdCloud() ? (
+              isCosmosCloud() ? (
                 <Callout variant={"warning"}>
                   No proxy clusters are currently connected. Please try again in
                   a few minutes. If the issue persists, check{" "}
@@ -88,7 +88,7 @@ export const CustomDomainVerificationModal = ({
                     href={"https://status.netbird.io/"}
                     target={"_blank"}
                   >
-                    NetBird Status
+                    Cosmos Status
                   </InlineLink>{" "}
                   or reach out to{"  "}
                   <InlineLink href={"mailto:support@netbird.io"}>
@@ -140,7 +140,7 @@ export const CustomDomainVerificationModal = ({
                 )}
 
                 <Callout variant={"warning"}>
-                  DNS changes may take some time to propagate. If NetBird does
+                  DNS changes may take some time to propagate. If Cosmos does
                   not find the record immediately, please wait up to 24 hours
                   and try again.
                 </Callout>

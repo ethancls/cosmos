@@ -1,6 +1,6 @@
 import { useApiCall } from "@utils/api";
 import loadConfig from "@utils/config";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { useSWRConfig } from "swr";
@@ -15,7 +15,7 @@ import type { Group } from "@/interfaces/Group";
 import { PlanTier } from "@/interfaces/Subscription";
 import { OnboardingProvider } from "@/modules/onboarding/OnboardingProvider";
 
-export const NetBirdCloudProvider = () => {
+export const CosmosCloudProvider = () => {
   const { mutate } = useSWRConfig();
   const { subscription } = useBilling();
   const [awsUserId, setAwsUserId] = useState<string | undefined>();
@@ -60,7 +60,7 @@ export const NetBirdCloudProvider = () => {
       )}
 
       {/* Hide onboarding while users selects a plan */}
-      {!showAWSPlanSelection && isNetBirdCloud() && (
+      {!showAWSPlanSelection && isCosmosCloud() && (
         <OnboardingProvider
           onSurveySubmit={async (data) => {
             const { fields, hsId, gaId, accountId, userId } = data;

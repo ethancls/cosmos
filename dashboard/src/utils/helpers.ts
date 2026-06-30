@@ -46,7 +46,7 @@ export const generateColorFromUser = (user?: {
   name?: string;
   email?: string;
 }) => {
-  if (user?.email === "NetBird") return "#9c9c9c";
+  if (user?.email === "Cosmos") return "#9c9c9c";
   return user?.name
     ? chroma(generateColorFromString(user?.name || user?.id || "System User"))
         .saturate(2)

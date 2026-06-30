@@ -180,7 +180,7 @@ export function SetupContent({ onSuccess, onClose }: ModalProps) {
               key={index}
               className={cn(
                 "w-8 h-1 rounded-full bg-nb-gray-800",
-                step >= index + 1 && "bg-netbird",
+                step >= index + 1 && "bg-kyle",
               )}
             />
           ))}
@@ -189,9 +189,9 @@ export function SetupContent({ onSuccess, onClose }: ModalProps) {
 
       <IntegrationModalHeader
         image={integrationImage}
-        title={"Connect NetBird with Jumpcloud"}
+        title={"Connect Cosmos with Jumpcloud"}
         description={
-          "Start syncing your users and groups from Jumpcloud to NetBird. Follow the steps below to get started."
+          "Start syncing your users and groups from Jumpcloud to Cosmos. Follow the steps below to get started."
         }
       />
 
@@ -344,7 +344,7 @@ export function SetupContent({ onSuccess, onClose }: ModalProps) {
             <Steps.Step step={2}>
               <p className={"font-normal"}>
                 Go to <Mark>{"SSO Applications"}</Mark> and select your{" "}
-                <Mark>NetBird</Mark> application, and then select{" "}
+                <Mark>Cosmos</Mark> application, and then select{" "}
                 <Mark>Identity Management</Mark> tab.
               </p>
             </Steps.Step>

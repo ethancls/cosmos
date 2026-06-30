@@ -26,12 +26,12 @@ export const IntegrationModalHeader = ({
         >
           <Image
             src={netBirdLogo}
-            alt={"NetBird"}
+            alt={"Cosmos"}
             className={"rounded-[4px]"}
           />
         </div>
         <div>
-          <ArrowRightLeft size={24} className={"text-netbird"} />
+          <ArrowRightLeft size={24} className={"text-kyle"} />
         </div>
         <div
           className={

@@ -187,7 +187,7 @@ export function AgentConnectTabs({
               `model_provider = "netbird"`,
               ``,
               `[model_providers.netbird]`,
-              `name = "NetBird"`,
+              `name = "Cosmos"`,
               `base_url = "${openaiBase}"`,
               `wire_api = "responses"`,
             ]}
@@ -208,7 +208,7 @@ export function AgentConnectTabs({
               ``,
               `client.chat.completions.create(`,
               `    model="gpt-5.5",`,
-              `    messages=[{"role": "user", "content": "What is NetBird Agent Network?"}],`,
+              `    messages=[{"role": "user", "content": "What is Cosmos Agent Network?"}],`,
               `)`,
             ]}
           />
@@ -226,11 +226,11 @@ export function AgentConnectTabs({
               `  -d '{`,
               `    "model": "gpt-5.5",`,
               `    "messages": [`,
-              `      { "role": "user", "content": "What is NetBird Agent Network?" }`,
+              `      { "role": "user", "content": "What is Cosmos Agent Network?" }`,
               `    ]`,
               `  }'`,
             ]}
-            copyText={`curl ${openaiBase}/chat/completions -H "Content-Type: application/json" -d '{"model":"gpt-5.5","messages":[{"role":"user","content":"What is NetBird Agent Network?"}]}'`}
+            copyText={`curl ${openaiBase}/chat/completions -H "Content-Type: application/json" -d '{"model":"gpt-5.5","messages":[{"role":"user","content":"What is Cosmos Agent Network?"}]}'`}
           />
         </div>
       </TabsContent>
@@ -252,8 +252,8 @@ export default function AgentConnectModal({
             <h2 className={"text-lg my-0 leading-[1.5]"}>Configure Your Agent</h2>
           </div>
           <Paragraph className={"text-sm mt-3"}>
-            Point your agent at the NetBird endpoint as its base URL. No provider
-            API key is needed on the client. NetBird authorizes the request
+            Point your agent at the Cosmos endpoint as its base URL. No provider
+            API key is needed on the client. Cosmos authorizes the request
             against your policies and injects the upstream key.
           </Paragraph>
         </div>

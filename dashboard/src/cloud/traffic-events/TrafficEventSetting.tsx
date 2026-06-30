@@ -84,7 +84,7 @@ export const TrafficEventSetting = ({ account }: Props) => {
       choice = await confirm({
         title: "Enable Traffic Reporting (Kernel)?",
         description:
-          "Note: Enabling this setting will lead to a higher CPU usage than usual on the NetBird client.",
+          "Note: Enabling this setting will lead to a higher CPU usage than usual on the Cosmos client.",
         confirmText: "Enable",
         cancelText: "Cancel",
         type: "default",
@@ -157,7 +157,7 @@ export const TrafficEventSetting = ({ account }: Props) => {
               }
               helpText={
                 <>
-                  Enable traffic events for all peers. This requires NetBird
+                  Enable traffic events for all peers. This requires Cosmos
                   client v0.39 or higher.
                 </>
               }

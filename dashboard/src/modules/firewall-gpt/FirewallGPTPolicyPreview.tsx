@@ -215,7 +215,7 @@ export const FirewallGptPolicyPreview = ({
         } as Policy;
 
         notify({
-          title: "NetBird's Smart Firewall",
+          title: "Cosmos Smart Firewall",
           preventSuccessToast: true,
           description: `Policy ${policyObj?.name} was successfully created.`,
           promise: createPolicyRequest(policyObj)
@@ -263,7 +263,7 @@ export const FirewallGptPolicyPreview = ({
       >
         <div
           className={
-            "text-xs text-netbird/90 bg-netbird/10 border border-netbird/30 py-3 px-4 w-full rounded-md"
+            "text-xs text-kyle/90 bg-kyle/10 border border-kyle/30 py-3 px-4 w-full rounded-md"
           }
         >
           <IconInfoCircle
@@ -309,7 +309,7 @@ export const FirewallGptPolicyPreview = ({
                 width: "0%",
               }}
               className={
-                "absolute w-full h-[2px] bg-netbird/100 rounded-full left-0"
+                "absolute w-full h-[2px] bg-kyle/100 rounded-full left-0"
               }
             ></motion.div>
             <motion.div

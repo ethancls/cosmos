@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import * as React from "react";
 import { useMemo } from "react";
 import { AccountMFA } from "@/cloud/mfa/AccountMFASettings";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 
 const config = loadConfig();
 
@@ -29,7 +29,7 @@ export const AccountMfaCard = () => {
   const router = useRouter();
 
   return (
-    isNetBirdCloud() && (
+    isCosmosCloud() && (
       <button
         className={cn(
           "border cursor-pointer border-nb-gray-900/50 bg-nb-gray-900/30 hover:bg-nb-gray-900/50 py-3 pl-3 pr-5 rounded-lg transition-all min-w-[432px] max-w-[440px]",
@@ -65,7 +65,7 @@ export const AccountMfaCard = () => {
             </div>
 
             <p className={"text-xs font-light !text-nb-gray-300 "}>
-              Enable NetBird MFA if not configured in your IdP
+              Enable Cosmos MFA if not configured in your IdP
             </p>
           </div>
         </div>

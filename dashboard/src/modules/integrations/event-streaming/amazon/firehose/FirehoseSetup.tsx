@@ -110,7 +110,7 @@ export function SetupContent({ onSuccess }: Readonly<ModalProps>) {
   const connect = async () => {
     notify({
       title: "Amazon Data Firehose Integration",
-      description: `Amazon Data Firehose was successfully connected to NetBird.`,
+      description: `Amazon Data Firehose was successfully connected to Cosmos.`,
       promise: integrationRequest
         .post({
           platform: "firehose",
@@ -142,9 +142,9 @@ export function SetupContent({ onSuccess }: Readonly<ModalProps>) {
 
       <IntegrationModalHeader
         image={firehoseLogo}
-        title={"Connect NetBird with Amazon Data Firehose"}
+        title={"Connect Cosmos with Amazon Data Firehose"}
         description={
-          "Start streaming your NetBird audit & traffic events to Amazon Data Firehose. Follow the steps below to get started."
+          "Start streaming your Cosmos audit & traffic events to Amazon Data Firehose. Follow the steps below to get started."
         }
       />
 
@@ -234,7 +234,7 @@ export function SetupContent({ onSuccess }: Readonly<ModalProps>) {
                   <TooltipTrigger>
                     <InfoIcon
                       size={16}
-                      className={"inline-block ml-1 text-netbird"}
+                      className={"inline-block ml-1 text-kyle"}
                     />
                   </TooltipTrigger>
                   <TooltipContent>

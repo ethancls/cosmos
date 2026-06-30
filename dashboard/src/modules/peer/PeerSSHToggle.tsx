@@ -83,9 +83,9 @@ export const PeerSSHToggle = () => {
       title: `Disable SSH Access?`,
       description: (
         <div>
-          Starting from NetBird v0.61.0, once SSH access is disabled, you cannot
+          Starting from Cosmos v0.61.0, once SSH access is disabled, you cannot
           re-enable it again from the dashboard. You&apos;ll need to create an
-          explicit access control policy and update your NetBird client to
+          explicit access control policy and update your Cosmos client to
           restore SSH functionality.{" "}
           <InlineLink
             href={"https://docs.netbird.io/manage/peers/ssh"}
@@ -159,13 +159,13 @@ export const PeerSSHToggle = () => {
             icon={
               <AlertCircleIcon
                 size={14}
-                className={"shrink-0 relative top-[3px] text-netbird"}
+                className={"shrink-0 relative top-[3px] text-kyle"}
               />
             }
             className="my-3"
           >
             You have SSH access configured but your client runs on an older
-            NetBird version. Please update your NetBird client to v.0.61.0+ in
+            Cosmos version. Please update your Cosmos client to v.0.61.0+ in
             order to allow SSH connections.
           </Callout>
         )}
@@ -176,7 +176,7 @@ export const PeerSSHToggle = () => {
           icon={
             <AlertCircleIcon
               size={14}
-              className={"shrink-0 relative top-[3px] text-netbird"}
+              className={"shrink-0 relative top-[3px] text-kyle"}
             />
           }
           className="my-3"
@@ -193,12 +193,12 @@ export const PeerSSHToggle = () => {
           icon={
             <AlertCircleIcon
               size={14}
-              className={"shrink-0 relative top-[3px] text-netbird"}
+              className={"shrink-0 relative top-[3px] text-kyle"}
             />
           }
           className="my-3"
         >
-          Your SSH server is enabled, but starting from NetBird v0.61.0, SSH
+          Your SSH server is enabled, but starting from Cosmos v0.61.0, SSH
           requires an explicit access control policy. Please create an SSH
           access control policy in order to allow SSH connections.
         </Callout>

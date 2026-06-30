@@ -233,7 +233,7 @@ export function AccessControlModalContent({
   return (
     <ModalContent maxWidthClass={"max-w-3xl"}>
       <ModalHeader
-        icon={<AccessControlIcon className={"fill-netbird"} />}
+        icon={<AccessControlIcon className={"fill-kyle"} />}
         title={
           policy
             ? "Update Access Control Policy"
@@ -256,7 +256,7 @@ export function AccessControlModalContent({
             <Text
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-netbird transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
               }
             />
             Name & Description
@@ -308,7 +308,7 @@ export function AccessControlModalContent({
                         side={"right"}
                         content={
                           <>
-                            Select NetBird SSH for SSH-specific policies with
+                            Select Cosmos SSH for SSH-specific policies with
                             fine-grained access control, or use TCP with port 22
                             for basic network-level SSH access
                           </>
@@ -316,7 +316,7 @@ export function AccessControlModalContent({
                       />
                     }
                   >
-                    NetBird SSH
+                    Cosmos SSH
                   </SelectItem>
                 </SelectContent>
               </Select>
@@ -413,7 +413,7 @@ export function AccessControlModalContent({
                   icon={
                     <AlertCircleIcon
                       size={14}
-                      className={"shrink-0 relative top-[3px] text-netbird"}
+                      className={"shrink-0 relative top-[3px] text-kyle"}
                     />
                   }
                   className="mb-4"
@@ -431,7 +431,7 @@ export function AccessControlModalContent({
                     icon={
                       <AlertCircleIcon
                         size={14}
-                        className={"shrink-0 relative top-[3px] text-netbird"}
+                        className={"shrink-0 relative top-[3px] text-kyle"}
                       />
                     }
                     className="mb-6"

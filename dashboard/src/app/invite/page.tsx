@@ -16,7 +16,7 @@ import {
 import dayjs from "dayjs";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useMemo, useState } from "react";
-import NetBirdIcon from "@/assets/icons/NetBirdIcon";
+import CosmosIcon from "@/assets/icons/CosmosIcon";
 import { UserInviteInfo } from "@/interfaces/User";
 
 export default function InviteAcceptPage() {
@@ -217,12 +217,12 @@ function InviteAcceptContent() {
     <div className="min-h-screen flex items-center justify-center bg-nb-gray-950 p-4">
       <div className="max-w-md w-full">
         <div className="mb-8 flex justify-center">
-          <NetBirdIcon size={48} />
+          <CosmosIcon size={48} />
         </div>
 
         <div className="text-center mb-8">
           <h1 className="text-2xl font-semibold text-white mb-2">
-            Welcome to NetBird
+            Welcome to Cosmos
           </h1>
           <p className="dark:text-nb-gray-400 text-nb-gray-500 text-base">
             You&apos;ve been invited by <span className="dark:text-white text-nb-gray-900 font-medium">{inviteInfo.invited_by}</span> to join the network. Set your password to complete your account setup.

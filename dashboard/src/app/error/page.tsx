@@ -7,7 +7,7 @@ import loadConfig from "@utils/config";
 import { ArrowRightIcon, RefreshCw } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import NetBirdIcon from "@/assets/icons/NetBirdIcon";
+import CosmosIcon from "@/assets/icons/CosmosIcon";
 
 const config = loadConfig();
 
@@ -65,7 +65,7 @@ export default function ErrorPage() {
 
   const getDescription = () => {
     if (isBlockedUser) {
-      return "Your access has been blocked by the NetBird account administrator, possibly due to new user approval requirements or security policies. Please contact your administrator to regain access.";
+      return "Your access has been blocked by the Cosmos account administrator, possibly due to new user approval requirements or security policies. Please contact your administrator to regain access.";
     }
     if (isPendingApproval) {
       return "Your account is pending approval from an administrator. Please wait for approval before accessing the dashboard.";
@@ -76,7 +76,7 @@ export default function ErrorPage() {
   return (
     <div className="flex items-center justify-center flex-col h-screen max-w-xl mx-auto">
       <div className="bg-nb-gray-930 mb-3 border border-nb-gray-900 h-12 w-12 rounded-md flex items-center justify-center">
-        <NetBirdIcon size={23} />
+        <CosmosIcon size={23} />
       </div>
 
       <h1 className="text-center mt-2">{getTitle()}</h1>
@@ -87,7 +87,7 @@ export default function ErrorPage() {
 
       {error && (
         <div className="bg-nb-gray-930 border border-nb-gray-800 rounded-md p-4 mt-4 max-w-md font-mono mb-2">
-          <div className="text-center text-sm text-netbird">
+          <div className="text-center text-sm text-kyle">
             <div>response_message: {error.message}</div>
           </div>
         </div>

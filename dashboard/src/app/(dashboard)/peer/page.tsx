@@ -55,7 +55,7 @@ import {
 } from "@/cloud/traffic-events/TrafficEventsPeerTabContent";
 import RoundedFlag from "@/assets/countries/RoundedFlag";
 import CircleIcon from "@/assets/icons/CircleIcon";
-import NetBirdIcon from "@/assets/icons/NetBirdIcon";
+import CosmosIcon from "@/assets/icons/CosmosIcon";
 import PeerIcon from "@/assets/icons/PeerIcon";
 import ReverseProxyIcon from "@/assets/icons/ReverseProxyIcon";
 import { useCountries } from "@/contexts/CountryProvider";
@@ -376,7 +376,7 @@ const PeerOverviewTabs = () => {
           <TabsTrigger value={"reverse-proxies"}>
             <ReverseProxyIcon
               size={16}
-              className="fill-nb-gray-400 group-data-[state=active]/trigger:fill-netbird"
+              className="fill-nb-gray-400 group-data-[state=active]/trigger:fill-kyle"
             />
             {singularize("Services", flatTargets.length)}
           </TabsTrigger>
@@ -416,7 +416,7 @@ const PeerOverviewTabs = () => {
             hideResourceColumn
             emptyTableTitle={"This peer has no services"}
             emptyTableDescription={
-              "Add your services to this peer and securely expose them through NetBird's reverse proxy"
+              "Add your services to this peer and securely expose them through Cosmos reverse proxy"
             }
           />
         </TabsContent>
@@ -501,7 +501,7 @@ function PeerInformationCard({ peer }: Readonly<{ peer: Peer }>) {
   const handleSaveIP = (newIP: string) => {
     notify({
       title: peer.name,
-      description: "NetBird Peer IP was successfully updated",
+      description: "Cosmos Peer IP was successfully updated",
       promise: update({ ip: newIP }).then(() => {
         mutate("/peers/" + peer.id);
         setShowEditIPModal(false);
@@ -513,7 +513,7 @@ function PeerInformationCard({ peer }: Readonly<{ peer: Peer }>) {
   const handleSaveIPv6 = (newIPv6: string) => {
     notify({
       title: peer.name,
-      description: "NetBird Peer IPv6 was successfully updated",
+      description: "Cosmos Peer IPv6 was successfully updated",
       promise: update({ ipv6: newIPv6 }).then(() => {
         mutate("/peers/" + peer.id);
         setShowEditIPv6Modal(false);
@@ -545,11 +545,11 @@ function PeerInformationCard({ peer }: Readonly<{ peer: Peer }>) {
           <Card.ListItem
             copy
             tooltip={false}
-            copyText={"NetBird IP Address"}
+            copyText={"Cosmos IP Address"}
             label={
               <>
                 <MapPin size={16} className={"shrink-0"} />
-                NetBird IP Address
+                Cosmos IP Address
               </>
             }
             valueToCopy={peer.ip}
@@ -566,11 +566,11 @@ function PeerInformationCard({ peer }: Readonly<{ peer: Peer }>) {
             <Card.ListItem
               copy
               tooltip={false}
-              copyText={"NetBird IPv6 Address"}
+              copyText={"Cosmos IPv6 Address"}
               label={
                 <>
                   <MapPin size={16} className={"shrink-0"} />
-                  NetBird IPv6 Address
+                  Cosmos IPv6 Address
                 </>
               }
               valueToCopy={peer.ipv6}
@@ -715,7 +715,7 @@ function PeerInformationCard({ peer }: Readonly<{ peer: Peer }>) {
           <Card.ListItem
             label={
               <>
-                <NetBirdIcon size={16} className={"shrink-0"} />
+                <CosmosIcon size={16} className={"shrink-0"} />
                 Agent Version
               </>
             }
@@ -726,7 +726,7 @@ function PeerInformationCard({ peer }: Readonly<{ peer: Peer }>) {
             <Card.ListItem
               label={
                 <>
-                  <NetBirdIcon size={16} className={"shrink-0"} />
+                  <CosmosIcon size={16} className={"shrink-0"} />
                   UI Version
                 </>
               }
@@ -794,7 +794,7 @@ function EditNameModal({ onSuccess, peer, initialName }: Readonly<ModalProps>) {
               If the domain name already exists, we add an increment number
               suffix to it.
             </HelpText>
-            <div className={"text-netbird text-sm break-all whitespace-normal"}>
+            <div className={"text-kyle text-sm break-all whitespace-normal"}>
               {domainNamePreview}
             </div>
           </Card>

@@ -12,7 +12,7 @@ import { LockIcon } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useMemo, useState } from "react";
 import { useSWRConfig } from "swr";
-import NetBirdIcon from "@/assets/icons/NetBirdIcon";
+import CosmosIcon from "@/assets/icons/CosmosIcon";
 import { useMSP } from "@/cloud/msp/contexts/MSPProvider";
 import { useLoggedInUser } from "@/contexts/UsersProvider";
 
@@ -58,7 +58,7 @@ export default function JoinMspPage() {
       .finally(() => setIsAccepting(false));
 
     notify({
-      title: `NetBird Managed Service Provider`,
+      title: `Cosmos Managed Service Provider`,
       description: `Successfully joined as an Managed Service Provider`,
       loadingMessage: `Processing your invitation...`,
       promise,
@@ -92,14 +92,14 @@ export default function JoinMspPage() {
               "bg-nb-gray-900 rounded-full h-11 w-11 flex items-center justify-center mb-2"
             }
           >
-            <NetBirdIcon size={24} className={"shrink-0"} />
+            <CosmosIcon size={24} className={"shrink-0"} />
           </div>
 
           <div className={"text-xl font-medium text-center max-w-xs mb-1"}>
-            NetBird invites you to join as an Managed Service Provider (MSP)
+            Cosmos invites you to join as an Managed Service Provider (MSP)
           </div>
           <div className={"text-sm text-nb-gray-300 text-center"}>
-            You will get access to the NetBird MSP portal where you can manage
+            You will get access to the Cosmos MSP portal where you can manage
             multiple customers and their networks from a single place.
           </div>
           {!isOwner && !isMSPAccount && (

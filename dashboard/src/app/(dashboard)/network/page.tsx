@@ -158,7 +158,7 @@ function NetworkOverview({ network }: Readonly<{ network: Network }>) {
                 <PeerIcon
                   size={12}
                   className={
-                    "fill-nb-gray-500 group-data-[state=active]/trigger:fill-netbird transition-all"
+                    "fill-nb-gray-500 group-data-[state=active]/trigger:fill-kyle transition-all"
                   }
                 />
                 {singularize("Routing Peers", network?.routing_peers_count)}
@@ -167,7 +167,7 @@ function NetworkOverview({ network }: Readonly<{ network: Network }>) {
                 <ReverseProxyIcon
                   size={16}
                   className={
-                    "fill-nb-gray-500 group-data-[state=active]/trigger:fill-netbird transition-all"
+                    "fill-nb-gray-500 group-data-[state=active]/trigger:fill-kyle transition-all"
                   }
                 />
                 {singularize("Services", services.length)}

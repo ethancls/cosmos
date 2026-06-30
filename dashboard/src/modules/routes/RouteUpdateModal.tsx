@@ -323,7 +323,7 @@ function RouteUpdateModalContent({ onSuccess, route, cell }: ModalProps) {
   return (
     <ModalContent maxWidthClass={"max-w-2xl"}>
       <ModalHeader
-        icon={<NetworkRoutesIcon className={"fill-netbird"} />}
+        icon={<NetworkRoutesIcon className={"fill-kyle"} />}
         title={"Update " + route.network_id}
         description={routeInfo}
         color={"netbird"}
@@ -347,7 +347,7 @@ function RouteUpdateModalContent({ onSuccess, route, cell }: ModalProps) {
             <RouteIcon
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-netbird transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
               }
             />
             Route
@@ -359,7 +359,7 @@ function RouteUpdateModalContent({ onSuccess, route, cell }: ModalProps) {
             <Text
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-netbird transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
               }
             />
             Description
@@ -368,7 +368,7 @@ function RouteUpdateModalContent({ onSuccess, route, cell }: ModalProps) {
             <Settings2
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-netbird transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
               }
             />
             Settings
@@ -470,7 +470,7 @@ function RouteUpdateModalContent({ onSuccess, route, cell }: ModalProps) {
                       Auto Apply Route
                     </>
                   }
-                  helpText={"Automatically apply this exit node to your distribution groups. This requires NetBird client v0.55.0 or higher."}
+                  helpText={"Automatically apply this exit node to your distribution groups. This requires Cosmos client v0.55.0 or higher."}
                 />
             )}
 

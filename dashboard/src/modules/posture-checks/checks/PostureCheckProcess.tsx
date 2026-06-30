@@ -198,7 +198,7 @@ const CheckContent = ({ value, onChange, disabled }: Props) => {
                         />
                       }
                       placeholder={
-                        "/Applications/NetBird.app/Contents/MacOS/netbird"
+                        "/Applications/Cosmos.app/Contents/MacOS/netbird"
                       }
                       value={p.mac_path}
                       error={
@@ -227,7 +227,7 @@ const CheckContent = ({ value, onChange, disabled }: Props) => {
                           )}
                         />
                       }
-                      placeholder={`C:\\ProgramData\\NetBird\\netbird.exe`}
+                      placeholder={`C:\\ProgramData\\Cosmos\\netbird.exe`}
                       value={p.windows_path}
                       errorTooltip={true}
                       errorTooltipPosition={"top-right"}

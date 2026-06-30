@@ -38,11 +38,11 @@ export const MSPAccountExistsModal = ({
               "text-sm w-full text-center text-white py-2 rounded-lg flex items-center justify-center gap-2"
             }
           >
-            <GlobeIcon size={16} className={"text-netbird"} />
+            <GlobeIcon size={16} className={"text-kyle"} />
             {tenant?.domain}
           </div>
           <div className={"text-xl font-medium text-center mb-1"}>
-            This NetBird account already <br />
+            This Cosmos account already <br />
             exists in our system
           </div>
           <div className={"text-sm text-nb-gray-300 text-center"}>

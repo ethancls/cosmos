@@ -6,7 +6,7 @@ import { notify } from "@components/Notification";
 import useFetchApi, { useApiCall } from "@utils/api";
 import loadConfig from "@utils/config";
 import { cn } from "@utils/helpers";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 import {
   ArrowUpRightIcon,
   ExternalLinkIcon,
@@ -31,7 +31,7 @@ type Props = {
 
 export const UserMfaListItem = ({ userId }: Props) => {
   const { permission } = usePermissions();
-  return permission.settings.update && isNetBirdCloud() ? (
+  return permission.settings.update && isCosmosCloud() ? (
     <ListItem userId={userId} />
   ) : null;
 };
@@ -68,13 +68,13 @@ const ListItem = ({ userId }: Props) => {
       label={
         <>
           <ShieldCheckIcon size={16} />
-          NetBird MFA
+          Cosmos MFA
           <FullTooltip
             variant={"lighter"}
             content={
               <div className={"text-xs max-w-xs"}>
-                NetBird MFA is primarily intended for users who log in with
-                email and password. You may not need NetBird MFA if your SSO
+                Cosmos MFA is primarily intended for users who log in with
+                email and password. You may not need Cosmos MFA if your SSO
                 provider (e.g., Google, Microsoft) already has MFA enabled.{" "}
                 <InlineLink
                   href={

@@ -117,7 +117,7 @@ export default function OidcSetupModal({
 
           <IntegrationModalHeader
             image={logo}
-            title={`Connect NetBird with ${name}`}
+            title={`Connect Cosmos with ${name}`}
             description={`Use ${name} as a Single Sign-On provider to authenticate users. Follow the steps below to get started.`}
           />
 
@@ -174,7 +174,7 @@ export default function OidcSetupModal({
                 <p className={"font-normal"}>
                   Enter your
                   <Mark>Primary E-Mail Domain</Mark> which will later be used to
-                  log in to NetBird.
+                  log in to Cosmos.
                 </p>
                 <Input
                   customPrefix={<GlobeIcon size={16} />}

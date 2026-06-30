@@ -154,11 +154,11 @@ export const PlanCard = ({
 
         {/* Plan Users & Machines */}
         <div className={"mt-4 text-sm flex-col gap-1 flex"}>
-          <div className={"flex gap-2 items-center text-netbird"}>
+          <div className={"flex gap-2 items-center text-kyle"}>
             <UsersIcon size={16} />
             <span className={"text-nb-gray-200"}> Unlimited Users</span>
           </div>
-          <div className={"flex gap-2 items-center text-netbird"}>
+          <div className={"flex gap-2 items-center text-kyle"}>
             <MonitorSmartphoneIcon size={16} />
             <span className={"text-nb-gray-200"}>
               {" "}
@@ -174,7 +174,7 @@ export const PlanCard = ({
                 key={index}
                 className="flex items-center gap-2 text-sm text-nb-gray-200"
               >
-                <Check size={16} className={"text-netbird shrink-0"} />
+                <Check size={16} className={"text-kyle shrink-0"} />
                 {feature}
               </li>
             ))}

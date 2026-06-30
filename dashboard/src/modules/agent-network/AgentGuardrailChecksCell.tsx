@@ -38,7 +38,7 @@ export default function AgentGuardrailChecksCell({
             >
               <div
                 className={
-                  "bg-gradient-to-tr from-netbird-200 to-netbird-100 h-8 w-8 rounded-full flex items-center justify-center relative z-[10] hover:scale-[1.1] transition-all"
+                  "bg-gradient-to-tr from-kyle-200 to-kyle-100 h-8 w-8 rounded-full flex items-center justify-center relative z-[10] hover:scale-[1.1] transition-all"
                 }
               >
                 <Boxes size={14} />

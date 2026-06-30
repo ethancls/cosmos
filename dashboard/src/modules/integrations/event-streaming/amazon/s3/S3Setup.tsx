@@ -106,7 +106,7 @@ export function SetupContent({ onSuccess }: Readonly<ModalProps>) {
   const connect = async () => {
     notify({
       title: "Amazon S3 Integration",
-      description: `Amazon S3 was successfully connected to NetBird.`,
+      description: `Amazon S3 was successfully connected to Cosmos.`,
       promise: integrationRequest
         .post({
           platform: "s3",
@@ -138,9 +138,9 @@ export function SetupContent({ onSuccess }: Readonly<ModalProps>) {
 
       <IntegrationModalHeader
         image={s3Logo}
-        title={"Connect NetBird with Amazon S3"}
+        title={"Connect Cosmos with Amazon S3"}
         description={
-          "Start streaming your NetBird audit & traffic events to Amazon S3. Follow the steps below to get started."
+          "Start streaming your Cosmos audit & traffic events to Amazon S3. Follow the steps below to get started."
         }
       />
 

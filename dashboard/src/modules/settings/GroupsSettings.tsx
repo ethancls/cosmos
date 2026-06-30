@@ -8,7 +8,7 @@ import { notify } from "@components/Notification";
 import * as Tabs from "@radix-ui/react-tabs";
 import { useApiCall } from "@utils/api";
 import { cn } from "@utils/helpers";
-import { isLocalDev, isNetBirdCloud } from "@utils/netbird";
+import { isLocalDev, isCosmosCloud } from "@utils/netbird";
 import { AnimatePresence, motion } from "framer-motion";
 import { isEmpty } from "lodash";
 import {
@@ -85,12 +85,12 @@ export default function GroupsSettings({ account }: Props) {
     const choice = showConfirm
       ? await confirm({
           title: `JWT allow group - ${jwtAllowGroups[0]}`,
-          description: `Only users part of the ${jwtAllowGroups[0]} group will be able to access NetBird. Are you sure you want to save the changes?`,
+          description: `Only users part of the ${jwtAllowGroups[0]} group will be able to access Cosmos. Are you sure you want to save the changes?`,
           confirmText: "Save",
           children: (
             <div
               className={
-                "flex gap-2 items-center text-xs bg-netbird-950 px-4 justify-center py-3 rounded-md border border-netbird-500 text-netbird-200"
+                "flex gap-2 items-center text-xs bg-kyle-950 px-4 justify-center py-3 rounded-md border border-kyle-500 text-kyle-200"
               }
             >
               <AlertCircle size={14} />
@@ -177,7 +177,7 @@ export default function GroupsSettings({ account }: Props) {
             }
             disabled={!permission.settings.update}
           />
-          {(!isNetBirdCloud() || isLocalDev()) && (
+          {(!isCosmosCloud() || isLocalDev()) && (
             <FancyToggleSwitch
               value={jwtGroupSync}
               onChange={setJwtGroupSync}
@@ -195,7 +195,7 @@ export default function GroupsSettings({ account }: Props) {
           )}
         </div>
 
-        {(!isNetBirdCloud() || isLocalDev()) && (
+        {(!isCosmosCloud() || isLocalDev()) && (
           <AnimatePresence>
             {jwtGroupSync && (
               <div className={"overflow-hidden -top-4 relative z-0"}>
@@ -237,8 +237,8 @@ export default function GroupsSettings({ account }: Props) {
                     <div>
                       <Label>JWT allow groups</Label>
                       <HelpText>
-                        Limit access to NetBird for the specified group names,
-                        e.g., NetBird users. To use the groups, you need to
+                        Limit access to Cosmos for the specified group names,
+                        e.g., Cosmos users. To use the groups, you need to
                         configure them first in your IdP.
                       </HelpText>
                       <div>
@@ -301,7 +301,7 @@ export default function GroupsSettings({ account }: Props) {
                     {jwtAllowGroupsWarning && (
                       <div
                         className={
-                          "flex gap-2 items-center text-xs bg-netbird-950 px-4 justify-center py-3 rounded-md border border-netbird-500 text-netbird-200"
+                          "flex gap-2 items-center text-xs bg-kyle-950 px-4 justify-center py-3 rounded-md border border-kyle-500 text-kyle-200"
                         }
                       >
                         <AlertCircle size={14} />

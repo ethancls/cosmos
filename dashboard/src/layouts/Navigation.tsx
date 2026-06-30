@@ -5,7 +5,7 @@ import { cn } from "@utils/helpers";
 import {
   isAgentNetworkEnabled,
   isAgentNetworkOnly,
-  isNetBirdCloud,
+  isCosmosCloud,
 } from "@utils/netbird";
 import AccessControlIcon from "@/assets/icons/AccessControlIcon";
 import AgentNetworkIcon from "@/assets/icons/AgentNetworkIcon";
@@ -312,7 +312,7 @@ export default function Navigation({
                     permission?.edr?.read ||
                     permission?.idp?.read ||
                     permission?.event_streaming?.read ||
-                    (!isNetBirdCloud() && (permission?.settings?.read ?? false))
+                    (!isCosmosCloud() && (permission?.settings?.read ?? false))
                   }
                 />
                 <SidebarItem

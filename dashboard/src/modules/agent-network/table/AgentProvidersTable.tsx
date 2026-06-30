@@ -159,7 +159,7 @@ export default function AgentProvidersTable({
           }
           title={"Connect a provider"}
           description={
-            "Route OpenAI, Anthropic, and other LLM APIs through NetBird to enforce access control, track token spend, and capture prompts."
+            "Route OpenAI, Anthropic, and other LLM APIs through Cosmos to enforce access control, track token spend, and capture prompts."
           }
           button={
             <div className={"gap-x-4 flex items-center justify-center"}>

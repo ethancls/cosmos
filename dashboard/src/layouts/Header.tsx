@@ -1,7 +1,7 @@
 "use client";
 
 import Button from "@components/Button";
-import { NetBirdLogo } from "@components/NetBirdLogo";
+import { CosmosLogo } from "@components/CosmosLogo";
 import { AnnouncementBanner } from "@components/ui/AnnouncementBanner";
 import UserDropdown from "@components/ui/UserDropdown";
 import { cn } from "@utils/helpers";
@@ -61,7 +61,7 @@ export default function NavbarWithDropdown() {
                 "cursor-pointer hover:opacity-70 transition-all mr-auto"
               }
             >
-              <NetBirdLogo />
+              <CosmosLogo />
             </button>
             <ToggleCollapsableNavigationButton />
           </div>

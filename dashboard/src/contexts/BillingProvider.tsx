@@ -1,6 +1,6 @@
 import { notify } from "@components/Notification";
 import useFetchApi, { useApiCall } from "@utils/api";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 import md5 from "crypto-js/md5";
 import dayjs from "dayjs";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -95,7 +95,7 @@ export const BillingContext = React.createContext(
 export default function BillingProvider({ children }: Props) {
   const { permission } = usePermissions();
 
-  return permission?.billing?.read && isNetBirdCloud() ? (
+  return permission?.billing?.read && isCosmosCloud() ? (
     <BillingContextProvider>{children}</BillingContextProvider>
   ) : (
     <>{children}</>
@@ -263,9 +263,9 @@ function BillingContextProvider({ children }: Readonly<Props>) {
           mutate("/integrations/billing/subscription");
         });
         notify({
-          title: "NetBird Subscription",
+          title: "Cosmos Subscription",
           description: `Successfully subscribed to the ${plan.name} plan`,
-          loadingMessage: "Subscribing to NetBird via AWS Marketplace...",
+          loadingMessage: "Subscribing to Cosmos via AWS Marketplace...",
           promise: promise,
         });
         return promise;

@@ -1,16 +1,16 @@
 import Image from "next/image";
 import * as React from "react";
 import { memo } from "react";
-import NetBirdLogo from "@/assets/netbird.svg";
+import CosmosLogo from "@/assets/netbird.svg";
 
 type Props = {
   size?: number;
   className?: string;
 };
-function NetBirdIcon({ size = 16, className }: Props) {
+function CosmosIcon({ size = 16, className }: Props) {
   return (
     <Image
-      src={NetBirdLogo}
+      src={CosmosLogo}
       alt={"Netbird Icon"}
       width={size}
       className={className}
@@ -18,4 +18,4 @@ function NetBirdIcon({ size = 16, className }: Props) {
   );
 }
 
-export default memo(NetBirdIcon);
+export default memo(CosmosIcon);

@@ -95,7 +95,7 @@ export const OnboardingTestResource = ({
 
       <Modal open={open} onOpenChange={setOpen}>
         <ModalContent>
-          <SetupModalContent title={"Install NetBird"} />
+          <SetupModalContent title={"Install Cosmos"} />
         </ModalContent>
       </Modal>
     </div>

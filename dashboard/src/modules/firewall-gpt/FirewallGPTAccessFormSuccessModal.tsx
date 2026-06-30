@@ -19,12 +19,12 @@ export const FirewallGPTAccessFormSuccessModal = ({ open, setOpen }: Props) => {
             "flex items-center justify-center flex-col gap-3 px-6 relative z-[1]"
           }
         >
-          <Sparkles size={26} className={"text-netbird-500"} />
+          <Sparkles size={26} className={"text-kyle-500"} />
           <div className={"text-xl font-medium"}>Thank you for signing up!</div>
           <div className={"text-sm text-center mb-2"}>
             <p
               className={"!text-nb-gray-300"}
-            >{`We'll send you an email once NetBird's Smart Firewall is ready to use in your account.`}</p>
+            >{`We'll send you an email once Cosmos Smart Firewall is ready to use in your account.`}</p>
           </div>
           <Button
             variant={"secondary"}

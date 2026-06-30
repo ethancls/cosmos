@@ -50,7 +50,7 @@ const terminatedBadge = (
   <FullTooltip
     content={
       <div className={"text-xs max-w-xs"}>
-        This service has been terminated by the NetBird team as it violates the
+        This service has been terminated by the Cosmos team as it violates the
         Terms of Service. For questions, please contact{" "}
         <InlineLink href="mailto:support@netbird.io?subject=Request%20for%20Assistance%3A%20Terminated%20Service">
           support@netbird.io

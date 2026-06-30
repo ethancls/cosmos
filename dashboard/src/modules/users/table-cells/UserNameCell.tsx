@@ -38,7 +38,7 @@ export default function UserNameCell({ user }: Readonly<Props>) {
   const getStatusIcon = () => {
     if (user?.pending_approval) {
       return {
-        color: "bg-netbird text-netbird-950",
+        color: "bg-kyle text-kyle-950",
         icon: <Clock size={12} />,
       };
     }

@@ -37,7 +37,7 @@ export const AccessiblePeersSection = ({ peerID }: Props) => {
         <div className={"flex justify-between items-center mb-5"}>
           <div>
             <Paragraph>
-              This peer can connect to the following peers within the NetBird
+              This peer can connect to the following peers within the Cosmos
               network.{" "}
               <InlineLink
                 href={"https://docs.netbird.io/how-to/manage-network-access"}

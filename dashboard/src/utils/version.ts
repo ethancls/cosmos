@@ -64,7 +64,7 @@ export const compareVersions = (
 
 /**
  * Check if peer as routing peer is supported by the provided version and operating system.
- * Routing peers are supported on Windows, macOS, iOS & Android starting from NetBird v0.36.6+.
+ * Routing peers are supported on Windows, macOS, iOS & Android starting from Cosmos v0.36.6+.
  * @param version
  * @param os
  */
@@ -77,7 +77,7 @@ export const isRoutingPeerSupported = (version: string, os: string) => {
 
 /**
  * Check if native SSH is supported.
- * Supported starting from NetBird v0.60.0+.
+ * Supported starting from Cosmos v0.60.0+.
  * @param version
  */
 export const isNativeSSHSupported = (version: string) => {
@@ -86,8 +86,8 @@ export const isNativeSSHSupported = (version: string) => {
 };
 
 /**
- * Check if NetBird SSH protocol is supported.
- * Supported starting from NetBird v0.61.0+.
+ * Check if Cosmos SSH protocol is supported.
+ * Supported starting from Cosmos v0.61.0+.
  * @param version
  */
 export const isNetbirdSSHProtocolSupported = (version: string) => {

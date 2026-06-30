@@ -21,7 +21,7 @@ import { usePermissions } from "@/contexts/PermissionsProvider";
 import { useLoggedInUser } from "@/contexts/UsersProvider";
 import useOSDetection from "@/hooks/useOperatingSystem";
 import { ChangePasswordModalContent } from "@/modules/users/ChangePasswordModal";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 import { Modal } from "@components/modal/Modal";
 
 export default function UserDropdown() {
@@ -97,7 +97,7 @@ export default function UserDropdown() {
             />
           )}
 
-          {!isNetBirdCloud() && loggedInUser?.idp_id === "local" && (
+          {!isCosmosCloud() && loggedInUser?.idp_id === "local" && (
             <DropdownMenuItem
               onClick={() => {
                 setDropdownOpen(false);

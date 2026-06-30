@@ -1,4 +1,4 @@
-import { isNetBirdCloud, testEditionOverride } from "@utils/netbird";
+import { isCosmosCloud, testEditionOverride } from "@utils/netbird";
 import { useTrial } from "@/cloud/cloud-hooks/useTrial";
 import { useBilling } from "@/contexts/BillingProvider";
 import { useIsLicensed } from "@/hooks/useIsLicensed";
@@ -39,7 +39,7 @@ const OPEN_SOURCE_FEATURES: Array<keyof typeof PlanFeatures> = [
 
 /**
  * Hook to check if a feature is locked based on the current plan.
- * On NetBird Cloud the lock follows the subscription plan, for trial users it
+ * On Cosmos Cloud the lock follows the subscription plan, for trial users it
  * always returns false. On self-hosted deployments features included in the
  * open-source management server are always unlocked, the rest follow the
  * license (NETBIRD_LICENSED or the licensed management server probe).
@@ -52,7 +52,7 @@ export const useIsFeatureLocked = (feature: keyof typeof PlanFeatures) => {
 
   if (process.env.APP_ENV === "test" && !testEditionOverride()) return false;
 
-  if (!isNetBirdCloud()) {
+  if (!isCosmosCloud()) {
     if (OPEN_SOURCE_FEATURES.includes(feature)) return false;
     return !isLicensed;
   }

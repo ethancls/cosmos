@@ -185,7 +185,7 @@ export function SetupContent({
               key={index}
               className={cn(
                 "w-8 h-1 rounded-full bg-nb-gray-800",
-                step >= index + 1 && "bg-netbird",
+                step >= index + 1 && "bg-kyle",
               )}
             />
           ))}
@@ -194,8 +194,8 @@ export function SetupContent({
 
       <IntegrationModalHeader
         image={image || integrationImage}
-        title={`Connect NetBird with ${name}`}
-        description={`Start syncing your users and groups from ${name} to NetBird. Follow the steps below to get started.`}
+        title={`Connect Cosmos with ${name}`}
+        description={`Start syncing your users and groups from ${name} to Cosmos. Follow the steps below to get started.`}
       />
 
       {step === -1 && (
@@ -309,7 +309,7 @@ export function SetupContent({
             data={[
               {
                 label: "Name",
-                value: "NetBird",
+                value: "Cosmos",
               },
               {
                 label: "API Type",

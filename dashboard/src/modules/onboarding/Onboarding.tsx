@@ -1,13 +1,13 @@
 import InlineLink from "@components/InlineLink";
 import { Modal, ModalPortal } from "@components/modal/Modal";
-import { NetBirdLogo } from "@components/NetBirdLogo";
+import { CosmosLogo } from "@components/CosmosLogo";
 import { notify } from "@components/Notification";
 import { GradientFadedBackground } from "@components/ui/GradientFadedBackground";
 import { DialogContent, DialogTitle } from "@radix-ui/react-dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import useFetchApi, { useApiCall } from "@utils/api";
 import { cn } from "@utils/helpers";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 import { useRouter } from "next/navigation";
 import * as React from "react";
 import { useEffect, useMemo, useReducer, useState } from "react";
@@ -317,7 +317,7 @@ export const Onboarding = ({
                 intent === Intent.NETWORKS && step === 7 && "max-w-5xl",
               )}
             >
-              <NetBirdLogo size={"large"} mobile={false} />
+              <CosmosLogo size={"large"} mobile={false} />
 
               <div
                 className={
@@ -358,8 +358,8 @@ export const Onboarding = ({
                 >
                   {isOnboardingPending && (
                     <Stepper
-                      step={isNetBirdCloud() ? step : step - 1}
-                      maxSteps={isNetBirdCloud() ? maxSteps : maxSteps - 1}
+                      step={isCosmosCloud() ? step : step - 1}
+                      maxSteps={isCosmosCloud() ? maxSteps : maxSteps - 1}
                     />
                   )}
 
@@ -599,7 +599,7 @@ export const Onboarding = ({
                     "text-sm text-nb-gray-400 font-light pb-10 text-center px-4"
                   }
                 >
-                  Already know how NetBird works?
+                  Already know how Cosmos works?
                   <InlineLink
                     href={"#"}
                     className={"!text-nb-gray-200 ml-1"}
@@ -632,7 +632,7 @@ const Stepper = ({ step, maxSteps }: { step: number; maxSteps: number }) => {
           key={index}
           className={cn(
             "w-8 h-1 rounded-full bg-nb-gray-800",
-            step >= index + 1 && "bg-netbird",
+            step >= index + 1 && "bg-kyle",
           )}
         />
       ))}

@@ -453,7 +453,7 @@ function UserMultiSelect({
                     className={cn(
                       "flex items-center gap-3 p-2 rounded cursor-pointer transition-colors",
                       checked
-                        ? "bg-netbird/10"
+                        ? "bg-kyle/10"
                         : "hover:bg-nb-gray-900/50",
                     )}
                   >

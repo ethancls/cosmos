@@ -2,7 +2,7 @@ import Button from "@components/Button";
 import FullTooltip from "@components/FullTooltip";
 import { IconHelpCircle } from "@tabler/icons-react";
 import { cn } from "@utils/helpers";
-import { isAgentNetworkOnly, isNetBirdCloud } from "@utils/netbird";
+import { isAgentNetworkOnly, isCosmosCloud } from "@utils/netbird";
 import { ExternalLinkIcon, Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import * as React from "react";
@@ -130,7 +130,7 @@ export const TrialOrUpgradeButton = ({
     );
   };
 
-  if (!isNetBirdCloud()) return <SelfHostedUpgradeButton variant={variant} />;
+  if (!isCosmosCloud()) return <SelfHostedUpgradeButton variant={variant} />;
   if (!isOwnerOrAdmin) return <RegularUserContent />;
   if (!isTrialAvailable) return <PlansAndBillingButton />;
   if (!offerTrial) return <PlansAndBillingButton />;

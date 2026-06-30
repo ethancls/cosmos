@@ -28,7 +28,7 @@ import React, { useCallback, useMemo, useState } from "react";
 import { useSWRConfig } from "swr";
 import { useApiCall } from "@/utils/api";
 import { cn, validator } from "@utils/helpers";
-import { GRPC_API_ORIGIN, isNetBirdCloud } from "@/utils/netbird";
+import { GRPC_API_ORIGIN, isCosmosCloud } from "@/utils/netbird";
 import { SelectDropdown } from "@components/select/SelectDropdown";
 import {
   REVERSE_PROXY_CLUSTERS_DOCS_LINK,
@@ -59,7 +59,7 @@ const renderHighlightedCommand = (command: string, highlights: string[]) => {
       {pattern
         ? line.split(pattern).map((part, partIndex) =>
             valid.includes(part) ? (
-              <span key={partIndex} className={"text-netbird"}>
+              <span key={partIndex} className={"text-kyle"}>
                 {part}
               </span>
             ) : (
@@ -96,7 +96,7 @@ export const ClustersModal = ({ open, onOpenChange }: Props) => {
     return "";
   }, [domain]);
 
-  const managementUrl = isNetBirdCloud()
+  const managementUrl = isCosmosCloud()
     ? "https://api.netbird.io"
     : GRPC_API_ORIGIN || "";
 
@@ -394,10 +394,10 @@ spec:
                 </div>
               </div>
 
-              {!isNetBirdCloud() && (
+              {!isCosmosCloud() && (
                 <Callout variant={"warning"}>
                   For self-hosted deployments, make sure the proxy service
-                  routes are configured on your NetBird management server before
+                  routes are configured on your Cosmos management server before
                   starting the proxy.&nbsp;
                   <InlineLink
                     href={REVERSE_PROXY_SELFHOSTED_ROUTING_DOCS_LINK}

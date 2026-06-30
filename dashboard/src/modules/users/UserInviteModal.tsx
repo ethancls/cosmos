@@ -29,7 +29,7 @@ import { Group } from "@/interfaces/Group";
 import { Role, User, UserInvite } from "@/interfaces/User";
 import useGroupHelper from "@/modules/groups/useGroupHelper";
 import { UserRoleSelector } from "@/modules/users/UserRoleSelector";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 
 type UserCreationMode = "create" | "invite";
 
@@ -211,7 +211,7 @@ export function UserInviteModalContent({
       initial: groups,
     });
 
-  const isCloud = isNetBirdCloud();
+  const isCloud = isCosmosCloud();
   const [mode, setMode] = useState<UserCreationMode>("invite");
 
   const createUser = async () => {
@@ -287,7 +287,7 @@ export function UserInviteModalContent({
     if (isCloud)
       return "Invite a user to your network and set their permissions.";
     if (mode === "create") {
-      return "Create a NetBird user account with email and password.";
+      return "Create a Cosmos user account with email and password.";
     }
     return "Generate an invite link that the user can use to set their own password.";
   };
@@ -443,20 +443,20 @@ function UserAvatars() {
       >
         <div
           className={
-            "w-10 h-10 shrink-0 bg-netbird/20 rounded-full inline-flex animate-ping duration-3000"
+            "w-10 h-10 shrink-0 bg-kyle/20 rounded-full inline-flex animate-ping duration-3000"
           }
         />
       </div>
       <div
         className={
-          "w-14 h-14 relative top-2 overflow-hidden -right-8 bg-nb-gray-950 rounded-full flex items-center justify-center border-4 border-nb-gray-950 outline-2 outline-netbird"
+          "w-14 h-14 relative top-2 overflow-hidden -right-8 bg-nb-gray-950 rounded-full flex items-center justify-center border-4 border-nb-gray-950 outline-2 outline-kyle"
         }
       >
         <Image src={Avatar1} alt={"MS"} />
       </div>
       <div
         className={
-          "w-14 h-14 relative top-1 overflow-hidden -right-4 bg-nb-gray-950 rounded-full flex items-center justify-center border-4 border-nb-gray-950 outline-2 outline-netbird"
+          "w-14 h-14 relative top-1 overflow-hidden -right-4 bg-nb-gray-950 rounded-full flex items-center justify-center border-4 border-nb-gray-950 outline-2 outline-kyle"
         }
       >
         <Image src={Avatar2} alt={"MS"} />
@@ -467,7 +467,7 @@ function UserAvatars() {
           "w-14 h-14 z-20 relative overflow-hidden bg-nb-gray-930 rounded-full flex items-center justify-center border-4 border-nb-gray-950"
         }
       >
-        <User2 size={24} className={"text-netbird"} />
+        <User2 size={24} className={"text-kyle"} />
       </div>
       <div
         className={

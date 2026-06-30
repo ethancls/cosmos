@@ -62,7 +62,7 @@ export const MSPTenantPlanTabTrigger = ({ tenant }: Props) => {
       <CreditCardIcon
         size={16}
         className={
-          "text-nb-gray-500 group-data-[state=active]/trigger:text-netbird transition-all"
+          "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
         }
       />
       Plan

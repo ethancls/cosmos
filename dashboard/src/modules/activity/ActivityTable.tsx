@@ -77,7 +77,7 @@ const ActivityFeedColumnsTable: ColumnDef<ActivityEvent>[] = [
   },
   {
     id: "initiator_email",
-    accessorFn: (row) => row.initiator_email || "NetBird",
+    accessorFn: (row) => row.initiator_email || "Cosmos",
     filterFn: "exactMatch",
   },
 ];
@@ -120,7 +120,7 @@ export default function ActivityTable({
     return uniqueUsers.map((event) => ({
       name: event.initiator_name,
       id: event.initiator_id,
-      email: event.initiator_email || "NetBird",
+      email: event.initiator_email || "Cosmos",
       external: !!event?.meta?.external,
     }));
   }, [events]);
@@ -192,7 +192,7 @@ export default function ActivityTable({
               size={"large"}
             />
           }
-          title={"Get Started with NetBird"}
+          title={"Get Started with Cosmos"}
           description={
             "It looks like you don't have any connected machines.\n" +
             "Get started by adding one to your network."

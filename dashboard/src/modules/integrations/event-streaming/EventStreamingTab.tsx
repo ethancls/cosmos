@@ -31,7 +31,7 @@ export default function EventStreamingTab() {
         </Breadcrumbs>
         <h1>Event Streaming</h1>
         <Paragraph>
-          Event Streaming allows you to stream NetBirds audit & traffic events
+          Event Streaming allows you to stream Cosmoss audit & traffic events
           to different third-party services.
         </Paragraph>
         <Paragraph>

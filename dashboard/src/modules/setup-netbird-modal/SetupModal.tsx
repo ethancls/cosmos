@@ -12,7 +12,7 @@ import { Tabs, TabsList, TabsTrigger } from "@components/Tabs";
 import { IconInfoCircle } from "@tabler/icons-react";
 import { useApiCall } from "@utils/api";
 import { cn } from "@utils/helpers";
-import { getNetBirdUpCommand } from "@utils/netbird";
+import { getCosmosUpCommand } from "@utils/netbird";
 import {
   CopyIcon,
   ExternalLinkIcon,
@@ -145,7 +145,7 @@ export function SetupModalContent({
           content={
             <>
               A setup key is a one-time, pre-authentication token used to
-              enroll an unattended machine with NetBird. Pass it to{" "}
+              enroll an unattended machine with Cosmos. Pass it to{" "}
               <code>netbird up</code> via <code>--setup-key</code> and the
               peer registers without an interactive login.
             </>
@@ -181,8 +181,8 @@ export function SetupModalContent({
     }
 
     return effectiveSetupKey
-      ? "Install NetBird with Setup Key"
-      : "Install NetBird";
+      ? "Install Cosmos with Setup Key"
+      : "Install Cosmos";
   }, [
     isFirstRun,
     isInstallPage,
@@ -210,8 +210,8 @@ export function SetupModalContent({
             )}
           >
             {isUserDevice === false || effectiveSetupKey
-              ? "To get started, install and run NetBird with the setup key as a parameter."
-              : "To get started, install NetBird and log in with your email account."}
+              ? "To get started, install and run Cosmos with the setup key as a parameter."
+              : "To get started, install Cosmos and log in with your email account."}
           </Paragraph>
         </div>
       )}
@@ -225,7 +225,7 @@ export function SetupModalContent({
           <TabsTrigger value={String(OperatingSystem.LINUX)}>
             <ShellIcon
               className={
-                "fill-nb-gray-500 group-data-[state=active]/trigger:fill-netbird transition-all"
+                "fill-nb-gray-500 group-data-[state=active]/trigger:fill-kyle transition-all"
               }
             />
             Linux
@@ -234,7 +234,7 @@ export function SetupModalContent({
           <TabsTrigger value={String(OperatingSystem.WINDOWS)}>
             <WindowsIcon
               className={
-                "fill-nb-gray-500 group-data-[state=active]/trigger:fill-netbird transition-all"
+                "fill-nb-gray-500 group-data-[state=active]/trigger:fill-kyle transition-all"
               }
             />
             Windows
@@ -242,7 +242,7 @@ export function SetupModalContent({
           <TabsTrigger value={String(OperatingSystem.APPLE)}>
             <AppleIcon
               className={
-                "fill-nb-gray-500 group-data-[state=active]/trigger:fill-netbird transition-all"
+                "fill-nb-gray-500 group-data-[state=active]/trigger:fill-kyle transition-all"
               }
             />
             macOS
@@ -253,7 +253,7 @@ export function SetupModalContent({
               <TabsTrigger value={String(OperatingSystem.IOS)}>
                 <IOSIcon
                   className={
-                    "fill-nb-gray-500 group-data-[state=active]/trigger:fill-netbird transition-all"
+                    "fill-nb-gray-500 group-data-[state=active]/trigger:fill-kyle transition-all"
                   }
                 />
                 iOS
@@ -261,7 +261,7 @@ export function SetupModalContent({
               <TabsTrigger value={String(OperatingSystem.ANDROID)}>
                 <AndroidIcon
                   className={
-                    "fill-nb-gray-500 group-data-[state=active]/trigger:fill-netbird transition-all"
+                    "fill-nb-gray-500 group-data-[state=active]/trigger:fill-kyle transition-all"
                   }
                 />
                 Android
@@ -273,7 +273,7 @@ export function SetupModalContent({
             <TabsTrigger value={String(OperatingSystem.DOCKER)}>
               <DockerIcon
                 className={
-                  "fill-nb-gray-500 group-data-[state=active]/trigger:fill-netbird transition-all"
+                  "fill-nb-gray-500 group-data-[state=active]/trigger:fill-kyle transition-all"
                 }
               />
               Docker
@@ -361,12 +361,12 @@ export const SetupKeyParameter = ({
   return (
     <>
       {" "}
-      --setup-key <span className={"text-netbird"}>{display}</span>
+      --setup-key <span className={"text-kyle"}>{display}</span>
     </>
   );
 };
 
-type NetBirdUpCommandProps = {
+type CosmosUpCommandProps = {
   setupKey?: string;
   setupKeyPlaceholder?: string;
   hostname?: string;
@@ -377,16 +377,16 @@ type NetBirdUpCommandProps = {
   continuation?: string;
 };
 
-// NetBirdUpCommand renders `netbird up` inside a <Code> block. When
+// CosmosUpCommand renders `netbird up` inside a <Code> block. When
 // extra flags are present it splits across multiple lines with the
 // shell's line-continuation character (purely visual) so long commands
 // stay readable; the clipboard always gets the single-line form.
-export const NetBirdUpCommand = ({
+export const CosmosUpCommand = ({
   setupKey,
   setupKeyPlaceholder,
   hostname,
   continuation = "\\",
-}: NetBirdUpCommandProps) => {
+}: CosmosUpCommandProps) => {
   const keyValue = setupKey ?? setupKeyPlaceholder;
   const hasKey = !!keyValue;
   const hasHostname = !!hostname;
@@ -396,7 +396,7 @@ export const NetBirdUpCommand = ({
   // shell (bash, zsh, cmd, PowerShell) regardless of how it's displayed
   // — the line continuations below are purely a visual aid.
   const copyCommand = [
-    getNetBirdUpCommand(),
+    getCosmosUpCommand(),
     hasKey && `--setup-key ${keyValue}`,
     hasHostname && `--hostname '${hostname}'`,
   ]
@@ -406,7 +406,7 @@ export const NetBirdUpCommand = ({
   if (!hasKey && !hasHostname) {
     return (
       <Code codeToCopy={copyCommand}>
-        <Code.Line>{getNetBirdUpCommand()}</Code.Line>
+        <Code.Line>{getCosmosUpCommand()}</Code.Line>
       </Code>
     );
   }
@@ -414,19 +414,19 @@ export const NetBirdUpCommand = ({
   return (
     <Code codeToCopy={copyCommand}>
       <Code.Line>
-        {getNetBirdUpCommand()} {continuation}
+        {getCosmosUpCommand()} {continuation}
       </Code.Line>
       {hasKey && (
         <Code.Line>
           {"  --setup-key "}
-          <span className={"text-netbird"}>{keyValue}</span>
+          <span className={"text-kyle"}>{keyValue}</span>
           {hasHostname && ` ${continuation}`}
         </Code.Line>
       )}
       {hasHostname && (
         <Code.Line>
           {"  --hostname "}
-          <span className={"text-netbird"}>{`'${hostname}'`}</span>
+          <span className={"text-kyle"}>{`'${hostname}'`}</span>
         </Code.Line>
       )}
     </Code>
@@ -439,7 +439,7 @@ export const HostnameParameter = ({ hostname }: { hostname?: string }) => {
       <>
         {" "}
         --hostname{" "}
-        <span className={"text-netbird"}>
+        <span className={"text-kyle"}>
           {"'"}
           {hostname}
           {"'"}

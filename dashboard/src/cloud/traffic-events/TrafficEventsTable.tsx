@@ -295,7 +295,7 @@ export default function TrafficEventsTable({
       return {
         id: user.id || "",
         name: user.name || "",
-        email: user.email || "NetBird",
+        email: user.email || "Cosmos",
       } as UserSelectOption;
     });
   }, [users]);

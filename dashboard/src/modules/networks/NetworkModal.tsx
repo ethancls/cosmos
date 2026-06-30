@@ -92,7 +92,7 @@ const Content = ({ network, onCreated, onUpdated }: ContentProps) => {
   return (
     <ModalContent maxWidthClass={"max-w-xl"}>
       <ModalHeader
-        icon={<NetworkRoutesIcon className={"fill-netbird"} />}
+        icon={<NetworkRoutesIcon className={"fill-kyle"} />}
         title={network ? "Update Network" : "Add Network"}
         description={
           network

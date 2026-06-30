@@ -1,6 +1,6 @@
 import FullTooltip from "@components/FullTooltip";
 import { cn } from "@utils/helpers";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 import { LockIcon, Sparkles } from "lucide-react";
 import * as React from "react";
 import { usePermissions } from "@/contexts/PermissionsProvider";
@@ -14,7 +14,7 @@ type Props = {
 export const FirewallGPTButton = ({ onClick }: Props) => {
   const { permission } = usePermissions();
 
-  if (!isNetBirdCloud()) {
+  if (!isCosmosCloud()) {
     return (
       <FullTooltip
         interactive={true}
@@ -26,7 +26,7 @@ export const FirewallGPTButton = ({ onClick }: Props) => {
             </div>
             <div className={"text-xs text-nb-gray-300 font-light"}>
               Smart Firewall uses AI to help you create access policies and is
-              available with a NetBird Enterprise commercial license.
+              available with a Cosmos Enterprise commercial license.
             </div>
             <SelfHostedUpgradeButton />
           </div>

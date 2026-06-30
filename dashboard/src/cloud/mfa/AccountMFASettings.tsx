@@ -166,7 +166,7 @@ export const AccountMFASettings = () => {
           }
           helpText={
             <>
-              Enable NetBird MFA if not configured in your IdP. <br />
+              Enable Cosmos MFA if not configured in your IdP. <br />
               This setting is global and applies to all users.
             </>
           }

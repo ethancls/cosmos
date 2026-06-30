@@ -1,10 +1,10 @@
 import { cn } from "@utils/helpers";
 import { Disc3Icon, FlagIcon, NetworkIcon, ServerCogIcon } from "lucide-react";
 import * as React from "react";
-import NetBirdIcon from "@/assets/icons/NetBirdIcon";
+import CosmosIcon from "@/assets/icons/CosmosIcon";
 import { PostureCheck } from "@/interfaces/PostureCheck";
 import { GeoLocationTooltip } from "@/modules/posture-checks/checks/tooltips/GeoLocationTooltip";
-import { NetBirdVersionTooltip } from "@/modules/posture-checks/checks/tooltips/NetBirdVersionTooltip";
+import { CosmosVersionTooltip } from "@/modules/posture-checks/checks/tooltips/CosmosVersionTooltip";
 import { OperatingSystemTooltip } from "@/modules/posture-checks/checks/tooltips/OperatingSystemTooltip";
 import { PeerNetworkRangeTooltip } from "@/modules/posture-checks/checks/tooltips/PeerNetworkRangeTooltip";
 import { ProcessTooltip } from "@/modules/posture-checks/checks/tooltips/ProcessTooltip";
@@ -34,17 +34,17 @@ export const PostureCheckChecksCell = ({
       >
         <div className={"flex -space-x-2 "}>
           {check.checks.nb_version_check && (
-            <NetBirdVersionTooltip
+            <CosmosVersionTooltip
               version={check.checks.nb_version_check.min_version}
             >
               <div
                 className={cn(
-                  "bg-gradient-to-tr from-netbird-200 to-netbird-100 h-8 w-8 rounded-full flex items-center justify-center relative z-[10] hover:scale-[1.1] transition-all",
+                  "bg-gradient-to-tr from-kyle-200 to-kyle-100 h-8 w-8 rounded-full flex items-center justify-center relative z-[10] hover:scale-[1.1] transition-all",
                 )}
               >
-                <NetBirdIcon size={14} />
+                <CosmosIcon size={14} />
               </div>
-            </NetBirdVersionTooltip>
+            </CosmosVersionTooltip>
           )}
 
           {check.checks.geo_location_check && (

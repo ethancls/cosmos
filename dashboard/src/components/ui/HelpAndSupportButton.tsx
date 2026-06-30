@@ -22,7 +22,7 @@ import { useState } from "react";
 import Button from "@components/Button";
 import { cn } from "@utils/helpers";
 import SlackIcon from "@/assets/icons/SlackIcon";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 
 export default function HelpAndSupportButton() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -83,7 +83,7 @@ export default function HelpAndSupportButton() {
           </DropdownMenuShortcut>
         </DropdownMenuItem>
 
-        {isNetBirdCloud() && (
+        {isCosmosCloud() && (
           <DropdownMenuItem href="mailto:support@netbird.io?subject=Support Request">
             <div className={"flex gap-3 items-center"}>
               <MailIcon size={14} />
@@ -102,7 +102,7 @@ export default function HelpAndSupportButton() {
         >
           <div className={"flex gap-3 items-center"}>
             <MessagesSquareIcon size={14} />
-            NetBird Forum
+            Cosmos Forum
           </div>
           <DropdownMenuShortcut>
             <ArrowUpRightIcon size={16} />
@@ -116,7 +116,7 @@ export default function HelpAndSupportButton() {
         >
           <div className={"flex gap-3 items-center"}>
             <SlackIcon size={14} />
-            NetBird Slack
+            Cosmos Slack
           </div>
           <DropdownMenuShortcut>
             <ArrowUpRightIcon size={16} />

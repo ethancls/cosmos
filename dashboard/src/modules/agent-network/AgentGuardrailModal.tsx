@@ -108,7 +108,7 @@ export default function AgentGuardrailModal({
               <Text
                 size={16}
                 className={
-                  "text-nb-gray-500 group-data-[state=active]/trigger:text-netbird transition-all"
+                  "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
                 }
               />
               Name & Description
@@ -246,7 +246,7 @@ function ModelAllowlistCheck({
       title={"Model Allowlist"}
       description={"Block requests for models not on the allowlist."}
       icon={<Boxes size={16} />}
-      iconClass={"bg-gradient-to-tr from-netbird-200 to-netbird-100"}
+      iconClass={"bg-gradient-to-tr from-kyle-200 to-kyle-100"}
       modalWidthClass={"max-w-2xl"}
       onReset={() => onChange(undefined)}
     >
@@ -326,7 +326,7 @@ function ModelAllowlistContent({
                   className={cn(
                     "flex items-center gap-3 p-2 rounded border cursor-pointer transition-colors",
                     checked
-                      ? "border-netbird/40 bg-netbird/5"
+                      ? "border-kyle/40 bg-kyle/5"
                       : "border-nb-gray-800 bg-nb-gray-900/20 hover:border-nb-gray-700",
                   )}
                 >
@@ -412,7 +412,7 @@ function PromptCaptureContent({ onConfirm }: { onConfirm: () => void }) {
     <>
       <div className={"flex flex-col px-8 gap-3 pb-6"}>
         <div className={"text-sm text-nb-gray-300"}>
-          NetBird redacts emails, SSN-shaped, phone-shaped, and credit-card
+          Cosmos redacts emails, SSN-shaped, phone-shaped, and credit-card
           patterns before storing the prompt body. Enabling this guardrail
           adds strict redaction on top of the proxy&apos;s built-in token
           redaction.

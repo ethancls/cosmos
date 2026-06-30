@@ -1,6 +1,6 @@
 import { IconHelpCircle } from "@tabler/icons-react";
 import { cn } from "@utils/helpers";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 import { LockIcon } from "lucide-react";
 import * as React from "react";
 import {
@@ -62,7 +62,7 @@ export const LockedFeatureBadge = ({
             )}
           >
             <LockIcon size={12} className={"relative -top-[1px]"} />
-            {isNetBirdCloud()
+            {isCosmosCloud()
               ? plan == "team"
                 ? PLAN_TEXT.TEAM
                 : PLAN_TEXT.BUSINESS

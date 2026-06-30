@@ -15,7 +15,7 @@ import React, { useState } from "react";
 import { usePermissions } from "@/contexts/PermissionsProvider";
 import { PostureCheck } from "@/interfaces/PostureCheck";
 import { PostureCheckGeoLocation } from "@/modules/posture-checks/checks/PostureCheckGeoLocation";
-import { PostureCheckNetBirdVersion } from "@/modules/posture-checks/checks/PostureCheckNetBirdVersion";
+import { PostureCheckCosmosVersion } from "@/modules/posture-checks/checks/PostureCheckCosmosVersion";
 import { PostureCheckOperatingSystem } from "@/modules/posture-checks/checks/PostureCheckOperatingSystem";
 import { PostureCheckPeerNetworkRange } from "@/modules/posture-checks/checks/PostureCheckPeerNetworkRange";
 import { PostureCheckProcess } from "@/modules/posture-checks/checks/PostureCheckProcess";
@@ -96,7 +96,7 @@ export default function PostureCheckModal({
                 <Text
                   size={16}
                   className={
-                    "text-nb-gray-500 group-data-[state=active]/trigger:text-netbird transition-all"
+                    "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
                   }
                 />
                 Name & Description
@@ -105,7 +105,7 @@ export default function PostureCheckModal({
 
             <TabsContent value={"checks"} className={"pb-6 px-8"}>
               <>
-                <PostureCheckNetBirdVersion
+                <PostureCheckCosmosVersion
                   value={check?.checks?.nb_version_check}
                   onChange={(v) =>
                     setCheck({
@@ -184,7 +184,7 @@ export default function PostureCheckModal({
                         payload: e.target.value,
                       })
                     }
-                    placeholder={"e.g., NetBird Version > 0.25.0"}
+                    placeholder={"e.g., Cosmos Version > 0.25.0"}
                     disabled={
                       !permission.policies.create || !permission.policies.update
                     }
@@ -205,7 +205,7 @@ export default function PostureCheckModal({
                       })
                     }
                     placeholder={
-                      "e.g., Check if the NetBird version is bigger than 0.25.0"
+                      "e.g., Check if the Cosmos version is bigger than 0.25.0"
                     }
                     rows={3}
                     disabled={

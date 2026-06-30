@@ -9,9 +9,9 @@ import { Terminal } from "@/modules/remote-access/ssh/Terminal";
 import { SSHStatus, useSSH } from "@/modules/remote-access/ssh/useSSH";
 import { useSSHQueryParams } from "@/modules/remote-access/ssh/useSSHQueryParams";
 import {
-  NetBirdStatus,
-  useNetBirdClient,
-} from "@/modules/remote-access/useNetBirdClient";
+  CosmosStatus,
+  useCosmosClient,
+} from "@/modules/remote-access/useCosmosClient";
 import {
   isNativeSSHSupported,
   isNetbirdSSHProtocolSupported,
@@ -65,7 +65,7 @@ type Props = {
 };
 
 function SSHTerminal({ username, port, peer, ipVersion }: Props) {
-  const client = useNetBirdClient();
+  const client = useCosmosClient();
   const connected = useRef(false);
   const sshConnectedOnce = useRef(false);
 
@@ -80,8 +80,8 @@ function SSHTerminal({ username, port, peer, ipVersion }: Props) {
   const isSSHConnecting = status === SSHStatus.CONNECTING;
   const isSSHConnected = status === SSHStatus.CONNECTED;
   const isSSHDisconnected = status === SSHStatus.DISCONNECTED;
-  const isClientDisconnected = client.status === NetBirdStatus.DISCONNECTED;
-  const isClientConnecting = client.status === NetBirdStatus.CONNECTING;
+  const isClientDisconnected = client.status === CosmosStatus.DISCONNECTED;
+  const isClientConnecting = client.status === CosmosStatus.CONNECTING;
 
   // Use the FQDN when an IP version is specified so the dialer resolves to the correct address family.
   const sshHost = ipVersion ? peer.dns_label || peer.ip : peer.ip;
@@ -114,7 +114,7 @@ function SSHTerminal({ username, port, peer, ipVersion }: Props) {
 
   useEffect(() => {
     if (isSSHConnected || isSSHConnecting) return;
-    if (isClientConnecting || client.status === NetBirdStatus.CONNECTED) return;
+    if (isClientConnecting || client.status === CosmosStatus.CONNECTED) return;
 
     const connect = async () => {
       if (!peer.id) return;
@@ -241,7 +241,7 @@ const DisconnectedMessage = ({
         Disconnected from {username}@{peerIp}
         <button
           className={
-            "underline-offset-4 items-center transition-all duration-200 inline-flex texts-inherit gap-1 text-netbird hover:underline font-normal"
+            "underline-offset-4 items-center transition-all duration-200 inline-flex texts-inherit gap-1 text-kyle hover:underline font-normal"
           }
           onClick={onReconnect}
         >

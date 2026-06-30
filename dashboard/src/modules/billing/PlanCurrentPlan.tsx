@@ -123,7 +123,7 @@ export const PlanCurrentPlan = ({
           <div
             className={"flex gap-2 items-center text-sm text-nb-gray-300 mb-4"}
           >
-            {`You currently have access to NetBird's full set of features & integrations. `}
+            {`You currently have access to Cosmos full set of features & integrations. `}
             {currentPlan.name == "Team" &&
               `Your Team plan remains active during this trial. `}
             {`After the trial, you will return to your ${currentPlan.name} plan unless you choose to upgrade.`}
@@ -189,7 +189,7 @@ export const PlanCurrentPlan = ({
                 <HelpCircle
                   size={14}
                   className={
-                    "text-nb-gray-300 hover:text-netbird transition-all cursor-pointer"
+                    "text-nb-gray-300 hover:text-kyle transition-all cursor-pointer"
                   }
                 />
               </FullTooltip>

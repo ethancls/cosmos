@@ -3,7 +3,7 @@ import loadConfig from "@utils/config";
 const config = loadConfig();
 export const GRPC_API_ORIGIN = config.grpcApiOrigin;
 
-export const getNetBirdUpCommand = () => {
+export const getCosmosUpCommand = () => {
   let cmd = "netbird up";
   if (GRPC_API_ORIGIN) {
     cmd += " --management-url " + GRPC_API_ORIGIN;
@@ -34,10 +34,10 @@ export const testEditionOverride = (): Edition | undefined => {
   return undefined;
 };
 
-// isNetBirdCloud returns true when the dashboard runs on the NetBird-managed
+// isCosmosCloud returns true when the dashboard runs on the Cosmos-managed
 // cloud infrastructure (billing, MSP, trial, hosted integrations).
 // The hostname fallback keeps deployments without NETBIRD_CLOUD working.
-export const isNetBirdCloud = () => {
+export const isCosmosCloud = () => {
   const override = testEditionOverride();
   if (override) return override === "cloud";
   if (process.env.APP_ENV === "test") return true;
@@ -55,7 +55,7 @@ export const isNetBirdCloud = () => {
 export const hasLicensedFlag = () => {
   const override = testEditionOverride();
   if (override) return override !== "oss";
-  return config.licensed || isNetBirdCloud();
+  return config.licensed || isCosmosCloud();
 };
 
 // isAgentNetworkOnly returns true for the dedicated Agent Network surface:
@@ -65,7 +65,7 @@ export const isAgentNetworkOnly = () => {
   return config.agentNetworkOnly;
 };
 
-// pkgsDownloadUrl builds a NetBird client installer download link on
+// pkgsDownloadUrl builds a Cosmos client installer download link on
 // pkgs.netbird.io. In Agent Network-only mode the client ships from the
 // release-candidate channel, so the link gets a "/rc" suffix that
 // pkgs.netbird.io 302-redirects to the latest RC GitHub asset (e.g.

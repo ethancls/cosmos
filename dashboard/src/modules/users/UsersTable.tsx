@@ -36,7 +36,7 @@ import {
   Table,
 } from "@tanstack/react-table";
 import useFetchApi from "@utils/api";
-import { isNetBirdCloud } from "@utils/netbird";
+import { isCosmosCloud } from "@utils/netbird";
 import dayjs from "dayjs";
 import { ExternalLinkIcon, Link2, MailPlus } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
@@ -179,7 +179,7 @@ export default function UsersTable({
   const path = usePathname();
   const account = useAccount();
 
-  const isCloud = isNetBirdCloud();
+  const isCloud = isCosmosCloud();
   const embeddedIdpEnabled = account?.settings.embedded_idp_enabled;
   const showInvitesToggle = !isCloud && embeddedIdpEnabled;
 
@@ -236,7 +236,7 @@ export default function UsersTable({
     () => [
       { value: undefined, label: "All", dotClass: "bg-nb-gray-500" },
       { value: "active", label: "Active", dotClass: "bg-green-500" },
-      { value: "pending", label: "Pending", dotClass: "bg-netbird" },
+      { value: "pending", label: "Pending", dotClass: "bg-kyle" },
       { value: "invited", label: "Invited", dotClass: "bg-yellow-400" },
       { value: "blocked", label: "Blocked", dotClass: "bg-red-500" },
     ],
@@ -474,7 +474,7 @@ export const InviteUserButton = ({
 
   // On cloud: always show "Invite User"
   // On self-hosted: only show when embedded_idp_enabled is true
-  const isCloud = isNetBirdCloud();
+  const isCloud = isCosmosCloud();
   const embeddedIdpEnabled = account?.settings.embedded_idp_enabled;
   const localAuthDisabled = account?.settings.local_auth_disabled;
 

@@ -45,7 +45,7 @@ export default function NetworkRoutes() {
             <h1 ref={headingRef}>Routes</h1>
             <Paragraph>
               Access other networks like LANs and VPCs without installing
-              NetBird on every resource.{" "}
+              Cosmos on every resource.{" "}
               <InlineLink
                 href={
                   "https://docs.netbird.io/how-to/routing-traffic-to-private-networks"
