@@ -8,6 +8,7 @@ import { ExternalLinkIcon, FolderGit2Icon } from "lucide-react";
 import React, { lazy, Suspense } from "react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import InlineLink from "@/components/InlineLink";
+import AccessControlIcon from "@/assets/icons/AccessControlIcon";
 import { usePermissions } from "@/contexts/PermissionsProvider";
 import PageContainer from "@/layouts/PageContainer";
 
@@ -22,6 +23,12 @@ export default function GroupsPage() {
     <PageContainer>
       <div className={"p-default py-6"}>
         <Breadcrumbs>
+          <Breadcrumbs.Item
+            href={"/access-control"}
+            label={"Access Control"}
+            icon={<AccessControlIcon size={14} />}
+            disabled={true}
+          />
           <Breadcrumbs.Item
             href={"/groups"}
             label={"Groups"}

@@ -98,7 +98,7 @@ function ControlCenterView() {
     if (queryTab === "users") return FlowView.USERS;
     if (queryTab === "groups") return FlowView.GROUPS;
     if (queryTab === "networks") return FlowView.NETWORKS;
-    return FlowView.PEERS;
+    return FlowView.USERS;
   }, [queryTab]);
   const [currentView, setCurrentView] = useState<FlowView>(initialTab);
 

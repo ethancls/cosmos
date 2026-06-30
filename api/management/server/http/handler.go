@@ -38,6 +38,7 @@ import (
 	"github.com/netbirdio/netbird/management/server/geolocation"
 	nbgroups "github.com/netbirdio/netbird/management/server/groups"
 	"github.com/netbirdio/netbird/management/server/http/handlers/accounts"
+	"github.com/netbirdio/netbird/management/server/http/handlers/cosmos"
 	"github.com/netbirdio/netbird/management/server/http/handlers/dns"
 	"github.com/netbirdio/netbird/management/server/http/handlers/events"
 	"github.com/netbirdio/netbird/management/server/http/handlers/groups"
@@ -126,6 +127,7 @@ func NewAPIHandler(ctx context.Context, router *mux.Router, accountManager accou
 	idp.AddEndpoints(accountManager, router)
 	instance.AddEndpoints(instanceManager, accountManager, router)
 	instance.AddVersionEndpoint(instanceManager, router)
+	cosmos.AddEndpoints(accountManager, router)
 	if serviceManager != nil && reverseProxyDomainManager != nil {
 		reverseproxymanager.RegisterEndpoints(serviceManager, *reverseProxyDomainManager, reverseProxyAccessLogsManager, permissionsManager, router)
 	}

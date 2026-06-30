@@ -7,7 +7,7 @@ import SkeletonTable from "@components/skeletons/SkeletonTable";
 import { RestrictedAccess } from "@components/ui/RestrictedAccess";
 import { usePortalElement } from "@hooks/usePortalElement";
 import useFetchApi from "@utils/api";
-import { ExternalLinkIcon } from "lucide-react";
+import { ExternalLinkIcon, ShieldCheck } from "lucide-react";
 import React, { lazy, Suspense } from "react";
 import AccessControlIcon from "@/assets/icons/AccessControlIcon";
 import GroupsProvider from "@/contexts/GroupsProvider";
@@ -36,6 +36,13 @@ export default function AccessControlPage() {
               href={"/access-control"}
               label={"Access Control"}
               icon={<AccessControlIcon size={14} />}
+              disabled={true}
+            />
+            <Breadcrumbs.Item
+              href={"/access-control"}
+              label={"Policies"}
+              icon={<ShieldCheck size={15} />}
+              active
             />
           </Breadcrumbs>
           <h1 ref={headingRef}>Access Control Policies</h1>

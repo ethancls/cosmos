@@ -2,8 +2,8 @@ import { SegmentedTabs } from "@components/SegmentedTabs";
 import { isAgentNetworkOnly } from "@utils/netbird";
 import {
   FolderGit2,
-  MonitorSmartphoneIcon,
   NetworkIcon,
+  ServerIcon,
   UsersIcon,
 } from "lucide-react";
 import * as React from "react";
@@ -32,15 +32,15 @@ export const FlowSelector = ({ value, onChange }: Props) => {
           value={FlowView.PEERS}
           className={"text-xs px-3 py-1"}
         >
-          <MonitorSmartphoneIcon size={12} />
-          Peer
+          <ServerIcon size={12} />
+          Gateway
         </SegmentedTabs.Trigger>
         <SegmentedTabs.Trigger
           value={FlowView.USERS}
           className={"text-xs px-3 py-1"}
         >
           <UsersIcon size={12} />
-          User
+          Identity
         </SegmentedTabs.Trigger>
         <SegmentedTabs.Trigger
           value={FlowView.GROUPS}
@@ -58,7 +58,7 @@ export const FlowSelector = ({ value, onChange }: Props) => {
             className={"text-xs px-3 py-[0.45rem]"}
           >
             <NetworkIcon size={12} />
-            Networks
+            Resources
           </SegmentedTabs.Trigger>
         )}
       </SegmentedTabs.List>
