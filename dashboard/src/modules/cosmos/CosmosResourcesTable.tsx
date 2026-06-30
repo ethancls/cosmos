@@ -35,6 +35,7 @@ import GetStartedTest from "@components/ui/GetStartedTest";
 import DescriptionWithTooltip from "@components/ui/DescriptionWithTooltip";
 import TextWithTooltip from "@components/ui/TextWithTooltip";
 import { notify } from "@components/Notification";
+import GroupsRow from "@/modules/common-table-rows/GroupsRow";
 import { ToggleSwitch } from "@components/ToggleSwitch";
 import { ColumnDef, SortingState } from "@tanstack/react-table";
 import { useApiCall } from "@utils/api";
@@ -56,9 +57,10 @@ import {
 import React, { useCallback, useMemo, useState } from "react";
 import { useSWRConfig } from "swr";
 import { useDialog } from "@/contexts/DialogProvider";
-import { useGroups } from "@/contexts/GroupsProvider";
+import { usePermissions } from "@/contexts/PermissionsProvider";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { CosmosResource, CosmosSession } from "@/interfaces/Cosmos";
+import { Group } from "@/interfaces/Group";
 import CosmosResourceModal from "@/modules/cosmos/CosmosResourceModal";
 
 type Props = {
@@ -382,7 +384,7 @@ export default function CosmosResourcesTable({
           <DataTableHeader column={column}>Groups</DataTableHeader>
         ),
         cell: ({ row }) => (
-          <ResourceGroupCell groupIds={row.original.group_ids} />
+          <ResourceGroupCell resource={row.original} />
         ),
       },
       {
@@ -599,28 +601,50 @@ function CosmosResourceActionMenu({
   );
 }
 
-function ResourceGroupCell({ groupIds }: { groupIds?: string }) {
-  const { groups: allGroups } = useGroups();
+function ResourceGroupCell({
+  resource,
+}: {
+  resource: CosmosResource;
+}) {
+  const { mutate } = useSWRConfig();
+  const resourceApi = useApiCall<CosmosResource>(
+    `/cosmos/resources/${resource.id}/groups`,
+  );
+  const [modal, setModal] = useState(false);
+  const { permission } = usePermissions();
 
-  const ids = groupIds
+  const groupIDs = resource.group_ids
     ?.split(",")
     .map((g) => g.trim())
-    .filter(Boolean);
+    .filter(Boolean) || [];
 
-  if (!ids || ids.length === 0)
-    return <span className="text-sm text-nb-gray-400">-</span>;
-
-  const groupNames = ids
-    .map((id) => allGroups?.find((g) => g.id === id)?.name)
-    .filter(Boolean) as string[];
+  const handleSave = async (promises: Promise<Group>[]) => {
+    const groups = await Promise.all(promises);
+    const ids = groups.map((g) => g.id);
+    await resourceApi.put({ group_ids: ids });
+    notify({
+      title: resource.name,
+      description: "Groups of the resource were successfully saved",
+      loadingMessage: "Saving the groups of the resource...",
+      promise: Promise.resolve().then(() => {
+        setModal(false);
+        mutate("/cosmos/resources");
+        mutate("/groups");
+      }),
+    });
+  };
 
   return (
-    <div className="flex flex-wrap gap-1">
-      {groupNames.map((name) => (
-        <Badge key={name} variant={"gray"}>
-          {name}
-        </Badge>
-      ))}
-    </div>
+    <GroupsRow
+      label={"Assigned Groups"}
+      description={"Use groups to control what can access this resource"}
+      groups={groupIDs}
+      showAddGroupButton={true}
+      disabled={!permission.groups.update}
+      onSave={handleSave}
+      modal={modal}
+      setModal={setModal}
+      countOnly={true}
+    />
   );
 }

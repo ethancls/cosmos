@@ -22,11 +22,14 @@ import {
 import { useApiCall } from "@utils/api";
 import React, { useMemo, useState } from "react";
 import { ServerIcon } from "lucide-react";
+import { PeerGroupSelector } from "@components/PeerGroupSelector";
+import { useGroups } from "@/contexts/GroupsProvider";
 import {
   CosmosProtocol,
   CosmosResource,
   CosmosResourceRequest,
 } from "@/interfaces/Cosmos";
+import { Group } from "@/interfaces/Group";
 
 type Props = {
   open: boolean;
@@ -75,8 +78,18 @@ function CosmosResourceModalContent({
   );
   const [host, setHost] = useState(resource?.host ?? "");
   const [port, setPort] = useState(String(resource?.port ?? protocolDefaults.ssh));
+  const { groups: allGroups } = useGroups();
   const [groupIDs, setGroupIDs] = useState(resource?.group_ids ?? "");
   const [enabled, setEnabled] = useState(resource ? resource.enabled : true);
+
+  const initialGroups = useMemo(() => {
+    return groupIDs
+      .split(",")
+      .map((id) => id.trim())
+      .filter(Boolean)
+      .map((id) => allGroups?.find((g) => g.id === id))
+      .filter(Boolean) as Group[];
+  }, [groupIDs, allGroups]);
   const [recordingEnabled, setRecordingEnabled] = useState(
     resource ? resource.recording_enabled : true,
   );
@@ -199,10 +212,12 @@ function CosmosResourceModalContent({
         </div>
         <div>
           <Label>Groups</Label>
-          <Input
-            value={groupIDs}
-            onChange={(e) => setGroupIDs(e.target.value)}
-            placeholder="Group IDs, comma-separated"
+          <PeerGroupSelector
+            onChange={(groups) => {
+              const gs = typeof groups === "function" ? groups(initialGroups) : groups;
+              setGroupIDs(gs.map((g) => g.id).join(","));
+            }}
+            values={initialGroups}
           />
         </div>
         <div className="grid gap-3">
