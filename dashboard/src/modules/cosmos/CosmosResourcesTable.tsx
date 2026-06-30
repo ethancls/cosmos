@@ -35,8 +35,22 @@ import GetStartedTest from "@components/ui/GetStartedTest";
 import DescriptionWithTooltip from "@components/ui/DescriptionWithTooltip";
 import TextWithTooltip from "@components/ui/TextWithTooltip";
 import { notify } from "@components/Notification";
-import GroupsRow from "@/modules/common-table-rows/GroupsRow";
 import { ToggleSwitch } from "@components/ToggleSwitch";
+import ModalHeader from "@components/modal/ModalHeader";
+import { PeerGroupSelector } from "@components/PeerGroupSelector";
+import MultipleGroups, {
+  TransparentEditIconButton,
+} from "@components/ui/MultipleGroups";
+import {
+  Modal,
+  ModalClose,
+  ModalContent,
+  ModalFooter,
+  ModalTrigger,
+} from "@components/modal/Modal";
+import Separator from "@components/Separator";
+import { IconCirclePlus } from "@tabler/icons-react";
+import { FolderGit2 } from "lucide-react";
 import { ColumnDef, SortingState } from "@tanstack/react-table";
 import { useApiCall } from "@utils/api";
 import { cn } from "@utils/helpers";
@@ -54,9 +68,10 @@ import {
   TerminalSquareIcon,
   Trash2,
 } from "lucide-react";
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useSWRConfig } from "swr";
 import { useDialog } from "@/contexts/DialogProvider";
+import { useGroups } from "@/contexts/GroupsProvider";
 import { usePermissions } from "@/contexts/PermissionsProvider";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { CosmosResource, CosmosSession } from "@/interfaces/Cosmos";
@@ -607,44 +622,93 @@ function ResourceGroupCell({
   resource: CosmosResource;
 }) {
   const { mutate } = useSWRConfig();
-  const resourceApi = useApiCall<CosmosResource>(
+  const groupsApi = useApiCall<{ group_ids: string[] }>(
     `/cosmos/resources/${resource.id}/groups`,
   );
   const [modal, setModal] = useState(false);
   const { permission } = usePermissions();
+  const { groups: allGroups } = useGroups();
 
-  const groupIDs = resource.group_ids
+  const currentIDs = resource.group_ids
     ?.split(",")
     .map((g) => g.trim())
     .filter(Boolean) || [];
 
-  const handleSave = async (promises: Promise<Group>[]) => {
-    const groups = await Promise.all(promises);
-    const ids = groups.map((g) => g.id);
-    await resourceApi.put({ group_ids: ids });
-    notify({
-      title: resource.name,
-      description: "Groups of the resource were successfully saved",
-      loadingMessage: "Saving the groups of the resource...",
-      promise: Promise.resolve().then(() => {
-        setModal(false);
-        mutate("/cosmos/resources");
-        mutate("/groups");
-      }),
-    });
+  const initialGroups = useMemo(
+    () =>
+      currentIDs
+        .map((id) => allGroups?.find((g: Group) => g.id === id))
+        .filter(Boolean) as Group[],
+    [currentIDs, allGroups],
+  );
+
+  const [selectedGroups, setSelectedGroups] = useState(initialGroups);
+
+  useEffect(() => {
+    setSelectedGroups(initialGroups);
+  }, [initialGroups.length, resource.group_ids]);
+
+  const handleSave = async () => {
+    const ids = selectedGroups.map((g) => g.id);
+    await groupsApi.put({ group_ids: ids });
+    mutate("/cosmos/resources");
+    setModal(false);
   };
 
   return (
-    <GroupsRow
-      label={"Assigned Groups"}
-      description={"Use groups to control what can access this resource"}
-      groups={groupIDs}
-      showAddGroupButton={true}
-      disabled={!permission.groups.update}
-      onSave={handleSave}
-      modal={modal}
-      setModal={setModal}
-      countOnly={true}
-    />
+    <Modal open={modal} onOpenChange={setModal}>
+      <ModalTrigger
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if (permission.groups.update) setModal(true);
+        }}
+      >
+        {initialGroups.length === 0 ? (
+          <Badge variant={"gray"} useHover={true}>
+            <IconCirclePlus size={14} />
+            Add Groups
+          </Badge>
+        ) : (
+          <div className={"flex items-center gap-1 group"}>
+            <MultipleGroups
+              groups={initialGroups}
+              label={"Assigned Groups"}
+              countOnly={true}
+            />
+            <TransparentEditIconButton />
+          </div>
+        )}
+      </ModalTrigger>
+      <ModalContent maxWidthClass={"max-w-xl"}>
+        <ModalHeader
+          icon={<FolderGit2 size={18} />}
+          title={"Assigned Groups"}
+          description={"Use groups to control what can access this resource"}
+          color={"blue"}
+        />
+        <Separator />
+        <div className={"px-8 py-6 flex flex-col gap-8"}>
+          <PeerGroupSelector
+            onChange={setSelectedGroups}
+            values={selectedGroups}
+          />
+        </div>
+        <ModalFooter className={"items-center"}>
+          <div className={"flex gap-3 w-full justify-end"}>
+            <ModalClose asChild>
+              <Button variant={"secondary"}>Cancel</Button>
+            </ModalClose>
+            <Button
+              variant={"primary"}
+              onClick={handleSave}
+              disabled={!permission.groups.update}
+            >
+              Save Groups
+            </Button>
+          </div>
+        </ModalFooter>
+      </ModalContent>
+    </Modal>
   );
 }
