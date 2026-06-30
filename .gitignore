@@ -10,3 +10,4 @@ kyle-reference-netbird-backend/
 cosmos-server/data/
 cosmos-server/cosmos-server
 *.db
+cosmos-server/cosmos-server
