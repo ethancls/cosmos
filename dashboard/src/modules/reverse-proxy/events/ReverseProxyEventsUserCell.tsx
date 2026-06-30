@@ -1,7 +1,8 @@
 import TextWithTooltip from "@components/ui/TextWithTooltip";
-import { generateColorFromUser } from "@utils/helpers";
+import { generateColorFromUser, getGravatarUrl } from "@utils/helpers";
+import Image from "next/image";
 import * as React from "react";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { usePeers } from "@/contexts/PeersProvider";
 import { useUsers } from "@/contexts/UsersProvider";
 import { ReverseProxyEvent } from "@/interfaces/ReverseProxy";
@@ -66,17 +67,37 @@ export const ReverseProxyEventsUserCell = ({ event }: Props) => {
     };
   }
 
+  const [gravatarFailed, setGravatarFailed] = useState(false);
+  const [gravatarUrl, setGravatarUrl] = useState<string | undefined>();
+
+  useEffect(() => {
+    getGravatarUrl(identityForColor?.email, 32).then(setGravatarUrl);
+  }, [identityForColor?.email]);
+
+  const avatarSrc =
+    !gravatarFailed && gravatarUrl ? gravatarUrl : undefined;
+
   return (
     <div className={"flex items-center gap-2 py-2 px-3"}>
       <div
         className={
-          "w-8 h-8 rounded-full flex items-center justify-center text-white uppercase text-xs font-medium bg-nb-gray-900 shrink-0"
+          "w-8 h-8 rounded-full flex items-center justify-center text-white uppercase text-xs font-medium bg-nb-gray-900 shrink-0 overflow-hidden"
         }
-        style={{
-          color: generateColorFromUser(identityForColor),
-        }}
       >
-        {displayName?.charAt(0) || "?"}
+        {avatarSrc ? (
+          <Image
+            src={avatarSrc}
+            alt={displayName}
+            width={32}
+            height={32}
+            className={"rounded-full"}
+            onError={() => setGravatarFailed(true)}
+          />
+        ) : (
+          <span style={{ color: generateColorFromUser(identityForColor) }}>
+            {displayName?.charAt(0) || "?"}
+          </span>
+        )}
       </div>
 
       <div className="flex flex-col gap-0 min-w-0">

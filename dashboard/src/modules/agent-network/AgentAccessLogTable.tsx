@@ -795,7 +795,7 @@ function TokensCell({ entry }: { entry: AIAccessLogEntry }) {
             <span className={"text-nb-gray-400"}>input</span>
           </div>
           <div className={"flex items-center gap-2 whitespace-nowrap"}>
-            <ArrowDownIcon size={12} className={"text-kyle shrink-0"} />
+            <ArrowDownIcon size={12} className={"text-cosmos shrink-0"} />
             <span className={"font-medium"}>
               {entry.outputTokens.toLocaleString()}
             </span>
@@ -824,7 +824,7 @@ function TokensCell({ entry }: { entry: AIAccessLogEntry }) {
           {entry.inputTokens.toLocaleString()}
         </div>
         <div className={"flex gap-2 items-center whitespace-nowrap"}>
-          <ArrowDownIcon size={15} className={"text-kyle"} />
+          <ArrowDownIcon size={15} className={"text-cosmos"} />
           <span className={"sr-only"}>Output:</span>
           {entry.outputTokens.toLocaleString()}
         </div>

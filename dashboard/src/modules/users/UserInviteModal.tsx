@@ -443,20 +443,20 @@ function UserAvatars() {
       >
         <div
           className={
-            "w-10 h-10 shrink-0 bg-kyle/20 rounded-full inline-flex animate-ping duration-3000"
+            "w-10 h-10 shrink-0 bg-cosmos/20 rounded-full inline-flex animate-ping duration-3000"
           }
         />
       </div>
       <div
         className={
-          "w-14 h-14 relative top-2 overflow-hidden -right-8 bg-nb-gray-950 rounded-full flex items-center justify-center border-4 border-nb-gray-950 outline-2 outline-kyle"
+          "w-14 h-14 relative top-2 overflow-hidden -right-8 bg-nb-gray-950 rounded-full flex items-center justify-center border-4 border-nb-gray-950 outline-2 outline-cosmos"
         }
       >
         <Image src={Avatar1} alt={"MS"} />
       </div>
       <div
         className={
-          "w-14 h-14 relative top-1 overflow-hidden -right-4 bg-nb-gray-950 rounded-full flex items-center justify-center border-4 border-nb-gray-950 outline-2 outline-kyle"
+          "w-14 h-14 relative top-1 overflow-hidden -right-4 bg-nb-gray-950 rounded-full flex items-center justify-center border-4 border-nb-gray-950 outline-2 outline-cosmos"
         }
       >
         <Image src={Avatar2} alt={"MS"} />
@@ -467,7 +467,7 @@ function UserAvatars() {
           "w-14 h-14 z-20 relative overflow-hidden bg-nb-gray-930 rounded-full flex items-center justify-center border-4 border-nb-gray-950"
         }
       >
-        <User2 size={24} className={"text-kyle"} />
+        <User2 size={24} className={"text-cosmos"} />
       </div>
       <div
         className={

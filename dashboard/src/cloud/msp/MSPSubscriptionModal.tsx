@@ -53,7 +53,7 @@ const MSPSubscriptionModalContent = ({
         icon={<CreditCardIcon size={18} />}
         title={`Cosmos Plan for ${tenant.name}`}
         description={"Select the plan that best fits your tenant's needs."}
-        color={"netbird"}
+        color={"cosmos"}
       />
       <div className={"px-8 pb-1"}>
         <div className={"grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-4"}>

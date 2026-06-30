@@ -159,7 +159,7 @@ export const PeerSSHToggle = () => {
             icon={
               <AlertCircleIcon
                 size={14}
-                className={"shrink-0 relative top-[3px] text-kyle"}
+                className={"shrink-0 relative top-[3px] text-cosmos"}
               />
             }
             className="my-3"
@@ -176,7 +176,7 @@ export const PeerSSHToggle = () => {
           icon={
             <AlertCircleIcon
               size={14}
-              className={"shrink-0 relative top-[3px] text-kyle"}
+              className={"shrink-0 relative top-[3px] text-cosmos"}
             />
           }
           className="my-3"
@@ -193,7 +193,7 @@ export const PeerSSHToggle = () => {
           icon={
             <AlertCircleIcon
               size={14}
-              className={"shrink-0 relative top-[3px] text-kyle"}
+              className={"shrink-0 relative top-[3px] text-cosmos"}
             />
           }
           className="my-3"

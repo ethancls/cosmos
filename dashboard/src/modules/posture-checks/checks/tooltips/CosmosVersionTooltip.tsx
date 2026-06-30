@@ -16,7 +16,7 @@ export const CosmosVersionTooltip = ({ version, children }: Props) => {
           <span className={""}>Min. Client Version</span>
 
           <span
-            className={"text-kyle font-semibold flex items-center gap-1"}
+            className={"text-cosmos font-semibold flex items-center gap-1"}
           >
             <IconMathEqualGreater size={14} />
             {version}

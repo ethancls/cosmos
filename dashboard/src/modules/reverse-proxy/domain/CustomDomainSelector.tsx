@@ -81,7 +81,7 @@ export function CustomDomainSelector({
       value: "add_custom",
       label: "Add Custom Domain",
       renderItem: () => (
-        <div className="flex items-center justify-between gap-2 text-kyle text-sm w-full">
+        <div className="flex items-center justify-between gap-2 text-cosmos text-sm w-full">
           <div className={"flex items-center gap-2"}>
             <span>Add Custom Domain</span>
           </div>

@@ -313,7 +313,7 @@ function ConsumptionByDayChart({
             {
               label: "Cost (USD)",
               data: daily.map((d) => d.cost),
-              backgroundColor: "rgba(246, 131, 48, 0.65)", // netbird orange
+              backgroundColor: "rgba(33, 124, 231, 0.65)", // cosmos blue
             },
           ],
         };

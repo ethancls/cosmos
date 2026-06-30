@@ -95,7 +95,7 @@ export default function AgentGuardrailModal({
           description={
             "Define a reusable set of LLM guardrails to attach to one or more policies."
           }
-          color={"netbird"}
+          color={"cosmos"}
         />
 
         <Tabs onValueChange={setTab} defaultValue={tab} value={tab}>
@@ -108,7 +108,7 @@ export default function AgentGuardrailModal({
               <Text
                 size={16}
                 className={
-                  "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                  "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
                 }
               />
               Name & Description
@@ -246,7 +246,7 @@ function ModelAllowlistCheck({
       title={"Model Allowlist"}
       description={"Block requests for models not on the allowlist."}
       icon={<Boxes size={16} />}
-      iconClass={"bg-gradient-to-tr from-kyle-200 to-kyle-100"}
+      iconClass={"bg-gradient-to-tr from-cosmos-200 to-cosmos-100"}
       modalWidthClass={"max-w-2xl"}
       onReset={() => onChange(undefined)}
     >
@@ -326,7 +326,7 @@ function ModelAllowlistContent({
                   className={cn(
                     "flex items-center gap-3 p-2 rounded border cursor-pointer transition-colors",
                     checked
-                      ? "border-kyle/40 bg-kyle/5"
+                      ? "border-cosmos/40 bg-cosmos/5"
                       : "border-nb-gray-800 bg-nb-gray-900/20 hover:border-nb-gray-700",
                   )}
                 >

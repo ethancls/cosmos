@@ -191,7 +191,7 @@ export function ConfigurationContent({
             <FolderGit2
               size={14}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Peer Approval
@@ -200,7 +200,7 @@ export function ConfigurationContent({
             <ShieldCheckIcon
               size={14}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Compliance
@@ -209,7 +209,7 @@ export function ConfigurationContent({
             <Cog
               size={14}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Settings
@@ -218,7 +218,7 @@ export function ConfigurationContent({
             <AlertOctagon
               size={14}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Danger Zone

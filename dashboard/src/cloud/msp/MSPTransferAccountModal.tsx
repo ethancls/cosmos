@@ -119,7 +119,7 @@ export const MSPTransferAccountModal = () => {
               </div>
             </div>
             <div>
-              <ArrowRightLeft size={24} className={"text-kyle"} />
+              <ArrowRightLeft size={24} className={"text-cosmos"} />
             </div>
             <div
               className={
@@ -160,15 +160,15 @@ export const MSPTransferAccountModal = () => {
               </div>
               <ul className="flex flex-col gap-1.5 mt-4 mb-1">
                 <li className="flex items-center gap-2 text-sm text-nb-gray-200">
-                  <SettingsIcon size={16} className={"text-kyle"} />
+                  <SettingsIcon size={16} className={"text-cosmos"} />
                   Manage your account, settings and configurations
                 </li>
                 <li className="flex items-center gap-2 text-sm text-nb-gray-200">
-                  <MonitorSmartphoneIcon size={16} className={"text-kyle"} />
+                  <MonitorSmartphoneIcon size={16} className={"text-cosmos"} />
                   Manage all devices and associated resources
                 </li>
                 <li className="flex items-center gap-2 text-sm text-nb-gray-200">
-                  <UserIcon size={16} className={"text-kyle"} />
+                  <UserIcon size={16} className={"text-cosmos"} />
                   Manage all users, groups and permissions
                 </li>
               </ul>

@@ -7,7 +7,7 @@ const iconVariant = cva(
   {
     variants: {
       color: {
-        netbird: "bg-kyle-950 border-kyle text-kyle",
+        cosmos: "bg-cosmos-950 border-cosmos text-cosmos",
         blue: "bg-sky-950 border-sky-500 text-sky-100",
         "blue-darker": "bg-sky-950 border-sky-500 text-sky-500",
         red: "bg-red-950 border-red-500 text-red-500",
@@ -34,7 +34,7 @@ interface Props extends IconVariant {
 }
 
 export default function SquareIcon({
-  color = "netbird",
+  color = "cosmos",
   icon,
   size = "medium",
   margin = "mt-1",

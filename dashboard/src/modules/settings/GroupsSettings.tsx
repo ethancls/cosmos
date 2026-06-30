@@ -90,7 +90,7 @@ export default function GroupsSettings({ account }: Props) {
           children: (
             <div
               className={
-                "flex gap-2 items-center text-xs bg-kyle-950 px-4 justify-center py-3 rounded-md border border-kyle-500 text-kyle-200"
+                "flex gap-2 items-center text-xs bg-cosmos-950 px-4 justify-center py-3 rounded-md border border-cosmos-500 text-cosmos-200"
               }
             >
               <AlertCircle size={14} />
@@ -301,7 +301,7 @@ export default function GroupsSettings({ account }: Props) {
                     {jwtAllowGroupsWarning && (
                       <div
                         className={
-                          "flex gap-2 items-center text-xs bg-kyle-950 px-4 justify-center py-3 rounded-md border border-kyle-500 text-kyle-200"
+                          "flex gap-2 items-center text-xs bg-cosmos-950 px-4 justify-center py-3 rounded-md border border-cosmos-500 text-cosmos-200"
                         }
                       >
                         <AlertCircle size={14} />

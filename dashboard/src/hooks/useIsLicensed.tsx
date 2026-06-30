@@ -1,6 +1,6 @@
 import useFetchApi from "@utils/api";
 import loadConfig from "@utils/config";
-import { hasLicensedFlag, testEditionOverride } from "@utils/netbird";
+import { hasLicensedFlag, isCosmosCloud, testEditionOverride } from "@utils/netbird";
 import { useEffect, useState } from "react";
 
 /**
@@ -62,12 +62,13 @@ export const useIsLicensed = (): {
 } => {
   const declared = hasLicensedFlag();
   const override = testEditionOverride();
+  const isCloud = isCosmosCloud();
 
   const [cached] = useState<boolean | undefined>(() =>
     declared || override ? undefined : readLicenseCache(),
   );
 
-  const shouldProbe = !declared && !override && cached === undefined;
+  const shouldProbe = isCloud && !declared && !override && cached === undefined;
   const { data, error, isLoading } = useFetchApi<unknown>(
     LICENSE_PROBE_ENDPOINT,
     true,

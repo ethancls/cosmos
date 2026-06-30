@@ -204,7 +204,7 @@ function RoutingPeerModalContent({
         icon={<Share2Icon size={16} />}
         title={router ? "Update Routing Peer" : "Add Routing Peer"}
         description={`Route traffic to '${network.name}'`}
-        color={"netbird"}
+        color={"cosmos"}
       />
 
       <Tabs defaultValue={tab} onValueChange={(v) => setTab(v)} value={tab}>
@@ -213,7 +213,7 @@ function RoutingPeerModalContent({
             <Share2Icon
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Routing Peers
@@ -223,7 +223,7 @@ function RoutingPeerModalContent({
             <Settings2
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Advanced Settings

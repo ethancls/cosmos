@@ -392,7 +392,7 @@ export function RouteModalContent({
           exitNode ? (
             <IconDirectionSign size={20} />
           ) : (
-            <NetworkRoutesIcon className={"fill-kyle"} />
+            <NetworkRoutesIcon className={"fill-cosmos"} />
           )
         }
         title={
@@ -410,7 +410,7 @@ export function RouteModalContent({
               : "Route all internet traffic through a peer"
             : "Access LANs and VPC by adding a network route."
         }
-        color={exitNode ? "yellow" : "netbird"}
+        color={exitNode ? "yellow" : "cosmos"}
       />
 
       <Tabs defaultValue={tab} onValueChange={(v) => setTab(v)} value={tab}>
@@ -423,7 +423,7 @@ export function RouteModalContent({
               <RouteIcon
                 size={16}
                 className={
-                  "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                  "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
                 }
               />
               Route
@@ -434,7 +434,7 @@ export function RouteModalContent({
             <FolderGit2
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Groups
@@ -447,7 +447,7 @@ export function RouteModalContent({
             <Text
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Name & Description
@@ -459,7 +459,7 @@ export function RouteModalContent({
             <Settings2
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Additional Settings

@@ -63,7 +63,7 @@ export const AddGroupButton = () => {
             icon={<FolderGit2Icon size={18} />}
             title="Create Group"
             description="Create a group to manage and organize access in your network"
-            color="netbird"
+            color="cosmos"
           />
           <Separator />
           <div className={"px-8 flex-col flex gap-6 py-6"}>

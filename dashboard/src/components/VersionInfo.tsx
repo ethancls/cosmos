@@ -135,7 +135,7 @@ const NavigationVersionInfoContent = () => {
           href="https://docs.netbird.io/selfhosted/maintenance/upgrade"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-1.5 text-white font-medium bg-kyle hover:bg-kyle-500 transition-colors rounded-md py-1.5 px-2 mt-1"
+          className="flex items-center justify-center gap-1.5 text-white font-medium bg-cosmos hover:bg-cosmos-500 transition-colors rounded-md py-1.5 px-2 mt-1"
         >
           <ArrowUpCircle size={12} />
           <span>Update available</span>

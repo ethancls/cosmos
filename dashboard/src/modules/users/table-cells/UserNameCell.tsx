@@ -1,7 +1,8 @@
-import { cn, generateColorFromUser } from "@utils/helpers";
+import { cn, generateColorFromUser, getGravatarUrl } from "@utils/helpers";
 import useFetchApi from "@utils/api";
 import { Ban, Clock, Cog } from "lucide-react";
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import { User } from "@/interfaces/User";
 import { SSOIdentityProvider } from "@/interfaces/IdentityProvider";
 import { useAccount } from "@/modules/account/useAccount";
@@ -38,7 +39,7 @@ export default function UserNameCell({ user }: Readonly<Props>) {
   const getStatusIcon = () => {
     if (user?.pending_approval) {
       return {
-        color: "bg-kyle text-kyle-950",
+        color: "bg-cosmos text-cosmos-950",
         icon: <Clock size={12} />,
       };
     }
@@ -56,6 +57,23 @@ export default function UserNameCell({ user }: Readonly<Props>) {
 
   const { color, icon } = getStatusIcon();
 
+  const [pictureFailed, setPictureFailed] = useState(false);
+  const [gravatarFailed, setGravatarFailed] = useState(false);
+  const [gravatarUrl, setGravatarUrl] = useState<string | undefined>();
+
+  useEffect(() => {
+    getGravatarUrl(user?.email, 40).then(setGravatarUrl);
+  }, [user?.email]);
+
+  const avatarSrc: string | undefined =
+    !pictureFailed && user?.picture
+      ? user.picture
+      : !gravatarFailed && gravatarUrl
+        ? gravatarUrl
+        : undefined;
+
+  const showLetter = !avatarSrc;
+
   return (
     <div
       className={cn("flex gap-4 px-2 py-1 items-center")}
@@ -63,14 +81,28 @@ export default function UserNameCell({ user }: Readonly<Props>) {
     >
       <div
         className={
-          "w-10 h-10 rounded-full relative flex items-center justify-center text-white uppercase text-md font-medium bg-nb-gray-900"
+          "w-10 h-10 rounded-full relative flex items-center justify-center text-white uppercase text-md font-medium bg-nb-gray-900 overflow-hidden"
         }
-        style={{
-          color: generateColorFromUser(user),
-        }}
       >
-        {!user?.name && !user?.id && <Cog size={12} />}
-        {user?.name?.charAt(0) || user?.id?.charAt(0)}
+        {avatarSrc ? (
+          <Image
+            src={avatarSrc}
+            alt={user.name ?? ""}
+            width={40}
+            height={40}
+            className={"rounded-full"}
+            onError={() => {
+              if (!pictureFailed && user?.picture) setPictureFailed(true);
+              else if (!gravatarFailed) setGravatarFailed(true);
+            }}
+          />
+        ) : showLetter ? (
+          <span style={{ color: generateColorFromUser(user) }}>
+            {!user?.name && !user?.id && <Cog size={12} />}
+            {user?.name?.charAt(0) || user?.id?.charAt(0)}
+          </span>
+        ) : null}
+
         {(status == "invited" || status == "blocked") && (
           <div
             className={cn(

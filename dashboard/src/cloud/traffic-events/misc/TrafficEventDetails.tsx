@@ -146,7 +146,7 @@ const ExpandedCards = () => {
             "text-sm font-medium text-nb-gray-200 flex items-center gap-2"
           }
         >
-          <ArrowUpIcon size={16} className={"text-kyle-500"} />
+          <ArrowUpIcon size={16} className={"text-cosmos-500"} />
           10.8 GB
         </span>
       </div>

@@ -132,7 +132,7 @@ export const AssignUserToGroupModalContent = ({
             <div className={"text-sm"}>
               {Object.keys(selectedRows).length > 0 && (
                 <div className={"text-nb-gray-200"}>
-                  <span className={"text-kyle font-medium"}>
+                  <span className={"text-cosmos font-medium"}>
                     {Object.keys(selectedRows).length}
                   </span>{" "}
                   User(s) selected

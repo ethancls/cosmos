@@ -58,7 +58,7 @@ export const MSPDomainVerificationModal = ({
           icon={<GlobeIcon size={20} />}
           title={"Verify Domain Ownership"}
           description={domain}
-          color={"netbird"}
+          color={"cosmos"}
         />
         <div className={"px-8 flex flex-col gap-0"}>
           <Steps className={"pt-0"}>

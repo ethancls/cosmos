@@ -1,16 +1,19 @@
-import { cn, generateColorFromUser } from "@utils/helpers";
+import { cn, generateColorFromUser, getGravatarUrl } from "@utils/helpers";
 import * as React from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useApplicationContext } from "@/contexts/ApplicationProvider";
 
 type Props = {
   size?: "default" | "small" | "large" | "medium";
 };
+
 export const UserAvatar = ({ size = "default" }: Props) => {
   const { user } = useApplicationContext();
 
-  const [pictureLoaded, setPictureLoaded] = useState(true);
+  const [pictureFailed, setPictureFailed] = useState(false);
+  const [gravatarFailed, setGravatarFailed] = useState(false);
+  const [gravatarUrl, setGravatarUrl] = useState<string | undefined>();
 
   const getAvatarSize = () => {
     if (size === "small") return 32;
@@ -19,19 +22,45 @@ export const UserAvatar = ({ size = "default" }: Props) => {
     return 35.2;
   };
 
-  return pictureLoaded && user?.picture ? (
-    <Image
-      src={user?.picture}
-      alt={""}
-      onError={() => setPictureLoaded(false)}
-      width={getAvatarSize()}
-      height={getAvatarSize()}
-      className={"rounded-full"}
-    />
-  ) : (
+  const sizePx = getAvatarSize();
+
+  useEffect(() => {
+    getGravatarUrl(user?.email, sizePx).then(setGravatarUrl);
+  }, [user?.email, sizePx]);
+
+  // 1. Profile picture from backend
+  if (!pictureFailed && user?.picture) {
+    return (
+      <Image
+        src={user.picture}
+        alt={user.name ?? ""}
+        onError={() => setPictureFailed(true)}
+        width={sizePx}
+        height={sizePx}
+        className={"rounded-full"}
+      />
+    );
+  }
+
+  // 2. Gravatar
+  if (!gravatarFailed && gravatarUrl) {
+    return (
+      <Image
+        src={gravatarUrl}
+        alt={user?.name ?? ""}
+        onError={() => setGravatarFailed(true)}
+        width={sizePx}
+        height={sizePx}
+        className={"rounded-full"}
+      />
+    );
+  }
+
+  // 3. Letter avatar fallback
+  return (
     <div
       className={cn(
-        "rounded-full flex items-center justify-center bg-nb-gray-900 text-kyle uppercase",
+        "rounded-full flex items-center justify-center bg-nb-gray-900 uppercase",
         size == "small" && "w-8 h-8",
         size == "medium" && "w-[2.2rem] h-[2.2rem]",
         size == "default" && "w-10 h-10",

@@ -114,7 +114,7 @@ export function ChangePasswordModalContent({
         icon={<KeyRound size={18} />}
         title={"Change Password"}
         description={"Update your account password."}
-        color={"netbird"}
+        color={"cosmos"}
       />
 
       <Separator />

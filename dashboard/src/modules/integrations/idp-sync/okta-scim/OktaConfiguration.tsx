@@ -195,7 +195,7 @@ export function ConfigurationContent({ onSuccess, config }: ModalProps) {
             <Cog
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Settings
@@ -204,7 +204,7 @@ export function ConfigurationContent({ onSuccess, config }: ModalProps) {
             <FolderGit2
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Group Sync
@@ -213,7 +213,7 @@ export function ConfigurationContent({ onSuccess, config }: ModalProps) {
             <UserCircle
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             User Sync
@@ -222,7 +222,7 @@ export function ConfigurationContent({ onSuccess, config }: ModalProps) {
             <AlertOctagon
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Danger Zone

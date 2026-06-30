@@ -34,15 +34,15 @@ export const TrialSuccessModal = ({ open, setOpen }: Props) => {
             </div>
             <ul className="flex flex-col gap-1.5 mt-4 mb-6">
               <li className="flex items-center gap-2 text-sm text-nb-gray-200">
-                <Check size={16} className={"text-kyle"} />
+                <Check size={16} className={"text-cosmos"} />
                 Configure IdP sync for user & group provisioning
               </li>
               <li className="flex items-center gap-2 text-sm text-nb-gray-200">
-                <Check size={16} className={"text-kyle"} />
+                <Check size={16} className={"text-cosmos"} />
                 Set up your first device posture checks
               </li>
               <li className="flex items-center gap-2 text-sm text-nb-gray-200">
-                <Check size={16} className={"text-kyle"} />
+                <Check size={16} className={"text-cosmos"} />
                 Enable device approvals for added control
               </li>
             </ul>

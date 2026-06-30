@@ -93,7 +93,7 @@ export const CustomDomainModal = ({
           icon={<GlobeIcon size={20} />}
           title={"Add Custom Domain"}
           description={"You will need to verify the domain with DNS records"}
-          color={"netbird"}
+          color={"cosmos"}
         />
 
         <Separator />

@@ -154,7 +154,7 @@ const CustomerModalContent = ({
             ? `${customer.name} (${customer.domain})`
             : "Add a new customer account to your distributor organization."
         }
-        color={"netbird"}
+        color={"cosmos"}
       />
       {customer ? (
         <Tabs defaultValue={"general"} value={tab} onValueChange={setTab}>
@@ -163,7 +163,7 @@ const CustomerModalContent = ({
               <Text
                 size={16}
                 className={
-                  "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                  "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
                 }
               />
               General
@@ -173,7 +173,7 @@ const CustomerModalContent = ({
                 <CreditCardIcon
                   size={16}
                   className={
-                    "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                    "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
                   }
                 />
                 Plan

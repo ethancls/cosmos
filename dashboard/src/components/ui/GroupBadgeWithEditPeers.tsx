@@ -93,13 +93,13 @@ export default function GroupBadgeWithEditPeers({
           </div>
           <span
             className={
-              "text-[0.7rem] relative leading-none mt-[2px] text-nb-gray-300 mb-[1px] font-normal flex gap-1.5 items-center group-hover/badge:text-kyle transition-all"
+              "text-[0.7rem] relative leading-none mt-[2px] text-nb-gray-300 mb-[1px] font-normal flex gap-1.5 items-center group-hover/badge:text-cosmos transition-all"
             }
           >
             <span>
               <span
                 className={
-                  "font-medium text-nb-gray-200 group-hover/badge:text-kyle transition-all"
+                  "font-medium text-nb-gray-200 group-hover/badge:text-cosmos transition-all"
                 }
               >
                 {peerCount}
@@ -112,7 +112,7 @@ export default function GroupBadgeWithEditPeers({
               <SquarePen
                 size={11}
                 className={
-                  "shrink-0 transition-all relative z-10 group-hover/badge:text-kyle text-kyle-400/80"
+                  "shrink-0 transition-all relative z-10 group-hover/badge:text-cosmos text-cosmos-400/80"
                 }
               />
             )}

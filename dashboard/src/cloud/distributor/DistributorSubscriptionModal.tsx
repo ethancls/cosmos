@@ -64,7 +64,7 @@ const DistributorSubscriptionModalContent = ({
         icon={<CreditCardIcon size={18} />}
         title={`Cosmos Plan for ${name}`}
         description={`Select the plan that best fits your customer's needs.`}
-        color={"netbird"}
+        color={"cosmos"}
       />
       <div className={"px-8 pb-1"}>
         <div

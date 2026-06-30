@@ -15,7 +15,7 @@ import { RestrictedAccess } from "@components/ui/RestrictedAccess";
 import useRedirect from "@hooks/useRedirect";
 import { IconCirclePlus, IconSettings2 } from "@tabler/icons-react";
 import useFetchApi, { useApiCall } from "@utils/api";
-import { generateColorFromString } from "@utils/helpers";
+import { generateColorFromString, getGravatarUrl } from "@utils/helpers";
 import dayjs from "dayjs";
 import {
   Ban,
@@ -27,7 +27,8 @@ import {
   User2,
 } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import { useSWRConfig } from "swr";
 import TeamIcon from "@/assets/icons/TeamIcon";
 import { UserMfaListItem } from "@/cloud/mfa/UserMFAListItem";
@@ -143,6 +144,20 @@ function UserOverview({ user, initialGroups }: Readonly<Props>) {
   const showSeparator = !showTabs;
 
   const [tab, setTab] = useState(isServiceUser ? "access-tokens" : "peers");
+  const [pictureFailed, setPictureFailed] = useState(false);
+  const [gravatarFailed, setGravatarFailed] = useState(false);
+  const [gravatarUrl, setGravatarUrl] = useState<string | undefined>();
+
+  useEffect(() => {
+    getGravatarUrl(user?.email, 40).then(setGravatarUrl);
+  }, [user?.email]);
+
+  const avatarSrc: string | undefined =
+    !pictureFailed && user?.picture
+      ? user.picture
+      : !gravatarFailed && gravatarUrl
+        ? gravatarUrl
+        : undefined;
 
   return (
     <PageContainer>
@@ -178,26 +193,35 @@ function UserOverview({ user, initialGroups }: Readonly<Props>) {
             <div className={"flex items-center gap-3"}>
               <div
                 className={
-                  "w-10 h-10 rounded-full relative flex items-center justify-center text-white uppercase text-md font-medium bg-nb-gray-900"
-                }
-                style={
-                  isServiceUser
-                    ? {
-                        color: "white",
-                      }
-                    : {
-                        color: user?.name
-                          ? generateColorFromString(
-                              user?.name || user?.id || "System User",
-                            )
-                          : "#808080",
-                      }
+                  "w-10 h-10 rounded-full relative flex items-center justify-center text-white uppercase text-md font-medium bg-nb-gray-900 overflow-hidden"
                 }
               >
                 {isServiceUser ? (
                   <IconSettings2 size={16} />
+                ) : avatarSrc ? (
+                  <Image
+                    src={avatarSrc}
+                    alt={user?.name ?? ""}
+                    width={40}
+                    height={40}
+                    className={"rounded-full"}
+                    onError={() => {
+                      if (!pictureFailed && user?.picture) setPictureFailed(true);
+                      else setGravatarFailed(true);
+                    }}
+                  />
                 ) : (
-                  user?.name?.charAt(0) || user?.id?.charAt(0)
+                  <span
+                    style={{
+                      color: user?.name
+                        ? generateColorFromString(
+                            user?.name || user?.id || "System User",
+                          )
+                        : "#808080",
+                    }}
+                  >
+                    {user?.name?.charAt(0) || user?.id?.charAt(0)}
+                  </span>
                 )}
               </div>
               <h1 className={"flex items-center gap-3"} title={user?.id}>

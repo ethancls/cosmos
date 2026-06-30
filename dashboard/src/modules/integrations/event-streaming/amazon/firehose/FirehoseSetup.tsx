@@ -234,7 +234,7 @@ export function SetupContent({ onSuccess }: Readonly<ModalProps>) {
                   <TooltipTrigger>
                     <InfoIcon
                       size={16}
-                      className={"inline-block ml-1 text-kyle"}
+                      className={"inline-block ml-1 text-cosmos"}
                     />
                   </TooltipTrigger>
                   <TooltipContent>

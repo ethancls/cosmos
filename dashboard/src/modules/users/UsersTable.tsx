@@ -236,7 +236,7 @@ export default function UsersTable({
     () => [
       { value: undefined, label: "All", dotClass: "bg-nb-gray-500" },
       { value: "active", label: "Active", dotClass: "bg-green-500" },
-      { value: "pending", label: "Pending", dotClass: "bg-kyle" },
+      { value: "pending", label: "Pending", dotClass: "bg-cosmos" },
       { value: "invited", label: "Invited", dotClass: "bg-yellow-400" },
       { value: "blocked", label: "Blocked", dotClass: "bg-red-500" },
     ],

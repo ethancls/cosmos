@@ -78,7 +78,7 @@ export function ServiceUserModalContent({ onSuccess }: Readonly<ModalProps>) {
         description={
           "Service users are non-login users that are not associated with any specific person."
         }
-        color={"netbird"}
+        color={"cosmos"}
       />
 
       <Separator />

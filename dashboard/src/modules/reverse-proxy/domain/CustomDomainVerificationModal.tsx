@@ -61,7 +61,7 @@ export const CustomDomainVerificationModal = ({
           icon={<GlobeIcon size={20} />}
           title={"Verify Domain"}
           description={domain.domain}
-          color={"netbird"}
+          color={"cosmos"}
         />
         <div className={"px-8 flex flex-col gap-0 pb-6"}>
           <Steps className={"pt-0 stepper-bg-variant"}>

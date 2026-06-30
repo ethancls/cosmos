@@ -480,14 +480,14 @@ export default function AIProviderModal({
     <Modal open={open} onOpenChange={(o) => (o ? null : handleClose())}>
       <ModalContent maxWidthClass={"max-w-2xl"}>
         <ModalHeader
-          icon={<AgentNetworkIcon className={"fill-kyle"} size={18} />}
+          icon={<AgentNetworkIcon className={"fill-cosmos"} size={18} />}
           title={isEdit ? "Edit Provider" : "Connect Provider"}
           description={
             isEdit
               ? "Update this provider's configuration."
               : "Connect an AI model provider or gateway to your Agent Network."
           }
-          color={"netbird"}
+          color={"cosmos"}
         />
 
         <Tabs onValueChange={setTab} defaultValue={tab} value={tab}>
@@ -522,7 +522,7 @@ export default function AIProviderModal({
                   icon={
                     <AlertCircleIcon
                       size={14}
-                      className={"shrink-0 relative top-[3px] text-kyle"}
+                      className={"shrink-0 relative top-[3px] text-cosmos"}
                     />
                   }
                 >

@@ -221,7 +221,7 @@ export const OnboardingDemoCall = ({ open, onOpenChange }: Props) => {
                   className="flex items-center gap-3 text-sm text-nb-gray-200"
                   key={index}
                 >
-                  <Check size={16} className={"text-kyle shrink-0"} />
+                  <Check size={16} className={"text-cosmos shrink-0"} />
                   {feature}
                 </li>
               ))}

@@ -194,7 +194,7 @@ export function PeerSelector({
                     content={
                       <div className={"max-w-[240px] text-xs"}>
                         Please update Cosmos to at least{" "}
-                        <span className={"text-kyle"}>v0.36.6</span> or later
+                        <span className={"text-cosmos"}>v0.36.6</span> or later
                         to use this peer as a routing peer.
                       </div>
                     }
@@ -220,10 +220,10 @@ export function PeerSelector({
                       </div>
                       {!isSupported && (
                         <div className={"relative"}>
-                          <span className="animate-ping absolute left-0 inline-flex h-[14px] w-[14px] rounded-full bg-kyle opacity-20"></span>
+                          <span className="animate-ping absolute left-0 inline-flex h-[14px] w-[14px] rounded-full bg-cosmos opacity-20"></span>
                           <ArrowUpCircleIcon
                             size={14}
-                            className={"text-kyle"}
+                            className={"text-cosmos"}
                           />
                         </div>
                       )}

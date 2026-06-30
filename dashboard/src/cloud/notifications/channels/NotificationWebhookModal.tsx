@@ -101,7 +101,7 @@ function NotificationWebhookModalContent({
             <TextIcon
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             General
@@ -114,7 +114,7 @@ function NotificationWebhookModalContent({
             <FileCode2Icon
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Headers

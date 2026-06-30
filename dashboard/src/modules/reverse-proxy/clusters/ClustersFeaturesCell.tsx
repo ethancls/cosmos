@@ -26,7 +26,7 @@ export default function ClustersFeaturesCell({ cluster }: Readonly<Props>) {
       key: "custom-ports",
       label: "Custom Ports",
       description: "Cluster can bind arbitrary TCP/UDP ports for services.",
-      icon: <SlidersHorizontal size={14} className={"text-kyle"} />,
+      icon: <SlidersHorizontal size={14} className={"text-cosmos"} />,
     });
   }
   if (cluster.require_subdomain) {
@@ -61,7 +61,7 @@ export default function ClustersFeaturesCell({ cluster }: Readonly<Props>) {
           target types.
         </>
       ),
-      icon: <Lock size={14} className={"text-kyle"} />,
+      icon: <Lock size={14} className={"text-cosmos"} />,
     });
   }
 

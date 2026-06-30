@@ -108,7 +108,7 @@ function InviteRoleCell({ invite }: { invite: UserInvite }) {
 
   return (
     <div className={cn("flex gap-3 items-center text-nb-gray-200")}>
-      <Badge variant={role === "owner" ? "netbird" : "gray"}>
+      <Badge variant={role === "owner" ? "cosmos" : "gray"}>
         {role === Role.User && (
           <>
             <User2 size={14} />

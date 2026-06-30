@@ -579,10 +579,10 @@ export default function ReverseProxyModal({
         maxWidthClass={tab === "service" ? "max-w-xl" : "max-w-2xl"}
       >
         <ModalHeader
-          icon={<ReverseProxyIcon className={"fill-kyle"} size={18} />}
+          icon={<ReverseProxyIcon className={"fill-cosmos"} size={18} />}
           title={modalTitle}
           description={modalDescription}
-          color={"netbird"}
+          color={"cosmos"}
         />
 
         <Tabs value={tab} onValueChange={setTab}>

@@ -129,7 +129,7 @@ const NavigationUsageInfoContent = () => {
                     "absolute h-full",
                     isFreePlan && usagePercentage >= 100
                       ? "bg-red-500"
-                      : "from-kyle to-kyle-500 bg-gradient-to-r",
+                      : "from-cosmos to-cosmos-500 bg-gradient-to-r",
                   )}
                   style={{
                     width: `${usagePercentage}%`,
@@ -141,7 +141,7 @@ const NavigationUsageInfoContent = () => {
               <div
                 className={cn(
                   "text-red-500 flex gap-1.5 items-center mt-1.5",
-                  usagePercentage >= 100 ? "text-red-500" : "text-kyle",
+                  usagePercentage >= 100 ? "text-red-500" : "text-cosmos",
                 )}
               >
                 <IconInfoCircle size={12} className={"font-medium"} />

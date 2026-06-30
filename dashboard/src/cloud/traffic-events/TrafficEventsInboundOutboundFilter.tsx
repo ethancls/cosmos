@@ -30,7 +30,7 @@ export function TrafficEventsInboundOutboundFilter({ value, onChange }: Props) {
         isActive={isOutbound}
         onClick={() => onChange(TrafficEventDirection.EGRESS)}
       >
-        <ArrowUpIcon size={14} className={cn("text-kyle")} />
+        <ArrowUpIcon size={14} className={cn("text-cosmos")} />
         Outbound
       </InnerButton>
     </div>

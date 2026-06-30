@@ -3,7 +3,7 @@ import {
   SelectOption,
 } from "@components/select/SelectDropdown";
 import useFetchApi from "@utils/api";
-import { cn, generateColorFromUser } from "@utils/helpers";
+import { cn } from "@utils/helpers";
 import { Handle, type Node, Position } from "@xyflow/react";
 import { sortBy } from "lodash";
 import { ChevronsUpDown, Cog } from "lucide-react";
@@ -134,17 +134,12 @@ export const SelectedUser = ({
 }) => {
   return (
     <div className={cn("flex items-center justify-center gap-2.5", className)}>
-      <div
-        className={
-          "w-8 h-8 rounded-full relative flex items-center justify-center text-white uppercase text-md font-medium bg-nb-gray-900"
-        }
-        style={{
-          color: generateColorFromUser(user),
-        }}
-      >
-        {!user?.name && !user?.id && <Cog size={12} />}
-        {user?.name?.charAt(0) || user?.id?.charAt(0)}
-      </div>
+      <SmallUserAvatar
+        name={user?.name}
+        email={user?.email}
+        id={user?.id}
+        className={"w-8 h-8 text-md"}
+      />
       <div
         className={cn(
           "flex flex-col justify-center relative",

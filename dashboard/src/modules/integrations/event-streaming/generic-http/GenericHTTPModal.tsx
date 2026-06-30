@@ -242,7 +242,7 @@ export function GenericHTTPModalContent({
             <CogIcon
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             General
@@ -251,7 +251,7 @@ export function GenericHTTPModalContent({
             <FileCode2Icon
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Headers
@@ -263,7 +263,7 @@ export function GenericHTTPModalContent({
             <BracesIcon
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Body Template
@@ -273,7 +273,7 @@ export function GenericHTTPModalContent({
               <AlertOctagon
                 size={16}
                 className={
-                  "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                  "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
                 }
               />
               Danger Zone

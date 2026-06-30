@@ -182,7 +182,7 @@ const MspAccountModalContent = ({ setOpen, tenant, initialTab }: Props) => {
             ? `${tenant.name} (${tenant.domain})`
             : "Add a new tenant account to your organization."
         }
-        color={"netbird"}
+        color={"cosmos"}
       />
       <Tabs defaultValue={"general"} value={tab} onValueChange={setTab}>
         <TabsList justify={"start"} className={"px-8"}>
@@ -190,7 +190,7 @@ const MspAccountModalContent = ({ setOpen, tenant, initialTab }: Props) => {
             <Text
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             General
@@ -199,7 +199,7 @@ const MspAccountModalContent = ({ setOpen, tenant, initialTab }: Props) => {
             <LockIcon
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Permissions

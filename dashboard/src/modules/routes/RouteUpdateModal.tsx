@@ -323,10 +323,10 @@ function RouteUpdateModalContent({ onSuccess, route, cell }: ModalProps) {
   return (
     <ModalContent maxWidthClass={"max-w-2xl"}>
       <ModalHeader
-        icon={<NetworkRoutesIcon className={"fill-kyle"} />}
+        icon={<NetworkRoutesIcon className={"fill-cosmos"} />}
         title={"Update " + route.network_id}
         description={routeInfo}
-        color={"netbird"}
+        color={"cosmos"}
         truncate={true}
       >
         {route?.domains && (
@@ -347,7 +347,7 @@ function RouteUpdateModalContent({ onSuccess, route, cell }: ModalProps) {
             <RouteIcon
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Route
@@ -359,7 +359,7 @@ function RouteUpdateModalContent({ onSuccess, route, cell }: ModalProps) {
             <Text
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Description
@@ -368,7 +368,7 @@ function RouteUpdateModalContent({ onSuccess, route, cell }: ModalProps) {
             <Settings2
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Settings

@@ -157,7 +157,7 @@ export function SetupContent({ onSuccess, account }: Readonly<ModalProps>) {
               key={index}
               className={cn(
                 "w-8 h-1 rounded-full bg-nb-gray-800",
-                step >= index + 1 && "bg-kyle",
+                step >= index + 1 && "bg-cosmos",
               )}
             />
           ))}

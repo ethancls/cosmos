@@ -19,7 +19,7 @@ export const FirewallGPTAccessFormSuccessModal = ({ open, setOpen }: Props) => {
             "flex items-center justify-center flex-col gap-3 px-6 relative z-[1]"
           }
         >
-          <Sparkles size={26} className={"text-kyle-500"} />
+          <Sparkles size={26} className={"text-cosmos-500"} />
           <div className={"text-xl font-medium"}>Thank you for signing up!</div>
           <div className={"text-sm text-center mb-2"}>
             <p

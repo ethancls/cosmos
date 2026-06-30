@@ -83,7 +83,7 @@ const CurrentPlan = ({ plan }: { plan: PlanTier }) => {
       <span
         className={cn(
           "h-2 w-2 rounded-full",
-          plan == PlanTier.BUSINESS && "bg-kyle",
+          plan == PlanTier.BUSINESS && "bg-cosmos",
           plan == PlanTier.TEAM && "bg-sky-500",
           plan == PlanTier.FREE && "bg-nb-gray-500",
           plan == PlanTier.TRIAL && "bg-purple-400",

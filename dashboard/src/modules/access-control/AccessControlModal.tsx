@@ -233,7 +233,7 @@ export function AccessControlModalContent({
   return (
     <ModalContent maxWidthClass={"max-w-3xl"}>
       <ModalHeader
-        icon={<AccessControlIcon className={"fill-kyle"} />}
+        icon={<AccessControlIcon className={"fill-cosmos"} />}
         title={
           policy
             ? "Update Access Control Policy"
@@ -242,7 +242,7 @@ export function AccessControlModalContent({
         description={
           "Use this policy to restrict access to groups of resources."
         }
-        color={"netbird"}
+        color={"cosmos"}
       />
 
       <Tabs defaultValue={tab} onValueChange={(v) => setTab(v)} value={tab}>
@@ -256,7 +256,7 @@ export function AccessControlModalContent({
             <Text
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Name & Description
@@ -413,7 +413,7 @@ export function AccessControlModalContent({
                   icon={
                     <AlertCircleIcon
                       size={14}
-                      className={"shrink-0 relative top-[3px] text-kyle"}
+                      className={"shrink-0 relative top-[3px] text-cosmos"}
                     />
                   }
                   className="mb-4"
@@ -431,7 +431,7 @@ export function AccessControlModalContent({
                     icon={
                       <AlertCircleIcon
                         size={14}
-                        className={"shrink-0 relative top-[3px] text-kyle"}
+                        className={"shrink-0 relative top-[3px] text-cosmos"}
                       />
                     }
                     className="mb-6"

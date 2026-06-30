@@ -1,10 +1,11 @@
 import Card from "@components/Card";
 import { SmallBadge } from "@components/ui/SmallBadge";
 import TextWithTooltip from "@components/ui/TextWithTooltip";
-import { cn, generateColorFromUser } from "@utils/helpers";
+import { cn, generateColorFromUser, getGravatarUrl } from "@utils/helpers";
 import dayjs from "dayjs";
 import { AlertCircle, ArrowUpRight, Cog, PlusIcon, XIcon } from "lucide-react";
-import React, { useMemo } from "react";
+import Image from "next/image";
+import React, { useEffect, useMemo, useState } from "react";
 import { useUsers } from "@/contexts/UsersProvider";
 import { ActivityEvent } from "@/interfaces/ActivityEvent";
 import { User } from "@/interfaces/User";
@@ -12,13 +13,13 @@ import ActivityDescription from "@/modules/activity/ActivityDescription";
 import ActivityTypeIcon from "@/modules/activity/ActivityTypeIcon";
 import { getColorFromCode } from "@/modules/activity/utils";
 
-export type ActionColor = "green" | "red" | "blue-darker" | "netbird";
+export type ActionColor = "green" | "red" | "blue-darker" | "cosmos";
 
 const ActionIcons: Record<ActionColor, React.ReactNode> = {
   green: <PlusIcon size={12} />,
   red: <XIcon size={12} />,
   "blue-darker": <ArrowUpRight size={12} />,
-  netbird: <AlertCircle size={12} />,
+  cosmos: <AlertCircle size={12} />,
 };
 
 export const ActivityEntryRow = ({ event }: { event: ActivityEvent }) => {
@@ -48,6 +49,13 @@ export const ActivityEntryRow = ({ event }: { event: ActivityEvent }) => {
 
   const user = getActivityUser();
 
+  const [gravatarFailed, setGravatarFailed] = useState(false);
+  const [gravatarUrl, setGravatarUrl] = useState<string | undefined>();
+
+  useEffect(() => {
+    getGravatarUrl(user?.email, 16).then(setGravatarUrl);
+  }, [user?.email]);
+
   const color = useMemo(() => {
     return getColorFromCode(event.activity_code);
   }, [event.activity_code]);
@@ -70,7 +78,7 @@ export const ActivityEntryRow = ({ event }: { event: ActivityEvent }) => {
             color == "red" && "bg-red-950 text-red-500 ",
             color == "green" && "bg-green-950 text-green-400 ",
             color == "blue-darker" && "bg-sky-950 text-sky-500 ",
-            color == "netbird" && "bg-kyle-950 text-kyle-500",
+            color == "cosmos" && "bg-cosmos-950 text-cosmos-500",
           )}
         >
           {color && ActionIcons[color as ActionColor]}
@@ -83,14 +91,24 @@ export const ActivityEntryRow = ({ event }: { event: ActivityEvent }) => {
             <div className={"flex items-center gap-2"}>
               <div
                 className={
-                  "w-4 h-4 rounded-full flex items-center justify-center text-white uppercase text-[9px] font-medium bg-nb-gray-900"
+                  "w-4 h-4 rounded-full flex items-center justify-center text-white uppercase text-[9px] font-medium bg-nb-gray-900 overflow-hidden"
                 }
-                style={{
-                  color: generateColorFromUser(user),
-                }}
               >
-                {!user?.name && !user?.id && <Cog size={12} />}
-                {user?.name?.charAt(0) || user?.id?.charAt(0)}
+                {!gravatarFailed && gravatarUrl ? (
+                  <Image
+                    src={gravatarUrl}
+                    alt={user?.name ?? ""}
+                    width={16}
+                    height={16}
+                    className={"rounded-full"}
+                    onError={() => setGravatarFailed(true)}
+                  />
+                ) : (
+                  <span style={{ color: generateColorFromUser(user) }}>
+                    {!user?.name && !user?.id && <Cog size={12} />}
+                    {user?.name?.charAt(0) || user?.id?.charAt(0)}
+                  </span>
+                )}
               </div>
 
               <span className={"text-sm text-nb-gray-200"}>

@@ -59,7 +59,7 @@ const renderHighlightedCommand = (command: string, highlights: string[]) => {
       {pattern
         ? line.split(pattern).map((part, partIndex) =>
             valid.includes(part) ? (
-              <span key={partIndex} className={"text-kyle"}>
+              <span key={partIndex} className={"text-cosmos"}>
                 {part}
               </span>
             ) : (
@@ -262,7 +262,7 @@ spec:
           icon={<ServerIcon size={16} />}
           title={"Setup Cluster"}
           description={"Setup a proxy cluster"}
-          color={"netbird"}
+          color={"cosmos"}
         />
 
         <Tabs

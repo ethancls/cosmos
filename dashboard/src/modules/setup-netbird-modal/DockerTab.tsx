@@ -64,7 +64,7 @@ export default function DockerTab({
               <Code.Line>
                 {" "}
                 -e NB_SETUP_KEY=
-                <span className={"text-kyle"}>
+                <span className={"text-cosmos"}>
                   {setupKey ?? setupKeyPlaceholder ?? "SETUP_KEY"}
                 </span>{" "}
                 \
@@ -74,7 +74,7 @@ export default function DockerTab({
                 <Code.Line>
                   {" "}
                   -e NB_HOSTNAME=
-                  <span className={"text-kyle"}>{`'${hostname}'`}</span> \
+                  <span className={"text-cosmos"}>{`'${hostname}'`}</span> \
                 </Code.Line>
               )}
 
@@ -83,7 +83,7 @@ export default function DockerTab({
                 <Code.Line>
                   {" "}
                   -e NB_MANAGEMENT_URL=
-                  <span className={"text-kyle"}>{GRPC_API_ORIGIN}</span> \
+                  <span className={"text-cosmos"}>{GRPC_API_ORIGIN}</span> \
                 </Code.Line>
               )}
               <Code.Line> netbirdio/netbird:latest</Code.Line>

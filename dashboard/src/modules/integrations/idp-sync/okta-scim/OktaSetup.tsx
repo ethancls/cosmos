@@ -151,7 +151,7 @@ export function SetupContent({
               key={index}
               className={cn(
                 "w-8 h-1 rounded-full bg-nb-gray-800",
-                step >= index + 1 && "bg-kyle",
+                step >= index + 1 && "bg-cosmos",
               )}
             />
           ))}
@@ -464,7 +464,7 @@ export function SetupSSOContent() {
               key={index}
               className={cn(
                 "w-8 h-1 rounded-full bg-nb-gray-800",
-                step >= index + 1 && "bg-kyle",
+                step >= index + 1 && "bg-cosmos",
               )}
             />
           ))}
@@ -609,14 +609,14 @@ export function SetupSSOContent() {
           <div className={"flex flex-col gap-6 max-w-lg mb-4 z-0"}>
             <div
               className={
-                "bg-kyle-950 px-6 py-4 rounded-md border border-kyle-500 "
+                "bg-cosmos-950 px-6 py-4 rounded-md border border-cosmos-500 "
               }
             >
-              <p className={"!text-kyle-200"}>
+              <p className={"!text-cosmos-200"}>
                 You can use{" "}
                 <InlineLink
                   href={"mailto:support@netbird.io"}
-                  className={"inline !text-kyle-500 font-medium"}
+                  className={"inline !text-cosmos-500 font-medium"}
                 >
                   {" "}
                   1Password
@@ -625,7 +625,7 @@ export function SetupSSOContent() {
                 the Cosmos team. If you need help, please contact us at{" "}
                 <InlineLink
                   href={"mailto:support@netbird.io"}
-                  className={"inline !text-kyle-500 font-medium"}
+                  className={"inline !text-cosmos-500 font-medium"}
                 >
                   {" "}
                   support@netbird.io

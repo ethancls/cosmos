@@ -189,7 +189,7 @@ export const PlanCurrentPlan = ({
                 <HelpCircle
                   size={14}
                   className={
-                    "text-nb-gray-300 hover:text-kyle transition-all cursor-pointer"
+                    "text-nb-gray-300 hover:text-cosmos transition-all cursor-pointer"
                   }
                 />
               </FullTooltip>

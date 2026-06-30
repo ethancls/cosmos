@@ -252,10 +252,10 @@ export function NameserverModalContent({
   return (
     <ModalContent maxWidthClass={"max-w-xl"}>
       <ModalHeader
-        icon={<DNSIcon className={"fill-kyle"} />}
+        icon={<DNSIcon className={"fill-cosmos"} />}
         title={isUpdate ? preset?.name : "Add Nameserver"}
         description={"Use a nameserver to resolve domains in your network"}
-        color={"netbird"}
+        color={"cosmos"}
       />
 
       <Tabs defaultValue={tab} onValueChange={(v) => setTab(v)} value={tab}>
@@ -264,7 +264,7 @@ export function NameserverModalContent({
             <ServerIcon
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Nameserver
@@ -277,7 +277,7 @@ export function NameserverModalContent({
             <GlobeIcon
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Domains
@@ -290,7 +290,7 @@ export function NameserverModalContent({
             <Text
               size={16}
               className={
-                "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
               }
             />
             Name & Description

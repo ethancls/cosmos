@@ -248,7 +248,7 @@ export default function AgentConnectModal({
       <ModalContent maxWidthClass={"max-w-2xl"}>
         <div className={"px-8 pt-5"}>
           <div className={"flex items-center gap-3"}>
-            <SquareIcon color={"netbird"} margin={""} icon={<Plug size={16} />} />
+            <SquareIcon color={"cosmos"} margin={""} icon={<Plug size={16} />} />
             <h2 className={"text-lg my-0 leading-[1.5]"}>Configure Your Agent</h2>
           </div>
           <Paragraph className={"text-sm mt-3"}>

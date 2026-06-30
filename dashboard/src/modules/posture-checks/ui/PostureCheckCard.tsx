@@ -11,7 +11,7 @@ export const PostureCheckCard = ({
   title,
   description,
   icon,
-  iconClass = "bg-gradient-to-tr from-kyle-200 to-kyle-100",
+  iconClass = "bg-gradient-to-tr from-cosmos-200 to-cosmos-100",
   modalWidthClass = "max-w-xl",
   onClose,
   open,

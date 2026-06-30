@@ -263,7 +263,7 @@ export const FirewallGptPolicyPreview = ({
       >
         <div
           className={
-            "text-xs text-kyle/90 bg-kyle/10 border border-kyle/30 py-3 px-4 w-full rounded-md"
+            "text-xs text-cosmos/90 bg-cosmos/10 border border-cosmos/30 py-3 px-4 w-full rounded-md"
           }
         >
           <IconInfoCircle
@@ -309,7 +309,7 @@ export const FirewallGptPolicyPreview = ({
                 width: "0%",
               }}
               className={
-                "absolute w-full h-[2px] bg-kyle/100 rounded-full left-0"
+                "absolute w-full h-[2px] bg-cosmos/100 rounded-full left-0"
               }
             ></motion.div>
             <motion.div

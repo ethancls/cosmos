@@ -225,7 +225,7 @@ export function SetupModalContent({
           <TabsTrigger value={String(OperatingSystem.LINUX)}>
             <ShellIcon
               className={
-                "fill-nb-gray-500 group-data-[state=active]/trigger:fill-kyle transition-all"
+                "fill-nb-gray-500 group-data-[state=active]/trigger:fill-cosmos transition-all"
               }
             />
             Linux
@@ -234,7 +234,7 @@ export function SetupModalContent({
           <TabsTrigger value={String(OperatingSystem.WINDOWS)}>
             <WindowsIcon
               className={
-                "fill-nb-gray-500 group-data-[state=active]/trigger:fill-kyle transition-all"
+                "fill-nb-gray-500 group-data-[state=active]/trigger:fill-cosmos transition-all"
               }
             />
             Windows
@@ -242,7 +242,7 @@ export function SetupModalContent({
           <TabsTrigger value={String(OperatingSystem.APPLE)}>
             <AppleIcon
               className={
-                "fill-nb-gray-500 group-data-[state=active]/trigger:fill-kyle transition-all"
+                "fill-nb-gray-500 group-data-[state=active]/trigger:fill-cosmos transition-all"
               }
             />
             macOS
@@ -253,7 +253,7 @@ export function SetupModalContent({
               <TabsTrigger value={String(OperatingSystem.IOS)}>
                 <IOSIcon
                   className={
-                    "fill-nb-gray-500 group-data-[state=active]/trigger:fill-kyle transition-all"
+                    "fill-nb-gray-500 group-data-[state=active]/trigger:fill-cosmos transition-all"
                   }
                 />
                 iOS
@@ -261,7 +261,7 @@ export function SetupModalContent({
               <TabsTrigger value={String(OperatingSystem.ANDROID)}>
                 <AndroidIcon
                   className={
-                    "fill-nb-gray-500 group-data-[state=active]/trigger:fill-kyle transition-all"
+                    "fill-nb-gray-500 group-data-[state=active]/trigger:fill-cosmos transition-all"
                   }
                 />
                 Android
@@ -273,7 +273,7 @@ export function SetupModalContent({
             <TabsTrigger value={String(OperatingSystem.DOCKER)}>
               <DockerIcon
                 className={
-                  "fill-nb-gray-500 group-data-[state=active]/trigger:fill-kyle transition-all"
+                  "fill-nb-gray-500 group-data-[state=active]/trigger:fill-cosmos transition-all"
                 }
               />
               Docker
@@ -361,7 +361,7 @@ export const SetupKeyParameter = ({
   return (
     <>
       {" "}
-      --setup-key <span className={"text-kyle"}>{display}</span>
+      --setup-key <span className={"text-cosmos"}>{display}</span>
     </>
   );
 };
@@ -419,14 +419,14 @@ export const CosmosUpCommand = ({
       {hasKey && (
         <Code.Line>
           {"  --setup-key "}
-          <span className={"text-kyle"}>{keyValue}</span>
+          <span className={"text-cosmos"}>{keyValue}</span>
           {hasHostname && ` ${continuation}`}
         </Code.Line>
       )}
       {hasHostname && (
         <Code.Line>
           {"  --hostname "}
-          <span className={"text-kyle"}>{`'${hostname}'`}</span>
+          <span className={"text-cosmos"}>{`'${hostname}'`}</span>
         </Code.Line>
       )}
     </Code>
@@ -439,7 +439,7 @@ export const HostnameParameter = ({ hostname }: { hostname?: string }) => {
       <>
         {" "}
         --hostname{" "}
-        <span className={"text-kyle"}>
+        <span className={"text-cosmos"}>
           {"'"}
           {hostname}
           {"'"}

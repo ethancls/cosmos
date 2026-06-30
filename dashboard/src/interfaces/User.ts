@@ -15,6 +15,7 @@ export interface User {
   permissions: Permissions;
   password?: string;
   idp_id?: string;
+  picture?: string;
 }
 
 export interface UserInviteCreateRequest {

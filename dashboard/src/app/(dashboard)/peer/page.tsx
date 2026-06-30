@@ -376,7 +376,7 @@ const PeerOverviewTabs = () => {
           <TabsTrigger value={"reverse-proxies"}>
             <ReverseProxyIcon
               size={16}
-              className="fill-nb-gray-400 group-data-[state=active]/trigger:fill-kyle"
+              className="fill-nb-gray-400 group-data-[state=active]/trigger:fill-cosmos"
             />
             {singularize("Services", flatTargets.length)}
           </TabsTrigger>
@@ -794,7 +794,7 @@ function EditNameModal({ onSuccess, peer, initialName }: Readonly<ModalProps>) {
               If the domain name already exists, we add an increment number
               suffix to it.
             </HelpText>
-            <div className={"text-kyle text-sm break-all whitespace-normal"}>
+            <div className={"text-cosmos text-sm break-all whitespace-normal"}>
               {domainNamePreview}
             </div>
           </Card>

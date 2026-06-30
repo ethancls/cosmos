@@ -203,7 +203,7 @@ export function SSHUsernameSelector({
                           className={"text-neutral-500 dark:text-nb-gray-300"}
                         >
                           Add username by pressing{" "}
-                          <span className={"font-bold text-kyle"}>
+                          <span className={"font-bold text-cosmos"}>
                             {"'Enter'"}
                           </span>
                         </div>

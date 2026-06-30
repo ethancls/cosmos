@@ -76,9 +76,9 @@ export default function AddRouteDropdownButton() {
             <div className={"flex gap-3 items-center justify-center pr-3"}>
               <SquareIcon
                 icon={
-                  <NetworkRoutesIcon size={14} className={"fill-kyle"} />
+                  <NetworkRoutesIcon size={14} className={"fill-cosmos"} />
                 }
-                color={"netbird"}
+                color={"cosmos"}
                 margin={""}
                 size={"small"}
               />

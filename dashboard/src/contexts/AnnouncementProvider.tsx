@@ -73,6 +73,11 @@ const getRemoteAnnouncements = async (): Promise<{
   closedAnnouncements: string[];
 }> => {
   try {
+    const isCloud = isCosmosCloud();
+    if (!isCloud) {
+      return { announcements: [], closedAnnouncements: [] };
+    }
+
     let stored: AnnouncementStore | null = null;
     try {
       const data = localStorage.getItem(STORAGE_KEY);
@@ -96,7 +101,6 @@ const getRemoteAnnouncements = async (): Promise<{
       raw = await response.json();
     }
 
-    const isCloud = isCosmosCloud();
     const filtered = raw.filter((a) => !a.isCloudOnly || isCloud);
     const hashes = new Set(filtered.map((a) => md5(a.text).toString()));
     const closed = (stored?.closedAnnouncements ?? []).filter((h) =>

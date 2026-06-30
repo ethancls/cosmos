@@ -46,12 +46,12 @@ export const PeerSSHInstructions = ({
         showClose={true}
       >
         <ModalHeader
-          icon={<TerminalSquare size={16} className={"text-kyle"} />}
+          icon={<TerminalSquare size={16} className={"text-cosmos"} />}
           title={"Enable SSH Access"}
           description={
             "Allow remote SSH access from other connected network participants."
           }
-          color={"netbird"}
+          color={"cosmos"}
         />
 
         <Separator />

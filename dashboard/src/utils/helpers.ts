@@ -1,7 +1,19 @@
-import chroma from "chroma-js";
 import { type ClassValue, clsx } from "clsx";
 import deepClone from "lodash/cloneDeep";
 import { twMerge } from "tailwind-merge";
+
+export async function getGravatarUrl(
+  email: string | undefined,
+  size: number,
+): Promise<string | undefined> {
+  if (!email) return undefined;
+  const msg = new TextEncoder().encode(email.trim().toLowerCase());
+  const hash = await crypto.subtle.digest("SHA-256", msg);
+  const hex = Array.from(new Uint8Array(hash))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+  return `https://www.gravatar.com/avatar/${hex}?d=404&s=${size * 2}`;
+}
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -26,19 +38,21 @@ export function removeAllSpaces(str?: string) {
 }
 
 export const generateColorFromString = (str?: string) => {
-  if (!str) return "#f68330";
+  if (!str) return "#217ce7";
   if (str.includes("System")) return "#808080";
-  if (str.toLowerCase().startsWith("netbird")) return "#f68330";
+  if (str.toLowerCase().startsWith("cosmos")) return "#217ce7";
   let hash = 0;
   str.split("").forEach((char) => {
     hash = char.charCodeAt(0) + ((hash << 5) - hash);
   });
-  let colour = "#";
-  for (let i = 0; i < 3; i++) {
-    const value = (hash >> (i * 8)) & 0xff;
-    colour += value.toString(16).padStart(2, "0");
-  }
-  return chroma(colour).saturate(2).luminance(0.4).hex();
+  const cosmosShades = [
+    "#eff4fa",
+    "#cbdff7",
+    "#9ac2f3",
+    "#5b9cea",
+    "#217ce7",
+  ];
+  return cosmosShades[Math.abs(hash) % cosmosShades.length];
 };
 
 export const generateColorFromUser = (user?: {
@@ -48,10 +62,7 @@ export const generateColorFromUser = (user?: {
 }) => {
   if (user?.email === "Cosmos") return "#9c9c9c";
   return user?.name
-    ? chroma(generateColorFromString(user?.name || user?.id || "System User"))
-        .saturate(2)
-        .luminance(0.4)
-        .hex()
+    ? generateColorFromString(user?.name || user?.id || "System User")
     : "#9c9c9c";
 };
 

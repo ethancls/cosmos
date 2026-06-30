@@ -209,7 +209,7 @@ export function SetupContent({ onSuccess }: Readonly<ModalProps>) {
                     <InfoIcon
                       size={15}
                       className={
-                        "inline-block relative ml-1 -top-[1px] text-kyle hover:text-kyle-400"
+                        "inline-block relative ml-1 -top-[1px] text-cosmos hover:text-cosmos-400"
                       }
                     />
                   </TooltipTrigger>

@@ -11,11 +11,11 @@ type Props = {
 
 const sizes = {
   default: {
-    desktop: 22,
+    desktop: 30,
     mobile: 30,
   },
   large: {
-    desktop: 24,
+    desktop: 36,
     mobile: 40,
   },
 };

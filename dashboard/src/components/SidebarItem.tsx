@@ -110,7 +110,7 @@ export default function SidebarItem({
                 ? "pl-7 pr-2 py-[.45rem] mt-1 mb-0.5"
                 : "py-[.45rem] px-3",
               isActive
-                ? "text-gray-900 bg-gray-200 dark:text-white dark:bg-nb-gray-900"
+                ? "text-cosmos bg-gray-200 dark:text-cosmos dark:bg-nb-gray-900"
                 : "text-gray-600 hover:bg-gray-200 dark:text-nb-gray-400 dark:hover:bg-nb-gray-900/50",
             )}
             onClick={handleClick}
@@ -119,20 +119,22 @@ export default function SidebarItem({
             {isChild && isNavigationCollapsed && !mobileNavOpen && (
               <div
                 className={
-                  "absolute left-0 top-0 w-full h-full flex items-center justify-center group-hover/navigation:hidden text-[10px]"
+                  "absolute left-0 top-0 w-full h-full flex items-center justify-center text-[10px] opacity-100 group-hover/navigation:opacity-0 transition-opacity duration-150"
                 }
               >
-                <DotIcon size={14} className={"shrink-0"} />
+                <DotIcon size={17} className={cn("shrink-0", isActive && "text-cosmos")} />
               </div>
             )}
             <div
               className={classNames(
-                "flex w-full items-center shrink-0 ",
+                "flex w-full items-center shrink-0",
                 href == "" ? "disabled pointer-events-none" : "",
               )}
             >
-              <span className="peer/icon" data-active={isActive} />
-              {icon}
+              <span className="min-w-[22px] flex justify-center shrink-0">
+                <span className="peer/icon" data-active={isActive} />
+                {icon}
+              </span>
 
               <span
                 className={cn(
@@ -140,7 +142,7 @@ export default function SidebarItem({
                   labelClassName,
                   isNavigationCollapsed &&
                     !mobileNavOpen &&
-                    "opacity-0 group-hover/navigation:opacity-100",
+                    "opacity-0 group-hover/navigation:opacity-100 transition-opacity duration-200 delay-75",
                 )}
               >
                 {label}
@@ -153,7 +155,7 @@ export default function SidebarItem({
                       "shrink-0",
                       isNavigationCollapsed &&
                         !mobileNavOpen &&
-                        "opacity-0 group-hover/navigation:opacity-100",
+                        "opacity-0 group-hover/navigation:opacity-100 transition-opacity duration-200 delay-75",
                     )}
                   />
                 ) : (
@@ -163,7 +165,7 @@ export default function SidebarItem({
                       "shrink-0",
                       isNavigationCollapsed &&
                         !mobileNavOpen &&
-                        "opacity-0 group-hover/navigation:opacity-100",
+                        "opacity-0 group-hover/navigation:opacity-100 transition-opacity duration-200 delay-75",
                     )}
                   />
                 ))}

@@ -8,7 +8,7 @@ export const GroupPrefixHelpText = ({ type = "groups" }: Props) => {
   return type === "user-groups" ? (
     <HelpText className={"max-w-lg mt-2"}>
       By default,{" "}
-      <span className={"text-kyle font-semibold"}>All Users</span> will be
+      <span className={"text-cosmos font-semibold"}>All Users</span> will be
       synchronized from your IdP to Cosmos. <br />
       If you want to synchronize only users that belong to a specific group, you
       can add them below. Keep in mind that the prefix matching is
@@ -17,7 +17,7 @@ export const GroupPrefixHelpText = ({ type = "groups" }: Props) => {
   ) : (
     <HelpText className={"max-w-lg mt-2"}>
       By default,{" "}
-      <span className={"text-kyle font-semibold"}>All Groups</span> will be
+      <span className={"text-cosmos font-semibold"}>All Groups</span> will be
       synchronized from your IdP to Cosmos. <br />
       If you want to synchronize only groups that start with a specific prefix,
       you can add them below. Keep in mind that the prefix matching is

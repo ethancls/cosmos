@@ -23,7 +23,7 @@ export default function UserStatusCell({ user }: Readonly<Props>) {
       return { text: "Disabled", color: "bg-gray-400" };
     }
     if (isPendingApproval) {
-      return { text: "Pending", color: "bg-kyle" };
+      return { text: "Pending", color: "bg-cosmos" };
     }
     if (status === "blocked") {
       return { text: "Blocked", color: "bg-red-500" };
@@ -104,7 +104,7 @@ export default function UserStatusCell({ user }: Readonly<Props>) {
           <span className={cn("h-2 w-2 rounded-full", color)}></span>
           {text}
           {showTooltip && (
-            <HelpCircle size={14} className="text-kyle cursor-help" />
+            <HelpCircle size={14} className="text-cosmos cursor-help" />
           )}
         </div>
       </FullTooltip>

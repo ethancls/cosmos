@@ -6,7 +6,7 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/ethancls/cosmos/formatter"
+	"github.com/netbirdio/netbird/formatter"
 )
 
 // LogrusHandler is an slog.Handler that delegates to logrus.

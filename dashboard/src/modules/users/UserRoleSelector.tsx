@@ -94,17 +94,17 @@ export function UserRoleSelector({
         description: (
           <div className={"inline-block"}>
             This action will transfer the{" "}
-            <span className={"text-kyle inline font-medium"}>Owner</span>{" "}
+            <span className={"text-cosmos inline font-medium"}>Owner</span>{" "}
             role to{" "}
             {currentUser ? (
-              <span className={"text-kyle inline font-medium"}>
+              <span className={"text-cosmos inline font-medium"}>
                 {currentUser.name}
               </span>
             ) : (
               "this user"
             )}{" "}
             and leave you with the{" "}
-            <span className={"text-kyle inline font-medium"}>Admin</span>{" "}
+            <span className={"text-cosmos inline font-medium"}>Admin</span>{" "}
             role. This action can only be undone if the new owner transfers the
             role back to you.
           </div>

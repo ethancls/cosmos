@@ -79,7 +79,7 @@ export default function PostureCheckModal({
             description={
               "Use posture checks to further restrict access in your network."
             }
-            color={"netbird"}
+            color={"cosmos"}
           />
 
           <Tabs onValueChange={(v) => setTab(v)} defaultValue={tab} value={tab}>
@@ -96,7 +96,7 @@ export default function PostureCheckModal({
                 <Text
                   size={16}
                   className={
-                    "text-nb-gray-500 group-data-[state=active]/trigger:text-kyle transition-all"
+                    "text-nb-gray-500 group-data-[state=active]/trigger:text-cosmos transition-all"
                   }
                 />
                 Name & Description

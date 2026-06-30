@@ -260,10 +260,10 @@ export default function ReverseProxyTargetModal({
       <Modal open={open} onOpenChange={onOpenChange}>
         <ModalContent maxWidthClass="max-w-2xl">
           <ModalHeader
-            icon={<Server className="text-kyle" size={16} />}
+            icon={<Server className="text-cosmos" size={16} />}
             title={currentTarget ? "Edit Target" : "Add Target"}
             description="Configure the target for your reverse proxy."
-            color="netbird"
+            color="cosmos"
           />
 
           <Separator />

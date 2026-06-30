@@ -170,7 +170,7 @@ export default function IdentityProviderModal({
                 ? "Update the identity provider configuration"
                 : "Configure a new identity provider for authentication"
             }
-            color={"netbird"}
+            color={"cosmos"}
           />
 
           <Separator />

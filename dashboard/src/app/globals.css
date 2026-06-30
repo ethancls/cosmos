@@ -198,5 +198,5 @@ p {
 
 /* Control Center */
 .react-flow__node-groupNode .selected{
-    @apply border-netbird;
+    @apply border-cosmos;
 }

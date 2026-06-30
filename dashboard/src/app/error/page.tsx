@@ -87,7 +87,7 @@ export default function ErrorPage() {
 
       {error && (
         <div className="bg-nb-gray-930 border border-nb-gray-800 rounded-md p-4 mt-4 max-w-md font-mono mb-2">
-          <div className="text-center text-sm text-kyle">
+          <div className="text-center text-sm text-cosmos">
             <div>response_message: {error.message}</div>
           </div>
         </div>

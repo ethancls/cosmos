@@ -241,7 +241,7 @@ const DisconnectedMessage = ({
         Disconnected from {username}@{peerIp}
         <button
           className={
-            "underline-offset-4 items-center transition-all duration-200 inline-flex texts-inherit gap-1 text-kyle hover:underline font-normal"
+            "underline-offset-4 items-center transition-all duration-200 inline-flex texts-inherit gap-1 text-cosmos hover:underline font-normal"
           }
           onClick={onReconnect}
         >

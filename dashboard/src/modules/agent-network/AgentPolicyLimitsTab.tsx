@@ -383,7 +383,7 @@ function LimitEditModal({
               ? "Cap total tokens per group and per individual user over a rolling window."
               : "Cap USD spend per group and per individual user over a rolling window."
           }
-          color={"netbird"}
+          color={"cosmos"}
         />
         <div className={"flex flex-col px-8 gap-4 pt-2 pb-6"}>
           <div className={"grid grid-cols-2 gap-4"}>

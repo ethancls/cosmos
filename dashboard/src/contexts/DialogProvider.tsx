@@ -88,7 +88,7 @@ export default function DialogProvider({ children }: Props) {
                 dialogOptions.type == "default"
                   ? "blue"
                   : dialogOptions.type == "warning"
-                  ? "netbird"
+                  ? "cosmos"
                   : "red"
               }
               className={"px-8"}

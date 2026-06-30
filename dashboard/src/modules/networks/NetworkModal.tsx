@@ -92,14 +92,14 @@ const Content = ({ network, onCreated, onUpdated }: ContentProps) => {
   return (
     <ModalContent maxWidthClass={"max-w-xl"}>
       <ModalHeader
-        icon={<NetworkRoutesIcon className={"fill-kyle"} />}
+        icon={<NetworkRoutesIcon className={"fill-cosmos"} />}
         title={network ? "Update Network" : "Add Network"}
         description={
           network
             ? network.name
             : "Access internal resources in LANs and VPC by adding a network."
         }
-        color={"netbird"}
+        color={"cosmos"}
       />
       <Separator />
       <div className={"px-8 flex-col flex gap-6 py-6"}>

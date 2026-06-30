@@ -24,7 +24,7 @@ export const PlanIcon = ({ name, size = 40 }: Props) => {
           "border-nb-gray-900 bg-gradient-to-br from-[#6697FF]/90 to-[#CE8EE3]/90",
         isTeam && "border-nb-gray-900 bg-gradient-to-b from-sky-500 to-sky-300",
         isBusiness &&
-          "border-nb-gray-900 bg-gradient-to-b from-kyle to-kyle-300",
+          "border-nb-gray-900 bg-gradient-to-b from-cosmos to-cosmos-300",
       )}
       style={{ width: size, height: size }}
     >

@@ -127,11 +127,10 @@ const config: Config = {
           "960": "#16181b",
         },
 
-        netbird: {
+        cosmos: {
           DEFAULT: "#217ce7",
           "50": "#eff4fa",
           "100": "#cbdff7",
-          "150": "#cbdff7",
           "200": "#9ac2f3",
           "300": "#5b9cea",
           "400": "#217ce7",

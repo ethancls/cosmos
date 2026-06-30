@@ -265,7 +265,7 @@ export function PortSelector({
                           className={"text-neutral-500 dark:text-nb-gray-300"}
                         >
                           Add this port or range by pressing{" "}
-                          <span className={"font-bold text-kyle"}>
+                          <span className={"font-bold text-cosmos"}>
                             {"'Enter'"}
                           </span>
                         </div>

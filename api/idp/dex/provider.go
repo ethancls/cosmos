@@ -27,7 +27,7 @@ import (
 	"golang.org/x/crypto/bcrypt"
 	"google.golang.org/grpc"
 
-	nbjwt "github.com/ethancls/cosmos/shared/auth/jwt"
+	nbjwt "github.com/netbirdio/netbird/shared/auth/jwt"
 )
 
 // Config matches what management/internals/server/server.go expects
@@ -452,14 +452,14 @@ func (p *Provider) Stop(ctx context.Context) error {
 func (p *Provider) EnsureDefaultClients(ctx context.Context, dashboardURIs, cliURIs []string) error {
 	clients := []storage.Client{
 		{
-			ID:           "netbird-dashboard",
-			Name:         "NetBird Dashboard",
+			ID:           "cosmos-dashboard",
+			Name:         "Cosmos Dashboard",
 			RedirectURIs: dashboardURIs,
 			Public:       true,
 		},
 		{
-			ID:           "netbird-cli",
-			Name:         "NetBird CLI",
+			ID:           "cosmos-cli",
+			Name:         "Cosmos CLI",
 			RedirectURIs: cliURIs,
 			Public:       true,
 		},

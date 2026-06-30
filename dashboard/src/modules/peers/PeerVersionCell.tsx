@@ -43,7 +43,7 @@ export default function PeerVersionCell({
   }, [os, version, latestVersion, ephemeral]);
 
   const updateIcon = useMemo(() => {
-    return <ArrowUpCircleIcon size={15} className={"text-kyle"} />;
+    return <ArrowUpCircleIcon size={15} className={"text-cosmos"} />;
   }, []);
 
   return (
@@ -56,7 +56,7 @@ export default function PeerVersionCell({
                 <MemoizedCosmosIcon />
                 {version == "development" ? "dev" : version}
                 <div className={"relative"}>
-                  <span className="animate-ping absolute left-0 inline-flex h-[15px] w-[15px] rounded-full bg-kyle opacity-20"></span>
+                  <span className="animate-ping absolute left-0 inline-flex h-[15px] w-[15px] rounded-full bg-cosmos opacity-20"></span>
                   {updateIcon}
                 </div>
               </div>
@@ -70,8 +70,8 @@ export default function PeerVersionCell({
               >
                 <MemoizedCosmosIcon />
                 <span>{version}</span>
-                <ArrowRightIcon size={16} className={"text-kyle"} />
-                <span className={"text-kyle"}>{latestVersion}</span>
+                <ArrowRightIcon size={16} className={"text-cosmos"} />
+                <span className={"text-cosmos"}>{latestVersion}</span>
               </div>
               <p className={"font-medium"}>Update available </p>
 

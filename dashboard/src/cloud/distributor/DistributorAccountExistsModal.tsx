@@ -38,7 +38,7 @@ export const DistributorAccountExistsModal = ({
               "text-sm w-full text-center text-white py-2 rounded-lg flex items-center justify-center gap-2"
             }
           >
-            <GlobeIcon size={16} className={"text-kyle"} />
+            <GlobeIcon size={16} className={"text-cosmos"} />
             {customer?.domain}
           </div>
           <div className={"text-xl font-medium text-center mb-1"}>

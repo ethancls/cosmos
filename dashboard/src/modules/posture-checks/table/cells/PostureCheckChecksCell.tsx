@@ -39,7 +39,7 @@ export const PostureCheckChecksCell = ({
             >
               <div
                 className={cn(
-                  "bg-gradient-to-tr from-kyle-200 to-kyle-100 h-8 w-8 rounded-full flex items-center justify-center relative z-[10] hover:scale-[1.1] transition-all",
+                  "bg-gradient-to-tr from-cosmos-200 to-cosmos-100 h-8 w-8 rounded-full flex items-center justify-center relative z-[10] hover:scale-[1.1] transition-all",
                 )}
               >
                 <CosmosIcon size={14} />

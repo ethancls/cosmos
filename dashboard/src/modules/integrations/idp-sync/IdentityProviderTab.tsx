@@ -89,7 +89,7 @@ export default function IdentityProviderTab() {
             Please contact us at{" "}
             <InlineLink
               href={"mailto:support@netbird.io"}
-              className={"inline !text-kyle-500 font-medium"}
+              className={"inline !text-cosmos-500 font-medium"}
             >
               {" "}
               support@netbird.io

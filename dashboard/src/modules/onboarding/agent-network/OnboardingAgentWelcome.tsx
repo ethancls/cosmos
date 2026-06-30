@@ -76,7 +76,7 @@ const Highlight = ({
 }) => {
   return (
     <div className={"flex gap-3 items-start"}>
-      <SquareIcon color={"netbird"} margin={""} icon={icon} />
+      <SquareIcon color={"cosmos"} margin={""} icon={icon} />
       <div>
         <div className={"text-sm"}>{title}</div>
         <div className={"text-[0.8rem] text-nb-gray-300 font-light mt-1 block"}>

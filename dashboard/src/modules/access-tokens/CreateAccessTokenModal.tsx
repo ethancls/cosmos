@@ -167,7 +167,7 @@ export function AccessTokenModalContent({
         icon={<IconApi />}
         title={"Create Access Token"}
         description={"Use this token to access Cosmos public API"}
-        color={"netbird"}
+        color={"cosmos"}
       />
 
       <Separator />

@@ -24,7 +24,7 @@ export const linkVariants = cva(
   {
     variants: {
       variant: {
-        default: "text-kyle hover:underline font-normal",
+        default: "text-cosmos hover:underline font-normal",
         faded: "text-nb-gray-400 hover:text-nb-gray-300 hover:underline",
         white: "text-nb-gray-100 hover:text-white hover:underline",
         dashed:

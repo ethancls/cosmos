@@ -48,13 +48,14 @@ export default function Navigation({
     <div
       data-navigation
       className={cn(
-        "whitespace-nowrap md:border-r dark:border-zinc-700/40 bg-gray-50 dark:bg-nb-gray relative group/navigation transition-all",
+        "whitespace-nowrap md:border-r dark:border-zinc-700/40 bg-gray-50 dark:bg-nb-gray relative group/navigation",
         hideOnMobile ? "hidden md:block" : "",
         fullWidth
           ? "w-auto max-w-[22rem]"
           : "w-[15rem] max-w-[15rem] min-w-[15rem] overflow-y-auto",
         isNavigationCollapsed &&
-          "md:w-[70px] md:min-w-[70px] md:fixed md:overflow-hidden md:hover:w-[15rem] md:hover:max-w-[15rem] md:hover:min-w-[15rem] md:z-50",
+          "md:w-[70px] md:min-w-[70px] md:fixed md:overflow-hidden md:hover:w-[15rem] md:hover:min-w-[15rem] md:hover:overflow-visible md:z-50 md:shadow-none md:hover:shadow-2xl",
+        "transition-[width,min-width,box-shadow] duration-300 ease-out",
       )}
       style={{
         height: `calc(100vh - ${headerHeight + bannerHeight}px)`,
@@ -70,9 +71,10 @@ export default function Navigation({
         >
           <div
             className={cn(
-              "flex flex-col pt-3 justify-between w-[15rem] max-w-[15rem] min-w-[15rem] transition-all",
+              "flex flex-col pt-3 justify-between w-[15rem] max-w-[15rem] min-w-[15rem]",
               isNavigationCollapsed &&
-                "md:w-[70px] md:min-w-[70px] md:group-hover/navigation:w-[15rem] md:group-hover/navigation:max-w-[15rem] md:group-hover/navigation:min-w-[15rem] md:overflow-x-clip",
+                "md:w-[70px] md:min-w-[70px] md:group-hover/navigation:w-[15rem] md:group-hover/navigation:min-w-[15rem] md:overflow-hidden md:group-hover/navigation:overflow-visible",
+              "transition-[width,min-width] duration-300 ease-out",
             )}
             style={{
               height: !fullWidth

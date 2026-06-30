@@ -155,7 +155,7 @@ function AgentBudgetRuleModalContent({
         description={
           "Account-level token and budget caps. Apply account-wide or scope to specific groups or users."
         }
-        color={"netbird"}
+        color={"cosmos"}
       />
 
       <Tabs defaultValue={tab} onValueChange={setTab} value={tab}>
@@ -453,7 +453,7 @@ function UserMultiSelect({
                     className={cn(
                       "flex items-center gap-3 p-2 rounded cursor-pointer transition-colors",
                       checked
-                        ? "bg-kyle/10"
+                        ? "bg-cosmos/10"
                         : "hover:bg-nb-gray-900/50",
                     )}
                   >

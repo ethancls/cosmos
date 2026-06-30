@@ -31,7 +31,7 @@ export const IntegrationModalHeader = ({
           />
         </div>
         <div>
-          <ArrowRightLeft size={24} className={"text-kyle"} />
+          <ArrowRightLeft size={24} className={"text-cosmos"} />
         </div>
         <div
           className={

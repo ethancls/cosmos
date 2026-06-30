@@ -33,8 +33,8 @@ export default function GroupsCountCell({
         content={
           <div className={"text-xs"}>
             Group{" "}
-            <span className={"text-kyle font-medium"}>{groupName}</span> is
-            used in <span className={"font-medium text-kyle"}>{count}</span>{" "}
+            <span className={"text-cosmos font-medium"}>{groupName}</span> is
+            used in <span className={"font-medium text-cosmos"}>{count}</span>{" "}
             {text}
           </div>
         }

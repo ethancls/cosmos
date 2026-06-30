@@ -80,7 +80,7 @@ export const OnboardingIntent = ({onSelect, useCases, isBusiness}: Props) => {
                         isBusiness ? "Install Cosmos on two or more devices to create secure, direct WireGuard connections, like laptop to server or server to database. Add at least two machines to get started." :"Install Cosmos on two or more devices in your homelab, such as your laptop, NAS, or Raspberry Pi, to create secure, direct WireGuard connections."
                         }
                         recommended={isP2PRecommended}
-                        icon={<PeerIcon size={18} className={"fill-kyle"}/>}
+                        icon={<PeerIcon size={18} className={"fill-cosmos"}/>}
                         onClick={() => onSelect(Intent.P2P)}
                     />
                     <IntentCard
@@ -89,7 +89,7 @@ export const OnboardingIntent = ({onSelect, useCases, isBusiness}: Props) => {
                         isBusiness ? "Enable employee remote access to VMs, Kubernetes clusters, and cloud or on-prem resources without installing Cosmos on every machine." : "Securely access your homelab remotely from anywhere without installing Cosmos on every device."
                         }
                         recommended={isNetworksRecommended}
-                        icon={<NetworkRoutesIcon size={18} className={"fill-kyle"}/>}
+                        icon={<NetworkRoutesIcon size={18} className={"fill-cosmos"}/>}
                         onClick={() => onSelect(Intent.NETWORKS)}
                     />
                 </div>
@@ -133,7 +133,7 @@ const IntentCard = ({
                     <div className={"text-left"}>
                         <h2
                             className={
-                                "text-base font-medium mb-.5 group-hover:text-kyle transition-all inline-flex gap-x-2 gap-y-1 flex-wrap"
+                                "text-base font-medium mb-.5 group-hover:text-cosmos transition-all inline-flex gap-x-2 gap-y-1 flex-wrap"
                             }
                         >
                             {title}
@@ -149,8 +149,8 @@ const IntentCard = ({
                   <span
                       className={cn(
                           "relative",
-                          "inline-flex text-[0.7rem] font-light bg-kyle/10 border border-kyle-400/30 text-kyle-400 rounded-full px-2 py-1 pb-0.5 leading-none",
-                          "hover:bg-kyle/20 cursor-help transition-all self-center",
+                          "inline-flex text-[0.7rem] font-light bg-cosmos/10 border border-cosmos-400/30 text-cosmos-400 rounded-full px-2 py-1 pb-0.5 leading-none",
+                          "hover:bg-cosmos/20 cursor-help transition-all self-center",
                       )}
                   >
                     Recommended
@@ -166,7 +166,7 @@ const IntentCard = ({
                     >
                         <IconArrowRight
                             size={24}
-                            className={"shrink-0 group-hover:text-kyle"}
+                            className={"shrink-0 group-hover:text-cosmos"}
                         />
                     </div>
                 </div>
