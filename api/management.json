@@ -1,0 +1,36 @@
+{
+  "Stuns": [],
+  "TURNConfig": {
+    "TimeBasedCredentials": false,
+    "Turns": []
+  },
+  "Signal": {
+    "Proto": "http",
+    "URI": "localhost:10000"
+  },
+  "Datadir": "./data",
+  "HttpConfig": {
+    "LetsEncryptDomain": "",
+    "CertFile": "",
+    "CertKey": "",
+    "AuthAudience": "cosmos-api",
+    "AuthIssuer": "",
+    "AuthKeysLocation": "",
+    "OIDCConfigEndpoint": "",
+    "IdpSignKeyRefreshEnabled": false
+  },
+  "EmbeddedIdP": {
+    "Enabled": true,
+    "Issuer": "http://localhost:8080/oauth2",
+    "LocalAddress": "localhost:8080",
+    "Storage": {
+      "Type": "sqlite3",
+      "Config": {
+        "File": "./data/idp.db"
+      }
+    },
+    "DashboardRedirectURIs": ["http://localhost:3000/#callback"],
+    "CLIRedirectURIs": ["http://localhost:3000/#silent-callback"],
+    "DashboardPostLogoutRedirectURIs": ["http://localhost:3000"]
+  }
+}

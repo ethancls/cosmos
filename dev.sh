@@ -1,14 +1,14 @@
 #!/bin/bash
 set -e
 echo "Starting Cosmos dev environment..."
-echo "[1/2] Building and starting cosmos-server..."
-cd cosmos-server
-go build -o cosmos-server . 2>/dev/null || echo "  (using existing binary)"
+echo "[1/2] Starting cosmos-server..."
+cd api
 mkdir -p data
-./cosmos-server management --config ./management.json --datadir ./data --port 8080 --log-file console --disable-anonymous-metrics &
+go run ./management/ --datadir ./data --port 8080 --log-file console --disable-anonymous-metrics &
 SERVER_PID=$!
 echo "[2/2] Starting cosmos-dashboard..."
-cd ../cosmos-dashboard
+cd ../dashboard
+npm install --silent 2>/dev/null
 npm run dev &
 DASHBOARD_PID=$!
 echo ""
