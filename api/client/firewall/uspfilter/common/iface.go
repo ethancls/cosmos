@@ -1,0 +1,17 @@
+package common
+
+import (
+	wgdevice "golang.zx2c4.com/wireguard/device"
+
+	"github.com/ethancls/cosmos/client/iface/device"
+	"github.com/ethancls/cosmos/client/iface/wgaddr"
+)
+
+// IFaceMapper defines subset methods of interface required for manager
+type IFaceMapper interface {
+	Name() string
+	SetFilter(device.PacketFilter) error
+	Address() wgaddr.Address
+	GetWGDevice() *wgdevice.Device
+	GetDevice() *device.FilteredDevice
+}
